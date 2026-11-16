@@ -20,10 +20,10 @@ function PlayerDialog({ req, onClose }: { req: Req; onClose: () => void }) {
   useEffect(() => { ref.current?.showModal(); }, []);
   const src = `https://www.youtube-nocookie.com/embed/${req.yt}?start=${req.t}&autoplay=1&rel=0&playsinline=1`;
   return (
-    <dialog ref={ref} className="player" onClose={onClose} onClick={e => { if (e.target === ref.current) ref.current?.close(); }}>
+    <dialog ref={ref} className="player" aria-labelledby="player-title" onClose={onClose} onClick={e => { if (e.target === ref.current) ref.current?.close(); }}>
       <div className="player-in">
         <div className="player-top">
-          <span className="player-title">{req.title}</span>
+          <span className="player-title" id="player-title">{req.title}</span>
           <a href={`https://www.youtube.com/watch?v=${req.yt}&t=${req.t}s`} target="_blank" rel="noopener">{t(ui.openYoutube)}</a>
           <button type="button" className="x" aria-label={t(ui.close)} onClick={() => ref.current?.close()}>×</button>
         </div>

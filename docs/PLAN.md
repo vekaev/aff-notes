@@ -60,7 +60,12 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
       cutaway), each with what happened + the lesson + the original in the in-page player (docs/research/incident-videos.md).
 - [x] Card grids redesigned: top-left aligned, icon + title on one row, equal heights; gear checks as a numbered row with arrows.
 - [~] Section-by-section review by 3 helpers (docs/review/), then fixes.
-- [ ] PWA and sharing: favicon, preview image, search/social tags, manifest, offline, accessibility pass, security headers.
+- [x] PWA and sharing: favicon (SVG + PNG), app icons incl. maskable, link-preview image (og.png 1200×630), description,
+      keywords, Open Graph + Twitter tags, theme-color light/dark, manifest, service worker (app shell precached,
+      clips cached on play + "Save everything for offline" button), skip link, aria-current, labelled player,
+      security headers in vercel.json. Icons/preview regenerate with `node scripts/icons.mjs`.
+- [ ] Verify the service worker in real Chrome/Safari (the app's built-in browser refuses to register it).
+- [ ] When hosted: set VITE_SITE_URL in .env to the absolute URL so link previews show the image.
 - [x] Private GitHub repo vekaev/aff-notes (private), autopilot pushes there.
 
 ## Facts to verify (doubts raised by the text reviewers; check against sources, then fix or mark <q-check/>)

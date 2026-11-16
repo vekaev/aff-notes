@@ -7,6 +7,7 @@ import { BlockView } from './components/Blocks';
 import { Hero, useTrackLastChapter } from './components/Hero';
 import { SkyRail } from './components/SkyRail';
 import { LangMenu, ThemeButton } from './components/Settings';
+import { OfflineButton } from './components/Offline';
 import { ICONS, PART_ICON } from './components/Icon';
 
 /** Which part is on screen, for the header nav. */
@@ -42,11 +43,12 @@ export function App() {
 
   return (
     <>
+      <a className="skip" href="#content">{t(ui.skip)}</a>
       <header className={`top gutter tone-${active}`}>
         <div className="col">
           <a className="brand" href="#top">{t(ui.brand)}</a>
           <nav className="parts" aria-label={t(ui.part)}>
-            {parts.map(p => <a key={p.id} href={`#${p.id}`} style={acc(p.id)} className={active === p.id ? 'on' : ''}>{p.roman} · {t(p.title)}</a>)}
+            {parts.map(p => <a key={p.id} href={`#${p.id}`} style={acc(p.id)} className={active === p.id ? 'on' : ''} aria-current={active === p.id ? 'location' : undefined}>{p.roman} · {t(p.title)}</a>)}
           </nav>
           <div className="settings"><LangMenu /><ThemeButton /></div>
         </div>
@@ -54,6 +56,7 @@ export function App() {
 
       <SkyRail />
       <main id="top">
+        <span id="content" tabIndex={-1} />
         <Hero />
 
         {parts.map(p => (
@@ -80,7 +83,7 @@ export function App() {
           </div>
         ))}
 
-        <footer className="gutter"><div className="col">{t(ui.footer)}</div></footer>
+        <footer className="gutter"><div className="col footer-in"><span>{t(ui.footer)}</span><OfflineButton /></div></footer>
       </main>
     </>
   );

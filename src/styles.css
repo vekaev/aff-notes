@@ -535,3 +535,8 @@ dialog.player::backdrop { background: rgba(0,0,0,.72); }
 .rig .rp.on { opacity: 1; }
 @media (prefers-reduced-motion: reduce) { .rig .rp { transition: none; } }
 @media (max-width: 760px) { .rig.sticky { position: static; } }
+/* accessibility: skip link, visible only on keyboard focus */
+.skip { position: absolute; left: 12px; top: -48px; z-index: 50; background: var(--ink); color: var(--paper); padding: 8px 14px; border-radius: 999px; font-weight: 650; text-decoration: none; transition: top .15s; }
+.skip:focus { top: calc(env(safe-area-inset-top, 0px) + 10px); }
+#content { display: block; height: 0; outline: none; }
+.footer-in { display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
