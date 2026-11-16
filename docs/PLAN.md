@@ -1,5 +1,10 @@
 # AFF notes — plan
 
+**Mission.** A guide that helps people jump safely: everything a student needs from the plane door to the landing,
+true to the sources, grouped the way a jump happens, short, readable and shown with real footage. If one student
+remembers the right thing at the right second because of it, it was worth it. Every change is checked against that:
+is it true, is it clear, does it help someone on their next jump?
+
 Personal study app for AFF (Accelerated Freefall) after the ground course at Skydive California (Tracy, CA).
 For personal use for now; maybe later shared with the dropzone, or turned into an app for beginner skydivers.
 Every request from the owner goes here first. `[x]` = in the app (content tests pass); `[ ]` = not done.
@@ -95,6 +100,11 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - [~] Independent expert fact-check: `.claude/agents/aff-expert-reviewer.md` (an AFF instructor seeing the app for the
       first time, checks every claim against USPA SIM/BSR, manuals, Parachutist). 6 reviewers, reports in
       `docs/review/expert/`; then one list of fixes: clear ones applied, the rest asked.
+- [ ] Two more checkers: `.claude/agents/aff-page-guard.md` (page still works and reads well: every chapter, 4 languages,
+      light/dark, phone/desktop) and `.claude/agents/aff-curriculum-reviewer.md` (what's missing, new sections, more and
+      better tests, visuals). Reports in `docs/review/page-guard/` and `docs/review/curriculum/`.
+- [ ] 24-hour finishing run: task `aff-notes-finish-review`, every 2 hours from 2026-11-16 12:00 to 2026-11-17 10:00,
+      then it switches itself off. Each run processes the open review findings and reports.
 - [ ] Owner to re-check scrolling on the iPhone (the fix is seen in the emulator only).
 - [x] Numbers tape fixed: 2,500 = can you reach the holding point (canopy plan), then 2,000 over it, 1,000 leave it;
       the emergency 2,500 (decide and act on a bad main) and 1,000 (no cutaway below) moved to their own red row.
