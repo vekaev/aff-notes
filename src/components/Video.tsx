@@ -24,7 +24,7 @@ export function Video({ src, label }: { src: string; label?: string }) {
   const reduce = reduceMotion();
   return (
     <div className="vid">
-      <video ref={ref} muted loop playsInline preload="none" controls={reduce} aria-label={label} />
+      <video ref={ref} muted loop playsInline preload="none" poster={`media/${src}.jpg`} controls={reduce} aria-label={label} />
     </div>
   );
 }

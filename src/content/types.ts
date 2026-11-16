@@ -24,8 +24,13 @@ export interface Watch {
   credit: string;
 }
 
-export interface Step { title: L; sub?: L }
-export interface Rule { big?: string; title?: L; text?: L; tone?: 'red' | 'accent' }
+import type { IconName } from '../components/Icon';
+export type { IconName };
+
+export interface Step { title: L; sub?: L; icon?: IconName }
+export interface Rule { big?: string; icon?: IconName; title?: L; text?: L; tone?: 'red' | 'accent' }
+/** One bar: a label and a share in percent. */
+export interface Bar { label: L; value: number; hl?: boolean }
 export interface Mistakes { title: L; bad: L[]; good: L[]; badTitle?: L; goodTitle?: L }
 export interface FaqItem { n: string; q: L; a: L }
 export interface QuizQuestion { q: L; options: L[]; answer: number; why: L }
@@ -46,7 +51,7 @@ export interface AltRow { alt: string; value: number; title: L; sub: L; hot?: bo
 export type Block =
   | { type: 'p'; text: L; muted?: boolean }
   | { type: 'h'; text: L; id?: string }
-  | { type: 'steps'; items: Step[] }
+  | { type: 'steps'; items: Step[]; timeline?: boolean }
   | { type: 'rules'; items: Rule[] }
   | { type: 'callout'; text: L; title?: L; tone?: 'note' | 'red'; check?: boolean }
   | { type: 'clips'; items: Clip[] }
@@ -56,6 +61,7 @@ export type Block =
   | { type: 'tips'; items: Mistakes[]; sources: { label: string; href: string }[] }
   | { type: 'questions'; items: L[] }
   | { type: 'stats'; items: Rule[] }
+  | { type: 'bars'; title: L; items: Bar[]; source: { label: string; href: string } }
   | { type: 'climb'; steps: Step[]; captions: L[] }          // animated door climb-out
   | { type: 'exit'; steps: Step[] }                          // animated exit count
   | { type: 'altimeter'; rows: AltRow[] }                    // dive flow with a live altimeter

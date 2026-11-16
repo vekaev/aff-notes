@@ -18,17 +18,29 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 ---
 
 ## 0. Round 2 (owner, 2026-11-16, evening)
-- [ ] Keep working through this plan; a recurring job re-checks the app and the plan (autopilot / scheduled run).
-- [ ] "Test yourself" as cards: one question per card, next/previous, score.
-- [ ] Parts and chapters visibly separated (shaded sections like the first version); less wall of text; pictures or
-      icons where there is only text (plane, helmet/seatbelt, gear).
-- [ ] Climb-out drawing: the hand must actually grab the rail/door frame.
-- [ ] Videos open inside the page (player at the right second), not a new tab; same for the "watch" links.
-- [ ] Exit count: steps clickable to see each pose (check in, check out, …).
-- [ ] "Hide the names" button renamed to "Test yourself: hide the names".
-- [ ] Design review by a separate agent: too much plain white, hard to read; change background and colours.
-- [ ] Text review agents: check wording and translations in all three languages.
+- [x] Keep working through this plan: autopilot task `autopilot-aff-notes`, 9:30 and 21:30 daily.
+- [x] "Test yourself" as cards: one question per card, next/previous, score.
+- [x] Parts and chapters visibly separated: full-width tinted band per part, cover with roman numeral, icon and
+      contents; accent tick per chapter; header takes the part's tint (design review applied).
+- [x] Icons where there was only text: plane rules, gear (+ 4-check timeline), altitude rules, obstacles.
+- [ ] Less wall of text: shorten long intros and callouts (>200 chars), collapse detail into "more" (design review #14).
+- [ ] Gear chapter drawing of the rig (container, reserve, main, AAD, red/silver handles) (design review #12).
+- [x] Climb-out drawing: hands grab the door handle and stay on it as the body moves.
+- [x] Videos open inside the page (player at the right second), not a new tab; same for the "watch" links.
+- [x] Exit count: steps clickable to see each pose (check in, check out, …).
+- [x] "Hide the names" button renamed to "Test yourself: hide the names" with a hint.
+- [x] Design review by a separate agent; new palette (paper vs card contrast), posters for clips, quiz styles.
+- [x] Text review agents: all 5 content files reviewed in EN/ES/RU (~700 fixes; terms unified).
 - [ ] More research: where people most often get injured (phase, body part, students) — shown visually.
+
+## Facts to verify (doubts raised by the text reviewers; check against sources, then fix or mark <q-check/>)
+- [ ] Arms 90/90 signal is described as "thumb and pinky, an L": check the clip (L = thumb + index).
+- [ ] Slider stuck: we say pump the rear risers; many sources say pump the toggles/brakes.
+- [ ] "~4,000 cutaways a year, about one per 700–800 jumps": check against USPA jump totals (~3.5 M → ~1 per 875).
+- [ ] "5–6 s at full brakes without stalling" depends on the canopy.
+- [ ] Water landing wording vs the current SIM 4-1; "flare about 10 ft" before a building: height or distance?
+- [ ] Tips use "level A/B/C" from Sharp's articles, the rest says "category": make consistent.
+- [ ] Source links inline for "6× injured" and "73–90% at landing".
 
 ## 1. Content the owner dictated (must all be on the page)
 

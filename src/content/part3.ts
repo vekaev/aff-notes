@@ -451,6 +451,7 @@ export const part3: Part = {
           type: 'rules',
           items: [
             {
+              icon: 'tree',
               title: l('Trees', 'Árboles', 'Деревья'),
               text: l(
                 'Half brakes, feet and knees tight together, legs not crossed, protect your face with your arms. Stuck up there: stay put and wait for help, don\'t climb down alone.',
@@ -459,6 +460,7 @@ export const part3: Part = {
               ),
             },
             {
+              icon: 'water',
               title: l('Water', 'Agua', 'Вода'),
               text: l(
                 'Half brakes at about 10 ft above the water, take a deep breath before you go in, feet and knees together as for a PLF. Stay in the harness until you are in the water, then get out of it and swim away from the canopy fast. Leave the gear.',
@@ -467,6 +469,7 @@ export const part3: Part = {
               ),
             },
             {
+              icon: 'building',
               title: l('Buildings', 'Edificios', 'Здания'),
               text: l(
                 'Flare about 10 ft before you hit, then PLF. Near a wall, fly along it with a flat turn rather than into it. On a roof, collapse the canopy so the wind can\'t drag you off the edge.',
@@ -475,6 +478,7 @@ export const part3: Part = {
               ),
             },
             {
+              icon: 'power',
               title: l('Power lines', 'Cables eléctricos', 'Линии электропередачи'),
               tone: 'red',
               text: l(

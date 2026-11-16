@@ -4,6 +4,7 @@ import { Rich, useLang } from '../i18n';
 import { ui } from '../ui';
 import { Video } from './Video';
 import { mmss, ytUrl } from '../lib';
+import { Icon } from './Icon';
 import { useOpenVideo } from './Player';
 import { Quiz } from './Quiz';
 import { Altimeter, CanopyCheck, Climb, CanopyDrawing, ExitCount, LowTurn, Pattern } from '../widgets';
@@ -72,13 +73,30 @@ export function BlockView({ b, chapterId }: { b: Block; chapterId: string }) {
     case 'p': return <p className={b.muted ? 'muted' : undefined}><Rich s={b.text} /></p>;
     case 'h': return <h4 id={b.id}><Rich s={b.text} /></h4>;
     case 'steps':
-      return <ol className="steps">{b.items.map((s, i) => <li key={i}><div><span className="st"><Rich s={s.title} /></span>{s.sub && <span className="sub"><Rich s={s.sub} /></span>}</div></li>)}</ol>;
+      return <ol className={`steps ${b.timeline ? 'timeline' : ''}`}>{b.items.map((s, i) => <li key={i}><div>{s.icon && <Icon name={s.icon} />}<span className="st"><Rich s={s.title} /></span>{s.sub && <span className="sub"><Rich s={s.sub} /></span>}</div></li>)}</ol>;
+    case 'bars': {
+      const max = Math.max(...b.items.map(x => x.value));
+      return (
+        <div className="surface bars">
+          <span className="bt"><Rich s={b.title} /></span>
+          {b.items.map((x, i) => (
+            <div key={i} className={`row ${x.hl ? 'hl' : ''}`}>
+              <span><Rich s={x.label} /></span>
+              <span className="track"><span className="fill" style={{ ['--v' as string]: `${(x.value / max) * 100}%` }} /></span>
+              <span className="pct">{x.value}%</span>
+            </div>
+          ))}
+          <span className="src"><a href={b.source.href} target="_blank" rel="noopener">{b.source.label}</a></span>
+        </div>
+      );
+    }
     case 'rules':
     case 'stats':
       return (
         <div className="rules">
           {b.items.map((r, i) => (
             <div key={i} className={`rule ${r.tone ?? ''}`}>
+              {r.icon && <Icon name={r.icon} />}
               {r.big && <div className="big">{r.big}</div>}
               {r.title && <span className="rt"><Rich s={r.title} /></span>}
               {r.text && <span className="rx"><Rich s={r.text} /></span>}

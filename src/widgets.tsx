@@ -238,8 +238,8 @@ export function LowTurn({ b }: { b: Extract<Block, { type: 'lowturn' }> }) {
           <circle cx="110" cy="92" r="6" fill="var(--red)" />
           <g fontFamily="var(--mono)" fontSize="10">
             <text x="104" y="80" textAnchor="end" fill="var(--red)">{t({ en: 'turn starts low', es: 'giro muy bajo', ru: 'поворот низко' })}</text>
-            <text x="124" y="160" textAnchor="end" fill="var(--red)">{t({ en: 'dives, speeds up', es: 'se clava, acelera', ru: 'ныряет, разгоняется' })}</text>
-            <text x="312" y="172" textAnchor="end" fill="var(--ink)">{t({ en: 'straight: glide, flare', es: 'recto: planeo, flare', ru: 'прямо: скольжение, flare' })}</text>
+            <text x="112" y="176" textAnchor="end" fill="var(--red)">{t({ en: 'dives, speeds up', es: 'se clava, acelera', ru: 'ныряет, разгоняется' })}</text>
+            <text x="312" y="203" textAnchor="end" fill="var(--ink)">{t({ en: 'straight: glide, flare', es: 'recto: planeo, flare', ru: 'прямо: скольжение, flare' })}</text>
             <text x="12" y="202" fill="var(--muted)">{t(ui.sideView)}</text>
           </g>
         </svg>
