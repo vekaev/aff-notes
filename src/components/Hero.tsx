@@ -95,8 +95,16 @@ function JumpPicture() {
         {/* the flying jumper */}
         {!reduce && (
           <g className="flyer" style={{ offsetPath: `path('${FLIGHT}')` }}>
-            <g className="fly-canopy"><path d="M-14 -16 Q0 -28 14 -16 Q0 -20 -14 -16 Z" /><path d="M-12 -16 L-2 -4 M12 -16 L2 -4" className="lines" /></g>
-            <circle cx="0" cy="-3" r="3.6" /><path d="M0 0 v7 M-6 2 l6 -2 l6 2 M-4 12 l4 -5 l4 5" />
+            {/* freefall: belly to earth, body horizontal, arms and legs bent up */}
+            <g className="fly-box">
+              <circle cx="-10" cy="-2" r="3.6" />
+              <path d="M-6 0 H7 M-3 0 L-7 -7 M2 0 L-1 -7 M7 0 L11 -5 L15 -2 M7 0 L12 2 L16 -1" />
+            </g>
+            {/* under canopy: hanging upright */}
+            <g className="fly-hang">
+              <g className="fly-canopy"><path d="M-14 -20 Q0 -32 14 -20 Q0 -24 -14 -20 Z" /><path d="M-12 -20 L-2 -7 M12 -20 L2 -7" className="lines" /></g>
+              <circle cx="0" cy="-4" r="3.6" /><path d="M0 -1 v8 M-5 2 L0 -1 L5 2 M0 7 l-3 6 M0 7 l3 6" />
+            </g>
           </g>
         )}
         {stop('part1', 70, 108, 'I', parts[0].title, '0 → 13,500 ft', 'var(--acc-plane)')}

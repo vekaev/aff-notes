@@ -7,28 +7,46 @@ import { useEffect, useRef, useState } from 'react';
 
 type Pose = 'sit' | 'box' | 'canopy' | 'reserve' | 'stand' | 'cheer';
 
-function usePageState() {
-  const [s, set] = useState({ p: 0, part: 'top' });
+/**
+ * Scroll position drives the jumper directly (transform on a ref, no React render per frame);
+ * React only re-renders when the pose changes (a new part, or landing at the very bottom).
+ */
+function useRail(jumper: React.RefObject<HTMLDivElement | null>, altEl: React.RefObject<HTMLSpanElement | null>) {
+  const [state, set] = useState({ part: 'top', landed: false });
   useEffect(() => {
     let raf = 0;
+    let parts: { id: string; top: number }[] = [];
+    const measure = () => {
+      parts = [...document.querySelectorAll<HTMLElement>('[data-part]')].map(el => ({ id: el.dataset.part!, top: el.getBoundingClientRect().top + scrollY }));
+    };
     const read = () => {
       raf = 0;
       const max = document.documentElement.scrollHeight - innerHeight;
       const p = max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0;
+      const el = jumper.current;
+      if (el) {
+        const track = (el.parentElement?.clientHeight ?? 0) - el.offsetHeight - 22;
+        el.style.transform = `translate3d(0, ${Math.max(0, p * track)}px, 0)`;
+      }
+      if (altEl.current) altEl.current.textContent = Math.max(0, Math.round(((1 - p) * 13500) / 100) * 100).toLocaleString('en-US');
       let part = 'top';
-      document.querySelectorAll<HTMLElement>('[data-part]').forEach(el => { if (el.getBoundingClientRect().top < innerHeight * 0.5) part = el.dataset.part!; });
-      set(prev => (Math.abs(prev.p - p) < 0.0005 && prev.part === part ? prev : { p, part }));
+      const mid = scrollY + innerHeight * 0.5;
+      for (const x of parts) if (x.top < mid) part = x.id;
+      const landed = p > 0.985;
+      set(prev => (prev.part === part && prev.landed === landed ? prev : { part, landed }));
     };
     const on = () => { if (!raf) raf = requestAnimationFrame(read); };
-    read();
-    addEventListener('scroll', on, { passive: true }); addEventListener('resize', on);
-    return () => { removeEventListener('scroll', on); removeEventListener('resize', on); };
-  }, []);
-  return s;
+    const onResize = () => { measure(); on(); };
+    measure(); read();
+    const ro = new ResizeObserver(onResize); ro.observe(document.body);
+    addEventListener('scroll', on, { passive: true }); addEventListener('resize', onResize);
+    return () => { ro.disconnect(); removeEventListener('scroll', on); removeEventListener('resize', onResize); cancelAnimationFrame(raf); };
+  }, [jumper, altEl]);
+  return state;
 }
 
-function poseFor(part: string, p: number): Pose {
-  if (p > 0.985) return 'cheer';
+function poseFor(part: string, landed: boolean): Pose {
+  if (landed) return 'cheer';
   if (part === 'top' || part === 'part1') return 'sit';
   if (part === 'part2') return 'box';
   if (part === 'part3') return 'canopy';
@@ -70,18 +88,19 @@ function Jumper({ pose }: { pose: Pose }) {
 const CONFETTI = ['var(--acc-free)', 'var(--acc-canopy)', 'var(--red)', 'var(--ok)', 'var(--acc-dz)'];
 
 export function SkyRail() {
-  const { p, part } = usePageState();
-  const pose = poseFor(part, p);
+  const jumper = useRef<HTMLDivElement>(null);
+  const altEl = useRef<HTMLSpanElement>(null);
+  const { part, landed } = useRail(jumper, altEl);
+  const pose = poseFor(part, landed);
   const [burst, setBurst] = useState(0);
-  const landed = useRef(false);
+  const celebrated = useRef(false);
   const reduce = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useEffect(() => {
-    if (pose === 'cheer' && !landed.current) { landed.current = true; if (!reduce) setBurst(b => b + 1); }
-    if (pose !== 'cheer' && p < 0.95) landed.current = false;
-  }, [pose, p, reduce]);
+    if (landed && !celebrated.current) { celebrated.current = true; if (!reduce) setBurst(b => b + 1); }
+    if (!landed) celebrated.current = false;
+  }, [landed, reduce]);
 
-  const alt = Math.max(0, Math.round(((1 - p) * 13500) / 100) * 100);
   // Click or drag anywhere on the rail to scroll there, like a normal scroll bar.
   const toY = (el: HTMLElement, y: number, smooth: boolean) => {
     const r = el.getBoundingClientRect();
@@ -99,7 +118,7 @@ export function SkyRail() {
   };
 
   return (
-    <div className="skyrail" aria-hidden="true" onPointerDown={down} title={`${alt.toLocaleString('en-US')} ft`}>
+    <div className="skyrail" aria-hidden="true" onPointerDown={down}>
       <svg className="sky-plane" viewBox="0 0 24 12" style={{ opacity: pose === 'sit' ? 0 : 1 }}><path d="M1 6 l8 -1 l3 -4 h1.5 l-1 4 l5 .5 l1.5 -2 h1.5 l-.7 2.5 l.7 2.5 h-1.5 l-1.5 -2 l-5 .5 l1 4 h-1.5 l-3 -4 z" fill="var(--faint)" /></svg>
       <div className="sky-track" />
       <div className="sky-ground">
@@ -110,8 +129,8 @@ export function SkyRail() {
           <line x1="0" y1="22.5" x2="40" y2="22.5" stroke="var(--line-strong)" strokeWidth="1.5" />
         </svg>
       </div>
-      <div className="sky-jumper" style={{ ['--p' as string]: p }}>
-        <span className="sky-alt">{alt.toLocaleString('en-US')}</span>
+      <div className="sky-jumper" ref={jumper}>
+        <span className="sky-alt" ref={altEl} />
         <svg key={pose} viewBox="0 0 40 48" className="pose-in"><Jumper pose={pose} /></svg>
         {burst > 0 && (
           <span className="confetti" key={burst}>
