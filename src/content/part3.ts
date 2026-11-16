@@ -110,6 +110,7 @@ export const part3: Part = {
                 clip('deploy', l('Lock on, wave off, reach, throw (their altimeter, not your pull altitude)', 'Altímetro, wave-off, buscar, lanzar (su altímetro, no tu altura de apertura)', 'Высотомер, отмашка, дотянуться, выбросить (их высотомер, не твоя высота раскрытия)', 'Висотомір, відмашка, дотягнутися, викинути (їхній висотомір, не твоя висота розкриття)'), 'Skydive Spaceland', 'ufz1HjyYs_0', 146),
                 clip('throw', l('Locate, grip, throw, arch, count', 'Localizar, agarrar, lanzar, arquear, contar', 'Найти, взять, выбросить, прогиб, счёт', 'Знайти, взяти, викинути, прогин, рахунок'), 'APF', 'PTYsjH7DSVA', 124),
                 clip('check', l('Canopy check: shape, slider, toggles, practice flares', 'Revisión de la vela: forma, slider, batidores, flares de práctica', 'Проверка купола: форма, слайдер, клеванты, пробные flare', 'Перевірка купола: форма, слайдер, клеванти, пробні flare'), 'APF', 'PTYsjH7DSVA', 154),
+                clip('canopy_check_pov', l('Your view right after opening: slider coming down, then the check: square, stable, steerable', 'Lo que ves justo después de abrir: el slider baja, luego la revisión: cuadrada, estable, gobernable', 'Что ты видишь сразу после раскрытия: слайдер опускается, дальше проверка: квадратный, стабильный, управляемый', 'Що ти бачиш одразу після розкриття: слайдер опускається, далі перевірка: квадратний, стабільний, керований'), 'Strictly Clown Business', 'moBHeP1WNNI', 33),
               ],
             },
           ],
@@ -214,7 +215,7 @@ export const part3: Part = {
           type: 'pattern',
           rows: [
             {
-              alt: '2,500',
+              alt: '2,500 ft',
               value: 2.5,
               point: [275, 205],
               title: l('Decide where to go', 'Decide adónde ir', 'Решаем, куда лететь', 'Вирішуємо, куди летіти'),
@@ -226,7 +227,7 @@ export const part3: Part = {
               ),
             },
             {
-              alt: '2,000',
+              alt: '2,000 ft',
               value: 2,
               point: [275, 205],
               title: l('Over the holding point', 'Sobre el punto de espera', 'Над точкой ожидания', 'Над точкою очікування'),
@@ -238,7 +239,7 @@ export const part3: Part = {
               ),
             },
             {
-              alt: '2,000→1,000',
+              alt: '2,000→1,000 ft',
               value: 1.5,
               point: [275, 205],
               title: l('Hold there', 'Espera ahí', 'Ожидание над точкой', 'Очікування над точкою'),
@@ -250,7 +251,7 @@ export const part3: Part = {
               ),
             },
             {
-              alt: '900',
+              alt: '900 ft',
               value: 0.9,
               hot: true,
               point: [250, 200],
@@ -263,7 +264,7 @@ export const part3: Part = {
               ),
             },
             {
-              alt: '600',
+              alt: '600 ft',
               value: 0.6,
               hot: true,
               point: [60, 200],
@@ -276,7 +277,7 @@ export const part3: Part = {
               ),
             },
             {
-              alt: '300',
+              alt: '300 ft',
               value: 0.3,
               hot: true,
               point: [60, 70],
@@ -327,6 +328,7 @@ export const part3: Part = {
           items: [
             clip('holding', l('Holding area, explained on a real dropzone', 'La zona de espera, explicada en una zona de salto real', 'Зона ожидания на настоящем аэродроме', 'Зона очікування на справжньому аеродромі'), 'Skydive Spaceland', 'puD56VJ8loA', 84),
             clip('pattern', l('Flying the pattern: downwind, base, final', 'Volar el circuito: viento en cola, base, final', 'Схема захода: по ветру, базовая прямая, финал', 'Схема заходу: по вітру, базова пряма, фінал'), 'Skydive Spaceland', 'puD56VJ8loA', 110),
+            clip('pattern_pov', l('From the canopy: downwind, base and final drawn on a real field (north wind at that dropzone)', 'Desde la vela: viento en cola, base y final dibujados sobre un campo real (viento del norte en esa zona de salto)', 'С купола: участки по ветру, базовая и финал нарисованы на настоящем поле (северный ветер на той площадке)', 'З купола: ділянки по вітру, базова й фінал намальовані на справжньому полі (північний вітер на тому майданчику)'), 'Skydive Miami', 'KUUMP_XCBUE', 217),
           ],
         },
         { type: 'h', text: l('Turn limits', 'Límites de giro', 'Ограничения разворотов', 'Обмеження розворотів') },

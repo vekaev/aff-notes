@@ -163,12 +163,11 @@ export function Hero() {
         <svg className="ring" viewBox="0 0 64 64" aria-hidden="true">
           <circle cx="32" cy="32" r="27" className="track" />
           <circle cx="32" cy="32" r="27" className="val" strokeDasharray={`${pct * 169.6} 169.6`} transform="rotate(-90 32 32)" />
-          <text x="32" y="37" textAnchor="middle">{done}/{total}</text>
         </svg>
         <div className="rtext">
           <span className="rl">{lastCh ? `${t(T.where)}` : t(T.tests).replace(/^./, c => c.toUpperCase()) + `: ${done}/${total}`}</span>
           <b>{lastCh ? headline(t(lastCh.c.title)) : headline(t(chapters[0].c.title))}</b>
-          <span className="rl">{nextTest ? <>{t(T.nextTest)}: <a href={`#${nextTest.c.id}`}>{t(nextTest.c.title)}</a></> : t(T.allDone)}</span>
+          <span className="rl">{lastCh ? `${done}/${total} ${t(T.tests)} · ` : ''}{nextTest ? <>{t(T.nextTest)}: <a href={`#${nextTest.c.id}`}>{t(nextTest.c.title)}</a></> : t(T.allDone)}</span>
         </div>
         <a className="btn primary go" href={`#${target}`}>{t(lastCh ? T.cont : T.start)} →</a>
       </div>

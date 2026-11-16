@@ -259,7 +259,7 @@ export const part4: Part = {
               ],
             },
             {
-              big: '2,500',
+              big: '2,500 ft',
               tone: 'red',
               title: t(`Decision altitude`, `Altura de decisión`, `Высота принятия решения`, `Висота ухвалення рішення`),
               points: [
@@ -284,7 +284,7 @@ export const part4: Part = {
               ],
             },
             {
-              big: '1,000',
+              big: '1,000 ft',
               tone: 'red',
               title: t(`Hard deck`, `Límite mínimo`, `Нижняя граница`, `Нижня межа`),
               points: [
@@ -2162,7 +2162,7 @@ export const part4: Part = {
               `Exit count: exact words, which instructor first, exit altitude.`,
               `Conteo de salida: palabras exactas, qué instructor primero, altura de salida.`,
               `Отсчёт на выходе: точные слова, на какого инструктора смотрим первым, высота выброски.`,
-              `Відлік на виході: точні слова, на якого інструктора дивимося першим, висота викидання.`,
+              `Відлік на виході: точні слова, на якого інструктора дивимося першим, висота відокремлення.`,
             ),
           ],
         },

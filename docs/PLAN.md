@@ -26,9 +26,9 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] Sections felt cramped: more space, margins, sizes (6eea713).
 - [x] Incident cards: the clip opens the full YouTube video (6eea713).
 - [x] Numbers tape: 2,500 = can you reach the holding point; emergency numbers separate (6eea713).
-- [~] Real pictures next to every drawing, the rig first: rig back/front clips placed (pushed with the Part I fixes);
-      exit, altimeter, pattern and canopy-check clips cut, to place next to their drawings; then a real rig photo
-      with the same tap points as the drawing (curriculum review, visual #1).
+- [x] Real pictures next to every drawing, the rig first: rig back/front clips and the 8 rig-part photos placed;
+      exit (Part I count), altimeter (Part II flow, poster now shows the dial), canopy-check POV (Part III deploy) and
+      pattern POV (Part III pattern) placed 2026-11-16 14:00 run, seen EN/ES/UK/RU, light/dark, desktop/375 px.
 - [?] Photo of the dropzone map from the ground course → next to the pattern drawing and in Part V (owner sends it).
 - [x] Phone scrolling jumped: rail no longer catches touches (6eea713). Owner to confirm on the iPhone.
 - [x] Header: title left, language and theme right (6eea713).
@@ -62,7 +62,11 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       YouTube, pros, official manuals), a study app like this one, expert fact-check, curriculum review, page guard,
       notes capture, final exam + AI-tutor prompt, then reinforcement after the course. Skill `/study` in agent-tools,
       mission: knowledge that can save a life (2026-11-16). Done: ~/agent-tools/skills/study (+ /factcheck, /autopilot sprint).
-- [ ] Page guard findings (docs/review/page-guard/2026-11-16-full.md): "ft" on every altitude everywhere (cards, prose,
+- [~] Page guard findings (docs/review/page-guard/2026-11-16-full.md). Done 14:00 run: "ft" on the big altitude cards
+      (altitude, EP, dropzone), count chips labelled "Count, not altitude", hero ring line "x/20 tests passed", UK
+      "відокремлення"; "ft" on the dive-flow and pattern timelines and the altimeter legend (page guard
+      docs/review/page-guard/2026-11-16-1415.md). Still open: bare altitudes in prose; big numbers per language format
+      ("2,500 ft" over "2 500 футов"); RU "выброска" vs "отделение"; "ft" on every altitude everywhere (cards, prose,
       altimeter rows, legend, pattern labels, hero axis); label the canopy-check count chips as the count, not altitudes;
       one number format per language (UK/RU "5 500" vs "5,500"); translate the English injury-chart sources in ES/UK/RU;
       UK "викидання" → "відокремлення"; label the hero "0/20" ring; phone: sticky exit-count drawing covers the steps.
@@ -75,7 +79,7 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - [x] Collect the ask-owner questions from every fixer log (docs/review/fixes/*.md) into "Waiting on you", one question each with a recommended answer; fixes.md says they are there, they are not (from 2026-11-16)
 - [x] Put the two open questions under "Waiting on you": lowercase headlines everywhere (§0b) and the big reorder (line above) (from 2026-11-16)
 - [x] Run the page guard (.claude/agents/aff-page-guard.md) on all chapters: never run yet, docs/review/page-guard/ doesn't exist (from 2026-11-16)
-- [ ] Tidy stale ticks: §0c "Two more checkers" and "24-hour finishing run" are [ ] while this inbox has them [x] (from 2026-11-16)
+- [x] Tidy stale ticks: §0c "Two more checkers" and "24-hour finishing run" are [ ] while this inbox has them [x] (from 2026-11-16)
 
 ### Standing preferences (apply to all future work)
 - Real footage or photos over drawings; a picture or clip next to every piece of text; moving clips over still images.
@@ -179,18 +183,18 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - [x] Header: title left, part in the middle (numeral only on phones), language + theme pinned right.
 - [x] Numbers stay with their units on one line ("5 s", "2 500 футов", "SIM 4-1"); quiz button "Next question";
       holding point: S-turns / figure-eights within the 180° limit (asked the instructors: circles allowed?).
-- [~] Independent expert fact-check: `.claude/agents/aff-expert-reviewer.md` (an AFF instructor seeing the app for the
+- [x] Independent expert fact-check: `.claude/agents/aff-expert-reviewer.md` (an AFF instructor seeing the app for the
       first time, checks every claim against USPA SIM/BSR, manuals, Parachutist). 6 reviewers, reports in
       `docs/review/expert/`; then one list of fixes: clear ones applied, the rest asked.
-- [ ] Two more checkers: `.claude/agents/aff-page-guard.md` (page still works and reads well: every chapter, 4 languages,
+- [x] Two more checkers: `.claude/agents/aff-page-guard.md` (page still works and reads well: every chapter, 4 languages,
       light/dark, phone/desktop) and `.claude/agents/aff-curriculum-reviewer.md` (what's missing, new sections, more and
       better tests, visuals). Reports in `docs/review/page-guard/` and `docs/review/curriculum/`.
-- [ ] 24-hour finishing run: task `aff-notes-finish-review`, every 2 hours from 2026-11-16 12:00 to 2026-11-17 10:00,
+- [x] 24-hour finishing run: task `aff-notes-finish-review`, every 2 hours from 2026-11-16 12:00 to 2026-11-17 10:00,
       then it switches itself off. Each run processes the open review findings and reports.
 - [ ] Owner to re-check scrolling on the iPhone (the fix is seen in the emulator only).
 - [x] Numbers tape fixed: 2,500 = can you reach the holding point (canopy plan), then 2,000 over it, 1,000 leave it;
       the emergency 2,500 (decide and act on a bad main) and 1,000 (no cutaway below) moved to their own red row.
-- [ ] Real footage next to every drawing (rig with its parts first, exit, altimeter, pattern POV, canopy check POV).
+- [x] Real footage next to every drawing (rig with its parts first, exit, altimeter, pattern POV, canopy check POV).
 - [x] Email draft rewritten in the owner's words (review + free help + what to add); not sent.
 
 ## Facts to verify (doubts raised by the text reviewers; check against sources, then fix or mark <q-check/>)

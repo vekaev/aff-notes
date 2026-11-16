@@ -174,7 +174,7 @@ export const part2: Part = {
           type: 'altimeter',
           rows: [
             {
-              alt: '13,000',
+              alt: '13,000 ft',
               value: 13,
               title: { en: 'Exit, arch', es: 'Salida, arquea', uk: 'Відокремлення, прогин', ru: 'Отделение, прогиб' },
               sub: {
@@ -229,14 +229,14 @@ export const part2: Part = {
               },
             },
             {
-              alt: '6,000',
+              alt: '6,000 ft',
               value: 6,
               hot: true,
               title: { en: 'Lock on', es: 'Lock on', uk: 'Лише висотомір', ru: 'Только высотомер' },
               sub: { en: '<b>No more</b> exercises.', es: '<b>Se acabaron</b> los ejercicios.', uk: 'Більше <b>жодних</b> вправ.', ru: 'Больше <b>никаких</b> упражнений.' },
             },
             {
-              alt: '5,500',
+              alt: '5,500 ft',
               value: 5.5,
               hot: true,
               title: { en: 'PULL', es: 'ABRIR', uk: 'РОЗКРИТТЯ', ru: 'РАСКРЫТИЕ' },
@@ -258,6 +258,18 @@ export const part2: Part = {
             uk: 'На справжньому студентському висотомірі колір є лише в <b>нижній частині</b> циферблата: в Alti-2 Galaxy, наприклад, жовто-червона дуга починається з <b>3 000 футів</b> (Para Gear). 6 000 і 5 500 нічим не позначені: <b>читай цифри</b>. Роздивися свій висотомір до стрибка.',
             ru: 'На настоящем студенческом высотомере цвет есть только в <b>нижней части</b> циферблата: у Alti-2 Galaxy, например, жёлто-красная дуга начинается с <b>3 000 футов</b> (Para Gear). 6 000 и 5 500 ничем не отмечены: <b>читай цифры</b>. Рассмотри свой высотомер до прыжка.',
           },
+        },
+        {
+          type: 'clips',
+          items: [
+            {
+              src: 'alt_real',
+              caption: { en: 'A real wrist altimeter, held up and read in freefall', es: 'Un altímetro de muñeca real, levantado y leído en caída libre', uk: 'Справжній наручний висотомір: підняти й прочитати у вільному падінні', ru: 'Настоящий наручный высотомер: поднять и прочитать в свободном падении' },
+              credit: 'Marcin Kobylecki',
+              yt: 'gCjqB_kB_qM',
+              t: 58,
+            },
+          ],
         },
         {
           type: 'callout',
@@ -432,7 +444,7 @@ export const part2: Part = {
           type: 'rules',
           items: [
             {
-              big: '6,000',
+              big: '6,000 ft',
               tone: 'accent',
               title: { en: 'Lock on', es: 'Lock on', uk: 'Лише висотомір', ru: 'Только высотомер' },
               text: {
@@ -443,7 +455,7 @@ export const part2: Part = {
               },
             },
             {
-              big: '5,500',
+              big: '5,500 ft',
               tone: 'accent',
               title: { en: 'Pull', es: 'Abrir', uk: 'Розкриття', ru: 'Раскрытие' },
               text: {

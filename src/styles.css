@@ -269,7 +269,8 @@ details p { margin: 10px 0 0; color: var(--muted); }
 .check-list .on b { color: var(--ok); }
 .count { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
 .count span { font: 500 12px var(--mono); padding: 3px 8px; border-radius: 999px; background: var(--soft); opacity: .4; transition: opacity .2s; }
-.count span.on { opacity: 1; }
+.count span.on, .count span.count-label { opacity: 1; }
+.count span.count-label { background: none; padding-left: 0; padding-right: 0; color: var(--muted); font-family: inherit; flex-basis: 100%; text-align: center; }
 
 footer { padding-block: 120px 64px; color: var(--muted); font-size: 13px; background: linear-gradient(in oklab to bottom, var(--band-dz) 0, var(--paper) 200px); }
 

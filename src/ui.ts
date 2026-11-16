@@ -18,6 +18,7 @@ export const ui = {
   play: { en: 'Play', es: 'Reproducir', ru: 'Пуск', uk: 'Пуск' },
   thumbCheck: { en: 'Thumb-to-ear check', es: 'Pulgares a las orejas', ru: 'Пальцы к ушам', uk: 'Пальці до вух' },
   pull: { en: 'Pull', es: 'Abrir', ru: 'Раскрыть', uk: 'Розкрити' },
+  countLabel: { en: 'Count, not altitude:', es: 'Conteo, no altura:', ru: 'Счёт, не высота:', uk: 'Рахунок, не висота:' },
   test: { en: 'Test yourself', es: 'Ponte a prueba', ru: 'Проверь себя', uk: 'Перевір себе' },
   passed: { en: 'passed', es: 'aprobado', ru: 'сдано', uk: 'складено' },
   right: { en: 'Right.', es: 'Correcto.', ru: 'Верно.', uk: 'Правильно.' },

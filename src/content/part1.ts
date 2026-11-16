@@ -573,6 +573,18 @@ export const part1: Part = {
           ],
         },
         {
+          type: 'clips',
+          items: [
+            {
+              src: 'exit_real',
+              caption: { en: 'A real first AFF exit, filmed from inside: the student in the door between two instructors, all three leave together', es: 'Una salida real de primer AFF, filmada desde dentro: el alumno en la puerta entre dos instructores, salen los tres a la vez', uk: 'Справжнє перше відокремлення за AFF, знято зсередини: студент у дверях між двома інструкторами, усі троє відокремлюються разом', ru: 'Настоящее первое отделение по AFF, снято изнутри: студент в двери между двумя инструкторами, все трое отделяются вместе' },
+              credit: 'Matt (YouTube)',
+              yt: 'Z5lxQOmDIKk',
+              t: 6,
+            },
+          ],
+        },
+        {
           type: 'watch',
           items: [
             { yt: 'kd8HVlIfzqc', t: 0, label: { en: 'Real AFF exit with instructors', es: 'Salida AFF real con instructores', uk: 'Справжнє відокремлення за AFF з інструкторами', ru: 'Настоящее отделение по AFF с инструкторами' }, credit: 'Perris' },

@@ -7,7 +7,7 @@ Expert reports: `docs/review/expert/<scope>.md`. A second, independent pass on P
 first one was being fixed) is kept in `docs/review/expert/second-opinion/part4-emergencies.md`: compare it with the fixer
 log when Part IV is done.
 
-## Status 2026-11-16 10:25 PST
+## Status 2026-11-16 14:10 PST
 
 | scope | report | fixer log | fixed | added | rejected | ask-owner | status |
 |---|---|---|---|---|---|---|---|
@@ -15,11 +15,12 @@ log when Part IV is done.
 | part2-freefall | yes | yes | 6 | 5 | 2 | 3 (4 questions) | done 8a2c519 |
 | part3-canopy | yes | yes | 13 | 7 | 1 | 4 | done 8a2c519 |
 | first-screen-dropzone | yes | yes | 6 | 3 | 0 | 2 (3 questions) | done 92dd8f4 |
-| part4-emergencies | yes | no | | | | | todo: owner's chat is fixing it (part4.ts uncommitted) |
-| part4-injuries-tips | yes | no | | | | | todo: owner's chat is fixing it |
-| curriculum | 2026-11-16.md | | | | | | proposals; build one sourced item per run |
+| part4-emergencies | yes | yes | 18 | 1 | 0 | 3 | done 8f436c7; 4 left for later (#17, M1, M2 not added, C3 elsewhere) |
+| part4-injuries-tips | yes | yes | 16 | 1 | 1 | 3 (+1 listed) | done d99a86a |
+| curriculum | 2026-11-16.md | | | | | | proposals; final check (543718d) and rig photos (8084813) built; next: one sourced item per run |
+| real footage | real-footage.md | | 6 clips + 8 photos placed | | | | done (rig 8084813; exit, altimeter, canopy check, pattern: 14:00 run) |
 
-## Safety items to confirm once Part IV is committed
+## Safety items from Part IV (applied in 8f436c7 / d99a86a; kept as the checklist)
 
 From the two Part IV reports (both passes agree on these):
 - Biplane: don't flare, toggles stowed, steer the front canopy with its rear risers (USPA SIM 4-1).

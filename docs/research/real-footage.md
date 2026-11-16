@@ -1,7 +1,7 @@
 # Real footage beside the drawn widgets
 
 Researched and cut 2026-11-16. All clips: 480x270, silent, H.264 High, 24 fps, `+faststart`, poster = frame at 1 s
-(480x270), in `public/media/`. Not wired into `src/` yet. Every clip was checked frame by frame on a contact sheet.
+(480x270), in `public/media/`. Wired into the app 2026-11-16 (exit: Part I count; altimeter: Part II flow; canopy check and pattern: Part III). Every clip was checked frame by frame on a contact sheet.
 Personal use only (see CLAUDE.md): clips are cut from other people's YouTube videos.
 
 | Widget | File | YouTube id | Start (s) | Length | Credit |
@@ -63,7 +63,7 @@ clip is wanted.
 ## Rig part photos
 
 Stills for the "Know your rig" drawing, cut 2026-11-16: one frame per part, cropped 4:3 on the part, 640x480 JPEG
-(15–26 KB), in `public/media/`. Not wired into `src/` yet. Each was picked from a 1 fps contact sheet; the parts were
+(15–26 KB), in `public/media/`. Wired into "Know your rig" (8084813). Each was picked from a 1 fps contact sheet; the parts were
 matched to what the narrator says at that moment (YouTube auto-captions). Personal use only (see CLAUDE.md).
 
 | Id | File | YouTube id | Second | Credit | Caption | Confidence |

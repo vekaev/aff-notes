@@ -208,8 +208,8 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
         </svg>
         <div className="cap"><b className="alt-now">{(r.value * 1000).toLocaleString('en-US')} ft</b><span><Rich s={r.title} /></span></div>
         <ul className="alt-legend">
-          <li><i style={{ background: 'var(--acc-canopy)' }} />6,000 · {t(L.lock)}</li>
-          <li><i style={{ background: 'var(--red)' }} />5,500 · {t(L.pull)}</li>
+          <li><i style={{ background: 'var(--acc-canopy)' }} />6,000 ft · {t(L.lock)}</li>
+          <li><i style={{ background: 'var(--red)' }} />5,500 ft · {t(L.pull)}</li>
           <li className="dir">↺ {t(L.dir)}</li>
         </ul>
       </div>
@@ -300,7 +300,7 @@ export function CanopyCheck({ items }: { items: { word: L; text: L }[] }) {
         <g transform={`translate(100 160) scale(${scale} ${Math.min(1, scale * 1.1)}) translate(-100 -160)`}><CanopyShape /></g>
         <line x1="100" y1="160" x2="100" y2="180" stroke="var(--ink)" strokeWidth="6" strokeLinecap="round" /><circle cx="100" cy="154" r="7" fill="var(--ink)" />
       </svg>
-      <div className="count">{[1, 2, 3, 4, 5].map(k => <span key={k} className={n >= k ? 'on' : ''}>{k}000</span>)}</div>
+      <div className="count"><span className="count-label">{t(ui.countLabel)}</span>{[1, 2, 3, 4, 5].map(k => <span key={k} className={n >= k ? 'on' : ''}>{k}000</span>)}</div>
       <div className="check-list">{items.map((it, i) => <div key={i} className={n >= 6 + i ? 'on' : ''}><b><Rich s={it.word} /></b><span><Rich s={it.text} /></span></div>)}</div>
       <div className="controls"><button type="button" className="btn primary" onClick={run}>{t(ui.pull)}</button></div>
     </div>
