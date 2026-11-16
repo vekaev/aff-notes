@@ -8,11 +8,10 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 
 ## Waiting on you
 - Send the dropzone the email asking for the ground-school slides? Draft: `docs/email-draft.md` (not sent).
-- Publish to the web (Vercel) or keep it as a private link? Clips are cut from other people's videos: fine for personal
-  use, not for a public site.
 - GitHub repo for this project (private)? Today it's local only.
 
 ## Owner decides later
+- Publishing: **local only for now** (owner, 2026-11-16). A web version would need the clips replaced by links or own footage.
 - Public version for the dropzone / other students (needs own footage or licensed clips instead of YouTube cuts).
 - Native app version (iPhone) built on the same content files.
 
