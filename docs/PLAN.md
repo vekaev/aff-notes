@@ -92,6 +92,9 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - [x] Header: title left, part in the middle (numeral only on phones), language + theme pinned right.
 - [x] Numbers stay with their units on one line ("5 s", "2 500 футов", "SIM 4-1"); quiz button "Next question";
       holding point: S-turns / figure-eights within the 180° limit (asked the instructors: circles allowed?).
+- [~] Independent expert fact-check: `.claude/agents/aff-expert-reviewer.md` (an AFF instructor seeing the app for the
+      first time, checks every claim against USPA SIM/BSR, manuals, Parachutist). 6 reviewers, reports in
+      `docs/review/expert/`; then one list of fixes: clear ones applied, the rest asked.
 - [ ] Owner to re-check scrolling on the iPhone (the fix is seen in the emulator only).
 - [x] Numbers tape fixed: 2,500 = can you reach the holding point (canopy plan), then 2,000 over it, 1,000 leave it;
       the emergency 2,500 (decide and act on a bad main) and 1,000 (no cutaway below) moved to their own red row.
