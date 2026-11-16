@@ -37,7 +37,8 @@
 .tone-dz { --band: var(--band-dz); --accent: var(--acc-dz); --prev: var(--band-ep); }
 
 * { box-sizing: border-box; }
-html { scrollbar-gutter: stable; scroll-padding-top: calc(var(--header) + 16px); }
+html { scroll-padding-top: calc(var(--header) + 16px); scrollbar-width: none; }
+html::-webkit-scrollbar { display: none; }
 body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.55 var(--font); -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-underline-offset: 3px; text-decoration-color: var(--line-strong); }
 a:hover { text-decoration-color: currentColor; }
@@ -346,4 +347,31 @@ dialog.player::backdrop { background: rgba(0,0,0,.72); }
   .jump .stop circle { r: 18; }
   .jump .stop .n { font-size: 15px; }
   .jump-legend { display: flex; }
+}
+
+/* the jump as a scroll bar: a skydiver falls down the right edge */
+.skyrail { position: fixed; z-index: 9; right: max(6px, env(safe-area-inset-right, 0px)); top: calc(var(--header) + env(safe-area-inset-top, 0px) + 8px); bottom: calc(10px + env(safe-area-inset-bottom, 0px)); width: 44px; cursor: pointer; --h: calc(100% - 48px - 22px); }
+.sky-plane { position: absolute; top: 0; left: 10px; width: 24px; height: 12px; }
+.sky-track { position: absolute; left: 21px; top: 16px; bottom: 26px; border-left: 2px dotted var(--line-strong); }
+.sky-ground { position: absolute; left: 2px; right: 2px; bottom: 0; height: 28px; }
+.sky-ground svg { width: 100%; height: 100%; display: block; }
+.sky-jumper { position: absolute; left: 2px; width: 40px; height: 48px; top: calc(var(--p) * var(--h)); transition: top .12s linear; }
+.sky-jumper > svg { width: 40px; height: 48px; display: block; }
+.pose-in { animation: posein .35s ease-out; }
+@keyframes posein { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: none; } }
+.sky-alt { position: absolute; right: 44px; top: 16px; font: 600 10px var(--mono); color: var(--muted); background: var(--card); border-radius: 999px; padding: 1px 6px; box-shadow: 0 0 0 1px var(--hair); white-space: nowrap; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.skyrail:hover .sky-alt, .skyrail.dragging .sky-alt { opacity: 1; }
+.skyrail { touch-action: none; user-select: none; }
+.skyrail.dragging .sky-jumper { transition: none; }
+.confetti { position: absolute; left: 20px; top: 20px; pointer-events: none; }
+.confetti i { position: absolute; width: 5px; height: 8px; border-radius: 1px; animation: boom 1.4s ease-out forwards; }
+@keyframes boom { 0% { transform: rotate(var(--a)) translateY(0) scale(.4); opacity: 1; } 70% { opacity: 1; } 100% { transform: rotate(var(--a)) translateY(calc(var(--d) * -1)) rotate(200deg) scale(1); opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .pose-in, .confetti i { animation: none; } .sky-jumper { transition: none; } }
+@media (max-width: 760px) {
+  .skyrail { width: 30px; right: 2px; --h: calc(100% - 34px - 18px); }
+  .sky-jumper, .sky-jumper > svg { width: 28px; height: 34px; }
+  .sky-track { left: 14px; }
+  .sky-plane { left: 4px; width: 20px; }
+  .sky-ground { height: 20px; }
+  .gutter { padding-right: max(34px, env(safe-area-inset-right, 0px)); }
 }

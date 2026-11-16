@@ -36,6 +36,10 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - [x] New first screen (owner picked A + C + D): the jump as a clickable picture, continue where you stopped with
       test progress, and the key numbers as cards.
 
+- [x] Scroll progress as a jump: a skydiver falls down a rail on the right (sits in the plane, flies the box,
+      hangs under the main, red reserve in emergencies), lands among trees and houses, cheers with confetti;
+      the rail replaces the scroll bar (click or drag).
+
 ## Facts to verify (doubts raised by the text reviewers; check against sources, then fix or mark <q-check/>)
 - [ ] Arms 90/90 signal is described as "thumb and pinky, an L": check the clip (L = thumb + index).
 - [ ] Slider stuck: we say pump the rear risers; many sources say pump the toggles/brakes.

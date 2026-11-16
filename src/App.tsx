@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { parts } from './content';
 import { LANGS } from './content/types';
 import { headline, useLang } from './i18n';
@@ -6,22 +6,8 @@ import { ui } from './ui';
 import { usePassed } from './progress';
 import { BlockView } from './components/Blocks';
 import { Hero, useTrackLastChapter } from './components/Hero';
+import { SkyRail } from './components/SkyRail';
 import { ICONS, PART_ICON } from './components/Icon';
-
-function useScrollProgress(bar: React.RefObject<HTMLDivElement | null>) {
-  useEffect(() => {
-    let raf = 0;
-    const update = () => {
-      raf = 0;
-      const max = document.documentElement.scrollHeight - innerHeight;
-      if (bar.current) bar.current.style.transform = `scaleX(${max > 0 ? Math.min(1, scrollY / max) : 0})`;
-    };
-    const on = () => { if (!raf) raf = requestAnimationFrame(update); };
-    update();
-    addEventListener('scroll', on, { passive: true }); addEventListener('resize', on);
-    return () => { removeEventListener('scroll', on); removeEventListener('resize', on); };
-  }, [bar]);
-}
 
 /** Which part is on screen, for the header nav. */
 function useActivePart() {
@@ -38,8 +24,6 @@ function useActivePart() {
 
 export function App() {
   const { lang, setLang, t } = useLang();
-  const bar = useRef<HTMLDivElement>(null);
-  useScrollProgress(bar);
   useTrackLastChapter();
   const active = useActivePart();
   const passed = usePassed();
@@ -58,9 +42,9 @@ export function App() {
             {LANGS.map(l => <button key={l} type="button" aria-pressed={lang === l} onClick={() => setLang(l)}>{l.toUpperCase()}</button>)}
           </div>
         </div>
-        <div className="progress" ref={bar} />
       </header>
 
+      <SkyRail />
       <main id="top">
         <Hero />
 
