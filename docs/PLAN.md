@@ -17,6 +17,19 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 
 ---
 
+## 0. Round 2 (owner, 2026-11-16, evening)
+- [ ] Keep working through this plan; a recurring job re-checks the app and the plan (autopilot / scheduled run).
+- [ ] "Test yourself" as cards: one question per card, next/previous, score.
+- [ ] Parts and chapters visibly separated (shaded sections like the first version); less wall of text; pictures or
+      icons where there is only text (plane, helmet/seatbelt, gear).
+- [ ] Climb-out drawing: the hand must actually grab the rail/door frame.
+- [ ] Videos open inside the page (player at the right second), not a new tab; same for the "watch" links.
+- [ ] Exit count: steps clickable to see each pose (check in, check out, …).
+- [ ] "Hide the names" button renamed to "Test yourself: hide the names".
+- [ ] Design review by a separate agent: too much plain white, hard to read; change background and colours.
+- [ ] Text review agents: check wording and translations in all three languages.
+- [ ] More research: where people most often get injured (phase, body part, students) — shown visually.
+
 ## 1. Content the owner dictated (must all be on the page)
 
 ### Part I — plane and exit

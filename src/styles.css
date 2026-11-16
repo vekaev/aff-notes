@@ -2,7 +2,7 @@
    Colour belongs to content only (footage, the emergency red). System font: no web-font swap, no layout jump. */
 :root {
   --paper: #f6f5f2; --ink: #000; --card: #fff; --muted: #6e6e73; --faint: rgba(0,0,0,.45);
-  --line: rgba(0,0,0,.12); --soft: rgba(0,0,0,.05); --red: #c8202f; --red-soft: rgba(200,32,47,.08); --ok: #1f7a46;
+  --line: rgba(0,0,0,.12); --line-strong: rgba(0,0,0,.28); --soft: rgba(0,0,0,.05); --sky-tint: #dce9f5; --red: #c8202f; --red-soft: rgba(200,32,47,.08); --ok: #1f7a46;
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --r: 16px; --gap: 16px; --col: 760px; --header: 56px;
@@ -10,10 +10,10 @@
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --paper: #000; --ink: #fff; --card: #1c1c1c; --muted: #98989d; --faint: rgba(255,255,255,.5);
-  --line: rgba(255,255,255,.14); --soft: rgba(255,255,255,.06); --red: #ff5a63; --red-soft: rgba(255,90,99,.12); --ok: #4cc27f; color-scheme: dark; } }
+  --line: rgba(255,255,255,.14); --line-strong: rgba(255,255,255,.32); --soft: rgba(255,255,255,.06); --sky-tint: #13283c; --red: #ff5a63; --red-soft: rgba(255,90,99,.12); --ok: #4cc27f; color-scheme: dark; } }
 :root[data-theme="dark"] {
   --paper: #000; --ink: #fff; --card: #1c1c1c; --muted: #98989d; --faint: rgba(255,255,255,.5);
-  --line: rgba(255,255,255,.14); --soft: rgba(255,255,255,.06); --red: #ff5a63; --red-soft: rgba(255,90,99,.12); --ok: #4cc27f; color-scheme: dark; }
+  --line: rgba(255,255,255,.14); --line-strong: rgba(255,255,255,.32); --soft: rgba(255,255,255,.06); --sky-tint: #13283c; --red: #ff5a63; --red-soft: rgba(255,90,99,.12); --ok: #4cc27f; color-scheme: dark; }
 
 * { box-sizing: border-box; }
 html { scrollbar-gutter: stable; scroll-padding-top: calc(var(--header) + 16px); }
@@ -205,3 +205,35 @@ footer { margin-top: 72px; padding-block: 24px 64px; border-top: 1px solid var(-
 .prop { transform-box: fill-box; transform-origin: center; animation: spin .25s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .prop { animation: none; } .pose, .pose g { transition: none; } }
+
+/* quiz as a deck of cards */
+.quiz .dots { display: flex; gap: 6px; margin-left: auto; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.dot.cur { outline: 2px solid var(--ink); outline-offset: 1px; }
+.dot.ok { background: var(--ok); } .dot.no { background: var(--red); }
+.qcard { background: var(--paper); border-radius: 14px; padding: 18px; display: grid; gap: 12px; animation: qin .25s ease-out; }
+@keyframes qin { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .qcard { animation: none; } }
+.qn { font: 500 12px var(--mono); color: var(--muted); }
+.qq { font-size: 19px; font-weight: 650; letter-spacing: -.01em; margin: 0; line-height: 1.35; }
+.opts { display: grid; gap: 8px; }
+.qcard .opt { background: var(--card); }
+.opt.dim { opacity: .55; }
+.qnav { display: flex; justify-content: space-between; gap: 8px; }
+.qnav .btn:disabled { opacity: .35; cursor: default; }
+.qcard.end { text-align: center; justify-items: center; }
+.score-big { font-size: 44px; font-weight: 800; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.toggle-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.toggle-row .hint { font-size: 14px; color: var(--muted); }
+.card { cursor: pointer; }
+
+/* in-page player */
+dialog.player { border: 0; padding: 0; background: transparent; width: min(960px, 94vw); max-width: none; }
+dialog.player::backdrop { background: rgba(0,0,0,.72); }
+.player-in { background: var(--card); color: var(--ink); border-radius: var(--r); overflow: hidden; }
+.player-top { display: flex; align-items: center; gap: 12px; padding: 10px 12px 10px 16px; font-size: 14px; }
+.player-title { font-weight: 650; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.player-top a { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.player-top .x { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--line); background: transparent; color: var(--ink); font-size: 20px; line-height: 1; cursor: pointer; }
+.player-frame { position: relative; aspect-ratio: 16 / 9; background: #000; }
+.player-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }

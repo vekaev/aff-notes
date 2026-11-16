@@ -28,16 +28,29 @@ function useTimers() {
   };
 }
 
-/* ---------- climb-out: six moves into the door ---------- */
-const POSES = [
-  { RA: 0, RL: 0, LA: 0, LL: 0, B: '', H: 0 },
-  { RA: -95, RL: 0, LA: 0, LL: 0, B: '', H: 0 },
-  { RA: -95, RL: -22, LA: 0, LL: 0, B: 'translateX(10px)', H: 0 },
-  { RA: -95, RL: -22, LA: -80, LL: 0, B: 'translateX(10px)', H: 0 },
-  { RA: -95, RL: -22, LA: -80, LL: -18, B: 'translateX(26px)', H: 0 },
-  { RA: -95, RL: -22, LA: -80, LL: -18, B: 'translateX(36px) rotate(10deg)', H: -22 },
+/* ---------- climb-out: six moves into the door; hands really grab the handle ---------- */
+// Body pose in world space: translate then lean about the feet. Hands either hang or hold a grip point on the
+// door handle; a held hand stays on the handle as the body moves, so the arm is drawn to the grip itself.
+const FEET: [number, number] = [150, 190];
+const SHOULDER: [number, number] = [150, 84];
+const GRIP_R: [number, number] = [213, 84];
+const GRIP_L: [number, number] = [213, 104];
+type Pose = { tx: number; lean: number; RA: boolean; LA: boolean; RL: number; LL: number; H: number };
+const POSES: Pose[] = [
+  { tx: 0, lean: 0, RA: false, LA: false, RL: 0, LL: 0, H: 0 },
+  { tx: 0, lean: 0, RA: true, LA: false, RL: 0, LL: 0, H: 0 },
+  { tx: 12, lean: 0, RA: true, LA: false, RL: -22, LL: 0, H: 0 },
+  { tx: 12, lean: 0, RA: true, LA: true, RL: -22, LL: 0, H: 0 },
+  { tx: 26, lean: 0, RA: true, LA: true, RL: -22, LL: -18, H: 0 },
+  { tx: 30, lean: 12, RA: true, LA: true, RL: -22, LL: -18, H: -24 },
 ];
 const HL = ['', 'RA', 'RL', 'LA', 'LL', 'H'];
+
+/** World point → body-local point (inverse of translate(tx) rotate(lean about the feet)). */
+function toLocal([wx, wy]: [number, number], p: Pose): [number, number] {
+  const a = (-p.lean * Math.PI) / 180, x = wx - p.tx - FEET[0], y = wy - FEET[1];
+  return [FEET[0] + x * Math.cos(a) - y * Math.sin(a), FEET[1] + x * Math.sin(a) + y * Math.cos(a)];
+}
 
 export function Climb({ steps, captions }: { steps: Step[]; captions: L[] }) {
   const { t } = useLang();
@@ -45,9 +58,18 @@ export function Climb({ steps, captions }: { steps: Step[]; captions: L[] }) {
   const timers = useTimers();
   const p = POSES[i];
   const play = () => { timers.clear(); setI(0); for (let k = 1; k < 6; k++) timers.after(k * 1500, () => setI(k)); };
-  const limb = (id: string, x1: number, y1: number, y2: number, rot: number) => (
-    <g className={`pose ${HL[i] === id ? 'hl' : ''}`} style={{ transformOrigin: `${x1}px ${y1}px`, transform: `rotate(${rot}deg)` }}>
-      <line x1={x1} y1={y1} x2={x1} y2={y2} />
+  const arm = (id: 'RA' | 'LA', held: boolean, grip: [number, number]) => {
+    const [x2, y2] = held ? toLocal(grip, p) : [SHOULDER[0] + (id === 'LA' ? -4 : 4), 126];
+    return (
+      <g className={HL[i] === id ? 'hl' : ''}>
+        <line x1={SHOULDER[0]} y1={SHOULDER[1]} x2={x2} y2={y2} />
+        <circle cx={x2} cy={y2} r="5.5" fill={HL[i] === id ? 'var(--red)' : id === 'LA' ? 'var(--faint)' : 'var(--ink)'} />
+      </g>
+    );
+  };
+  const leg = (id: string, rot: number) => (
+    <g className={`pose ${HL[i] === id ? 'hl' : ''}`} style={{ transformOrigin: '150px 132px', transform: `rotate(${rot}deg)` }}>
+      <line x1="150" y1="132" x2="150" y2="188" />
     </g>
   );
   return (
@@ -55,14 +77,17 @@ export function Climb({ steps, captions }: { steps: Step[]; captions: L[] }) {
       <div><StepList steps={steps} on={i} onPick={k => { timers.clear(); setI(k); }} /></div>
       <div className="stage sticky">
         <svg viewBox="0 0 320 220" role="img" aria-label="Climb-out">
-          <rect x="228" y="30" width="80" height="162" rx="4" fill="var(--soft)" />
-          <rect x="222" y="24" width="8" height="170" fill="var(--line)" />
-          <rect x="0" y="190" width="320" height="6" fill="var(--line)" />
+          <rect x="228" y="30" width="80" height="162" rx="4" fill="var(--sky-tint)" />
+          <rect x="222" y="24" width="8" height="170" fill="var(--line-strong)" />
+          <rect x="210" y="58" width="6" height="64" rx="3" fill="var(--ink)" />
+          <rect x="210" y="58" width="16" height="5" rx="2" fill="var(--ink)" /><rect x="210" y="117" width="16" height="5" rx="2" fill="var(--ink)" />
+          <text x="196" y="52" fontFamily="var(--mono)" fontSize="9" fill="var(--muted)">{t({ en: 'handle', es: 'agarradera', ru: 'поручень' })}</text>
+          <rect x="0" y="190" width="320" height="6" fill="var(--line-strong)" />
           <g className="prop" transform="translate(286 52)"><rect x="-3" y="-20" width="6" height="40" rx="3" fill="var(--faint)" /><rect x="-20" y="-3" width="40" height="6" rx="3" fill="var(--faint)" /></g>
-          <g className="fig pose" style={{ transformOrigin: '150px 190px', transform: p.B }}>
-            <g className="far">{limb('LL', 150, 132, 188, p.LL)}{limb('LA', 150, 84, 126, p.LA)}</g>
+          <g className="fig pose" style={{ transformOrigin: `${FEET[0]}px ${FEET[1]}px`, transform: `translateX(${p.tx}px) rotate(${p.lean}deg)` }}>
+            <g className="far">{leg('LL', p.LL)}{arm('LA', p.LA, GRIP_L)}</g>
             <line x1="150" y1="80" x2="150" y2="132" />
-            {limb('RL', 150, 132, 188, p.RL)}{limb('RA', 150, 84, 126, p.RA)}
+            {leg('RL', p.RL)}{arm('RA', p.RA, GRIP_R)}
             <g className="pose" style={{ transformOrigin: '150px 74px', transform: `rotate(${p.H}deg)` }}>
               <circle className="head" cx="150" cy="62" r="13" style={HL[i] === 'H' ? { fill: 'var(--red)' } : undefined} />
               <rect x="155" y="56" width="9" height="7" rx="2" fill="var(--paper)" />
@@ -79,7 +104,7 @@ export function Climb({ steps, captions }: { steps: Step[]; captions: L[] }) {
   );
 }
 
-/* ---------- exit count: check in, check out, prop, up, down, arch ---------- */
+/* ---------- exit count: check in, check out, prop, up, down, arch — tap a step to see it ---------- */
 const SEQ = [
   { say: '"Check in"', look: 'L', body: '', head: -30 }, { say: '"OK"', ok: 'L', body: '', head: -30 },
   { say: '"Check out"', look: 'R', body: '', head: 20 }, { say: '"OK"', ok: 'R', body: '', head: 20 },
@@ -87,6 +112,7 @@ const SEQ = [
   { say: '"Down"', body: 'rotate(-6deg)', head: -25 }, { say: '"Arch!"', body: 'rotate(14deg)', head: -25 },
   { say: '', body: 'translate(110px,50px) rotate(80deg)', head: -25 },
 ] as const;
+const STEP_TO_SEQ = [0, 2, 4, 5, 6, 7];
 
 export function ExitCount({ steps }: { steps: Step[] }) {
   const { t } = useLang();
@@ -94,17 +120,18 @@ export function ExitCount({ steps }: { steps: Step[] }) {
   const timers = useTimers();
   const s = SEQ[k] as (typeof SEQ)[number] & { look?: string; ok?: string };
   const play = () => { timers.clear(); let at = 0; SEQ.forEach((_, j) => { timers.after(at, () => setK(j)); at += j >= 4 ? 800 : 1100; }); timers.after(at + 1200, () => setK(4)); };
+  const stepOn = STEP_TO_SEQ.findIndex((q, n) => k >= q && (n === STEP_TO_SEQ.length - 1 || k < STEP_TO_SEQ[n + 1]));
   const inst = (side: string, cx: number, cy: number, y2: number) => (
     <g opacity={s.look === side || s.ok === side ? 1 : 0.3}><circle cx={cx} cy={cy} r="11" fill="var(--faint)" /><line x1={cx} y1={cy + 12} x2={cx} y2={y2} stroke="var(--faint)" strokeWidth="7" strokeLinecap="round" /></g>
   );
   return (
     <div className="split">
-      <div><ol className="steps">{steps.map((st, i) => <li key={i}><div><span className="st"><Rich s={st.title} /></span>{st.sub && <span className="sub"><Rich s={st.sub} /></span>}</div></li>)}</ol></div>
+      <div><StepList steps={steps} on={stepOn} onPick={n => { timers.clear(); setK(STEP_TO_SEQ[n]); }} /></div>
       <div className="stage sticky">
         <svg viewBox="0 0 320 220" role="img" aria-label="Exit count">
-          <rect x="150" y="0" width="170" height="220" fill="var(--soft)" />
-          <rect x="0" y="150" width="152" height="8" fill="var(--line)" />
-          <rect x="146" y="10" width="8" height="142" fill="var(--line)" />
+          <rect x="150" y="0" width="170" height="220" fill="var(--sky-tint)" />
+          <rect x="0" y="150" width="152" height="8" fill="var(--line-strong)" />
+          <rect x="146" y="10" width="8" height="142" fill="var(--line-strong)" />
           {inst('L', 60, 74, 148)}{inst('R', 212, 64, 120)}
           <text x="44" y="50" fontFamily="var(--mono)" fontSize="14" fill="var(--ok)" opacity={s.ok === 'L' ? 1 : 0}>OK</text>
           <text x="196" y="40" fontFamily="var(--mono)" fontSize="14" fill="var(--ok)" opacity={s.ok === 'R' ? 1 : 0}>OK</text>

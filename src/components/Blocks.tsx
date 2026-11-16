@@ -3,27 +3,32 @@ import type { Block, Card, Clip, Watch } from '../content/types';
 import { Rich, useLang } from '../i18n';
 import { ui } from '../ui';
 import { Video } from './Video';
+import { mmss, ytUrl } from '../lib';
+import { useOpenVideo } from './Player';
 import { Quiz } from './Quiz';
 import { Altimeter, CanopyCheck, Climb, CanopyDrawing, ExitCount, LowTurn, Pattern } from '../widgets';
 
-const mmss = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
-export const ytUrl = (id: string, t = 0) => `https://www.youtube.com/watch?v=${id}${t ? `&t=${t}s` : ''}`;
 
 export function ClipFigure({ c }: { c: Clip }) {
   const { t } = useLang();
+  const open = useOpenVideo();
+  const play = (e: React.MouseEvent) => { if (e.metaKey || e.ctrlKey) return; e.preventDefault(); open({ yt: c.yt, t: c.t, title: t(c.caption) }); };
   return (
     <figure className="clip">
       <Video src={c.src} label={t(c.caption)} />
-      <figcaption><Rich s={c.caption} /><a href={ytUrl(c.yt, c.t)} target="_blank" rel="noopener">▶ {c.credit} · {mmss(c.t)}</a></figcaption>
+      <figcaption><Rich s={c.caption} /><a href={ytUrl(c.yt, c.t)} onClick={play}>▶ {t(ui.watch)} · {c.credit} · {mmss(c.t)}</a></figcaption>
     </figure>
   );
 }
 
 function WatchRow({ items }: { items: Watch[] }) {
+  const { t } = useLang();
+  const open = useOpenVideo();
   return (
     <div className="watch">
       {items.map((w, i) => (
-        <a key={i} href={w.yt ? ytUrl(w.yt, w.t) : w.href} target="_blank" rel="noopener">
+        <a key={i} href={w.yt ? ytUrl(w.yt, w.t) : w.href} target={w.yt ? undefined : '_blank'} rel="noopener"
+          onClick={e => { if (!w.yt || e.metaKey || e.ctrlKey) return; e.preventDefault(); open({ yt: w.yt, t: w.t ?? 0, title: t(w.label) }); }}>
           <span className="tc">▶{w.t ? ` ${mmss(w.t)}` : ''}</span><Rich s={w.label} /><span className="cr">· {w.credit}</span>
         </a>
       ))}
@@ -53,7 +58,10 @@ function Cards({ b }: { b: Extract<Block, { type: 'cards' }> }) {
     <div className={`cardgroup blocks ${quiz ? 'quizzing' : ''}`}>
       {b.groupTitle && <h4><Rich s={b.groupTitle} />{b.pill && <span className={`pill ${b.pill}`}>{b.pill}</span>}</h4>}
       {b.groupSub && <p className="muted" style={{ margin: 0 }}><Rich s={b.groupSub} /></p>}
-      <button type="button" className="btn toggle" aria-pressed={quiz} onClick={() => setQuiz(q => !q)}>{t(quiz ? ui.showNames : ui.hideNames)}</button>
+      <div className="toggle-row">
+        <button type="button" className={`btn toggle ${quiz ? 'primary' : ''}`} aria-pressed={quiz} onClick={() => setQuiz(q => !q)}>{t(quiz ? ui.showNames : ui.hideNames)}</button>
+        {quiz && <span className="hint">{t(ui.tapToReveal)}</span>}
+      </div>
       <div className={`cards ${b.small ? 'small' : ''}`}>{b.items.map((c, i) => <CardView key={i} c={c} />)}</div>
     </div>
   );
