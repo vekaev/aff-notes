@@ -649,6 +649,10 @@ h4 { margin: var(--s8) 0 var(--s3); font-size: 17px; }
 /* four cards to a row on a wide screen: same icon-above-title stack, the title would wrap word by word beside the icon */
 .blocks .rules:has(> :nth-child(4):last-child):not(:has(.pts)) .rule .rh:has(.ico) { flex-direction: column; align-items: flex-start; gap: var(--s2); }
 
+/* four-step timeline: number and icon on one line, the step name below at the card's full width (RU/UK wrapped a word a line) */
+.timeline:has(> li:nth-child(4)) li { grid-template-columns: auto minmax(0, 1fr); align-items: center; }
+.timeline:has(> li:nth-child(4)) .st { grid-column: 1 / -1; hyphens: manual; }
+
 /* four cards that hold lists: two to a row, four list columns read two or three words a line */
 .blocks .rules:has(.pts):has(> :nth-child(4):last-child) { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
 
@@ -707,3 +711,15 @@ a.pill:hover { filter: brightness(1.1); }
 .rig-photo figcaption { font-size: 14px; color: var(--muted); margin-top: var(--s2); line-height: 1.45; }
 .rig-photo .src-link { border: 0; background: none; padding: 0; font: inherit; color: inherit; text-decoration: underline; text-decoration-color: var(--line-strong); cursor: pointer; }
 @media (max-width: 760px) { .rig.sticky { position: static; } }
+
+/* final check: the last band, the same calm khaki as Part V, flowing out of it */
+.final-band { --prev: var(--band-dz); padding-top: var(--s2); }
+.final .own { list-style: none; margin: 0; padding: 0; counter-reset: o; display: grid; gap: var(--s4); }
+.final .own li { counter-increment: o; display: grid; gap: var(--s2); }
+.final .own label { font-weight: 600; }
+.final .own label::before { content: counter(o) ". "; color: var(--accent, var(--muted)); }
+.final .own textarea { width: 100%; font: 400 16px/1.5 var(--font); color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: var(--s3) var(--s4); resize: vertical; min-height: 64px; }
+.final .own textarea:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
+.final .small { font-size: 14px; }
+.final .blocks { grid-template-columns: minmax(0, 1fr); }
+.final .quiz .dots, .final .quiz .qh > :last-child { flex-wrap: wrap; min-width: 0; }

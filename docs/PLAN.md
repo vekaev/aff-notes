@@ -55,7 +55,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       missing; result in docs/review/owner-asks-audit.md.
 - [x] Rule: every owner message is first split into tasks / subtasks / questions, written here, and the reply points to
       these lines (CLAUDE.md + ~/agent-tools/rules/working.md).
-- [~] Final check at the end of the app: a "test yourself on everything" button (mixed decision-style questions from all
+- [x] Final check at the end of the app: a "test yourself on everything" button (mixed decision-style questions from all
       chapters), a list of open self-answers to show an instructor, and "practise with your AI": one button copies a
       ready prompt (all key facts + quiz instructions) to paste into ChatGPT / Claude / any assistant (2026-11-16).
 - [~] A reusable team for learning any new skill or certificate (diving, pilot, driving, drift…): research (Reddit,
