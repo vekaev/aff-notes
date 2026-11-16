@@ -378,3 +378,50 @@ dialog.player::backdrop { background: rgba(0,0,0,.72); }
   .gutter { padding-right: max(34px, env(safe-area-inset-right, 0px)); }
 }
 .sky-plane { transition: opacity .3s; }
+
+/* jump picture v2: full width, drawn like a diagram, one quiet flight */
+.hero:not(.hero-b) { padding-bottom: 8px; }
+.hero-b { padding-top: 0; }
+.jump-wrap { position: relative; max-width: 1100px; margin: 0 auto; }
+.jump { max-width: none; margin: 18px 0 0; }
+.jump .axis line { stroke: var(--line-strong); stroke-width: 1.5; }
+.jump .axis text { font: 500 11px var(--mono); fill: var(--muted); }
+.jump .ground { stroke: var(--line-strong); stroke-width: 2.5; }
+.jump .scenery path { stroke: var(--ok); stroke-width: 2; fill: color-mix(in srgb, var(--ok) 25%, transparent); stroke-linejoin: round; }
+.jump .scenery .house { stroke: var(--faint); fill: var(--card); }
+.jump .target { stroke: var(--ok); stroke-width: 4; stroke-linecap: round; }
+.jump .plane path { fill: var(--acc-plane); }
+.jump .plane .wing { fill: none; stroke: var(--paper); stroke-width: 3; stroke-linecap: round; }
+.jump .plane .door { fill: var(--sky-tint); }
+.jump .plane .prop { stroke: var(--acc-plane); stroke-width: 2.5; stroke-linecap: round; }
+.jump .ff { fill: none; stroke: var(--acc-free); stroke-width: 3; stroke-dasharray: 6 6; }
+.jump .glide { fill: none; stroke: var(--acc-canopy); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+.jump .ep-branch { stroke: var(--red); stroke-width: 2; stroke-dasharray: 4 4; fill: none; }
+.jump .reserve path { fill: var(--red); stroke: none; }
+.jump .reserve path + path { fill: none; stroke: var(--red); stroke-width: 1.2; }
+.jump .flyer circle { fill: var(--ink); }
+.jump .flyer > path { fill: none; stroke: var(--ink); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+.jump .fly-canopy path { fill: var(--acc-canopy); }
+.jump .fly-canopy .lines { fill: none; stroke: var(--muted); stroke-width: 1; }
+.jump .fly-canopy { opacity: 0; animation: canopyopen .5s ease-out 2.4s forwards; }
+@keyframes canopyopen { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: none; } }
+.jump .glide { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 4.6s linear 2.4s forwards; }
+.jump .ff { animation: fadein .6s ease-out .2s both; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+.jump .stop .lb { font: 650 17px var(--font); paint-order: stroke; stroke: var(--paper); stroke-width: 6px; stroke-linejoin: round; }
+.jump .stop .al { font: 500 12px var(--mono); paint-order: stroke; stroke: var(--paper); stroke-width: 5px; }
+.jump .stop .n { font: 700 12px var(--font); }
+.replay { position: absolute; right: 8px; top: 4px; font: 600 12px var(--font); color: var(--muted); background: var(--card); border: 0; border-radius: 999px; padding: 5px 10px; box-shadow: 0 0 0 1px var(--hair); cursor: pointer; }
+.replay:hover { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .jump .glide { stroke-dashoffset: 0; animation: none; } .jump .ff { animation: none; } }
+@media (max-width: 560px) { .jump .axis text { display: none; } .replay { top: -6px; } }
+/* the flight follows the path with CSS motion path; remounting the svg replays it */
+.jump .flyer { transform-box: view-box; offset-rotate: 0deg; offset-anchor: 0 0; offset-distance: 100%; animation: fly 7s linear both; }
+@keyframes fly { 0%, 8% { offset-distance: 0%; } 35% { offset-distance: 19%; } 100% { offset-distance: 100%; } }
+@media (max-width: 560px) {
+  .jump .stop circle { r: 30; stroke-width: 4; }
+  .jump .stop .n { font-size: 26px; transform: translateY(5px); transform-box: fill-box; }
+  .jump .flyer > path { stroke-width: 4; }
+  .jump .ff, .jump .glide { stroke-width: 5; }
+}

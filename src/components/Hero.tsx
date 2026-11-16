@@ -42,36 +42,71 @@ const NUMBERS: { big: string; label: L; to: string; red?: boolean }[] = [
   { big: '10 ft', label: h('flare, then PLF', 'flare y luego PLF', 'flare, потом PLF'), to: 'flare' },
 ];
 
-/** Side view of the jump; every stop is a link to its part. */
+/**
+ * Side view of the whole jump, full width. Each part is a numbered stop that links to it.
+ * On first view the path draws itself and a small jumper flies it once: freefall, the canopy opens,
+ * the pattern, the landing. "Replay" runs it again. Nothing moves with reduced motion.
+ */
+const FLIGHT = 'M182 58 C 222 62, 276 104, 302 156 C 400 188, 520 206, 640 210 L 850 210 L 850 244 L 938 264';
 function JumpPicture() {
   const { t } = useLang();
-  const stop = (id: string, x: number, y: number, n: string, label: L, sub: string, color: string, anchor: 'start' | 'end' = 'start') => (
+  const [run, setRun] = useState(0);
+  const reduce = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const stop = (id: string, x: number, y: number, n: string, label: L, sub: L | string, color: string, anchor: 'start' | 'end' = 'start') => (
     <a href={`#${id}`} className="stop" style={{ ['--c' as string]: color }}>
-      <circle cx={x} cy={y} r="13" />
-      <text x={x} y={y + 4.5} textAnchor="middle" className="n">{n}</text>
-      <text x={anchor === 'start' ? x + 20 : x - 20} y={y - 2} textAnchor={anchor} className="lb">{t(label)}</text>
-      <text x={anchor === 'start' ? x + 20 : x - 20} y={y + 13} textAnchor={anchor} className="al">{sub}</text>
+      <circle cx={x} cy={y} r="15" />
+      <text x={x} y={y + 5} textAnchor="middle" className="n">{n}</text>
+      <text x={anchor === 'start' ? x + 24 : x - 24} y={y - 1} textAnchor={anchor} className="lb">{t(label)}</text>
+      <text x={anchor === 'start' ? x + 24 : x - 24} y={y + 16} textAnchor={anchor} className="al">{typeof sub === 'string' ? sub : t(sub)}</text>
     </a>
   );
   return (
-    <svg className="jump" viewBox="0 0 640 270" role="img" aria-label={t(T.title)}>
-      {/* ground */}
-      <line x1="0" y1="246" x2="640" y2="246" className="ground" />
-      {/* plane */}
-      <path d="M40 40 l40 -4 l14 -12 h6 l-5 12 l22 2 l6 -7 h5 l-3 10 l3 10 h-5 l-6 -7 l-22 2 l5 12 h-6 l-14 -12 z" className="plane" />
-      {/* freefall */}
-      <path d="M122 46 C 150 54, 176 88, 186 128" className="ff" />
-      <g className="flyer"><circle cx="186" cy="132" r="5" /><path d="M176 140 l10 -4 l10 4 M186 136 v10 M180 152 l6 -6 l6 6" /></g>
-      {/* canopy and glide into the pattern */}
-      <path d="M202 150 Q 226 134 250 150" className="canopy" />
-      <path d="M226 154 C 280 190, 340 200, 410 206 L 520 206 L 520 176 L 590 176" className="glide" />
-      <path d="M598 236 l10 10 M608 236 l-10 10" className="target" />
-      {stop('part1', 24, 84, 'I', parts[0].title, '0 → 13,500 ft', 'var(--acc-plane)')}
-      {stop('part2', 250, 92, 'II', parts[1].title, '13,500 → 5,500', 'var(--acc-free)')}
-      {stop('part3', 380, 150, 'III', parts[2].title, '5,500 → 0', 'var(--acc-canopy)')}
-      {stop('part4', 270, 236, 'IV', parts[3].title, '!', 'var(--acc-ep)')}
-      {stop('dz', 612, 140, 'V', parts[4].title, 'Tracy, CA', 'var(--acc-dz)', 'end')}
-    </svg>
+    <div className="jump-wrap">
+      <svg className="jump" viewBox="0 0 1000 300" role="img" aria-label={t(T.title)} key={run}>
+        {/* altitude axis */}
+        <g className="axis">
+          <line x1="34" y1="40" x2="34" y2="276" />
+          {[[58, '13,500'], [156, '5,500'], [206, '2,500'], [276, '0']].map(([y, v]) => (
+            <g key={v as string}><line x1="30" y1={y as number} x2="38" y2={y as number} /><text x="44" y={(y as number) + 4}>{v}</text></g>
+          ))}
+        </g>
+        {/* ground: trees, a house, the target */}
+        <line x1="0" y1="276" x2="1000" y2="276" className="ground" />
+        <g className="scenery">
+          <path d="M700 276 v-14 M692 262 L700 240 L708 262 Z" /><path d="M724 276 v-10 M718 266 L724 250 L730 266 Z" />
+          <path d="M760 276 v-20 l13 -11 l13 11 v20 Z" className="house" /><path d="M768 276 v-9 h9 v9" className="house" />
+          <path d="M980 276 v-12 M974 264 L980 246 L986 264 Z" />
+        </g>
+        <path d="M930 266 l14 10 M944 266 l-14 10" className="target" />
+        {/* plane with an open door */}
+        <g className="plane">
+          <path d="M96 46 L104 30 L114 44 Z" />
+          <path d="M100 52 Q100 44 112 44 H196 Q210 46 214 52 Q210 58 196 60 H112 Q100 60 100 52 Z" />
+          <path d="M138 56 h46" className="wing" />
+          <rect x="166" y="46" width="12" height="11" rx="2" className="door" />
+          <line x1="216" y1="44" x2="216" y2="60" className="prop" />
+        </g>
+        {/* the path */}
+        <path d="M182 58 C 222 62, 276 104, 302 156" className="ff" />
+        <path d="M302 156 C 400 188, 520 206, 640 210 L 850 210 L 850 244 L 938 264" className="glide" pathLength={1} />
+        {/* emergency branch: reserve under a red canopy, decide by 2,500 */}
+        <path d="M302 160 L 330 200" className="ep-branch" />
+        <g className="reserve"><path d="M318 202 Q334 190 350 202 Q334 198 318 202 Z" /><path d="M321 202 L332 214 M347 202 L336 214" /></g>
+        {/* the flying jumper */}
+        {!reduce && (
+          <g className="flyer" style={{ offsetPath: `path('${FLIGHT}')` }}>
+            <g className="fly-canopy"><path d="M-14 -16 Q0 -28 14 -16 Q0 -20 -14 -16 Z" /><path d="M-12 -16 L-2 -4 M12 -16 L2 -4" className="lines" /></g>
+            <circle cx="0" cy="-3" r="3.6" /><path d="M0 0 v7 M-6 2 l6 -2 l6 2 M-4 12 l4 -5 l4 5" />
+          </g>
+        )}
+        {stop('part1', 70, 108, 'I', parts[0].title, '0 → 13,500 ft', 'var(--acc-plane)')}
+        {stop('part2', 330, 98, 'II', parts[1].title, '13,500 → 5,500', 'var(--acc-free)')}
+        {stop('part3', 520, 150, 'III', parts[2].title, '5,500 → 0', 'var(--acc-canopy)')}
+        {stop('part4', 376, 236, 'IV', parts[3].title, { en: 'decide by 2,500', es: 'decide antes de 2,500', ru: 'решение до 2 500' }, 'var(--acc-ep)')}
+        {stop('dz', 930, 172, 'V', parts[4].title, 'Tracy, CA', 'var(--acc-dz)', 'end')}
+      </svg>
+      {!reduce && <button type="button" className="replay" onClick={() => setRun(r => r + 1)}>↻ {t({ en: 'Replay the jump', es: 'Repetir el salto', ru: 'Повторить прыжок' })}</button>}
+    </div>
   );
 }
 
@@ -95,7 +130,9 @@ export function Hero() {
       <h1>{headline(t(T.title))}</h1>
       <p>{t(T.sub)} <Rich s={{ en: '<q-check/> = confirm with them.', es: '<q-check/> = confírmalo con ellos.', ru: '<q-check/> — уточнить у них.' }} /></p>
 
+    </div>
       <JumpPicture />
+    <div className="col hero hero-b">
       <ol className="toc jump-legend">
         {parts.map(p => <li key={p.id}><a href={`#${p.id}`} style={{ ['--c' as string]: `var(--acc-${({ part1: 'plane', part2: 'free', part3: 'canopy', part4: 'ep', dz: 'dz' } as Record<string, string>)[p.id]})` }}><span className="rn">{p.roman}</span>{t(p.title)}</a></li>)}
       </ol>
