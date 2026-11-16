@@ -69,8 +69,8 @@ function Jumper({ pose }: { pose: Pose }) {
         <circle cx="26" cy="21" r="2.6" fill="var(--ink)" />
         <path d="M26 23.5 v3 M26 26.5 l3 7 M26 26.5 l5 6" {...ink} strokeWidth={2.2} />
       </g>);
-    case 'box': // belly to earth, arms and legs out
-      return (<g>{head(20, 22)}<path d="M20 26 v8 M20 28 l-9 -6 M20 28 l9 -6 M20 34 l-7 7 M20 34 l7 7" {...ink} /></g>);
+    case 'box': // the classic skydiver from above: arms and legs bent, belly to earth
+      return (<g>{head(20, 15)}<path d="M20 19 v12 M20 22 h-8 l-3 -7 M20 22 h8 l3 -7 M20 31 l-7 5 v6 M20 31 l7 5 v6" {...ink} /></g>);
     case 'canopy':
     case 'reserve':
       return (<g>

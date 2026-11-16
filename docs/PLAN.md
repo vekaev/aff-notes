@@ -8,10 +8,9 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 
 ## Waiting on you
 - Send the dropzone the email asking for the ground-school slides? Draft: `docs/email-draft.md` (not sent).
-- GitHub repo for this project (private)? Today it's local only.
 
 ## Owner decides later
-- Publishing: **local only for now** (owner, 2026-11-16). A web version would need the clips replaced by links or own footage.
+- Publishing: **private GitHub repo only** (vekaev/aff-notes, owner 2026-11-16); the app itself is not published. A web version would need the clips replaced by links or own footage.
 - Public version for the dropzone / other students (needs own footage or licensed clips instead of YouTube cuts).
 - Native app version (iPhone) built on the same content files.
 
@@ -23,7 +22,7 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - [x] Parts and chapters visibly separated: full-width tinted band per part, cover with roman numeral, icon and
       contents; accent tick per chapter; header takes the part's tint (design review applied).
 - [x] Icons where there was only text: plane rules, gear (+ 4-check timeline), altitude rules, obstacles.
-- [ ] Less wall of text: shorten long intros and callouts (>200 chars), collapse detail into "more" (design review #14).
+- [x] Less wall of text: every chapter rewritten as short bullet lists with bold key words (helpers, all 5 files).
 - [ ] Gear chapter drawing of the rig (container, reserve, main, AAD, red/silver handles) (design review #12).
 - [x] Climb-out drawing: hands grab the door handle and stay on it as the body moves.
 - [x] Videos open inside the page (player at the right second), not a new tab; same for the "watch" links.
@@ -40,14 +39,32 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - [x] Scroll progress as a jump: a skydiver falls down a rail on the right (sits in the plane, flies the box,
       hangs under the main, red reserve in emergencies), lands among trees and houses, cheers with confetti;
       the rail replaces the scroll bar (click or drag).
+- [ ] At the very end the jumper also dances (today: arms up + confetti only).
+
+## 0b. Round 3 (owner, 2026-11-16, night)
+- [x] Gradient between part bands (and smoother in dark: lighter dark bands, oklab fade).
+- [x] Jump picture redrawn full width + one-time flight animation with replay; box pose (seen from above) in
+      freefall, upright under canopy; works on phones.
+- [x] Number cards → altimeter tape in jump order + two timers.
+- [x] Climb-out clip bigger (single clips full width, title slide cut); step 6: head and chest out of the door.
+- [x] Scroll rail: plane drawn with the jumper in the door; smoother scrolling (transform, no re-render per frame).
+- [x] Clip cards fully clickable → in-page player.
+- [x] Key words: plain bold (the highlighter band was hard to read).
+- [x] Header: frosted glass tinted by the part underneath, plain paper over the first screen; settings chips in header colour.
+- [x] Language menu that scales to more languages + theme button (system/light/dark) with an instant tooltip.
+- [x] Ukrainian everywhere: interface and all 5 content files (~950 strings), type-checked like the others.
+- [x] First screen text rewritten, sentence case: "Your first jump, step by step."
+- [ ] Other headlines are still lowercase (Stoic style). Owner disliked lowercase on the first screen — same everywhere? (ask)
+- [~] Real "what went wrong" videos (low turns, flare errors, obstacles, collisions): search running, then cut clips.
+- [x] Private GitHub repo vekaev/aff-notes (private), autopilot pushes there.
 
 ## Facts to verify (doubts raised by the text reviewers; check against sources, then fix or mark <q-check/>)
-- [ ] Arms 90/90 signal is described as "thumb and pinky, an L": check the clip (L = thumb + index).
+- [x] Arms 90/90 = thumb and pinky: confirmed by the video's narration (lines along thumb and pinky form 90°).
 - [ ] Slider stuck: we say pump the rear risers; many sources say pump the toggles/brakes.
 - [ ] "~4,000 cutaways a year, about one per 700–800 jumps": check against USPA jump totals (~3.5 M → ~1 per 875).
 - [ ] "5–6 s at full brakes without stalling" depends on the canopy.
 - [ ] Water landing wording vs the current SIM 4-1; "flare about 10 ft" before a building: height or distance?
-- [ ] Tips use "level A/B/C" from Sharp's articles, the rest says "category": make consistent.
+- [x] Tips now say "category A/B/C" like the rest of the app.
 - [x] Source links for the injury charts (Sweden 2007, USPA, Netherlands 2024).
 
 ## 1. Content the owner dictated (must all be on the page)
@@ -110,9 +127,9 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - [x] Reading progress bar at the top.
 - [x] Test after each chapter; passed tests remembered; score in the header.
 - [x] Fix: Russian text overflowing in the canopy check list.
-- [ ] Check every chapter in all 3 languages, light and dark, phone width (partly done, see the line at the top).
+- [ ] Check every chapter in all 4 languages, light and dark, phone width (partly done: spot checks only).
 - [x] Commit (local git).
-- [ ] Publish: the private-link publish was blocked by a safety check because the page carries clips cut from other people's videos. Runs locally with `npm run dev`. Options: keep local, or publish without the clips (links only).
+- [x] Publish: decided — private GitHub repo only; the app is not published (clips are other people's videos).
 
 ## 5. Other
 - [x] Email to the dropzone asking for the slides: draft only (`docs/email-draft.md`).

@@ -1,29 +1,39 @@
 import { useEffect, useState } from 'react';
 import { parts } from './content';
-import { LANGS } from './content/types';
 import { headline, useLang } from './i18n';
 import { ui } from './ui';
 import { usePassed } from './progress';
 import { BlockView } from './components/Blocks';
 import { Hero, useTrackLastChapter } from './components/Hero';
 import { SkyRail } from './components/SkyRail';
+import { LangMenu, ThemeButton } from './components/Settings';
 import { ICONS, PART_ICON } from './components/Icon';
 
 /** Which part is on screen, for the header nav. */
+/**
+ * The part under the header (for its tint and the nav): the last part whose band has reached the header.
+ * 'top' above the first part, so the header over the first screen stays plain paper.
+ */
 function useActivePart() {
-  const [active, setActive] = useState(parts[0].id);
+  const [active, setActive] = useState('top');
   useEffect(() => {
-    const io = new IntersectionObserver(es => {
-      es.forEach(e => { if (e.isIntersecting) setActive((e.target as HTMLElement).dataset.part!); });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    document.querySelectorAll('[data-part]').forEach(el => io.observe(el));
-    return () => io.disconnect();
+    let raf = 0;
+    const read = () => {
+      raf = 0;
+      let part = 'top';
+      document.querySelectorAll<HTMLElement>('[data-part]').forEach(el => { if (el.getBoundingClientRect().top <= 64) part = el.dataset.part!; });
+      setActive(prev => (prev === part ? prev : part));
+    };
+    const on = () => { if (!raf) raf = requestAnimationFrame(read); };
+    read();
+    addEventListener('scroll', on, { passive: true }); addEventListener('resize', on);
+    return () => { removeEventListener('scroll', on); removeEventListener('resize', on); cancelAnimationFrame(raf); };
   }, []);
   return active;
 }
 
 export function App() {
-  const { lang, setLang, t } = useLang();
+  const { t } = useLang();
   useTrackLastChapter();
   const active = useActivePart();
   const passed = usePassed();
@@ -38,9 +48,7 @@ export function App() {
           <nav className="parts" aria-label={t(ui.part)}>
             {parts.map(p => <a key={p.id} href={`#${p.id}`} style={acc(p.id)} className={active === p.id ? 'on' : ''}>{p.roman} · {t(p.title)}</a>)}
           </nav>
-          <div className="langs" role="group" aria-label="Language">
-            {LANGS.map(l => <button key={l} type="button" aria-pressed={lang === l} onClick={() => setLang(l)}>{l.toUpperCase()}</button>)}
-          </div>
+          <div className="settings"><LangMenu /><ThemeButton /></div>
         </div>
       </header>
 

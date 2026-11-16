@@ -19,16 +19,16 @@
   --paper: #000; --card: #232326; --ink: #fff; --muted: #a1a1a8; --faint: rgba(255,255,255,.6);
   --line: rgba(255,255,255,.14); --line-strong: rgba(255,255,255,.32); --hair: rgba(255,255,255,.08); --soft: rgba(255,255,255,.06);
   --red: #ff5a63; --red-soft: rgba(255,90,99,.12); --ok: #4cc27f; --sky-tint: #13283c;
-  --band-plane: #0f1215; --acc-plane: #a3adb8; --band-free: #0a1622; --acc-free: #72aee8;
-  --band-canopy: #1a1209; --acc-canopy: #ff9450; --band-ep: #1d0e10; --acc-ep: #ff6b72;
-  --band-dz: #14130e; --acc-dz: #cdc79f; color-scheme: dark; } }
+  --band-plane: #121519; --acc-plane: #a3adb8; --band-free: #0c1a2a; --acc-free: #72aee8;
+  --band-canopy: #1e150b; --acc-canopy: #ff9450; --band-ep: #221013; --acc-ep: #ff6b72;
+  --band-dz: #18170f; --acc-dz: #cdc79f; color-scheme: dark; } }
 :root[data-theme="dark"] {
   --paper: #000; --card: #232326; --ink: #fff; --muted: #a1a1a8; --faint: rgba(255,255,255,.6);
   --line: rgba(255,255,255,.14); --line-strong: rgba(255,255,255,.32); --hair: rgba(255,255,255,.08); --soft: rgba(255,255,255,.06);
   --red: #ff5a63; --red-soft: rgba(255,90,99,.12); --ok: #4cc27f; --sky-tint: #13283c;
-  --band-plane: #0f1215; --acc-plane: #a3adb8; --band-free: #0a1622; --acc-free: #72aee8;
-  --band-canopy: #1a1209; --acc-canopy: #ff9450; --band-ep: #1d0e10; --acc-ep: #ff6b72;
-  --band-dz: #14130e; --acc-dz: #cdc79f; color-scheme: dark; }
+  --band-plane: #121519; --acc-plane: #a3adb8; --band-free: #0c1a2a; --acc-free: #72aee8;
+  --band-canopy: #1e150b; --acc-canopy: #ff9450; --band-ep: #221013; --acc-ep: #ff6b72;
+  --band-dz: #18170f; --acc-dz: #cdc79f; color-scheme: dark; }
 
 .tone-part1 { --band: var(--band-plane); --accent: var(--acc-plane); --prev: var(--paper); }
 .tone-part2 { --band: var(--band-free); --accent: var(--acc-free); --prev: var(--band-plane); }
@@ -82,7 +82,7 @@ h1 { font-size: clamp(30px, 6vw, 40px); line-height: 1.08; font-weight: 750; let
 
 /* part bands: full width tint, a cover with a big roman numeral and the part's contents */
 /* each band starts in the previous part's colour and fades into its own, so parts flow into each other */
-.band { background: linear-gradient(to bottom, var(--prev) 0, var(--band) 220px) var(--band); padding-bottom: 96px; }
+.band { background: linear-gradient(in oklab to bottom, var(--prev) 0, var(--band) 320px) var(--band); padding-bottom: 96px; }
 .part { position: relative; padding-block: 88px 24px; }
 .part .roman { position: absolute; right: 0; top: 40px; font: 800 clamp(96px, 18vw, 168px)/1 var(--font); letter-spacing: -.05em; color: var(--accent); opacity: .14; pointer-events: none; }
 .part .kicker { font: 600 13px var(--font); color: var(--accent); display: flex; align-items: center; gap: 10px; }
@@ -271,7 +271,7 @@ details p { margin: 10px 0 0; color: var(--muted); }
 .count span { font: 500 12px var(--mono); padding: 3px 8px; border-radius: 999px; background: var(--soft); opacity: .4; transition: opacity .2s; }
 .count span.on { opacity: 1; }
 
-footer { padding-block: 120px 64px; color: var(--muted); font-size: 13px; background: linear-gradient(to bottom, var(--band-dz) 0, var(--paper) 160px); }
+footer { padding-block: 120px 64px; color: var(--muted); font-size: 13px; background: linear-gradient(in oklab to bottom, var(--band-dz) 0, var(--paper) 200px); }
 
 /* in-page player */
 dialog.player { border: 0; padding: 0; background: transparent; width: min(960px, 94vw); max-width: none; }
@@ -473,3 +473,32 @@ dialog.player::backdrop { background: rgba(0,0,0,.72); }
   .tape .lbl { grid-column: 3; grid-row: 1; font-size: 13.5px; }
   .timers { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* header settings: language menu (any number of languages) and theme button */
+.settings { display: flex; gap: 6px; flex: none; align-items: center; }
+.chip { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: 650 12px var(--font); letter-spacing: .04em; cursor: pointer; }
+.chip:hover { border-color: var(--line-strong); }
+.chip svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.chip .caret { width: 14px; height: 14px; color: var(--muted); }
+.chip.icon { width: 32px; padding: 0; justify-content: center; }
+.menu { position: relative; }
+.menu-list { position: absolute; right: 0; top: calc(100% + 6px); z-index: 20; list-style: none; margin: 0; padding: 6px; min-width: 180px; box-shadow: 0 0 0 1px var(--hair), 0 12px 32px rgba(0,0,0,.14); }
+.menu-list button { width: 100%; display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 9px 10px; border: 0; border-radius: 10px; background: transparent; color: var(--ink); font: 500 14px var(--font); cursor: pointer; text-align: left; }
+.menu-list button:hover { background: var(--soft); }
+.menu-list button[aria-selected="true"] { background: var(--ink); color: var(--paper); }
+.menu-list .code { font: 600 11px var(--mono); opacity: .6; }
+
+/* header: frosted glass over the page, tinted by the part underneath; colour changes fade */
+.top { background: color-mix(in oklab, var(--band, var(--paper)) 78%, transparent); -webkit-backdrop-filter: saturate(1.5) blur(18px); backdrop-filter: saturate(1.5) blur(18px); border-bottom: 1px solid var(--hair); transition: background-color .6s ease, border-color .6s ease; }
+.top.tone-top { --band: var(--paper); --accent: var(--ink); }
+.parts a { transition: background-color .3s, color .3s; }
+.parts a.on { background: color-mix(in oklab, var(--card) 85%, transparent); }
+.brand { letter-spacing: -.025em; }
+/* instant tooltip (the native title waits ~1 s) */
+.tip { position: relative; }
+.tip::after { content: attr(data-tip); position: absolute; right: 0; top: calc(100% + 8px); white-space: nowrap; font: 600 12px var(--font); letter-spacing: 0; color: var(--paper); background: var(--ink); padding: 6px 10px; border-radius: 8px; opacity: 0; transform: translateY(-3px); pointer-events: none; transition: opacity .15s, transform .15s; z-index: 30; }
+.tip:hover::after, .tip:focus-visible::after { opacity: 1; transform: none; }
+@media (hover: none) { .tip::after { display: none; } }
+/* settings chips take the header's own colour */
+.top .chip { background: transparent; border-color: var(--line); transition: background-color .2s, border-color .2s; }
+.top .chip:hover, .top .chip[aria-expanded="true"] { background: var(--soft); border-color: var(--line-strong); }

@@ -82,7 +82,7 @@ export function Climb({ steps, captions }: { steps: Step[]; captions: L[] }) {
           <rect x="222" y="24" width="8" height="170" fill="var(--line-strong)" />
           <rect x="210" y="58" width="6" height="64" rx="3" fill="var(--ink)" />
           <rect x="210" y="58" width="16" height="5" rx="2" fill="var(--ink)" /><rect x="210" y="117" width="16" height="5" rx="2" fill="var(--ink)" />
-          <text x="168" y="140" fontFamily="var(--mono)" fontSize="9" fill="var(--muted)">{t({ en: 'handle', es: 'agarradera', ru: 'поручень' })}</text>
+          <text x="168" y="140" fontFamily="var(--mono)" fontSize="9" fill="var(--muted)">{t({ en: 'handle', es: 'agarradera', ru: 'поручень', uk: 'поручень' })}</text>
           <rect x="0" y="190" width="320" height="6" fill="var(--line-strong)" />
           <g className="prop" transform="translate(286 52)"><rect x="-3" y="-20" width="6" height="40" rx="3" fill="var(--faint)" /><rect x="-20" y="-3" width="40" height="6" rx="3" fill="var(--faint)" /></g>
           <g className="fig pose" style={{ transformOrigin: `${FEET[0]}px ${FEET[1]}px`, transform: `translateX(${p.tx}px) rotate(${p.lean}deg)` }}>
@@ -238,9 +238,9 @@ export function LowTurn({ b }: { b: Extract<Block, { type: 'lowturn' }> }) {
           <path d="M150 186 l-8 -12 l10 4 l2 -12 l6 10 l10 -6 l-4 12 z" fill="var(--red)" />
           <circle cx="110" cy="92" r="6" fill="var(--red)" />
           <g fontFamily="var(--mono)" fontSize="10">
-            <text x="104" y="80" textAnchor="end" fill="var(--red)">{t({ en: 'turn starts low', es: 'giro muy bajo', ru: 'поворот низко' })}</text>
-            <text x="112" y="176" textAnchor="end" fill="var(--red)">{t({ en: 'dives, speeds up', es: 'se clava, acelera', ru: 'ныряет, разгоняется' })}</text>
-            <text x="312" y="203" textAnchor="end" fill="var(--ink)">{t({ en: 'straight: glide, flare', es: 'recto: planeo, flare', ru: 'прямо: скольжение, flare' })}</text>
+            <text x="104" y="80" textAnchor="end" fill="var(--red)">{t({ en: 'turn starts low', es: 'giro muy bajo', ru: 'поворот низко', uk: 'поворот низько' })}</text>
+            <text x="112" y="176" textAnchor="end" fill="var(--red)">{t({ en: 'dives, speeds up', es: 'se clava, acelera', ru: 'ныряет, разгоняется', uk: 'пірнає, розганяється' })}</text>
+            <text x="312" y="203" textAnchor="end" fill="var(--ink)">{t({ en: 'straight: glide, flare', es: 'recto: planeo, flare', ru: 'прямо: скольжение, flare', uk: 'прямо: ковзання, flare' })}</text>
             <text x="12" y="202" fill="var(--muted)">{t(ui.sideView)}</text>
           </g>
         </svg>

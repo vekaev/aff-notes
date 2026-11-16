@@ -54,13 +54,13 @@ export function renderInline(text: string): ReactNode[] {
 
 export function CheckBadge() {
   const { lang } = useLang();
-  const word = { en: 'check', es: 'verificar', ru: 'уточнить' }[lang];
+  const word = { en: 'check', es: 'verificar', ru: 'уточнить', uk: 'уточнити' }[lang];
   return <span className="badge" title={word}>{word}</span>;
 }
 
 /** Stoic headline: lowercase except acronyms (AFF, PLF, USPA), ending with a period. */
 export function headline(s: string): string {
-  const words = s.split(' ').map(w => (/^[A-ZÁÉÍÓÚÑА-ЯЁ0-9]{2,}[.,!?:]?$/u.test(w) || /\d/.test(w) ? w : w.toLowerCase()));
+  const words = s.split(' ').map(w => (/^[A-ZÁÉÍÓÚÑА-ЯЁІЇЄҐ0-9]{2,}[.,!?:]?$/u.test(w) || /\d/.test(w) ? w : w.toLowerCase()));
   const h = words.join(' ');
   return /[.!?…]$/.test(h) ? h : h + '.';
 }

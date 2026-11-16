@@ -5,7 +5,7 @@ import { headline, Rich, useLang } from '../i18n';
 import { usePassed } from '../progress';
 
 const LAST = 'aff-last-chapter';
-const h = (en: string, es: string, ru: string): L => ({ en, es, ru });
+const h = (en: string, es: string, ru: string, uk: string): L => ({ en, es, ru, uk });
 
 /** Remembers the chapter you were reading (this browser only), for "continue". */
 export function useTrackLastChapter() {
@@ -19,31 +19,31 @@ export function useTrackLastChapter() {
 }
 
 const T = {
-  eyebrow: h('Accelerated Freefall · level 1 · study notes', 'Caída libre acelerada · nivel 1 · apuntes', 'AFF · уровень 1 · конспект'),
-  title: h('from the seat to the ground', 'del asiento al suelo', 'от сиденья до земли'),
-  sub: h('The whole jump, in order, with real footage. Your instructors\' briefing always wins.', 'Todo el salto, en orden, con vídeos reales. Lo que diga tu instructor siempre manda.', 'Весь прыжок по порядку, с настоящими видео. Брифинг инструкторов всегда важнее.'),
-  start: h('Start reading', 'Empezar a leer', 'Начать читать'),
-  cont: h('Continue', 'Continuar', 'Продолжить'),
-  where: h('You stopped at', 'Te quedaste en', 'Ты остановился на'),
-  nextTest: h('Next test', 'Siguiente prueba', 'Следующий тест'),
-  allDone: h('All tests passed. Review the numbers before every jump.', 'Todas las pruebas aprobadas. Repasa las cifras antes de cada salto.', 'Все тесты сданы. Перед каждым прыжком повторяй цифры.'),
-  tests: h('tests passed', 'pruebas aprobadas', 'тестов сдано'),
-  numbers: h('The numbers to know by heart', 'Las cifras que hay que saber de memoria', 'Цифры, которые надо знать наизусть'),
+  eyebrow: h('AFF level 1 · study notes', 'AFF nivel 1 · apuntes', 'AFF уровень 1 · конспект', 'AFF рівень 1 · конспект'),
+  title: h('Your first jump, step by step', 'Tu primer salto, paso a paso', 'Твой первый прыжок, шаг за шагом', 'Твій перший стрибок, крок за кроком'),
+  sub: h('From the plane door to the landing: what to do, the numbers to remember, and what to do if something goes wrong. Real videos and a short test after each chapter.', 'De la puerta del avión al aterrizaje: qué hacer, las cifras que hay que recordar y qué hacer si algo sale mal. Vídeos reales y una prueba corta tras cada capítulo.', 'От двери самолёта до приземления: что делать, какие цифры помнить и что делать, если что-то пошло не так. Настоящие видео и короткий тест после каждой главы.', 'Від дверей літака до приземлення: що робити, які цифри пам’ятати і що робити, якщо щось пішло не так. Справжні відео та короткий тест після кожного розділу.'),
+  start: h('Start reading', 'Empezar a leer', 'Начать читать', 'Почати читати'),
+  cont: h('Continue', 'Continuar', 'Продолжить', 'Продовжити'),
+  where: h('You stopped at', 'Te quedaste en', 'Ты остановился на', 'Ти зупинився на'),
+  nextTest: h('Next test', 'Siguiente prueba', 'Следующий тест', 'Наступний тест'),
+  allDone: h('All tests passed. Review the numbers before every jump.', 'Todas las pruebas aprobadas. Repasa las cifras antes de cada salto.', 'Все тесты сданы. Перед каждым прыжком повторяй цифры.', 'Усі тести складено. Перед кожним стрибком повторюй цифри.'),
+  tests: h('tests passed', 'pruebas aprobadas', 'тестов сдано', 'тестів складено'),
+  numbers: h('The numbers to know by heart', 'Las cifras que hay que saber de memoria', 'Цифры, которые надо знать наизусть', 'Цифри, які треба знати напам’ять'),
 };
 
 /** The altitudes in the order you pass them, plus two timers. Each links to its chapter. */
 const TAPE: { big: string; label: L; to: string; red?: boolean }[] = [
-  { big: '13,500', label: h('exit', 'salida', 'отделение'), to: 'count' },
-  { big: '6,000', label: h('lock on: altimeter only', 'solo el altímetro', 'только высотомер'), to: 'altitude' },
-  { big: '5,500', label: h('pull', 'abre', 'раскрытие'), to: 'deploy' },
-  { big: '2,500', label: h('decide: fix or cut away', 'decide: arreglar o liberar', 'решение: исправить или отцепка'), to: 'ep', red: true },
-  { big: '1,000', label: h('no cutaway below', 'no liberar por debajo', 'ниже не отцепляться'), to: 'ep', red: true },
-  { big: '900 · 600 · 300', label: h('landing pattern', 'circuito', 'схема захода'), to: 'pattern' },
-  { big: '10 ft', label: h('flare, then PLF', 'flare y PLF', 'flare, потом PLF'), to: 'flare' },
+  { big: '13,500', label: h('exit', 'salida', 'отделение', 'відокремлення'), to: 'count' },
+  { big: '6,000', label: h('lock on: altimeter only', 'solo el altímetro', 'только высотомер', 'лише висотомір'), to: 'altitude' },
+  { big: '5,500', label: h('pull', 'abre', 'раскрытие', 'розкриття'), to: 'deploy' },
+  { big: '2,500', label: h('decide: fix or cut away', 'decide: arreglar o liberar', 'решение: исправить или отцепка', 'рішення: виправити чи відчеплення'), to: 'ep', red: true },
+  { big: '1,000', label: h('no cutaway below', 'no liberar por debajo', 'ниже не отцепляться', 'нижче не відчіплятися'), to: 'ep', red: true },
+  { big: '900 · 600 · 300', label: h('landing pattern', 'circuito', 'схема захода', 'схема заходу'), to: 'pattern' },
+  { big: '10 ft', label: h('flare, then PLF', 'flare y PLF', 'flare, потом PLF', 'flare, потім PLF'), to: 'flare' },
 ];
 const TIMERS: { big: string; label: L; to: string }[] = [
-  { big: '3 s', label: h('check altitude, all the time', 'mira el altímetro, siempre', 'смотри на высоту, всегда'), to: 'altitude' },
-  { big: '5 s', label: h('count after the pull, then check the canopy', 'cuenta tras abrir y revisa la vela', 'счёт после раскрытия, потом проверка купола'), to: 'deploy' },
+  { big: '3 s', label: h('check altitude, all the time', 'mira el altímetro, siempre', 'смотри на высоту, всегда', 'дивись на висоту, завжди'), to: 'altitude' },
+  { big: '5 s', label: h('count after the pull, then check the canopy', 'cuenta tras abrir y revisa la vela', 'счёт после раскрытия, потом проверка купола', 'рахунок після розкриття, потім перевірка купола'), to: 'deploy' },
 ];
 
 /**
@@ -101,8 +101,9 @@ function JumpPicture() {
           <g className="flyer" style={{ offsetPath: `path('${FLIGHT}')` }}>
             {/* freefall: belly to earth, body horizontal, arms and legs bent up */}
             <g className="fly-box">
-              <circle cx="-10" cy="-2" r="3.6" />
-              <path d="M-6 0 H7 M-3 0 L-7 -7 M2 0 L-1 -7 M7 0 L11 -5 L15 -2 M7 0 L12 2 L16 -1" />
+              {/* the classic skydiver seen from above: arms and legs bent, belly to earth */}
+              <circle cx="0" cy="-9" r="3.8" />
+              <path d="M0 -5 V5 M0 -3 L-7 -3 L-10 -9 M0 -3 L7 -3 L10 -9 M0 5 L-6 9 L-6 14 M0 5 L6 9 L6 14" />
             </g>
             {/* under canopy: hanging upright */}
             <g className="fly-hang">
@@ -114,10 +115,10 @@ function JumpPicture() {
         {stop('part1', 70, 108, 'I', parts[0].title, '0 → 13,500 ft', 'var(--acc-plane)')}
         {stop('part2', 330, 98, 'II', parts[1].title, '13,500 → 5,500', 'var(--acc-free)')}
         {stop('part3', 520, 150, 'III', parts[2].title, '5,500 → 0', 'var(--acc-canopy)')}
-        {stop('part4', 376, 236, 'IV', parts[3].title, { en: 'decide by 2,500', es: 'decide antes de 2,500', ru: 'решение до 2 500' }, 'var(--acc-ep)')}
+        {stop('part4', 376, 236, 'IV', parts[3].title, { en: 'decide by 2,500', es: 'decide antes de 2,500', ru: 'решение до 2 500', uk: 'рішення до 2 500' }, 'var(--acc-ep)')}
         {stop('dz', 930, 172, 'V', parts[4].title, 'Tracy, CA', 'var(--acc-dz)', 'end')}
       </svg>
-      {!reduce && <button type="button" className="replay" onClick={() => setRun(r => r + 1)}>↻ {t({ en: 'Replay the jump', es: 'Repetir el salto', ru: 'Повторить прыжок' })}</button>}
+      {!reduce && <button type="button" className="replay" onClick={() => setRun(r => r + 1)}>↻ {t({ en: 'Replay the jump', es: 'Repetir el salto', ru: 'Повторить прыжок', uk: 'Повторити стрибок' })}</button>}
     </div>
   );
 }
@@ -139,8 +140,8 @@ export function Hero() {
   return (
     <div className="gutter"><div className="col hero">
       <div className="eyebrow">{t(T.eyebrow)}</div>
-      <h1>{headline(t(T.title))}</h1>
-      <p>{t(T.sub)} <Rich s={{ en: '<q-check/> = confirm with them.', es: '<q-check/> = confírmalo con ellos.', ru: '<q-check/> — уточнить у них.' }} /></p>
+      <h1>{t(T.title)}.</h1>
+      <p>{t(T.sub)} <Rich s={{ en: '<q-check/> = confirm with them.', es: '<q-check/> = confírmalo con ellos.', ru: '<q-check/> — уточнить у них.', uk: '<q-check/> — уточнити в них.' }} /></p>
 
     </div>
       <JumpPicture />

@@ -138,8 +138,8 @@ export function BlockView({ b, chapterId }: { b: Block; chapterId: string }) {
             <details key={i} open={i === 0}>
               <summary><Rich s={m.title} /></summary>
               <div className="cols">
-                <div><h5 className="bad">{m.badTitle ? <Rich s={m.badTitle} /> : <Rich s={{ en: 'Mistakes', es: 'Errores', ru: 'Ошибки' }} />}</h5><ul>{m.bad.map((x, j) => <li key={j}><Rich s={x} /></li>)}</ul></div>
-                <div><h5 className="good">{m.goodTitle ? <Rich s={m.goodTitle} /> : <Rich s={{ en: 'Tips', es: 'Consejos', ru: 'Советы' }} />}</h5><ul>{m.good.map((x, j) => <li key={j}><Rich s={x} /></li>)}</ul></div>
+                <div><h5 className="bad">{m.badTitle ? <Rich s={m.badTitle} /> : <Rich s={{ en: 'Mistakes', es: 'Errores', ru: 'Ошибки', uk: 'Помилки' }} />}</h5><ul>{m.bad.map((x, j) => <li key={j}><Rich s={x} /></li>)}</ul></div>
+                <div><h5 className="good">{m.goodTitle ? <Rich s={m.goodTitle} /> : <Rich s={{ en: 'Tips', es: 'Consejos', ru: 'Советы', uk: 'Поради' }} />}</h5><ul>{m.good.map((x, j) => <li key={j}><Rich s={x} /></li>)}</ul></div>
               </div>
             </details>
           ))}

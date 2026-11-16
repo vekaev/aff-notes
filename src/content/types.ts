@@ -1,10 +1,13 @@
-// Content model. Every visible string is an L: all three languages side by side, so a missing
+// Content model. Every visible string is an L: all languages side by side, so a missing
 // translation is a type error, not a blank on screen. Text may contain a small set of inline tags:
 // <b>, <a href>, and <q-check/> (rendered as the "check with your instructor" badge).
 
-export const LANGS = ['en', 'es', 'ru'] as const;
+export const LANGS = ['en', 'es', 'uk', 'ru'] as const;
 export type Lang = (typeof LANGS)[number];
 export type L = Record<Lang, string>;
+
+/** Each language in its own name, for the language menu. Add a language here and in LANGS. */
+export const LANG_NAMES: Record<Lang, string> = { en: 'English', es: 'Español', uk: 'Українська', ru: 'Русский' };
 
 /** A short silent looping clip cut from a public tutorial, served from /media. */
 export interface Clip {
