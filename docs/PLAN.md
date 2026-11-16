@@ -58,10 +58,10 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] Final check at the end of the app: a "test yourself on everything" button (mixed decision-style questions from all
       chapters), a list of open self-answers to show an instructor, and "practise with your AI": one button copies a
       ready prompt (all key facts + quiz instructions) to paste into ChatGPT / Claude / any assistant (2026-11-16).
-- [~] A reusable team for learning any new skill or certificate (diving, pilot, driving, drift…): research (Reddit,
+- [x] A reusable team for learning any new skill or certificate (diving, pilot, driving, drift…): research (Reddit,
       YouTube, pros, official manuals), a study app like this one, expert fact-check, curriculum review, page guard,
       notes capture, final exam + AI-tutor prompt, then reinforcement after the course. Skill `/study` in agent-tools,
-      mission: knowledge that can save a life (2026-11-16).
+      mission: knowledge that can save a life (2026-11-16). Done: ~/agent-tools/skills/study (+ /factcheck, /autopilot sprint).
 - [ ] Page guard findings (docs/review/page-guard/2026-11-16-full.md): "ft" on every altitude everywhere (cards, prose,
       altimeter rows, legend, pattern labels, hero axis); label the canopy-check count chips as the count, not altitudes;
       one number format per language (UK/RU "5 500" vs "5,500"); translate the English injury-chart sources in ES/UK/RU;
