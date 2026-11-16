@@ -47,7 +47,7 @@ const TAPE: { big: string; label: L; to: string; red?: boolean }[] = [
 /** Only if the main is bad: the emergency numbers, kept apart so they don't mix with the canopy ones. */
 const EMERGENCY: { big: string; label: L; to: string }[] = [
   { big: '2,500', label: h('bad main: decide and act (fix or cut away) by here', 'principal mala: decide y actúa (arreglar o liberar) antes de aquí', 'плохой основной: реши и действуй (исправить или отцепка) до этой высоты', 'поганий основний: виріши й дій (виправити чи відчеплення) до цієї висоти'), to: 'ep' },
-  { big: '1,000', label: h('no cutaway below: pull the reserve only', 'por debajo no liberes: solo abre la reserva', 'ниже не отцепляйся: только запасной', 'нижче не відчіплюйся: лише запасний'), to: 'ep' },
+  { big: '1,000', label: h('no cutaway below: pull the reserve only (one exception: a downplane)', 'por debajo no liberes: solo la reserva (excepción: downplane)', 'ниже не отцепляйся: только запасной (исключение: «даунплейн»)', 'нижче не відчіплюйся: лише запасний (виняток: «даунплейн»)'), to: 'ep' },
 ];
 const TIMERS: { big: string; label: L; to: string }[] = [
   { big: '3 s', label: h('check altitude, all the time', 'mira el altímetro, siempre', 'смотри на высоту, всегда', 'дивись на висоту, завжди'), to: 'altitude' },

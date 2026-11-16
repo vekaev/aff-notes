@@ -51,13 +51,38 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] Numbers block: say what the numbers are (feet above the ground), "ft" next to each altitude, no word breaks.
 - [~] Know your rig: a real photo for each of the 8 parts (reserve, main, pilot chute handle, AAD, red handle, silver
       handle, three rings, straps), shown next to the drawing when the part is picked.
-- [~] Re-check every owner message of this whole chat (before and after the summary) against this inbox; add what's
+- [x] Re-check every owner message of this whole chat (before and after the summary) against this inbox; add what's
       missing; result in docs/review/owner-asks-audit.md.
 - [x] Rule: every owner message is first split into tasks / subtasks / questions, written here, and the reply points to
       these lines (CLAUDE.md + ~/agent-tools/rules/working.md).
 - [?] Big reorder (Part IV "act now" first, statistics and real cases in their own part, EP button in the header): ask.
 
+Added by the owner-asks audit (docs/review/owner-asks-audit.md):
+- [ ] Email draft: also ask for the ground-course presentation (slides, pictures, videos) the owner wanted from the dropzone (from 2026-11-16)
+- [ ] Hand signals: owner remembers about 15 instructor signals from the course, the app has 13; find the missing ones (USPA Cat A list, ground course) or ask (from 2026-11-16)
+- [x] Part IV emergencies expert fixes (both reports, the safety items in docs/review/fixes.md) applied, checked and committed; the expert fact-check line above is ticked but this scope is still todo (from 2026-11-16)
+- [x] Collect the ask-owner questions from every fixer log (docs/review/fixes/*.md) into "Waiting on you", one question each with a recommended answer; fixes.md says they are there, they are not (from 2026-11-16)
+- [x] Put the two open questions under "Waiting on you": lowercase headlines everywhere (§0b) and the big reorder (line above) (from 2026-11-16)
+- [ ] Run the page guard (.claude/agents/aff-page-guard.md) on all chapters: never run yet, docs/review/page-guard/ doesn't exist (from 2026-11-16)
+- [ ] Tidy stale ticks: §0c "Two more checkers" and "24-hour finishing run" are [ ] while this inbox has them [x] (from 2026-11-16)
+
+### Standing preferences (apply to all future work)
+- Real footage or photos over drawings; a picture or clip next to every piece of text; moving clips over still images.
+- Lists with bold key words, not paragraphs; plain bold, no highlighter.
+- Don't save space: generous margins, gaps and text sizes; calm and readable, not stark white.
+- Content stays general ("your dropzone"); one dropzone's facts only in Part V.
+- When the owner states a fact, check it against the sources and tell him plainly where he was wrong.
+- For a redesign, propose a few options first and let the owner pick; animations smooth and not distracting.
+
 ## Waiting on you
+- **Instructor briefing:** the app's last Part IV chapter "questions for your instructors" (18, by jump phase) holds every
+  school-specific doubt from the fact-check (count 3 or 5 after the pull, where to look in the flare, aircraft-emergency
+  altitudes, which instructor is outside, hard pull: reserve only or cut away first, RSL/MARD, reserve handle type,
+  wave-off count, the shake on exit, AAD model). Bring the answers; each fixes a `check` badge.
+- Ground-school test photo: Q27 key says 300 ft or 1,000 ft? (Q28 already asks about 300.)
+- Lowercase headlines everywhere (Stoic) or sentence case like the first screen? Recommended: sentence case.
+- Big reorder: Part IV "act now" chapters first, statistics and real cases in their own part "learn from others", an
+  always-visible EP button in the header? Recommended: yes.
 - Email to Skydive California (info@skydivecalifornia.com, checked on their contact page): review request + offer to
   help for free + "what would you add for your school?". Draft: `docs/email-draft.md` (not sent). Needs the private link.
 - Private link only the dropzone can open: Cloudflare Pages + Cloudflare Access (email one-time code, allow-list)?
