@@ -19,6 +19,9 @@ broke the page or made it harder to read. A student reads this before a jump, ma
    in localStorage key `aff-lang`), at **375 px** and **desktop**, in **light and dark** (theme key `aff-theme`):
    - nothing overflows sideways (`document.documentElement.scrollWidth` equals the window width);
    - no text cut off, overlapping, or one word per line in narrow columns; numbers stay with their units;
+   - every number says what it is: altitudes carry "ft", times "s", and a block of numbers has a line saying what they
+     count (a bare "2,500" or "5,500" with no unit or label is a failure, owner 2026-11-16);
+   - in drawings no text sits under a moving part (needle, flight path) and labels are centred on what they name;
    - every clip has a poster and plays; clickable clips open the in-page player;
    - drawings (climb-out, exit count, altimeter, landing pattern, low turn, canopy check, rig) render and their labels
      don't collide;
