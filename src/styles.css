@@ -502,3 +502,30 @@ dialog.player::backdrop { background: rgba(0,0,0,.72); }
 /* settings chips take the header's own colour */
 .top .chip { background: transparent; border-color: var(--line); transition: background-color .2s, border-color .2s; }
 .top .chip:hover, .top .chip[aria-expanded="true"] { background: var(--soft); border-color: var(--line-strong); }
+
+/* card grids, consistent: content starts top-left, icon and title share a row, one type size,
+   every card in a row stretches to the same height so the edges line up */
+.rules { align-items: stretch; }
+.rule { display: flex; flex-direction: column; gap: 6px; padding: 16px 16px 18px; }
+.rule .rh { display: flex; align-items: center; gap: 10px; min-height: 34px; }
+.rule .rh .ico { width: 34px; height: 34px; border-radius: 10px; margin: 0; }
+.rule .rh .ico svg { width: 19px; height: 19px; }
+.rule .rt { font-size: 16px; line-height: 1.25; margin: 0; text-wrap: balance; }
+.rule.has-big .big { margin-bottom: 0; }
+.rule.has-big .rh { min-height: 0; }
+.rule .rx { font-size: 15px; line-height: 1.45; }
+.rule .pts { margin-top: 2px; }
+
+/* a short sequence (the four gear checks): numbered steps in a row with arrows, left-aligned */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 10px; }
+.timeline li { position: relative; display: grid; grid-template-columns: auto auto minmax(0, 1fr); align-items: center; gap: 10px; background: var(--card); border-radius: var(--r); box-shadow: 0 0 0 1px var(--hair); padding: 12px 14px; }
+.timeline .tn { font: 700 12px var(--mono); color: var(--accent, var(--muted)); }
+.timeline .ico { width: 32px; height: 32px; border-radius: 10px; margin: 0; }
+.timeline .ico svg { width: 18px; height: 18px; }
+.timeline .st { font-size: 15px; font-weight: 600; line-height: 1.25; text-wrap: balance; }
+.timeline .sub { display: block; font-size: 13px; font-weight: 400; color: var(--muted); margin-top: 2px; }
+@media (min-width: 700px) {
+  .timeline li:not(:last-child)::after { content: "→"; position: absolute; right: -9px; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; border-radius: 50%; background: var(--band, var(--paper)); color: var(--muted); font-size: 11px; display: grid; place-items: center; z-index: 1; }
+}
+.card .src-link { font-size: 12px; color: var(--muted); text-decoration: none; margin-top: 6px; }
+.card .src-link:hover { color: var(--ink); }

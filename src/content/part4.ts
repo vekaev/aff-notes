@@ -1322,6 +1322,157 @@ export const part4: Part = {
       ],
     },
 
+    // ---------------------------------------------------------------- what went wrong: real footage
+    {
+      id: 'mistakes',
+      eyebrow: t(`Real footage`, `Vídeos reales`, `Настоящие видео`, `Справжні відео`),
+      title: t(`What went wrong: real jumps`, `Qué salió mal: saltos reales`, `Что пошло не так: настоящие прыжки`, `Що пішло не так: справжні стрибки`),
+      blocks: [
+        {
+          type: 'p',
+          text: t(
+            `Real jumps where something went wrong, and the <b>one lesson</b> from each. Nobody is badly hurt on screen.`,
+            `Saltos reales donde algo salió mal y la <b>lección</b> de cada uno. Nadie sale gravemente herido en pantalla.`,
+            `Настоящие прыжки, где что-то пошло не так, и <b>один урок</b> из каждого. Тяжёлых травм в кадре нет.`,
+            `Справжні стрибки, де щось пішло не так, і <b>один урок</b> із кожного. Важких травм у кадрі немає.`,
+          ),
+        },
+        {
+          type: 'cards',
+          groupTitle: t(`Low turns`, `Giros bajos`, `Низкие развороты`, `Низькі розвороти`),
+          items: [
+            {
+              clip: 'x_lowturn', tone: 'ep', source: { yt: 'qiJUPUghXyc', t: 34, credit: 'JOINTHETEEM' },
+              name: t(`Turn too low, into the ground`, `Giro demasiado bajo, contra el suelo`, `Слишком низкий разворот — в землю`, `Занизький розворот — у землю`),
+              what: t(`A big turn near the ground; the canopy was still diving at impact. Broken femur and ankle.`, `Un giro grande cerca del suelo; la vela seguía picando al impactar. Fémur y tobillo rotos.`, `Большой разворот у земли; купол ещё нырял при ударе. Перелом бедра и лодыжки.`, `Великий розворот біля землі; купол ще пірнав під час удару. Перелом стегна й щиколотки.`),
+              act: t(`<b>No big turns low.</b> Below 300 ft, small flat turns only.`, `<b>Nada de giros grandes abajo.</b> Bajo 300 ft, solo giros pequeños y planos.`, `<b>Никаких больших разворотов низко.</b> Ниже 300 футов — только маленькие плоские.`, `<b>Жодних великих розворотів низько.</b> Нижче 300 футів — лише малі пласкі.`),
+            },
+            {
+              clip: 'x_lowturn2', tone: 'ep', source: { yt: '5Lj_O4MLo0M', t: 19, credit: 'Chris Forman' },
+              name: t(`The dive, from the ground`, `La picada, desde el suelo`, `Нырок купола, вид с земли`, `Пірнання купола, вигляд із землі`),
+              what: t(`Same mistake seen from outside: the turn starts low and the canopy can't level out before the water.`, `El mismo error visto desde fuera: el giro empieza bajo y la vela no se nivela antes del agua.`, `Та же ошибка со стороны: разворот начат низко, купол не успевает выровняться до воды.`, `Та сама помилка збоку: розворот почато низько, купол не встигає вирівнятися до води.`),
+              act: t(`A turn makes the canopy <b>dive and speed up</b>. Give it height to recover.`, `Un giro hace que la vela <b>pique y acelere</b>. Dale altura para recuperar.`, `Разворот заставляет купол <b>нырнуть и разогнаться</b>. Нужна высота, чтобы выйти.`, `Розворот змушує купол <b>пірнути й розігнатися</b>. Потрібна висота, щоб вийти.`),
+            },
+          ],
+        },
+        {
+          type: 'cards',
+          groupTitle: t(`Flare`, `Flare`, `Flare`, `Flare`),
+          items: [
+            {
+              clip: 'x_flarehigh', tone: 'fix', source: { yt: 'hZXQpFu8I1s', t: 2, credit: 'Zach Foreman' },
+              name: t(`Flared too high, then fixed it`, `Flare demasiado alto, y bien corregido`, `Flare слишком высоко — и правильное исправление`, `Flare зависоко — і правильне виправлення`),
+              what: t(`An AFF student flares early; the instructor on the radio: hold it, then finish.`, `Un alumno AFF hace el flare pronto; el instructor por radio: mantén y luego termina.`, `Студент AFF начал flare рано; инструктор по радио: держи, потом дожми.`, `Студент AFF почав flare рано; інструктор по радіо: тримай, потім дотисни.`),
+              act: t(`Too high? <b>Hold, don't let up</b>, finish as you sink.`, `¿Muy alto? <b>Mantén, no subas</b>, termina al bajar.`, `Слишком высоко? <b>Держи, не отпускай</b>, дожми при снижении.`, `Зависоко? <b>Тримай, не відпускай</b>, дотисни під час зниження.`),
+            },
+            {
+              clip: 'x_flarefast', tone: 'ep', source: { yt: 'N8vpe-olEYs', t: 9, credit: 'jpelligrinelli' },
+              name: t(`Flare stabbed too fast`, `Flare demasiado brusco`, `Flare рывком`, `Flare ривком`),
+              what: t(`An AFF B student stabs the toggles down; the canopy still has speed at touchdown and he tumbles.`, `Un alumno AFF B tira de golpe; la vela aún tiene velocidad al tocar y rueda.`, `Студент AFF B дёрнул клеванты; у купола ещё скорость при касании, и он кувыркается.`, `Студент AFF B смикнув клеванти; у купола ще швидкість при торканні, і він перекидається.`),
+              act: t(`Flare <b>smoothly and all the way</b>; feet and knees together, PLF.`, `Flare <b>suave y hasta abajo</b>; pies y rodillas juntos, PLF.`, `Flare <b>плавно и до конца</b>; ступни и колени вместе, PLF.`, `Flare <b>плавно й до кінця</b>; ступні й коліна разом, PLF.`),
+            },
+          ],
+        },
+        {
+          type: 'cards',
+          groupTitle: t(`Wind`, `Viento`, `Ветер`, `Вітер`),
+          items: [
+            {
+              clip: 'x_wind', tone: 'ep', source: { yt: '1h7fvb46wug', t: 54, credit: 'JOINTHETEEM' },
+              name: t(`Strong wind, landed crosswind`, `Viento fuerte, aterrizaje de lado`, `Сильный ветер, посадка боком`, `Сильний вітер, посадка боком`),
+              what: t(`The wind picked up while the load was in the air; he landed sideways and was dragged.`, `El viento subió durante el vuelo; aterrizó de lado y la vela lo arrastró.`, `Ветер усилился, пока группа была в воздухе; сел боком, и купол его протащил.`, `Вітер посилився, поки група була в повітрі; сів боком, і купол його протягнув.`),
+              act: t(`In strong wind <b>face straight into it</b>, then collapse the canopy fast.`, `Con viento fuerte <b>de frente al viento</b>, luego colapsa la vela rápido.`, `В сильный ветер <b>садись строго против ветра</b>, потом быстро гаси купол.`, `У сильний вітер <b>сідай строго проти вітру</b>, потім швидко гаси купол.`),
+            },
+            {
+              clip: 'x_downwind', tone: 'ep', source: { yt: 'tG63N8Y-ti4', t: 11, credit: 'Paul Lewis' },
+              name: t(`Downwind landing`, `Aterrizaje con viento de cola`, `Посадка по ветру`, `Посадка за вітром`),
+              what: t(`The landing direction was set wrong; he landed downwind, too fast, and his legs folded.`, `La dirección de aterrizaje estaba mal; aterrizó con viento de cola, demasiado rápido.`, `Направление посадки было выставлено неверно; сел по ветру, слишком быстро, ноги подломились.`, `Напрямок посадки було виставлено неправильно; сів за вітром, надто швидко, ноги підломилися.`),
+              act: t(`Check the <b>windsock</b> yourself. Downwind: flare fully and PLF.`, `Mira tú el <b>cono de viento</b>. Con viento de cola: flare completo y PLF.`, `Сам смотри на <b>колдун</b>. По ветру: полный flare и PLF.`, `Сам дивись на <b>вітровказ</b>. За вітром: повний flare і PLF.`),
+            },
+          ],
+        },
+        {
+          type: 'cards',
+          groupTitle: t(`Obstacles`, `Obstáculos`, `Препятствия`, `Перешкоди`),
+          items: [
+            {
+              clip: 'x_power', tone: 'ep', source: { yt: 'KWO7U-PNEus', t: 20, credit: 'JOINTHETEEM' },
+              name: t(`Power lines he didn't see`, `Cables que no vio`, `Провода, которых он не заметил`, `Дроти, яких він не помітив`),
+              what: t(`Landing off, he aimed for a gap in the trees; power lines ran along the driveway.`, `Fuera de zona, apuntó a un hueco entre árboles; los cables seguían el camino.`, `Садился вне площадки в просвет между деревьями; вдоль дороги шли провода.`, `Сідав поза майданчиком у просвіт між деревами; уздовж дороги йшли дроти.`),
+              act: t(`Wires follow <b>roads and straight cuts</b>: look for the poles early.`, `Los cables siguen <b>caminos y cortes rectos</b>: busca los postes pronto.`, `Провода идут <b>вдоль дорог и просек</b>: ищи столбы заранее.`, `Дроти йдуть <b>уздовж доріг і просік</b>: шукай стовпи заздалегідь.`),
+            },
+            {
+              clip: 'x_trees', tone: 'ep', source: { yt: 'QkUIomzFj_c', t: 90, credit: 'JOINTHETEEM' },
+              name: t(`Steered into the trees`, `Directo a los árboles`, `Прямо в деревья`, `Просто в дерева`),
+              what: t(`A late, long turn pointed him at the trees, and he kept staring at them (target fixation). Broken ankle.`, `Un giro largo y tardío lo apuntó a los árboles y siguió mirándolos (fijación). Tobillo roto.`, `Поздний длинный разворот навёл его на деревья, и он смотрел на них (фиксация на цели). Перелом лодыжки.`, `Пізній довгий розворот навів його на дерева, і він дивився на них (фіксація на цілі). Перелом щиколотки.`),
+              act: t(`Look <b>where you want to go</b>, not at the obstacle.`, `Mira <b>adonde quieres ir</b>, no al obstáculo.`, `Смотри <b>туда, куда хочешь</b>, а не на препятствие.`, `Дивись <b>туди, куди хочеш</b>, а не на перешкоду.`),
+            },
+            {
+              clip: 'x_roof', tone: 'ep', source: { yt: 'cxnjXmlNqaw', t: 110, credit: 'JOINTHETEEM' },
+              name: t(`Roof and wires on a late decision`, `Tejado y cables por decidir tarde`, `Крыша и провода из-за позднего решения`, `Дах і дроти через пізнє рішення`),
+              what: t(`He decided too late that he couldn't make the landing area and skimmed a roof and lines.`, `Decidió tarde que no llegaba y rozó un tejado y unos cables.`, `Слишком поздно понял, что не долетает, и прошёл над крышей и проводами.`, `Надто пізно зрозумів, що не долітає, і пройшов над дахом і дротами.`),
+              act: t(`Decide <b>by 2,000 ft</b>: can't make it? Pick a clear field.`, `Decide <b>antes de 2,000 ft</b>: ¿no llegas? Elige un campo despejado.`, `Решай <b>к 2 000 футам</b>: не долетаешь — выбирай чистое поле.`, `Вирішуй <b>до 2 000 футів</b>: не долітаєш — обирай чисте поле.`),
+            },
+          ],
+        },
+        {
+          type: 'cards',
+          groupTitle: t(`In the air`, `En el aire`, `В воздухе`, `У повітрі`),
+          items: [
+            {
+              clip: 'x_collision', tone: 'ep', source: { yt: 'BUogil8WvRI', t: 16, credit: 'JOINTHETEEM' },
+              name: t(`Canopy collision at 250 ft`, `Choque de velas a 250 ft`, `Столкновение куполов на 250 футах`, `Зіткнення куполів на 250 футах`),
+              what: t(`Four canopies on final; one made a sudden 90° turn and the other flew into it.`, `Cuatro velas en final; una giró 90° de repente y la otra chocó con ella.`, `Четыре купола на финале; один резко повернул на 90°, другой влетел в него.`, `Чотири куполи на фіналі; один різко повернув на 90°, інший влетів у нього.`),
+              act: t(`<b>Watch traffic</b>, give room, no sudden turns near the ground.`, `<b>Vigila el tráfico</b>, deja espacio, nada de giros bruscos abajo.`, `<b>Следи за другими</b>, держи дистанцию, никаких резких поворотов у земли.`, `<b>Стеж за іншими</b>, тримай дистанцію, жодних різких поворотів біля землі.`),
+            },
+            {
+              clip: 'x_aff', tone: 'ep', source: { yt: 'jA8A3sv7hx8', t: 84, credit: 'Zach Foreman' },
+              name: t(`Spinning and nearly no pull`, `Girando y casi sin abrir`, `Вращение и почти без раскрытия`, `Обертання й майже без розкриття`),
+              what: t(`A student before solo: head high, unstable, turning, and late to pull.`, `Un alumno antes de saltar solo: cabeza alta, inestable, girando y tarde para abrir.`, `Студент перед самостоятельными прыжками: голова задрана, нестабилен, крутится и тянет с раскрытием.`, `Студент перед самостійними стрибками: голова задерта, нестабільний, крутиться й зволікає з розкриттям.`),
+              act: t(`Order: <b>pull, at the right altitude, then stable</b>.`, `Orden: <b>abrir, a la altura correcta, luego estable</b>.`, `Порядок: <b>раскрыться, на нужной высоте, потом стабильность</b>.`, `Порядок: <b>розкритися, на потрібній висоті, потім стабільність</b>.`),
+            },
+            {
+              clip: 'x_nohandle', tone: 'ep', source: { yt: 'qidpLSdggOo', t: 46, credit: 'Zach Foreman' },
+              name: t(`Can't find the handle`, `No encuentra la manija`, `Не находит ручку`, `Не знаходить ручку`),
+              what: t(`The student searches for the pilot chute; the instructor docks and throws it for him.`, `El alumno busca el extractor; el instructor se acerca y lo lanza por él.`, `Студент ищет вытяжной; инструктор подлетает и выбрасывает его за него.`, `Студент шукає витяжний; інструктор підлітає й викидає його за нього.`),
+              act: t(`<b>Two tries</b>, then the emergency procedure. Practise touches on the ground.`, `<b>Dos intentos</b>, luego el procedimiento de emergencia. Practica en tierra.`, `<b>Две попытки</b>, потом аварийная процедура. Тренируй касания на земле.`, `<b>Дві спроби</b>, потім аварійна процедура. Тренуй дотики на землі.`),
+            },
+            {
+              clip: 'x_cutaway', tone: 'fix', source: { yt: 'wx1gJRlAdPE', t: 20, credit: 'JOINTHETEEM' },
+              name: t(`Spinning main, cutaway, reserve`, `Principal girando, liberación, reserva`, `Вращение основного, отцепка, запасной`, `Обертання основного, відчеплення, запасний`),
+              what: t(`The main started spinning; he felt the G-force rise and cut away. The reserve opened.`, `La principal empezó a girar; sintió subir la fuerza G y liberó. Se abrió la reserva.`, `Основной начал вращаться; он почувствовал рост перегрузки и отцепился. Запасной раскрылся.`, `Основний почав обертатися; він відчув зростання перевантаження й відчепився. Запасний розкрився.`),
+              act: t(`A spin <b>gets worse fast</b>: decide, cut away, reserve.`, `Un giro <b>empeora rápido</b>: decide, libera, reserva.`, `Вращение <b>быстро усиливается</b>: решай, отцепка, запасной.`, `Обертання <b>швидко посилюється</b>: вирішуй, відчеплення, запасний.`),
+            },
+          ],
+        },
+        {
+          type: 'quiz',
+          questions: [
+            {
+              q: t(`You flared too high. What do you do?`, `Hiciste el flare demasiado alto. ¿Qué haces?`, `Ты начал flare слишком высоко. Что делаешь?`, `Ти почав flare зависоко. Що робиш?`),
+              options: [
+                t(`Let the toggles up and try again`, `Subir los batidores y repetir`, `Отпустить клеванты и повторить`, `Відпустити клеванти й повторити`),
+                t(`Hold them where they are, finish as you sink`, `Mantenerlos donde están y terminar al bajar`, `Держать их там, где есть, дожать при снижении`, `Тримати їх там, де є, дотиснути під час зниження`),
+                t(`Turn to lose height`, `Girar para perder altura`, `Повернуть, чтобы потерять высоту`, `Повернути, щоб втратити висоту`),
+              ],
+              answer: 1,
+              why: t(`Letting up makes the canopy dive; a turn low is worse. Hold, then finish.`, `Subir hace picar la vela; girar abajo es peor. Mantén y termina.`, `Если отпустить, купол нырнёт; разворот низко ещё хуже. Держи, потом дожми.`, `Якщо відпустити, купол пірне; розворот низько ще гірше. Тримай, потім дотисни.`),
+            },
+            {
+              q: t(`Where do power lines usually run?`, `¿Por dónde suelen ir los cables?`, `Где обычно идут провода?`, `Де зазвичай ідуть дроти?`),
+              options: [
+                t(`Along roads, driveways and straight cuts through trees`, `Junto a caminos y cortes rectos entre árboles`, `Вдоль дорог, подъездов и прямых просек`, `Уздовж доріг, під’їздів і прямих просік`),
+                t(`Only in cities`, `Solo en ciudades`, `Только в городах`, `Лише в містах`),
+                t(`Over open fields`, `Sobre campos abiertos`, `Над открытыми полями`, `Над відкритими полями`),
+              ],
+              answer: 0,
+              why: t(`Look for the poles along roads and straight lines in the trees, early.`, `Busca los postes junto a caminos y líneas rectas entre árboles, pronto.`, `Ищи столбы вдоль дорог и прямых просек, заранее.`, `Шукай стовпи вздовж доріг і прямих просік, заздалегідь.`),
+            },
+          ],
+        },
+      ],
+    },
+
     // ---------------------------------------------------------------- tips
     {
       id: 'tips',

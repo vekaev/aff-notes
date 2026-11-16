@@ -47,6 +47,8 @@ export interface Card {
   what: L;
   act?: L;
   tone?: 'key' | 'ep' | 'fix';
+  /** The original video, opened in the in-page player from the card. */
+  source?: { yt: string; t: number; credit: string };
 }
 
 /** Ordered rows with an altitude on the left; tapping one moves the altimeter / map marker. */

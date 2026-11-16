@@ -147,12 +147,11 @@ export const part1: Part = {
             {
               icon: 'rig',
               title: { en: 'Main', es: 'Principal', uk: 'Основний', ru: 'Основной' },
-              text: {
-                en: 'Packed by a <b>packer</b>.',
-                es: 'La pliega un <b>plegador</b>.',
-                uk: 'Вкладає <b>укладальник</b>.',
-                ru: 'Укладывает <b>укладчик</b>.',
-              },
+              points: [
+                { en: 'Packed by a <b>packer</b>', es: 'La pliega un <b>plegador</b>', uk: 'Вкладає <b>укладальник</b>', ru: 'Укладывает <b>укладчик</b>' },
+                { en: 'Checked by your <b>instructor</b> before the jump', es: 'La revisa tu <b>instructor</b> antes del salto', uk: 'Перевіряє твій <b>інструктор</b> перед стрибком', ru: 'Проверяет твой <b>инструктор</b> перед прыжком' },
+                { en: 'Opened by <b>you</b>, at 5,500 ft', es: 'La abres <b>tú</b>, a 5,500 ft', uk: 'Розкриваєш <b>ти</b>, на 5 500 футах', ru: 'Раскрываешь <b>ты</b>, на 5 500 футах' },
+              ],
             },
             {
               icon: 'reserve',

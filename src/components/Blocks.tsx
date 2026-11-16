@@ -43,6 +43,16 @@ function WatchRow({ items }: { items: Watch[] }) {
   );
 }
 
+function SourceLink({ src, title }: { src: { yt: string; t: number; credit: string }; title: string }) {
+  const { t } = useLang();
+  const open = useOpenVideo();
+  return (
+    <a className="src-link" href={ytUrl(src.yt, src.t)} onClick={e => { e.stopPropagation(); if (e.metaKey || e.ctrlKey) return; e.preventDefault(); open({ yt: src.yt, t: src.t, title }); }}>
+      ▶ {t(ui.watch)} · {src.credit} · {mmss(src.t)}
+    </a>
+  );
+}
+
 function CardView({ c }: { c: Card }) {
   const [reveal, setReveal] = useState(false);
   const { t } = useLang();
@@ -53,6 +63,7 @@ function CardView({ c }: { c: Card }) {
         <span className="nm"><Rich s={c.name} /></span>
         <span className="wh"><Rich s={c.what} /></span>
         {c.act && <span className="ac"><Rich s={c.act} /></span>}
+        {c.source && <SourceLink src={c.source} title={t(c.name)} />}
       </div>
     </div>
   );
@@ -79,7 +90,18 @@ export function BlockView({ b, chapterId }: { b: Block; chapterId: string }) {
     case 'p': return <p className={b.muted ? 'muted' : undefined}><Rich s={b.text} /></p>;
     case 'h': return <h4 id={b.id}><Rich s={b.text} /></h4>;
     case 'steps':
-      return <ol className={`steps ${b.timeline ? 'timeline' : ''}`}>{b.items.map((s, i) => <li key={i}><div>{s.icon && <Icon name={s.icon} />}<span className="st"><Rich s={s.title} /></span>{s.sub && <span className="sub"><Rich s={s.sub} /></span>}</div></li>)}</ol>;
+      if (b.timeline) return (
+        <ol className="timeline">
+          {b.items.map((s, i) => (
+            <li key={i}>
+              <span className="tn">{i + 1}</span>
+              {s.icon && <Icon name={s.icon} />}
+              <span className="st"><Rich s={s.title} />{s.sub && <span className="sub"><Rich s={s.sub} /></span>}</span>
+            </li>
+          ))}
+        </ol>
+      );
+      return <ol className="steps">{b.items.map((s, i) => <li key={i}><div>{s.icon && <Icon name={s.icon} />}<span className="st"><Rich s={s.title} /></span>{s.sub && <span className="sub"><Rich s={s.sub} /></span>}</div></li>)}</ol>;
     case 'bars': {
       const max = Math.max(...b.items.map(x => x.value));
       return (
@@ -101,10 +123,9 @@ export function BlockView({ b, chapterId }: { b: Block; chapterId: string }) {
       return (
         <div className="rules">
           {b.items.map((r, i) => (
-            <div key={i} className={`rule ${r.tone ?? ''}`}>
-              {r.icon && <Icon name={r.icon} />}
+            <div key={i} className={`rule ${r.tone ?? ''} ${r.big ? 'has-big' : ''}`}>
               {r.big && <div className="big">{r.big}</div>}
-              {r.title && <span className="rt"><Rich s={r.title} /></span>}
+              {(r.icon || r.title) && <div className="rh">{r.icon && <Icon name={r.icon} />}{r.title && <span className="rt"><Rich s={r.title} /></span>}</div>}
               {r.text && <span className="rx"><Rich s={r.text} /></span>}
               {r.points && <ul className="pts">{r.points.map((x, j) => <li key={j}><Rich s={x} /></li>)}</ul>}
             </div>

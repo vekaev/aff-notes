@@ -55,7 +55,11 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - [x] Ukrainian everywhere: interface and all 5 content files (~950 strings), type-checked like the others.
 - [x] First screen text rewritten, sentence case: "Your first jump, step by step."
 - [ ] Other headlines are still lowercase (Stoic style). Owner disliked lowercase on the first screen — same everywhere? (ask)
-- [~] Real "what went wrong" videos (low turns, flare errors, obstacles, collisions): search running, then cut clips.
+- [x] Real "what went wrong" videos: new chapter with 13 clips (low turns, flare, wind, obstacles, collision, AFF freefall,
+      cutaway), each with what happened + the lesson + the original in the in-page player (docs/research/incident-videos.md).
+- [x] Card grids redesigned: top-left aligned, icon + title on one row, equal heights; gear checks as a numbered row with arrows.
+- [~] Section-by-section review by 3 helpers (docs/review/), then fixes.
+- [ ] PWA and sharing: favicon, preview image, search/social tags, manifest, offline, accessibility pass, security headers.
 - [x] Private GitHub repo vekaev/aff-notes (private), autopilot pushes there.
 
 ## Facts to verify (doubts raised by the text reviewers; check against sources, then fix or mark <q-check/>)
