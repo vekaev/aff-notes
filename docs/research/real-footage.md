@@ -59,3 +59,32 @@ clip is wanted.
 - **climb**: no clearly better angle than the existing `climb.mp4`; `exit_real` also shows the climb into the door.
 - **Exit count from inside with sound/captions**: the clean inside view (`exit_real`) has no count; the one with the
   count (`f1N8OAm8mtg`) is a wing camera with English captions burned in.
+
+## Rig part photos
+
+Stills for the "Know your rig" drawing, cut 2026-11-16: one frame per part, cropped 4:3 on the part, 640x480 JPEG
+(15–26 KB), in `public/media/`. Not wired into `src/` yet. Each was picked from a 1 fps contact sheet; the parts were
+matched to what the narrator says at that moment (YouTube auto-captions). Personal use only (see CLAUDE.md).
+
+| Id | File | YouTube id | Second | Credit | Caption | Confidence |
+|---|---|---|---|---|---|---|
+| reserve | `rig_reserve.jpg` | `LQZhlBAsWgE` | 99 | Matt Walker | Top of the container: the reserve, with its pin in the clear window and the AAD display just above. | High |
+| main | `rig_main.jpg` | `LQZhlBAsWgE` | 84 | Matt Walker | Bottom of the container: the main, closed, a finger on the main pin flap. | High |
+| pc | `rig_pc.jpg` | `DaQIlD_xZZk` | 214.5 | Skydive Fundamentals | The blue hackey (pilot chute handle) sticking out of its pouch at the bottom corner of the container. | Medium-high |
+| aad | `rig_aad.jpg` | `LQZhlBAsWgE` | 13.5 | Matt Walker | Close-up of the CYPRES AAD control unit: display and red button. | High |
+| cutaway | `rig_cutaway.jpg` | `LQZhlBAsWgE` | 170.5 | Matt Walker | The red cutaway handle (pillow), eased out of its pocket so the yellow cutaway cables show. | High |
+| reserve-handle | `rig_reserve-handle.jpg` | `LQZhlBAsWgE` | ~297 | Matt Walker | The steel D-ring reserve handle in its pocket on the left main lift web; red cutaway handle at the left edge for comparison. | High |
+| rings | `rig_rings.jpg` | `LQZhlBAsWgE` | 160.5 | Matt Walker | Three-ring release on the shoulder: big ring, middle ring, little ring and loop. | High |
+| straps | `rig_straps.jpg` | `LQZhlBAsWgE` | ~300 | Matt Walker | Rig lying face up: the two leg strap loops laid out below the harness. The chest strap is not clearly in shot. | Medium |
+
+Notes:
+- `LQZhlBAsWgE` = "Skydive pre-jump gear check", Matt Walker (Mirage student rig, rig lying on a mat, so the wearer's
+  right is on the left of the picture). Narration confirms: pilot chute handle ~55 s, main pin flap 69–90 s, reserve
+  pin window 100–130 s, 3-ring 136–180 s, cutaway handle 237–244 s, "on the left hand side I have my reserve handle,
+  this D-ring" 245–260 s, chest strap ~330 s. The ~297 and ~300 s frames come from a separate download of 295–349 s
+  (section start may be off by a second).
+- `DaQIlD_xZZk` = "AFF Gear Checks: Complete Skydiving Gear Check Guide for Students", Skydive Fundamentals. Chosen for
+  the pilot chute handle because in Matt Walker's video the hackey is only a small grey blob at the container edge.
+- The parts in `Sg9lNMv1vdU` (Start Skydiving) are filmed wide on a person or as small picture-in-picture inserts with
+  text overlays; `BFl4m5vTvfk` has burned-in captions. Neither was used for stills.
+- Better straps photo still wanted: one frame with both leg straps and the chest strap buckled on a person.

@@ -3,6 +3,7 @@ import type { AltRow, Block, L, RigPart, RigPartId, Step } from './content/types
 import { Rich, useLang } from './i18n';
 import { ui } from './ui';
 import { ClipFigure } from './components/Blocks';
+import { useOpenVideo } from './components/Player';
 
 // Drawings are ink on the card; only the emergency red is a colour, as in the rest of the page.
 
@@ -198,7 +199,8 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
           {low}
           {ticks}
           {mark(6, 'var(--acc-canopy)')}{mark(5.5, 'var(--red)')}
-          <text x={C} y="84" textAnchor="middle" fontFamily="var(--mono)" fontSize="9" letterSpacing="1" fill="var(--muted)">×1000 FT</text>
+          {/* between 3 and 4: the needle never rests there (13 is at 1, 5.5 near 6) and its tail stays nearer the hub */}
+          <text x={C + 39} y={C + 6} textAnchor="middle" fontFamily="var(--mono)" fontSize="9" letterSpacing=".5" fill="var(--muted)"><tspan x={C + 39}>×1000</tspan><tspan x={C + 39} dy="11">FT</tspan></text>
           <g className="pose" style={{ transformOrigin: `${C}px ${C}px`, transform: `rotate(${ang(r.value)}deg)` }}>
             <path d={`M${C - 4} ${C + 18} L${C - 2.2} ${C} L${C} 26 L${C + 2.2} ${C} L${C + 4} ${C + 18} Z`} fill="var(--ink)" />
           </g>
@@ -248,6 +250,14 @@ export function Pattern({ rows }: { rows: AltRow[] }) {
 }
 
 /* ---------- low turn: side view ---------- */
+/** A right-aligned mono label (10 px, about 6 units a letter) that breaks onto two lines when it would run past the drawing's left edge. */
+function EndLabel({ x, y, fill, s }: { x: number; y: number; fill: string; s: string }) {
+  if (s.length * 6 <= x - 4) return <text x={x} y={y} textAnchor="end" fill={fill}>{s}</text>;
+  const w = s.split(' '); let k = 1;
+  while (k < w.length - 1 && w.slice(0, k + 1).join(' ').length <= s.length / 2) k++;
+  return <text x={x} y={y - 6} textAnchor="end" fill={fill}><tspan x={x}>{w.slice(0, k).join(' ')}</tspan><tspan x={x} dy="12">{w.slice(k).join(' ')}</tspan></text>;
+}
+
 export function LowTurn({ b }: { b: Extract<Block, { type: 'lowturn' }> }) {
   const { t } = useLang();
   return (
@@ -261,8 +271,8 @@ export function LowTurn({ b }: { b: Extract<Block, { type: 'lowturn' }> }) {
           <path d="M150 186 l-8 -12 l10 4 l2 -12 l6 10 l10 -6 l-4 12 z" fill="var(--red)" />
           <circle cx="110" cy="92" r="6" fill="var(--red)" />
           <g fontFamily="var(--mono)" fontSize="10">
-            <text x="100" y="112" textAnchor="end" fill="var(--red)">{t({ en: 'turn starts low', es: 'el giro empieza bajo', ru: 'поворот низко', uk: 'поворот низько' })}</text>
-            <text x="112" y="176" textAnchor="end" fill="var(--red)">{t({ en: 'dives, speeds up', es: 'se clava, acelera', ru: 'ныряет, разгоняется', uk: 'пірнає, розганяється' })}</text>
+            <EndLabel x={100} y={112} fill="var(--red)" s={t({ en: 'turn starts low', es: 'el giro empieza bajo', ru: 'поворот низко', uk: 'поворот низько' })} />
+            <EndLabel x={112} y={172} fill="var(--red)" s={t({ en: 'dives, speeds up', es: 'se clava, acelera', ru: 'ныряет, разгоняется', uk: 'пірнає, розганяється' })} />
             <text x="312" y="203" textAnchor="end" fill="var(--ink)">{t({ en: 'straight: glide, flare', es: 'recto: planeo, flare', ru: 'прямо: скольжение, flare', uk: 'прямо: ковзання, flare' })}</text>
             <text x="12" y="202" fill="var(--muted)">{t(ui.sideView)}</text>
           </g>
@@ -325,11 +335,25 @@ export function CanopyDrawing({ state }: { state: 'none' | 'spin' | 'twist' | 'g
 
 
 /* ---------- the rig, back and front: tap a part, it lights up ---------- */
+/** A real photo of each part (frames from public gear-check videos; docs/research/real-footage.md). */
+const RIG_PHOTO: Partial<Record<RigPartId, { yt: string; t: number; credit: string; cap: L }>> = {
+  reserve: { yt: 'LQZhlBAsWgE', t: 99, credit: 'Matt Walker', cap: { en: 'The reserve: top of the container, its pin in the clear window', es: 'La reserva: arriba del contenedor, su pasador en la ventana', uk: 'Запасний: верх ранця, його шпилька у віконці', ru: 'Запасной: верх ранца, его шпилька в окошке' } },
+  main: { yt: 'LQZhlBAsWgE', t: 84, credit: 'Matt Walker', cap: { en: 'The main: bottom of the container, closed', es: 'La principal: abajo del contenedor, cerrada', uk: 'Основний: низ ранця, закритий', ru: 'Основной: низ ранца, закрыт' } },
+  pc: { yt: 'DaQIlD_xZZk', t: 214, credit: 'Skydive Fundamentals', cap: { en: 'The pilot chute handle in its pouch at the bottom corner', es: 'La manija del extractor en su bolsillo, abajo en la esquina', uk: 'Ручка витяжного в кишені внизу, з краю', ru: 'Ручка вытяжного в кармане внизу, с краю' } },
+  aad: { yt: 'LQZhlBAsWgE', t: 13, credit: 'Matt Walker', cap: { en: 'The AAD control unit (CYPRES): display and button', es: 'La unidad de control del AAD (CYPRES): pantalla y botón', uk: 'Блок керування AAD (CYPRES): екран і кнопка', ru: 'Блок управления AAD (CYPRES): экран и кнопка' } },
+  cutaway: { yt: 'LQZhlBAsWgE', t: 170, credit: 'Matt Walker', cap: { en: 'The red cutaway handle, pulled a little to show its cables', es: 'La manija roja de liberación, un poco fuera para ver los cables', uk: 'Червона подушка відчеплення, трохи витягнута, видно троси', ru: 'Красная подушка отцепки, чуть вытянута, видны тросики' } },
+  silver: { yt: 'LQZhlBAsWgE', t: 297, credit: 'Matt Walker', cap: { en: 'The reserve handle: a metal D-ring on the left chest', es: 'La manija de reserva: un anillo metálico a la izquierda del pecho', uk: 'Ручка запасного: металеве кільце зліва на грудях', ru: 'Ручка запасного: металлическое кольцо слева на груди' } },
+  rings: { yt: 'LQZhlBAsWgE', t: 160, credit: 'Matt Walker', cap: { en: 'The three-ring release on the shoulder: big, middle, little ring', es: 'Los tres anillos en el hombro: grande, mediano, pequeño', uk: 'Три кільця на плечі: велике, середнє, мале', ru: 'Три кольца на плече: большое, среднее, малое' } },
+  straps: { yt: 'LQZhlBAsWgE', t: 300, credit: 'Matt Walker', cap: { en: 'The leg strap loops (rig lying face up)', es: 'Las perneras (el equipo boca arriba)', uk: 'Ножні обхвати (система лежить лицем догори)', ru: 'Ножные обхваты (система лежит лицом вверх)' } },
+};
+
 export function Rig({ parts }: { parts: RigPart[] }) {
   const { t } = useLang();
+  const open = useOpenVideo();
   const [i, setI] = useState(0);
   const on = parts[i].id;
   const rp = (id: RigPartId) => `rp ${id === on ? 'on' : ''}`;
+  const photo = RIG_PHOTO[on];
   return (
     <div className="split">
       <div className="stage sticky rig">
@@ -376,6 +400,12 @@ export function Rig({ parts }: { parts: RigPart[] }) {
           </g>
         </svg>
         <div className="cap"><Rich s={parts[i].name} /></div>
+        {photo && (
+          <figure className="rig-photo">
+            <img src={`media/rig_${on}.jpg`} alt={t(photo.cap)} width={640} height={480} decoding="async" />
+            <figcaption>{t(photo.cap)} · <button type="button" className="src-link" onClick={() => open({ yt: photo.yt, t: photo.t, title: t(parts[i].name) })}>▶ {photo.credit}</button></figcaption>
+          </figure>
+        )}
       </div>
       <div><StepList steps={parts.map(p => ({ title: p.name, sub: p.text }))} on={i} onPick={setI} /></div>
     </div>

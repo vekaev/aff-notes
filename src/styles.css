@@ -642,7 +642,15 @@ h4 { margin: var(--s8) 0 var(--s3); font-size: 17px; }
   .cards.wide .card .body { padding: var(--s5); }
   /* cards that hold a list read badly two to a row on a phone */
   .blocks .rules:has(.pts) { grid-template-columns: minmax(0, 1fr); }
+  /* two cards to a row: icon above the title, so the title gets the card's full width (no one-word lines in RU/UK) */
+  .blocks .rules:not(:has(.pts)) .rule .rh:has(.ico) { flex-direction: column; align-items: flex-start; gap: var(--s2); }
 }
+
+/* four cards to a row on a wide screen: same icon-above-title stack, the title would wrap word by word beside the icon */
+.blocks .rules:has(> :nth-child(4):last-child):not(:has(.pts)) .rule .rh:has(.ico) { flex-direction: column; align-items: flex-start; gap: var(--s2); }
+
+/* four cards that hold lists: two to a row, four list columns read two or three words a line */
+.blocks .rules:has(.pts):has(> :nth-child(4):last-child) { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
 
 /* emergency numbers: their own red row under the tape, so they never read as part of the landing plan */
 .emerg { display: grid; gap: var(--s2); }
@@ -692,3 +700,10 @@ a.pill:hover { filter: brightness(1.1); }
 .timer.red .big .u { color: inherit; opacity: .75; }
 .numbers .nh small { display: block; font-weight: 500; color: var(--muted); margin-top: 2px; }
 .tape .lbl, .timer .lbl { hyphens: none; }
+
+/* rig: the real part under the drawing */
+.rig-photo { margin: var(--s3) 0 0; }
+.rig-photo img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: calc(var(--r) - 4px); background: var(--soft); }
+.rig-photo figcaption { font-size: 14px; color: var(--muted); margin-top: var(--s2); line-height: 1.45; }
+.rig-photo .src-link { border: 0; background: none; padding: 0; font: inherit; color: inherit; text-decoration: underline; text-decoration-color: var(--line-strong); cursor: pointer; }
+@media (max-width: 760px) { .rig.sticky { position: static; } }

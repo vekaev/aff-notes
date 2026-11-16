@@ -49,12 +49,19 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       ("how to do the emergency procedure →"); FIX explains "two tries only, keep checking altitude, not fixed by 2,500 → EP".
       Make "two tries + watch altitude" stand out in the malfunctions chapter.
 - [x] Numbers block: say what the numbers are (feet above the ground), "ft" next to each altitude, no word breaks.
-- [~] Know your rig: a real photo for each of the 8 parts (reserve, main, pilot chute handle, AAD, red handle, silver
+- [x] Know your rig: a real photo for each of the 8 parts (reserve, main, pilot chute handle, AAD, red handle, silver
       handle, three rings, straps), shown next to the drawing when the part is picked.
 - [x] Re-check every owner message of this whole chat (before and after the summary) against this inbox; add what's
       missing; result in docs/review/owner-asks-audit.md.
 - [x] Rule: every owner message is first split into tasks / subtasks / questions, written here, and the reply points to
       these lines (CLAUDE.md + ~/agent-tools/rules/working.md).
+- [~] Final check at the end of the app: a "test yourself on everything" button (mixed decision-style questions from all
+      chapters), a list of open self-answers to show an instructor, and "practise with your AI": one button copies a
+      ready prompt (all key facts + quiz instructions) to paste into ChatGPT / Claude / any assistant (2026-11-16).
+- [~] A reusable team for learning any new skill or certificate (diving, pilot, driving, drift…): research (Reddit,
+      YouTube, pros, official manuals), a study app like this one, expert fact-check, curriculum review, page guard,
+      notes capture, final exam + AI-tutor prompt, then reinforcement after the course. Skill `/study` in agent-tools,
+      mission: knowledge that can save a life (2026-11-16).
 - [?] Big reorder (Part IV "act now" first, statistics and real cases in their own part, EP button in the header): ask.
 
 Added by the owner-asks audit (docs/review/owner-asks-audit.md):
