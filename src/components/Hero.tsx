@@ -19,7 +19,7 @@ export function useTrackLastChapter() {
 }
 
 const T = {
-  eyebrow: h('AFF level 1 · study notes', 'AFF nivel 1 · apuntes', 'AFF уровень 1 · конспект', 'AFF рівень 1 · конспект'),
+  eyebrow: h('AFF category A · study notes', 'AFF categoría A · apuntes', 'AFF категория A · конспект', 'AFF категорія A · конспект'),
   title: h('Your first jump, step by step', 'Tu primer salto, paso a paso', 'Твой первый прыжок, шаг за шагом', 'Твій перший стрибок, крок за кроком'),
   sub: h('From the plane door to the landing: what to do, the numbers to remember, and what to do if something goes wrong. Real videos and a short test after each chapter.', 'De la puerta del avión al aterrizaje: qué hacer, las cifras que hay que recordar y qué hacer si algo sale mal. Vídeos reales y una prueba corta tras cada capítulo.', 'От двери самолёта до приземления: что делать, какие цифры помнить и что делать, если что-то пошло не так. Настоящие видео и короткий тест после каждой главы.', 'Від дверей літака до приземлення: що робити, які цифри пам’ятати і що робити, якщо щось пішло не так. Справжні відео та короткий тест після кожного розділу.'),
   start: h('Start reading', 'Empezar a leer', 'Начать читать', 'Почати читати'),
@@ -58,7 +58,7 @@ const TIMERS: { big: string; label: L; to: string }[] = [
  * On first view the path draws itself and a small jumper flies it once: freefall, the canopy opens,
  * the pattern, the landing. "Replay" runs it again. Nothing moves with reduced motion.
  */
-const FLIGHT = 'M182 58 C 222 62, 276 104, 302 156 C 400 188, 520 206, 640 210 L 850 210 L 850 244 L 938 264';
+const FLIGHT = 'M182 58 C 222 62, 276 104, 302 156 C 400 188, 560 210, 700 226 L 850 246 L 938 264';
 function JumpPicture() {
   const { t } = useLang();
   const [run, setRun] = useState(0);
@@ -67,8 +67,9 @@ function JumpPicture() {
     <a href={`#${id}`} className="stop" style={{ ['--c' as string]: color }}>
       <circle cx={x} cy={y} r="15" />
       <text x={x} y={y + 5} textAnchor="middle" className="n">{n}</text>
-      <text x={anchor === 'start' ? x + 24 : x - 24} y={y - 1} textAnchor={anchor} className="lb">{t(label)}</text>
-      <text x={anchor === 'start' ? x + 24 : x - 24} y={y + 16} textAnchor={anchor} className="al">{typeof sub === 'string' ? sub : t(sub)}</text>
+      {/* with a second line the pair is centred on the circle; alone, the title sits on its centre line */}
+      <text x={anchor === 'start' ? x + 24 : x - 24} y={sub ? y - 1 : y + 1} dominantBaseline={sub ? undefined : "central"} textAnchor={anchor} className="lb">{t(label)}</text>
+      {sub && <text x={anchor === 'start' ? x + 24 : x - 24} y={y + 16} textAnchor={anchor} className="al">{typeof sub === 'string' ? sub : t(sub)}</text>}
     </a>
   );
   return (
@@ -99,7 +100,7 @@ function JumpPicture() {
         </g>
         {/* the path */}
         <path d="M182 58 C 222 62, 276 104, 302 156" className="ff" />
-        <path d="M302 156 C 400 188, 520 206, 640 210 L 850 210 L 850 244 L 938 264" className="glide" pathLength={1} />
+        <path d="M302 156 C 400 188, 560 210, 700 226 L 850 246 L 938 264" className="glide" pathLength={1} />
         {/* emergency branch: reserve under a red canopy, decide by 2,500 */}
         <path d="M302 160 L 330 200" className="ep-branch" />
         <g className="reserve"><path d="M318 202 Q334 190 350 202 Q334 198 318 202 Z" /><path d="M321 202 L332 214 M347 202 L336 214" /></g>
@@ -148,7 +149,7 @@ export function Hero() {
     <div className="gutter"><div className="col hero">
       <div className="eyebrow">{t(T.eyebrow)}</div>
       <h1>{t(T.title)}.</h1>
-      <p>{t(T.sub)} <Rich s={{ en: '<q-check/> = confirm with them.', es: '<q-check/> = confírmalo con ellos.', ru: '<q-check/> — уточнить у них.', uk: '<q-check/> — уточнити в них.' }} /></p>
+      <p>{t(T.sub)} <Rich s={{ en: '<q-check/> = confirm with your instructors: their briefing always wins over this page.', es: '<q-check/> = confírmalo con tus instructores: su briefing siempre manda sobre esta página.', ru: '<q-check/> — уточнить у инструкторов: их брифинг всегда важнее этой страницы.', uk: '<q-check/> — уточнити в інструкторів: їхній брифінг завжди важливіший за цю сторінку.' }} /></p>
 
     </div>
       <JumpPicture />

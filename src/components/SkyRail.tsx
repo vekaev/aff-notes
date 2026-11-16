@@ -28,10 +28,10 @@ function useRail(jumper: React.RefObject<HTMLDivElement | null>, altEl: React.Re
         const track = (el.parentElement?.clientHeight ?? 0) - el.offsetHeight - 22;
         el.style.transform = `translate3d(0, ${Math.max(0, p * track)}px, 0)`;
       }
-      if (altEl.current) altEl.current.textContent = Math.max(0, Math.round(((1 - p) * 13000) / 100) * 100).toLocaleString('en-US');
       let part = 'top';
       const mid = scrollY + innerHeight * 0.5;
       for (const x of parts) if (x.top < mid) part = x.id;
+      if (altEl.current) altEl.current.textContent = (Math.round(altitudeAt(mid, parts) / 100) * 100).toLocaleString('en-US');
       const landed = p > 0.985;
       set(prev => (prev.part === part && prev.landed === landed ? prev : { part, landed }));
     };
@@ -43,6 +43,25 @@ function useRail(jumper: React.RefObject<HTMLDivElement | null>, altEl: React.Re
     return () => { ro.disconnect(); removeEventListener('scroll', on); removeEventListener('resize', onResize); cancelAnimationFrame(raf); };
   }, [jumper, altEl]);
   return state;
+}
+
+/**
+ * The altitude the reader is "at", by chapter rather than by page length: the plane climbs through Part I
+ * (0 → 13,000), freefall runs 13,000 → 5,500 through Part II, the canopy 5,500 → 0 through Part III, the reserve
+ * ride again 5,500 → 0 through Part IV, and Part V is on the ground.
+ */
+const SPANS: Record<string, [number, number]> = { top: [0, 0], part1: [0, 13000], part2: [13000, 5500], part3: [5500, 0], part4: [5500, 0], dz: [0, 0] };
+function altitudeAt(y: number, parts: { id: string; top: number }[]): number {
+  const all = [{ id: 'top', top: 0 }, ...parts, { id: 'end', top: document.documentElement.scrollHeight }];
+  for (let k = 0; k < all.length - 1; k++) {
+    const a = all[k], b = all[k + 1];
+    if (y < b.top || k === all.length - 2) {
+      const [from, to] = SPANS[a.id] ?? [0, 0];
+      const f = Math.min(1, Math.max(0, (y - a.top) / Math.max(1, b.top - a.top)));
+      return from + (to - from) * f;
+    }
+  }
+  return 0;
 }
 
 function poseFor(part: string, landed: boolean): Pose {

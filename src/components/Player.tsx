@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from 'react';
 import { useLang } from '../i18n';
 import { ui } from '../ui';
+import { NO_EMBED } from '../content/noembed';
 
 // One in-page player for every "watch the original" link: opens the YouTube video right here,
 // already at the right second, instead of sending you to another tab.
@@ -10,7 +11,12 @@ export const useOpenVideo = () => useContext(Ctx);
 
 export function PlayerProvider({ children }: { children: ReactNode }) {
   const [req, setReq] = useState<Req | null>(null);
-  const open = useCallback((r: Req) => setReq(r), []);
+  // Some uploaders allow playing only on YouTube itself (scripts/check-embeds.mjs lists them): open those there
+  // right away instead of showing YouTube's "Video unavailable" box.
+  const open = useCallback((r: Req) => {
+    if (NO_EMBED.has(r.yt)) { window.open(`https://www.youtube.com/watch?v=${r.yt}&t=${r.t}s`, '_blank', 'noopener'); return; }
+    setReq(r);
+  }, []);
   return <Ctx.Provider value={open}>{children}{req && <PlayerDialog req={req} onClose={() => setReq(null)} />}</Ctx.Provider>;
 }
 
@@ -29,6 +35,10 @@ function PlayerDialog({ req, onClose }: { req: Req; onClose: () => void }) {
         </div>
         <div className="player-frame">
           <iframe src={src} title={req.title} allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowFullScreen />
+        </div>
+        <div className="player-foot">
+          <span>{t(ui.notPlaying)}</span>
+          <a className="btn primary" href={`https://www.youtube.com/watch?v=${req.yt}&t=${req.t}s`} target="_blank" rel="noopener">{t(ui.openYoutube)} ↗</a>
         </div>
       </div>
     </dialog>

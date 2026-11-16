@@ -676,3 +676,7 @@ h4 { margin: var(--s8) 0 var(--s3); font-size: 17px; }
 .alt-legend li { display: inline-flex; align-items: center; gap: 6px; }
 .alt-legend i { width: 12px; height: 4px; border-radius: 2px; display: inline-block; }
 .alt-legend i.arc { background: var(--red); opacity: .55; }
+
+/* player: a clear way out when the uploader allows YouTube only */
+.player-foot { display: flex; align-items: center; justify-content: space-between; gap: var(--s3); flex-wrap: wrap; padding: var(--s3) var(--s4); background: var(--card); color: var(--muted); font-size: 14px; }
+.player-foot .btn { flex: none; display: inline-flex; align-items: center; text-decoration: none; }

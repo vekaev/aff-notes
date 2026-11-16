@@ -186,6 +186,7 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
   const L = {
     lock: { en: 'lock on', es: 'lock on', uk: 'lock on', ru: 'lock on' },
     pull: { en: 'pull', es: 'abrir', uk: 'розкриття', ru: 'раскрытие' },
+    dir: { en: 'one turn = 12,000 ft; falling, the needle turns counterclockwise', es: 'una vuelta = 12,000 ft; al caer, la aguja gira en sentido antihorario', uk: 'один оберт = 12 000 футів; коли падаєш, стрілка йде проти годинникової', ru: 'один оборот = 12 000 футов; при падении стрелка идёт против часовой' },
     low: { en: 'colour on real dials starts low (check yours)', es: 'en los altímetros reales el color empieza abajo (mira el tuyo)', uk: 'на справжніх висотомірах колір лише внизу (подивись на свій)', ru: 'на настоящих высотомерах цвет только внизу (посмотри на свой)' },
   };
   return (
@@ -209,6 +210,7 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
           <li><i style={{ background: 'var(--acc-canopy)' }} />6,000 · {t(L.lock)}</li>
           <li><i style={{ background: 'var(--red)' }} />5,500 · {t(L.pull)}</li>
           <li><i className="arc" />{t(L.low)}</li>
+          <li className="dir">↺ {t(L.dir)}</li>
         </ul>
       </div>
     </div>
@@ -235,7 +237,7 @@ export function Pattern({ rows }: { rows: AltRow[] }) {
           <text x="278" y="16" textAnchor="middle" fontFamily="var(--mono)" fontSize="10" fill="var(--muted)">{t(ui.wind)}</text>
           <path d="M262 38 L262 54 L232 46 Z" fill="none" stroke="var(--ink)" strokeWidth="2" />
           <circle cx="275" cy="205" r="22" fill="none" stroke="var(--faint)" strokeWidth="1.5" strokeDasharray="4 4" />
-          <path id="patPath" d="M275 183 A22 22 0 1 1 275 227 A22 22 0 1 1 275 183 L250 200 L60 200 L60 70 L186 70" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" markerEnd="url(#arrP)" />
+          <path id="patPath" d="M298 186 C 252 178, 248 198, 280 198 C 308 198, 304 218, 272 216 C 254 215, 250 207, 250 200 L60 200 L60 70 L186 70" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" markerEnd="url(#arrP)" />
           <path d="M194 62 L210 78 M210 62 L194 78" stroke="var(--ok)" strokeWidth="4" />
           <g fontFamily="var(--mono)" fontSize="11" fill="var(--ink)"><text x="226" y="228">900</text><text x="72" y="228">600</text><text x="72" y="100">300</text><text x="148" y="56">10 ft</text></g>
           {!reduce && <circle r="7" fill="var(--red)" stroke="var(--paper)" strokeWidth="2"><animateMotion dur="14s" repeatCount="indefinite"><mpath href="#patPath" /></animateMotion></circle>}

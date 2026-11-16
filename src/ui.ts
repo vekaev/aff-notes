@@ -32,6 +32,7 @@ export const ui = {
   allRight: { en: 'All right. Chapter passed.', es: 'Todo correcto. Capítulo aprobado.', ru: 'Всё верно. Глава сдана.', uk: 'Усе правильно. Розділ складено.' },
   someWrong: { en: 'Read the chapter again and retry. All answers right passes it.', es: 'Vuelve a leer el capítulo y repite. Con todo correcto, lo apruebas.', ru: 'Перечитай главу и попробуй ещё раз. Всё верно — глава сдана.', uk: 'Перечитай розділ і спробуй ще раз. Усе правильно — розділ складено.' },
   close: { en: 'Close', es: 'Cerrar', ru: 'Закрыть', uk: 'Закрити' },
+  notPlaying: { en: 'Doesn\'t play here? Some videos play only on YouTube.', es: '¿No se reproduce aquí? Algunos vídeos solo se ven en YouTube.', uk: 'Не відтворюється тут? Деякі відео працюють лише на YouTube.', ru: 'Не играет здесь? Некоторые видео работают только на YouTube.' },
   openYoutube: { en: 'Open on YouTube', es: 'Abrir en YouTube', ru: 'Открыть на YouTube', uk: 'Відкрити на YouTube' },
   footer: {
     en: 'Study notes for personal use, not instruction. Clips are short excerpts from public tutorials; each links to its original.',
