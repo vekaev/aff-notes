@@ -25,10 +25,10 @@ export const part3: Part = {
                 {
                   title: l('Pull at 5,500 ft', 'Abre a 5,500 ft', 'Раскрытие на 5 500 футах', 'Розкриття на 5 500 футах'),
                   sub: l(
-                    "Right hand to the <b>pilot chute handle</b> (the little “ball” at the bottom of the container, right side). Pull it out and <b>throw it</b>.",
-                    "Mano derecha a la <b>manija del extractor</b> (la “pelotita” en la parte de abajo del contenedor, lado derecho). Sácalo y <b>lánzalo</b>.",
-                    "Правая рука — на <b>ручку вытяжного парашюта</b> («шарик» внизу ранца справа). Вытащить и <b>выбросить</b>.",
-                    "Права рука — на <b>ручку витяжного парашута</b> («кулька» внизу ранця справа). Витягни його і <b>викинь</b>.",
+                    "Right hand to the <b>pilot chute handle</b> (the little “ball” at the bottom of the container, right side). Pull it out and <b>throw it</b> to the side at arm's length, then back to the arch while you count.",
+                    "Mano derecha a la <b>manija del extractor</b> (la “pelotita” en la parte de abajo del contenedor, lado derecho). Sácalo y <b>lánzalo</b> hacia el costado con el brazo estirado, y vuelve al arco mientras cuentas.",
+                    "Правая рука — на <b>ручку вытяжного парашюта</b> («шарик» внизу ранца справа). Вытащить и <b>выбросить</b> в сторону на вытянутой руке, потом снова прогиб и счёт.",
+                    "Права рука — на <b>ручку витяжного парашута</b> («кулька» внизу ранця справа). Витягни його і <b>викинь</b> убік на витягнутій руці, потім знову прогин і рахунок.",
                   ),
                 },
                 {
@@ -47,6 +47,15 @@ export const part3: Part = {
                     '<b>Está, cuadrada, estable, gobernable.</b>',
                     '<b>Есть, квадратный, стабильный, управляемый.</b>',
                     '<b>Є, квадратний, стабільний, керований.</b>',
+                  ),
+                },
+                {
+                  title: l('Then look around', 'Luego mira alrededor', 'Потом осмотрись', 'Потім роззирнися'),
+                  sub: l(
+                    'Check your <b>altitude</b>, look for <b>other canopies</b>, find the <b>holding point</b>.',
+                    'Mira la <b>altura</b>, busca <b>otras velas</b> y encuentra el <b>punto de espera</b>.',
+                    'Проверь <b>высоту</b>, найди глазами <b>другие купола</b> и <b>точку ожидания</b>.',
+                    'Перевір <b>висоту</b>, знайди очима <b>інші куполи</b> і <b>точку очікування</b>.',
                   ),
                 },
               ],
@@ -89,8 +98,8 @@ export const part3: Part = {
               text: l(
                 'Go to <a href="#ep">Part IV</a>. Decide by the decision altitude, <b>2,500 ft</b>.',
                 'Ve a la <a href="#ep">Parte IV</a>. Decide antes de la altura de decisión, <b>2,500 ft</b>.',
-                'Переходи к <a href="#ep">части IV</a>. Решить нужно до высоты принятия решения — <b>2 500 футов</b>.',
-                'Переходь до <a href="#ep">частини IV</a>. Вирішити треба до висоти ухвалення рішення — <b>2 500 футів</b>.',
+                'Переходи к <a href="#ep">части IV</a>. Решение — до <b>2 500 футов</b> (высота принятия решения).',
+                'Переходь до <a href="#ep">частини IV</a>. Рішення — до <b>2 500 футів</b> (висота ухвалення рішення).',
               ),
             },
           ],
@@ -98,19 +107,11 @@ export const part3: Part = {
             {
               type: 'clips',
               items: [
-                clip('deploy', l('Lock on, wave off, reach, throw', 'Altímetro, wave-off, buscar, lanzar', 'Высотомер, отмашка, дотянуться, выбросить', 'Висотомір, відмашка, дотягнутися, викинути'), 'Skydive Spaceland', 'ufz1HjyYs_0', 146),
+                clip('deploy', l('Lock on, wave off, reach, throw (their altimeter, not your pull altitude)', 'Altímetro, wave-off, buscar, lanzar (su altímetro, no tu altura de apertura)', 'Высотомер, отмашка, дотянуться, выбросить (их высотомер, не твоя высота раскрытия)', 'Висотомір, відмашка, дотягнутися, викинути (їхній висотомір, не твоя висота розкриття)'), 'Skydive Spaceland', 'ufz1HjyYs_0', 146),
                 clip('throw', l('Locate, grip, throw, arch, count', 'Localizar, agarrar, lanzar, arquear, contar', 'Найти, взять, выбросить, прогиб, счёт', 'Знайти, взяти, викинути, прогин, рахунок'), 'APF', 'PTYsjH7DSVA', 124),
                 clip('check', l('Canopy check: shape, slider, toggles, practice flares', 'Revisión de la vela: forma, slider, batidores, flares de práctica', 'Проверка купола: форма, слайдер, клеванты, пробные flare', 'Перевірка купола: форма, слайдер, клеванти, пробні flare'), 'APF', 'PTYsjH7DSVA', 154),
               ],
             },
-          ],
-        },
-        {
-          type: 'watch',
-          items: [
-            { yt: 'ufz1HjyYs_0', t: 146, label: l('Lock on, wave off, throw', 'Altímetro, wave-off, lanzar', 'Высотомер, отмашка, выброс', 'Висотомір, відмашка, викид'), credit: 'Skydive Spaceland' },
-            { yt: 'PTYsjH7DSVA', t: 124, label: l('Locate, grip, throw, count', 'Localizar, agarrar, lanzar, contar', 'Найти, взять, выбросить, считать', 'Знайти, взяти, викинути, рахувати'), credit: 'APF' },
-            { yt: 'PTYsjH7DSVA', t: 154, label: l('Canopy check and practice flares', 'Revisión de la vela y flares de práctica', 'Проверка купола и пробные flare', 'Перевірка купола й пробні flare'), credit: 'APF' },
           ],
         },
         {
@@ -126,7 +127,7 @@ export const part3: Part = {
               options: [
                 l('Right away, as soon as you feel the tug', 'Enseguida, en cuanto sientes el tirón', 'Сразу, как только почувствовал рывок', 'Одразу, щойно відчув ривок'),
                 l('After counting about 5 seconds', 'Después de contar unos 5 segundos', 'После счёта примерно 5 секунд', 'Після рахунку приблизно 5 секунд'),
-                l('After landing', 'Después de aterrizar', 'После приземления', 'Після приземлення'),
+                l('Only once you are down to 2,500 ft', 'Solo cuando bajas a 2,500 ft', 'Только когда снизишься до 2 500 футов', 'Лише коли знизишся до 2 500 футів'),
               ],
               answer: 1,
               why: l(
@@ -164,9 +165,9 @@ export const part3: Part = {
                 'Одна відповідь під час перевірки — «ні». До якої висоти треба вирішити?',
               ),
               options: [
-                l('By 1,000 ft', 'Antes de 1,000 ft', 'До 1 000 футов', 'До 1 000 футів'),
-                l('By 2,500 ft, the decision altitude', 'Antes de 2,500 ft, la altura de decisión', 'До 2 500 футов — высоты принятия решения', 'До 2 500 футів — висоти ухвалення рішення'),
-                l('By 300 ft', 'Antes de 300 ft', 'До 300 футов', 'До 300 футів'),
+                l('By 1,000 ft, before the pattern', 'Antes de 1,000 ft, antes del circuito', 'До 1 000 футов, до входа в схему', 'До 1 000 футів, до входу в схему'),
+                l('By 2,500 ft, the decision altitude', 'Antes de 2,500 ft, la altura de decisión', 'До 2 500 футов, высоты решения', 'До 2 500 футів, висоти рішення'),
+                l('By 300 ft, before final', 'Antes de 300 ft, antes del final', 'До 300 футов, до финала', 'До 300 футів, до фіналу'),
               ],
               answer: 1,
               why: l(
@@ -190,10 +191,10 @@ export const part3: Part = {
           type: 'list',
           items: [
             l(
-              'Drawn as on our <b>ground-school test</b>. Altitudes in feet.',
-              'Dibujado como en nuestro <b>examen del curso en tierra</b>. Alturas en pies.',
-              'Нарисовано как в нашем <b>тесте наземной подготовки</b>. Высоты в футах.',
-              'Намальовано як у нашому <b>тесті наземної підготовки</b>. Висоти у футах.',
+              'Drawn as on a typical <b>ground-school test</b>. Altitudes in feet.',
+              'Dibujado como en un <b>examen típico del curso en tierra</b>. Alturas en pies.',
+              'Нарисовано как в типичном <b>тесте наземной подготовки</b>. Высоты в футах.',
+              'Намальовано як у типовому <b>тесті наземної підготовки</b>. Висоти у футах.',
             ),
             l(
               'Final always points <b>into the wind</b>, so the whole pattern turns with it.',
@@ -208,10 +209,10 @@ export const part3: Part = {
               'Дивимося на <b>колдун</b> (вітровказівник) до посадки в літак.',
             ),
             l(
-              'At our dropzone the wind is usually <b>from the north</b>.',
-              'En nuestra zona de salto el viento suele venir <b>del norte</b>.',
-              'У нас на аэродроме ветер обычно <b>с севера</b>.',
-              'У нас на аеродромі вітер зазвичай <b>з півночі</b>.',
+              'The wind changes by dropzone and by day: <b>check the windsock</b> before you board. The map below is drawn with the wind from the right, not to scale.',
+              'El viento cambia según la zona de salto y el día: <b>mira la manga de viento</b> antes de subir. El mapa de abajo tiene el viento desde la derecha y no está a escala.',
+              'Ветер зависит от площадки и дня: <b>посмотри на ветроуказатель</b> перед посадкой в самолёт. На карте ниже ветер дует справа, масштаб не соблюдён.',
+              'Вітер залежить від майданчика і дня: <b>подивись на вітровказівник</b> перед посадкою в літак. На карті нижче вітер дме справа, масштаб не дотримано.',
             ),
           ],
         },
@@ -224,10 +225,10 @@ export const part3: Part = {
               point: [275, 205],
               title: l('Decide where to go', 'Decide adónde ir', 'Решаем, куда лететь', 'Вирішуємо, куди летіти'),
               sub: l(
-                "Can you reach the <b>holding point</b>? <b>Left or right</b> pattern for today's wind? A canopy decision, not the emergency one.",
-                '¿Llegas al <b>punto de espera</b>? ¿Circuito por la <b>izquierda o derecha</b> con el viento de hoy? Decisión de vuelo, no la de emergencia.',
-                'Долетаю ли до <b>точки ожидания</b>? <b>Левая или правая</b> схема при сегодняшнем ветре? Решение по полёту, а не аварийное.',
-                'Чи долітаю до <b>точки очікування</b>? <b>Ліва чи права</b> схема при сьогоднішньому вітрі? Рішення щодо польоту, а не аварійне.',
+                "Can you reach the <b>holding point</b>? Which side is the pattern on today: <b>left-hand</b> (turns to the left) or <b>right-hand</b> (turns to the right)? The side is chosen so final points into the wind and away from obstacles; the dropzone decides. <q-check/> Why now: there is still height to change the plan.",
+                '¿Llegas al <b>punto de espera</b>? ¿De qué lado va hoy el circuito: <b>por la izquierda</b> (giros a la izquierda) o <b>por la derecha</b> (giros a la derecha)? El lado se elige para que el final apunte contra el viento y lejos de obstáculos; lo decide la zona de salto. <q-check/> Por qué ahora: todavía hay altura para cambiar el plan.',
+                'Долетаю ли до <b>точки ожидания</b>? С какой стороны сегодня схема: <b>левая</b> (повороты влево) или <b>правая</b> (повороты вправо)? Сторону выбирают так, чтобы финал шёл против ветра и в стороне от препятствий; решает аэродром. <q-check/> Почему сейчас: ещё есть высота, чтобы поменять план.',
+                'Чи долітаю до <b>точки очікування</b>? З якого боку сьогодні схема: <b>ліва</b> (повороти ліворуч) чи <b>права</b> (повороти праворуч)? Бік обирають так, щоб фінал ішов проти вітру й далі від перешкод; вирішує аеродром. <q-check/> Чому зараз: ще є висота, щоб змінити план.',
               ),
             },
             {
@@ -236,10 +237,10 @@ export const part3: Part = {
               point: [275, 205],
               title: l('Over the holding point', 'Sobre el punto de espera', 'Над точкой ожидания', 'Над точкою очікування'),
               sub: l(
-                "The point <b>near the playground</b>. Ask: can I reach the landing area from here? If not, <b>pick a clear field</b> now. <q-check/>",
-                "El punto <b>cerca del parque infantil</b>. Pregúntate: ¿llego a la zona de aterrizaje desde aquí? Si no, <b>elige ahora un campo despejado</b>. <q-check/>",
-                "Точка <b>у детской площадки</b>. Спроси себя: долечу ли отсюда до зоны приземления? Если нет — <b>сразу выбираем свободное поле</b>. <q-check/>",
-                "Точка <b>біля дитячого майданчика</b>. Спитай себе: чи долечу звідси до зони приземлення? Якщо ні — <b>одразу обирай вільне поле</b>. <q-check/>",
+                "The point <b>your instructors showed on the map</b> <q-check/>. Not sure you'll make the landing area? <b>Pick a clear field now</b> (USPA SIM 4-1: by 2,000 ft). Why: there is still time to land somewhere safe.",
+                "El punto <b>que tus instructores marcaron en el mapa</b> <q-check/>. ¿No estás seguro de llegar a la zona de aterrizaje? <b>Elige ya un campo despejado</b> (USPA SIM 4-1: antes de 2,000 ft). Por qué: aún hay tiempo para aterrizar en un sitio seguro.",
+                "Точка, <b>которую инструкторы показали на карте</b> <q-check/>. Не уверен, что долетишь до зоны приземления? <b>Сразу выбери свободное поле</b> (USPA SIM 4-1: до 2 000 футов). Почему: ещё есть время сесть в безопасном месте.",
+                "Точка, <b>яку інструктори показали на карті</b> <q-check/>. Не впевнений, що долетиш до зони приземлення? <b>Одразу обери вільне поле</b> (USPA SIM 4-1: до 2 000 футів). Чому: ще є час сісти в безпечному місці.",
               ),
             },
             {
@@ -248,10 +249,10 @@ export const part3: Part = {
               point: [275, 205],
               title: l('Hold there', 'Espera ahí', 'Ожидание над точкой', 'Очікування над точкою'),
               sub: l(
-                '<b>Circle or S-turns</b> over the point, whatever the wind. Watch the <b>windsock</b> and the <b>other canopies</b>.',
-                'Haz <b>círculos o eses</b> sobre el punto, sea cual sea el viento. Mira la <b>manga de viento</b> y las <b>otras velas</b>.',
-                '<b>Кружим или летаем «змейкой»</b> над точкой при любом ветре. Смотрим на <b>колдун</b> и на <b>другие купола</b>.',
-                '<b>Кружляємо або летимо «змійкою»</b> над точкою за будь-якого вітру. Дивимося на <b>колдун</b> і на <b>інші куполи</b>.',
+                '<b>Circle or S-turns</b> over the point. Watch the <b>windsock</b> and the <b>other canopies</b>. Why: you stay upwind with height to spare, and the traffic stays predictable. At <b>1,000 ft</b> leave the point and fly to the entry.',
+                'Haz <b>círculos o eses</b> sobre el punto. Mira la <b>manga de viento</b> y las <b>otras velas</b>. Por qué: te quedas a barlovento (viento arriba) con altura de sobra y el tráfico es predecible. A <b>1,000 ft</b> deja el punto y vuela a la entrada.',
+                '<b>Кружим или летаем «змейкой»</b> над точкой. Смотрим на <b>колдун</b> и на <b>другие купола</b>. Почему: ты остаёшься с наветренной стороны с запасом высоты, а движение куполов предсказуемо. На <b>1 000 футов</b> уходи с точки к входу в схему.',
+                '<b>Кружляємо або летимо «змійкою»</b> над точкою. Дивимося на <b>колдун</b> і на <b>інші куполи</b>. Чому: ти лишаєшся з навітряного боку із запасом висоти, а рух куполів передбачуваний. На <b>1 000 футів</b> іди з точки до входу в схему.',
               ),
             },
             {
@@ -261,10 +262,10 @@ export const part3: Part = {
               point: [250, 200],
               title: l('Enter the pattern: downwind', 'Entra al circuito: viento en cola', 'Вход в схему: по ветру', 'Вхід у схему: по вітру'),
               sub: l(
-                '<b>Wind at your back</b>, flying alongside the landing area.',
-                '<b>Viento en la espalda</b>, vuelas paralelo a la zona de aterrizaje.',
-                '<b>Ветер в спину</b>, летим вдоль зоны приземления.',
-                '<b>Вітер у спину</b>, летимо вздовж зони приземлення.',
+                '<b>Wind at your back</b>, flying alongside the landing area. Why: you can see the target beside you and judge the wind before you turn.',
+                '<b>Viento en la espalda</b>, vuelas paralelo a la zona de aterrizaje. Por qué: ves el blanco a tu lado y juzgas el viento antes de girar.',
+                '<b>Ветер в спину</b>, летим вдоль зоны приземления. Почему: цель видна сбоку, и ветер можно оценить до поворота.',
+                '<b>Вітер у спину</b>, летимо вздовж зони приземлення. Чому: ціль видно збоку, і вітер можна оцінити до повороту.',
               ),
             },
             {
@@ -272,8 +273,13 @@ export const part3: Part = {
               value: 0.6,
               hot: true,
               point: [60, 200],
-              title: l('Turn 90° onto base', 'Gira 90° a base', 'Поворот 90° на базовую', 'Поворот на 90° на базову'),
-              sub: l('<b>Crosswind</b> leg.', 'Tramo con <b>viento cruzado</b>.', 'Участок <b>поперёк ветра</b>.', 'Ділянка <b>поперек вітру</b>.'),
+              title: l('Turn 90° onto base', 'Gira 90° a base', 'Поворот 90° на базовую прямую', 'Поворот на 90° на базову пряму'),
+              sub: l(
+                '<b>Crosswind</b> leg. Why: room to judge your height and adjust before final.',
+                'Tramo con <b>viento cruzado</b>. Por qué: margen para juzgar la altura y corregir antes del final.',
+                'Участок <b>поперёк ветра</b>. Почему: есть запас, чтобы оценить высоту и поправиться до финала.',
+                'Ділянка <b>поперек вітру</b>. Чому: є запас, щоб оцінити висоту й виправитися до фіналу.',
+              ),
             },
             {
               alt: '300',
@@ -282,10 +288,10 @@ export const part3: Part = {
               point: [60, 70],
               title: l('Turn 90° onto final', 'Gira 90° a final', 'Поворот 90° на финал', 'Поворот на 90° на фінал'),
               sub: l(
-                '<b>Into the wind</b>, toward the target. From here only small flat corrections (<b>≤ 45°</b>).',
-                '<b>Contra el viento</b>, hacia el blanco. Desde aquí solo correcciones pequeñas y planas (<b>≤ 45°</b>).',
-                '<b>Против ветра</b>, на цель. Дальше только небольшие плоские поправки (<b>≤ 45°</b>).',
-                '<b>Проти вітру</b>, на ціль. Далі лише невеликі пласкі поправки (<b>≤ 45°</b>).',
+                '<b>Into the wind</b>, toward the target. From here only small flat corrections (<b>≤ 45°</b>). Why: time to fly straight and level before the flare.',
+                '<b>Contra el viento</b>, hacia el blanco. Desde aquí solo correcciones pequeñas y planas (<b>≤ 45°</b>). Por qué: tiempo para volar recto y nivelado antes del flare.',
+                '<b>Против ветра</b>, на цель. Дальше только небольшие плоские поправки (<b>≤ 45°</b>). Почему: есть время лететь прямо и ровно до flare.',
+                '<b>Проти вітру</b>, на ціль. Далі лише невеликі пласкі поправки (<b>≤ 45°</b>). Чому: є час летіти прямо й рівно до flare.',
               ),
             },
             {
@@ -295,10 +301,10 @@ export const part3: Part = {
               point: [188, 70],
               title: l('Flare', 'Flare', 'Flare', 'Flare'),
               sub: l(
-                '<b>About 3 m</b> off the ground. Smooth, both hands, <b>finished at touchdown</b>, then hold it.',
-                '<b>A unos 3 m</b> del suelo. Suave, con las dos manos, que <b>termine al tocar el suelo</b>, y luego mantenlo.',
-                '<b>Примерно 3 м</b> над землёй. Плавно, обеими руками, <b>закончить к моменту касания</b> и держать.',
-                '<b>Приблизно 3 м</b> над землею. Плавно, обома руками, <b>закінчити в момент торкання</b> і тримати.',
+                '<b>About 3 m</b> off the ground. Smooth, both hands, <b>finished at touchdown</b>, then hold it. Why: it turns the descent into a short level glide.',
+                '<b>A unos 3 m</b> del suelo. Suave, con las dos manos, que <b>termine al tocar el suelo</b>, y luego mantenlo. Por qué: convierte el descenso en un planeo corto y nivelado.',
+                '<b>Примерно 3 м</b> над землёй. Плавно, обеими руками, <b>закончить к моменту касания</b> и держать. Почему: снижение превращается в короткое ровное планирование.',
+                '<b>Приблизно 3 м</b> над землею. Плавно, обома руками, <b>закінчити в момент торкання</b> і тримати. Чому: зниження перетворюється на коротке рівне планування.',
               ),
             },
           ],
@@ -326,21 +332,33 @@ export const part3: Part = {
           type: 'clips',
           items: [
             clip('holding', l('Holding area, explained on a real dropzone', 'La zona de espera, explicada en una zona de salto real', 'Зона ожидания на настоящем аэродроме', 'Зона очікування на справжньому аеродромі'), 'Skydive Spaceland', 'puD56VJ8loA', 84),
-            clip('pattern', l('Flying the pattern: downwind, base, final', 'Volar el circuito: viento en cola, base, final', 'Схема захода: по ветру, базовая, финал', 'Схема заходу: по вітру, базова, фінал'), 'Skydive Spaceland', 'puD56VJ8loA', 110),
-          ],
-        },
-        {
-          type: 'watch',
-          items: [
-            { yt: 'puD56VJ8loA', t: 84, label: l('Landing patterns 101', 'Circuitos de aterrizaje: lo básico', 'Схемы захода: основы', 'Схеми заходу: основи'), credit: 'Skydive Spaceland' },
+            clip('pattern', l('Flying the pattern: downwind, base, final', 'Volar el circuito: viento en cola, base, final', 'Схема захода: по ветру, базовая прямая, финал', 'Схема заходу: по вітру, базова пряма, фінал'), 'Skydive Spaceland', 'puD56VJ8loA', 110),
           ],
         },
         { type: 'h', text: l('Turn limits', 'Límites de giro', 'Ограничения разворотов', 'Обмеження розворотів') },
         {
+          type: 'p',
+          muted: true,
+          text: l(
+            "A dropzone rule, not a USPA one: ask yours for its limits.",
+            'Una regla de la zona de salto, no de USPA: pregunta los límites de la tuya.',
+            'Правило аэродрома, а не USPA: спроси ограничения на своём.',
+            'Правило аеродрому, а не USPA: запитай обмеження на своєму.',
+          ),
+        },
+        {
           type: 'rules',
           items: [
-            { big: '≤ 180°', title: l('Above 1,000 ft', 'Por encima de 1,000 ft', 'Выше 1 000 футов', 'Вище 1 000 футів') },
-            { big: '≤ 90°', title: l('1,000 → 300 ft', '1,000 → 300 ft', '1 000 → 300 футов', '1 000 → 300 футів') },
+            {
+              big: '≤ 180°',
+              title: l('Above 1,000 ft', 'Por encima de 1,000 ft', 'Выше 1 000 футов', 'Вище 1 000 футів'),
+              text: l('Setting up and <b>looking around</b>.', 'Para prepararte y <b>mirar alrededor</b>.', 'Подготовка к заходу, <b>смотрим вокруг</b>.', 'Підготовка до заходу, <b>дивимося довкола</b>.'),
+            },
+            {
+              big: '≤ 90°',
+              title: l('1,000 → 300 ft', '1,000 → 300 ft', '1 000 → 300 футов', '1 000 → 300 футів'),
+              text: l('<b>Pattern turns only</b>: downwind → base → final.', '<b>Solo los giros del circuito</b>: viento en cola → base → final.', '<b>Только повороты схемы</b>: по ветру → базовая → финал.', '<b>Лише повороти схеми</b>: по вітру → базова → фінал.'),
+            },
             {
               big: '≤ 45°',
               tone: 'red',
@@ -348,15 +366,6 @@ export const part3: Part = {
               text: l('<b>Flat turns only</b>, and only to avoid something.', '<b>Solo giros planos</b>, y solo para esquivar algo.', '<b>Только плоские развороты</b> и только чтобы уйти от препятствия.', '<b>Лише пласкі розвороти</b> і лише щоб оминути перешкоду.'),
             },
           ],
-        },
-        {
-          type: 'callout',
-          text: l(
-            'A <b>big turn low</b> is the classic way canopy pilots get hurt: the canopy <b>dives</b> and loses height fast.',
-            'Un <b>giro grande a baja altura</b> es la forma clásica en que los pilotos de vela se lesionan: la vela <b>pica</b> y pierde altura rápido.',
-            '<b>Большой разворот низко</b> над землёй — классическая причина травм: купол <b>ныряет</b> и быстро теряет высоту.',
-            '<b>Великий розворот низько</b> над землею — класична причина травм: купол <b>пірнає</b> і швидко втрачає висоту.',
-          ),
         },
         {
           type: 'h',
@@ -383,12 +392,6 @@ export const part3: Part = {
           ),
           points: [
             l(
-              'Below 300 ft: <b>about 45° max</b>, flat turns only.',
-              'Por debajo de 300 ft: <b>unos 45° como máximo</b>, solo giros planos.',
-              'Ниже 300 футов: <b>не больше примерно 45°</b>, только плоские.',
-              'Нижче 300 футів: <b>не більше ніж приблизно 45°</b>, лише пласкі.',
-            ),
-            l(
               'Wrong spot low? <b>Land straight</b>, even downwind or off target.',
               '¿Bajo y en mal lugar? <b>Aterriza recto</b>, aunque sea con viento en cola o fuera del blanco.',
               'Низко и не туда? <b>Садись прямо</b>, даже по ветру или мимо цели.',
@@ -414,16 +417,16 @@ export const part3: Part = {
             ),
           ],
           clip: clip(
-            'lowturn',
+            'x_lowturn2',
             l(
-              'News report: “skydiving deaths often result from sharp turns”',
-              'Noticia: “las muertes en paracaidismo suelen deberse a giros bruscos”',
-              'Репортаж: «гибель парашютистов часто связана с резкими поворотами»',
-              'Репортаж: «загибель парашутистів часто пов’язана з різкими поворотами»',
+              'Seen from the ground: the turn starts low and the canopy is still diving at the water',
+              'Visto desde el suelo: el giro empieza bajo y la vela sigue picando al llegar al agua',
+              'Вид с земли: разворот начат низко, и купол ещё ныряет у самой воды',
+              'Вигляд із землі: розворот почато низько, і купол ще пірнає біля самої води',
             ),
-            'Cronkite News',
-            '3dsAULINDhU',
-            129,
+            'Chris Forman',
+            '5Lj_O4MLo0M',
+            19,
           ),
         },
         {
@@ -437,9 +440,9 @@ export const part3: Part = {
                 'Що вирішуєш на 2 500 футах під добрим куполом?',
               ),
               options: [
-                l('Whether to cut away', 'Si liberar o no', 'Отцепляться или нет', 'Відчіплюватися чи ні'),
-                l('Whether you can reach the holding point, and a left- or right-hand pattern', 'Si llegas al punto de espera, y circuito por la izquierda o por la derecha', 'Долетаю ли до точки ожидания и какая схема: левая или правая', 'Чи долітаю до точки очікування і яка схема: ліва чи права'),
-                l('When to start the flare', 'Cuándo empezar el flare', 'Когда начинать flare', 'Коли починати flare'),
+                l('Whether to cut away or keep this canopy', 'Si liberar o quedarte con esta vela', 'Отцепляться или лететь на этом куполе', 'Відчіплюватися чи летіти на цьому куполі'),
+                l('The holding point and a left or right pattern', 'El punto de espera y circuito izquierdo o derecho', 'Точку ожидания и левую или правую схему', 'Точку очікування й ліву чи праву схему'),
+                l('How high to start the flare today', 'A qué altura empezar hoy el flare', 'На какой высоте сегодня начать flare', 'На якій висоті сьогодні почати flare'),
               ],
               answer: 1,
               why: l(
@@ -465,8 +468,8 @@ export const part3: Part = {
               why: l(
                 'Hold from 2,000 to 1,000, enter downwind at 900, base at 600, final at 300, flare at about 10 ft.',
                 'Espera de 2,000 a 1,000, entra con viento en cola a 900, base a 600, final a 300, flare a unos 10 ft.',
-                'Ожидание с 2 000 до 1 000, вход по ветру на 900, базовая на 600, финал на 300, flare примерно на 10 футах.',
-                'Очікування з 2 000 до 1 000, вхід по вітру на 900, базова на 600, фінал на 300, flare приблизно на 10 футах.',
+                'Ожидание с 2 000 до 1 000, вход по ветру на 900, базовая прямая на 600, финал на 300, flare примерно на 10 футах.',
+                'Очікування з 2 000 до 1 000, вхід по вітру на 900, базова пряма на 600, фінал на 300, flare приблизно на 10 футах.',
               ),
             },
             {
@@ -479,7 +482,7 @@ export const part3: Part = {
               options: [
                 l('Up to 180°', 'Hasta 180°', 'До 180°', 'До 180°'),
                 l('Up to 90°', 'Hasta 90°', 'До 90°', 'До 90°'),
-                l('None at all', 'Ninguno', 'Никакой', 'Жодного'),
+                l('Up to 45°', 'Hasta 45°', 'До 45°', 'До 45°'),
               ],
               answer: 1,
               why: l(
@@ -498,7 +501,7 @@ export const part3: Part = {
               ),
               options: [
                 l('Turn hard toward the target', 'Giras fuerte hacia el blanco', 'Резко поворачиваешь к цели', 'Різко повертаєш до цілі'),
-                l('Land straight ahead with a level wing, even off the target', 'Aterrizas recto con el ala nivelada, aunque sea fuera del blanco', 'Садишься прямо с ровным крылом, даже мимо цели', 'Сідаєш прямо з рівним крилом, навіть повз ціль'),
+                l('Land straight ahead, wing level', 'Aterrizas recto, con el ala nivelada', 'Садишься прямо, крыло ровно', 'Сідаєш прямо, крило рівно'),
                 l('Turn into the wind, whatever it takes', 'Giras contra el viento, como sea', 'Разворачиваешься против ветра любой ценой', 'Розвертаєшся проти вітру за будь-яку ціну'),
               ],
               answer: 1,
@@ -524,12 +527,12 @@ export const part3: Part = {
           kind: 'do',
           title: l('Best plan: never get there', 'El mejor plan: no llegar ahí', 'Лучший план: туда не попасть', 'Найкращий план: туди не потрапити'),
           items: [
-            l('<b>See it early</b> and steer away <b>above 1,000 ft</b>.', '<b>Detéctalo temprano</b> y aléjate <b>por encima de 1,000 ft</b>.', '<b>Заметь заранее</b> и уйди <b>выше 1 000 футов</b>.', '<b>Помічай заздалегідь</b> і відходь <b>вище 1 000 футів</b>.'),
-            l('Be over the holding point <b>by 2,000 ft</b>: still time to judge if you reach the landing area.', 'Estar sobre el punto de espera <b>a 2,000 ft</b>: aún hay tiempo para ver si llegas.', 'К <b>2 000 футам</b> будь над точкой ожидания: ещё есть время понять, долетишь ли.', 'На <b>2 000 футах</b> будь над точкою очікування: ще є час зрозуміти, чи долетиш.'),
-            l("Can't make it? <b>Pick a clear field</b> and land there, into the wind.", '¿No llegas? <b>Elige un campo despejado</b> y aterriza ahí, contra el viento.', 'Не долетаешь? <b>Выбери чистое поле</b> и садись туда, против ветра.', 'Не долітаєш? <b>Обери чисте поле</b> й сідай туди, проти вітру.'),
+            l('<b>See it early</b> and turn away from it <b>while you are still above 1,000 ft</b>.', '<b>Detéctalo temprano</b> y aléjate de él <b>mientras estés por encima de 1,000 ft</b>.', '<b>Заметь заранее</b> и отверни от него, <b>пока ты выше 1 000 футов</b>.', '<b>Помічай заздалегідь</b> і відвертай від неї, <b>поки ти вище 1 000 футів</b>.'),
+            l('Be over the holding point <b>by 2,000 ft</b>: still time to judge if you reach the landing area.', 'Llega sobre el punto de espera <b>antes de 2,000 ft</b>: aún hay tiempo para ver si llegas.', 'К <b>2 000 футам</b> будь над точкой ожидания: ещё есть время понять, долетишь ли.', 'На <b>2 000 футах</b> будь над точкою очікування: ще є час зрозуміти, чи долетиш.'),
+            l("Can't make it? <b>Pick a clear field</b> and land there, into the wind if you can do it without a low turn.", '¿No llegas? <b>Elige un campo despejado</b> y aterriza ahí, contra el viento si puedes hacerlo sin un giro bajo.', 'Не долетаешь? <b>Выбери чистое поле</b> и садись туда, против ветра, если для этого не нужен низкий разворот.', 'Не долітаєш? <b>Обери чисте поле</b> й сідай туди, проти вітру, якщо для цього не потрібен низький розворот.'),
           ],
         },
-        { type: 'p', muted: true, text: l('Still ending up on one? The steps from our instructors and USPA (SIM 4-1):', '¿Aun así vas a caer sobre uno? Los pasos de nuestros instructores y de USPA (SIM 4-1):', 'Всё равно садишься на препятствие? Шаги от наших инструкторов и USPA (SIM 4-1):', 'Усе одно сідаєш на перешкоду? Кроки від наших інструкторів і USPA (SIM 4-1):') },
+        { type: 'p', muted: true, text: l('Still ending up on one? The steps from instructors and USPA (SIM 4-1):', '¿Aun así vas a caer sobre uno? Los pasos de los instructores y de USPA (SIM 4-1):', 'Всё равно садишься на препятствие? Шаги от инструкторов и USPA (SIM 4-1):', 'Усе одно сідаєш на перешкоду? Кроки від інструкторів і USPA (SIM 4-1):') },
         {
           type: 'rules',
           items: [
@@ -537,10 +540,10 @@ export const part3: Part = {
               icon: 'tree',
               title: l('Trees', 'Árboles', 'Деревья', 'Дерева'),
               points: [
-                l('<b>Half brakes</b>', '<b>Medio freno</b>', '<b>Полутормоза</b>', '<b>Напівгальма</b>'),
+                l('<b>Half brakes</b>, aim for the <b>middle</b> of the tree', '<b>Medio freno</b>, apunta al <b>centro</b> del árbol', '<b>Полутормоза</b>, целься в <b>середину</b> дерева', '<b>Напівгальма</b>, цілься в <b>середину</b> дерева'),
                 l('<b>Feet and knees tight</b>, legs not crossed', '<b>Pies y rodillas juntos</b>, piernas sin cruzar', '<b>Ступни и колени плотно</b>, ноги не скрещивать', '<b>Ступні й коліна щільно</b>, ноги не схрещувати'),
                 l('<b>Protect your face</b> with your arms', '<b>Protege la cara</b> con los brazos', '<b>Закрой лицо</b> руками', '<b>Закрий обличчя</b> руками'),
-                l('Stuck: <b>stay put, wait for help</b>, don\'t climb down', 'Atrapado: <b>quieto, espera ayuda</b>, no bajes solo', 'Застрял: <b>не двигайся, жди помощи</b>, сам не слезай', 'Застряг: <b>не рухайся, чекай допомоги</b>, сам не злазь'),
+                l('Stuck: <b>hold the trunk or a big branch</b>, wait for help, don\'t climb down', 'Atrapado: <b>abrázate al tronco o a una rama gruesa</b>, espera ayuda, no bajes solo', 'Застрял: <b>держись за ствол или толстую ветку</b>, жди помощи, сам не слезай', 'Застряг: <b>тримайся за стовбур або товсту гілку</b>, чекай допомоги, сам не злазь'),
               ],
             },
             {
@@ -548,7 +551,7 @@ export const part3: Part = {
               title: l('Water', 'Agua', 'Вода', 'Вода'),
               points: [
                 l('<b>Half brakes</b> at about 10 ft', '<b>Medio freno</b> a unos 10 ft', '<b>Полутормоза</b> примерно на 10 футах', '<b>Напівгальма</b> приблизно на 10 футах'),
-                l('<b>Deep breath</b>, feet and knees together', '<b>Respira hondo</b>, pies y rodillas juntos', '<b>Глубокий вдох</b>, ступни и колени вместе', '<b>Глибокий вдих</b>, ступні й коліна разом'),
+                l('<b>Deep breath</b>, feet and knees together, ready to PLF', '<b>Respira hondo</b>, pies y rodillas juntos, listo para el PLF', '<b>Глубокий вдох</b>, ступни и колени вместе, готов к PLF', '<b>Глибокий вдих</b>, ступні й коліна разом, готовий до PLF'),
                 l('<b>Stay in the harness</b> until you are in the water', '<b>Quédate en el arnés</b> hasta estar en el agua', '<b>Из системы не выбирайся</b> до касания воды', '<b>Із системи не вибирайся</b>, доки не торкнешся води'),
                 l('Then <b>get out and swim away</b> from the canopy fast', 'Luego <b>sal y nada lejos</b> de la vela rápido', 'Потом <b>выберись и отплыви</b> от купола быстро', 'Потім <b>вибирайся й відпливай</b> від купола швидко'),
               ],
@@ -558,8 +561,8 @@ export const part3: Part = {
               title: l('Buildings', 'Edificios', 'Здания', 'Будівлі'),
               points: [
                 l('Near a wall: <b>fly along it</b> with a flat turn, not into it', 'Cerca de una pared: <b>vuela a lo largo</b> con un giro plano, no contra ella', 'У стены: <b>лети вдоль неё</b> плоским поворотом, не в неё', 'Біля стіни: <b>лети вздовж неї</b> пласким поворотом, не в неї'),
-                l('Going to hit: <b>flare about 10 ft before</b>, then PLF', 'Si vas a golpear: <b>flare unos 10 ft antes</b>, luego PLF', 'Удар неизбежен: <b>flare примерно за 10 футов</b>, потом PLF', 'Удару не уникнути: <b>flare приблизно за 10 футів</b>, потім PLF'),
-                l('On a roof: <b>collapse the canopy</b> so the wind can\'t drag you off', 'En un techo: <b>colapsa la vela</b> para que el viento no te arrastre', 'На крыше: <b>погаси купол</b>, чтобы ветер не стащил', 'На даху: <b>погаси купол</b>, щоб вітер не стягнув'),
+                l('Going to hit: <b>flare about 10 ft above where you\'ll touch</b>, then PLF', 'Si vas a golpear: <b>flare a unos 10 ft por encima del punto de contacto</b>, luego PLF', 'Удар неизбежен: <b>flare на высоте около 10 футов над точкой касания</b>, потом PLF', 'Удару не уникнути: <b>flare на висоті близько 10 футів над точкою дотику</b>, потім PLF'),
+                l('On a roof: <b>collapse the canopy</b>; if the wind drags you, <b>cut away</b> (disconnect the RSL first) <q-check/>', 'En un techo: <b>colapsa la vela</b>; si el viento te arrastra, <b>libera</b> (desconecta antes el RSL) <q-check/>', 'На крыше: <b>погаси купол</b>; если ветер тащит — <b>отцепляйся</b> (сначала отсоедини RSL) <q-check/>', 'На даху: <b>погаси купол</b>; якщо вітер тягне — <b>відчіплюйся</b> (спершу від’єднай RSL) <q-check/>'),
               ],
             },
             {
@@ -597,9 +600,9 @@ export const part3: Part = {
                 'Ти сідаєш на воду. Що з підвісною системою?',
               ),
               options: [
-                l('Get out of it up high, before the water', 'Salirte en el aire, antes del agua', 'Выбраться ещё в воздухе, до воды', 'Вибратися ще в повітрі, до води'),
-                l('Stay in until you are in the water, then get out and swim away', 'Quedarte hasta estar en el agua, luego salir y nadar lejos', 'Оставаться в ней до воды, потом выбраться и отплыть', 'Залишатися в ній до води, потім вибратися й відпливти'),
-                l('Stay in it and hold on to the canopy', 'Quedarte en él y agarrarte a la vela', 'Оставаться в ней и держаться за купол', 'Залишатися в ній і триматися за купол'),
+                l('Get out of it up high and drop into the water', 'Salir de él en el aire y caer al agua', 'Выбраться ещё в воздухе и упасть в воду', 'Вибратися ще в повітрі й упасти у воду'),
+                l('Stay in until you are in the water, then swim away', 'Quedarte hasta estar en el agua y luego nadar lejos', 'Оставаться в ней до воды, потом отплыть', 'Залишатися в ній до води, потім відпливти'),
+                l('Stay in it and hold on to the canopy to float', 'Quedarte en él y agarrarte a la vela para flotar', 'Оставаться в ней и держаться за купол на плаву', 'Залишатися в ній і триматися за купол на плаву'),
               ],
               answer: 1,
               why: l(
@@ -619,7 +622,7 @@ export const part3: Part = {
               options: [
                 l('Across the lines, to get past them fast', 'Cruzando los cables, para pasarlos rápido', 'Поперёк проводов, чтобы быстрее их проскочить', 'Поперек дротів, щоб швидше їх проскочити'),
                 l('Parallel to the lines, so you touch only one', 'Paralelo a los cables, para tocar solo uno', 'Параллельно проводам, чтобы коснуться только одного', 'Паралельно дротам, щоб торкнутися лише одного'),
-                l('Grab a wire to stop', 'Agarrar un cable para frenar', 'Схватиться за провод, чтобы остановиться', 'Схопитися за дріт, щоб зупинитися'),
+                l('Grab a wire with both hands to stop', 'Agarrar un cable con las dos manos para frenar', 'Схватиться за провод обеими руками, чтобы остановиться', 'Схопитися за дріт обома руками, щоб зупинитися'),
               ],
               answer: 1,
               why: l(
@@ -643,10 +646,10 @@ export const part3: Part = {
               ],
               answer: 0,
               why: l(
-                'A flat turn along the wall keeps you from hitting it without making the canopy dive. If you do hit, flare about 10 ft before and PLF.',
-                'Un giro plano a lo largo de la pared evita el golpe sin hacer picar la vela. Si igual golpeas, flare unos 10 ft antes y PLF.',
-                'Плоский поворот вдоль стены уводит от удара, не заставляя купол нырять. Если всё же удар — flare примерно за 10 футов и PLF.',
-                'Плаский поворот уздовж стіни відводить від удару й не змушує купол пірнати. Якщо удару не уникнути — flare приблизно за 10 футів і PLF.',
+                'A flat turn along the wall keeps you from hitting it without making the canopy dive. If you do hit, flare about 10 ft above where you\'ll touch, then PLF.',
+                'Un giro plano a lo largo de la pared evita el golpe sin hacer picar la vela. Si igual golpeas, flare a unos 10 ft por encima del punto de contacto y luego PLF.',
+                'Плоский поворот вдоль стены уводит от удара, не заставляя купол нырять. Если всё же удар — flare на высоте около 10 футов над точкой касания, потом PLF.',
+                'Плаский поворот уздовж стіни відводить від удару й не змушує купол пірнати. Якщо удару не уникнути — flare на висоті близько 10 футів над точкою дотику, потім PLF.',
               ),
             },
             {
@@ -659,7 +662,7 @@ export const part3: Part = {
               options: [
                 l('Pull the canopy free, then climb down', 'Soltar la vela del árbol y luego bajar', 'Сдёрнуть купол, потом слезть', 'Смикнути купол, потім злізти'),
                 l('Leave it, stay put and wait for help', 'Dejarlo, quedarte quieto y esperar ayuda', 'Оставить, не двигаться и ждать помощи', 'Залишити, не рухатися й чекати допомоги'),
-                l('Cut the lines and jump down', 'Cortar las líneas y saltar', 'Перерезать стропы и спрыгнуть', 'Перерізати стропи й зістрибнути'),
+                l('Cut the lines and jump to the ground', 'Cortar las líneas y saltar al suelo', 'Перерезать стропы и спрыгнуть на землю', 'Перерізати стропи й зістрибнути на землю'),
               ],
               answer: 1,
               why: l(
@@ -683,24 +686,44 @@ export const part3: Part = {
           type: 'split',
           left: [
             {
+              type: 'callout',
+              title: l('What the flare does', 'Qué hace el flare', 'Что делает flare', 'Що робить flare'),
+              points: [
+                l('On final you come down <b>at an angle</b>.', 'En final bajas <b>en ángulo</b>.', 'На финале ты снижаешься <b>под углом</b>.', 'На фіналі ти знижуєшся <b>під кутом</b>.'),
+                l(
+                  'The flare makes it a <b>short level glide</b>; the canopy “lifts” you a little.',
+                  'El flare lo convierte en un <b>planeo corto y nivelado</b>; la vela te “levanta” un poco.',
+                  'Flare превращает это в <b>короткое горизонтальное планирование</b>, купол чуть «приподнимает».',
+                  'Flare перетворює це на <b>коротке горизонтальне планування</b>, купол трохи «підіймає».',
+                ),
+                l('You <b>step down softly</b>.', 'Te <b>posas suave</b>.', 'Ты <b>мягко встаёшь</b>.', 'Ти <b>м’яко стаєш</b> на ноги.'),
+                l(
+                  'Common mistake: <b>too fast</b>. A jerky flare spends the canopy’s speed too early, and you drop the last few feet.',
+                  'Error común: <b>demasiado rápido</b>. Un flare brusco gasta la velocidad de la vela demasiado pronto y caes los últimos pies.',
+                  'Частая ошибка — <b>слишком быстро</b>: резкий flare тратит скорость купола раньше времени, и последние футы ты падаешь.',
+                  'Часта помилка — <b>надто швидко</b>: різкий flare витрачає швидкість купола завчасно, і останні фути ти падаєш.',
+                ),
+              ],
+            },
+            {
               type: 'steps',
               items: [
                 {
                   title: l('On final: full flight, legs together', 'En final: vuelo completo, piernas juntas', 'На финале: полная скорость, ноги вместе', 'На фіналі: повна швидкість, ноги разом'),
                   sub: l(
-                    '<b>Hands all the way up</b>, canopy flying level, feet and knees together. <b>No turns.</b>',
-                    '<b>Manos totalmente arriba</b>, vela volando nivelada, pies y rodillas juntos. <b>Sin giros.</b>',
-                    '<b>Руки полностью вверху</b>, купол летит ровно, ступни и колени вместе. <b>Без поворотов.</b>',
-                    '<b>Руки повністю вгорі</b>, купол летить рівно, ступні й коліна разом. <b>Без поворотів.</b>',
+                    '<b>Hands all the way up</b>, canopy flying level, feet and knees together. <b>Only small flat corrections.</b>',
+                    '<b>Manos totalmente arriba</b>, vela volando nivelada, pies y rodillas juntos. <b>Solo correcciones pequeñas y planas.</b>',
+                    '<b>Руки полностью вверху</b>, купол летит ровно, ступни и колени вместе. <b>Только небольшие плоские поправки.</b>',
+                    '<b>Руки повністю вгорі</b>, купол летить рівно, ступні й коліна разом. <b>Лише невеликі пласкі поправки.</b>',
                   ),
                 },
                 {
                   title: l('Start at about 10 ft (3 m)', 'Empieza a unos 10 ft (3 m)', 'Начинаем примерно с 10 футов (3 м)', 'Починаємо приблизно з 10 футів (3 м)'),
                   sub: l(
-                    'Look at the <b>horizon ahead</b>, about 45° down, not at the ground under you. Looking straight down makes the ground rush up and <b>throws your timing off</b>.',
-                    'Mira al <b>horizonte delante</b>, unos 45° hacia abajo, no al suelo debajo de ti. Mirar justo abajo hace que el suelo se te venga encima y <b>arruina el momento</b>.',
-                    'Смотрим на <b>горизонт впереди</b>, примерно на 45° вниз, а не на землю под собой. Если смотреть прямо вниз, земля «набегает» и <b>момент выходит неверным</b>.',
-                    'Дивимося на <b>горизонт попереду</b>, приблизно на 45° униз, а не на землю під собою. Якщо дивитися просто вниз, земля «набігає» і <b>момент збивається</b>.',
+                    'Eyes on the <b>horizon ahead</b>, not at your feet: looking down makes the ground rush up and <b>throws your timing off</b>. 10 ft is about a one-storey roof. Schools differ (10–15 ft). <q-check/>',
+                    'Mira al <b>horizonte delante</b>, no a tus pies: mirar abajo hace que el suelo se te venga encima y <b>te hace calcular mal el momento</b>. 10 ft es más o menos un techo de una planta. Cada escuela dice algo distinto (10–15 ft). <q-check/>',
+                    'Смотрим на <b>горизонт впереди</b>, а не под ноги: если смотреть вниз, земля «набегает» и <b>ошибаешься с моментом</b>. 10 футов — это примерно крыша одноэтажного дома. В разных школах по-разному (10–15 футов). <q-check/>',
+                    'Дивимося на <b>горизонт попереду</b>, а не під ноги: якщо дивитися вниз, земля «набігає» і <b>помиляєшся з моментом</b>. 10 футів — це приблизно дах одноповерхового будинку. У різних школах по-різному (10–15 футів). <q-check/>',
                   ),
                 },
                 {
@@ -715,10 +738,10 @@ export const part3: Part = {
                 {
                   title: l('Finish all the way down and hold', 'Termina abajo del todo y mantén', 'До конца вниз и держим', 'До кінця вниз і тримаємо'),
                   sub: l(
-                    "Arms <b>fully extended</b> until you're standing. Never let the toggles <b>back up</b>.",
-                    'Brazos <b>totalmente extendidos</b> hasta que estés de pie. Nunca dejes <b>subir los batidores</b>.',
-                    'Руки <b>полностью вниз</b>, пока не встал. Клеванты <b>не отпускать вверх</b>.',
-                    'Руки <b>повністю внизу</b>, доки не встав. Клеванти <b>не відпускати вгору</b>.',
+                    "Hands <b>all the way down</b> by your hips until you're standing. Never let the toggles <b>back up</b>.",
+                    'Manos <b>abajo del todo</b>, a la altura de la cadera, hasta que estés de pie. Nunca dejes <b>subir los batidores</b>.',
+                    'Руки <b>до упора вниз</b>, у бёдер, пока не встал. Клеванты <b>не отпускать вверх</b>.',
+                    'Руки <b>до кінця вниз</b>, біля стегон, доки не встав. Клеванти <b>не відпускати вгору</b>.',
                   ),
                 },
                 {
@@ -726,19 +749,37 @@ export const part3: Part = {
                   sub: l(
                     'Ready for a <b>parachute landing fall (PLF)</b> if the landing is hard.',
                     'Listo para una <b>caída de aterrizaje (PLF)</b> si el aterrizaje es duro.',
-                    'Готов к <b>падению с перекатом (PLF)</b>, если приземление жёсткое.',
-                    'Готовий до <b>приземлення з перекатом (PLF)</b>, якщо посадка жорстка.',
+                    'Готов к <b>PLF — приземлению с перекатом</b>, если приземление жёсткое.',
+                    'Готовий до <b>PLF — приземлення з перекатом</b>, якщо посадка жорстка.',
                   ),
                 },
               ],
             },
             {
               type: 'list',
-              title: l('Timing', 'El momento', 'Темп', 'Темп'),
+              title: l('Timing', 'El momento', 'Когда тянуть', 'Коли тягнути'),
               items: [
                 l('What matters: the flare is <b>finished at touchdown</b>.', 'Lo que importa: el flare <b>termina al tocar el suelo</b>.', 'Главное — flare <b>закончился в момент касания</b>.', 'Головне — flare <b>закінчено в момент торкання</b>.'),
                 l('Started late: <b>pull faster</b>.', 'Si empiezas tarde: <b>tira más rápido</b>.', 'Начал поздно — <b>тяни быстрее</b>.', 'Почав пізно — <b>тягни швидше</b>.'),
                 l('Started early: <b>pull slower</b>.', 'Si empiezas temprano: <b>tira más lento</b>.', 'Начал рано — <b>тяни медленнее</b>.', 'Почав рано — <b>тягни повільніше</b>.'),
+                l(
+                  'Flared too high: <b>stop, hold</b> what you have, fly straight, finish as you sink.',
+                  '¿Flare demasiado alto? <b>Para, mantén</b> lo que tienes, vuela recto y termina al bajar.',
+                  'Начал слишком высоко: <b>остановись, держи</b> то, что есть, лети прямо, дожимай при снижении.',
+                  'Почав надто високо: <b>зупинись, тримай</b> те, що є, лети прямо, дотискай під час зниження.',
+                ),
+                l(
+                  'A student canopy can usually stay at <b>full brakes</b> for a few seconds without stalling. <q-check/>',
+                  'Una vela de alumno suele aguantar unos segundos a <b>frenos completos</b> sin entrar en pérdida. <q-check/>',
+                  'Студенческий купол обычно может несколько секунд лететь на <b>полных тормозах</b> без сваливания. <q-check/>',
+                  'Студентський купол зазвичай може кілька секунд летіти на <b>повних гальмах</b> без звалювання. <q-check/>',
+                ),
+                l(
+                  'No radio call and the ground is close? <b>Flare anyway</b>: you fly your canopy.',
+                  '¿No llega la llamada por radio y el suelo está cerca? <b>Haz el flare igual</b>: tú pilotas tu vela.',
+                  'Команды по радио нет, а земля близко? <b>Всё равно делай flare</b>: куполом управляешь ты.',
+                  'Команди по радіо немає, а земля близько? <b>Однаково роби flare</b>: куполом керуєш ти.',
+                ),
               ],
             },
             {
@@ -758,42 +799,10 @@ export const part3: Part = {
                   'Це рахунок для <b>плавності</b>, а не п’ять повних секунд.',
                 ),
                 l(
-                  '<b>5–6 s</b>: how long a student canopy stays at full brakes without stalling.',
-                  '<b>5–6 s</b>: lo que una vela de alumno aguanta a frenos completos sin pérdida.',
-                  '<b>5–6 с</b> — сколько студенческий купол летит на полных тормозах без сваливания.',
-                  '<b>5–6 с</b> — стільки студентський купол летить на повних гальмах без звалювання.',
-                ),
-                l(
-                  'Flared too high: <b>stop, hold</b> what you have, fly straight, finish as you sink.',
-                  '¿Flare demasiado alto? <b>Para, mantén</b> lo que tienes, vuela recto, termina al bajar.',
-                  'Начал слишком высоко: <b>остановись, держи</b> клеванты, лети прямо, дожимай при снижении.',
-                  'Почав надто високо: <b>зупинись, тримай</b> клеванти, лети прямо, дотискай під час зниження.',
-                ),
-              ],
-            },
-            {
-              type: 'callout',
-              title: l('What the flare does', 'Qué hace el flare', 'Что делает flare', 'Що робить flare'),
-              points: [
-                l('On final you come down <b>at an angle</b>.', 'En final bajas <b>en ángulo</b>.', 'На финале ты снижаешься <b>под углом</b>.', 'На фіналі ти знижуєшся <b>під кутом</b>.'),
-                l(
-                  'The flare makes it a <b>short level glide</b>; the canopy “lifts” you a little.',
-                  'El flare lo convierte en un <b>planeo corto y nivelado</b>; la vela te “levanta” un poco.',
-                  'Flare превращает это в <b>короткое горизонтальное планирование</b>, купол чуть «приподнимает».',
-                  'Flare перетворює це на <b>коротке горизонтальне планування</b>, купол трохи «підіймає».',
-                ),
-                l('You <b>step down softly</b>.', 'Te <b>posas suave</b>.', 'Ты <b>мягко встаёшь</b>.', 'Ти <b>м’яко стаєш</b> на ноги.'),
-                l(
-                  'Common mistake: <b>too fast</b>. A jerky flare spends that energy too early.',
-                  'Error común: <b>demasiado rápido</b>. Un flare brusco gasta esa energía demasiado pronto.',
-                  'Частая ошибка — <b>слишком быстро</b>: резкий flare тратит энергию раньше времени.',
-                  'Часта помилка — <b>надто швидко</b>: різкий flare витрачає енергію завчасно.',
-                ),
-                l(
-                  '<b>Practise a flare</b> up high right after opening.',
-                  '<b>Practica un flare</b> arriba justo después de abrir.',
-                  '<b>Пробный flare</b> делаем наверху сразу после раскрытия.',
-                  '<b>Пробний flare</b> робимо нагорі одразу після розкриття.',
+                  'Unlike the <b>5-second count</b> after the pull, this one is just a rhythm.',
+                  'A diferencia de la <b>cuenta de 5 segundos</b> tras abrir, esta es solo un ritmo.',
+                  'В отличие от <b>счёта 5 секунд</b> после раскрытия, здесь это просто ритм.',
+                  'На відміну від <b>рахунку 5 секунд</b> після розкриття, тут це просто ритм.',
                 ),
               ],
             },
@@ -802,7 +811,7 @@ export const part3: Part = {
             {
               type: 'clips',
               items: [
-                clip('flare_cue', l('Where to start the flare', 'Dónde empezar el flare', 'Где начинать flare', 'Де починати flare'), 'Rhythm Skydiving', 'tUFSss3guic', 33),
+                clip('flare_cue', l('Where to start the flare (this school says 12–15 ft)', 'Dónde empezar el flare (esta escuela dice 12–15 ft)', 'Где начинать flare (в этой школе — 12–15 футов)', 'Де починати flare (у цій школі — 12–15 футів)'), 'Rhythm Skydiving', 'tUFSss3guic', 33),
                 clip('flare_land', l('Final, flare, slide, stand', 'Final, flare, deslizar, de pie', 'Финал, flare, скольжение, встал', 'Фінал, flare, ковзання, встав'), 'Rhythm Skydiving', 'tUFSss3guic', 85),
                 clip('flare_end', l('Level out just above the ground, slide', 'Nivelar justo sobre el suelo, deslizar', 'Выровняться у самой земли и скользить', 'Вирівнятися біля самої землі й ковзати'), 'Rhythm Skydiving', 'tUFSss3guic', 148),
               ],
@@ -819,10 +828,10 @@ export const part3: Part = {
                 {
                   title: l('Feet and knees together, knees soft', 'Pies y rodillas juntos, rodillas un poco flexionadas', 'Ступни и колени вместе, колени чуть согнуты', 'Ступні й коліна разом, коліна трохи зігнуті'),
                   sub: l(
-                    '<b>Chin to chest</b>, elbows in, hands on the toggles.',
-                    '<b>Barbilla al pecho</b>, codos adentro, manos en los batidores.',
-                    '<b>Подбородок к груди</b>, локти прижаты, руки на клевантах.',
-                    '<b>Підборіддя до грудей</b>, лікті притиснуті, руки на клевантах.',
+                    '<b>Chin to chest</b>, elbows in, hands on the toggles. Legs slightly forward; <b>don’t reach for the ground</b> with one foot or a hand.',
+                    '<b>Barbilla al pecho</b>, codos adentro, manos en los batidores. Piernas un poco adelante; <b>no busques el suelo</b> con un pie ni con una mano.',
+                    '<b>Подбородок к груди</b>, локти прижаты, руки на клевантах. Ноги чуть вперёд; <b>не тянись к земле</b> одной ногой или рукой.',
+                    '<b>Підборіддя до грудей</b>, лікті притиснуті, руки на клевантах. Ноги трохи вперед; <b>не тягнися до землі</b> однією ногою чи рукою.',
                   ),
                 },
                 {
@@ -838,7 +847,7 @@ export const part3: Part = {
             },
             {
               type: 'callout',
-              title: l('Not onto the stomach, then the back', 'No sobre el estómago y luego la espalda', 'Не на живот, потом на спину', 'Не на живіт, а потім на спину'),
+              title: l('On the side, not front-to-back', 'Por el costado, no de frente a espalda', 'По боку, а не с живота на спину', 'По боку, а не з живота на спину'),
               points: [
                 l(
                   'Roll along the <b>side</b> of the body, not forward onto the stomach.',
@@ -875,7 +884,7 @@ export const part3: Part = {
           type: 'watch',
           items: [
             { yt: 'tUFSss3guic', t: 65, label: l('The landing flare', 'El flare de aterrizaje', 'Выравнивание при посадке', 'Вирівнювання під час посадки'), credit: 'Rhythm Skydiving' },
-            { yt: 'lCWKPIQuK8Q', t: 0, label: l('Parachute landing fall', 'Caída de aterrizaje en paracaídas (PLF)', 'Приземление с перекатом (PLF)', 'Приземлення з перекатом (PLF)'), credit: 'USPA' },
+            { yt: 'lCWKPIQuK8Q', t: 0, label: l('Parachute landing fall', 'Caída de aterrizaje en paracaídas (PLF)', 'PLF — приземление с перекатом', 'PLF — приземлення з перекатом'), credit: 'USPA' },
           ],
         },
         {
@@ -890,15 +899,15 @@ export const part3: Part = {
               ),
               options: [
                 l('Straight down at the ground under you', 'Justo abajo, al suelo debajo de ti', 'Прямо вниз, на землю под собой', 'Просто вниз, на землю під собою'),
-                l('At the horizon ahead, about 45° down', 'Al horizonte delante, unos 45° hacia abajo', 'На горизонт впереди, примерно на 45° вниз', 'На горизонт попереду, приблизно на 45° униз'),
-                l('Up at the canopy', 'Arriba, a la vela', 'Вверх, на купол', 'Угору, на купол'),
+                l('At the horizon ahead, not at your feet', 'Al horizonte delante, no a tus pies', 'На горизонт впереди, а не под ноги', 'На горизонт попереду, а не під ноги'),
+                l('Up at the canopy, to check its shape', 'Arriba, a la vela, para ver su forma', 'Вверх, на купол, проверить его форму', 'Угору, на купол, перевірити його форму'),
               ],
               answer: 1,
               why: l(
-                'Looking straight down makes the ground rush up and the timing goes wrong. Look ahead, about 45° down.',
-                'Mirar justo abajo hace que el suelo se te venga encima y el momento sale mal. Mira delante, unos 45° hacia abajo.',
-                'Если смотреть прямо вниз, земля «набегает» и момент выходит неверным. Смотри вперёд, примерно на 45° вниз.',
-                'Якщо дивитися просто вниз, земля «набігає» і момент збивається. Дивись уперед, приблизно на 45° униз.',
+                'Looking straight down makes the ground rush up, and you get the timing wrong. Eyes on the horizon ahead.',
+                'Mirar justo abajo hace que el suelo se te venga encima y calculas mal el momento. Mira al horizonte delante.',
+                'Если смотреть прямо вниз, земля «набегает», и ошибаешься с моментом. Смотри на горизонт впереди.',
+                'Якщо дивитися просто вниз, земля «набігає», і помиляєшся з моментом. Дивись на горизонт попереду.',
               ),
             },
             {
@@ -910,8 +919,8 @@ export const part3: Part = {
               ),
               options: [
                 l('The pull must last exactly five seconds', 'El tirón tiene que durar exactamente cinco segundos', 'Движение должно длиться ровно пять секунд', 'Рух має тривати рівно п’ять секунд'),
-                l('Start the flare at 5 ft', 'Empezar el flare a 5 ft', 'Начинать flare на 5 футах', 'Починати flare на 5 футах'),
-                l("It's a count to keep the pull smooth, finished at touchdown", 'Es una cuenta para que el tirón sea suave y termine al tocar el suelo', 'Это счёт для плавности, закончить в момент касания', 'Це рахунок для плавності, закінчити в момент торкання'),
+                l('Start the flare at 5 ft above the ground', 'Empezar el flare a 5 ft del suelo', 'Начинать flare в 5 футах над землёй', 'Починати flare за 5 футів над землею'),
+                l('A rhythm to keep the pull smooth', 'Un ritmo para que el tirón sea suave', 'Ритм, чтобы тянуть плавно', 'Ритм, щоб тягнути плавно'),
               ],
               answer: 2,
               why: l(
@@ -931,7 +940,7 @@ export const part3: Part = {
               options: [
                 l('Let the toggles back up and start again', 'Dejar subir los batidores y empezar de nuevo', 'Отпустить клеванты вверх и начать заново', 'Відпустити клеванти вгору й почати знову'),
                 l('Hold what you have, fly straight, finish as you sink', 'Mantener lo que tienes, volar recto y terminar mientras bajas', 'Держать что есть, лететь прямо, дожать при снижении', 'Тримати те, що є, летіти прямо, дотиснути під час зниження'),
-                l('Turn to lose height', 'Girar para perder altura', 'Повернуть, чтобы потерять высоту', 'Повернути, щоб утратити висоту'),
+                l('Make a turn to lose the extra height', 'Hacer un giro para perder la altura de más', 'Сделать поворот, чтобы сбросить лишнюю высоту', 'Зробити поворот, щоб скинути зайву висоту'),
               ],
               answer: 1,
               why: l(
@@ -951,7 +960,7 @@ export const part3: Part = {
               options: [
                 l('the stomach, then the back', 'el estómago y luego la espalda', 'по животу, потом по спине', 'по животу, потім по спині'),
                 l('the side: feet, calf, thigh, hip, back', 'el costado: pies, pantorrilla, muslo, cadera, espalda', 'по боку: стопы, икра, бедро, ягодица, спина', 'по боку: стопи, литка, стегно, сідниця, спина'),
-                l('your hands first', 'primero las manos', 'сначала на руки', 'спочатку на руки'),
+                l('your hands first, to catch the ground', 'primero las manos, para frenar', 'сначала на руки, чтобы «поймать» землю', 'спочатку на руки, щоб «зловити» землю'),
               ],
               answer: 1,
               why: l(
@@ -975,10 +984,10 @@ export const part3: Part = {
         {
           type: 'p',
           text: l(
-            'Questions 26–32 of our written test. <b>Answer out loud</b>, then open the card.',
-            'Preguntas 26–32 de nuestro examen escrito. <b>Responde en voz alta</b> y luego abre la tarjeta.',
-            'Вопросы 26–32 нашего письменного теста. <b>Ответь вслух</b>, потом открой карточку.',
-            'Питання 26–32 нашого письмового тесту. <b>Відповідай уголос</b>, потім відкрий картку.',
+            'Questions 26–32 of the ground-school written test. <b>Answer out loud</b>, then open the card.',
+            'Preguntas 26–32 del examen escrito del curso en tierra. <b>Responde en voz alta</b> y luego abre la tarjeta.',
+            'Вопросы 26–32 письменного теста наземной подготовки. <b>Ответь вслух</b>, потом открой карточку.',
+            'Питання 26–32 письмового тесту наземної підготовки. <b>Відповідай уголос</b>, потім відкрий картку.',
           ),
         },
         {
@@ -988,10 +997,10 @@ export const part3: Part = {
               n: '26',
               q: l('Draw the landing pattern with its key altitudes.', 'Dibuja el circuito de aterrizaje con sus alturas clave.', 'Нарисуй схему захода с ключевыми высотами.', 'Намалюй схему заходу з ключовими висотами.'),
               a: l(
-                '<b>2,500 ft</b>: decide where to go and which side the pattern is on. <b>2,000 → 1,000 ft</b>: hold over the holding point. <b>900 ft</b>: start the downwind leg. <b>600 ft</b>: turn onto base. <b>300 ft</b>: turn onto final, into the wind. <b>About 10 ft</b>: flare. See <a href="#pattern">the landing pattern</a>.',
-                '<b>2,500 ft</b>: decide adónde ir y de qué lado va el circuito. <b>2,000 → 1,000 ft</b>: espera sobre el punto de espera. <b>900 ft</b>: empieza el tramo con viento en cola. <b>600 ft</b>: gira a base. <b>300 ft</b>: gira a final, contra el viento. <b>Unos 10 ft</b>: flare. Ver <a href="#pattern">el circuito de aterrizaje</a>.',
-                '<b>2 500 футов</b>: решаем, куда лететь и с какой стороны схема. <b>2 000 → 1 000</b>: ожидание над точкой. <b>900 футов</b>: начало участка по ветру. <b>600</b>: поворот на базовую. <b>300</b>: поворот на финал, против ветра. <b>Около 10 футов</b>: flare. См. <a href="#pattern">схему захода</a>.',
-                '<b>2 500 футів</b>: вирішуємо, куди летіти і з якого боку схема. <b>2 000 → 1 000 футів</b>: очікування над точкою. <b>900 футів</b>: початок ділянки по вітру. <b>600 футів</b>: поворот на базову. <b>300 футів</b>: поворот на фінал, проти вітру. <b>Близько 10 футів</b>: flare. Див. <a href="#pattern">схему заходу</a>.',
+                '<b>2,500 ft</b>: decide where to go and which side the pattern is on.\n<b>2,000 → 1,000 ft</b>: hold over the holding point.\n<b>900 ft</b>: start the downwind leg.\n<b>600 ft</b>: turn onto base.\n<b>300 ft</b>: turn onto final, into the wind.\n<b>About 10 ft</b>: flare.\nSee <a href="#pattern">the landing pattern</a>.',
+                '<b>2,500 ft</b>: decide adónde ir y de qué lado va el circuito.\n<b>2,000 → 1,000 ft</b>: espera sobre el punto de espera.\n<b>900 ft</b>: empieza el tramo con viento en cola.\n<b>600 ft</b>: gira a base.\n<b>300 ft</b>: gira a final, contra el viento.\n<b>Unos 10 ft</b>: flare.\nVer <a href="#pattern">el circuito de aterrizaje</a>.',
+                '<b>2 500 футов</b>: решаем, куда лететь и с какой стороны схема.\n<b>2 000 → 1 000 футов</b>: ожидание над точкой.\n<b>900 футов</b>: начало участка по ветру.\n<b>600 футов</b>: поворот на базовую прямую.\n<b>300 футов</b>: поворот на финал, против ветра.\n<b>Около 10 футов</b>: flare.\nСм. <a href="#pattern">схему захода</a>.',
+                '<b>2 500 футів</b>: вирішуємо, куди летіти і з якого боку схема.\n<b>2 000 → 1 000 футів</b>: очікування над точкою.\n<b>900 футів</b>: початок ділянки по вітру.\n<b>600 футів</b>: поворот на базову пряму.\n<b>300 футів</b>: поворот на фінал, проти вітру.\n<b>Близько 10 футів</b>: flare.\nДив. <a href="#pattern">схему заходу</a>.',
               ),
             },
             {
@@ -1003,10 +1012,10 @@ export const part3: Part = {
                 'На якій висоті припиняємо великі розвороти і які розвороти дозволені?',
               ),
               a: l(
-                'Our rules: up to <b>180°</b> above 1,000 ft, up to <b>90°</b> from 1,000 to 300 ft, below 300 ft only small flat corrections, up to <b>45°</b>. The handwriting on the sheet says “300 ft” and “45°”.',
-                'Nuestras reglas: hasta <b>180°</b> por encima de 1,000 ft, hasta <b>90°</b> de 1,000 a 300 ft, por debajo de 300 ft solo correcciones pequeñas y planas, hasta <b>45°</b>. Lo escrito a mano en la hoja dice “300 ft” y “45°”.',
-                'Наши правила: до <b>180°</b> выше 1 000 футов, до <b>90°</b> с 1 000 до 300 футов, ниже 300 — только небольшие плоские поправки, до <b>45°</b>. На листе от руки написано «300 ft» и «45°».',
-                'Наші правила: до <b>180°</b> вище 1 000 футів, до <b>90°</b> з 1 000 до 300 футів, нижче 300 — лише невеликі пласкі поправки, до <b>45°</b>. На аркуші від руки написано «300 ft» і «45°».',
+                '<b>300 ft.</b> Below it, only small flat corrections, up to <b>45°</b>.\nThe full ladder (ask your dropzone):\nAbove 1,000 ft: up to <b>180°</b>.\n1,000 → 300 ft: up to <b>90°</b>.',
+                '<b>300 ft.</b> Por debajo, solo correcciones pequeñas y planas, hasta <b>45°</b>.\nLa escala completa (pregunta en tu zona de salto):\nPor encima de 1,000 ft: hasta <b>180°</b>.\n1,000 → 300 ft: hasta <b>90°</b>.',
+                '<b>300 футов.</b> Ниже — только небольшие плоские поправки, до <b>45°</b>.\nВся лесенка (уточни на своей площадке):\nВыше 1 000 футов: до <b>180°</b>.\n1 000 → 300 футов: до <b>90°</b>.',
+                '<b>300 футів.</b> Нижче — лише невеликі пласкі поправки, до <b>45°</b>.\nУся драбинка (уточни на своєму майданчику):\nВище 1 000 футів: до <b>180°</b>.\n1 000 → 300 футів: до <b>90°</b>.',
               ),
             },
             {
@@ -1028,10 +1037,10 @@ export const part3: Part = {
                 'Коли починаємо flare? А якщо почали надто високо?',
               ),
               a: l(
-                "<b>About 10 ft (3 m)</b> off the ground. Too high: <b>don't let the toggles back up</b>. Hold them where they are, finish the flare near the ground and get ready to PLF.",
-                '<b>A unos 10 ft (3 m)</b> del suelo. Demasiado alto: <b>no dejes subir los batidores</b>. Mantenlos donde están, termina el flare cerca del suelo y prepárate para el PLF.',
-                '<b>Примерно в 10 футах (3 м)</b> от земли. Слишком высоко: <b>клеванты не отпускать вверх</b>. Держать там, где они есть, дожать у земли и готовиться к PLF.',
-                '<b>Приблизно на 10 футах (3 м)</b> над землею. Надто високо: <b>клеванти не відпускати вгору</b>. Тримати там, де вони є, дотиснути біля землі й готуватися до PLF.',
+                "<b>About 10 ft (3 m)</b> off the ground. Too high: <b>don't let the toggles back up</b>. Stop, hold what you have, fly straight, finish as you sink and get ready to PLF.",
+                '<b>A unos 10 ft (3 m)</b> del suelo. Demasiado alto: <b>no dejes subir los batidores</b>. Para, mantén lo que tienes, vuela recto, termina al bajar y prepárate para el PLF.',
+                '<b>Примерно в 10 футах (3 м)</b> от земли. Слишком высоко: <b>клеванты не отпускать вверх</b>. Остановись, держи то, что есть, лети прямо, дожимай при снижении и готовься к PLF.',
+                '<b>Приблизно на 10 футах (3 м)</b> над землею. Надто високо: <b>клеванти не відпускати вгору</b>. Зупинись, тримай те, що є, лети прямо, дотискай під час зниження й готуйся до PLF.',
               ),
             },
             {
@@ -1040,16 +1049,16 @@ export const part3: Part = {
               a: l(
                 'Parachute landing fall: you land on your feet and <b>roll along the side</b> of the body, so the <b>impact spreads out</b> instead of going into your ankles and legs. Feet and knees together, knees slightly bent, chin to chest, elbows in.',
                 'Caída de aterrizaje en paracaídas (PLF): aterrizas sobre los pies y <b>ruedas por el costado</b> del cuerpo, así el <b>impacto se reparte</b> en vez de ir a tobillos y piernas. Pies y rodillas juntos, rodillas un poco flexionadas, barbilla al pecho, codos adentro.',
-                'Parachute landing fall — приземление с перекатом: касаешься ногами и <b>перекатываешься по боку</b>, <b>удар распределяется</b> по телу, а не уходит в лодыжки и ноги. Ступни и колени вместе, колени чуть согнуты, подбородок к груди, локти прижаты.',
-                'Parachute landing fall — приземлення з перекатом: торкаєшся землі ногами й <b>перекочуєшся по боку</b>, тож <b>удар розподіляється</b> по тілу, а не йде в щиколотки й ноги. Ступні й коліна разом, коліна трохи зігнуті, підборіддя до грудей, лікті притиснуті.',
+                'PLF — приземление с перекатом (parachute landing fall): касаешься ногами и <b>перекатываешься по боку</b>, <b>удар распределяется</b> по телу, а не уходит в лодыжки и ноги. Ступни и колени вместе, колени чуть согнуты, подбородок к груди, локти прижаты.',
+                'PLF — приземлення з перекатом (parachute landing fall): торкаєшся землі ногами й <b>перекочуєшся по боку</b>, тож <b>удар розподіляється</b> по тілу, а не йде в щиколотки й ноги. Ступні й коліна разом, коліна трохи зігнуті, підборіддя до грудей, лікті притиснуті.',
               ),
             },
             {
               n: '31',
               q: l('The 5 points of contact in a PLF?', '¿Los 5 puntos de contacto en un PLF?', '5 точек касания при PLF?', '5 точок торкання під час PLF?'),
               a: l(
-                '1 <b>balls of the feet</b> · 2 side of the <b>calf</b> · 3 side of the <b>thigh</b> · 4 side of the <b>buttock</b> (hip) · 5 side of the <b>back</b> (the “push-up” muscle).',
-                '1 <b>parte delantera de la planta</b> · 2 costado de la <b>pantorrilla</b> · 3 costado del <b>muslo</b> · 4 costado del <b>glúteo</b> (cadera) · 5 costado de la <b>espalda</b> (el músculo de las “flexiones”).',
+                '1 <b>balls of the feet</b> · 2 side of the <b>calf</b> · 3 side of the <b>thigh</b> · 4 side of the <b>buttock</b> (hip) · 5 side of the <b>back</b> (the “pull-up” muscle, the lat).',
+                '1 <b>parte delantera de la planta</b> · 2 costado de la <b>pantorrilla</b> · 3 costado del <b>muslo</b> · 4 costado del <b>glúteo</b> (cadera) · 5 costado de la <b>espalda</b> (el dorsal ancho, el músculo de las dominadas).',
                 '1 <b>подушечки стоп</b> · 2 боковая часть <b>икры</b> · 3 боковая часть <b>бедра</b> · 4 <b>ягодица</b> сбоку · 5 бок <b>спины</b> (широчайшая мышца).',
                 '1 <b>подушечки стоп</b> · 2 бічна частина <b>литки</b> · 3 бічна частина <b>стегна</b> · 4 <b>сідниця</b> збоку · 5 бік <b>спини</b> (найширший м’яз).',
               ),
@@ -1071,22 +1080,22 @@ export const part3: Part = {
           questions: [
             {
               q: l(
-                'Below what altitude are only corrections of 45° or less allowed?',
-                '¿Por debajo de qué altura solo se permiten correcciones de 45° o menos?',
-                'Ниже какой высоты можно только поправки до 45°?',
-                'Нижче якої висоти можна лише поправки до 45°?',
+                'In a PLF, what is the 5th point of contact?',
+                'En un PLF, ¿cuál es el 5.º punto de contacto?',
+                'Какая 5-я точка касания при PLF?',
+                'Яка 5-та точка торкання під час PLF?',
               ),
               options: [
-                l('1,000 ft', '1,000 ft', '1 000 футов', '1 000 футів'),
-                l('600 ft', '600 ft', '600 футов', '600 футів'),
-                l('300 ft', '300 ft', '300 футов', '300 футів'),
+                l('The back of the head, chin tucked', 'La nuca, con la barbilla recogida', 'Затылок, подбородок прижат', 'Потилиця, підборіддя притиснуте'),
+                l('The side of the back, the lat', 'El costado de la espalda, el dorsal', 'Бок спины, широчайшая мышца', 'Бік спини, найширший м’яз'),
+                l('Both hands, palms on the ground', 'Las dos manos, palmas al suelo', 'Обе ладони, упор в землю', 'Обидві долоні, упор у землю'),
               ],
-              answer: 2,
+              answer: 1,
               why: l(
-                'Question 28: below 300 ft, only small flat corrections, 45° or less.',
-                'Pregunta 28: por debajo de 300 ft, solo correcciones pequeñas y planas, de 45° o menos.',
-                'Вопрос 28: ниже 300 футов — только небольшие плоские поправки, до 45°.',
-                'Питання 28: нижче 300 футів — лише невеликі пласкі поправки, до 45°.',
+                'Question 31: balls of the feet, calf, thigh, buttock, then the side of the back (the lat, the “pull-up” muscle).',
+                'Pregunta 31: parte delantera de la planta, pantorrilla, muslo, glúteo y luego el costado de la espalda (el dorsal ancho, el músculo de las dominadas).',
+                'Вопрос 31: подушечки стоп, икра, бедро, ягодица, потом бок спины (широчайшая мышца).',
+                'Питання 31: подушечки стоп, литка, стегно, сідниця, потім бік спини (найширший м’яз).',
               ),
             },
             {
@@ -1099,7 +1108,7 @@ export const part3: Part = {
               options: [
                 l('Tall grass', 'Hierba alta', 'Высокая трава', 'Висока трава'),
                 l('Power lines', 'Cables eléctricos', 'Линии электропередачи', 'Лінії електропередачі'),
-                l('Other canopies', 'Otras velas', 'Другие купола', 'Інші куполи'),
+                l('A dirt road', 'Un camino de tierra', 'Грунтовая дорога', 'Ґрунтова дорога'),
               ],
               answer: 1,
               why: l(

@@ -7,12 +7,22 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 (desktop, light, EN); canopy check, obstacles, a chapter test (phone, dark, RU).
 
 ## Waiting on you
-- Send the dropzone the email asking for the ground-school slides? Draft: `docs/email-draft.md` (not sent).
+- Email to Skydive California (info@skydivecalifornia.com, checked on their contact page): review request + offer to
+  help for free + "what would you add for your school?". Draft: `docs/email-draft.md` (not sent). Needs the private link.
+- Private link only the dropzone can open: Cloudflare Pages + Cloudflare Access (email one-time code, allow-list)?
+  Needs your Cloudflare account and OK; the clips are other people's videos, so keep the allow-list small.
+
+- Photo of the dropzone map the instructors drew in ground school (holding point, pattern, landing area): send it and
+  it goes next to the pattern drawing in Part III and into Part V.
 
 ## Owner decides later
 - Publishing: **private GitHub repo only** (vekaev/aff-notes, owner 2026-11-16); the app itself is not published. A web version would need the clips replaced by links or own footage.
 - Public version for the dropzone / other students (needs own footage or licensed clips instead of YouTube cuts).
 - Native app version (iPhone) built on the same content files.
+- Reuse for other dropzones: content is now general ("your dropzone"); dropzone facts live only in Part V. Needs rights
+  from the clip creators (or own footage) before anyone else gets it.
+- Open source the app (code + content, without the YouTube clips).
+- ML model that spots packing mistakes in a video of someone packing (idea, 2026-11-16).
 
 ---
 
@@ -59,7 +69,7 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - [x] Real "what went wrong" videos: new chapter with 13 clips (low turns, flare, wind, obstacles, collision, AFF freefall,
       cutaway), each with what happened + the lesson + the original in the in-page player (docs/research/incident-videos.md).
 - [x] Card grids redesigned: top-left aligned, icon + title on one row, equal heights; gear checks as a numbered row with arrows.
-- [~] Section-by-section review by 3 helpers (docs/review/), then fixes.
+- [x] Section-by-section review by 3 helpers (docs/review/), content fixes applied (parts I–V); screen findings partly done.
 - [x] PWA and sharing: favicon (SVG + PNG), app icons incl. maskable, link-preview image (og.png 1200×630), description,
       keywords, Open Graph + Twitter tags, theme-color light/dark, manifest, service worker (app shell precached,
       clips cached on play + "Save everything for offline" button), skip link, aria-current, labelled player,
@@ -67,6 +77,22 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - [ ] Verify the service worker in real Chrome/Safari (the app's built-in browser refuses to register it).
 - [ ] When hosted: set VITE_SITE_URL in .env to the absolute URL so link previews show the image.
 - [x] Private GitHub repo vekaev/aff-notes (private), autopilot pushes there.
+
+## 0c. Round 4 (owner, 2026-11-16, late)
+- [x] Jump picture: no "decide by 2,500" line under part IV.
+- [x] Incident cards: wide, the video is a play button that opens the full YouTube video at the right second.
+- [x] More air everywhere: one spacing scale (--s1…--s10), bigger gaps between blocks and chapters, more padding in
+      cards, 15–16 px text in cards, list cards one per row on phones.
+- [x] Content general, not tied to Tracy: "your school / your instructors / ask your dropzone"; Skydive California facts
+      (north wind, holding point by the playground, turn limits 180/90/45) only in Part V, now "Your dropzone, example".
+- [x] Phone scrolling jumped: the progress rail on the right edge caught the thumb and jumped the page. On touch screens
+      the rail now only shows progress; the header re-renders alone when the part changes. No layout shifts measured.
+- [x] Header: title left, part in the middle (numeral only on phones), language + theme pinned right.
+- [ ] Owner to re-check scrolling on the iPhone (the fix is seen in the emulator only).
+- [x] Numbers tape fixed: 2,500 = can you reach the holding point (canopy plan), then 2,000 over it, 1,000 leave it;
+      the emergency 2,500 (decide and act on a bad main) and 1,000 (no cutaway below) moved to their own red row.
+- [ ] Real footage next to every drawing (rig with its parts first, exit, altimeter, pattern POV, canopy check POV).
+- [x] Email draft rewritten in the owner's words (review + free help + what to add); not sent.
 
 ## Facts to verify (doubts raised by the text reviewers; check against sources, then fix or mark <q-check/>)
 - [x] Arms 90/90 = thumb and pinky: confirmed by the video's narration (lines along thumb and pinky form 90°).

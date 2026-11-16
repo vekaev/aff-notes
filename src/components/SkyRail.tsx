@@ -28,7 +28,7 @@ function useRail(jumper: React.RefObject<HTMLDivElement | null>, altEl: React.Re
         const track = (el.parentElement?.clientHeight ?? 0) - el.offsetHeight - 22;
         el.style.transform = `translate3d(0, ${Math.max(0, p * track)}px, 0)`;
       }
-      if (altEl.current) altEl.current.textContent = Math.max(0, Math.round(((1 - p) * 13500) / 100) * 100).toLocaleString('en-US');
+      if (altEl.current) altEl.current.textContent = Math.max(0, Math.round(((1 - p) * 13000) / 100) * 100).toLocaleString('en-US');
       let part = 'top';
       const mid = scrollY + innerHeight * 0.5;
       for (const x of parts) if (x.top < mid) part = x.id;
@@ -108,6 +108,8 @@ export function SkyRail() {
     scrollTo({ top: f * (document.documentElement.scrollHeight - innerHeight), behavior: smooth && !reduce ? 'smooth' : 'auto' });
   };
   const down = (e: React.PointerEvent<HTMLDivElement>) => {
+    // Mouse and pen only. On a phone the rail sits where the thumb scrolls: a touch there used to jump the page.
+    if (e.pointerType === 'touch') return;
     const el = e.currentTarget;
     el.setPointerCapture(e.pointerId);
     toY(el, e.clientY, true);

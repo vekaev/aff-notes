@@ -149,7 +149,8 @@ export function ExitCount({ steps }: { steps: Step[] }) {
 }
 
 /* ---------- dive flow with a live altimeter ---------- */
-const MAX = 15, ang = (v: number) => -135 + (v / MAX) * 270;
+// A real analog altimeter: 0 at the top, one turn = 12,000 ft (13,000 shows just past 1).
+const ang = (v: number) => (v / 12) * 360;
 
 function AltRows({ rows, on, onPick }: { rows: AltRow[]; on: number; onPick: (i: number) => void }) {
   return (
@@ -169,11 +170,17 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
   const [i, setI] = useState(0);
   const r = rows[i];
   const ticks = [];
-  for (let v = 0; v <= MAX; v++) {
-    const a = ((ang(v) - 90) * Math.PI) / 180, r1 = v % 5 ? 92 : 86, warn = v === 5 || v === 6;
-    ticks.push(<line key={v} x1={120 + r1 * Math.cos(a)} y1={120 + r1 * Math.sin(a)} x2={120 + 100 * Math.cos(a)} y2={120 + 100 * Math.sin(a)} stroke={warn ? 'var(--red)' : 'var(--faint)'} strokeWidth={v % 5 ? 2 : 4} />);
-    if (v % 3 === 0 || v === 5) ticks.push(<text key={'t' + v} x={120 + 72 * Math.cos(a)} y={124 + 72 * Math.sin(a)} textAnchor="middle" fontFamily="var(--mono)" fontSize="13" fill={warn ? 'var(--red)' : 'var(--muted)'}>{v}</text>);
+  // red arc 0–2,500 ft (decision altitude and below), amber 2,500–6,000 (lock on → pull → decide)
+  const arc = (from: number, to: number, color: string) => {
+    const p = (v: number) => { const a = ((ang(v) - 90) * Math.PI) / 180; return `${120 + 101 * Math.cos(a)} ${120 + 101 * Math.sin(a)}`; };
+    return <path d={`M${p(from)} A101 101 0 0 1 ${p(to)}`} fill="none" stroke={color} strokeWidth="6" strokeLinecap="butt" opacity=".75" />;
+  };
+  for (let h = 0; h < 24; h++) {
+    const v = h / 2, a = ((ang(v) - 90) * Math.PI) / 180, major = h % 2 === 0, r1 = major ? 86 : 92;
+    ticks.push(<line key={h} x1={120 + r1 * Math.cos(a)} y1={120 + r1 * Math.sin(a)} x2={120 + 98 * Math.cos(a)} y2={120 + 98 * Math.sin(a)} stroke="var(--faint)" strokeWidth={major ? 3 : 1.5} />);
+    if (major) ticks.push(<text key={'t' + h} x={120 + 72 * Math.cos(a)} y={124.5 + 72 * Math.sin(a)} textAnchor="middle" fontFamily="var(--mono)" fontSize="13" fill="var(--muted)">{v}</text>);
   }
+  ticks.push(<g key="arcs">{arc(0, 2.5, 'var(--red)')}{arc(2.5, 6, 'var(--acc-canopy)')}</g>);
   return (
     <div className="split">
       <div><AltRows rows={rows} on={i} onPick={setI} /></div>
@@ -214,7 +221,7 @@ export function Pattern({ rows }: { rows: AltRow[] }) {
           <circle cx="275" cy="205" r="22" fill="none" stroke="var(--faint)" strokeWidth="1.5" strokeDasharray="4 4" />
           <path id="patPath" d="M275 183 A22 22 0 1 1 275 227 A22 22 0 1 1 275 183 L250 200 L60 200 L60 70 L186 70" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" markerEnd="url(#arrP)" />
           <path d="M194 62 L210 78 M210 62 L194 78" stroke="var(--ok)" strokeWidth="4" />
-          <g fontFamily="var(--mono)" fontSize="11" fill="var(--ink)"><text x="236" y="192">900</text><text x="66" y="192">600</text><text x="66" y="88">300</text><text x="148" y="56">10 ft</text></g>
+          <g fontFamily="var(--mono)" fontSize="11" fill="var(--ink)"><text x="226" y="228">900</text><text x="72" y="228">600</text><text x="72" y="100">300</text><text x="148" y="56">10 ft</text></g>
           {!reduce && <circle r="7" fill="var(--red)" stroke="var(--paper)" strokeWidth="2"><animateMotion dur="14s" repeatCount="indefinite"><mpath href="#patPath" /></animateMotion></circle>}
           {r.point && <circle cx={r.point[0]} cy={r.point[1]} r="12" fill="none" stroke="var(--ink)" strokeWidth="3" />}
         </svg>
@@ -238,7 +245,7 @@ export function LowTurn({ b }: { b: Extract<Block, { type: 'lowturn' }> }) {
           <path d="M150 186 l-8 -12 l10 4 l2 -12 l6 10 l10 -6 l-4 12 z" fill="var(--red)" />
           <circle cx="110" cy="92" r="6" fill="var(--red)" />
           <g fontFamily="var(--mono)" fontSize="10">
-            <text x="104" y="80" textAnchor="end" fill="var(--red)">{t({ en: 'turn starts low', es: 'giro muy bajo', ru: 'поворот низко', uk: 'поворот низько' })}</text>
+            <text x="100" y="112" textAnchor="end" fill="var(--red)">{t({ en: 'turn starts low', es: 'giro muy bajo', ru: 'поворот низко', uk: 'поворот низько' })}</text>
             <text x="112" y="176" textAnchor="end" fill="var(--red)">{t({ en: 'dives, speeds up', es: 'se clava, acelera', ru: 'ныряет, разгоняется', uk: 'пірнає, розганяється' })}</text>
             <text x="312" y="203" textAnchor="end" fill="var(--ink)">{t({ en: 'straight: glide, flare', es: 'recto: planeo, flare', ru: 'прямо: скольжение, flare', uk: 'прямо: ковзання, flare' })}</text>
             <text x="12" y="202" fill="var(--muted)">{t(ui.sideView)}</text>

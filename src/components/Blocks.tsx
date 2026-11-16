@@ -56,9 +56,16 @@ function SourceLink({ src, title }: { src: { yt: string; t: number; credit: stri
 function CardView({ c }: { c: Card }) {
   const [reveal, setReveal] = useState(false);
   const { t } = useLang();
+  const open = useOpenVideo();
+  const media = c.clip ? <Video src={c.clip} label={t(c.name)} /> : c.drawing ? <div className="draw"><CanopyDrawing state={c.drawing} /></div> : null;
   return (
     <div className={`card ${c.tone ?? ''} ${reveal ? 'reveal' : ''}`} onClick={() => setReveal(r => !r)}>
-      {c.clip ? <Video src={c.clip} label={t(c.name)} /> : c.drawing ? <div className="draw"><CanopyDrawing state={c.drawing} /></div> : null}
+      {c.source && media ? (
+        <button type="button" className="media-btn" aria-label={`${t(ui.watch)}: ${t(c.name)}`}
+          onClick={e => { e.stopPropagation(); open({ yt: c.source!.yt, t: c.source!.t, title: t(c.name) }); }}>
+          {media}<span className="play" aria-hidden="true">▶</span>
+        </button>
+      ) : media}
       <div className="body">
         <span className="nm"><Rich s={c.name} /></span>
         <span className="wh"><Rich s={c.what} /></span>
@@ -72,15 +79,19 @@ function CardView({ c }: { c: Card }) {
 function Cards({ b }: { b: Extract<Block, { type: 'cards' }> }) {
   const [quiz, setQuiz] = useState(false);
   const { t } = useLang();
+  // cards that each link to a real video (the mistakes chapter) are shown wide: big video, text beside it
+  const wide = b.items.every(c => c.source);
   return (
     <div className={`cardgroup blocks ${quiz ? 'quizzing' : ''}`}>
       {b.groupTitle && <h4><Rich s={b.groupTitle} />{b.pill && <span className={`pill ${b.pill}`}>{b.pill}</span>}</h4>}
       {b.groupSub && <p className="muted" style={{ margin: 0 }}><Rich s={b.groupSub} /></p>}
-      <div className="toggle-row">
-        <button type="button" className={`btn toggle ${quiz ? 'primary' : ''}`} aria-pressed={quiz} onClick={() => setQuiz(q => !q)}>{t(quiz ? ui.showNames : ui.hideNames)}</button>
-        {quiz && <span className="hint">{t(ui.tapToReveal)}</span>}
-      </div>
-      <div className={`cards ${b.small ? 'small' : ''}`}>{b.items.map((c, i) => <CardView key={i} c={c} />)}</div>
+      {!wide && (
+        <div className="toggle-row">
+          <button type="button" className={`btn toggle ${quiz ? 'primary' : ''}`} aria-pressed={quiz} onClick={() => setQuiz(q => !q)}>{t(quiz ? ui.showNames : ui.hideNames)}</button>
+          {quiz && <span className="hint">{t(ui.tapToReveal)}</span>}
+        </div>
+      )}
+      <div className={`cards ${b.small ? 'small' : ''} ${wide ? 'wide' : ''}`}>{b.items.map((c, i) => <CardView key={i} c={c} />)}</div>
     </div>
   );
 }
@@ -103,14 +114,13 @@ export function BlockView({ b, chapterId }: { b: Block; chapterId: string }) {
       );
       return <ol className="steps">{b.items.map((s, i) => <li key={i}><div>{s.icon && <Icon name={s.icon} />}<span className="st"><Rich s={s.title} /></span>{s.sub && <span className="sub"><Rich s={s.sub} /></span>}</div></li>)}</ol>;
     case 'bars': {
-      const max = Math.max(...b.items.map(x => x.value));
       return (
         <div className="surface bars">
           <span className="bt"><Rich s={b.title} /></span>
           {b.items.map((x, i) => (
             <div key={i} className={`row ${x.hl ? 'hl' : ''}`}>
               <span><Rich s={x.label} /></span>
-              <span className="track"><span className="fill" style={{ ['--v' as string]: `${(x.value / max) * 100}%` }} /></span>
+              <span className="track"><span className="fill" style={{ ['--v' as string]: `${Math.min(100, x.value)}%` }} /></span>
               <span className="pct">{x.value}%</span>
             </div>
           ))}

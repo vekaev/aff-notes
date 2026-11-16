@@ -1,11 +1,12 @@
 import type { Part } from './types';
 
-// Public material from the dropzone where the course happened (docs/research/skydive-california.md).
+// The one place that is about a specific dropzone: the school where the owner did the course
+// (docs/research/skydive-california.md). The rest of the app is general; swap this part to reuse it elsewhere.
 export const dropzone: Part = {
   id: 'dz',
   roman: 'V',
-  range: { en: 'Tracy, California', es: 'Tracy, California', uk: 'Трейсі, Каліфорнія', ru: 'Трейси, Калифорния' },
-  title: { en: 'Our dropzone', es: 'Nuestra zona de salto', uk: 'Наш майданчик', ru: 'Наша площадка' },
+  range: { en: 'example: Skydive California', es: 'ejemplo: Skydive California', uk: 'приклад: Skydive California', ru: 'пример: Skydive California' },
+  title: { en: 'Your dropzone', es: 'Tu zona de salto', uk: 'Твій майданчик', ru: 'Твоя площадка' },
   chapters: [
     {
       id: 'sdca',
@@ -13,8 +14,10 @@ export const dropzone: Part = {
       blocks: [
         { type: 'list', title: { en: 'Skydive California, 25001 Kasson Rd, Tracy', es: 'Skydive California, 25001 Kasson Rd, Tracy', uk: 'Skydive California, 25001 Kasson Rd, Трейсі', ru: 'Skydive California, 25001 Kasson Rd, Трейси' }, items: [
           { en: 'A <b>USPA dropzone</b> with its own airfield.', es: 'Una <b>zona de salto de USPA</b> con aeródromo propio.', uk: '<b>Майданчик USPA</b> із власним аеродромом.', ru: '<b>Площадка USPA</b> со своим аэродромом.' },
-          { en: 'Students exit at <b>13,000 ft</b>, pull at <b>5,500 ft</b> on category A.', es: 'Los alumnos saltan a <b>13,000 ft</b> y abren a <b>5,500 ft</b> en la categoría A.', uk: 'Студенти стрибають з <b>13 000 футів</b>, розкриваються на <b>5 500</b> на категорії A.', ru: 'Студенты прыгают с <b>13 000 футов</b>, раскрываются на <b>5 500</b> на категории A.' },
           { en: '<b>Radio help</b> under canopy.', es: '<b>Ayuda por radio</b> bajo la vela.', uk: 'Під куполом <b>допомагають по радіо</b>.', ru: 'Под куполом <b>помогают по радио</b>.' },
+          { en: 'Wind usually <b>from the north</b> (ground course).', es: 'El viento suele venir <b>del norte</b> (curso en tierra).', uk: 'Вітер зазвичай <b>з півночі</b> (наземний курс).', ru: 'Ветер обычно <b>с севера</b> (наземный курс).' },
+          { en: 'Holding point <b>near the playground</b> <q-check/>.', es: 'Punto de espera <b>cerca del parque infantil</b> <q-check/>.', uk: 'Точка очікування <b>біля дитячого майданчика</b> <q-check/>.', ru: 'Точка ожидания <b>у детской площадки</b> <q-check/>.' },
+          { en: 'Turn limits taught here: <b>180° above 1,000 ft, 90° to 300 ft, 45° below</b>.', es: 'Límites de giro que se enseñan aquí: <b>180° por encima de 1,000 ft, 90° hasta 300 ft, 45° por debajo</b>.', uk: 'Обмеження розворотів тут: <b>180° вище 1 000 футів, 90° до 300 футів, 45° нижче</b>.', ru: 'Ограничения разворотов здесь: <b>180° выше 1 000 футов, 90° до 300 футов, 45° ниже</b>.' },
         ] },
         { type: 'rules', items: [
           { big: '13,000', title: { en: 'Exit altitude', es: 'Altura de salida', uk: 'Висота викидання', ru: 'Высота выброски' }, text: { en: 'For AFF students.', es: 'Para alumnos AFF.', uk: 'Для студентів AFF.', ru: 'Для студентов AFF.' } },
@@ -44,6 +47,28 @@ export const dropzone: Part = {
           { en: '<b>Emergency altitudes</b>.', es: 'Las <b>alturas de emergencia</b>.', uk: '<b>Аварійні висоти</b>.', ru: '<b>Аварийные высоты</b>.' },
           { en: 'All in the ground-school slides: <b>ask for a copy</b>.', es: 'Todo está en las diapositivas del curso teórico: <b>pide una copia</b>.', uk: 'Усе це в слайдах наземної підготовки: <b>попроси копію</b>.', ru: 'Всё это в слайдах наземной подготовки: <b>попроси копию</b>.' },
         ] },
+        { type: 'quiz', questions: [
+          {
+            q: { en: 'What is the exit altitude for AFF students here?', es: '¿A qué altura saltan aquí los alumnos AFF?', uk: 'З якої висоти тут стрибають студенти AFF?', ru: 'С какой высоты здесь прыгают студенты AFF?' },
+            options: [
+              { en: '13,000 ft', es: '13,000 ft', uk: '13 000 футів', ru: '13 000 футов' },
+              { en: '10,000 ft', es: '10,000 ft', uk: '10 000 футів', ru: '10 000 футов' },
+              { en: '5,500 ft', es: '5,500 ft', uk: '5 500 футів', ru: '5 500 футов' },
+            ],
+            answer: 0,
+            why: { en: 'Students exit at 13,000 ft and pull at 5,500 ft on category A.', es: 'Los alumnos saltan a 13,000 ft y abren a 5,500 ft en la categoría A.', uk: 'Студенти стрибають з 13 000 футів і розкриваються на 5 500 на категорії A.', ru: 'Студенты прыгают с 13 000 футов и раскрываются на 5 500 на категории A.' },
+          },
+          {
+            q: { en: 'Someone keeps flying the wrong landing pattern. What happens?', es: 'Alguien vuela mal el circuito una y otra vez. ¿Qué pasa?', uk: 'Хтось раз у раз літає не за схемою. Що буде?', ru: 'Кто-то раз за разом летает не по схеме. Что будет?' },
+            options: [
+              { en: 'Suspended, even with a license', es: 'Lo suspenden, aun con licencia', uk: 'Відсторонять, навіть із ліцензією', ru: 'Отстранят, даже с лицензией' },
+              { en: 'Nothing, the pattern is advice', es: 'Nada, el circuito es un consejo', uk: 'Нічого, схема — лише порада', ru: 'Ничего, схема — лишь совет' },
+              { en: 'Only students get a warning', es: 'Solo avisan a los alumnos', uk: 'Попереджають лише студентів', ru: 'Предупреждают только студентов' },
+            ],
+            answer: 0,
+            why: { en: 'Jumpers say the dropzone suspends even licensed jumpers who fly the wrong pattern again and again. One side is farmland: don\'t land there.', es: 'Según los paracaidistas, la zona suspende incluso a quienes tienen licencia si vuelan mal el circuito varias veces. Un lado es cultivo: no aterrices ahí.', uk: 'За словами парашутистів, майданчик відстороняє навіть ліцензованих, хто раз у раз літає не за схемою. Один бік — посіви: туди не сідай.', ru: 'По словам прыгунов, площадка отстраняет даже лицензированных, кто раз за разом летает не по схеме. Одна сторона — посевы: туда не садись.' },
+          },
+        ] },
       ],
     },
     {
@@ -62,11 +87,11 @@ export const dropzone: Part = {
           { title: { en: 'USPA dive flows, category A onward', es: 'Planes de salto USPA, desde la categoría A', uk: 'Плани стрибків USPA з категорії A', ru: 'Планы прыжков USPA с категории A' },
             sub: { en: '<a href="https://www.uspa.org/skydiveschool/A">Category A</a> and the <a href="https://www.youtube.com/playlist?list=PL5NtYTSapvjCNbMA5CE_P8s1PEN2danzh">video playlist</a>. <b>Read the next category</b> before each jump.', es: '<a href="https://www.uspa.org/skydiveschool/A">Categoría A</a> y la <a href="https://www.youtube.com/playlist?list=PL5NtYTSapvjCNbMA5CE_P8s1PEN2danzh">lista de videos</a>. <b>Lee la siguiente categoría</b> antes de cada salto.', uk: '<a href="https://www.uspa.org/skydiveschool/A">Категорія A</a> і <a href="https://www.youtube.com/playlist?list=PL5NtYTSapvjCNbMA5CE_P8s1PEN2danzh">плейлист</a>. Перед кожним стрибком <b>читай наступну категорію</b>.', ru: '<a href="https://www.uspa.org/skydiveschool/A">Категория A</a> и <a href="https://www.youtube.com/playlist?list=PL5NtYTSapvjCNbMA5CE_P8s1PEN2danzh">плейлист</a>. Перед каждым прыжком <b>читай следующую категорию</b>.' } },
           { title: { en: 'USPA Skydiver\'s Information Manual, section 4-1', es: 'Manual de información del paracaidista de USPA (SIM), sección 4-1', uk: 'Довідник USPA (SIM), розділ 4-1', ru: 'Справочник USPA (SIM), раздел 4-1' },
-            sub: { en: '<a href="https://www.uspa.org/sim/4-1">Emergencies</a>: <b>malfunctions</b>, two canopies, obstacle landings, decision altitudes.', es: '<a href="https://www.uspa.org/sim/4-1">Emergencias</a>: <b>malfunciones</b>, dos velas, aterrizajes en obstáculos, alturas de decisión.', uk: '<a href="https://www.uspa.org/sim/4-1">Аварійні ситуації</a>: <b>відмови</b>, два куполи, посадка на перешкоди, висоти ухвалення рішення.', ru: '<a href="https://www.uspa.org/sim/4-1">Аварийные ситуации</a>: <b>отказы</b>, два купола, посадка на препятствия, высоты принятия решения.' } },
+            sub: { en: '<a href="https://www.uspa.org/sim/4-1">Emergencies</a>: <b>malfunctions</b>, two canopies, obstacle landings, decision altitudes. The rule book itself: read it once the course makes sense.', es: '<a href="https://www.uspa.org/sim/4-1">Emergencias</a>: <b>malfunciones</b>, dos velas, aterrizajes en obstáculos, alturas de decisión. Es el reglamento en sí: léelo cuando el curso ya tenga sentido.', uk: '<a href="https://www.uspa.org/sim/4-1">Аварійні ситуації</a>: <b>відмови</b>, два куполи, посадка на перешкоди, висоти ухвалення рішення. Це сам звід правил: читай, коли курс уже зрозумілий.', ru: '<a href="https://www.uspa.org/sim/4-1">Аварийные ситуации</a>: <b>отказы</b>, два купола, посадка на препятствия, высоты принятия решения. Это сам свод правил: читай, когда курс уже понятен.' } },
           { title: { en: 'Brian Germain, "The Parachute and its Pilot"', es: 'Brian Germain, "The Parachute and its Pilot"', uk: 'Браян Джермейн, «The Parachute and its Pilot»', ru: 'Брайан Джермейн, «The Parachute and its Pilot»' },
             sub: { en: 'The <b>classic canopy-flight book</b>. His <a href="https://www.youtube.com/watch?v=IIN4WylwLGo">flare videos</a> are short and clear.', es: 'El <b>libro clásico de pilotaje de vela</b>. Sus <a href="https://www.youtube.com/watch?v=IIN4WylwLGo">videos sobre el flare</a> son cortos y claros.', uk: '<b>Класична книжка</b> про пілотування купола. Його <a href="https://www.youtube.com/watch?v=IIN4WylwLGo">відео про flare</a> короткі й зрозумілі.', ru: '<b>Классическая книга</b> о пилотировании купола. Его <a href="https://www.youtube.com/watch?v=IIN4WylwLGo">видео про flare</a> короткие и понятные.' } },
           { title: { en: 'Parachutist magazine, "Rating Corner" and "Safety Check"', es: 'Revista Parachutist, "Rating Corner" y "Safety Check"', uk: 'Журнал Parachutist, рубрики «Rating Corner» і «Safety Check»', ru: 'Журнал Parachutist, рубрики «Rating Corner» и «Safety Check»' },
-            sub: { en: 'Short columns by instructors on <b>what students get wrong</b>: <a href="https://www.uspa.org/rating-corner-aff-tips">AFF tips</a>, <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">the five-second rule</a>.', es: 'Columnas breves de instructores sobre <b>los errores de los alumnos</b>: <a href="https://www.uspa.org/rating-corner-aff-tips">consejos AFF</a>, <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">la regla de los cinco segundos</a>.', uk: 'Короткі колонки інструкторів про <b>типові помилки студентів</b>: <a href="https://www.uspa.org/rating-corner-aff-tips">поради з AFF</a>, <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">правило п\'яти секунд</a>.', ru: 'Короткие колонки инструкторов о <b>типичных ошибках студентов</b>: <a href="https://www.uspa.org/rating-corner-aff-tips">советы по AFF</a>, <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">правило пяти секунд</a>.' } },
+            sub: { en: 'Short columns by instructors on <b>what students get wrong</b>: <a href="https://www.uspa.org/rating-corner-aff-tips">AFF tips</a>, <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">the five-second rule</a>.', es: 'Columnas breves de instructores sobre <b>los errores de los alumnos</b>: <a href="https://www.uspa.org/rating-corner-aff-tips">consejos AFF</a>, <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">la regla de los cinco segundos</a>.', uk: 'Короткі колонки інструкторів про <b>типові помилки студентів</b>: <a href="https://www.uspa.org/rating-corner-aff-tips">поради з AFF</a>, <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">правило п’яти секунд</a>.', ru: 'Короткие колонки инструкторов о <b>типичных ошибках студентов</b>: <a href="https://www.uspa.org/rating-corner-aff-tips">советы по AFF</a>, <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">правило пяти секунд</a>.' } },
         ] },
       ],
     },

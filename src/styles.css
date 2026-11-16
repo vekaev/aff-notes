@@ -451,7 +451,7 @@ dialog.player::backdrop { background: rgba(0,0,0,.72); }
 
 /* the numbers as an altimeter tape: altitudes in the order you pass them */
 .ngrid { display: none; }
-.tape { list-style: none; margin: 0; padding: 18px 12px 16px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)) minmax(0, 1.7fr) minmax(0, 1fr); gap: 4px; position: relative; }
+.tape { list-style: none; margin: 0; padding: 18px 12px 16px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)) minmax(0, 1.7fr) minmax(0, 1fr); gap: 4px; position: relative; }
 .tape::before { content: ""; position: absolute; left: 7%; right: 7%; top: 58px; height: 2px; background: var(--line-strong); }
 .tape li a { display: grid; justify-items: center; text-align: center; gap: 8px; padding: 4px 4px 2px; text-decoration: none; border-radius: 10px; position: relative; }
 .tape li a:hover { background: var(--soft); }
@@ -540,3 +540,131 @@ dialog.player::backdrop { background: rgba(0,0,0,.72); }
 .skip:focus { top: calc(env(safe-area-inset-top, 0px) + 10px); }
 #content { display: block; height: 0; outline: none; }
 .footer-in { display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+
+/* review fixes */
+html, body { overflow-x: clip; }
+h3, h4, .rule .rt, .card .nm, .timeline .st, .tape .lbl { overflow-wrap: break-word; hyphens: auto; }
+.rule .big, .tape .big, .timer .big, .alt-rows .a, .bars .pct { white-space: nowrap; }
+.cards { grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); }
+.cards:has(> :nth-child(5)) { grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)); }
+.card { position: relative; }
+.card.ep, .card.fix, .card.key { box-shadow: 0 0 0 1px var(--hair); }
+.card.ep::before, .card.fix::before, .card.key::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; z-index: 2; background: var(--red); }
+.card.fix::before { background: var(--ok); }
+.card.key::before { background: var(--accent, var(--ink)); }
+.card .draw { aspect-ratio: 16 / 9; overflow: hidden; }
+.card .draw svg { height: 100%; width: auto; max-width: 100%; }
+/* on a phone the picture comes first and stays in view while you tap the steps under it */
+@media (max-width: 760px) {
+  .split > .stage.sticky { order: -1; top: calc(var(--header) + env(safe-area-inset-top, 0px) + 6px); z-index: 3; box-shadow: 0 0 0 1px var(--hair), 0 8px 18px rgba(0,0,0,.08); }
+  .split > .stage.sticky svg { max-height: 190px; }
+  .split > .stage.sticky .controls .btn { height: 32px; }
+}
+
+/* wide incident cards: the video gets room, the text sits beside it with clear spacing */
+.cards.wide { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.cards.wide .card { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); cursor: default; }
+.cards.wide .card .body { padding: 18px 20px 18px; gap: 8px; justify-content: flex-start; }
+.cards.wide .card .nm { font-size: 19px; line-height: 1.25; }
+.cards.wide .card .wh { font-size: 15px; line-height: 1.5; }
+.cards.wide .card .ac { font-size: 15px; line-height: 1.45; margin-top: 6px; padding-top: 10px; }
+.cards.wide .vid { aspect-ratio: auto; height: 100%; min-height: 220px; }
+@media (max-width: 760px) {
+  .cards.wide .card { grid-template-columns: minmax(0, 1fr); }
+  .cards.wide .vid { aspect-ratio: 16 / 9; height: auto; min-height: 0; }
+}
+.media-btn { position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; color: inherit; }
+.media-btn .vid { height: 100%; }
+.media-btn .play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 52px; height: 52px; border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; font-size: 18px; display: grid; place-items: center; transition: transform .15s, background-color .15s; }
+.media-btn:hover .play, .media-btn:focus-visible .play { transform: translate(-50%, -50%) scale(1.08); background: rgba(0,0,0,.75); }
+.card .ac b { color: inherit; }
+
+/* room to breathe (owner 2026-11-16: "sections look cramped").
+   One spacing scale; every gap below comes from it, so the same distance means the same thing everywhere. */
+:root { --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 20px; --s6: 24px; --s7: 32px; --s8: 48px; --s9: 72px; --s10: 112px; }
+.chapter { margin-top: var(--s9); padding-top: var(--s8); }
+h3 { margin: var(--s2) 0 var(--s6); }
+h4 { margin: var(--s8) 0 var(--s3); font-size: 17px; }
+.blocks { gap: var(--s7); }
+.blocks > h4 { margin: var(--s4) 0 0; }
+.blocks > h4:first-child { margin-top: 0; }
+.blocks > h4 + * { margin-top: calc(var(--s3) - var(--s7)); }
+.blocks > p { line-height: 1.6; }
+.band { padding-bottom: var(--s10); }
+.part { padding-block: var(--s10) var(--s6); }
+.toc { margin-top: var(--s6); gap: var(--s2); }
+
+/* inside cards: more padding, readable sizes, looser lists */
+.rules, .timeline { gap: var(--s3); }
+.rule { padding: var(--s5) var(--s5) var(--s6); gap: var(--s2); }
+.callout { padding: var(--s5) var(--s6) var(--s5) 56px; font-size: 16px; line-height: 1.55; }
+.callout::before { left: var(--s5); top: 22px; }
+.callout .ct { margin-bottom: var(--s1); }
+.steps li { padding: var(--s4) var(--s5); gap: var(--s4); }
+.steps .sub { margin-top: var(--s1); line-height: 1.5; }
+.timeline li { padding: var(--s4) var(--s4); }
+.pts { gap: var(--s2); margin-top: var(--s2); }
+.pts li { line-height: 1.5; padding-left: 20px; }
+.list { padding: var(--s5) var(--s6) var(--s6); }
+.list .lt { margin-bottom: var(--s2); }
+.cards { gap: var(--s4); }
+.card .body { padding: var(--s4) var(--s4) var(--s5); gap: var(--s2); }
+.card .wh, .card .ac { font-size: 15px; line-height: 1.45; }
+.card .ac { padding-top: var(--s3); }
+.cards.wide { gap: var(--s6); }
+.cards.wide .card .body { padding: var(--s6) var(--s6) var(--s5); gap: var(--s3); }
+.clips { gap: var(--s4); }
+.clip figcaption { padding: var(--s3) var(--s4) var(--s4); font-size: 15px; line-height: 1.45; }
+.split { gap: var(--s6); }
+.split > div { gap: var(--s5); }
+.questions li { padding: var(--s4) var(--s5) var(--s4) 56px; line-height: 1.5; }
+.questions li::before { left: var(--s5); top: 18px; }
+.faq { gap: var(--s3); }
+.tips .cols { gap: var(--s6); margin-top: var(--s4); }
+.tips ul { gap: var(--s2); }
+.bars { gap: var(--s3); padding: var(--s5); }
+.quiz { padding: var(--s6); gap: var(--s5); }
+.watch { gap: var(--s2); }
+
+@media (max-width: 520px) {
+  .chapter { margin-top: var(--s8); padding-top: var(--s7); }
+  .blocks { gap: var(--s6); }
+  .blocks > h4 + * { margin-top: calc(var(--s3) - var(--s6)); }
+  .blocks > h4 { margin-top: var(--s2); }
+  .part { padding-block: var(--s9) var(--s4); }
+  .band { padding-bottom: var(--s9); }
+  .callout { padding: var(--s4) var(--s4) var(--s4) 48px; }
+  .callout::before { left: var(--s4); top: 18px; }
+  .rule { padding: var(--s4) var(--s4) var(--s5); }
+  .steps li { padding: var(--s4); gap: var(--s3); }
+  .list { padding: var(--s4) var(--s5) var(--s5); }
+  .quiz { padding: var(--s5); }
+  .cards.wide .card .body { padding: var(--s5); }
+  /* cards that hold a list read badly two to a row on a phone */
+  .blocks .rules:has(.pts) { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* emergency numbers: their own red row under the tape, so they never read as part of the landing plan */
+.emerg { display: grid; gap: var(--s2); }
+.emerg .eh { font: 650 13px var(--font); color: var(--red); }
+.timer.red { box-shadow: inset 3px 0 0 var(--red), 0 0 0 1px var(--hair); }
+.timer.red .big { color: var(--red); }
+
+/* header: title left, parts in the middle, language + theme pinned right (owner 2026-11-16) */
+.top .col { gap: var(--s3); }
+.brand { flex: none; }
+.parts { margin-left: auto; margin-right: auto; }
+.settings { margin-left: auto; }
+.parts + .settings { margin-left: 0; }
+@media (max-width: 700px) {
+  .parts { margin: 0; }
+  .parts a .pt { display: none; }            /* on a phone the current part shows as its numeral: "IV" */
+  .parts a { padding: 6px 10px; }
+  .brand { display: inline; }
+  .settings { margin-left: auto !important; }
+}
+@media (max-width: 420px) { .brand { display: inline; } .parts { margin-left: 0; } }
+
+/* phones: the rail only shows progress; scrolling stays native (a touch on it used to jump the page) */
+@media (pointer: coarse) { .skyrail { pointer-events: none; touch-action: auto; } }
+.faq p { white-space: pre-line; }

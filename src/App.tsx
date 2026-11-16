@@ -33,26 +33,38 @@ function useActivePart() {
   return active;
 }
 
+const acc = (id: string) => ({ ['--a' as string]: `var(--acc-${({ part1: 'plane', part2: 'free', part3: 'canopy', part4: 'ep', dz: 'dz' } as Record<string, string>)[id]})` });
+
+/**
+ * Title on the left, the parts in the middle, language and theme pinned right.
+ * Its own component: when the part under the header changes only the header re-renders, not the whole page.
+ */
+function Header() {
+  const { t } = useLang();
+  const active = useActivePart();
+  return (
+    <header className={`top gutter tone-${active}`}>
+      <div className="col">
+        <a className="brand" href="#top">{t(ui.brand)}</a>
+        <nav className="parts" aria-label={t(ui.part)}>
+          {parts.map(p => <a key={p.id} href={`#${p.id}`} style={acc(p.id)} className={active === p.id ? 'on' : ''} aria-current={active === p.id ? 'location' : undefined}><span className="pr">{p.roman}</span><span className="pt"> · {t(p.title)}</span></a>)}
+        </nav>
+        <div className="settings"><LangMenu /><ThemeButton /></div>
+      </div>
+    </header>
+  );
+}
+
 export function App() {
   const { t } = useLang();
   useTrackLastChapter();
-  const active = useActivePart();
   const passed = usePassed();
-  const acc = (id: string) => ({ ['--a' as string]: `var(--acc-${({ part1: 'plane', part2: 'free', part3: 'canopy', part4: 'ep', dz: 'dz' } as Record<string, string>)[id]})` });
   let n = 0;
 
   return (
     <>
       <a className="skip" href="#content">{t(ui.skip)}</a>
-      <header className={`top gutter tone-${active}`}>
-        <div className="col">
-          <a className="brand" href="#top">{t(ui.brand)}</a>
-          <nav className="parts" aria-label={t(ui.part)}>
-            {parts.map(p => <a key={p.id} href={`#${p.id}`} style={acc(p.id)} className={active === p.id ? 'on' : ''} aria-current={active === p.id ? 'location' : undefined}>{p.roman} · {t(p.title)}</a>)}
-          </nav>
-          <div className="settings"><LangMenu /><ThemeButton /></div>
-        </div>
-      </header>
+      <Header />
 
       <SkyRail />
       <main id="top">

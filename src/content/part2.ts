@@ -3,7 +3,7 @@ import type { Part } from './types';
 export const part2: Part = {
   id: 'part2',
   roman: 'II',
-  range: { en: '13,500 → 5,500 ft', es: '13,500 → 5,500 ft', uk: '13 500 → 5 500 футів', ru: '13 500 → 5 500 футов' },
+  range: { en: '13,000 → 5,500 ft', es: '13,000 → 5,500 ft', uk: '13 000 → 5 500 футів', ru: '13 000 → 5 500 футов' },
   title: { en: 'Freefall', es: 'Caída libre', uk: 'Вільне падіння', ru: 'Свободное падение' },
   chapters: [
     // ---------------------------------------------------------------- body
@@ -17,18 +17,23 @@ export const part2: Part = {
             {
               type: 'p',
               text: {
-                en: 'Right after exit: push the <b>hips down</b> toward the ground and <b>arch</b>. This is the most stable position, belly to earth.',
-                es: 'Justo después de salir: empuja la <b>cadera hacia el suelo</b> y <b>arquea</b>. Es la posición más estable, panza a tierra.',
-                uk: 'Одразу після відокремлення: <b>таз штовхаємо вниз</b>, до землі, і <b>прогинаємося</b>. Це найстійкіше положення — животом до землі.',
-                ru: 'Сразу после отделения: <b>таз толкаем вниз</b>, к земле, и <b>прогибаемся</b>. Это самое устойчивое положение — животом к земле.',
+                en: 'On exit: <b>hips forward, into the wind</b>, chin up. A few seconds later you\'re <b>belly to earth</b>: the hips are the lowest point and you <b>arch</b>. This is the most stable position.',
+                es: 'Al salir: <b>cadera adelante, contra el viento</b>, barbilla arriba. Unos segundos después estás <b>panza a tierra</b>: la cadera es el punto más bajo y <b>arqueas</b>. Es la posición más estable.',
+                uk: 'На відокремленні: <b>таз уперед, назустріч потоку</b>, підборіддя вгору. За кілька секунд ти <b>животом до землі</b>: таз — найнижча точка, і ти <b>прогинаєшся</b>. Це найстійкіше положення.',
+                ru: 'На отделении: <b>таз вперёд, навстречу потоку</b>, подбородок вверх. Через несколько секунд ты <b>животом к земле</b>: таз — самая нижняя точка, и ты <b>прогибаешься</b>. Это самое устойчивое положение.',
               },
             },
             {
               type: 'steps',
               items: [
                 {
-                  title: { en: 'Hips down, arch', es: 'Cadera abajo, arquea', uk: 'Таз униз, прогин', ru: 'Таз вниз, прогиб' },
-                  sub: { en: 'The hips are the <b>lowest point</b> of the body.', es: 'La cadera es el <b>punto más bajo</b> del cuerpo.', uk: 'Таз — <b>найнижча точка</b> тіла.', ru: 'Таз — <b>самая нижняя точка</b> тела.' },
+                  title: { en: 'Hips forward, arch', es: 'Cadera adelante, arquea', uk: 'Таз уперед, прогин', ru: 'Таз вперёд, прогиб' },
+                  sub: {
+                    en: 'Belly to earth, "forward" means <b>toward the ground</b>: the hips are the <b>lowest point</b> of the body.',
+                    es: 'Panza a tierra, "adelante" significa <b>hacia el suelo</b>: la cadera es el <b>punto más bajo</b> del cuerpo.',
+                    uk: 'Коли ти животом до землі, «уперед» означає <b>до землі</b>: таз — <b>найнижча точка</b> тіла.',
+                    ru: 'Когда ты животом к земле, «вперёд» значит <b>к земле</b>: таз — <b>самая нижняя точка</b> тела.',
+                  },
                 },
                 {
                   title: { en: 'Arms square', es: 'Brazos en escuadra', uk: 'Руки «квадратом»', ru: 'Руки «квадратом»' },
@@ -42,19 +47,28 @@ export const part2: Part = {
                 {
                   title: { en: 'Thumb-to-ear check', es: 'Pulgares a las orejas', uk: 'Перевірка: великі пальці до вух', ru: 'Проверка: большие пальцы к ушам' },
                   sub: {
-                    en: 'Touch your <b>thumbs to your ears</b>, then <b>open back out</b>: that\'s where square arms are.',
-                    es: 'Toca las <b>orejas con los pulgares</b> y <b>vuelve a abrir</b>: ahí están los brazos en escuadra.',
-                    uk: 'Приклади <b>великі пальці до вух</b> і <b>розведи руки назад</b>: це і є руки «квадратом».',
-                    ru: 'Приложи <b>большие пальцы к ушам</b> и <b>разведи руки обратно</b>: это и есть руки «квадратом».',
+                    en: 'Touch your <b>thumbs to your ears</b>, then <b>open your arms out to the sides</b>: that\'s where square arms are.',
+                    es: 'Toca las <b>orejas con los pulgares</b> y <b>abre los brazos a los lados</b>: ahí están los brazos en escuadra.',
+                    uk: 'Приклади <b>великі пальці до вух</b> і <b>розведи руки в сторони</b>: це і є руки «квадратом».',
+                    ru: 'Приложи <b>большие пальцы к ушам</b> и <b>разведи руки в стороны</b>: это и есть руки «квадратом».',
                   },
                 },
                 {
                   title: { en: 'Legs', es: 'Piernas', uk: 'Ноги', ru: 'Ноги' },
                   sub: {
-                    en: 'You said "legs together and up". Many schools teach knees about <b>shoulder width</b>, shins up, toes pointed. <q-check/>',
-                    es: 'Dijiste "piernas juntas y arriba". Muchas escuelas enseñan rodillas más o menos a la <b>anchura de los hombros</b>, espinillas arriba, puntas de los pies estiradas. <q-check/>',
-                    uk: 'Ти сказав «ноги разом і вгору». У багатьох школах навчають: коліна приблизно на <b>ширині плечей</b>, гомілки вгору, носки витягнуті. <q-check/>',
-                    ru: 'Ты сказал «ноги вместе и вверх». Во многих школах учат: колени примерно на <b>ширине плеч</b>, голени вверх, носки вытянуты. <q-check/>',
+                    en: 'Knees about <b>shoulder width</b>, legs <b>slightly extended</b> (knees bent about <b>45°</b>), toes pointed (USPA). Some instructors say "legs together and up": which does your school want? <q-check/>',
+                    es: 'Rodillas más o menos a la <b>anchura de los hombros</b>, piernas <b>un poco estiradas</b> (rodillas dobladas unos <b>45°</b>), puntas de los pies estiradas (USPA). Algunos instructores dicen "piernas juntas y arriba": ¿qué pide tu escuela? <q-check/>',
+                    uk: 'Коліна приблизно на <b>ширині плечей</b>, ноги <b>трохи випрямлені</b> (коліна зігнуті приблизно на <b>45°</b>), носки витягнуті (USPA). Деякі інструктори кажуть «ноги разом і вгору»: як навчає твоя школа? <q-check/>',
+                    ru: 'Колени примерно на <b>ширине плеч</b>, ноги <b>слегка выпрямлены</b> (колени согнуты примерно на <b>45°</b>), носки вытянуты (USPA). Некоторые инструкторы говорят «ноги вместе и вверх»: как учит твоя школа? <q-check/>',
+                  },
+                },
+                {
+                  title: { en: 'Relax, breathe', es: 'Relájate, respira', uk: 'Розслабся, дихай', ru: 'Расслабься, дыши' },
+                  sub: {
+                    en: 'USPA cue: <b>altitude, arch, legs, relax</b>. A <b>stiff</b> body is one of the most common student faults.',
+                    es: 'La consigna de la USPA: <b>altura, arco, piernas, relájate</b>. Un cuerpo <b>rígido</b> es uno de los fallos más comunes del alumno.',
+                    uk: 'Підказка USPA: <b>висота, прогин, ноги, розслабся</b>. <b>Скуте</b> тіло — одна з найчастіших помилок студента.',
+                    ru: 'Подсказка USPA: <b>высота, прогиб, ноги, расслабься</b>. <b>Скованное</b> тело — одна из самых частых ошибок студента.',
                   },
                 },
               ],
@@ -95,24 +109,24 @@ export const part2: Part = {
             {
               q: { en: 'What do you do right after exit?', es: '¿Qué haces justo después de salir?', uk: 'Що робиш одразу після відокремлення?', ru: 'Что делаешь сразу после отделения?' },
               options: [
-                { en: 'Push the hips down and arch', es: 'Empujas la cadera hacia abajo y arqueas', uk: 'Штовхаєш таз униз і прогинаєшся', ru: 'Толкаешь таз вниз и прогибаешься' },
-                { en: 'Look down to find the ground', es: 'Miras abajo para ver el suelo', uk: 'Дивишся вниз, шукаєш землю', ru: 'Смотришь вниз, ищешь землю' },
-                { en: 'Pull your knees to your chest', es: 'Llevas las rodillas al pecho', uk: 'Підтягуєш коліна до грудей', ru: 'Подтягиваешь колени к груди' },
+                { en: 'Hips forward into the wind, chin up', es: 'Cadera adelante contra el viento, barbilla arriba', uk: 'Таз уперед назустріч потоку, підборіддя вгору', ru: 'Таз вперёд навстречу потоку, подбородок вверх' },
+                { en: 'Look straight down to find the ground', es: 'Miras hacia abajo para buscar el suelo', uk: 'Дивишся вниз, щоб знайти землю', ru: 'Смотришь вниз, чтобы найти землю' },
+                { en: 'Pull your knees up to your chest', es: 'Llevas las rodillas hacia el pecho', uk: 'Підтягуєш коліна до грудей', ru: 'Подтягиваешь колени к груди' },
               ],
               answer: 0,
               why: {
-                en: 'Hips down and arch: belly to earth is the most stable position, with the hips as the lowest point.',
-                es: 'Cadera abajo y arco: panza a tierra es la posición más estable, con la cadera como punto más bajo.',
-                uk: 'Таз униз і прогин: животом до землі — найстійкіше положення, таз — найнижча точка.',
-                ru: 'Таз вниз и прогиб: животом к земле — самое устойчивое положение, таз — самая нижняя точка.',
+                en: 'On exit you face the wind, not the ground: hips into it, chin up. A few seconds later you\'re belly to earth with the hips lowest.',
+                es: 'Al salir miras al viento, no al suelo: cadera contra él, barbilla arriba. Unos segundos después estás panza a tierra con la cadera como punto más bajo.',
+                uk: 'На відокремленні ти обличчям до потоку, а не до землі: таз назустріч йому, підборіддя вгору. За кілька секунд ти животом до землі, таз — найнижче.',
+                ru: 'На отделении ты лицом к потоку, а не к земле: таз навстречу ему, подбородок вверх. Через несколько секунд ты животом к земле, таз — ниже всего.',
               },
             },
             {
               q: { en: 'How do you find square arms?', es: '¿Cómo encuentras los brazos en escuadra?', uk: 'Як знайти положення рук «квадратом»?', ru: 'Как найти положение рук «квадратом»?' },
               options: [
                 { en: 'Stretch both arms straight out to the sides', es: 'Estiras los dos brazos rectos a los lados', uk: 'Витягнути руки прямо в сторони', ru: 'Вытянуть руки прямо в стороны' },
-                { en: 'Touch your thumbs to your ears, then open back out', es: 'Tocas las orejas con los pulgares y vuelves a abrir', uk: 'Прикласти великі пальці до вух і розвести руки назад', ru: 'Приложить большие пальцы к ушам и развести руки обратно' },
-                { en: 'Hold the chest strap', es: 'Agarras la cinta de pecho', uk: 'Триматися за грудну перемичку', ru: 'Держаться за грудную перемычку' },
+                { en: 'Thumbs to your ears, then arms out to the sides', es: 'Pulgares a las orejas y luego brazos a los lados', uk: 'Пальці до вух, потім розвести руки в сторони', ru: 'Пальцы к ушам, потом развести руки в стороны' },
+                { en: 'Hold the chest strap with both hands', es: 'Agarras la cinta de pecho con las dos manos', uk: 'Триматися обома руками за грудну перемичку', ru: 'Держаться обеими руками за грудную перемычку' },
               ],
               answer: 1,
               why: {
@@ -123,18 +137,18 @@ export const part2: Part = {
               },
             },
             {
-              q: { en: 'In the box, which part of your body is the lowest?', es: 'En la caja, ¿qué parte del cuerpo queda más baja?', uk: 'Яка частина тіла в «коробочці» найнижча?', ru: 'Какая часть тела в «коробочке» самая нижняя?' },
+              q: { en: 'Where are your legs in the box (USPA)?', es: '¿Dónde van las piernas en la caja (USPA)?', uk: 'Як тримати ноги в «коробочці» (USPA)?', ru: 'Как держать ноги в «коробочке» (USPA)?' },
               options: [
-                { en: 'Your head', es: 'La cabeza', uk: 'Голова', ru: 'Голова' },
-                { en: 'Your knees', es: 'Las rodillas', uk: 'Коліна', ru: 'Колени' },
-                { en: 'Your hips', es: 'La cadera', uk: 'Таз', ru: 'Таз' },
+                { en: 'Knees tucked under your belly, feet crossed', es: 'Rodillas bajo el vientre, pies cruzados', uk: 'Коліна під животом, ступні схрещені', ru: 'Колени под животом, ступни скрещены' },
+                { en: 'Legs straight and locked, feet touching', es: 'Piernas rectas y rígidas, pies juntos', uk: 'Ноги прямі й напружені, ступні разом', ru: 'Ноги прямые и напряжены, ступни вместе' },
+                { en: 'Knees shoulder width, legs slightly extended', es: 'Rodillas a la anchura de los hombros, piernas un poco estiradas', uk: 'Коліна на ширині плечей, ноги трохи випрямлені', ru: 'Колени на ширине плеч, ноги слегка выпрямлены' },
               ],
               answer: 2,
               why: {
-                en: 'You push the hips down toward the ground, so they are the lowest point of the body.',
-                es: 'Empujas la cadera hacia el suelo, así que es el punto más bajo del cuerpo.',
-                uk: 'Таз штовхаємо вниз, до землі, тому він — найнижча точка тіла.',
-                ru: 'Таз толкаем вниз, к земле, поэтому он — самая нижняя точка тела.',
+                en: 'USPA neutral position: knees about shoulder width, legs slightly extended (knees about 45°), toes pointed.',
+                es: 'Posición neutra de la USPA: rodillas más o menos a la anchura de los hombros, piernas un poco estiradas (rodillas a unos 45°), puntas estiradas.',
+                uk: 'Нейтральне положення за USPA: коліна приблизно на ширині плечей, ноги трохи випрямлені (коліна приблизно 45°), носки витягнуті.',
+                ru: 'Нейтральное положение по USPA: колени примерно на ширине плеч, ноги слегка выпрямлены (колени примерно 45°), носки вытянуты.',
               },
             },
           ],
@@ -160,14 +174,14 @@ export const part2: Part = {
           type: 'altimeter',
           rows: [
             {
-              alt: '~13,500',
-              value: 13.5,
+              alt: '13,000',
+              value: 13,
               title: { en: 'Exit, arch', es: 'Salida, arquea', uk: 'Відокремлення, прогин', ru: 'Отделение, прогиб' },
               sub: {
-                en: '<b>Hips down</b>, chin up. Exit altitude not confirmed. <q-check/>',
-                es: '<b>Cadera abajo</b>, barbilla arriba. Altura de salida sin confirmar. <q-check/>',
-                uk: '<b>Таз униз</b>, підборіддя вгору. Висота відокремлення не підтверджена. <q-check/>',
-                ru: '<b>Таз вниз</b>, подбородок вверх. Высота отделения не подтверждена. <q-check/>',
+                en: '<b>Hips into the wind</b>, chin up. Then <b>breathe</b> and check your body position.',
+                es: '<b>Cadera contra el viento</b>, barbilla arriba. Luego <b>respira</b> y revisa tu posición.',
+                uk: '<b>Таз назустріч потоку</b>, підборіддя вгору. Потім <b>вдихни</b> й перевір положення тіла.',
+                ru: '<b>Таз навстречу потоку</b>, подбородок вверх. Потом <b>вдохни</b> и проверь положение тела.',
               },
             },
             {
@@ -175,10 +189,10 @@ export const part2: Part = {
               value: 12.5,
               title: { en: 'Circle of awareness', es: 'Círculo de atención', uk: 'Коло уваги', ru: 'Круг внимания' },
               sub: {
-                en: '<b>Altitude</b> → left instructor → right instructor → chin up → <b>altitude</b>.',
-                es: '<b>Altura</b> → instructor izquierdo → instructor derecho → barbilla arriba → <b>altura</b>.',
-                uk: '<b>Висота</b> → лівий інструктор → правий інструктор → підборіддя вгору → <b>висота</b>.',
-                ru: '<b>Высота</b> → левый инструктор → правый инструктор → подбородок вверх → <b>высота</b>.',
+                en: '<b>Altitude</b> → left instructor → right instructor → chin up (horizon) → <b>altitude</b>.',
+                es: '<b>Altura</b> → instructor izquierdo → instructor derecho → barbilla arriba (horizonte) → <b>altura</b>.',
+                uk: '<b>Висота</b> → лівий інструктор → правий інструктор → підборіддя вгору (горизонт) → <b>висота</b>.',
+                ru: '<b>Высота</b> → левый инструктор → правый инструктор → подбородок вверх (горизонт) → <b>высота</b>.',
               },
             },
             {
@@ -197,16 +211,16 @@ export const part2: Part = {
               value: 10,
               title: { en: 'Circle of awareness again', es: 'Círculo de atención otra vez', uk: 'Знову коло уваги', ru: 'Снова круг внимания' },
               sub: {
-                en: 'Left → right → chin up → <b>altitude</b>.',
-                es: 'Izquierda → derecha → barbilla arriba → <b>altura</b>.',
-                uk: 'Ліворуч → праворуч → підборіддя вгору → <b>висота</b>.',
-                ru: 'Влево → вправо → подбородок вверх → <b>высота</b>.',
+                en: 'Left → right → chin up (horizon) → <b>altitude</b>.',
+                es: 'Izquierda → derecha → barbilla arriba (horizonte) → <b>altura</b>.',
+                uk: 'Ліворуч → праворуч → підборіддя вгору (горизонт) → <b>висота</b>.',
+                ru: 'Влево → вправо → подбородок вверх (горизонт) → <b>высота</b>.',
               },
             },
             {
               alt: '↓',
               value: 8,
-              title: { en: 'Hold the box, check altitude every 3–5 s', es: 'Mantén la caja, mira la altura cada 3–5 s', uk: 'Тримаємо коробочку, висота кожні 3–5 с', ru: 'Держим коробочку, высота каждые 3–5 с' },
+              title: { en: 'Hold the box, check altitude every 3 s', es: 'Mantén la caja, mira la altura cada 3 s', uk: 'Тримаємо коробочку, висота кожні 3 с', ru: 'Держим коробочку, высота каждые 3 с' },
               sub: {
                 en: 'Relax, legs, arch. Answer <b>instructor signals</b>.',
                 es: 'Relájate, piernas, arco. Responde a las <b>señales de los instructores</b>.',
@@ -218,7 +232,7 @@ export const part2: Part = {
               alt: '6,000',
               value: 6,
               hot: true,
-              title: { en: 'Lock on', es: 'Lock on', uk: 'Тільки висотомір', ru: 'Только высотомер' },
+              title: { en: 'Lock on', es: 'Lock on', uk: 'Лише висотомір', ru: 'Только высотомер' },
               sub: { en: '<b>No more</b> exercises.', es: '<b>Se acabaron</b> los ejercicios.', uk: 'Більше <b>жодних</b> вправ.', ru: 'Больше <b>никаких</b> упражнений.' },
             },
             {
@@ -227,13 +241,23 @@ export const part2: Part = {
               hot: true,
               title: { en: 'PULL', es: 'ABRIR', uk: 'РОЗКРИТТЯ', ru: 'РАСКРЫТИЕ' },
               sub: {
-                en: '<b>Look, reach, pull</b>. Then count to five (Part III).',
-                es: '<b>Mira, alcanza, tira</b>. Luego cuenta hasta cinco (Parte III).',
-                uk: '<b>Подивись, дотягнись, витягни</b>. Потім відлік до п’яти (частина III).',
-                ru: '<b>Посмотри, дотянись, выдерни</b>. Потом счёт до пяти (часть III).',
+                en: 'Wave off just before you pull, if your school teaches it <q-check/>. Then <b>look, reach, throw</b> and count to five (Part III).',
+                es: 'Haz el wave-off justo antes de abrir, si tu escuela lo enseña <q-check/>. Luego <b>mira, alcanza, lanza</b> y cuenta hasta cinco (Parte III).',
+                uk: 'Відмашка просто перед розкриттям, якщо так навчає твоя школа <q-check/>. Потім <b>подивись, дотягнись, викинь</b> і рахуй до п’яти (частина III).',
+                ru: 'Отмашка прямо перед раскрытием, если так учит твоя школа <q-check/>. Потом <b>посмотри, дотянись, выбрось</b> и считай до пяти (часть III).',
               },
             },
           ],
+        },
+        {
+          type: 'callout',
+          tone: 'red',
+          text: {
+            en: 'Lost <b>one</b> instructor: <b>carry on</b> with the dive. Lost <b>both</b>: <b>pull now</b>.',
+            es: '¿Perdiste a <b>un</b> instructor? <b>Sigue</b> con el salto. ¿Perdiste a <b>los dos</b>? <b>Abre ya</b>.',
+            uk: 'Втратив <b>одного</b> інструктора — <b>продовжуй</b> стрибок. Втратив <b>обох</b> — <b>розкривайся одразу</b>.',
+            ru: 'Потерял <b>одного</b> инструктора — <b>продолжай</b> прыжок. Потерял <b>обоих</b> — <b>раскрывайся сразу</b>.',
+          },
         },
         {
           type: 'clips',
@@ -268,8 +292,8 @@ export const part2: Part = {
               q: { en: 'What is the order of the circle of awareness?', es: '¿Cuál es el orden del círculo de atención?', uk: 'Який порядок у кола уваги?', ru: 'Какой порядок у круга внимания?' },
               options: [
                 { en: 'Altitude → left instructor → right instructor → chin up → altitude', es: 'Altura → instructor izquierdo → instructor derecho → barbilla arriba → altura', uk: 'Висота → лівий інструктор → правий інструктор → підборіддя вгору → висота', ru: 'Высота → левый инструктор → правый инструктор → подбородок вверх → высота' },
-                { en: 'Chin up → pull → altitude', es: 'Barbilla arriba → abrir → altura', uk: 'Підборіддя вгору → розкриття → висота', ru: 'Подбородок вверх → раскрытие → высота' },
-                { en: 'Right instructor → ground → altitude', es: 'Instructor derecho → suelo → altura', uk: 'Правий інструктор → земля → висота', ru: 'Правый инструктор → земля → высота' },
+                { en: 'Left instructor → right instructor → altitude → chin up → pull', es: 'Instructor izquierdo → instructor derecho → altura → barbilla arriba → abrir', uk: 'Лівий інструктор → правий інструктор → висота → підборіддя вгору → розкриття', ru: 'Левый инструктор → правый инструктор → высота → подбородок вверх → раскрытие' },
+                { en: 'Chin up → right instructor → left instructor → ground → altitude', es: 'Barbilla arriba → instructor derecho → instructor izquierdo → suelo → altura', uk: 'Підборіддя вгору → правий інструктор → лівий інструктор → земля → висота', ru: 'Подбородок вверх → правый инструктор → левый инструктор → земля → высота' },
               ],
               answer: 0,
               why: {
@@ -295,18 +319,18 @@ export const part2: Part = {
               },
             },
             {
-              q: { en: 'What happens at 6,000 ft?', es: '¿Qué pasa a 6,000 ft?', uk: 'Що відбувається на висоті 6 000 футів?', ru: 'Что происходит на высоте 6 000 футов?' },
+              q: { en: 'What do you do between every block of the dive?', es: '¿Qué haces entre bloque y bloque del salto?', uk: 'Що робиш між блоками стрибка?', ru: 'Что делаешь между блоками прыжка?' },
               options: [
-                { en: 'Another circle of awareness', es: 'Otro círculo de atención', uk: 'Ще одне коло уваги', ru: 'Ещё один круг внимания' },
-                { en: 'You pull', es: 'Abres', uk: 'Розкриття', ru: 'Раскрытие' },
-                { en: 'Lock on: no more exercises', es: 'Lock on: se acabaron los ejercicios', uk: 'Тільки висотомір: більше жодних вправ', ru: 'Только высотомер: больше никаких упражнений' },
+                { en: 'Do one more practice touch', es: 'Haces un toque de práctica más', uk: 'Робиш ще один тренувальний дотик', ru: 'Делаешь ещё одно тренировочное касание' },
+                { en: 'Look down to see the ground', es: 'Miras abajo para ver el suelo', uk: 'Дивишся вниз, на землю', ru: 'Смотришь вниз, на землю' },
+                { en: 'Check your altitude', es: 'Miras la altura', uk: 'Перевіряєш висоту', ru: 'Проверяешь высоту' },
               ],
               answer: 2,
               why: {
-                en: '6,000 is lock on: stop exercises and watch the altimeter. You pull at 5,500.',
-                es: '6,000 es lock on: deja los ejercicios y mira el altímetro. Abres a 5,500.',
-                uk: '6 000 — тільки висотомір: припиняєш вправи й дивишся на висотомір. Розкриття на 5 500.',
-                ru: '6 000 — только высотомер: прекращаешь упражнения и смотришь на высотомер. Раскрытие на 5 500.',
+                en: 'Between every block you check altitude. It comes before everything else in the dive.',
+                es: 'Entre bloque y bloque miras la altura. Va antes que todo lo demás en el salto.',
+                uk: 'Між блоками перевіряєш висоту. Вона важливіша за все інше в стрибку.',
+                ru: 'Между блоками проверяешь высоту. Она важнее всего остального в прыжке.',
               },
             },
           ],
@@ -333,12 +357,12 @@ export const part2: Part = {
           items: [
             {
               icon: 'altimeter',
-              big: '3–5 s',
+              big: '3 s',
               text: {
-                en: 'USPA says <b>every 3 seconds</b>; some schools teach about 5. <b>All the time.</b>',
-                es: 'La USPA dice <b>cada 3 segundos</b>; algunas escuelas enseñan unos 5. <b>Todo el tiempo.</b>',
-                uk: 'USPA: <b>кожні 3 секунди</b>; деякі школи вчать близько 5. <b>Постійно.</b>',
-                ru: 'USPA: <b>каждые 3 секунды</b>; некоторые школы учат около 5. <b>Постоянно.</b>',
+                en: '<b>Every 3 seconds</b> (USPA). <b>All the time.</b>',
+                es: '<b>Cada 3 segundos</b> (USPA). <b>Todo el tiempo.</b>',
+                uk: '<b>Кожні 3 секунди</b> (USPA). <b>Постійно.</b>',
+                ru: '<b>Каждые 3 секунды</b> (USPA). <b>Постоянно.</b>',
               },
             },
             {
@@ -352,37 +376,22 @@ export const part2: Part = {
             {
               icon: 'tap',
               text: {
-                en: 'When an <b>instructor signals</b> you to. <q-check/>',
-                es: 'Cuando un <b>instructor te lo indique</b>. <q-check/>',
-                uk: 'Коли <b>інструктор подає знак</b>. <q-check/>',
-                ru: 'Когда <b>инструктор подаёт знак</b>. <q-check/>',
+                en: 'When an <b>instructor signals</b> you to (a tap on the wrist).',
+                es: 'Cuando un <b>instructor te lo indique</b> (un toque en la muñeca).',
+                uk: 'Коли <b>інструктор подає знак</b> (поплескування по зап’ястю).',
+                ru: 'Когда <b>инструктор подаёт знак</b> (хлопок по запястью).',
               },
             },
           ],
         },
         {
           type: 'callout',
-          check: true,
-          points: [
-            {
-              en: 'You remembered three reasons; the usual fourth is <b>instructor signal</b> (a slap on the wrist)',
-              es: 'Recordaste tres motivos; el cuarto suele ser <b>señal del instructor</b> (una palmada en la muñeca)',
-              uk: 'Ти запам’ятав три причини; зазвичай четверта — <b>за знаком інструктора</b> (плескання по зап’ястю)',
-              ru: 'Ты запомнил три причины; обычно четвёртая — <b>по знаку инструктора</b> (хлопок по запястью)',
-            },
-            {
-              en: 'Your "every 3" is <b>USPA\'s rule</b>: an altitude check every 3 seconds',
-              es: 'Tu "cada 3" es la <b>regla de la USPA</b>: mirar la altura cada 3 segundos',
-              uk: 'Твоє «кожні 3» — <b>правило USPA</b>: перевірка висоти кожні 3 секунди',
-              ru: 'Твоё «каждые 3» — <b>правило USPA</b>: проверка высоты каждые 3 секунды',
-            },
-            {
-              en: 'Overloaded or lost? Default to: <b>altitude, arch, pull at 5,500</b>',
-              es: '¿Saturado o perdido? Vuelve a lo básico: <b>altura, arco, abrir a 5,500</b>',
-              uk: 'Перевантажений чи загубився? За замовчуванням: <b>висота, прогин, розкриття на 5 500</b>',
-              ru: 'Перегружен или потерялся? По умолчанию: <b>высота, прогиб, раскрытие на 5 500</b>',
-            },
-          ],
+          text: {
+            en: 'Overloaded or lost? Default to: <b>altitude, arch, pull at 5,500</b>.',
+            es: '¿Saturado o perdido? Vuelve a lo básico: <b>altura, arco, abrir a 5,500</b>.',
+            uk: 'Перевантажений чи загубився? За замовчуванням: <b>висота, прогин, розкриття на 5 500</b>.',
+            ru: 'Перегружен или потерялся? По умолчанию: <b>высота, прогиб, раскрытие на 5 500</b>.',
+          },
         },
         {
           type: 'rules',
@@ -390,12 +399,12 @@ export const part2: Part = {
             {
               big: '6,000',
               tone: 'accent',
-              title: { en: 'Lock on', es: 'Lock on', uk: 'Тільки висотомір', ru: 'Только высотомер' },
+              title: { en: 'Lock on', es: 'Lock on', uk: 'Лише висотомір', ru: 'Только высотомер' },
               text: {
-                en: 'Stop <b>all exercises</b>. Watch the <b>altimeter only</b>.',
-                es: 'Deja <b>todos los ejercicios</b>. Mira <b>solo el altímetro</b>.',
-                uk: 'Припини <b>усі вправи</b>. Дивися <b>тільки на висотомір</b>.',
-                ru: 'Прекрати <b>все упражнения</b>. Смотри <b>только на высотомер</b>.',
+                en: 'Stop <b>all exercises</b>. Watch the <b>altimeter only</b>. The pull takes about <b>1,000 ft</b>, so this leaves time to pull at 5,500.',
+                es: 'Deja <b>todos los ejercicios</b>. Mira <b>solo el altímetro</b>. La apertura lleva unos <b>1,000 ft</b>, así te da tiempo a abrir a 5,500.',
+                uk: 'Припини <b>усі вправи</b>. Дивися <b>лише на висотомір</b>. Розкриття забирає близько <b>1 000 футів</b>, тож так устигаєш розкритися на 5 500.',
+                ru: 'Прекрати <b>все упражнения</b>. Смотри <b>только на высотомер</b>. Раскрытие занимает около <b>1 000 футов</b>, так что успеваешь раскрыться на 5 500.',
               },
             },
             {
@@ -403,10 +412,10 @@ export const part2: Part = {
               tone: 'accent',
               title: { en: 'Pull', es: 'Abrir', uk: 'Розкриття', ru: 'Раскрытие' },
               text: {
-                en: 'Our pull altitude is <b>5,500 ft</b>, not 5,000.',
-                es: 'Nuestra altura de apertura es <b>5,500 ft</b>, no 5,000.',
-                uk: 'Ми розкриваємося на висоті <b>5 500 футів</b>, а не 5 000.',
-                ru: 'Мы раскрываемся на высоте <b>5 500 футов</b>, а не 5 000.',
+                en: 'On <b>category A</b> we pull at <b>5,500 ft</b>, not 5,000. Ask about later categories.',
+                es: 'En la <b>categoría A</b> abrimos a <b>5,500 ft</b>, no a 5,000. Pregunta por las categorías siguientes.',
+                uk: 'На <b>категорії A</b> розкриваємося на <b>5 500 футах</b>, а не на 5 000. Про наступні категорії запитай.',
+                ru: 'На <b>категории A</b> раскрываемся на <b>5 500 футах</b>, а не на 5 000. Про следующие категории спроси.',
               },
             },
           ],
@@ -423,14 +432,14 @@ export const part2: Part = {
               ],
               answer: 0,
               why: {
-                en: 'USPA says every 3 seconds; some schools teach about 5. Either way, all the time.',
-                es: 'La USPA dice cada 3 segundos; algunas escuelas enseñan unos 5. En todo caso, todo el tiempo.',
-                uk: 'USPA: кожні 3 секунди; деякі школи вчать близько 5. У будь-якому разі — постійно.',
-                ru: 'USPA: каждые 3 секунды; некоторые школы учат около 5. В любом случае — постоянно.',
+                en: 'USPA says every 3 seconds, all the time: before and after every maneuver, and whenever in doubt.',
+                es: 'La USPA dice cada 3 segundos, todo el tiempo: antes y después de cada maniobra, y siempre que dudes.',
+                uk: 'USPA: кожні 3 секунди, постійно — до і після кожного маневру та щоразу, коли сумніваєшся.',
+                ru: 'USPA: каждые 3 секунды, постоянно — до и после каждого манёвра и всякий раз, когда сомневаешься.',
               },
             },
             {
-              q: { en: 'What is our pull altitude?', es: '¿Cuál es nuestra altura de apertura?', uk: 'На якій висоті ми розкриваємося?', ru: 'На какой высоте мы раскрываемся?' },
+              q: { en: 'What is the pull altitude on category A?', es: '¿Cuál es la altura de apertura en la categoría A?', uk: 'На якій висоті розкриваються на категорії A?', ru: 'На какой высоте раскрываются на категории A?' },
               options: [
                 { en: '5,000 ft', es: '5,000 ft', uk: '5 000 футів', ru: '5 000 футов' },
                 { en: '5,500 ft', es: '5,500 ft', uk: '5 500 футів', ru: '5 500 футов' },
@@ -440,7 +449,7 @@ export const part2: Part = {
               why: {
                 en: 'We pull at 5,500 ft, not 5,000. 6,000 is lock on.',
                 es: 'Abrimos a 5,500 ft, no a 5,000. 6,000 es lock on.',
-                uk: 'Розкриваємося на 5 500 футах, а не на 5 000. На 6 000 — тільки висотомір.',
+                uk: 'Розкриваємося на 5 500 футах, а не на 5 000. На 6 000 — лише висотомір.',
                 ru: 'Раскрываемся на 5 500 футах, а не на 5 000. На 6 000 — только высотомер.',
               },
             },
@@ -448,7 +457,7 @@ export const part2: Part = {
               q: { en: 'You feel overloaded or lost in freefall. What do you default to?', es: 'Te sientes saturado o perdido en caída libre. ¿A qué vuelves?', uk: 'У вільному падінні ти перевантажений або загубився. До чого повертаєшся?', ru: 'В свободном падении ты перегружен или потерялся. К чему возвращаешься?' },
               options: [
                 { en: 'Look for the instructors until you find them', es: 'Buscar a los instructores hasta encontrarlos', uk: 'Шукати інструкторів, поки не знайдеш', ru: 'Искать инструкторов, пока не найдёшь' },
-                { en: 'Repeat the practice touches', es: 'Repetir los toques de práctica', uk: 'Повторити тренувальні дотики', ru: 'Повторить тренировочные касания' },
+                { en: 'Repeat the practice touches until calm', es: 'Repetir los toques de práctica hasta calmarte', uk: 'Повторювати тренувальні дотики, поки не заспокоїшся', ru: 'Повторять тренировочные касания, пока не успокоишься' },
                 { en: 'Altitude, arch, pull at 5,500', es: 'Altura, arco, abrir a 5,500', uk: 'Висота, прогин, розкриття на 5 500', ru: 'Высота, прогиб, раскрытие на 5 500' },
               ],
               answer: 2,
@@ -504,19 +513,25 @@ export const part2: Part = {
               },
             },
             {
+              clip: 's_alt',
+              name: { en: 'Check altitude', es: 'Mira la altura', uk: 'Перевір висоту', ru: 'Проверь высоту' },
+              what: { en: 'Slap or tap on your wrist.', es: 'Palmada o toque en la muñeca.', uk: 'Поплескування або дотик по зап’ястю.', ru: 'Хлопок или касание по запястью.' },
+              act: { en: 'Look at the altimeter.', es: 'Mira el altímetro.', uk: 'Подивись на висотомір.', ru: 'Посмотри на высотомер.' },
+            },
+            {
               clip: 's_arch',
               name: { en: 'Arch', es: 'Arquea', uk: 'Прогнись', ru: 'Прогнись' },
               what: {
-                en: 'Thumb down. This is the "thumb down" you remembered. <q-check/>',
-                es: 'Pulgar abajo. Este es el "pulgar abajo" que recordabas. <q-check/>',
-                uk: 'Великий палець униз. Це той самий «палець униз», який ти запам’ятав. <q-check/>',
-                ru: 'Большой палец вниз. Это тот самый «палец вниз», который ты запомнил. <q-check/>',
+                en: 'Thumb down. Arch signals differ between schools. <q-check/>',
+                es: 'Pulgar abajo. La señal de arquear cambia según la escuela. <q-check/>',
+                uk: 'Великий палець униз. Знак прогину в різних школах різний. <q-check/>',
+                ru: 'Большой палец вниз. Знак прогиба в разных школах разный. <q-check/>',
               },
               act: {
-                en: 'Push your hips forward / down, arch more.',
-                es: 'Empuja la cadera hacia adelante / abajo, arquea más.',
-                uk: 'Таз уперед / вниз, прогнись сильніше.',
-                ru: 'Таз вперёд / вниз, прогнись сильнее.',
+                en: 'Push your hips forward (toward the ground when you\'re belly to earth), arch more.',
+                es: 'Empuja la cadera adelante (hacia el suelo cuando estás panza a tierra), arquea más.',
+                uk: 'Таз уперед (до землі, коли ти животом до землі), прогнись сильніше.',
+                ru: 'Таз вперёд (к земле, когда ты животом к земле), прогнись сильнее.',
               },
             },
             {
@@ -531,12 +546,6 @@ export const part2: Part = {
               },
             },
             {
-              clip: 's_good',
-              name: { en: 'Good', es: 'Bien', uk: 'Добре', ru: 'Хорошо' },
-              what: { en: 'Thumbs up.', es: 'Pulgar arriba.', uk: 'Великий палець угору.', ru: 'Большой палец вверх.' },
-              act: { en: 'Hold what you have now.', es: 'Mantén la posición que tienes.', uk: 'Так і тримай.', ru: 'Так и держи.' },
-            },
-            {
               clip: 's_relax',
               name: { en: 'Relax', es: 'Relájate', uk: 'Розслабся', ru: 'Расслабься' },
               what: { en: 'Shaking, floppy hand.', es: 'Mano floja que se sacude.', uk: 'Розслаблена кисть, що труситься.', ru: 'Расслабленная трясущаяся кисть.' },
@@ -546,6 +555,12 @@ export const part2: Part = {
                 uk: 'Глибокий вдих, розслабся, потруси кистями.',
                 ru: 'Глубокий вдох, расслабься, потряси кистями.',
               },
+            },
+            {
+              clip: 's_good',
+              name: { en: 'Good', es: 'Bien', uk: 'Добре', ru: 'Хорошо' },
+              what: { en: 'Thumbs up.', es: 'Pulgar arriba.', uk: 'Великий палець угору.', ru: 'Большой палец вверх.' },
+              act: { en: 'Hold what you have now.', es: 'Mantén la posición que tienes.', uk: 'Так і тримай.', ru: 'Так и держи.' },
             },
             {
               clip: 's_arms',
@@ -588,12 +603,6 @@ export const part2: Part = {
               act: { en: 'Head up, look forward.', es: 'Cabeza arriba, mira al frente.', uk: 'Підніми голову, дивися вперед.', ru: 'Подними голову, смотри вперёд.' },
             },
             {
-              clip: 's_alt',
-              name: { en: 'Check altitude', es: 'Mira la altura', uk: 'Перевір висоту', ru: 'Проверь высоту' },
-              what: { en: 'Slap or tap on your wrist.', es: 'Palmada o toque en la muñeca.', uk: 'Плескання або дотик по зап’ястю.', ru: 'Хлопок или касание по запястью.' },
-              act: { en: 'Look at the altimeter.', es: 'Mira el altímetro.', uk: 'Подивись на висотомір.', ru: 'Посмотри на высотомер.' },
-            },
-            {
               name: { en: 'Shaking you on exit', es: 'Te sacuden al salir', uk: 'Трусять після відокремлення', ru: 'Трясут после отделения' },
               what: {
                 en: 'An instructor shakes your harness right after exit.',
@@ -602,10 +611,10 @@ export const part2: Part = {
                 ru: 'Инструктор трясёт тебя за подвесную систему сразу после отделения.',
               },
               act: {
-                en: 'Push hips further forward, chin up.',
-                es: 'Empuja más la cadera hacia adelante, barbilla arriba.',
-                uk: 'Таз ще сильніше вперед, підборіддя вгору.',
-                ru: 'Таз ещё сильнее вперёд, подбородок вверх.',
+                en: 'Push your hips further forward, into the wind, chin up.',
+                es: 'Empuja más la cadera adelante, contra el viento, barbilla arriba.',
+                uk: 'Таз ще сильніше вперед, назустріч потоку, підборіддя вгору.',
+                ru: 'Таз ещё сильнее вперёд, навстречу потоку, подбородок вверх.',
               },
             },
           ],
@@ -623,7 +632,7 @@ export const part2: Part = {
             {
               q: { en: 'An instructor shows you one finger pointed in any direction. What do you do?', es: 'Un instructor te muestra un dedo apuntando en cualquier dirección. ¿Qué haces?', uk: 'Інструктор показує тобі один палець, спрямований у будь-який бік. Що робиш?', ru: 'Инструктор показывает тебе один палец, направленный в любую сторону. Что делаешь?' },
               options: [
-                { en: 'Turn the way the finger points', es: 'Girar hacia donde apunta el dedo', uk: 'Повернути туди, куди показує палець', ru: 'Повернуть туда, куда показывает палец' },
+                { en: 'Turn toward the finger', es: 'Girar hacia el dedo', uk: 'Повернути за пальцем', ru: 'Повернуть за пальцем' },
                 { en: 'Pull right now', es: 'Abrir ahora mismo', uk: 'Розкритися одразу', ru: 'Раскрыться сразу' },
                 { en: 'Check your altimeter', es: 'Mirar el altímetro', uk: 'Подивитися на висотомір', ru: 'Посмотреть на высотомер' },
               ],
@@ -636,7 +645,7 @@ export const part2: Part = {
               },
             },
             {
-              q: { en: 'An instructor slaps or taps your wrist. What does it mean?', es: 'Un instructor te da una palmada o un toque en la muñeca. ¿Qué significa?', uk: 'Інструктор плескає або торкається твого зап’ястя. Що це означає?', ru: 'Инструктор хлопает или касается твоего запястья. Что это значит?' },
+              q: { en: 'An instructor slaps or taps your wrist. What does it mean?', es: 'Un instructor te da una palmada o un toque en la muñeca. ¿Qué significa?', uk: 'Інструктор поплескує або торкається твого зап’ястя. Що це означає?', ru: 'Инструктор хлопает или касается твоего запястья. Что это значит?' },
               options: [
                 { en: 'Check altitude', es: 'Mira la altura', uk: 'Перевір висоту', ru: 'Проверь высоту' },
                 { en: 'Relax', es: 'Relájate', uk: 'Розслабся', ru: 'Расслабься' },
@@ -646,16 +655,16 @@ export const part2: Part = {
               why: {
                 en: 'A slap or tap on the wrist means look at the altimeter.',
                 es: 'Una palmada o un toque en la muñeca significa mirar el altímetro.',
-                uk: 'Плескання або дотик по зап’ястю — подивись на висотомір.',
+                uk: 'Поплескування або дотик по зап’ястю — подивись на висотомір.',
                 ru: 'Хлопок или касание по запястью — посмотри на высотомер.',
               },
             },
             {
               q: { en: 'You see two fingers in a V. What do you do?', es: 'Ves dos dedos en V. ¿Qué haces?', uk: 'Бачиш два пальці літерою V. Що робиш?', ru: 'Видишь два пальца буквой V. Что делаешь?' },
               options: [
-                { en: 'Two more practice touches', es: 'Dos toques de práctica más', uk: 'Ще два тренувальні дотики', ru: 'Ещё два тренировочных касания' },
-                { en: 'Bring your knees to your chest', es: 'Llevar las rodillas al pecho', uk: 'Підтягнути коліна до грудей', ru: 'Подтянуть колени к груди' },
-                { en: 'Smoothly extend your legs until you get a thumbs up', es: 'Estirar las piernas suavemente hasta que te hagan pulgar arriba', uk: 'Плавно випрямляти ноги, поки не покажуть «палець угору»', ru: 'Плавно выпрямлять ноги, пока не покажут «палец вверх»' },
+                { en: 'Do two more practice touches, slowly', es: 'Hacer dos toques de práctica más, despacio', uk: 'Зробити ще два тренувальні дотики, повільно', ru: 'Сделать ещё два тренировочных касания, медленно' },
+                { en: 'Bring your knees up to your chest', es: 'Llevar las rodillas hacia el pecho', uk: 'Підтягнути коліна до грудей', ru: 'Подтянуть колени к груди' },
+                { en: 'Extend your legs until you see a thumbs up', es: 'Estirar las piernas hasta ver un pulgar arriba', uk: 'Випрямляти ноги, поки не побачиш «палець угору»', ru: 'Выпрямлять ноги, пока не увидишь «палец вверх»' },
               ],
               answer: 2,
               why: {
@@ -668,9 +677,9 @@ export const part2: Part = {
             {
               q: { en: 'In the filmed signals, what does thumb down mean?', es: 'En las señales grabadas, ¿qué significa pulgar abajo?', uk: 'Що означає «палець униз» у знятих жестах?', ru: 'Что значит «палец вниз» в снятых жестах?' },
               options: [
-                { en: 'Go lower, dive', es: 'Baja más, en picada', uk: 'Нижче, пікіруй', ru: 'Ниже, пикируй' },
-                { en: 'Arch: push your hips forward, arch more', es: 'Arquea: empuja la cadera hacia adelante, arquea más', uk: 'Прогнись: таз уперед, прогнись сильніше', ru: 'Прогнись: таз вперёд, прогнись сильнее' },
-                { en: 'Something is wrong, pull', es: 'Algo va mal, abre', uk: 'Щось не так, розкривайся', ru: 'Что-то не так, раскрывайся' },
+                { en: 'Dive: head down to fall faster', es: 'Picada: cabeza abajo para caer más rápido', uk: 'Пікіруй: голову вниз, щоб падати швидше', ru: 'Пикируй: голову вниз, чтобы падать быстрее' },
+                { en: 'Arch: hips forward, arch more', es: 'Arquea: cadera adelante, arquea más', uk: 'Прогнись: таз уперед, сильніше', ru: 'Прогнись: таз вперёд, сильнее' },
+                { en: 'Problem: wave off and pull now', es: 'Problema: wave-off y abre ya', uk: 'Проблема: відмашка й розкривайся', ru: 'Проблема: отмашка и раскрывайся' },
               ],
               answer: 1,
               why: {

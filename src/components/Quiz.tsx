@@ -8,6 +8,15 @@ import { markPassed, usePassed } from '../progress';
  * "Test yourself" as a deck of cards: one question at a time, answer, read why, next.
  * All answers right on the first try = chapter passed (remembered in this browser).
  */
+/** Same shuffle every time for a question (seeded by its English text), so the right answer isn't always A. */
+function order(q: QuizQuestion): number[] {
+  let h = 2166136261;
+  for (const ch of q.q.en) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
+  const idx = q.options.map((_, i) => i);
+  for (let i = idx.length - 1; i > 0; i--) { h = Math.imul(h ^ (h >>> 15), 2246822507); const j = (h >>> 0) % (i + 1); [idx[i], idx[j]] = [idx[j], idx[i]]; }
+  return idx;
+}
+
 export function Quiz({ id, questions }: { id: string; questions: QuizQuestion[] }) {
   const { t } = useLang();
   const passed = usePassed().has(id);
@@ -39,7 +48,8 @@ export function Quiz({ id, questions }: { id: string; questions: QuizQuestion[] 
           <div className="qn">{i + 1} / {questions.length}</div>
           <p className="qq"><Rich s={questions[i].q} /></p>
           <div className="opts">
-            {questions[i].options.map((o, oi) => {
+            {order(questions[i]).map(oi => {
+              const o = questions[i].options[oi];
               const p = picked[i];
               const cls = p === null ? '' : oi === questions[i].answer ? 'right' : oi === p ? 'wrong' : 'dim';
               return <button key={oi} type="button" className={`opt ${cls}`} disabled={p !== null} onClick={() => pick(oi)}><Rich s={o} /></button>;

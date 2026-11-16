@@ -28,18 +28,25 @@ const T = {
   nextTest: h('Next test', 'Siguiente prueba', 'Следующий тест', 'Наступний тест'),
   allDone: h('All tests passed. Review the numbers before every jump.', 'Todas las pruebas aprobadas. Repasa las cifras antes de cada salto.', 'Все тесты сданы. Перед каждым прыжком повторяй цифры.', 'Усі тести складено. Перед кожним стрибком повторюй цифри.'),
   tests: h('tests passed', 'pruebas aprobadas', 'тестов сдано', 'тестів складено'),
+  ifBad: h('If the main is bad', 'Si la principal falla', 'Если основной плохой', 'Якщо основний поганий'),
   numbers: h('The numbers to know by heart', 'Las cifras que hay que saber de memoria', 'Цифры, которые надо знать наизусть', 'Цифри, які треба знати напам’ять'),
 };
 
 /** The altitudes in the order you pass them, plus two timers. Each links to its chapter. */
 const TAPE: { big: string; label: L; to: string; red?: boolean }[] = [
-  { big: '13,500', label: h('exit', 'salida', 'отделение', 'відокремлення'), to: 'count' },
+  { big: '13,000', label: h('exit', 'salida', 'отделение', 'відокремлення'), to: 'count' },
   { big: '6,000', label: h('lock on: altimeter only', 'solo el altímetro', 'только высотомер', 'лише висотомір'), to: 'altitude' },
   { big: '5,500', label: h('pull', 'abre', 'раскрытие', 'розкриття'), to: 'deploy' },
-  { big: '2,500', label: h('decide: fix or cut away', 'decide: arreglar o liberar', 'решение: исправить или отцепка', 'рішення: виправити чи відчеплення'), to: 'ep', red: true },
-  { big: '1,000', label: h('no cutaway below', 'no liberar por debajo', 'ниже не отцепляться', 'нижче не відчіплятися'), to: 'ep', red: true },
+  { big: '2,500', label: h('can you reach the holding point?', '¿llegas al punto de espera?', 'долетаешь до точки ожидания?', 'долітаєш до точки очікування?'), to: 'pattern' },
+  { big: '2,000', label: h('over the holding point', 'sobre el punto de espera', 'над точкой ожидания', 'над точкою очікування'), to: 'pattern' },
+  { big: '1,000', label: h('leave it, start the pattern', 'déjalo, empieza el circuito', 'уходи в схему захода', 'виходь на схему заходу'), to: 'pattern' },
   { big: '900 · 600 · 300', label: h('landing pattern', 'circuito', 'схема захода', 'схема заходу'), to: 'pattern' },
   { big: '10 ft', label: h('flare, then PLF', 'flare y PLF', 'flare, потом PLF', 'flare, потім PLF'), to: 'flare' },
+];
+/** Only if the main is bad: the emergency numbers, kept apart so they don't mix with the canopy ones. */
+const EMERGENCY: { big: string; label: L; to: string }[] = [
+  { big: '2,500', label: h('bad main: decide and act (fix or cut away) by here', 'principal mala: decide y actúa (arreglar o liberar) antes de aquí', 'плохой основной: реши и действуй (исправить или отцепка) до этой высоты', 'поганий основний: виріши й дій (виправити чи відчеплення) до цієї висоти'), to: 'ep' },
+  { big: '1,000', label: h('no cutaway below: pull the reserve only', 'por debajo no liberes: solo abre la reserva', 'ниже не отцепляйся: только запасной', 'нижче не відчіплюйся: лише запасний'), to: 'ep' },
 ];
 const TIMERS: { big: string; label: L; to: string }[] = [
   { big: '3 s', label: h('check altitude, all the time', 'mira el altímetro, siempre', 'смотри на высоту, всегда', 'дивись на висоту, завжди'), to: 'altitude' },
@@ -70,7 +77,7 @@ function JumpPicture() {
         {/* altitude axis */}
         <g className="axis">
           <line x1="34" y1="40" x2="34" y2="276" />
-          {[[58, '13,500'], [156, '5,500'], [206, '2,500'], [276, '0']].map(([y, v]) => (
+          {[[58, '13,000'], [156, '5,500'], [206, '2,500'], [276, '0']].map(([y, v]) => (
             <g key={v as string}><line x1="30" y1={y as number} x2="38" y2={y as number} /><text x="44" y={(y as number) + 4}>{v}</text></g>
           ))}
         </g>
@@ -112,11 +119,11 @@ function JumpPicture() {
             </g>
           </g>
         )}
-        {stop('part1', 70, 108, 'I', parts[0].title, '0 → 13,500 ft', 'var(--acc-plane)')}
-        {stop('part2', 330, 98, 'II', parts[1].title, '13,500 → 5,500', 'var(--acc-free)')}
+        {stop('part1', 70, 108, 'I', parts[0].title, '0 → 13,000 ft', 'var(--acc-plane)')}
+        {stop('part2', 330, 98, 'II', parts[1].title, '13,000 → 5,500', 'var(--acc-free)')}
         {stop('part3', 520, 150, 'III', parts[2].title, '5,500 → 0', 'var(--acc-canopy)')}
-        {stop('part4', 376, 236, 'IV', parts[3].title, { en: 'decide by 2,500', es: 'decide antes de 2,500', ru: 'решение до 2 500', uk: 'рішення до 2 500' }, 'var(--acc-ep)')}
-        {stop('dz', 930, 172, 'V', parts[4].title, 'Tracy, CA', 'var(--acc-dz)', 'end')}
+        {stop('part4', 376, 236, 'IV', parts[3].title, '', 'var(--acc-ep)')}
+        {stop('dz', 930, 172, 'V', parts[4].title, '', 'var(--acc-dz)', 'end')}
       </svg>
       {!reduce && <button type="button" className="replay" onClick={() => setRun(r => r + 1)}>↻ {t({ en: 'Replay the jump', es: 'Repetir el salto', ru: 'Повторить прыжок', uk: 'Повторити стрибок' })}</button>}
     </div>
@@ -173,6 +180,12 @@ export function Hero() {
             </li>
           ))}
         </ol>
+        <div className="emerg">
+          <span className="eh">{t(T.ifBad)}</span>
+          <div className="timers">
+            {EMERGENCY.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface red"><span className="big">{x.big}</span><span className="lbl">{t(x.label)}</span></a>)}
+          </div>
+        </div>
         <div className="timers">
           {TIMERS.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface"><span className="big">{x.big}</span><span className="lbl">{t(x.label)}</span></a>)}
         </div>
