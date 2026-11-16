@@ -167,33 +167,49 @@ function AltRows({ rows, on, onPick }: { rows: AltRow[]; on: number; onPick: (i:
 }
 
 export function Altimeter({ rows }: { rows: AltRow[] }) {
+  const { t } = useLang();
   const [i, setI] = useState(0);
   const r = rows[i];
+  const C = 120;
+  const pt = (v: number, rad: number) => { const a = ((ang(v) - 90) * Math.PI) / 180; return [C + rad * Math.cos(a), C + rad * Math.sin(a)] as const; };
   const ticks = [];
-  // red arc 0–2,500 ft (decision altitude and below), amber 2,500–6,000 (lock on → pull → decide)
-  const arc = (from: number, to: number, color: string) => {
-    const p = (v: number) => { const a = ((ang(v) - 90) * Math.PI) / 180; return `${120 + 101 * Math.cos(a)} ${120 + 101 * Math.sin(a)}`; };
-    return <path d={`M${p(from)} A101 101 0 0 1 ${p(to)}`} fill="none" stroke={color} strokeWidth="6" strokeLinecap="butt" opacity=".75" />;
-  };
-  for (let h = 0; h < 24; h++) {
-    const v = h / 2, a = ((ang(v) - 90) * Math.PI) / 180, major = h % 2 === 0, r1 = major ? 86 : 92;
-    ticks.push(<line key={h} x1={120 + r1 * Math.cos(a)} y1={120 + r1 * Math.sin(a)} x2={120 + 98 * Math.cos(a)} y2={120 + 98 * Math.sin(a)} stroke="var(--faint)" strokeWidth={major ? 3 : 1.5} />);
-    if (major) ticks.push(<text key={'t' + h} x={120 + 72 * Math.cos(a)} y={124.5 + 72 * Math.sin(a)} textAnchor="middle" fontFamily="var(--mono)" fontSize="13" fill="var(--muted)">{v}</text>);
+  for (let h = 0; h < 60; h++) {
+    const v = h / 5, major = h % 5 === 0, half = h % 5 === 0 ? false : h % 5 === 0;
+    const [x1, y1] = pt(v, major ? 88 : 95), [x2, y2] = pt(v, 102);
+    ticks.push(<line key={h} x1={x1} y1={y1} x2={x2} y2={y2} stroke="var(--ink)" strokeOpacity={major ? 0.8 : 0.35} strokeWidth={major ? 3 : half ? 2 : 1.2} />);
+    if (major) { const [tx, ty] = pt(v, 72); ticks.push(<text key={'t' + h} x={tx} y={ty + 5} textAnchor="middle" fontSize="16" fontWeight="700" fill="var(--ink)">{v}</text>); }
   }
-  ticks.push(<g key="arcs">{arc(0, 2.5, 'var(--red)')}{arc(2.5, 6, 'var(--acc-canopy)')}</g>);
+  // like most student altimeters: colour only on the low part of the dial (below about 3,000 ft)
+  const low = (() => { const [x1, y1] = pt(0, 106), [x2, y2] = pt(3, 106); return <path d={`M${x1} ${y1} A106 106 0 0 1 ${x2} ${y2}`} fill="none" stroke="var(--red)" strokeWidth="5" opacity=".55" />; })();
+  // the two numbers to act on, marked on the rim
+  const mark = (v: number, color: string) => { const [x1, y1] = pt(v, 100), [x2, y2] = pt(v, 114); return <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={color} strokeWidth="5" strokeLinecap="round" />; };
+  const L = {
+    lock: { en: 'lock on', es: 'lock on', uk: 'lock on', ru: 'lock on' },
+    pull: { en: 'pull', es: 'abrir', uk: 'розкриття', ru: 'раскрытие' },
+    low: { en: 'colour on real dials starts low (check yours)', es: 'en los altímetros reales el color empieza abajo (mira el tuyo)', uk: 'на справжніх висотомірах колір лише внизу (подивись на свій)', ru: 'на настоящих высотомерах цвет только внизу (посмотри на свой)' },
+  };
   return (
     <div className="split">
       <div><AltRows rows={rows} on={i} onPick={setI} /></div>
-      <div className="stage sticky">
-        <svg viewBox="0 0 240 240" role="img" aria-label="Altimeter">
-          <circle cx="120" cy="120" r="110" fill="var(--paper)" stroke="var(--line)" strokeWidth="2" />
+      <div className="stage sticky alti">
+        <svg viewBox="0 0 240 240" role="img" aria-label={`Altimeter: ${(r.value * 1000).toLocaleString('en-US')} ft`}>
+          <circle cx={C} cy={C} r="117" fill="var(--ink)" opacity=".9" />
+          <circle cx={C} cy={C} r="110" fill="var(--card)" />
+          {low}
           {ticks}
-          <g className="pose" style={{ transformOrigin: '120px 120px', transform: `rotate(${ang(r.value)}deg)` }}><line x1="120" y1="132" x2="120" y2="30" stroke="var(--ink)" strokeWidth="5" strokeLinecap="round" /></g>
-          <circle cx="120" cy="120" r="8" fill="var(--ink)" />
-          <text x="120" y="176" textAnchor="middle" fontFamily="var(--mono)" fontSize="11" fill="var(--muted)">× 1000 ft</text>
-          <text x="120" y="200" textAnchor="middle" fontFamily="var(--mono)" fontSize="18" fill="var(--ink)">{(r.value * 1000).toLocaleString('en-US')} ft</text>
+          {mark(6, 'var(--acc-canopy)')}{mark(5.5, 'var(--red)')}
+          <text x={C} y="84" textAnchor="middle" fontFamily="var(--mono)" fontSize="9" letterSpacing="1" fill="var(--muted)">×1000 FT</text>
+          <g className="pose" style={{ transformOrigin: `${C}px ${C}px`, transform: `rotate(${ang(r.value)}deg)` }}>
+            <path d={`M${C - 4} ${C + 18} L${C - 2.2} ${C} L${C} 26 L${C + 2.2} ${C} L${C + 4} ${C + 18} Z`} fill="var(--ink)" />
+          </g>
+          <circle cx={C} cy={C} r="9" fill="var(--ink)" /><circle cx={C} cy={C} r="3" fill="var(--card)" />
         </svg>
-        <div className="cap"><Rich s={r.title} /></div>
+        <div className="cap"><b className="alt-now">{(r.value * 1000).toLocaleString('en-US')} ft</b><span><Rich s={r.title} /></span></div>
+        <ul className="alt-legend">
+          <li><i style={{ background: 'var(--acc-canopy)' }} />6,000 · {t(L.lock)}</li>
+          <li><i style={{ background: 'var(--red)' }} />5,500 · {t(L.pull)}</li>
+          <li><i className="arc" />{t(L.low)}</li>
+        </ul>
       </div>
     </div>
   );

@@ -668,3 +668,11 @@ h4 { margin: var(--s8) 0 var(--s3); font-size: 17px; }
 /* phones: the rail only shows progress; scrolling stays native (a touch on it used to jump the page) */
 @media (pointer: coarse) { .skyrail { pointer-events: none; touch-action: auto; } }
 .faq p { white-space: pre-line; }
+
+/* altimeter: the reading sits under the dial, never on it */
+.alti .cap { display: grid; gap: var(--s1); justify-items: center; text-align: center; }
+.alti .alt-now { font: 750 26px/1.1 var(--font); font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.alt-legend { list-style: none; margin: var(--s2) 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: var(--s1) var(--s4); font-size: 13px; color: var(--muted); }
+.alt-legend li { display: inline-flex; align-items: center; gap: 6px; }
+.alt-legend i { width: 12px; height: 4px; border-radius: 2px; display: inline-block; }
+.alt-legend i.arc { background: var(--red); opacity: .55; }
