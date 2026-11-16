@@ -21,14 +21,25 @@ function useActivePart() {
     let raf = 0;
     const read = () => {
       raf = 0;
+      // A header link scrolls the part to just under the header (scroll-padding-top: header + 16 px), so the line
+      // sits a bit lower than that; at the very bottom of the page the last part is the current one.
+      const line = (document.querySelector('.top')?.getBoundingClientRect().bottom ?? 56) + 40;
       let part = 'top';
-      document.querySelectorAll<HTMLElement>('[data-part]').forEach(el => { if (el.getBoundingClientRect().top <= 64) part = el.dataset.part!; });
+      const bands = document.querySelectorAll<HTMLElement>('[data-part]');
+      bands.forEach(el => { if (el.getBoundingClientRect().top <= line) part = el.dataset.part!; });
+      if (bands.length && innerHeight + scrollY >= document.documentElement.scrollHeight - 4) part = bands[bands.length - 1].dataset.part!;
       setActive(prev => (prev === part ? prev : part));
     };
     const on = () => { if (!raf) raf = requestAnimationFrame(read); };
     read();
+    // also when a scroll ends or a link jumps: the header always lands on the part you went to
+    const now = () => { cancelAnimationFrame(raf); read(); };
     addEventListener('scroll', on, { passive: true }); addEventListener('resize', on);
-    return () => { removeEventListener('scroll', on); removeEventListener('resize', on); cancelAnimationFrame(raf); };
+    addEventListener('scrollend', now); addEventListener('hashchange', now);
+    return () => {
+      removeEventListener('scroll', on); removeEventListener('resize', on);
+      removeEventListener('scrollend', now); removeEventListener('hashchange', now); cancelAnimationFrame(raf);
+    };
   }, []);
   return active;
 }

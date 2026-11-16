@@ -1,7 +1,12 @@
 # AFF notes: working rules
 
-Personal study app for AFF skydiving (Vite + React + TypeScript). Plan and status: `docs/PLAN.md` — every new
-request from the owner goes there first. Research: `docs/research/`. Content brief: `docs/content-brief.md`.
+Personal study app for AFF skydiving (Vite + React + TypeScript). Plan and status: `docs/PLAN.md`.
+
+- **Every ask is tracked.** Each thing the owner asks for (in any message, even mid-task or by voice) gets a line in
+  the inbox at the top of `docs/PLAN.md` before work starts, and is closed only when done and seen on screen (with the
+  commit) or dropped by the owner. Before ending a turn, check the inbox against the owner's last messages.
+
+Research: `docs/research/`. Content brief: `docs/content-brief.md`.
 
 - **Private repo only.** Remote: github.com/vekaev/aff-notes (**private**). Push commits there; never make it public,
   never publish the app (artifact, Vercel or anywhere): `public/media` holds clips cut from other people's YouTube

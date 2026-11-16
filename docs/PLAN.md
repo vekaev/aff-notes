@@ -11,6 +11,42 @@ Every request from the owner goes here first. `[x]` = in the app (content tests 
 Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check, landing pattern, EP, malfunctions
 (desktop, light, EN); canopy check, obstacles, a chapter test (phone, dark, RU).
 
+## Owner requests: the inbox (every ask lands here first, nothing is dropped)
+Rule: each thing the owner asks for, in any message, gets a line here **before** work starts, with the date and the
+owner's words in short. Status: `[ ]` open · `[~]` in progress · `[x]` done and seen on screen (commit) ·
+`[?]` waiting on the owner (the question is under "Waiting on you"). The 2-hourly run and the autopilot work the open
+lines top down; a line is closed only when it's done and seen, or the owner drops it.
+
+2026-11-16 (chat):
+- [x] Remove "decide by 2,500" under part IV of the jump picture (bb861dd).
+- [x] Content general, not tied to Tracy; Skydive California only in Part V (6eea713).
+- [x] Find the dropzone's email, draft the review/help email in the owner's words, don't send (docs/email-draft.md).
+- [?] Private link only the dropzone can open (Cloudflare Access proposed); owner removes the public Vercel site first.
+- [x] Future ideas into "Owner decides later": open source, ML model for packing mistakes.
+- [x] Sections felt cramped: more space, margins, sizes (6eea713).
+- [x] Incident cards: the clip opens the full YouTube video (6eea713).
+- [x] Numbers tape: 2,500 = can you reach the holding point; emergency numbers separate (6eea713).
+- [~] Real pictures next to every drawing, the rig first: rig back/front clips placed (pushed with the Part I fixes);
+      exit, altimeter, pattern and canopy-check clips cut, to place next to their drawings; then a real rig photo
+      with the same tap points as the drawing (curriculum review, visual #1).
+- [?] Photo of the dropzone map from the ground course → next to the pattern drawing and in Part V (owner sends it).
+- [x] Phone scrolling jumped: rail no longer catches touches (6eea713). Owner to confirm on the iPhone.
+- [x] Header: title left, language and theme right (6eea713).
+- [x] Independent expert fact-check of every line (6 reviewers, docs/review/expert/), fixes by fixer agents
+      (docs/review/fixes/): Parts II, III done (8a2c519); I, dropzone, IV injuries in progress; IV emergencies next.
+- [x] 24-hour finishing run every 2 h, then it stops itself (task aff-notes-finish-review).
+- [x] Page guard and curriculum reviewer agents (.claude/agents/); mission at the top of this plan.
+- [x] Altimeter unreadable: redrawn, reading under the dial (f4a136c).
+- [x] Jump picture labels not vertically centred (bb861dd).
+- [x] Video that can't be embedded: opens on YouTube, plus a button under every video (bb861dd).
+- [x] Altimeter needle direction explained in the legend (counterclockwise when falling) (bb861dd).
+- [x] Holding point: S-turns across the wind (east–west with a north wind), not circles (68e8d72).
+- [x] Header highlight wrong after clicking a part (scroll stopped 8 px short of the line); fixed, all 5 parts checked.
+- [x] Make sure every ask is tracked and done: this inbox + rule in CLAUDE.md + the 2-hourly run reads it.
+- [ ] Curriculum proposals: new chapters (landing off the DZ and after landing; other canopies; wind for students),
+      decision-style test questions, "act now" rules where they're used. One per run, sourced.
+- [?] Big reorder (Part IV "act now" first, statistics and real cases in their own part, EP button in the header): ask.
+
 ## Waiting on you
 - Email to Skydive California (info@skydivecalifornia.com, checked on their contact page): review request + offer to
   help for free + "what would you add for your school?". Draft: `docs/email-draft.md` (not sent). Needs the private link.

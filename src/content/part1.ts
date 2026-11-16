@@ -15,6 +15,16 @@ export const part1: Part = {
           type: 'rules',
           items: [
             {
+              icon: 'plane',
+              title: { en: 'Walk up from behind', es: 'Acércate por detrás', uk: 'Підходь ззаду', ru: 'Подходи сзади' },
+              text: {
+                en: 'Always approach the plane <b>from the rear</b>, away from the <b>propeller</b>.',
+                es: 'Acércate siempre al avión <b>por detrás</b>, lejos de la <b>hélice</b>.',
+                uk: 'До літака завжди підходь <b>ззаду</b>, подалі від <b>пропелера</b>.',
+                ru: 'К самолёту всегда подходи <b>сзади</b>, подальше от <b>пропеллера</b>.',
+              },
+            },
+            {
               icon: 'seatbelt',
               title: { en: 'Seatbelt on', es: 'Cinturón puesto', uk: 'Ремінь пристебнутий', ru: 'Ремень пристёгнут' },
               text: {
@@ -51,25 +61,36 @@ export const part1: Part = {
           check: true,
           title: { en: 'Aircraft emergency', es: 'Emergencia en el avión', uk: 'Аварійна ситуація в літаку', ru: 'Аварийная ситуация в самолёте' },
           text: {
-            en: 'Your school sets the details (ask). <b>Stay calm</b> and wait for the instructor\'s command. The usual rule:',
-            es: 'Los detalles los fija tu escuela (pregunta). <b>Mantén la calma</b> y espera la orden del instructor. La regla habitual:',
-            uk: 'Подробиці визначає твоя школа (запитай). <b>Зберігай спокій</b> і чекай команди інструктора. Звичайне правило:',
-            ru: 'Подробности определяет твоя школа (спроси). <b>Сохраняй спокойствие</b> и жди команды инструктора. Обычное правило:',
+            en: 'USPA lists four possible commands; your school sets which altitude gets which (ask). <b>Stay calm</b> and wait for the instructor\'s command. Usually, from low to high:',
+            es: 'USPA prevé cuatro órdenes posibles; tu escuela fija qué altura corresponde a cada una (pregunta). <b>Mantén la calma</b> y espera la orden del instructor. Por lo general, de baja a alta:',
+            uk: 'USPA передбачає чотири можливі команди; на якій висоті яка, визначає твоя школа (запитай). <b>Зберігай спокій</b> і чекай команди інструктора. Зазвичай, від малої висоти до великої:',
+            ru: 'USPA предусматривает четыре возможные команды; на какой высоте какая, определяет твоя школа (спроси). <b>Сохраняй спокойствие</b> и жди команды инструктора. Обычно, от малой высоты к большой:',
           },
           points: [
             {
-              en: '<b>Low</b>: stay in, belt on, <b>brace</b> (hands clasped behind your head)',
-              es: '<b>Bajo</b>: quédate dentro, con cinturón, en <b>posición de impacto</b> (manos entrelazadas detrás de la cabeza)',
-              uk: '<b>Низько</b>: залишаємося в літаку, пристебнуті, у <b>позі безпеки</b> (руки зчеплені на потилиці)',
-              ru: '<b>Низко</b>: остаёмся в самолёте, пристёгнуты, в <b>позе безопасности</b> (руки сцеплены на затылке)',
+              en: '<b>Low</b>: land with the plane. Stay in, <b>helmet and belt on</b>, <b>brace</b> (hands clasped behind your head)',
+              es: '<b>Bajo</b>: aterrizas con el avión. Quédate dentro, con <b>casco y cinturón</b>, en <b>posición de impacto</b> (manos entrelazadas detrás de la cabeza)',
+              uk: '<b>Низько</b>: сідаємо разом із літаком. Залишаємося всередині, <b>у шоломі й пристебнуті</b>, у <b>позі безпеки</b> (руки зчеплені на потилиці)',
+              ru: '<b>Низко</b>: садимся вместе с самолётом. Остаёмся внутри, <b>в шлеме и пристёгнуты</b>, в <b>позе безопасности</b> (руки сцеплены на затылке)',
             },
             {
-              en: '<b>Mid altitude</b>: exit on command; the instructor may tell you to pull the <b>reserve</b> right away',
-              es: '<b>Altura media</b>: salida a la orden; el instructor puede decirte que abras la <b>reserva</b> enseguida',
-              uk: '<b>Середня висота</b>: покидаємо літак за командою; інструктор може сказати одразу розкрити <b>запасний</b>',
-              ru: '<b>Средняя высота</b>: покидаем самолёт по команде; инструктор может сказать сразу раскрыть <b>запасной</b>',
+              en: '<b>Higher</b>: exit on command and pull the <b>reserve</b> right away',
+              es: '<b>Más alto</b>: sal a la orden y abre la <b>reserva</b> enseguida',
+              uk: '<b>Вище</b>: покидаємо літак за командою й одразу розкриваємо <b>запасний</b>',
+              ru: '<b>Выше</b>: покидаем самолёт по команде и сразу раскрываем <b>запасной</b>',
             },
-            { en: '<b>High</b>: normal exit', es: '<b>Alto</b>: salida normal', uk: '<b>Високо</b>: звичайне відокремлення', ru: '<b>Высоко</b>: обычное отделение' },
+            {
+              en: '<b>Higher still</b>: exit on command and pull the <b>main</b> right away',
+              es: '<b>Más alto aún</b>: sal a la orden y abre la <b>principal</b> enseguida',
+              uk: '<b>Ще вище</b>: покидаємо літак за командою й одразу розкриваємо <b>основний</b>',
+              ru: '<b>Ещё выше</b>: покидаем самолёт по команде и сразу раскрываем <b>основной</b>',
+            },
+            {
+              en: '<b>High</b>: exit the way the instructor says, maybe a normal exit',
+              es: '<b>Alto</b>: sal como diga el instructor, quizá con una salida normal',
+              uk: '<b>Високо</b>: відокремлюємося так, як скаже інструктор, можливо, звичайним відокремленням',
+              ru: '<b>Высоко</b>: отделяемся так, как скажет инструктор, возможно, обычным отделением',
+            },
             {
               en: 'Container opens in the plane: <b>hold it closed</b> and tell the instructor. If it goes out the door, <b>follow it</b> right away',
               es: 'Se abre el contenedor en el avión: <b>mantenlo cerrado</b> y avisa al instructor. Si sale por la puerta, <b>síguelo</b> enseguida',
@@ -82,7 +103,13 @@ export const part1: Part = {
               uk: 'Сіли разом із літаком: спокійно виходимо, відходимо <b>щонайменше на 100 футів (30 м)</b>',
               ru: 'Сели вместе с самолётом: спокойно выходим, отходим <b>минимум на 100 футов (30 м)</b>',
             },
-            { en: 'Your school\'s altitudes: <q-check/>', es: 'Alturas de tu escuela: <q-check/>', uk: 'Висоти у твоїй школі: <q-check/>', ru: 'Высоты в твоей школе: <q-check/>' },
+            {
+              en: 'Riding the plane down: a student-mode AAD should be <b>switched off</b> before the plane descends, or the descent can fire it. Who does it: <q-check/>',
+              es: 'Si bajas con el avión: un AAD en modo alumno debe <b>apagarse</b> antes de que el avión descienda, o el descenso puede dispararlo. Quién lo hace: <q-check/>',
+              uk: 'Якщо знижуєтеся разом із літаком: AAD у студентському режимі треба <b>вимкнути</b> до зниження, інакше під час зниження він може спрацювати. Хто це робить: <q-check/>',
+              ru: 'Если снижаетесь вместе с самолётом: AAD в студенческом режиме нужно <b>выключить</b> до снижения, иначе при снижении он может сработать. Кто это делает: <q-check/>',
+            },
+            { en: 'Your school\'s altitude for each command: <q-check/>', es: 'La altura de tu escuela para cada orden: <q-check/>', uk: 'Висота для кожної команди у твоїй школі: <q-check/>', ru: 'Высота для каждой команды в твоей школе: <q-check/>' },
           ],
         },
         {
@@ -106,16 +133,16 @@ export const part1: Part = {
             {
               q: { en: 'Aircraft emergency at low altitude. What is the typical rule?', es: 'Emergencia en el avión a baja altura. ¿Cuál es la regla típica?', uk: 'Аварійна ситуація в літаку на малій висоті. Яке звичайне правило?', ru: 'Аварийная ситуация в самолёте на малой высоте. Какое обычное правило?' },
               options: [
-                { en: 'Stay in, belt on, brace', es: 'Quédate dentro, con cinturón, en posición de impacto', uk: 'Залишаємося в літаку, пристебнуті, у позі безпеки', ru: 'Остаёмся в самолёте, пристёгнуты, в позе безопасности' },
+                { en: 'Stay in, helmet and belt on, brace', es: 'Quédate dentro, con casco y cinturón, en posición de impacto', uk: 'Залишаємося в літаку, у шоломі й пристебнуті, у позі безпеки', ru: 'Остаёмся в самолёте, в шлеме и пристёгнуты, в позе безопасности' },
                 { en: 'Unbuckle and jump out right away', es: 'Quítate el cinturón y salta enseguida', uk: 'Відстібаємося й одразу стрибаємо', ru: 'Отстёгиваемся и сразу прыгаем' },
                 { en: 'Take your helmet off, go to the door', es: 'Quítate el casco y ve a la puerta', uk: 'Знімаємо шолом і йдемо до дверей', ru: 'Снимаем шлем и идём к двери' },
               ],
               answer: 0,
               why: {
-                en: 'Low means you land with the plane: belt on, brace, and wait for the instructor\'s command.',
-                es: 'Bajo significa que aterrizas con el avión: cinturón puesto, posición de impacto y esperas la orden del instructor.',
-                uk: 'Низько — отже, сідаємо разом із літаком: пристебнуті, у позі безпеки, чекаємо команди інструктора.',
-                ru: 'Низко — значит, садимся вместе с самолётом: пристёгнуты, в позе безопасности, ждём команды инструктора.',
+                en: 'Low means you land with the plane: helmet and belt on, brace, and wait for the instructor\'s command.',
+                es: 'Bajo significa que aterrizas con el avión: casco y cinturón puestos, posición de impacto y esperas la orden del instructor.',
+                uk: 'Низько — отже, сідаємо разом із літаком: у шоломі й пристебнуті, у позі безпеки, чекаємо команди інструктора.',
+                ru: 'Низко — значит, садимся вместе с самолётом: в шлеме и пристёгнуты, в позе безопасности, ждём команды инструктора.',
               },
             },
             {
@@ -161,7 +188,7 @@ export const part1: Part = {
               points: [
                 { en: 'Packed by a <b>packer</b>', es: 'La pliega un <b>plegador</b>', uk: 'Вкладає <b>укладальник</b>', ru: 'Укладывает <b>укладчик</b>' },
                 { en: 'Checked by your <b>instructor</b> before the jump', es: 'La revisa tu <b>instructor</b> antes del salto', uk: 'Перевіряє твій <b>інструктор</b> перед стрибком', ru: 'Проверяет твой <b>инструктор</b> перед прыжком' },
-                { en: 'Opened by <b>you</b>, at 5,500 ft', es: 'La abres <b>tú</b>, a 5,500 ft', uk: 'Розкриваєш <b>ти</b>, на 5 500 футах', ru: 'Раскрываешь <b>ты</b>, на 5 500 футах' },
+                { en: 'Opened by <b>you</b>, at 5,500 ft (category A)', es: 'La abres <b>tú</b>, a 5,500 ft (categoría A)', uk: 'Розкриваєш <b>ти</b>, на 5 500 футах (категорія A)', ru: 'Раскрываешь <b>ты</b>, на 5 500 футах (категория A)' },
               ],
             },
             {
@@ -170,10 +197,10 @@ export const part1: Part = {
               points: [
                 { en: 'Packed only by a <b>certified rigger</b>', es: 'Solo la pliega un <b>rigger certificado</b>', uk: 'Вкладає лише <b>сертифікований ригер</b>', ru: 'Укладывает только <b>сертифицированный риггер</b>' },
                 {
-                  en: '<b>Inspected, repacked and sealed</b> on a fixed schedule: every <b>180 days</b> (USPA) <q-check/>',
-                  es: 'Se <b>inspecciona, se repliega y se sella</b> según un plazo fijo: cada <b>180 días</b> (USPA) <q-check/>',
-                  uk: 'Його <b>оглядають, перевкладають і пломбують</b> за чітким графіком: кожні <b>180 днів</b> (USPA) <q-check/>',
-                  ru: 'Его <b>осматривают, переукладывают и пломбируют</b> по чёткому графику: каждые <b>180 дней</b> (USPA) <q-check/>',
+                  en: '<b>Inspected, repacked and sealed</b> on a fixed schedule: every <b>180 days</b> (FAA rule)',
+                  es: 'Se <b>inspecciona, se repliega y se sella</b> según un plazo fijo: cada <b>180 días</b> (norma de la FAA)',
+                  uk: 'Його <b>оглядають, перевкладають і пломбують</b> за чітким графіком: кожні <b>180 днів</b> (правило FAA)',
+                  ru: 'Его <b>осматривают, переукладывают и пломбируют</b> по чёткому графику: каждые <b>180 дней</b> (правило FAA)',
                 },
               ],
             },
@@ -182,10 +209,10 @@ export const part1: Part = {
               title: { en: 'AAD', es: 'AAD', uk: 'AAD (страхувальний прилад)', ru: 'AAD (страхующий прибор)' },
               points: [
                 {
-                  en: 'Fires the reserve <b>automatically</b> if you are still in freefall <b>too low</b> (around 750–1,000 ft, by model and mode) <q-check/>',
-                  es: 'Abre la reserva <b>automáticamente</b> si sigues en caída libre <b>demasiado bajo</b> (unos 750–1,000 ft, según el modelo y el modo) <q-check/>',
-                  uk: '<b>Автоматично</b> розкриває запасний, якщо ти ще у вільному падінні <b>надто низько</b> (приблизно 750–1 000 футів, залежно від моделі й режиму) <q-check/>',
-                  ru: '<b>Автоматически</b> раскрывает запасной, если ты ещё в свободном падении <b>слишком низко</b> (примерно 750–1 000 футов, в зависимости от модели и режима) <q-check/>',
+                  en: 'Fires the reserve <b>automatically</b> if you are still falling <b>fast</b> when low: in freefall, or under a bad canopy that still comes down fast. On a student unit, around 750–1,000 ft <q-check/>',
+                  es: 'Abre la reserva <b>automáticamente</b> si sigues cayendo <b>rápido</b> a poca altura: en caída libre o bajo una vela en mal estado que todavía baja rápido. En un equipo de alumno, unos 750–1,000 ft <q-check/>',
+                  uk: '<b>Автоматично</b> розкриває запасний, якщо ти ще <b>швидко</b> падаєш низько: у вільному падінні або під несправним куполом, що все ще швидко знижується. На студентському приладі — приблизно 750–1 000 футів <q-check/>',
+                  ru: '<b>Автоматически</b> раскрывает запасной, если ты ещё <b>быстро</b> падаешь низко: в свободном падении или под неисправным куполом, который всё ещё быстро снижается. На студенческом приборе — примерно 750–1 000 футов <q-check/>',
                 },
                 { en: 'It is <b>only a backup</b>', es: 'Es <b>solo un respaldo</b>', uk: 'Це <b>лише підстраховка</b>', ru: 'Это <b>только подстраховка</b>' },
                 { en: 'Pulling is always <b>your job</b>', es: 'Abrir siempre es <b>tu responsabilidad</b>', uk: 'Розкриватися — завжди <b>твоє завдання</b>', ru: 'Раскрываться — всегда <b>твоя задача</b>' },
@@ -205,17 +232,17 @@ export const part1: Part = {
             {
               id: 'main',
               name: { en: 'Main', es: 'Principal', uk: 'Основний', ru: 'Основной' },
-              text: { en: '<b>Bottom</b> of the container. You open it at <b>5,500 ft</b>.', es: '<b>Abajo</b> en el contenedor. La abres a <b>5,500 ft</b>.', uk: '<b>Нижній</b> відсік ранця. Розкриваєш його на <b>5 500 футах</b>.', ru: '<b>Нижний</b> отсек ранца. Раскрываешь его на <b>5 500 футах</b>.' },
+              text: { en: '<b>Bottom</b> of the container. You open it at <b>5,500 ft</b> (category A).', es: '<b>Abajo</b> en el contenedor. La abres a <b>5,500 ft</b> (categoría A).', uk: '<b>Нижній</b> відсік ранця. Розкриваєш його на <b>5 500 футах</b> (категорія A).', ru: '<b>Нижний</b> отсек ранца. Раскрываешь его на <b>5 500 футах</b> (категория A).' },
             },
             {
               id: 'pc',
               name: { en: 'Pilot chute handle', es: 'Manija del extractor', uk: 'Ручка витяжного', ru: 'Ручка вытяжного' },
-              text: { en: 'The little <b>ball</b> at the bottom of the container, <b>right side</b>. Right hand.', es: 'La <b>bolita</b> abajo del contenedor, <b>lado derecho</b>. Mano derecha.', uk: '<b>Кулька</b> внизу ранця, <b>праворуч</b>. Права рука.', ru: '<b>Шарик</b> внизу ранца, <b>справа</b>. Правая рука.' },
+              text: { en: 'The little <b>ball</b> at the bottom of the container, <b>right side</b>. Right hand. On your student rig: <q-check/>', es: 'La <b>bolita</b> abajo del contenedor, <b>lado derecho</b>. Mano derecha. En tu equipo de alumno: <q-check/>', uk: '<b>Кулька</b> внизу ранця, <b>праворуч</b>. Права рука. На твоїй студентській системі: <q-check/>', ru: '<b>Шарик</b> внизу ранца, <b>справа</b>. Правая рука. На твоей студенческой системе: <q-check/>' },
             },
             {
               id: 'aad',
               name: { en: 'AAD', es: 'AAD', uk: 'AAD (страхувальний прилад)', ru: 'AAD (страхующий прибор)' },
-              text: { en: 'Small computer <b>inside the reserve</b>. Opens it if you are still falling fast too low. <b>Switched on</b> before the jump.', es: 'Pequeña computadora <b>dentro de la reserva</b>. La abre si sigues cayendo rápido demasiado bajo. Se <b>enciende</b> antes del salto.', uk: 'Маленький комп’ютер <b>у відсіку запасного</b>. Розкриває його, якщо ти ще швидко падаєш надто низько. <b>Вмикається</b> перед стрибком.', ru: 'Маленький компьютер <b>в отсеке запасного</b>. Раскрывает его, если ты ещё быстро падаешь слишком низко. <b>Включается</b> перед прыжком.' },
+              text: { en: 'Small computer <b>inside the reserve</b>. Opens it if you are still falling fast too low. <b>Switched on</b> on the ground, before you gear up.', es: 'Pequeña computadora <b>dentro de la reserva</b>. La abre si sigues cayendo rápido demasiado bajo. Se <b>enciende</b> en tierra, antes de ponerte el equipo.', uk: 'Маленький комп’ютер <b>у відсіку запасного</b>. Розкриває його, якщо ти ще швидко падаєш надто низько. <b>Вмикається</b> на землі, перед тим як одягнути систему.', ru: 'Маленький компьютер <b>в отсеке запасного</b>. Раскрывает его, если ты ещё быстро падаешь слишком низко. <b>Включается</b> на земле, перед тем как надеть систему.' },
             },
             {
               id: 'cutaway',
@@ -239,6 +266,25 @@ export const part1: Part = {
             },
           ],
         },
+        {
+          type: 'clips',
+          items: [
+            {
+              src: 'rig_real',
+              caption: { en: 'The real thing, from the back: reserve on top, main below', es: 'El equipo real, por detrás: la reserva arriba, la principal abajo', uk: 'Справжня система ззаду: запасний зверху, основний знизу', ru: 'Настоящая система сзади: запасной сверху, основной снизу' },
+              credit: 'Start Skydiving',
+              yt: 'Sg9lNMv1vdU',
+              t: 197,
+            },
+            {
+              src: 'rig_real_front',
+              caption: { en: 'The front: chest and leg straps, then the red cutaway handle in its pocket', es: 'Por delante: cinchas de pecho y piernas, luego la manija roja de liberación en su bolsillo', uk: 'Спереду: грудна перемичка й ножні обхвати, потім червона подушка відчеплення в кишені', ru: 'Спереди: грудная перемычка и ножные обхваты, потом красная подушка отцепки в кармашке' },
+              credit: 'Matt Walker',
+              yt: 'LQZhlBAsWgE',
+              t: 228,
+            },
+          ],
+        },
         { type: 'h', text: { en: 'Checked four times', es: 'Se revisa cuatro veces', uk: 'Перевіряється чотири рази', ru: 'Проверяется четыре раза' } },
         {
           type: 'steps',
@@ -258,6 +304,12 @@ export const part1: Part = {
             { en: '<b>Leg and chest straps</b>, <b>pins</b>', es: '<b>Perneras y cinta de pecho</b>, <b>pines</b>', uk: '<b>Ножні обхвати й грудна перемичка</b>, <b>чеки (піни)</b>', ru: '<b>Ножные обхваты и грудная перемычка</b>, <b>чеки (пины)</b>' },
             { en: '<b>RSL</b> hooked up, <b>reserve pin and seal</b> in place', es: '<b>RSL</b> conectado, <b>pin y sello de la reserva</b> en su sitio', uk: '<b>RSL</b> під’єднаний, <b>чека й пломба запасного</b> на місці', ru: '<b>RSL</b> подсоединён, <b>чека и пломба запасного</b> на месте' },
             { en: '<b>AAD</b> switched on', es: '<b>AAD</b> encendido', uk: '<b>AAD</b> увімкнений', ru: '<b>AAD</b> включён' },
+            {
+              en: '<b>Altimeter</b> set (zero on the ground), <b>helmet</b> chin strap done up, <b>goggles</b> clean and secure',
+              es: '<b>Altímetro</b> ajustado (cero en tierra), <b>casco</b> con la correa abrochada, <b>gafas</b> limpias y bien puestas',
+              uk: '<b>Висотомір</b> виставлений (нуль на землі), <b>шолом</b> із застебнутим ремінцем, <b>окуляри</b> чисті й добре сидять',
+              ru: '<b>Высотомер</b> выставлен (ноль на земле), <b>шлем</b> с застёгнутым ремешком, <b>очки</b> чистые и хорошо сидят',
+            },
             { en: 'Before exit: ask for a <b>pin check</b>', es: 'Antes de salir: pide un <b>pin check</b>', uk: 'Перед відокремленням попроси <b>перевірити чеки (pin check)</b>', ru: 'Перед отделением попроси <b>проверить чеки (pin check)</b>' },
           ],
         },
@@ -322,10 +374,10 @@ export const part1: Part = {
         {
           type: 'p',
           text: {
-            en: '<b>Six moves</b>, always in this order. <b>Right side first</b>, then left: the order depends on which side the door is on, so ask which side goes first on your aircraft <q-check/>. The red part is the one that moves.',
-            es: '<b>Seis movimientos</b>, siempre en este orden. <b>Primero el lado derecho</b>, luego el izquierdo: el orden depende del lado en que esté la puerta, así que pregunta qué lado va primero en tu avión <q-check/>. La parte roja es la que se mueve.',
-            uk: '<b>Шість рухів</b>, завжди в цьому порядку. <b>Спершу права сторона</b>, потім ліва: порядок залежить від того, з якого боку двері, тож запитай, який бік перший на твоєму літаку <q-check/>. Червоним показано те, що рухається.',
-            ru: '<b>Шесть движений</b>, всегда в этом порядке. <b>Сначала правая сторона</b>, потом левая: порядок зависит от того, с какой стороны дверь, так что спроси, какая сторона первая на твоём самолёте <q-check/>. Красным показано то, что движется.',
+            en: '<b>Six moves</b> in a fixed order. As taught in the ground course: <b>right side first</b>, then left. Which side goes first depends on which side the door is on, so check it for your aircraft <q-check/>. The red part is the one that moves.',
+            es: '<b>Seis movimientos</b> en un orden fijo. Como se enseñó en el curso de tierra: <b>primero el lado derecho</b>, luego el izquierdo. Qué lado va primero depende del lado en que esté la puerta, así que confírmalo para tu avión <q-check/>. La parte roja es la que se mueve.',
+            uk: '<b>Шість рухів</b> у чіткому порядку. Як на наземному курсі: <b>спершу права сторона</b>, потім ліва. Яка сторона перша, залежить від того, з якого боку двері, тож перевір це для свого літака <q-check/>. Червоним показано те, що рухається.',
+            ru: '<b>Шесть движений</b> в чётком порядке. Как на наземном курсе: <b>сначала правая сторона</b>, потом левая. Какая сторона первая, зависит от того, с какой стороны дверь, так что уточни это для своего самолёта <q-check/>. Красным показано то, что движется.',
           },
         },
         {
@@ -337,7 +389,7 @@ export const part1: Part = {
             },
             {
               title: { en: 'Right hand', es: 'Mano derecha', uk: 'Права рука', ru: 'Правая рука' },
-              sub: { en: 'Grab the <b>door handle</b> (the bar by the door).', es: 'Agarra la <b>agarradera de la puerta</b> (la barra junto a la puerta).', uk: 'Візьмися за <b>поручень</b> біля дверей.', ru: 'Возьмись за <b>поручень</b> у двери.' },
+              sub: { en: 'Grab the <b>door handle</b> (in the mock-up below, a bar across the top of the door).', es: 'Agarra la <b>agarradera de la puerta</b> (en la maqueta de abajo, una barra sobre la puerta).', uk: 'Візьмися за <b>поручень</b> біля дверей (на макеті нижче — перекладина над дверима).', ru: 'Возьмись за <b>поручень</b> у двери (на макете ниже — перекладина над дверью).' },
             },
             {
               title: { en: 'Right foot to the door edge', es: 'Pie derecho al borde de la puerta', uk: 'Праву ногу до краю дверей', ru: 'Правую ногу к краю двери' },
@@ -370,7 +422,7 @@ export const part1: Part = {
           items: [
             {
               src: 'climb',
-              caption: { en: 'Real climb-out and exit, step by step', es: 'Climb-out y salida reales, paso a paso', uk: 'Справжній вихід у двері й відокремлення, крок за кроком', ru: 'Настоящий выход в дверь и отделение, шаг за шагом' },
+              caption: { en: 'Climb-out practised in a mock-up door', es: 'Climb-out practicado en una maqueta de puerta', uk: 'Вихід у двері на макеті, на землі', ru: 'Выход в дверь на макете, на земле' },
               credit: 'Skydive Spaceland',
               yt: 'ufz1HjyYs_0',
               t: 28,
@@ -388,7 +440,7 @@ export const part1: Part = {
           type: 'quiz',
           questions: [
             {
-              q: { en: 'Which side moves first in the climb-out?', es: '¿Qué lado se mueve primero en el climb-out?', uk: 'Яка сторона рухається першою під час виходу в двері?', ru: 'Какая сторона двигается первой при выходе в дверь?' },
+              q: { en: 'In the ground course climb-out, which side moves first?', es: 'En el climb-out del curso de tierra, ¿qué lado se mueve primero?', uk: 'Яка сторона рухається першою у виході в двері з наземного курсу?', ru: 'Какая сторона двигается первой в выходе в дверь с наземного курса?' },
               options: [
                 { en: 'Left hand, then left foot', es: 'Mano izquierda, luego pie izquierdo', uk: 'Ліва рука, потім ліва нога', ru: 'Левая рука, потом левая нога' },
                 { en: 'Right hand, then right foot', es: 'Mano derecha, luego pie derecho', uk: 'Права рука, потім права нога', ru: 'Правая рука, потом правая нога' },
@@ -396,10 +448,10 @@ export const part1: Part = {
               ],
               answer: 1,
               why: {
-                en: 'Right side first: right hand on the door handle, right foot to the door edge. Then the left side.',
-                es: 'Primero el lado derecho: mano derecha en la agarradera, pie derecho al borde de la puerta. Luego el izquierdo.',
-                uk: 'Спершу права сторона: права рука на поручень, права нога до краю дверей. Потім ліва.',
-                ru: 'Сначала правая сторона: правая рука на поручень, правая нога к краю двери. Потом левая.',
+                en: 'As taught: right side first, right hand on the door handle, right foot to the door edge. Then the left side. With the door on the other side, it can be the mirror image.',
+                es: 'Como se enseñó: primero el lado derecho, mano derecha en la agarradera, pie derecho al borde de la puerta. Luego el izquierdo. Con la puerta al otro lado puede ser al revés.',
+                uk: 'Як навчали: спершу права сторона, права рука на поручень, права нога до краю дверей. Потім ліва. Якщо двері з іншого боку, може бути навпаки.',
+                ru: 'Как учили: сначала правая сторона, правая рука на поручень, правая нога к краю двери. Потом левая. Если дверь с другой стороны, может быть наоборот.',
               },
             },
             {
@@ -448,19 +500,19 @@ export const part1: Part = {
             {
               title: { en: '"Check in"', es: '"Check in"', uk: '«Check in»', ru: '«Check in»' },
               sub: {
-                en: 'Look at the instructor <b>inside</b> the plane (reserve side). They answer "OK".',
-                es: 'Mira al instructor que está <b>dentro</b> del avión (lado de la reserva). Te responde "OK".',
-                uk: 'Дивишся на інструктора <b>всередині</b> літака (з боку запасного). Він відповідає «OK».',
-                ru: 'Смотришь на инструктора <b>внутри</b> самолёта (со стороны запасного). Он отвечает «OK».',
+                en: 'Look at the instructor <b>inside</b> the plane. They answer "OK".',
+                es: 'Mira al instructor que está <b>dentro</b> del avión. Te responde "OK".',
+                uk: 'Дивишся на інструктора <b>всередині</b> літака. Він відповідає «OK».',
+                ru: 'Смотришь на инструктора <b>внутри</b> самолёта. Он отвечает «OK».',
               },
             },
             {
               title: { en: '"Check out"', es: '"Check out"', uk: '«Check out»', ru: '«Check out»' },
               sub: {
-                en: 'Look at the instructor <b>outside</b>, in the door (main side). They answer "OK".',
-                es: 'Mira al instructor que está <b>fuera</b>, en la puerta (lado de la principal). Te responde "OK".',
-                uk: 'Дивишся на інструктора <b>назовні</b>, у дверях (з боку основного). Він відповідає «OK».',
-                ru: 'Смотришь на инструктора <b>снаружи</b>, в двери (со стороны основного). Он отвечает «OK».',
+                en: 'Look at the instructor <b>outside</b>, in the door. They answer "OK".',
+                es: 'Mira al instructor que está <b>fuera</b>, en la puerta. Te responde "OK".',
+                uk: 'Дивишся на інструктора <b>назовні</b>, у дверях. Він відповідає «OK».',
+                ru: 'Смотришь на инструктора <b>снаружи</b>, в двери. Он отвечает «OK».',
               },
             },
             {
@@ -495,17 +547,28 @@ export const part1: Part = {
           check: true,
           points: [
             {
-              en: 'Words <b>differ</b> by school and aircraft ("Ready, set, go", "Out, in, out")',
-              es: 'Las palabras <b>cambian</b> según la escuela y el avión ("Ready, set, go", "Out, in, out")',
-              uk: 'Слова <b>залежать</b> від школи й літака («Ready, set, go», «Out, in, out»)',
-              ru: 'Слова <b>зависят</b> от школы и самолёта («Ready, set, go», «Out, in, out»)',
+              en: 'Words <b>differ</b> by school and aircraft ("Out, in, arch!", "Ready, set, go")',
+              es: 'Las palabras <b>cambian</b> según la escuela y el avión ("Out, in, arch!", "Ready, set, go")',
+              uk: 'Слова <b>залежать</b> від школи й літака («Out, in, arch!», «Ready, set, go»)',
+              ru: 'Слова <b>зависят</b> от школы и самолёта («Out, in, arch!», «Ready, set, go»)',
             },
-            { en: '<b>One instructor</b> on each side', es: '<b>Un instructor</b> a cada lado', uk: 'По <b>одному інструктору</b> з кожного боку', ru: 'По <b>одному инструктору</b> с каждой стороны' },
             {
-              en: 'Usual meaning: "in" = the instructor <b>inside</b>, "out" = the one <b>outside</b>. Your school: <q-check/>',
-              es: 'Lo habitual: "in" = el instructor de <b>dentro</b>, "out" = el de <b>fuera</b>. Tu escuela: <q-check/>',
-              uk: 'Зазвичай «in» — інструктор <b>всередині</b>, «out» — той, що <b>назовні</b>. У твоїй школі: <q-check/>',
-              ru: 'Обычно «in» — инструктор <b>внутри</b>, «out» — тот, что <b>снаружи</b>. В твоей школе: <q-check/>',
+              en: '<b>Two instructors</b> on the first categories, one on each side; later just one, and the climb-out changes',
+              es: '<b>Dos instructores</b> en las primeras categorías, uno a cada lado; después solo uno, y el climb-out cambia',
+              uk: '<b>Два інструктори</b> на перших категоріях, по одному з кожного боку; згодом лише один, і вихід у двері змінюється',
+              ru: '<b>Два инструктора</b> на первых категориях, по одному с каждой стороны; позже только один, и выход в дверь меняется',
+            },
+            {
+              en: 'Which instructor is outside depends on the door side: on a left-door plane (Caravan) it is often the one on your <b>left</b>, reserve side. Your aircraft: <q-check/>',
+              es: 'Qué instructor va fuera depende del lado de la puerta: en un avión con la puerta a la izquierda (Caravan) suele ser el de tu <b>izquierda</b>, lado de la reserva. Tu avión: <q-check/>',
+              uk: 'Хто з інструкторів назовні, залежить від боку дверей: на літаку з дверима ліворуч (Caravan) це часто той, що <b>ліворуч</b> від тебе, з боку запасного. На твоєму літаку: <q-check/>',
+              ru: 'Кто из инструкторов снаружи, зависит от стороны двери: на самолёте с дверью слева (Caravan) это часто тот, что <b>слева</b> от тебя, со стороны запасного. На твоём самолёте: <q-check/>',
+            },
+            {
+              en: 'Usually "check <b>in</b>" = the instructor inside the plane, "check <b>out</b>" = the one outside. Your school: <q-check/>',
+              es: 'Lo habitual: "check <b>in</b>" = el instructor de dentro del avión, "check <b>out</b>" = el de fuera. Tu escuela: <q-check/>',
+              uk: 'Зазвичай «check <b>in</b>» — інструктор усередині літака, «check <b>out</b>» — той, що назовні. У твоїй школі: <q-check/>',
+              ru: 'Обычно «check <b>in</b>» — инструктор внутри самолёта, «check <b>out</b>» — тот, что снаружи. В твоей школе: <q-check/>',
             },
           ],
         },
