@@ -1,0 +1,1097 @@
+<title>AFF Jump Notes</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: the page falls like a jump. Four parts, each a full-width altitude band (plane → freefall → canopy → emergency),
+   chapters inside pair the words with a looping drawing. Part colours come from the gear: sky, canopy, red cutaway / silver reserve. */
+:root{
+  --bg:#eef3f8; --surface:#ffffff; --ink:#0e1c2a; --muted:#566879; --line:#d3dde7;
+  --sky:#2a68a8; --sky-soft:#dbe8f5; --signal:#d9530b; --signal-soft:#fbe6d8; --ok:#1f8a4c;
+  --red:#c8202f; --red-soft:#f8dfe1; --silver:#8b97a3;
+  --canopy-a:#e2601a; --canopy-b:#1f5f9e; --canopy-c:#f2c230;
+  --fig:#0e1c2a; --fig-far:#8ea0b2; --door:#c9d6e3; --air:#cfe3f6;
+  --band1:#dfe6ee; --band2:#cfe2f5; --band3:#fde9d9; --band4:#f7dcdf;
+  --display:"Barlow Condensed","Arial Narrow",system-ui,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0a141e; --surface:#112030; --ink:#e4edf6; --muted:#93a7ba; --line:#22364a;
+  --sky:#6aa8e6; --sky-soft:#173049; --signal:#ff8a3d; --signal-soft:#3a2416; --ok:#4cc27f;
+  --red:#ff5a66; --red-soft:#3d1a1f; --silver:#b7c2cd;
+  --canopy-a:#ff7a33; --canopy-b:#3f86d1; --canopy-c:#f5cd4c;
+  --fig:#e4edf6; --fig-far:#5d7387; --door:#294157; --air:#16314a;
+  --band1:#121e2a; --band2:#0f2236; --band3:#2a1c12; --band4:#2a1418; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0a141e; --surface:#112030; --ink:#e4edf6; --muted:#93a7ba; --line:#22364a;
+  --sky:#6aa8e6; --sky-soft:#173049; --signal:#ff8a3d; --signal-soft:#3a2416; --ok:#4cc27f;
+  --red:#ff5a66; --red-soft:#3d1a1f; --silver:#b7c2cd;
+  --canopy-a:#ff7a33; --canopy-b:#3f86d1; --canopy-c:#f5cd4c;
+  --fig:#e4edf6; --fig-far:#5d7387; --door:#294157; --air:#16314a;
+  --band1:#121e2a; --band2:#0f2236; --band3:#2a1c12; --band4:#2a1418; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);padding-block:0 64px}
+.pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:900px;margin:0 auto}
+body.l-en .ru, body.l-en .es, body.l-ru .en, body.l-ru .es, body.l-es .en, body.l-es .ru{display:none!important}
+
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.brand{font:700 20px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.brand b{color:var(--signal)}
+.partnav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;min-width:0}
+.partnav a{font:600 12px var(--body);color:var(--muted);text-decoration:none;padding:5px 9px;border-radius:6px;white-space:nowrap}
+.partnav a:hover{color:var(--ink);background:var(--surface)}
+@media (max-width:640px){.partnav{display:none}}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;flex:none}
+.seg button{font:600 13px var(--body);padding:6px 12px;background:var(--surface);color:var(--muted);border:0;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+button:focus-visible,.step:focus-visible,.flow li:focus-visible,.card:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:24px;align-items:center;padding-block:36px 24px}
+@media (max-width:720px){.hero{grid-template-columns:minmax(0,1fr)}.hero .art{order:-1;max-width:340px}}
+.hero h1{font:700 clamp(44px,8vw,84px)/.92 var(--display);text-transform:uppercase;margin:10px 0 14px;text-wrap:balance}
+.hero p{max-width:60ch;color:var(--muted);margin:0}
+.art svg{width:100%;height:auto;display:block}
+.sway{animation:sway 6s ease-in-out infinite;transform-box:view-box;transform-origin:120px 230px}
+@keyframes sway{0%,100%{transform:rotate(-3deg)}50%{transform:rotate(3deg)}}
+
+/* altitude ladder of parts */
+.ladder{display:grid;gap:0;margin-top:22px;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.ladder a{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 14px;color:var(--ink);text-decoration:none;border-top:1px solid var(--line)}
+.ladder a:first-child{border-top:0}
+.ladder a:hover{background:var(--sky-soft)}
+.ladder .alt{font:500 13px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.ladder b{font:700 20px/1 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.ladder .n{font:500 12px var(--mono);color:var(--muted)}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px;vertical-align:1px}
+
+/* part bands */
+.part{margin-top:56px;padding-block:28px 26px}
+.part.p1{background:var(--band1)}.part.p2{background:var(--band2)}.part.p3{background:var(--band3)}.part.p4{background:var(--band4)}
+.part .wrap{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 20px;align-items:end}
+.part .roman{font:700 clamp(64px,12vw,120px)/.8 var(--display);color:var(--ink);opacity:.12;grid-row:span 2}
+.part h2{font:700 clamp(34px,6vw,54px)/.95 var(--display);text-transform:uppercase;margin:0;text-wrap:balance}
+.part .range{font:500 13px var(--mono);color:var(--muted);letter-spacing:.04em}
+
+section.ch{padding-block:40px 8px}
+section.ch + section.ch{border-top:1px solid var(--line)}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--sky)}
+h3.t{font:700 34px/1 var(--display);text-transform:uppercase;margin:6px 0 12px;text-wrap:balance}
+h4{font:700 21px/1.1 var(--display);text-transform:uppercase;letter-spacing:.02em;margin:0 0 8px}
+p{margin:0 0 12px}
+.lead{max-width:65ch}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:720px){.grid2{grid-template-columns:minmax(0,1fr)}}
+.stage{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px}
+.stage svg{display:block;width:100%;height:auto}
+.caption{font:700 26px/1.1 var(--display);text-transform:uppercase;text-align:center;min-height:30px;margin-top:6px;color:var(--signal)}
+.controls{display:flex;gap:8px;justify-content:center;margin-top:8px;flex-wrap:wrap}
+.btn{font:600 13px var(--body);padding:7px 14px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s}
+.step{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:start;padding:10px 12px;border-radius:10px;border:1px solid transparent}
+.steps.click .step{cursor:pointer}
+.step::before{counter-increment:s;content:counter(s);font:700 20px/34px var(--display);text-align:center;width:34px;height:34px;border-radius:50%;background:var(--sky-soft);color:var(--sky)}
+.step.on{background:var(--surface);border-color:var(--sky)}
+.step.on::before{background:var(--sky);color:var(--bg)}
+.step b{display:block}
+.step span.sub{color:var(--muted);font-size:14px}
+.ep .step.on{border-color:var(--red)}
+.ep .step.on::before{background:var(--red);color:#fff}
+
+.say{display:inline-block;font:600 13px var(--mono);background:var(--signal-soft);color:var(--signal);padding:1px 7px;border-radius:5px;white-space:nowrap}
+.check{border-left:3px solid var(--signal);background:var(--surface);padding:10px 14px;border-radius:0 8px 8px 0;margin:12px 0;font-size:15px}
+.check strong{color:var(--signal)}
+.check.red{border-left-color:var(--red)}
+.check.red strong{color:var(--red)}
+.q{font:600 11px var(--mono);color:var(--signal);border:1px solid var(--signal);border-radius:4px;padding:0 5px;margin-left:4px;vertical-align:2px;white-space:nowrap}
+
+.flow{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.flow li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;padding:9px 10px;border-radius:8px;cursor:pointer;border:1px solid transparent}
+.flow li.on{background:var(--surface);border-color:var(--sky)}
+.flow .alt{font:500 14px var(--mono);font-variant-numeric:tabular-nums;color:var(--sky);padding-top:2px}
+.flow li.hot .alt{color:var(--signal)}
+.flow b{display:block}
+.flow .sub{color:var(--muted);font-size:14px}
+.stickybox{position:sticky;top:80px}
+
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin-top:8px}
+.rule{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px}
+.rule .n{font:700 28px/1 var(--display);color:var(--sky)}
+
+.sig-head{display:flex;justify-content:space-between;align-items:end;gap:12px;flex-wrap:wrap}
+.signals{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:6px}
+.card svg{width:100%;height:auto;aspect-ratio:1;max-width:100%;background:var(--air);border-radius:8px}
+.card .name{font:700 22px/1 var(--display);text-transform:uppercase}
+.card .what{font-size:14px;color:var(--muted)}
+.card.key{border-color:var(--signal)}
+.card.key .name{color:var(--signal)}
+body.quiz .card .name,body.quiz .card .what,body.quiz .card .act{filter:blur(7px);transition:filter .2s}
+body.quiz .card:hover .name,body.quiz .card:hover .what,body.quiz .card:hover .act,body.quiz .card.reveal .name,body.quiz .card.reveal .what,body.quiz .card.reveal .act{filter:none}
+
+/* malfunctions */
+.mgroup{margin-top:22px}
+.mgroup h4 .pill{font:600 11px var(--mono);letter-spacing:.04em;padding:2px 7px;border-radius:5px;margin-left:8px;vertical-align:3px}
+.pill.ep{background:var(--red);color:#fff}
+.pill.fix{background:var(--ok);color:#fff}
+.mals{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.card .act{font-size:14px;border-top:1px solid var(--line);padding-top:8px;margin-top:auto}
+.card .act b{color:var(--red)}
+.card.fixable .act b{color:var(--ok)}
+
+.count{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:6px}
+.count span{font:500 13px var(--mono);padding:3px 8px;border-radius:5px;background:var(--sky-soft);color:var(--sky);opacity:.35;transition:opacity .2s}
+.count span.on{opacity:1}
+.tick{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.tick li{display:flex;gap:10px;align-items:baseline;padding:8px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--line);transition:border-color .2s}
+.tick li b{font:700 20px/1 var(--display);text-transform:uppercase;min-width:92px}
+.tick li.on{border-color:var(--ok)}
+.tick li.on b{color:var(--ok)}
+
+.clips{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:16px}
+figure.clip{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+figure.clip video,.card video,.stage video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#000}
+figure.clip figcaption{padding:8px 12px 10px;font-size:14px;display:flex;flex-direction:column;gap:2px}
+figure.clip figcaption a{font:500 12px var(--mono);color:var(--muted);text-decoration:none}
+figure.clip figcaption a:hover{color:var(--sky)}
+.stage video{border-radius:8px}
+.lt{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;align-items:start;margin-top:12px}
+@media (max-width:720px){.lt{grid-template-columns:minmax(0,1fr)}}
+.tips details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.tips details+details{margin-top:8px}
+.tips summary{cursor:pointer;font:700 22px/1.1 var(--display);text-transform:uppercase;list-style:none}
+.tips summary::-webkit-details-marker{display:none}
+.tips .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:10px}
+@media (max-width:720px){.tips .cols{grid-template-columns:minmax(0,1fr)}}
+.tips h5{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;margin:0 0 6px}
+.tips h5.bad{color:var(--red)}.tips h5.good{color:var(--ok)}
+.tips ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:15px}
+.tips .src{font-size:12px;color:var(--muted);margin-top:8px}
+.tips .src a{color:var(--muted)}
+.watch{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;align-items:center}
+.watch .lbl{font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.watch a{display:inline-flex;gap:8px;align-items:center;font:500 13px var(--body);color:var(--ink);text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 12px 5px 6px;max-width:100%}
+.watch a:hover{border-color:var(--red)}
+.watch a .tc{font:500 12px var(--mono);background:var(--red);color:#fff;border-radius:999px;padding:1px 8px;flex:none}
+.watch a .src{color:var(--muted)}
+.faq{display:grid;gap:8px}
+.faq details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.faq summary{cursor:pointer;font-weight:600;display:flex;gap:12px;align-items:baseline;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .n{font:500 13px var(--mono);color:var(--signal);flex:none}
+.faq details[open]{border-color:var(--sky)}
+.faq details p{margin:8px 0 0 38px;color:var(--ink)}
+.qs{counter-reset:q;list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.qs li{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px 10px 46px;position:relative}
+.qs li::before{counter-increment:q;content:"Q" counter(q);position:absolute;left:12px;top:11px;font:500 13px var(--mono);color:var(--signal)}
+footer{margin-top:48px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer a{color:var(--sky)}
+
+/* svg figure */
+.fig line,.fig path{stroke:var(--fig);stroke-width:7;stroke-linecap:round;fill:none}
+.fig .far line{stroke:var(--fig-far)}
+.fig circle.head{fill:var(--fig)}
+.fig .visor{fill:var(--sky)}
+.fig .hl line{stroke:var(--signal)}
+.pose g,.pose{transition:transform .6s cubic-bezier(.4,.1,.2,1),opacity .4s;transform-box:view-box}
+.prop{transform-box:fill-box;transform-origin:center;animation:spin .25s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hand rect,.hand .palm{fill:var(--ink)}
+.hand .glove{fill:var(--sky)}
+.a-poke{animation:poke 1.2s ease-in-out infinite;transform-box:view-box}
+@keyframes poke{0%,100%{transform:translateX(0)}50%{transform:translateX(14px)}}
+.a-wiggle{animation:wig .5s ease-in-out infinite;transform-box:view-box;transform-origin:100px 150px}
+@keyframes wig{0%,100%{transform:rotate(-10deg)}50%{transform:rotate(10deg)}}
+.a-out{animation:fout 1.8s ease-in-out infinite;transform-box:fill-box;transform-origin:bottom}
+@keyframes fout{0%,25%{transform:scaleY(.35)}55%,100%{transform:scaleY(1)}}
+.a-in{animation:fin 1.8s ease-in-out infinite;transform-box:fill-box;transform-origin:bottom}
+@keyframes fin{0%,25%{transform:scaleY(1)}55%,100%{transform:scaleY(.35)}}
+.a-push{animation:push 1.4s ease-in-out infinite;transform-box:view-box}
+@keyframes push{0%,100%{transform:translateY(0)}50%{transform:translateY(12px)}}
+.a-tap{animation:tap 1s ease-in-out infinite;transform-box:view-box}
+@keyframes tap{0%,100%{transform:translate(0,0)}50%{transform:translate(-8px,10px)}}
+.a-spin{animation:spin2 2.4s linear infinite;transform-box:view-box;transform-origin:100px 100px}
+@keyframes spin2{to{transform:rotate(360deg)}}
+.a-flap{animation:flap .35s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:bottom}
+@keyframes flap{from{transform:skewX(-6deg)}to{transform:skewX(6deg)}}
+.a-kick{animation:kick .5s ease-in-out infinite alternate;transform-box:view-box;transform-origin:100px 178px}
+@keyframes kick{from{transform:rotate(-14deg)}to{transform:rotate(14deg)}}
+@media (prefers-reduced-motion: reduce){.prop,.a-poke,.a-wiggle,.a-out,.a-in,.a-push,.a-tap,.a-spin,.a-flap,.a-kick,.sway{animation:none}.pose g,.pose{transition:none}}
+</style>
+
+<header class="top pad">
+  <div class="wrap">
+    <div class="brand">AFF <b>/</b> <span class="en">Jump Notes</span><span class="es">Notas de salto</span><span class="ru">Конспект</span></div>
+    <nav class="partnav" aria-label="Parts">
+      <a href="#part1"><span class="en">I · Plane</span><span class="es">I · Avión</span><span class="ru">I · Самолёт</span></a>
+      <a href="#part2"><span class="en">II · Freefall</span><span class="es">II · Caída libre</span><span class="ru">II · Свободное падение</span></a>
+      <a href="#part3"><span class="en">III · Canopy</span><span class="es">III · Vela</span><span class="ru">III · Купол</span></a>
+      <a href="#part4"><span class="en">IV · Emergencies</span><span class="es">IV · Emergencias</span><span class="ru">IV · Отказы</span></a>
+    </nav>
+    <div class="seg" role="group" aria-label="Language">
+      <button id="b-en" type="button" aria-pressed="true">EN</button>
+      <button id="b-es" type="button" aria-pressed="false">ES</button>
+      <button id="b-ru" type="button" aria-pressed="false">RU</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="pad"><div class="wrap hero">
+    <div>
+      <div class="eyebrow"><span class="en">Accelerated Freefall · Level 1 · study notes</span><span class="es">Caída libre acelerada (AFF) · Nivel 1 · notas de estudio</span><span class="ru">Ускоренное обучение (AFF) · Уровень 1 · конспект</span></div>
+      <h1><span class="en">From the seat to the canopy</span><span class="es">Del asiento a la vela</span><span class="ru">От сиденья до купола</span></h1>
+      <p><span class="en">Everything from the ground course, in the order it happens on the jump. For review before the next session. The instructors' briefing always wins over this page. <span class="q">CHECK</span> marks things to confirm with them.</span><span class="es">Todo el curso en tierra, en el orden en que pasa en el salto. Para repasar antes de la próxima sesión. El briefing de los instructores siempre manda sobre esta página. <span class="q">VERIFICAR</span> marca lo que hay que confirmar con ellos.</span><span class="ru">Всё с наземной подготовки, в том порядке, как это происходит в прыжке. Чтобы повторить перед следующим занятием. Брифинг инструкторов всегда важнее этой страницы. <span class="q">УТОЧНИТЬ</span> — спросить у инструктора.</span></p>
+      <div class="ladder">
+        <a href="#part1"><span class="alt">0 → ~13,500 ft</span><b><span class="dot" style="background:var(--silver)"></span><span class="en">In the plane</span><span class="es">En el avión</span><span class="ru">В самолёте</span></b><span class="n">I</span></a>
+        <a href="#part2"><span class="alt">13,500 → 5,500</span><b><span class="dot" style="background:var(--sky)"></span><span class="en">Freefall</span><span class="es">Caída libre</span><span class="ru">Свободное падение</span></b><span class="n">II</span></a>
+        <a href="#part3"><span class="alt">5,500 → 0</span><b><span class="dot" style="background:var(--canopy-a)"></span><span class="en">Under canopy</span><span class="es">Bajo vela</span><span class="ru">Под куполом</span></b><span class="n">III</span></a>
+        <a href="#part4"><span class="alt"><span class="en">any time</span><span class="es">en cualquier momento</span><span class="ru">в любой момент</span></span><b><span class="dot" style="background:var(--red)"></span><span class="en">When it goes wrong</span><span class="es">Cuando algo sale mal</span><span class="ru">Если что-то не так</span></b><span class="n">IV</span></a>
+      </div>
+    </div>
+    <div class="art"><svg viewBox="0 0 240 250" role="img" aria-label="Parachute canopy"><g class="sway" id="heroCanopy"></g></svg></div>
+  </div></div>
+
+  <!-- ================= PART I ================= -->
+  <div class="part p1 pad" id="part1"><div class="wrap"><div class="roman">I</div><div class="range">0 → ~13,500 FT</div><h2><span class="en">In the plane</span><span class="es">En el avión</span><span class="ru">В самолёте</span></h2></div></div>
+  <div class="pad"><div class="wrap">
+
+  <section class="ch" id="plane">
+    <div class="eyebrow"><span class="en">Chapter 1</span><span class="es">Capítulo 1</span><span class="ru">Глава 1</span></div>
+    <h3 class="t"><span class="en">The ride up</span><span class="es">La subida</span><span class="ru">Набор высоты</span></h3>
+    <div class="rules">
+      <div class="rule"><div class="n">01</div><b><span class="en">Seatbelt on</span><span class="es">Cinturón puesto</span><span class="ru">Пристёгнут</span></b><br><span class="en">From take-off until the instructor says it's time to get ready.</span><span class="es">Desde el despegue hasta que el instructor dice que es hora de prepararse.</span><span class="ru">С взлёта и пока инструктор не скажет готовиться.</span></div>
+      <div class="rule"><div class="n">02</div><b><span class="en">Helmet on, handles covered</span><span class="es">Casco puesto, manijas cubiertas</span><span class="ru">Шлем надет, ручки закрыты</span></b><br><span class="en">Protect your main and reserve handles when you move.</span><span class="es">Protege las manijas de la principal y de la reserva al moverte.</span><span class="ru">Береги ручки основного и запасного, когда двигаешься.</span> <span class="q">CHECK</span></div>
+      <div class="rule"><div class="n">03</div><b><span class="en">Instructors lead</span><span class="es">Los instructores guían</span><span class="ru">Ведут инструкторы</span></b><br><span class="en">They take you to the door. Move only on their signal.</span><span class="es">Te llevan a la puerta. Muévete solo cuando te den la señal.</span><span class="ru">Они подводят к двери. Двигаешься только по команде.</span></div>
+    </div>
+    <div class="check"><strong><span class="en">Aircraft emergency</span><span class="es">Emergencia del avión</span><span class="ru">Авария в самолёте</span></strong> <span class="q">CHECK</span><br>
+      <span class="en">Covered on the course, details missing here. Typical rule: low = stay in, belt on, brace; mid altitude = exit on command; high = normal exit. Our school's altitudes: ______.</span><span class="es">Se vio en el curso, aquí faltan detalles. Regla típica: bajo = quédate dentro, cinturón puesto, posición de impacto; altura media = salir a la orden; alto = salida normal. Alturas de nuestra escuela: ______.</span>
+      <span class="ru">Разбирали на курсе, деталей тут нет. Обычно: низко = остаёмся, пристёгнуты, группировка; средняя высота = выходим по команде; высоко = обычный выход. Высоты нашей школы: ______.</span></div>
+  </section>
+
+  <section class="ch" id="climb">
+    <div class="eyebrow"><span class="en">Chapter 2</span><span class="es">Capítulo 2</span><span class="ru">Глава 2</span></div>
+    <h3 class="t"><span class="en">Climb-out into the door</span><span class="es">Salida a la puerta (climb-out)</span><span class="ru">Выход в дверь</span></h3>
+    <p class="lead"><span class="en">Six moves, always in this order. Right side first, then left. The orange part is the one that moves.</span><span class="es">Seis movimientos, siempre en este orden. Primero el lado derecho, luego el izquierdo. La parte naranja es la que se mueve.</span><span class="ru">Шесть движений, всегда в этом порядке. Сначала правая сторона, потом левая. Оранжевым — то, что двигается.</span></p>
+    <div class="grid2">
+      <ol class="steps click" id="climbSteps">
+        <li class="step" tabindex="0"><div><b><span class="en">Set up facing the propeller</span><span class="es">Colócate mirando a la hélice</span><span class="ru">Встаём лицом к пропеллеру</span></b><span class="sub"><span class="en">Look forward, toward the prop.</span><span class="es">Mira hacia adelante, hacia la hélice.</span><span class="ru">Смотрим вперёд, на пропеллер.</span></span></div></li>
+        <li class="step" tabindex="0"><div><b><span class="en">Right hand</span><span class="es">Mano derecha</span><span class="ru">Правая рука</span></b><span class="sub"><span class="en">On the door frame.</span><span class="es">En el marco de la puerta.</span><span class="ru">На проём двери.</span></span></div></li>
+        <li class="step" tabindex="0"><div><b><span class="en">Right foot closer</span><span class="es">Pie derecho más cerca</span><span class="ru">Правую ногу ближе</span></b><span class="sub"><span class="en">Toward the edge of the door.</span><span class="es">Hacia el borde de la puerta.</span><span class="ru">К краю двери.</span></span></div></li>
+        <li class="step" tabindex="0"><div><b><span class="en">Left hand</span><span class="es">Mano izquierda</span><span class="ru">Левая рука</span></b><span class="sub"><span class="en">On the frame next to the right.</span><span class="es">En el marco, junto a la derecha.</span><span class="ru">На проём рядом с правой.</span></span></div></li>
+        <li class="step" tabindex="0"><div><b><span class="en">Left foot closer</span><span class="es">Pie izquierdo más cerca</span><span class="ru">Левую ногу ближе</span></b><span class="sub"><span class="en">Next to the right foot.</span><span class="es">Junto al pie derecho.</span><span class="ru">К правой ноге.</span></span></div></li>
+        <li class="step" tabindex="0"><div><b><span class="en">Head out: chin up, chest out</span><span class="es">Cabeza fuera: barbilla arriba, pecho fuera</span><span class="ru">Голову наружу: подбородок вверх, грудь вперёд</span></b><span class="sub"><span class="en">You are in the exit position.</span><span class="es">Estás en posición de salida.</span><span class="ru">Ты в позиции для отделения.</span></span></div></li>
+      </ol>
+      <div class="stage">
+        <svg id="climbSvg" viewBox="0 0 320 220" role="img" aria-label="Climb-out animation">
+          <rect x="228" y="30" width="80" height="162" rx="4" fill="var(--air)"/>
+          <rect x="222" y="24" width="8" height="170" fill="var(--door)"/>
+          <rect x="0" y="190" width="320" height="8" fill="var(--door)"/>
+          <g class="prop" transform="translate(286 52)"><rect x="-3" y="-20" width="6" height="40" rx="3" fill="var(--muted)"/><rect x="-20" y="-3" width="40" height="6" rx="3" fill="var(--muted)"/></g>
+          <circle cx="286" cy="52" r="5" fill="var(--ink)"/>
+          <g class="fig pose" id="cBody" style="transform-origin:150px 190px">
+            <g class="far">
+              <g class="pose" id="cLL" style="transform-origin:150px 132px"><line x1="150" y1="132" x2="150" y2="188"/></g>
+              <g class="pose" id="cLA" style="transform-origin:150px 84px"><line x1="150" y1="84" x2="150" y2="126"/></g>
+            </g>
+            <line x1="150" y1="80" x2="150" y2="132"/>
+            <g class="pose" id="cRL" style="transform-origin:150px 132px"><line x1="150" y1="132" x2="150" y2="188"/></g>
+            <g class="pose" id="cRA" style="transform-origin:150px 84px"><line x1="150" y1="84" x2="150" y2="126"/></g>
+            <g class="pose" id="cHead" style="transform-origin:150px 74px"><circle class="head" cx="150" cy="62" r="13"/><rect class="visor" x="155" y="56" width="9" height="7" rx="2"/></g>
+          </g>
+        </svg>
+        <div class="caption" id="climbCap"></div>
+        <div class="controls"><button class="btn primary" id="climbPlay" type="button"><span class="en">Play</span><span class="es">Reproducir</span><span class="ru">Пуск</span></button><button class="btn" id="climbNext" type="button"><span class="en">Next step</span><span class="es">Siguiente paso</span><span class="ru">Дальше</span></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ch" id="count">
+    <div class="eyebrow"><span class="en">Chapter 3</span><span class="es">Capítulo 3</span><span class="ru">Глава 3</span></div>
+    <h3 class="t"><span class="en">Exit count</span><span class="es">Conteo de salida</span><span class="ru">Отсчёт и отделение</span></h3>
+    <div class="grid2">
+      <div>
+        <ol class="steps">
+          <li class="step"><div><b><span class="say">"Check in"</span></b><span class="sub"><span class="en">Look at the first instructor. They answer <span class="say">"OK"</span>.</span><span class="es">Mira al primer instructor. Te responde <span class="say">"OK"</span>.</span><span class="ru">Смотришь на первого инструктора. Он отвечает <span class="say">"OK"</span>.</span></span></div></li>
+          <li class="step"><div><b><span class="say">"Check out"</span></b><span class="sub"><span class="en">Look at the second instructor. They answer <span class="say">"OK"</span>.</span><span class="es">Mira al segundo instructor. Te responde <span class="say">"OK"</span>.</span><span class="ru">Смотришь на второго. Он отвечает <span class="say">"OK"</span>.</span></span></div></li>
+          <li class="step"><div><b><span class="say">"Prop"</span></b><span class="sub"><span class="en">Look at the propeller, chin up.</span><span class="es">Mira a la hélice, barbilla arriba.</span><span class="ru">Смотришь на пропеллер, подбородок вверх.</span></span></div></li>
+          <li class="step"><div><b><span class="say">"Up"</span> · <span class="en">rock out</span><span class="es">balanceo afuera</span><span class="ru">качок наружу</span></b></div></li>
+          <li class="step"><div><b><span class="say">"Down"</span> · <span class="en">rock in</span><span class="es">balanceo adentro</span><span class="ru">качок внутрь</span></b></div></li>
+          <li class="step"><div><b><span class="say">"Arch!"</span> · <span class="en">rock out and go</span><span class="es">balanceo afuera y sal</span><span class="ru">наружу и отделяемся</span></b><span class="sub"><span class="en">Hips forward, chin up, arch.</span><span class="es">Cadera adelante, barbilla arriba, arquea.</span><span class="ru">Таз вперёд, подбородок вверх, прогиб.</span></span></div></li>
+        </ol>
+        <div class="check"><span class="en">Words differ by school and aircraft ("Ready, set, go", "Out, in, out"). One instructor on each side. Who you check first <span class="q">CHECK</span></span><span class="es">Las palabras cambian según la escuela y el avión ("Ready, set, go", "Out, in, out"). Un instructor a cada lado. A quién miras primero <span class="q">VERIFICAR</span></span><span class="ru">Слова зависят от школы и самолёта ("Ready, set, go", "Out, in, out"). По инструктору слева и справа. На кого смотреть первым <span class="q">УТОЧНИТЬ</span></span></div>
+      </div>
+      <div class="stage">
+        <svg id="exitSvg" viewBox="0 0 320 220" role="img" aria-label="Exit rock animation">
+          <rect x="150" y="0" width="170" height="220" fill="var(--air)"/>
+          <rect x="0" y="150" width="152" height="10" fill="var(--door)"/>
+          <rect x="146" y="10" width="8" height="142" fill="var(--door)"/>
+          <g id="iL" opacity=".35"><circle cx="60" cy="74" r="11" fill="var(--fig-far)"/><line x1="60" y1="86" x2="60" y2="148" stroke="var(--fig-far)" stroke-width="7" stroke-linecap="round"/></g>
+          <text id="okL" x="44" y="50" font-family="JetBrains Mono, monospace" font-size="14" fill="var(--ok)" opacity="0">OK</text>
+          <text id="okR" x="196" y="40" font-family="JetBrains Mono, monospace" font-size="14" fill="var(--ok)" opacity="0">OK</text>
+          <g id="iR" opacity=".35"><circle cx="212" cy="64" r="11" fill="var(--fig-far)"/><line x1="212" y1="76" x2="212" y2="120" stroke="var(--fig-far)" stroke-width="7" stroke-linecap="round"/></g>
+          <g class="fig pose" id="xBody" style="transform-origin:140px 150px">
+            <line x1="140" y1="96" x2="140" y2="148"/>
+            <line x1="140" y1="104" x2="152" y2="80"/>
+            <g class="pose" id="xHead" style="transform-origin:140px 92px"><circle class="head" cx="140" cy="80" r="12"/><rect class="visor" x="144" y="74" width="9" height="7" rx="2"/></g>
+          </g>
+        </svg>
+        <div class="caption" id="exitCap"></div>
+        <div class="controls"><button class="btn primary" id="exitPlay" type="button"><span class="en">Play count</span><span class="es">Reproducir conteo</span><span class="ru">Пуск</span></button></div>
+      </div>
+    </div>
+  </section>
+  </div></div>
+
+  <!-- ================= PART II ================= -->
+  <div class="part p2 pad" id="part2"><div class="wrap"><div class="roman">II</div><div class="range">13,500 → 5,500 FT</div><h2><span class="en">Freefall</span><span class="es">Caída libre</span><span class="ru">Свободное падение</span></h2></div></div>
+  <div class="pad"><div class="wrap">
+
+  <section class="ch" id="body">
+    <div class="eyebrow"><span class="en">Chapter 4</span><span class="es">Capítulo 4</span><span class="ru">Глава 4</span></div>
+    <h3 class="t"><span class="en">Body position: the box</span><span class="es">Posición del cuerpo: la caja (box)</span><span class="ru">Положение тела: «коробочка»</span></h3>
+    <div class="grid2">
+      <div>
+        <p class="lead"><span class="en">Right after exit: push the hips down toward the ground and arch. This is the most stable position, belly to earth.</span><span class="es">Justo después de salir: empuja la cadera hacia el suelo y arquea. Es la posición más estable, panza hacia la tierra.</span><span class="ru">Сразу после отделения: таз толкаем вниз, к земле, и прогибаемся. Это самая стабильная позиция, животом к земле.</span></p>
+        <ol class="steps">
+          <li class="step"><div><b><span class="en">Hips down, arch</span><span class="es">Cadera abajo, arquea</span><span class="ru">Таз вниз, прогиб</span></b><span class="sub"><span class="en">The hips are the lowest point of the body.</span><span class="es">La cadera es el punto más bajo del cuerpo.</span><span class="ru">Таз — самая нижняя точка тела.</span></span></div></li>
+          <li class="step"><div><b><span class="en">Arms square</span><span class="es">Brazos en escuadra</span><span class="ru">Руки «квадратом»</span></b><span class="sub"><span class="en">Elbows bent about 90°, hands near head level.</span><span class="es">Codos doblados a unos 90°, manos más o menos a la altura de la cabeza.</span><span class="ru">Локти согнуты примерно на 90°, кисти на уровне головы.</span></span></div></li>
+          <li class="step"><div><b><span class="en">Thumb-to-ear check</span><span class="es">Pulgares a las orejas</span><span class="ru">Проверка: большие пальцы к ушам</span></b><span class="sub"><span class="en">Touch your thumbs to your ears, then open back out: that's where square arms are.</span><span class="es">Toca las orejas con los pulgares y vuelve a abrir: ahí están los brazos en escuadra.</span><span class="ru">Приложи большие пальцы к ушам и разведи обратно: так находишь правильное положение рук.</span></span></div></li>
+          <li class="step"><div><b><span class="en">Legs</span><span class="es">Piernas</span><span class="ru">Ноги</span></b><span class="sub"><span class="en">You said "legs together and up". Many schools teach knees about shoulder width, shins up, toes pointed.</span><span class="es">Dijiste "piernas juntas y arriba". Muchas escuelas enseñan rodillas a la anchura de los hombros, espinillas arriba, puntas de los pies estiradas.</span><span class="ru">Ты сказал «ноги вместе и вверх». Во многих школах учат: колени на ширине плеч, голени вверх, носки вытянуты.</span> <span class="q">CHECK</span></span></div></li>
+        </ol>
+      </div>
+      <div class="stage">
+        <svg id="boxSvg" viewBox="0 0 320 240" role="img" aria-label="Box position">
+          <defs><marker id="arr" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--signal)"/></marker></defs>
+          <g class="fig">
+            <line x1="160" y1="78" x2="160" y2="140"/>
+            <line x1="160" y1="88" x2="112" y2="96"/><line x1="160" y1="88" x2="208" y2="96"/>
+            <g class="pose" id="bLF" style="transform-origin:112px 96px"><line x1="112" y1="96" x2="112" y2="52"/></g>
+            <g class="pose" id="bRF" style="transform-origin:208px 96px"><line x1="208" y1="96" x2="208" y2="52"/></g>
+            <line x1="160" y1="140" x2="128" y2="180"/><line x1="128" y1="180" x2="122" y2="212"/>
+            <line x1="160" y1="140" x2="192" y2="180"/><line x1="192" y1="180" x2="198" y2="212"/>
+            <circle class="head" cx="160" cy="62" r="15"/>
+          </g>
+          <line x1="250" y1="120" x2="250" y2="160" stroke="var(--signal)" stroke-width="3" marker-end="url(#arr)"/>
+          <text x="250" y="182" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--signal)"><tspan class="en">hips</tspan><tspan class="es">cadera</tspan><tspan class="ru">таз</tspan></text>
+          <text x="160" y="234" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--muted)"><tspan class="en">view from the front · ground below</tspan><tspan class="es">vista de frente · suelo abajo</tspan><tspan class="ru">вид спереди · земля внизу</tspan></text>
+        </svg>
+        <div class="caption" id="boxCap"></div>
+        <div class="controls"><button class="btn primary" id="boxPlay" type="button"><span class="en">Thumb-to-ear check</span><span class="es">Pulgares a las orejas</span><span class="ru">Проверка пальцы к ушам</span></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ch" id="flow">
+    <div class="eyebrow"><span class="en">Chapter 5</span><span class="es">Capítulo 5</span><span class="ru">Глава 5</span></div>
+    <h3 class="t"><span class="en">Freefall dive flow</span><span class="es">Plan de salto en caída libre</span><span class="ru">План свободного падения</span></h3>
+    <p class="lead"><span class="en">Tap a line to see the altimeter. Between every block: check altitude.</span><span class="es">Toca una línea para ver el altímetro. Entre cada bloque: mira la altura.</span><span class="ru">Нажми на строку, чтобы увидеть высотомер. Между блоками: проверка высоты.</span></p>
+    <div class="grid2">
+      <ol class="flow" id="flowList"></ol>
+      <div class="stage stickybox">
+        <svg id="altSvg" viewBox="0 0 240 240" role="img" aria-label="Altimeter">
+          <circle cx="120" cy="120" r="110" fill="var(--surface)" stroke="var(--line)" stroke-width="2"/>
+          <g id="altTicks"></g>
+          <g id="needle" class="pose" style="transform-origin:120px 120px"><line x1="120" y1="132" x2="120" y2="30" stroke="var(--signal)" stroke-width="5" stroke-linecap="round"/></g>
+          <circle cx="120" cy="120" r="8" fill="var(--ink)"/>
+          <text x="120" y="176" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="var(--muted)">× 1000 ft</text>
+          <text id="altRead" x="120" y="200" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="18" fill="var(--ink)"></text>
+        </svg>
+        <div class="caption" id="flowCap" style="font-size:20px"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ch" id="altitude">
+    <div class="eyebrow"><span class="en">Chapter 6</span><span class="es">Capítulo 6</span><span class="ru">Глава 6</span></div>
+    <h3 class="t"><span class="en">When to check altitude</span><span class="es">Cuándo mirar la altura</span><span class="ru">Когда смотреть на высоту</span></h3>
+    <p class="lead"><span class="en">Altitude awareness is the number-one job in freefall. Check it:</span><span class="es">La conciencia de la altura es la tarea número uno en caída libre. Mírala:</span><span class="ru">Контроль высоты — задача номер один. Смотри на высотомер:</span></p>
+    <div class="rules">
+      <div class="rule"><div class="n">3–5 s</div><span class="en">USPA says every 3 seconds; some schools teach about 5. All the time.</span><span class="es">USPA dice cada 3 segundos; algunas escuelas enseñan unos 5. Todo el tiempo.</span><span class="ru">USPA: каждые 3 секунды; некоторые школы учат около 5. Постоянно.</span></div>
+      <div class="rule"><div class="n">↔</div><span class="en">Before and after every maneuver.</span><span class="es">Antes y después de cada maniobra.</span><span class="ru">До и после каждого упражнения.</span></div>
+      <div class="rule"><div class="n">?</div><span class="en">Whenever in doubt.</span><span class="es">Siempre que tengas dudas.</span><span class="ru">Всегда, когда сомневаешься.</span></div>
+      <div class="rule"><div class="n">✋</div><span class="en">When an instructor signals you to.</span><span class="es">Cuando un instructor te lo indique.</span><span class="ru">Когда инструктор показывает жест.</span> <span class="q">CHECK</span></div>
+    </div>
+    <div class="check"><span class="en">You remembered three reasons; "instructor signal" (a slap on the wrist) is the usual fourth. Your "every 3" is USPA's rule: an altitude check every 3 seconds. Overloaded or lost? Default to: altitude, arch, pull at 5,500.</span><span class="es">Recordaste tres motivos; "señal del instructor" (una palmada en la muñeca) suele ser el cuarto. Tu "cada 3" es la regla de USPA: mirar la altura cada 3 segundos. ¿Saturado o perdido? Vuelve a lo básico: altura, arco, abrir a 5,500.</span><span class="ru">Ты запомнил три причины; обычно четвёртая — «по жесту инструктора» (хлопок по запястью). Твоё «каждые 3» — это правило USPA: проверка высоты каждые 3 секунды. Перегружен или потерялся? По умолчанию: высота, прогиб, раскрытие на 5 500.</span></div>
+    <div class="rules">
+      <div class="rule"><div class="n" style="color:var(--signal)">6,000</div><b><span class="en">Lock on</span><span class="es">Lock on</span><span class="ru">Только высотомер</span></b><br><span class="en">Stop all exercises. Watch the altimeter only.</span><span class="es">Para todos los ejercicios. Mira solo el altímetro.</span><span class="ru">Все упражнения стоп. Смотришь только на высотомер.</span></div>
+      <div class="rule"><div class="n" style="color:var(--signal)">5,500</div><b><span class="en">Pull</span><span class="es">Abrir</span><span class="ru">Раскрытие</span></b><br><span class="en">Our pull altitude is 5,500 ft, not 5,000.</span><span class="es">Nuestra altura de apertura es 5,500 ft, no 5,000.</span><span class="ru">У нас раскрытие на 5 500 футах, не на 5 000.</span></div>
+    </div>
+  </section>
+
+  <section class="ch" id="signals">
+    <div class="eyebrow"><span class="en">Chapter 7</span><span class="es">Capítulo 7</span><span class="ru">Глава 7</span></div>
+    <div class="sig-head">
+      <h3 class="t"><span class="en">Hand signals</span><span class="es">Señales de mano</span><span class="ru">Жесты инструктора</span></h3>
+      <button class="btn quizBtn" type="button" aria-pressed="false"><span class="en">Test me: hide names</span><span class="es">Ponme a prueba: ocultar nombres</span><span class="ru">Проверь себя: скрыть названия</span></button>
+    </div>
+    <p class="lead"><span class="en">Too loud to talk, so instructors show these right in front of your face, or touch you. Filmed by an AFF school (Skydive Fundamentals); most schools use the same set, but confirm each one with yours.</span><span class="es">Hay demasiado ruido para hablar, así que los instructores las muestran justo delante de tu cara o te tocan. Grabadas por una escuela AFF (Skydive Fundamentals); la mayoría de las escuelas usa el mismo conjunto, pero confirma cada una con la tuya.</span><span class="ru">Слишком шумно, поэтому инструктор показывает жесты прямо перед лицом или касается тебя. Снято школой AFF (Skydive Fundamentals); в большинстве школ жесты те же, но сверь каждый со своей.</span></p>
+    <div class="signals" id="sigGrid"></div>
+  </section>
+  </div></div>
+
+  <!-- ================= PART III ================= -->
+  <div class="part p3 pad" id="part3"><div class="wrap"><div class="roman">III</div><div class="range">5,500 FT → GROUND</div><h2><span class="en">Under canopy</span><span class="es">Bajo vela</span><span class="ru">Под куполом</span></h2></div></div>
+  <div class="pad"><div class="wrap">
+
+  <section class="ch" id="deploy">
+    <div class="eyebrow"><span class="en">Chapter 8</span><span class="es">Capítulo 8</span><span class="ru">Глава 8</span></div>
+    <h3 class="t"><span class="en">Pull, count, check</span><span class="es">Abrir, contar, revisar</span><span class="ru">Раскрытие, счёт, проверка</span></h3>
+    <div class="grid2">
+      <div>
+        <ol class="steps">
+          <li class="step"><div><b><span class="en">Pull at 5,500 ft</span><span class="es">Abrir a 5,500 ft</span><span class="ru">Раскрытие на 5 500 футах</span></b><span class="sub"><span class="en">Right hand to the pilot chute handle (the little "ball" at the bottom of the container, right side). Pull and throw it out.</span><span class="es">Mano derecha al extractor (pilot chute) (la "pelotita" en la parte de abajo del contenedor, lado derecho). Sácalo y lánzalo.</span><span class="ru">Правая рука к ручке вытяжного парашюта («шарик» внизу ранца справа). Вытянуть и выбросить.</span></span></div></li>
+          <li class="step"><div><b><span class="en">Count 5 seconds</span><span class="es">Cuenta 5 segundos</span><span class="ru">Считаем 5 секунд</span></b><span class="sub"><span class="en">"One thousand, two thousand … five thousand". A canopy needs about 5 s to open fully. Don't judge it earlier.</span><span class="es">"Mil uno, mil dos … mil cinco". Una vela necesita unos 5 s para abrirse del todo. No la juzgues antes.</span><span class="ru">«Тысяча один, тысяча два … тысяча пять». Куполу нужно около 5 с, чтобы раскрыться. Раньше не оцениваем.</span></span></div></li>
+          <li class="step"><div><b><span class="en">Look up and check</span><span class="es">Mira arriba y revisa</span><span class="ru">Смотрим вверх и проверяем</span></b><span class="sub"><span class="en">There, square, stable, steerable.</span><span class="es">Está, cuadrada, estable, gobernable.</span><span class="ru">Есть, квадратный, стабильный, управляемый.</span></span></div></li>
+        </ol>
+        <ul class="tick" id="tick">
+          <li><b><span class="en">There</span><span class="es">Está</span><span class="ru">Есть</span></b><span class="en">Something is out over your head.</span><span class="es">Hay algo fuera sobre tu cabeza.</span><span class="ru">Над головой что-то есть.</span></li>
+          <li><b><span class="en">Square</span><span class="es">Cuadrada</span><span class="ru">Квадратный</span></b><span class="en">Rectangle, all cells open, slider down.</span><span class="es">Rectángulo, todas las celdas abiertas, slider abajo.</span><span class="ru">Прямоугольник, все секции открыты, слайдер опущен.</span></li>
+          <li><b><span class="en">Stable</span><span class="es">Estable</span><span class="ru">Стабильный</span></b><span class="en">Flies straight, not spinning.</span><span class="es">Vuela recta, no gira.</span><span class="ru">Летит ровно, не вращается.</span></li>
+          <li><b><span class="en">Steerable</span><span class="es">Gobernable</span><span class="ru">Управляемый</span></b><span class="en">Unstow toggles: turn left, turn right, then a practice flare.</span><span class="es">Suelta los batidores: gira a la izquierda, gira a la derecha, luego un flare de práctica.</span><span class="ru">Снять клеванты с фиксации: поворот влево, вправо, потом пробное торможение (flare).</span></li>
+        </ul>
+        <div class="check red"><strong><span class="en">Any "no"?</span><span class="es">¿Algún "no"?</span><span class="ru">Хоть одно «нет»?</span></strong> <span class="en">Go to Part IV. Decide by the decision altitude.</span><span class="es">Ve a la Parte IV. Decide antes de la altura de decisión.</span><span class="ru">Смотри часть IV. Решение — до высоты принятия решения.</span></div>
+      </div>
+      <div class="stage">
+        <svg id="depSvg" viewBox="0 0 200 200" role="img" aria-label="Canopy opening"><g id="depArt"></g></svg>
+        <div class="count" id="countRow"><span>1000</span><span>2000</span><span>3000</span><span>4000</span><span>5000</span></div>
+        <div class="caption" id="depCap"></div>
+        <div class="controls"><button class="btn primary" id="depPlay" type="button"><span class="en">Pull</span><span class="es">Abrir</span><span class="ru">Раскрыть</span></button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ch" id="pattern">
+    <div class="eyebrow"><span class="en">Chapter 9</span><span class="es">Capítulo 9</span><span class="ru">Глава 9</span></div>
+    <h3 class="t"><span class="en">Flight plan and landing pattern</span><span class="es">Plan de vuelo y circuito de aterrizaje</span><span class="ru">План полёта и заход на посадку</span></h3>
+    <p class="lead"><span class="en">Drawn the way it is on our ground-school test. The final leg always points into the wind, so the whole pattern turns with the wind. Check the windsock before you board; at our dropzone the wind is usually from the north. Altitudes in feet.</span><span class="es">Dibujado como en nuestro examen del curso en tierra. El tramo final siempre apunta contra el viento, así que todo el circuito gira con el viento. Mira la manga de viento antes de subir; en nuestra zona de salto el viento suele venir del norte. Alturas en pies.</span><span class="ru">Нарисовано как в нашем тесте наземной подготовки. Финал всегда против ветра, поэтому вся схема поворачивается вместе с ветром. Смотрим на колдун (ветроуказатель) до посадки в самолёт; на нашей площадке ветер обычно с севера. Высоты в футах.</span></p>
+    <div class="grid2">
+      <ol class="flow" id="patList"></ol>
+      <div class="stage stickybox">
+        <svg id="patSvg" viewBox="0 0 320 270" role="img" aria-label="Landing pattern map">
+          <defs><marker id="arrB" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--sky)"/></marker>
+            <marker id="arrO" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--signal)"/></marker></defs>
+          <rect x="0" y="0" width="320" height="270" rx="8" fill="var(--air)"/>
+          <g><line x1="306" y1="26" x2="250" y2="26" stroke="var(--sky)" stroke-width="3" marker-end="url(#arrB)"/><text x="278" y="16" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="var(--sky)"><tspan class="en">wind</tspan><tspan class="es">viento</tspan><tspan class="ru">ветер</tspan></text></g>
+          <path d="M262 38 L262 54 L232 46 Z" fill="none" stroke="var(--ink)" stroke-width="2"/>
+          <circle cx="275" cy="205" r="22" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <text x="275" y="244" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="var(--muted)"><tspan class="en">hold 2000→1000</tspan><tspan class="es">espera 2000→1000</tspan><tspan class="ru">ожидание 2000→1000</tspan></text>
+          <path id="patPath" d="M275 183 A22 22 0 1 1 275 227 A22 22 0 1 1 275 183 L250 200 L60 200 L60 70 L186 70" fill="none" stroke="var(--signal)" stroke-width="3" stroke-linejoin="round" marker-end="url(#arrO)"/>
+          <path d="M194 62 L210 78 M210 62 L194 78" stroke="var(--ok)" stroke-width="4"/>
+          <g font-family="JetBrains Mono, monospace" font-size="11" fill="var(--ink)">
+            <text x="236" y="192">900</text><text x="66" y="192">600</text><text x="66" y="88">300</text><text x="152" y="56">10 ft · flare</text>
+          </g>
+          <g font-family="Barlow Condensed, sans-serif" font-size="13" font-weight="700" fill="var(--muted)" letter-spacing=".05em">
+            <text x="155" y="218" text-anchor="middle"><tspan class="en">DOWNWIND ←</tspan><tspan class="es">VIENTO EN COLA ←</tspan><tspan class="ru">ПО ВЕТРУ ←</tspan></text>
+            <text x="44" y="135" text-anchor="middle" transform="rotate(-90 44 135)"><tspan class="en">BASE</tspan><tspan class="es">BASE</tspan><tspan class="ru">БАЗОВАЯ</tspan></text>
+            <text x="125" y="104" text-anchor="middle"><tspan class="en">FINAL → into the wind</tspan><tspan class="es">FINAL → contra el viento</tspan><tspan class="ru">ФИНАЛ → против ветра</tspan></text>
+          </g>
+          <circle id="patDot" r="7" fill="var(--canopy-a)" stroke="var(--surface)" stroke-width="2"><animateMotion id="patMove" dur="14s" repeatCount="indefinite"><mpath href="#patPath"/></animateMotion></circle>
+          <circle id="patMark" r="11" fill="none" stroke="var(--sky)" stroke-width="3" opacity="0"/>
+        </svg>
+        <div class="caption" id="patCap" style="font-size:20px"></div>
+      </div>
+    </div>
+    <h4 style="margin-top:24px"><span class="en">Turn limits</span><span class="es">Límites de giro</span><span class="ru">Ограничения разворотов</span></h4>
+    <div class="rules">
+      <div class="rule"><div class="n">≤ 180°</div><span class="en">From 1,500 ft</span><span class="es">Desde 1,500 ft</span><span class="ru">С 1 500 футов</span></div>
+      <div class="rule"><div class="n">≤ 90°</div><span class="en">1,000 → 300 ft</span><span class="es">1,000 → 300 ft</span><span class="ru">1 000 → 300 футов</span></div>
+      <div class="rule"><div class="n">≤ 45°</div><span class="en">Below 300 ft. Only to avoid something, flat turns.</span><span class="es">Por debajo de 300 ft. Solo para esquivar algo, giros planos.</span><span class="ru">Ниже 300 футов. Только чтобы уйти от препятствия, плоско.</span></div>
+    </div>
+    <div class="check"><span class="en">What's the limit between 1,500 and 1,000 ft? <span class="q">CHECK</span> A big turn low is the classic way canopy pilots get hurt: the canopy dives and loses height fast.</span><span class="es">¿Cuál es el límite entre 1,500 y 1,000 ft? <span class="q">VERIFICAR</span> Un giro grande a baja altura es la forma clásica en que los pilotos de vela se lastiman: la vela pica y pierde altura rápido.</span><span class="ru">А между 1 500 и 1 000 футов какой лимит? <span class="q">УТОЧНИТЬ</span> Крутой разворот низко — классическая причина травм: купол ныряет и быстро теряет высоту.</span></div>
+    <h4 style="margin-top:24px" id="lowturn"><span class="en">What a "low turn" is, and why it hurts</span><span class="es">Qué es un "giro bajo" y por qué hace daño</span><span class="ru">Что такое «низкий разворот» и почему он опасен</span></h4>
+    <div class="lt">
+      <div class="stage">
+        <svg viewBox="0 0 320 210" role="img" aria-label="Straight final versus low turn, side view">
+          <rect x="0" y="0" width="320" height="210" rx="8" fill="var(--air)"/>
+          <line x1="0" y1="186" x2="320" y2="186" stroke="var(--ok)" stroke-width="4"/>
+          <path d="M20 40 L230 160 Q262 180 300 182" fill="none" stroke="var(--sky)" stroke-width="4" stroke-linecap="round"/>
+          <path d="M20 40 L110 92 Q125 104 132 128 Q140 158 150 184" fill="none" stroke="var(--red)" stroke-width="4" stroke-linecap="round" stroke-dasharray="7 5"/>
+          <path d="M150 186 l-8 -12 l10 4 l2 -12 l6 10 l10 -6 l-4 12 z" fill="var(--red)"/>
+          <circle cx="110" cy="92" r="6" fill="var(--red)"/>
+          <g font-family="JetBrains Mono, monospace" font-size="10">
+            <text x="104" y="80" text-anchor="end" fill="var(--red)"><tspan class="en">turn starts low</tspan><tspan class="es">el giro empieza bajo</tspan><tspan class="ru">поворот низко</tspan></text>
+            <text x="124" y="160" text-anchor="end" fill="var(--red)"><tspan class="en">dives, speeds up</tspan><tspan class="es">pica, acelera</tspan><tspan class="ru">ныряет, разгоняется</tspan></text>
+            <text x="312" y="172" text-anchor="end" fill="var(--sky)"><tspan class="en">straight: glide, flare</tspan><tspan class="es">recto: planeo, flare</tspan><tspan class="ru">прямо: скольжение, flare</tspan></text>
+            <text x="12" y="202" fill="var(--muted)"><tspan class="en">side view</tspan><tspan class="es">vista lateral</tspan><tspan class="ru">вид сбоку</tspan></text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <p><span class="en">When you pull one toggle, the canopy doesn't just turn: it tilts, dives and speeds up, and you swing out under it. Up high that's fine, it levels out again. Close to the ground it hasn't finished diving when you get there, so you hit the ground fast, often at an angle, with no flare left. That's a <b>low turn</b>.</span><span class="es">Cuando tiras de un batidor, la vela no solo gira: se inclina, pica y acelera, y tú te balanceas hacia afuera debajo de ella. Arriba no pasa nada, vuelve a nivelarse. Cerca del suelo todavía no terminó de picar cuando llegas, así que golpeas el suelo rápido, a menudo de lado, sin flare que te quede. Eso es un <b>giro bajo</b>.</span><span class="ru">Когда тянешь одну клеванту, купол не просто поворачивает: он кренится, ныряет и разгоняется, а тебя выносит в сторону под ним. Высоко это не страшно, купол снова выравнивается. У земли он не успевает выйти из нырка, и ты бьёшься о землю на скорости, часто под углом, без flare. Это и есть <b>низкий разворот</b>.</span></p>
+        <ul style="margin:0;padding-left:18px;display:grid;gap:4px">
+          <li><span class="en">Below 300 ft: no turns over about 45°, and only flat ones.</span><span class="es">Por debajo de 300 ft: ningún giro de más de unos 45°, y solo planos.</span><span class="ru">Ниже 300 футов: не больше примерно 45° и только плоско.</span></li>
+          <li><span class="en">Wrong spot low? Land straight, even downwind or off the target. A level wing beats the perfect landing spot (USPA SIM 4-1).</span><span class="es">¿Mal lugar estando bajo? Aterriza recto, aunque sea con viento en cola o fuera del blanco. Un ala nivelada vale más que el lugar perfecto (USPA SIM 4-1).</span><span class="ru">Не туда летишь низко? Садись прямо, даже по ветру или мимо цели. Ровное крыло важнее идеального места (USPA SIM 4-1).</span></li>
+          <li><span class="en">Something in the way below 300 ft: half brakes and go into it (bush, fence) rather than turn hard.</span><span class="es">Algo en el camino por debajo de 300 ft: medio freno y entra en ello (arbusto, cerca) en vez de girar fuerte.</span><span class="ru">Препятствие ниже 300 футов: половина тормозов и в него (куст, забор), а не резкий поворот.</span></li>
+          <li><span class="en">If you need to turn low: a flat turn, pull one toggle a little while holding the other partly down, so the canopy turns without diving.</span><span class="es">Si tienes que girar bajo: un giro plano, tira un poco de un batidor mientras mantienes el otro parcialmente abajo, así la vela gira sin picar.</span><span class="ru">Если нужно повернуть низко: плоский поворот, одну клеванту чуть тянешь, другую держишь частично внизу, тогда купол поворачивает, не ныряя.</span></li>
+        </ul>
+        <figure class="clip" style="margin-top:12px"><video src="media/lowturn.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span><span class="en">News report: "skydiving deaths often result from sharp turns"</span><span class="es">Noticia: "las muertes en paracaidismo suelen deberse a giros bruscos"</span><span class="ru">Репортаж: «гибель парашютистов часто связана с резкими поворотами»</span></span><a href="https://www.youtube.com/watch?v=3dsAULINDhU" target="_blank" rel="noopener">▶ Cronkite News · YouTube</a></figcaption></figure>
+      </div>
+    </div>
+    <h4 style="margin-top:24px"><span class="en">Four hazards to stay away from</span><span class="es">Cuatro peligros que hay que evitar</span><span class="ru">Четыре препятствия, от которых держимся подальше</span></h4>
+    <div class="rules">
+      <div class="rule"><div class="n">🌲</div><b><span class="en">Trees</span><span class="es">Árboles</span><span class="ru">Деревья</span></b></div>
+      <div class="rule"><div class="n">≈</div><b><span class="en">Water</span><span class="es">Agua</span><span class="ru">Вода</span></b></div>
+      <div class="rule"><div class="n">▦</div><b><span class="en">Buildings</span><span class="es">Edificios</span><span class="ru">Здания</span></b></div>
+      <div class="rule"><div class="n">⚡</div><b><span class="en">Power lines</span><span class="es">Cables eléctricos</span><span class="ru">Линии электропередачи</span></b></div>
+    </div>
+    <p class="lead" style="margin-top:10px;color:var(--muted)"><span class="en">That is why we fix our position over the holding area by 2,000 ft: there is still time to see if we can reach the landing area, and to pick a clear field if not.</span><span class="es">Por eso fijamos nuestra posición sobre la zona de espera a 2,000 ft: todavía hay tiempo para ver si llegamos a la zona de aterrizaje y, si no, elegir un campo despejado.</span><span class="ru">Поэтому к 2 000 футов мы уже над зоной ожидания: есть время понять, долетим ли до площадки, а если нет — выбрать чистое поле.</span></p>
+  </section>
+
+  <section class="ch" id="flare">
+    <div class="eyebrow"><span class="en">Chapter 10</span><span class="es">Capítulo 10</span><span class="ru">Глава 10</span></div>
+    <h3 class="t"><span class="en">The flare</span><span class="es">El flare</span><span class="ru">Выравнивание (flare)</span></h3>
+    <div class="grid2">
+      <div>
+        <ol class="steps">
+          <li class="step"><div><b><span class="en">On final: full flight, legs together</span><span class="es">En final: vuelo completo, piernas juntas</span><span class="ru">На финале: полная скорость, ноги вместе</span></b><span class="sub"><span class="en">Hands all the way up, canopy flying level, feet and knees together. No turns.</span><span class="es">Manos totalmente arriba, vela volando nivelada, pies y rodillas juntos. Sin giros.</span><span class="ru">Руки полностью вверху, купол летит ровно, ступни и колени вместе. Без поворотов.</span></span></div></li>
+          <li class="step"><div><b><span class="en">Start at about 10 ft (3 m)</span><span class="es">Empieza a unos 10 ft (3 m)</span><span class="ru">Начинаем примерно с 10 футов (3 м)</span></b><span class="sub"><span class="en">Eyes on the horizon, not straight down.</span><span class="es">Ojos en el horizonte, no mirando hacia abajo.</span><span class="ru">Смотрим на горизонт, а не прямо вниз.</span></span></div></li>
+          <li class="step"><div><b><span class="en">Pull smoothly, both hands together</span><span class="es">Tira suave, las dos manos juntas</span><span class="ru">Тянем плавно, обе руки вместе</span></b><span class="sub"><span class="en">Elbows go back, hands stay close to your body, thumbs slide down past the ribs. Don't swing straight arms out to the sides. What matters is that the flare is finished at touchdown: start late, pull faster; start early, pull slower.</span><span class="es">Los codos van hacia atrás, las manos cerca del cuerpo, los pulgares bajan rozando las costillas. No abras los brazos rectos hacia los lados. Lo que importa es que el flare termine al tocar el suelo: si empiezas tarde, tira más rápido; si empiezas temprano, tira más lento.</span><span class="ru">Локти уходят назад, кисти близко к телу, большие пальцы скользят вниз вдоль рёбер. Не разводить прямые руки в стороны. Главное — чтобы flare закончился в момент касания: начал поздно — тяни быстрее, рано — медленнее.</span></span></div></li>
+          <li class="step"><div><b><span class="en">Finish all the way down and hold</span><span class="es">Termina abajo del todo y mantén</span><span class="ru">До конца вниз и держим</span></b><span class="sub"><span class="en">Arms fully extended until you're standing. Never let the toggles back up.</span><span class="es">Brazos totalmente extendidos hasta que estés de pie. Nunca dejes subir los batidores.</span><span class="ru">Руки полностью вниз, пока не встал. Клеванты не отпускать вверх.</span></span></div></li>
+          <li class="step"><div><b><span class="en">Feet and knees together</span><span class="es">Pies y rodillas juntos</span><span class="ru">Ступни и колени вместе</span></b><span class="sub"><span class="en">Ready for a parachute landing fall (PLF) if the landing is hard.</span><span class="es">Listo para una caída de aterrizaje (PLF) si el aterrizaje es duro.</span><span class="ru">Готов к падению с перекатом (PLF), если приземление жёсткое.</span></span></div></li>
+        </ol>
+        <div class="check"><span class="en">What the flare does: on final you are coming down at an angle; the flare turns that into a short level glide, the canopy "lifts" you a little, and you step down softly. Too fast is the common mistake: a quick, jerky flare spends that energy too early. Practise a flare up high right after opening (Chapter 8).</span><span class="es">Qué hace el flare: en final bajas en ángulo; el flare lo convierte en un planeo corto y nivelado, la vela te "levanta" un poco y te posas suave. Demasiado rápido es el error común: un flare rápido y brusco gasta esa energía demasiado pronto. Practica un flare arriba justo después de abrir (Capítulo 8).</span><span class="ru">Что делает flare: на финале ты снижаешься под углом; flare превращает это в короткое ровное скольжение, купол тебя чуть «приподнимает», и ты мягко встаёшь. Частая ошибка — слишком быстро: резкий flare тратит эту энергию раньше времени. Пробный flare делаем наверху сразу после раскрытия (глава 8).</span></div>
+        <div class="check"><strong><span class="en">About the "5-second flare"</span><span class="es">Sobre el "flare de 5 segundos"</span><span class="ru">Про «flare на 5 секунд»</span></strong> <span class="q">CHECK</span><br><span class="en">No source teaches the flare as a fixed 5-second pull. The 5–6 seconds people mention is how long a student canopy can stay at full brakes without stalling. Pull smoothly and finish at touchdown. Flared too high: stop, hold what you have, fly straight, finish as you sink.</span><span class="es">Ninguna fuente enseña el flare como un tirón fijo de 5 segundos. Los 5–6 segundos que se mencionan son lo que una vela de alumno aguanta a frenos completos sin entrar en pérdida. Tira suave y termina al tocar el suelo. ¿Flare demasiado alto? Para, mantén lo que tienes, vuela recto y termina mientras bajas.</span><span class="ru">Ни один источник не учит flare как фиксированное движение на 5 секунд. 5–6 секунд — это сколько студенческий купол может держать полные тормоза без сваливания. Тянуть плавно и закончить в момент касания. Начал слишком высоко: остановись, держи что есть, лети прямо и дожимай, когда снижаешься.</span></div>
+        <h4 style="margin-top:20px">PLF</h4>
+        <ol class="steps">
+          <li class="step"><div><b><span class="en">Feet and knees together, knees soft</span><span class="es">Pies y rodillas juntos, rodillas flexibles</span><span class="ru">Ступни и колени вместе, колени мягкие</span></b><span class="sub"><span class="en">Chin to chest, elbows in, hands on the toggles.</span><span class="es">Barbilla al pecho, codos adentro, manos en los batidores.</span><span class="ru">Подбородок к груди, локти прижаты, руки на клевантах.</span></span></div></li>
+          <li class="step"><div><b><span class="en">Roll along the side</span><span class="es">Rueda por el costado</span><span class="ru">Перекат по боку</span></b><span class="sub"><span class="en">Balls of the feet → calf → thigh → hip → side of the back. Five points, one after another.</span><span class="es">Planta de los pies → pantorrilla → muslo → cadera → costado de la espalda. Cinco puntos, uno tras otro.</span><span class="ru">Подушечки стоп → икра → бедро → ягодица сбоку → бок спины. Пять точек, одна за другой.</span></span></div></li>
+        </ol>
+        <div class="check"><span class="en">You said "roll onto the stomach, then the back". The PLF roll goes along the <b>side</b> of the body, not forward onto the stomach: rolling forward is how arms and collarbones get hurt.</span><span class="es">Dijiste "rodar sobre el estómago y luego la espalda". El PLF rueda por el <b>costado</b> del cuerpo, no hacia adelante sobre el estómago: rodar hacia adelante es como se lastiman brazos y clavículas.</span><span class="ru">Ты сказал «перекат на живот, на спину». PLF — это перекат по <b>боку</b>, а не вперёд на живот: при перекате вперёд травмируют руки и ключицы.</span> <span class="q">CHECK</span></div>
+      </div>
+      <div class="stage">
+        <video src="media/flare_land.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <div class="caption" style="font-size:18px"><span class="en">Final, flare, slide, stand</span><span class="es">Final, flare, deslizar, de pie</span><span class="ru">Финал, flare, скольжение, встал</span></div>
+        <p style="font-size:13px;color:var(--muted);text-align:center;margin:4px 0 0"><a style="color:var(--muted)" href="https://www.youtube.com/watch?v=tUFSss3guic&t=65s" target="_blank" rel="noopener">▶ Rhythm Skydiving · The landing flare</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="ch" id="test">
+    <div class="eyebrow"><span class="en">Chapter 11 · from the ground-school test</span><span class="es">Capítulo 11 · del examen del curso en tierra</span><span class="ru">Глава 11 · из теста наземной подготовки</span></div>
+    <h3 class="t"><span class="en">Landing questions</span><span class="es">Preguntas de aterrizaje</span><span class="ru">Вопросы про приземление</span></h3>
+    <p class="lead"><span class="en">Questions 26–32 of our written test. Answer out loud, then open the card.</span><span class="es">Preguntas 26–32 de nuestro examen escrito. Responde en voz alta y luego abre la tarjeta.</span><span class="ru">Вопросы 26–32 нашего письменного теста. Ответь вслух, потом открой карточку.</span></p>
+    <div class="faq">
+      <details><summary><span class="n">26</span><span class="en">Draw the landing pattern with its key altitudes.</span><span class="es">Dibuja el circuito de aterrizaje con sus alturas clave.</span><span class="ru">Нарисуй схему захода с ключевыми высотами.</span></summary><p><span class="en">900 ft: start the downwind leg. 600 ft: turn onto base. 300 ft: turn onto final, into the wind. About 10 ft: flare. See Chapter 9.</span><span class="es">900 ft: empieza el tramo con viento en cola. 600 ft: gira a base. 300 ft: gira a final, contra el viento. Unos 10 ft: flare. Ver Capítulo 9.</span><span class="ru">900 футов: начало участка по ветру. 600: поворот на базовую. 300: поворот на финал, против ветра. Около 10 футов: flare. См. главу 9.</span></p></details>
+      <details><summary><span class="n">27</span><span class="en">At what altitude do you stop major turns, and which turns are allowed?</span><span class="es">¿A qué altura dejas de hacer giros grandes y qué giros se permiten?</span><span class="ru">На какой высоте прекращаем большие развороты и какие развороты можно?</span></summary><p><span class="en">Our rules: up to 180° from 1,500 ft, up to 90° from 1,000 to 300 ft, then only small corrections. The handwriting on the sheet says "300 ft" and "45°".</span><span class="es">Nuestras reglas: hasta 180° desde 1,500 ft, hasta 90° de 1,000 a 300 ft, luego solo pequeñas correcciones. Lo escrito a mano en la hoja dice "300 ft" y "45°".</span><span class="ru">Наши правила: до 180° с 1 500 футов, до 90° с 1 000 до 300 футов, дальше только небольшие поправки. На листе от руки написано «300 ft» и «45°».</span> <span class="q">CHECK</span></p></details>
+      <details><summary><span class="n">28</span><span class="en">Below what altitude are only minor corrections (45° or less) allowed?</span><span class="es">¿Por debajo de qué altura solo se permiten correcciones pequeñas (45° o menos)?</span><span class="ru">Ниже какой высоты разрешены только небольшие поправки (45° и меньше)?</span></summary><p><span class="en">300 ft.</span><span class="es">300 ft.</span><span class="ru">300 футов.</span></p></details>
+      <details><summary><span class="n">29</span><span class="en">When do you start the flare? What if you flare too high?</span><span class="es">¿Cuándo empiezas el flare? ¿Y si haces el flare demasiado alto?</span><span class="ru">Когда начинаем flare? А если начали слишком высоко?</span></summary><p><span class="en">About 10 ft (3 m) off the ground. Too high: don't let the toggles back up. Hold them where they are, finish the flare near the ground and get ready to PLF.</span><span class="es">A unos 10 ft (3 m) del suelo. Demasiado alto: no dejes subir los batidores. Mantenlos donde están, termina el flare cerca del suelo y prepárate para el PLF.</span><span class="ru">Примерно в 10 футах (3 м) от земли. Слишком высоко: клеванты не отпускать вверх. Держать там, где они есть, дожать у земли и готовиться к PLF.</span></p></details>
+      <details><summary><span class="n">30</span><span class="en">What is a PLF and why do we do it?</span><span class="es">¿Qué es un PLF y por qué lo hacemos?</span><span class="ru">Что такое PLF и зачем он нужен?</span></summary><p><span class="en">Parachute landing fall: you land on your feet and roll along the side of the body, so the impact spreads out instead of going into your ankles and legs. Feet and knees together, knees slightly bent, chin to chest, elbows in.</span><span class="es">Caída de aterrizaje en paracaídas (PLF): aterrizas sobre los pies y ruedas por el costado del cuerpo, así el impacto se reparte en vez de ir a tobillos y piernas. Pies y rodillas juntos, rodillas un poco flexionadas, barbilla al pecho, codos adentro.</span><span class="ru">Parachute landing fall — приземление с перекатом: касаешься ногами и перекатываешься по боку, удар распределяется по телу, а не уходит в лодыжки и ноги. Ступни и колени вместе, колени чуть согнуты, подбородок к груди, локти прижаты.</span></p></details>
+      <details><summary><span class="n">31</span><span class="en">The 5 points of contact in a PLF?</span><span class="es">¿Los 5 puntos de contacto en un PLF?</span><span class="ru">5 точек касания при PLF?</span></summary><p><span class="en">1 balls of the feet · 2 side of the calf · 3 side of the thigh · 4 side of the buttock (hip) · 5 side of the back (the "push-up" muscle).</span><span class="es">1 planta de los pies · 2 costado de la pantorrilla · 3 costado del muslo · 4 costado del glúteo (cadera) · 5 costado de la espalda (el músculo de las "flexiones").</span><span class="ru">1 подушечки стоп · 2 боковая часть икры · 3 боковая часть бедра · 4 ягодица сбоку · 5 бок спины (широчайшая мышца).</span></p></details>
+      <details><summary><span class="n">32</span><span class="en">The 4 hazards on the ground when landing?</span><span class="es">¿Los 4 peligros en el suelo al aterrizar?</span><span class="ru">4 препятствия на земле при посадке?</span></summary><p><span class="en">Trees, water, buildings, power lines.</span><span class="es">Árboles, agua, edificios, cables eléctricos.</span><span class="ru">Деревья, вода, здания, линии электропередачи.</span></p></details>
+    </div>
+  </section>
+  </div></div>
+
+  <!-- ================= PART IV ================= -->
+  <div class="part p4 pad" id="part4"><div class="wrap"><div class="roman">IV</div><div class="range" style="color:var(--red)">EMERGENCIES</div><h2><span class="en">When it goes wrong</span><span class="es">Cuando algo sale mal</span><span class="ru">Если что-то не так</span></h2></div></div>
+  <div class="pad"><div class="wrap">
+
+  <section class="ch" id="ep">
+    <div class="eyebrow" style="color:var(--red)"><span class="en">Chapter 12</span><span class="es">Capítulo 12</span><span class="ru">Глава 12</span></div>
+    <h3 class="t"><span class="en">Emergency procedure: cutaway and reserve</span><span class="es">Procedimiento de emergencia: liberación y reserva</span><span class="ru">Аварийная процедура: отцеп и запасной</span></h3>
+    <p class="lead"><span class="en">Two parachutes: the main and the reserve. If the main is not good, you get rid of it (red handle, right chest) and open the reserve (silver handle, left chest). Look at each handle before you grab it.</span><span class="es">Dos paracaídas: la principal y la reserva. Si la principal no está bien, te deshaces de ella (manija roja, pecho derecho) y abres la reserva (manija plateada, pecho izquierdo). Mira cada manija antes de agarrarla.</span><span class="ru">Два парашюта: основной и запасной. Если основной плохой, отцепляем его (красная подушка, правая сторона груди) и открываем запасной (серебряное кольцо, левая сторона груди). Перед тем как взять ручку, смотрим на неё.</span></p>
+    <div class="grid2">
+      <ol class="steps click ep" id="epSteps">
+        <li class="step" tabindex="0"><div><b><span class="en">Look red</span><span class="es">Mira la roja</span><span class="ru">Смотрим на красную</span></b><span class="sub"><span class="en">Cutaway pad, right chest.</span><span class="es">Almohadilla de liberación, pecho derecho.</span><span class="ru">Подушка отцепки, справа на груди.</span></span></div></li>
+        <li class="step" tabindex="0"><div><b><span class="en">Grab red</span><span class="es">Agarra la roja</span><span class="ru">Берём красную</span></b><span class="sub"><span class="en">Right hand. Both hands <span class="q">CHECK</span></span><span class="es">Mano derecha. Ambas manos <span class="q">VERIFICAR</span></span><span class="ru">Правой рукой. Или обеими <span class="q">УТОЧНИТЬ</span></span></span></div></li>
+        <li class="step" tabindex="0"><div><b><span class="en">Look silver</span><span class="es">Mira la plateada</span><span class="ru">Смотрим на серебряное</span></b><span class="sub"><span class="en">Reserve handle, left chest.</span><span class="es">Manija de la reserva, pecho izquierdo.</span><span class="ru">Кольцо запасного, слева на груди.</span></span></div></li>
+        <li class="step" tabindex="0"><div><b><span class="en">Grab silver</span><span class="es">Agarra la plateada</span><span class="ru">Берём кольцо</span></b><span class="sub"><span class="en">Left hand.</span><span class="es">Mano izquierda.</span><span class="ru">Левой рукой.</span></span></div></li>
+        <li class="step" tabindex="0"><div><b><span class="en">Peel and pull red</span><span class="es">Despega y tira de la roja</span><span class="ru">Отрываем красную</span></b><span class="sub"><span class="en">To full arm extension, still looking at silver. The main is gone.</span><span class="es">Hasta extender el brazo del todo, sin dejar de mirar la plateada. La principal se fue.</span><span class="ru">До полного выпрямления руки, глядя на кольцо. Основной отцеплен.</span></span></div></li>
+        <li class="step" tabindex="0"><div><b><span class="en">Pull silver</span><span class="es">Tira de la plateada</span><span class="ru">Тянем кольцо</span></b><span class="sub"><span class="en">Full arm extension.</span><span class="es">Brazo totalmente extendido.</span><span class="ru">До полного выпрямления руки.</span></span></div></li>
+        <li class="step" tabindex="0"><div><b><span class="en">Arch, look up, check the reserve</span><span class="es">Arquea, mira arriba, revisa la reserva</span><span class="ru">Прогиб, смотрим вверх, проверяем запасной</span></b><span class="sub"><span class="en">Same check: there, square, stable, steerable.</span><span class="es">Mismo chequeo: está, cuadrada, estable, gobernable.</span><span class="ru">Та же проверка: есть, квадратный, стабильный, управляемый.</span></span></div></li>
+      </ol>
+      <div class="stage stickybox">
+        <video src="media/ep1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+        <p style="font-size:13px;color:var(--muted);text-align:center;margin:6px 0 0"><span class="en">Real rig, one hand per handle: look red, grab, look silver, grab, pull red, pull silver.</span><span class="es">Equipo real, una mano por manija: mira la roja, agarra, mira la plateada, agarra, tira de la roja, tira de la plateada.</span><span class="ru">Настоящая система, по руке на ручку: посмотрел на красную, взял, на кольцо, взял, красную, кольцо.</span> <a style="color:var(--muted)" href="https://www.youtube.com/watch?v=nC6D6NHjccI&t=149s" target="_blank" rel="noopener">▶ Bodyflight Spotlight</a></p>
+        <div class="caption" id="epCap" style="color:var(--red)"></div>
+        <div class="controls"><button class="btn" id="epNext" type="button"><span class="en">Next step</span><span class="es">Siguiente paso</span><span class="ru">Дальше</span></button></div>
+      </div>
+    </div>
+    <div class="rules">
+      <div class="rule"><div class="n" style="color:var(--red)">2,500</div><b><span class="en">Decision altitude</span><span class="es">Altura de decisión</span><span class="ru">Высота принятия решения</span></b><br><span class="en">Students decide and act by 2,500 ft (USPA SIM 4-1). Two tries or about 5 seconds to fix, then cut away.</span><span class="es">Los alumnos deciden y actúan antes de 2,500 ft (USPA SIM 4-1). Dos intentos o unos 5 segundos para arreglarlo, luego liberas.</span><span class="ru">Студенты решают и действуют не ниже 2 500 футов (USPA SIM 4-1). Две попытки или около 5 секунд на исправление, потом отцеп.</span></div>
+      <div class="rule"><div class="n" style="color:var(--red)">1,000</div><b><span class="en">Hard deck</span><span class="es">Límite mínimo</span><span class="ru">Нижняя граница</span></b><br><span class="en">Below 1,000 ft don't cut away: pull the reserve and land with two canopies. Exception: a downplane.</span><span class="es">Por debajo de 1,000 ft no liberes: abre la reserva y aterriza con dos velas. Excepción: un downplane.</span><span class="ru">Ниже 1 000 футов не отцепляемся: открываем запасной и садимся на двух куполах. Исключение — «даунплейн».</span></div>
+      <div class="rule"><div class="n" style="color:var(--red)">5 s</div><b><span class="en">Don't delay</span><span class="es">No esperes</span><span class="ru">Не тянуть</span></b><br><span class="en">In 10 years nobody in the US died of a spinning malfunction alone after acting at or above decision altitude within about 5 s.</span><span class="es">En 10 años nadie en EE. UU. murió solo por una malfunción en giro tras actuar a la altura de decisión o por encima, en unos 5 s.</span><span class="ru">За 10 лет в США никто не погиб только от вращающегося отказа, если действовал на высоте решения или выше примерно за 5 с.</span></div>
+    </div>
+    <div class="check red"><span class="en">After a cutaway, pull the reserve yourself, straight away: the AAD won't fire until you're falling fast again. Many dropzones teach both hands on the red handle; others one hand per handle. Ask which one yours uses.</span><span class="es">Después de liberar, abre la reserva tú mismo, enseguida: el AAD no se activa hasta que vuelvas a caer rápido. Muchas zonas de salto enseñan las dos manos en la manija roja; otras, una mano por manija. Pregunta cuál usa la tuya.</span><span class="ru">После отцепа запасной открываешь сам и сразу: AAD не сработает, пока снова не разгонишься. Многие школы учат обе руки на красную ручку, другие — по руке на ручку. Спроси, как у вас.</span> <span class="q">CHECK</span></div>
+    <div class="check"><span class="en">Heard on the course, not sure what it was: "two hands forward and clear the lines that run from right to left toward the shoulder". <span class="q">CHECK</span></span><span class="es">Oído en el curso, no sé bien qué era: "dos manos adelante y despejar las líneas que van de derecha a izquierda hacia el hombro". <span class="q">VERIFICAR</span></span><span class="ru">Было на курсе, не понял точно: «двумя руками вперёд и очистить линии, которые идут справа налево к плечу». <span class="q">УТОЧНИТЬ</span></span></div>
+  </section>
+
+  <section class="ch" id="mal">
+    <div class="eyebrow" style="color:var(--red)"><span class="en">Chapter 13</span><span class="es">Capítulo 13</span><span class="ru">Глава 13</span></div>
+    <div class="sig-head">
+      <h3 class="t"><span class="en">What can go wrong</span><span class="es">Qué puede salir mal</span><span class="ru">Какие бывают отказы</span></h3>
+      <button class="btn quizBtn" type="button" aria-pressed="false"><span class="en">Test me: hide answers</span><span class="es">Ponme a prueba: ocultar respuestas</span><span class="ru">Проверь себя: скрыть ответы</span></button>
+    </div>
+    <p class="lead"><span class="en">Three families. Spot which one you have, then act. When in doubt, it's an emergency procedure. Most clips are first person, the way you'd see it looking up (USPA-linked malfunction series by Sigma, and APF "Cutaway!").</span><span class="es">Tres familias. Identifica cuál tienes y actúa. Si dudas, es procedimiento de emergencia. La mayoría de los clips son en primera persona, como lo verías mirando hacia arriba (serie de malfunciones de Sigma vinculada a USPA, y "Cutaway!" de APF).</span><span class="ru">Три группы. Понял, какая у тебя, и действуй. Сомневаешься — аварийная процедура. Большинство клипов — от первого лица, как ты увидишь, подняв голову (серия отказов Sigma, на которую ссылается USPA, и APF «Cutaway!»).</span></p>
+    <div id="malGroups"></div>
+    <h4 style="margin-top:28px"><span class="en">Cut away anyway if…</span><span class="es">Libera de todos modos si…</span><span class="ru">Отцепляйся в любом случае, если…</span></h4>
+    <div class="rules">
+      <div class="rule"><span class="en">More than one broken line.</span><span class="es">Más de una línea rota.</span><span class="ru">Порвано больше одной стропы.</span></div>
+      <div class="rule"><span class="en">A hole the size of your head, or sky through the bottom skin.</span><span class="es">Un agujero del tamaño de tu cabeza, o se ve el cielo a través de la tela inferior.</span><span class="ru">Дыра размером с голову или видно небо сквозь нижнюю оболочку.</span></div>
+      <div class="rule"><span class="en">The canopy still isn't inflated at 2,500 ft.</span><span class="es">La vela todavía no está inflada a 2,500 ft.</span><span class="ru">К 2 500 футам купол так и не наполнился.</span></div>
+      <div class="rule"><span class="en">It spins and the spin gets faster.</span><span class="es">Gira y el giro se hace más rápido.</span><span class="ru">Купол вращается, и вращение ускоряется.</span></div>
+    </div>
+  </section>
+
+  <section class="ch" id="two">
+    <div class="eyebrow" style="color:var(--red)"><span class="en">Chapter 14</span><span class="es">Capítulo 14</span><span class="ru">Глава 14</span></div>
+    <h3 class="t"><span class="en">Two canopies out</span><span class="es">Dos velas abiertas</span><span class="ru">Два купола</span></h3>
+    <p class="lead"><span class="en">The main and the reserve can both open. The reserve flies just like the main. What you do depends on how they sit.</span><span class="es">La principal y la reserva pueden abrirse las dos. La reserva vuela igual que la principal. Lo que haces depende de cómo queden.</span><span class="ru">Могут раскрыться и основной, и запасной. Запасной летит так же, как основной. Что делать, зависит от того, как они расположены.</span></p>
+    <div class="mals">
+      <div class="card"><video src="media/two_bi.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video><div class="name"><span class="en">Biplane</span><span class="es">Biplano</span><span class="ru">Биплан</span></div><div class="what"><span class="en">One canopy in front of the other.</span><span class="es">Una vela delante de la otra.</span><span class="ru">Один купол впереди другого.</span></div><div class="act"><b><span class="en">Don't cut away.</span><span class="es">No liberes.</span><span class="ru">Не отцепляться.</span></b> <span class="en">Steer the front one gently, leave the back one alone, small or no flare, PLF.</span><span class="es">Dirige suave la de adelante, deja la de atrás tranquila, flare pequeño o ninguno, PLF.</span><span class="ru">Аккуратно управлять передним, задний не трогать, flare слабый или без него, PLF.</span></div></div>
+      <div class="card"><video src="media/two_side.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video><div class="name"><span class="en">Side by side</span><span class="es">Lado a lado</span><span class="ru">Бок о бок</span></div><div class="what"><span class="en">The two canopies fly next to each other.</span><span class="es">Las dos velas vuelan una junto a la otra.</span><span class="ru">Купола летят рядом друг с другом.</span></div><div class="act"><b><span class="en">Don't cut away.</span><span class="es">No liberes.</span><span class="ru">Не отцепляться.</span></b> <span class="en">Steer the bigger one gently, no flare, PLF.</span><span class="es">Dirige suave la más grande, sin flare, PLF.</span><span class="ru">Аккуратно управлять тем, что больше, без flare, PLF.</span> <span class="q">CHECK</span></div></div>
+      <div class="card"><video src="media/two_down.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video><div class="name"><span class="en">Downplane</span><span class="es">Downplane</span><span class="ru">Даунплейн</span></div><div class="what"><span class="en">They pull apart, both pointing down, tearing you between them. Rare.</span><span class="es">Se separan, las dos apuntando hacia abajo, y te tiran entre ellas. Es raro.</span><span class="ru">Купола разошлись и оба смотрят вниз, тебя растягивает между ними. Редко.</span></div><div class="act"><b><span class="en">Cut away the main</span><span class="es">Libera la principal</span><span class="ru">Отцепить основной</span></b><span class="en">, at any altitude.</span><span class="es">, a cualquier altura.</span><span class="ru"> на любой высоте.</span></div></div>
+    </div>
+    <div class="check"><span class="en">Main and reserve tangled together: don't cut away; clear what you can and get ready to PLF. Ask the instructors to walk through all three cases on the ground.</span><span class="es">Principal y reserva enredadas: no liberes; despeja lo que puedas y prepárate para el PLF. Pide a los instructores que repasen los tres casos en tierra.</span><span class="ru">Основной и запасной перепутались: не отцепляться; освободить, что получается, и готовиться к PLF. Попроси инструкторов разобрать все три случая на земле.</span> <span class="q">CHECK</span></div>
+    <div class="watch"><span class="lbl"><span class="en">Watch</span><span class="es">Ver</span><span class="ru">Смотреть</span></span><a href="https://www.youtube.com/watch?v=or3MhI4MhAc&t=202s" target="_blank" rel="noopener"><span class="tc">▶ 3:22</span><span><span class="en">Two canopies out: all 5 configurations</span><span class="es">Dos velas abiertas: las 5 configuraciones</span><span class="ru">Два купола: все 5 вариантов</span></span><span class="src">· Skydive Vibes</span></a></div>
+  </section>
+
+  <section class="ch" id="obstacles">
+    <div class="eyebrow" style="color:var(--red)"><span class="en">Chapter 15</span><span class="es">Capítulo 15</span><span class="ru">Глава 15</span></div>
+    <h3 class="t"><span class="en">Landing on an obstacle</span><span class="es">Aterrizar sobre un obstáculo</span><span class="ru">Посадка на препятствие</span></h3>
+    <p class="lead"><span class="en">Best plan: see it early and steer away above 1,000 ft. If you can't, these are USPA's steps (SIM 4-1).</span><span class="es">Mejor plan: verlo temprano y alejarte por encima de 1,000 ft. Si no puedes, estos son los pasos de USPA (SIM 4-1).</span><span class="ru">Лучший план: заметить заранее и уйти от него выше 1 000 футов. Если не получилось, вот шаги USPA (SIM 4-1).</span></p>
+    <div class="rules">
+      <div class="rule"><div class="n">≈</div><b><span class="en">Water</span><span class="es">Agua</span><span class="ru">Вода</span></b><br><span class="en">Half brakes at about 10 ft above the water, take a deep breath before you go in, stay in the harness until you're in the water, then get out of it and swim away from the canopy.</span><span class="es">Medio freno a unos 10 ft sobre el agua, respira hondo antes de entrar, quédate en el arnés hasta estar en el agua, luego sal de él y nada lejos de la vela.</span><span class="ru">Половина тормозов примерно в 10 футах над водой, глубокий вдох перед входом, из системы не выбираться до касания воды, потом вылезти и отплыть от купола.</span></div>
+      <div class="rule"><div class="n">⚡</div><b><span class="en">Power lines</span><span class="es">Cables eléctricos</span><span class="ru">Провода</span></b><br><span class="en">Spot them early and steer away. If you can't: land parallel to the lines so you touch only one, feet and knees together, turn your head. If you hang there, nobody touches you until the power is off.</span><span class="es">Detéctalos temprano y aléjate. Si no puedes: aterriza paralelo a los cables para tocar solo uno, pies y rodillas juntos, gira la cabeza. Si quedas colgado, nadie te toca hasta que corten la corriente.</span><span class="ru">Заметить рано и уйти. Если нельзя: садиться параллельно проводам, чтобы коснуться только одного, ступни и колени вместе, голову отвернуть. Если повис — никто тебя не трогает, пока не отключат ток.</span></div>
+      <div class="rule"><div class="n">🌲</div><b><span class="en">Trees</span><span class="es">Árboles</span><span class="ru">Деревья</span></b><br><span class="en">Half brakes, feet and knees tight together, legs not crossed, protect your face with your arms. Stuck up there: stay put and wait for help, don't climb down alone.</span><span class="es">Medio freno, pies y rodillas bien juntos, piernas sin cruzar, protege la cara con los brazos. Si quedas atrapado arriba: no te muevas y espera ayuda, no bajes solo.</span><span class="ru">Половина тормозов, ступни и колени плотно, ноги не скрещивать, лицо закрыть руками. Застрял: оставайся на месте и жди помощи, сам не слезай.</span></div>
+      <div class="rule"><div class="n">▦</div><b><span class="en">Buildings</span><span class="es">Edificios</span><span class="ru">Здания</span></b><br><span class="en">Flare about 10 ft before you hit, then PLF. On a roof, pull the canopy down so the wind can't drag you off the edge.</span><span class="es">Haz el flare unos 10 ft antes de golpear, luego PLF. En un techo, baja la vela para que el viento no te arrastre por el borde.</span><span class="ru">Flare примерно за 10 футов до удара, потом PLF. На крыше погаси купол, чтобы ветер не стащил тебя с края.</span></div>
+    </div>
+  </section>
+
+  <section class="ch" id="real">
+    <div class="eyebrow" style="color:var(--red)"><span class="en">Chapter 16 · real data</span><span class="es">Capítulo 16 · datos reales</span><span class="ru">Глава 16 · реальные данные</span></div>
+    <h3 class="t"><span class="en">How people actually get hurt</span><span class="es">Cómo se lastima la gente en realidad</span><span class="ru">Как люди на самом деле травмируются</span></h3>
+    <p class="lead"><span class="en">Malfunctions get the attention, but most injuries happen in the last 10 feet.</span><span class="es">Las malfunciones se llevan la atención, pero la mayoría de las lesiones ocurren en los últimos 10 pies.</span><span class="ru">Все боятся отказов, но большинство травм случается в последних 10 футах.</span></p>
+    <div class="rules">
+      <div class="rule"><div class="n" style="color:var(--red)">73–90%</div><span class="en">of injuries happen at <b>landing</b> (Danish, Swedish, Dutch studies).</span><span class="es">de las lesiones ocurren en el <b>aterrizaje</b> (estudios daneses, suecos y neerlandeses).</span><span class="ru">травм — при <b>приземлении</b> (датские, шведские, голландские исследования).</span></div>
+      <div class="rule"><div class="n" style="color:var(--red)">~6×</div><span class="en">Students are about six times as likely to be injured as licensed jumpers.</span><span class="es">Los alumnos tienen unas seis veces más probabilidad de lesionarse que los paracaidistas con licencia.</span><span class="ru">Студенты травмируются примерно в шесть раз чаще, чем прыгуны с лицензией.</span></div>
+      <div class="rule"><div class="n" style="color:var(--red)">30–60%</div><span class="en">of injuries are to the ankle.</span><span class="es">de las lesiones son en el tobillo.</span><span class="ru">травм — лодыжка.</span></div>
+      <div class="rule"><div class="n" style="color:var(--red)">46%</div><span class="en">of US deaths 2001–2020 were landing problems, many from <a href="#lowturn" style="color:var(--sky)">low turns</a>.</span><span class="es">de las muertes en EE. UU. 2001–2020 fueron problemas de aterrizaje, muchas por <a href="#lowturn" style="color:var(--sky)">giros bajos</a>.</span><span class="ru">смертей в США в 2001–2020 — при посадке, многие из-за <a href="#lowturn" style="color:var(--sky)">низких разворотов</a>.</span></div>
+    </div>
+    <h4 style="margin-top:22px"><span class="en">The ones to remember, most common first</span><span class="es">Las que hay que recordar, de más a menos comunes</span><span class="ru">Что запомнить, от самого частого</span></h4>
+    <ol class="steps">
+      <li class="step"><div><b><span class="en">Bad flare, no PLF</span><span class="es">Mal flare, sin PLF</span><span class="ru">Плохой flare, нет PLF</span></b><span class="sub"><span class="en">Early, late, half or jerky flare, then trying to stand it up. Flare fully at ~10 ft, hold it, feet and knees together, PLF every time.</span><span class="es">Flare temprano, tardío, a medias o brusco, y luego intentar aterrizar de pie. Flare completo a ~10 ft, mantenlo, pies y rodillas juntos, PLF siempre.</span><span class="ru">Рано, поздно, не до конца или рывком, а потом попытка устоять на ногах. Полный flare на ~10 футах, держать, ступни и колени вместе, PLF всегда.</span></span></div></li>
+      <li class="step"><div><b><span class="en">Obstacles, landing off</span><span class="es">Obstáculos, aterrizaje fuera</span><span class="ru">Препятствия, посадка вне площадки</span></b><span class="sub"><span class="en">Trying to stretch back to the target. Decide high: if you can't make it, pick a clear field and land there, into the wind.</span><span class="es">Intentar estirar hasta el blanco. Decide arriba: si no llegas, elige un campo despejado y aterriza ahí, contra el viento.</span><span class="ru">Попытка дотянуть до цели. Решать высоко: не долетаешь — выбрать чистое поле и садиться туда, против ветра.</span></span></div></li>
+      <li class="step"><div><b><span class="en">Low turns</span><span class="es">Giros bajos</span><span class="ru">Низкие развороты</span></b><span class="sub"><span class="en">A big turn near the ground makes the canopy dive. Low and in trouble: stop turning, fly straight, flare.</span><span class="es">Un giro grande cerca del suelo hace picar la vela. ¿Bajo y en problemas? Deja de girar, vuela recto, haz el flare.</span><span class="ru">Большой разворот у земли — купол ныряет. Низко и что-то не так: перестать крутить, лететь прямо, flare.</span></span></div></li>
+      <li class="step"><div><b><span class="en">Downwind landing and turbulence</span><span class="es">Aterrizaje con viento en cola y turbulencia</span><span class="ru">Посадка по ветру и турбулентность</span></b><span class="sub"><span class="en">Land into the wind; stay away from buildings and tree lines that stir the air.</span><span class="es">Aterriza contra el viento; mantente lejos de edificios y filas de árboles que revuelven el aire.</span><span class="ru">Садиться против ветра; держаться дальше от зданий и лесополос, за ними воздух бурлит.</span></span></div></li>
+      <li class="step"><div><b><span class="en">Canopy collisions</span><span class="es">Choques entre velas</span><span class="ru">Столкновения куполов</span></b><span class="sub"><span class="en">Look before every turn, fly the same pattern as everyone.</span><span class="es">Mira antes de cada giro, vuela el mismo circuito que todos.</span><span class="ru">Смотреть перед каждым поворотом, летать по общей схеме.</span></span></div></li>
+      <li class="step"><div><b><span class="en">Late or wrong emergency procedure</span><span class="es">Procedimiento de emergencia tardío o equivocado</span><span class="ru">Поздняя или неправильная аварийная процедура</span></b><span class="sub"><span class="en">Too long fixing a spinning canopy. Two tries, then cut away, straight to the reserve.</span><span class="es">Demasiado tiempo arreglando una vela que gira. Dos intentos, luego liberas, directo a la reserva.</span><span class="ru">Слишком долго пытались исправить вращающийся купол. Две попытки, потом отцеп и сразу запасной.</span></span></div></li>
+      <li class="step"><div><b><span class="en">No pull or low pull</span><span class="es">Sin apertura o apertura baja</span><span class="ru">Нет раскрытия или раскрытие низко</span></b><span class="sub"><span class="en">Lost track of altitude. Altimeter first, always. The automatic opener (AAD) is a backup, not a plan.</span><span class="es">Perdiste la noción de la altura. Altímetro primero, siempre. El abridor automático (AAD) es un respaldo, no un plan.</span><span class="ru">Потеряли высоту. Высотомер прежде всего. Страхующий прибор (AAD) — запасной вариант, а не план.</span></span></div></li>
+    </ol>
+    <div class="check"><strong><span class="en">What students say on Reddit</span><span class="es">Lo que dicen los alumnos en Reddit</span><span class="ru">Что пишут студенты на Reddit</span></strong><br>
+      <span class="en">Many broke an ankle on AFF levels 2–4 after a few soft landings made them try to stand one up. Look at the horizon, not the ground. Practise flares up high. Experienced jumpers still PLF on no-wind days.</span><span class="es">Muchos se rompieron un tobillo en los niveles 2–4 de AFF después de que unos aterrizajes suaves los animaran a intentar quedar de pie. Mira el horizonte, no el suelo. Practica flares arriba. Los paracaidistas con experiencia siguen haciendo PLF los días sin viento.</span>
+      <span class="ru">Многие сломали лодыжку на 2–4 уровне AFF: после пары мягких посадок пытались приземлиться стоя. Смотреть на горизонт, а не в землю. Тренировать flare наверху. Опытные прыгуны делают PLF даже в безветрие.</span></div>
+  </section>
+
+  <section class="ch tips" id="tips">
+    <div class="eyebrow"><span class="en">Chapter 17 · from coaches, USPA and Reddit</span><span class="es">Capítulo 17 · de coaches, USPA y Reddit</span><span class="ru">Глава 17 · от тренеров, USPA и Reddit</span></div>
+    <h3 class="t"><span class="en">Common mistakes and tips, stage by stage</span><span class="es">Errores comunes y consejos, etapa por etapa</span><span class="ru">Частые ошибки и советы по этапам</span></h3>
+    <p class="lead"><span class="en">Read the one for the stage you're on before each jump day.</span><span class="es">Lee la de la etapa en la que estás antes de cada día de saltos.</span><span class="ru">Перед каждым прыжковым днём перечитай этап, на котором ты сейчас.</span></p>
+    <details><summary><span class="en">Plane and exit</span><span class="es">Avión y salida</span><span class="ru">Самолёт и отделение</span></summary><div class="cols">
+      <div><h5 class="bad"><span class="en">Mistakes</span><span class="es">Errores</span><span class="ru">Ошибки</span></h5><ul>
+        <li><span class="en">Unbuckling early, taking the helmet off, acting without a command.</span><span class="es">Desabrocharse antes de tiempo, quitarse el casco, actuar sin una orden.</span><span class="ru">Рано отстегнулся, снял шлем, действовал без команды.</span></li>
+        <li><span class="en">Rig or handles catching on seats and the door frame.</span><span class="es">Equipo o manijas que se enganchan en asientos y en el marco de la puerta.</span><span class="ru">Ранец или ручки цепляются за сиденья и косяк двери.</span></li>
+        <li><span class="en">Looking down on exit: you lose stability.</span><span class="es">Mirar hacia abajo al salir: pierdes estabilidad.</span><span class="ru">Смотреть вниз на отделении: теряешь стабильность.</span></li>
+        <li><span class="en">Hips sideways to the wind: a hard arch doesn't save a crooked exit.</span><span class="es">Cadera de lado al viento: un arco fuerte no salva una salida torcida.</span><span class="ru">Таз боком к потоку: сильный прогиб не спасает кривое отделение.</span></li>
+        <li><span class="en">Rushed count on the ground = rushed count in the door.</span><span class="es">Conteo apurado en tierra = conteo apurado en la puerta.</span><span class="ru">Скомканный счёт на земле = скомканный счёт в двери.</span></li>
+      </ul></div>
+      <div><h5 class="good"><span class="en">Tips</span><span class="es">Consejos</span><span class="ru">Советы</span></h5><ul>
+        <li><span class="en">Ask for a pin check before the door; cover your handles with a hand on the way.</span><span class="es">Pide un pin check antes de la puerta; cubre tus manijas con una mano al moverte.</span><span class="ru">Попроси проверить пины перед дверью; по пути прикрывай ручки рукой.</span></li>
+        <li><span class="en">On the ride up: slow breathing and run the dive flow in your head.</span><span class="es">En la subida: respira lento y repasa el plan de salto en la cabeza.</span><span class="ru">В наборе: медленное дыхание и прогон плана прыжка в голове.</span></li>
+        <li><span class="en">Present belly and hips to the wind, look up at the plane.</span><span class="es">Presenta panza y cadera al viento, mira hacia arriba al avión.</span><span class="ru">Подставь живот и таз потоку, смотри вверх, на самолёт.</span></li>
+        <li><span class="en">Don't grab the instructors: they hold you.</span><span class="es">No agarres a los instructores: ellos te sujetan a ti.</span><span class="ru">Не хватайся за инструкторов: держат они.</span></li>
+        <li><span class="en">Lost one instructor: carry on. Lost both: pull now.</span><span class="es">¿Perdiste a un instructor? Sigue. ¿Perdiste a los dos? Abre ya.</span><span class="ru">Потерял одного инструктора: продолжай. Обоих: раскрывайся сразу.</span></li>
+      </ul></div></div></details>
+    <details><summary><span class="en">Freefall</span><span class="es">Caída libre</span><span class="ru">Свободное падение</span></summary><div class="cols">
+      <div><h5 class="bad"><span class="en">Mistakes</span><span class="es">Errores</span><span class="ru">Ошибки</span></h5><ul>
+        <li><span class="en">Legs bent too much, or drifting up and uneven: you start to spin.</span><span class="es">Piernas demasiado dobladas, o que suben y quedan desparejas: empiezas a girar.</span><span class="ru">Ноги слишком согнуты или «уплывают» вверх и неровно: начинает крутить.</span></li>
+        <li><span class="en">Hips back, knees dropping: the arch is gone.</span><span class="es">Cadera atrás, rodillas cayendo: se perdió el arco.</span><span class="ru">Таз назад, колени опускаются: прогиба нет.</span></li>
+        <li><span class="en">Stiff and scared: can't learn, can't be released.</span><span class="es">Rígido y asustado: no puedes aprender ni te pueden soltar.</span><span class="ru">Зажат и боишься: не учишься, и отпустить тебя нельзя.</span></li>
+        <li><span class="en">Skipping a practice touch, looking away at lock-on: instructors read it as "won't pull".</span><span class="es">Saltarte un toque de práctica o mirar a otro lado en el lock on: los instructores lo leen como "no va a abrir".</span><span class="ru">Пропустил касание, отвёл взгляд на 6 000: инструктор читает это как «не раскроется».</span></li>
+      </ul></div>
+      <div><h5 class="good"><span class="en">Tips</span><span class="es">Consejos</span><span class="ru">Советы</span></h5><ul>
+        <li><span class="en">Practise the arch at home; tap your heels together; look at a point on the horizon.</span><span class="es">Practica el arco en casa; junta los talones; mira un punto en el horizonte.</span><span class="ru">Тренируй прогиб дома; стукни пятками; смотри на точку на горизонте.</span></li>
+        <li><span class="en">Every jump morning: dive flow out loud, handle touches with eyes closed.</span><span class="es">Cada mañana de salto: plan de salto en voz alta, toques de manijas con los ojos cerrados.</span><span class="ru">Каждое утро прыжка: план вслух, касания ручки с закрытыми глазами.</span></li>
+        <li><span class="en">About 10 minutes of wind tunnel before AFF helps, if you tell the coach you're on AFF.</span><span class="es">Unos 10 minutos de túnel de viento antes del AFF ayudan, si le dices al coach que estás en AFF.</span><span class="ru">Около 10 минут в аэротрубе до AFF помогают, если сказать тренеру, что ты на AFF.</span></li>
+        <li><span class="en">Level 1 has two goals: arch and pull on time. Everything else is a bonus.</span><span class="es">El Nivel 1 tiene dos objetivos: arquear y abrir a tiempo. Todo lo demás es extra.</span><span class="ru">На уровне 1 две цели: прогнуться и раскрыться вовремя. Остальное — бонус.</span></li>
+      </ul></div></div></details>
+    <details><summary><span class="en">Deployment and canopy check</span><span class="es">Apertura y revisión de la vela</span><span class="ru">Раскрытие и проверка купола</span></summary><div class="cols">
+      <div><h5 class="bad"><span class="en">Mistakes</span><span class="es">Errores</span><span class="ru">Ошибки</span></h5><ul>
+        <li><span class="en">Weak throw of the pilot chute; going head-low while staring at the altimeter.</span><span class="es">Lanzamiento débil del extractor; quedar cabeza abajo mientras miras fijo el altímetro.</span><span class="ru">Слабый выброс вытяжного; уход головой вниз, пока смотришь на высотомер.</span></li>
+        <li><span class="en">Looking over the shoulder too early, which turns you.</span><span class="es">Mirar por encima del hombro demasiado pronto, lo que te hace girar.</span><span class="ru">Слишком рано смотришь через плечо, и тебя разворачивает.</span></li>
+        <li><span class="en">Releasing the brakes while still in line twists: twist becomes a spin.</span><span class="es">Soltar los frenos con vueltas en las líneas todavía: el twist se convierte en giro.</span><span class="ru">Снял клеванты, пока стропы ещё перекручены: перекрут переходит во вращение.</span></li>
+        <li><span class="en">Skipping the turns and practice flare, and finding out at the ground the canopy doesn't steer.</span><span class="es">Saltarte los giros y el flare de práctica, y descubrir en el suelo que la vela no responde.</span><span class="ru">Пропустил повороты и пробный flare и узнал у земли, что купол не управляется.</span></li>
+      </ul></div>
+      <div><h5 class="good"><span class="en">Tips</span><span class="es">Consejos</span><span class="ru">Советы</span></h5><ul>
+        <li><span class="en">Can't find the handle: sweep along the bottom of the container, then down the side. Two tries or 5 s, then EP.</span><span class="es">¿No encuentras la manija? Barre a lo largo de la parte de abajo del contenedor y luego por el costado. Dos intentos o 5 s, luego procedimiento de emergencia.</span><span class="ru">Не найти ручку: проведи по низу ранца, потом вниз по боку. Две попытки или 5 с, потом аварийная процедура.</span></li>
+        <li><span class="en">Free hand over your head while you pull, body symmetrical.</span><span class="es">Mano libre sobre la cabeza mientras abres, cuerpo simétrico.</span><span class="ru">Свободная рука над головой, пока тянешь, тело симметрично.</span></li>
+        <li><span class="en">Full canopy check: there, square, steerable; full flare; turns of 90° each way.</span><span class="es">Revisión completa de la vela: está, cuadrada, gobernable; flare completo; giros de 90° a cada lado.</span><span class="ru">Полная проверка: есть, квадратный, управляемый; полный flare; повороты на 90° в обе стороны.</span></li>
+      </ul></div></div></details>
+    <details><summary><span class="en">Emergencies</span><span class="es">Emergencias</span><span class="ru">Отказы</span></summary><div class="cols">
+      <div><h5 class="bad"><span class="en">Mistakes</span><span class="es">Errores</span><span class="ru">Ошибки</span></h5><ul>
+        <li><span class="en">Trying to fix a spinning canopy for too long.</span><span class="es">Intentar arreglar demasiado tiempo una vela que gira.</span><span class="ru">Слишком долго пытаешься исправить вращающийся купол.</span></li>
+        <li><span class="en">Mixing up decision altitude (2,500) and hard deck (1,000), and not cutting away when you still could.</span><span class="es">Confundir la altura de decisión (2,500) con el límite mínimo (1,000), y no liberar cuando todavía podías.</span><span class="ru">Путаешь высоту решения (2 500) и нижнюю границу (1 000) и не отцепляешься, когда ещё можно.</span></li>
+        <li><span class="en">Waiting for the AAD after a cutaway.</span><span class="es">Esperar al AAD después de liberar.</span><span class="ru">Ждёшь AAD после отцепа.</span></li>
+        <li><span class="en">One-handed cutaway failing under spin forces.</span><span class="es">Liberación con una mano que falla por las fuerzas del giro.</span><span class="ru">Отцеп одной рукой не проходит при перегрузке во вращении.</span></li>
+      </ul></div>
+      <div><h5 class="good"><span class="en">Tips</span><span class="es">Consejos</span><span class="ru">Советы</span></h5><ul>
+        <li><span class="en">5-second rule: spot it, 5 s to decide, act counting out loud.</span><span class="es">Regla de los 5 segundos: detéctalo, 5 s para decidir, actúa contando en voz alta.</span><span class="ru">Правило 5 секунд: заметил, 5 с на решение, действуй, считая вслух.</span></li>
+        <li><span class="en">Hanging-harness drill all the way to landing, 3 times per session, saying each step out loud.</span><span class="es">Simulacro en el arnés colgante hasta el aterrizaje, 3 veces por sesión, diciendo cada paso en voz alta.</span><span class="ru">Отработка в подвеске до самой посадки, 3 раза за занятие, проговаривая каждый шаг.</span></li>
+        <li><span class="en">Under load the handles sit higher on the chest than on the ground.</span><span class="es">Con carga, las manijas quedan más arriba en el pecho que en tierra.</span><span class="ru">Под нагрузкой ручки на груди выше, чем на земле.</span></li>
+        <li><span class="en">Practise until it's automatic, not until it feels comfortable.</span><span class="es">Practica hasta que sea automático, no hasta que te sientas cómodo.</span><span class="ru">Тренируй до автоматизма, а не пока не станет комфортно.</span></li>
+      </ul></div></div></details>
+    <details><summary><span class="en">Canopy flight, flare and landing</span><span class="es">Vuelo de vela, flare y aterrizaje</span><span class="ru">Полёт под куполом, flare и посадка</span></summary><div class="cols">
+      <div><h5 class="bad"><span class="en">Mistakes</span><span class="es">Errores</span><span class="ru">Ошибки</span></h5><ul>
+        <li><span class="en">Flaring early, late or not at all. No flare causes the worst injuries.</span><span class="es">Flare temprano, tarde o sin flare. Sin flare se producen las peores lesiones.</span><span class="ru">Flare рано, поздно или вообще нет. Без flare — самые тяжёлые травмы.</span></li>
+        <li><span class="en">Not lifting the legs; reaching for the ground with a foot or a hand.</span><span class="es">No levantar las piernas; buscar el suelo con un pie o una mano.</span><span class="ru">Не поднял ноги; тянешься к земле ногой или рукой.</span></li>
+        <li><span class="en">Trying to stand it up after a few soft landings (the classic AFF 2–4 broken ankle).</span><span class="es">Intentar quedar de pie después de unos aterrizajes suaves (el clásico tobillo roto de AFF 2–4).</span><span class="ru">Пытаешься устоять после пары мягких посадок (классический перелом лодыжки на AFF 2–4).</span></li>
+        <li><span class="en">Fixating on the target and turning low to reach it.</span><span class="es">Fijarse en el blanco y girar bajo para alcanzarlo.</span><span class="ru">Зацикливаешься на цели и поворачиваешь низко, чтобы до неё дотянуть.</span></li>
+        <li><span class="en">Straight arms swung out to the sides in the flare ("iron cross").</span><span class="es">Brazos rectos abiertos a los lados en el flare ("cruz de hierro").</span><span class="ru">Прямые руки в стороны во время flare («железный крест»).</span></li>
+      </ul></div>
+      <div><h5 class="good"><span class="en">Tips</span><span class="es">Consejos</span><span class="ru">Советы</span></h5><ul>
+        <li><span class="en">Priorities: level wing, clear area, flare and PLF.</span><span class="es">Prioridades: ala nivelada, zona despejada, flare y PLF.</span><span class="ru">Приоритеты: ровное крыло, свободная площадка, flare и PLF.</span></li>
+        <li><span class="en">Look ahead at about 45°, not at your feet.</span><span class="es">Mira adelante a unos 45°, no a tus pies.</span><span class="ru">Смотри вперёд и вниз примерно под 45°, а не себе под ноги.</span></li>
+        <li><span class="en">The radio is a backup: ground coming fast and no "flare" call? Flare.</span><span class="es">La radio es un respaldo: ¿el suelo se acerca rápido y nadie dice "flare"? Haz el flare.</span><span class="ru">Радио — только подстраховка: земля близко, а команды нет? Делай flare.</span></li>
+        <li><span class="en">Pick an alternate landing area by 2,000 ft.</span><span class="es">Elige una zona de aterrizaje alternativa a 2,000 ft.</span><span class="ru">Запасную площадку выбирай к 2 000 футам.</span></li>
+        <li><span class="en">PLF every time; thumbs together at the crotch so a hand doesn't go out.</span><span class="es">PLF siempre; pulgares juntos a la altura de la entrepierna para que no se salga una mano.</span><span class="ru">PLF каждый раз; большие пальцы вместе у паха, чтобы рука не выставилась.</span></li>
+        <li><span class="en">Collision ahead: both turn right.</span><span class="es">Choque de frente: los dos giran a la derecha.</span><span class="ru">Угроза столкновения: оба уходят вправо.</span></li>
+      </ul></div></div></details>
+    <details><summary><span class="en">Getting through AFF and the A-license</span><span class="es">Cómo pasar el AFF y la licencia A</span><span class="ru">Как пройти AFF и получить лицензию A</span></summary><div class="cols">
+      <div><h5 class="bad"><span class="en">Why students repeat levels</span><span class="es">Por qué los alumnos repiten niveles</span><span class="ru">Почему повторяют уровни</span></h5><ul>
+        <li><span class="en">Too stiff to learn; drifting from the instructor; ignoring signals.</span><span class="es">Demasiado rígidos para aprender; se alejan del instructor; ignoran las señales.</span><span class="ru">Слишком зажат, чтобы учиться; отплываешь от инструктора; не реагируешь на жесты.</span></li>
+        <li><span class="en">Can't find the handle, or loses control at pull time.</span><span class="es">No encuentran la manija o pierden el control al abrir.</span><span class="ru">Не находишь ручку или теряешь контроль при раскрытии.</span></li>
+        <li><span class="en">Scraping through level B at the minimum: level C rarely passes first time.</span><span class="es">Pasar el nivel B por los pelos: el nivel C rara vez sale a la primera.</span><span class="ru">Проскочил уровень B на минимуме: C с первого раза почти не проходят.</span></li>
+        <li><span class="en">Long gaps between jumps.</span><span class="es">Mucho tiempo entre saltos.</span><span class="ru">Большие перерывы между прыжками.</span></li>
+      </ul></div>
+      <div><h5 class="good"><span class="en">Rules and habits</span><span class="es">Reglas y hábitos</span><span class="ru">Правила и привычки</span></h5><ul>
+        <li><span class="en">A-license: 25 jumps, progression card, check dive, written (75%+) and oral exam.</span><span class="es">Licencia A: 25 saltos, tarjeta de progresión, salto de control, examen escrito (75%+) y oral.</span><span class="ru">Лицензия A: 25 прыжков, карточка прогресса, check dive, письменный (от 75%) и устный экзамен.</span></li>
+        <li><span class="en">Student wind limit 14 mph; no alcohol 8 h before; after 30 days off, a supervised jump.</span><span class="es">Límite de viento para alumnos 14 mph; nada de alcohol 8 h antes; tras 30 días sin saltar, un salto supervisado.</span><span class="ru">Лимит ветра для студента 14 миль/ч; без алкоголя за 8 ч; после 30 дней перерыва — прыжок под надзором.</span></li>
+        <li><span class="en">Gear check four times: before putting it on, after, before boarding, before exit.</span><span class="es">Revisa el equipo cuatro veces: antes de ponértelo, después, antes de subir, antes de salir.</span><span class="ru">Проверка снаряжения четыре раза: до того как надел, после, перед посадкой, перед выходом.</span></li>
+        <li><span class="en">Jump in a tight block, take a canopy course after AFF.</span><span class="es">Salta en bloques seguidos, haz un curso de vela después del AFF.</span><span class="ru">Прыгай плотным блоком, после AFF — курс пилотирования купола.</span></li>
+        <li><span class="en">Learn only what today's jump needs; skip scary videos without context.</span><span class="es">Aprende solo lo que pide el salto de hoy; evita videos de miedo sin contexto.</span><span class="ru">Учи только то, что нужно на сегодняшний прыжок; не смотри страшные ролики без контекста.</span></li>
+      </ul></div></div></details>
+    <div class="src"><span class="en">Sources:</span><span class="es">Fuentes:</span><span class="ru">Источники:</span> <a href="http://www.uspa.org/skydiveschool/A">USPA ISP Cat A</a> · <a href="https://www.uspa.org/sim/4-1">SIM 4-1</a> · <a href="https://www.uspa.org/rating-corner-aff-tips">Brodsky-Chenfeld</a> · <a href="https://www.uspa.org/rating-corner-tips-for-new-aff-instructors">Grau</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">Planche Wallace</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486">Bell</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/52/artmid/2830/articleid/9015">Foundations of Flight</a> · <a href="https://www.reddit.com/r/SkyDiving/comments/1o7djbb/student_flare_timing/">r/SkyDiving</a> · <a href="https://www.uspa.org/members/licenses/a-license-requirements-and-forms">A-license</a> · <a href="https://www.uspa.org/SIM/2-1">SIM 2-1</a></div>
+    <div class="watch"><span class="lbl"><span class="en">Review</span><span class="es">Repaso</span><span class="ru">Повторить</span></span><a href="https://www.youtube.com/playlist?list=PL5NtYTSapvjCNbMA5CE_P8s1PEN2danzh" target="_blank" rel="noopener"><span class="tc">▶</span><span><span class="en">USPA dive flows, all categories</span><span class="es">Planes de salto USPA, todas las categorías</span><span class="ru">Планы прыжков USPA, все категории</span></span><span class="src">· USPA</span></a><a href="https://www.uspa.org/skydiveschool/landing" target="_blank" rel="noopener"><span class="tc">▶</span><span><span class="en">USPA online ground school</span><span class="es">Curso en tierra online de USPA</span><span class="ru">Онлайн-курс USPA</span></span><span class="src">· uspa.org</span></a><a href="https://www.youtube.com/watch?v=IIN4WylwLGo" target="_blank" rel="noopener"><span class="tc">▶</span><span><span class="en">Flaring too high</span><span class="es">Flare demasiado alto</span><span class="ru">Flare слишком высоко</span></span><span class="src">· Brian Germain</span></a></div>
+  </section>
+
+  <section class="ch" id="questions">
+    <div class="eyebrow"><span class="en">Before the next session</span><span class="es">Antes de la próxima sesión</span><span class="ru">Перед следующим занятием</span></div>
+    <h3 class="t"><span class="en">Ask the instructors</span><span class="es">Pregunta a los instructores</span><span class="ru">Спросить у инструкторов</span></h3>
+    <ol class="qs">
+      <li><span class="en">Aircraft emergency: what do we do, and at which altitudes?</span><span class="es">Emergencia del avión: ¿qué hacemos y a qué alturas?</span><span class="ru">Авария в самолёте: что делаем и на каких высотах?</span></li>
+      <li><span class="en">Exit count: exact words, which instructor first, exit altitude.</span><span class="es">Conteo de salida: palabras exactas, qué instructor primero, altura de salida.</span><span class="ru">Отсчёт: точные слова, на кого смотрим первым, высота выброски.</span></li>
+      <li><span class="en">Box position: legs together, or knees shoulder-width apart?</span><span class="es">Posición de caja: ¿piernas juntas o rodillas a la anchura de los hombros?</span><span class="ru">«Коробочка»: ноги вместе или колени на ширине плеч?</span></li>
+      <li><span class="en">Wave-off before the pull at 5,500 ft?</span><span class="es">¿Wave-off antes de abrir a 5,500 ft?</span><span class="ru">Отмашка перед раскрытием на 5 500 футах?</span></li>
+      <li><span class="en">Thumb down = arch (hips forward), like in the video?</span><span class="es">¿Pulgar abajo = arquear (cadera adelante), como en el video?</span><span class="ru">Палец вниз = прогиб (таз вперёд), как в видео?</span></li>
+      <li><span class="en">Flare: one-stage or two-stage, and how fast?</span><span class="es">Flare: ¿en una etapa o en dos, y a qué velocidad?</span><span class="ru">Flare: в одно движение или в два, и как быстро?</span></li>
+      <li><span class="en">Two canopies side by side: cut away or not?</span><span class="es">Dos velas lado a lado: ¿liberar o no?</span><span class="ru">Два купола бок о бок: отцепляться или нет?</span></li>
+      <li><span class="en">Turn limit between 1,500 and 1,000 ft.</span><span class="es">Límite de giro entre 1,500 y 1,000 ft.</span><span class="ru">Ограничение разворота между 1 500 и 1 000 футов.</span></li>
+      <li><span class="en">Cutaway: one hand per handle, or both hands on red?</span><span class="es">Liberación: ¿una mano por manija o las dos en la roja?</span><span class="ru">Отцеп: по руке на каждую ручку или обе руки на красную?</span></li>
+      <li><span class="en">Nothing out at all (hard pull, pilot chute in tow): cut away first, or reserve only?</span><span class="es">Nada fuera (apertura dura, extractor remolcado): ¿liberar primero o solo reserva?</span><span class="ru">Вообще ничего не вышло (тугое вытягивание, вытяжной в следе): сначала отцеп или сразу запасной?</span></li>
+      <li><span class="en">"Clear the lines from right to left toward the shoulder": what was that?</span><span class="es">"Despejar las líneas de derecha a izquierda hacia el hombro": ¿qué era eso?</span><span class="ru">«Очистить линии справа налево к плечу»: что это было?</span></li>
+    </ol>
+  </section>
+
+  <footer>
+    <span class="en">Study notes, not instruction. Sources used to fill gaps:</span><span class="es">Notas de estudio, no instrucción. Fuentes usadas para llenar huecos:</span><span class="ru">Конспект, а не инструкция. Источники, по которым заполнены пробелы:</span>
+    <a href="https://www.uspa.org/skydiveschool/a-flows">USPA Category A dive flows</a> ·
+    <a href="https://uspa.org/SIM/AppendixA">USPA SIM Appendix A</a> ·
+    <a href="https://uspa.org/sim/4-1">USPA SIM 4-1</a> ·
+    <a href="https://www.skydivemag.com/new?p=37956">USPA malfunctions video series</a> ·
+    <a href="https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7485">Parachutist: the five-second rule</a> ·
+    <a href="https://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents">USPA 2024 non-fatal incidents</a> ·
+    <a href="https://parachutist.com/another-record-lowthe-2020-fatality-summary">2020 fatality summary</a> ·
+    <a href="http://www.uspa.org/thats-how-we-roll-ankle-injuries-in-skydiving">USPA: ankle injuries</a> ·
+    <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/">Dutch study, 2.1 M jumps</a> ·
+    <a href="https://www.reddit.com/r/SkyDiving/comments/qwivgf/bad_landing_lessons_learned/">r/SkyDiving: bad landing lessons</a> ·
+    <a href="https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/">r/SkyDiving: broke my ankle on AFF 3</a> ·
+    <a href="https://bayareaskydiving.com/pages/aff-categories">Bay Area Skydiving AFF</a> ·
+    <a href="https://skydivetecumseh.com/?p=3915">Skydive Tecumseh: hand signals</a>
+  </footer>
+  </div></div>
+</main>
+
+<script>
+(function(){
+  const $=s=>document.querySelector(s);
+  const T=(en,ru,es)=>'<span class="en">'+en+'</span><span class="es">'+(es??en)+'</span><span class="ru">'+ru+'</span>';
+  const Q=T('<span class="q">CHECK</span>','<span class="q">УТОЧНИТЬ</span>','<span class="q">VERIFICAR</span>');
+
+  const LANGS=['en','es','ru'];
+  function setLang(l){if(!LANGS.includes(l))l='en';LANGS.forEach(x=>{document.body.classList.toggle('l-'+x,l===x);$('#b-'+x).setAttribute('aria-pressed',l===x)});
+    document.documentElement.lang=l;try{localStorage.setItem('aff-lang',l)}catch(e){}}
+  let lang='en';try{lang=localStorage.getItem('aff-lang')||'en'}catch(e){}
+  setLang(lang);LANGS.forEach(x=>$('#b-'+x).onclick=()=>setLang(x));
+
+  // ---------- canopy drawing ----------
+  // state: good | twist | slider | endcells | lineover | streamer | tow | baglock | none
+  function canopy(state,o={}){
+    const cx=100,top=36,bot=72,w=140,n=7,cw=w/n,x0=cx-w/2;
+    const cols=['var(--canopy-a)','var(--canopy-b)','var(--canopy-c)','var(--canopy-b)','var(--canopy-a)','var(--canopy-b)','var(--canopy-c)'];
+    const jy=o.jy||160;
+    let g='';
+    const jumper=`<g class="${state==='twist'?'a-kick':''}"><line x1="100" y1="${jy}" x2="100" y2="${jy+20}" stroke="var(--fig)" stroke-width="6" stroke-linecap="round"/><circle cx="100" cy="${jy-6}" r="7" fill="var(--fig)"/></g>`;
+    const lines=(tx,ty,list)=>list.map(x=>`<line x1="${x}" y1="${ty}" x2="${tx+(x<cx?-6:6)}" y2="${jy-2}" stroke="var(--muted)" stroke-width="1.2"/>`).join('');
+    const cells=(fn)=>{let s='';for(let i=0;i<n;i++){const k=fn(i);if(!k)continue;const h=(bot-top)*k.h,y=bot-h;s+=`<rect x="${x0+i*cw+(k.dx||0)}" y="${y}" width="${cw*(k.ws||1)}" height="${h}" rx="5" fill="${cols[i]}"/>`;}return s};
+    const arc=i=>Math.sin(Math.PI*(i+.5)/n)*.45+.55;
+    const lx=[x0+4,x0+w*.25,x0+w*.5-6,x0+w*.5+6,x0+w*.75,x0+w-4];
+    if(state==='good'||state==='slider'||state==='endcells'){
+      g+=cells(i=>state==='endcells'&&(i===0||i===n-1)?{h:arc(i)*.45,ws:.7,dx:i===0?cw*.3:0}:{h:arc(i)});
+      g+=lines(cx,bot,lx);
+      const sy=state==='slider'?bot+2:jy-24;g+=`<rect x="${state==='slider'?x0+10:88}" y="${sy}" width="${state==='slider'?w-20:24}" height="6" rx="2" fill="var(--ink)" opacity=".8"/>`;
+    } else if(state==='twist'){
+      g+=`<g class="a-spin" style="transform-origin:100px 54px">`+cells(i=>({h:arc(i)}))+`</g>`;
+      g+=lx.map(x=>`<line x1="${x}" y1="${bot}" x2="100" y2="112" stroke="var(--muted)" stroke-width="1.2"/>`).join('');
+      g+=`<path d="M96 112 L104 120 L96 128 L104 136 L96 144 L104 150" stroke="var(--signal)" stroke-width="3" fill="none"/><path d="M104 112 L96 120 L104 128 L96 136 L104 144 L96 150" stroke="var(--signal)" stroke-width="3" fill="none"/>`;
+    } else if(state==='lineover'){
+      g+=cells(i=>i===3?{h:.25}:{h:arc(i)*(i===2||i===4?.7:1)});
+      g+=lines(cx,bot,lx);
+      g+=`<path d="M100 ${bot} C100 20 100 20 100 30" stroke="var(--red)" stroke-width="3" fill="none"/><path d="M60 ${top} Q100 ${top+40} 140 ${top}" stroke="var(--red)" stroke-width="3" fill="none"/>`;
+    } else if(state==='streamer'){
+      g+=`<g class="a-flap"><rect x="88" y="26" width="24" height="96" rx="8" fill="var(--canopy-a)"/><rect x="94" y="26" width="6" height="96" fill="var(--canopy-b)"/></g>`;
+      g+=`<line x1="92" y1="122" x2="96" y2="${jy-2}" stroke="var(--muted)" stroke-width="1.2"/><line x1="108" y1="122" x2="104" y2="${jy-2}" stroke="var(--muted)" stroke-width="1.2"/>`;
+    } else if(state==='tow'){
+      g+=`<g class="a-flap"><path d="M84 54 Q100 34 116 54 Z" fill="var(--canopy-c)"/></g><path d="M100 54 Q108 110 104 ${jy+6}" stroke="var(--muted)" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>`;
+      g+=`<rect x="104" y="${jy}" width="12" height="16" rx="3" fill="var(--sky)"/>`;
+    } else if(state==='baglock'){
+      g+=`<path d="M84 26 Q100 8 116 26 Z" fill="var(--canopy-c)"/><line x1="100" y1="26" x2="100" y2="66" stroke="var(--muted)" stroke-width="1.5"/>`;
+      g+=`<rect x="86" y="66" width="28" height="34" rx="5" fill="var(--sky)"/><line x1="94" y1="100" x2="96" y2="${jy-2}" stroke="var(--muted)" stroke-width="1.2"/><line x1="106" y1="100" x2="104" y2="${jy-2}" stroke="var(--muted)" stroke-width="1.2"/>`;
+    } else if(state==='none'){
+      g+=`<text x="100" y="100" text-anchor="middle" font-family="Barlow Condensed, sans-serif" font-size="56" font-weight="700" fill="var(--red)">?</text>`;
+      g+=`<line x1="100" y1="${jy+4}" x2="116" y2="${jy+16}" stroke="var(--fig)" stroke-width="5" stroke-linecap="round"/>`;
+    }
+    return g+jumper;
+  }
+  $('#heroCanopy').innerHTML=`<g transform="translate(-6 -10) scale(1.26)">${canopy('good',{jy:166})}</g>`;
+
+  // ---------- climb-out ----------
+  const poses=[
+    {RA:0,RL:0,LA:0,LL:0,B:'',H:0},
+    {RA:-95,RL:0,LA:0,LL:0,B:'',H:0},
+    {RA:-95,RL:-22,LA:0,LL:0,B:'translateX(10px)',H:0},
+    {RA:-95,RL:-22,LA:-80,LL:0,B:'translateX(10px)',H:0},
+    {RA:-95,RL:-22,LA:-80,LL:-18,B:'translateX(26px)',H:0},
+    {RA:-95,RL:-22,LA:-80,LL:-18,B:'translateX(36px) rotate(10deg)',H:-22},
+  ];
+  const hl=[null,'cRA','cRL','cLA','cLL','cHead'];
+  const caps=[T('Face the prop','Лицом к пропеллеру','Mira a la hélice'),T('Right hand','Правая рука','Mano derecha'),T('Right foot','Правая нога','Pie derecho'),T('Left hand','Левая рука','Mano izquierda'),T('Left foot','Левая нога','Pie izquierdo'),T('Chin up, chest out','Подбородок вверх, грудь вперёд','Barbilla arriba, pecho fuera')];
+  function stepper(listSel,show,count){
+    const items=[...document.querySelectorAll(listSel+' .step')];let cur=0,t=null;
+    const go=i=>{cur=i;items.forEach((s,k)=>s.classList.toggle('on',k===i));show(i)};
+    const stop=()=>{clearInterval(t);t=null};
+    items.forEach((s,k)=>{s.onclick=()=>{stop();go(k)};s.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();stop();go(k)}}});
+    return{go,stop,next:()=>{stop();go((cur+1)%count)},play:(ms)=>{stop();go(0);t=setInterval(()=>{if(cur===count-1){stop();return}go(cur+1)},ms)}};
+  }
+  const climb=stepper('#climbSteps',i=>{const p=poses[i];
+    $('#cRA').style.transform=`rotate(${p.RA}deg)`;$('#cRL').style.transform=`rotate(${p.RL}deg)`;
+    $('#cLA').style.transform=`rotate(${p.LA}deg)`;$('#cLL').style.transform=`rotate(${p.LL}deg)`;
+    $('#cBody').style.transform=p.B;$('#cHead').style.transform=`rotate(${p.H}deg)`;
+    ['cRA','cRL','cLA','cLL','cHead'].forEach(id=>document.getElementById(id).classList.toggle('hl',hl[i]===id));
+    document.querySelector('#cHead circle').style.fill=hl[i]==='cHead'?'var(--signal)':'';
+    $('#climbCap').innerHTML=caps[i];},6);
+  $('#climbNext').onclick=climb.next;$('#climbPlay').onclick=()=>climb.play(1500);climb.go(0);
+
+  // ---------- exit count ----------
+  const seq=[
+    {cap:T('"Check in"','"Check in"','"Check in"'),look:'L',body:'',head:-30},
+    {cap:T('"OK"','"OK"','"OK"'),ok:'L',body:'',head:-30},
+    {cap:T('"Check out"','"Check out"','"Check out"'),look:'R',body:'',head:20},
+    {cap:T('"OK"','"OK"','"OK"'),ok:'R',body:'',head:20},
+    {cap:T('"Prop"','"Prop"','"Prop"'),body:'',head:-25},
+    {cap:T('"Up" · out','"Up" · наружу','"Up" · afuera'),body:'rotate(12deg)',head:-25},
+    {cap:T('"Down" · in','"Down" · внутрь','"Down" · adentro'),body:'rotate(-6deg)',head:-25},
+    {cap:T('"Arch!" · out','"Arch!" · наружу','"Arch!" · afuera'),body:'rotate(14deg)',head:-25},
+    {cap:T('Go — arch','Пошёл — прогиб','Sal — arquea'),body:'translate(110px,50px) rotate(80deg)',head:-25},
+  ];
+  let xt=null;
+  function showExit(i){const s=seq[i];$('#exitCap').innerHTML=s.cap;
+    $('#xBody').style.transform=s.body;$('#xHead').style.transform=`rotate(${s.head}deg)`;
+    $('#iL').setAttribute('opacity',s.look==='L'||s.ok==='L'?1:.35);$('#iR').setAttribute('opacity',s.look==='R'||s.ok==='R'?1:.35);
+    $('#okL').setAttribute('opacity',s.ok==='L'?1:0);$('#okR').setAttribute('opacity',s.ok==='R'?1:0);}
+  $('#exitPlay').onclick=()=>{clearTimeout(xt);let i=0;const run=()=>{showExit(i);i++;if(i<seq.length)xt=setTimeout(run,i>=5?800:1100);else xt=setTimeout(()=>{showExit(4);$('#exitCap').innerHTML=T('Again?','Ещё раз?','¿Otra vez?')},1800)};run();};
+  showExit(4);$('#exitCap').innerHTML=T('Press play','Нажми «Пуск»','Pulsa reproducir');
+
+  // ---------- box ----------
+  $('#boxCap').innerHTML=T('Box','Коробочка','Caja');
+  let bt=null;
+  $('#boxPlay').onclick=()=>{clearTimeout(bt);
+    $('#bLF').style.transform='rotate(52deg)';$('#bRF').style.transform='rotate(-52deg)';$('#boxCap').innerHTML=T('Thumbs to ears','Пальцы к ушам','Pulgares a las orejas');
+    bt=setTimeout(()=>{$('#bLF').style.transform='';$('#bRF').style.transform='';$('#boxCap').innerHTML=T('Open out: square','Развёл: квадрат','Abre: en escuadra')},1400);};
+
+  // ---------- altimeter + flow ----------
+  const MAX=15,ang=v=>-135+v/MAX*270;
+  let tk='';for(let v=0;v<=MAX;v++){const a=(ang(v)-90)*Math.PI/180,r1=v%5?92:86,r2=100;
+    const c=(v===6||v===5)?'var(--signal)':'var(--muted)';
+    tk+=`<line x1="${120+r1*Math.cos(a)}" y1="${120+r1*Math.sin(a)}" x2="${120+r2*Math.cos(a)}" y2="${120+r2*Math.sin(a)}" stroke="${c}" stroke-width="${v%5?2:4}"/>`;
+    if(v%3===0||v===5){tk+=`<text x="${120+72*Math.cos(a)}" y="${124+72*Math.sin(a)}" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="${c}">${v}</text>`}}
+  $('#altTicks').innerHTML=tk;
+  const flow=[
+    {a:13.5,alt:'~13,500',t:T('Exit, arch','Отделение, прогиб','Salida, arquea'),s:T('Hips down, chin up. Exit altitude not confirmed.','Таз вниз, подбородок вверх. Высоту выброски уточнить.','Cadera abajo, barbilla arriba. Altura de salida sin confirmar.')+' '+Q},
+    {a:12.5,alt:'',t:T('Circle of awareness','Круг внимания (COA)','Círculo de atención'),s:T('Altitude → left instructor → right instructor → chin up → altitude.','Высота → левый инструктор → правый → подбородок вверх → высота.','Altura → instructor izquierdo → instructor derecho → barbilla arriba → altura.')},
+    {a:11.5,alt:'',t:T('3 practice touches','3 тренировочных касания','3 toques de práctica'),s:T('Left hand over your head, right hand back to the pilot chute. Back to arch. Three times. Then altitude.','Левая рука над головой, правая назад к вытяжному. Обратно в прогиб. Три раза. Потом высота.','Mano izquierda sobre la cabeza, mano derecha atrás al extractor. Vuelve al arco. Tres veces. Luego la altura.')},
+    {a:10,alt:'',t:T('Circle of awareness again','Снова круг внимания','Círculo de atención otra vez'),s:T('Left → right → chin up → altitude.','Влево → вправо → подбородок вверх → высота.','Izquierda → derecha → barbilla arriba → altura.')},
+    {a:8,alt:'',t:T('Hold the box, altitude every ~5 s','Держим коробочку, высота каждые ~5 с','Mantén la caja, altura cada ~5 s'),s:T('Relax, legs, arch. Answer instructor signals.','Расслабиться, ноги, прогиб. Реагировать на жесты.','Relájate, piernas, arco. Responde a las señales de los instructores.')},
+    {a:6,alt:'6,000',hot:1,t:T('Lock on','Только высотомер','Lock on'),s:T('No more exercises.','Никаких упражнений.','No más ejercicios.')},
+    {a:5.5,alt:'5,500',hot:1,t:T('PULL','РАСКРЫТИЕ','ABRIR'),s:T('Look, reach, pull. Then count to five (Part III).','Посмотрел, дотянулся, выдернул. Потом счёт до пяти (часть III).','Mira, alcanza, tira. Luego cuenta hasta cinco (Parte III).')},
+  ];
+  const fl=$('#flowList');
+  fl.innerHTML=flow.map((f,i)=>`<li tabindex="0" class="${f.hot?'hot':''}"><div class="alt">${f.alt||'↓'}</div><div><b>${f.t}</b><span class="sub">${f.s}</span></div></li>`).join('');
+  function showFlow(i){const f=flow[i];$('#needle').style.transform=`rotate(${ang(f.a)}deg)`;
+    $('#altRead').textContent=(f.a*1000).toLocaleString('en-US')+' ft';$('#flowCap').innerHTML=f.t;
+    [...fl.children].forEach((li,k)=>li.classList.toggle('on',k===i));}
+  [...fl.children].forEach((li,k)=>{li.onclick=()=>showFlow(k);li.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showFlow(k)}}});
+  showFlow(0);
+
+  // ---------- hand signals ----------
+  function hand({f=[1,1,1,1],thumb='in',rot=0,anim='',fanim=[],extra=''}){
+    const xs=[78,94,110,126],L=46;
+    const fingers=f.map((k,i)=>{const h=L*k;return `<rect class="${fanim[i]||''}" x="${xs[i]-6}" y="${108-h}" width="13" height="${h+8}" rx="6.5"/>`}).join('');
+    let th='';
+    if(thumb==='out')th=`<rect x="44" y="118" width="36" height="13" rx="6.5" transform="rotate(-25 72 124)"/>`;
+    if(thumb==='in')th=`<rect x="66" y="122" width="26" height="13" rx="6.5" transform="rotate(-10 72 128)"/>`;
+    if(thumb==='up')th=`<rect x="56" y="92" width="13" height="40" rx="6.5"/>`;
+    return `<svg viewBox="0 0 200 200" aria-hidden="true"><g class="${anim}"><g class="hand" transform="rotate(${rot} 100 130)">
+      <rect class="palm" x="70" y="100" width="66" height="62" rx="16"/>${fingers}${th}
+      <rect class="glove" x="74" y="160" width="58" height="26" rx="6"/></g></g>${extra}</svg>`;}
+  const altIcon=`<g><rect x="150" y="150" width="34" height="34" rx="8" fill="var(--surface)" stroke="var(--ink)" stroke-width="3"/><line x1="167" y1="167" x2="167" y2="155" stroke="var(--signal)" stroke-width="3" stroke-linecap="round"/></g>`;
+  const sigs=[
+    {key:1,name:T('Pull','Раскрывай','Abrir'),what:T('Index finger pointed at you. Pull now.','Указательный палец направлен на тебя. Раскрывай сейчас.','Dedo índice apuntándote. Abre ya.'),svg:hand({f:[1,.35,.35,.35],rot:90,anim:'a-poke'})},
+    {name:T('Arch','Прогнись','Arco'),what:T('Flat hand pushed forward. Hips down, arch harder.','Ровная ладонь вперёд. Таз вниз, сильнее прогиб.','Mano plana empujada hacia adelante. Cadera abajo, arquea más.'),svg:hand({anim:'a-push'})},
+    {name:T('Legs out','Выпрями ноги','Piernas fuera'),what:T('Two fingers extend. Straighten your legs a little.','Два пальца выпрямляются. Немного выпрями ноги.','Dos dedos se estiran. Estira un poco las piernas.'),svg:hand({f:[1,1,.35,.35],fanim:['a-out','a-out']})},
+    {name:T('Legs in','Подогни ноги','Piernas dentro'),what:T('Two fingers bend. Bring your legs in.','Два пальца сгибаются. Подтяни ноги.','Dos dedos se doblan. Recoge las piernas.'),svg:hand({f:[1,1,.35,.35],fanim:['a-in','a-in']})},
+    {name:T('Relax','Расслабься','Relájate'),what:T('Loose hand shaking side to side.','Расслабленная кисть качается.','Mano suelta que se sacude de lado a lado.'),svg:hand({thumb:'out',anim:'a-wiggle'})},
+    {name:T('Check altitude','Проверь высоту','Mira la altura'),what:T('Points at your altimeter.','Показывает на твой высотомер.','Señala tu altímetro.')+' '+Q,svg:hand({f:[1,.35,.35,.35],rot:140,anim:'a-tap',extra:altIcon})},
+    {name:T('Thumb down','Палец вниз','Pulgar abajo'),what:T('By ear: "hips down"? Ask what it means.','На слух: «таз вниз»? Спросить, что значит.','De oído: ¿"cadera abajo"? Pregunta qué significa.')+' '+Q,svg:hand({f:[.35,.35,.35,.35],thumb:'up',rot:180,anim:'a-push'})},
+  ];
+  // real hand signals, filmed (Skydive Fundamentals, youtu.be/V4rn53L4isw)
+  const sigV=[
+    {key:1,v:'s_pull',name:T('Pull','Раскрывай','Abrir'),what:T('One finger pointed, in any direction. Pull right now; you\'ll talk about why on the ground.','Один палец, направлен в любую сторону. Раскрывайся сразу; почему — обсудите на земле.','Un dedo apuntando, en cualquier dirección. Abre ahora mismo; hablarán del porqué en tierra.')},
+    {v:'s_arch',name:T('Arch','Прогнись','Arco'),what:T('Thumb down. Push your hips forward / down, arch more. This is the "thumb down" you remembered.','Большой палец вниз. Таз вперёд / вниз, сильнее прогиб. Это тот самый «палец вниз», который ты запомнил.','Pulgar abajo. Empuja la cadera hacia adelante / abajo, arquea más. Este es el "pulgar abajo" que recordabas.')+' '+Q},
+    {v:'s_legsout',name:T('Legs out','Выпрями ноги','Piernas fuera'),what:T('Two fingers, V. Smoothly extend your legs until you get a thumbs up.','Два пальца, буква V. Плавно выпрямляй ноги, пока не покажут «палец вверх».','Dos dedos, V. Estira las piernas suavemente hasta que te hagan pulgar arriba.')},
+    {v:'s_good',name:T('Good','Хорошо','Bien'),what:T('Thumbs up. Hold what you have now.','Палец вверх. Держи то, что сейчас.','Pulgar arriba. Mantén lo que tienes ahora.')},
+    {v:'s_relax',name:T('Relax','Расслабься','Relájate'),what:T('Shaking, floppy hand. Deep breath, loosen up, shake your hands.','Трясущаяся расслабленная кисть. Глубокий вдох, расслабься, потряси кистями.','Mano que se sacude, floja. Respira hondo, suéltate, sacude las manos.')},
+    {v:'s_arms',name:T('Arms 90/90','Руки 90/90','Brazos 90/90'),what:T('Thumb and pinky out, an "L". Check arm position: 90° at the shoulder, 90° at the elbow.','Большой палец и мизинец, буква «L». Проверь руки: 90° в плече, 90° в локте.','Pulgar y meñique fuera, una "L". Revisa la posición de los brazos: 90° en el hombro, 90° en el codo.')},
+    {v:'s_toetap',name:T('Toe taps','Ноги ровно','Toque de puntas'),what:T('Bent flat hand. Legs too wide or uneven: tap your toes together and even them out.','Согнутая ладонь. Ноги слишком широко или неровно: стукни носками и выровняй.','Mano plana doblada. Piernas demasiado abiertas o desparejas: junta las puntas de los pies y empárejalas.')},
+    {v:'s_coa',name:T('Circle of awareness','Круг внимания','Círculo de atención'),what:T('Fingers bunched. Do your circle of awareness now.','Пальцы собраны в щепоть. Сделай круг внимания сейчас.','Dedos juntos en punta. Haz tu círculo de atención ahora.')},
+    {v:'s_touch',name:T('Practice touch','Касание ручки','Toque de práctica'),what:T('Fist. Do one more practice touch, slowly.','Кулак. Сделай ещё одно касание ручки, плавно.','Puño. Haz un toque de práctica más, despacio.')},
+    {v:'s_chin',name:T('Chin up','Подбородок вверх','Barbilla arriba'),what:T('Tap on the chin. Head up, look forward.','Касание подбородка. Голову вверх, смотри вперёд.','Toque en la barbilla. Cabeza arriba, mira al frente.')},
+    {v:'s_alt',name:T('Check altitude','Проверь высоту','Mira la altura'),what:T('Slap or tap on your wrist. Look at the altimeter.','Хлопок или касание по запястью. Посмотри на высотомер.','Palmada o toque en la muñeca. Mira el altímetro.')},
+    {name:T('Shaking you on exit','Трясут на выходе','Te sacuden al salir'),what:T('An instructor shakes your harness right after exit: push hips further forward, chin up.','Инструктор трясёт тебя за систему сразу после отделения: таз ещё вперёд, подбородок вверх.','Un instructor sacude tu arnés justo después de salir: empuja más la cadera hacia adelante, barbilla arriba.')},
+  ];
+  $('#sigGrid').innerHTML=sigV.map(s=>`<div class="card ${s.key?'key':''}" tabindex="0">${s.v?`<video src="media/${s.v}.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>`:''}<div class="name">${s.name}</div><div class="what">${s.what}</div></div>`).join('');
+
+  // ---------- deploy ----------
+  const depArt=$('#depArt');
+  function depFrame(k){ // k 0..5
+    if(k===0){depArt.innerHTML=canopy('none',{jy:160}).replace(/<text[\s\S]*?<\/text>/,'');return}
+    const s=Math.min(1,.15+k*.17);
+    depArt.innerHTML=`<g style="transform:translate(100px,160px) scale(${s},${Math.min(1,s*1.1)}) translate(-100px,-160px)">${canopy('good',{jy:160})}</g>`;
+  }
+  depFrame(0);$('#depCap').innerHTML=T('5,500 ft','5 500 футов','5,500 ft');
+  const cnt=[...document.querySelectorAll('#countRow span')],ticks=[...document.querySelectorAll('#tick li')];
+  let dt=[];
+  $('#depPlay').onclick=()=>{dt.forEach(clearTimeout);dt=[];cnt.forEach(c=>c.classList.remove('on'));ticks.forEach(c=>c.classList.remove('on'));
+    depFrame(0);$('#depCap').innerHTML=T('Pull','Раскрытие','Abrir');
+    for(let k=1;k<=5;k++)dt.push(setTimeout(()=>{depFrame(k);cnt[k-1].classList.add('on');$('#depCap').innerHTML=T(k+' thousand',k===1?'Тысяча один':'Тысяча '+['','один','два','три','четыре','пять'][k])},k*900));
+    ticks.forEach((t,i)=>dt.push(setTimeout(()=>{t.classList.add('on');$('#depCap').innerHTML=t.querySelector('b').innerHTML+' ✓'},5*900+700+i*700)));
+  };
+
+  // ---------- EP ----------
+  const RED=[91,124],SIL=[150,123];
+  const epS=[
+    {eye:RED,cap:T('Look red','Смотрим на красную','Mira la roja')},
+    {eye:RED,rh:[RED[0]-40,RED[1]-170+0],cap:T('Grab red','Берём красную','Agarra la roja')},
+    {eye:SIL,rh:1,cap:T('Look silver','Смотрим на кольцо','Mira la plateada')},
+    {eye:SIL,rh:1,lh:1,cap:T('Grab silver','Берём кольцо','Agarra la plateada')},
+    {eye:SIL,rh:2,lh:1,red:1,cap:T('Peel & pull red','Отрываем красную','Despega y tira de la roja')},
+    {eye:SIL,rh:2,lh:2,red:1,sil:1,cap:T('Pull silver','Тянем кольцо','Tira de la plateada')},
+    {rh:2,lh:2,red:1,sil:1,res:1,cap:T('Arch · check reserve','Прогиб · проверка запасного','Arquea · revisa la reserva')},
+  ];
+  const ep=stepper('#epSteps',i=>{$('#epCap').innerHTML=epS[i].cap;},7);
+  $('#epNext').onclick=ep.next;ep.go(0);
+
+  // ---------- landing pattern ----------
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce){const m=$('#patMove');m&&m.remove();$('#patDot').remove()}
+  const pat=[
+    {p:[275,205],alt:'2,000',t:T('Over the holding area','Над зоной ожидания','Sobre la zona de espera'),s:T('The point near the playground. Ask: can I reach the landing area from here?','Точка у детской площадки. Вопрос себе: долечу ли отсюда до площадки?','El punto cerca del parque infantil. Pregúntate: ¿llego a la zona de aterrizaje desde aquí?')+' '+Q},
+    {p:[275,205],alt:'2,000→1,000',t:T('Hold there','Держимся там','Espera ahí'),s:T('Circle or S-turns over the point, whatever the wind. Watch the windsock and the other canopies.','Кружим или делаем S-повороты над точкой, какой бы ни был ветер. Смотрим на колдун и другие купола.','Círculos o eses sobre el punto, sea cual sea el viento. Mira la manga de viento y las otras velas.')},
+    {p:[250,200],alt:'900',hot:1,t:T('Enter the pattern: downwind','Вход в схему: по ветру','Entra al circuito: viento en cola'),s:T('Wind at your back, flying alongside the landing area.','Ветер в спину, летим вдоль площадки.','Viento a tu espalda, volando paralelo a la zona de aterrizaje.')},
+    {p:[60,200],alt:'600',hot:1,t:T('Turn 90° onto base','Поворот 90° на базовую','Gira 90° a base'),s:T('Crosswind leg.','Поперёк ветра.','Tramo con viento cruzado.')},
+    {p:[60,70],alt:'300',hot:1,t:T('Turn 90° onto final','Поворот 90° на финал','Gira 90° a final'),s:T('Into the wind, toward the target. From here only small corrections (≤ 45°).','Против ветра, на цель. Дальше только небольшие поправки (≤ 45°).','Contra el viento, hacia el blanco. Desde aquí solo correcciones pequeñas (≤ 45°).')},
+    {p:[188,70],alt:'10 ft',hot:1,t:T('Flare','Flare','Flare'),s:T('About 3 m off the ground. Full, smooth, hold it.','Примерно 3 м над землёй. Полностью, плавно, держим.','A unos 3 m del suelo. Completo, suave, mantenlo.')},
+  ];
+  const pl=$('#patList');
+  pl.innerHTML=pat.map(f=>`<li tabindex="0" class="${f.hot?'hot':''}"><div class="alt">${f.alt}</div><div><b>${f.t}</b><span class="sub">${f.s}</span></div></li>`).join('');
+  function showPat(i){const f=pat[i],m=$('#patMark');m.setAttribute('cx',f.p[0]);m.setAttribute('cy',f.p[1]);m.setAttribute('opacity',1);
+    $('#patCap').innerHTML=f.alt+' · '+f.t;[...pl.children].forEach((li,k)=>li.classList.toggle('on',k===i));}
+  [...pl.children].forEach((li,k)=>{li.onclick=()=>showPat(k);li.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();showPat(k)}}});
+  showPat(2);
+
+
+  // ---------- malfunctions ----------
+  const groups=[
+    {pill:'ep',title:T('Nothing out, or almost nothing','Ничего не вышло или почти ничего','Nada fuera, o casi nada'),sub:T('High speed: you are still falling fast.','Высокая скорость: ты всё ещё быстро падаешь.','Velocidad alta: sigues cayendo rápido.'),items:[
+      {st:'none',name:T('Hard pull / can\'t find the handle','Тугое вытягивание / не найти ручку','Apertura dura / no encuentras la manija'),what:T('The pilot chute handle won\'t come out, or your hand can\'t find it.','Ручка вытяжного не выходит, или рука её не находит.','La manija del extractor no sale, o tu mano no la encuentra.'),act:T('<b>Two more tries</b>, then emergency procedure.','<b>Ещё две попытки</b>, потом аварийная процедура.','<b>Dos intentos más</b>, luego procedimiento de emergencia.')+' '+Q},
+      {st:'tow',name:T('Pilot chute in tow','Вытяжной в следе','Extractor remolcado (pilot chute in tow)'),what:T('The small pilot chute flies behind you but the container stays closed.','Маленький вытяжной летит за тобой, но ранец остался закрыт.','El pequeño extractor vuela detrás de ti pero el contenedor sigue cerrado.'),act:T('<b>Emergency procedure.</b> USPA allows two ways: reserve only, or cut away then reserve. Do what your school teaches.','<b>Аварийная процедура.</b> USPA допускает два варианта: сразу запасной или отцеп и запасной. Делай так, как учит твоя школа.','<b>Procedimiento de emergencia.</b> USPA permite dos formas: solo reserva, o liberar y luego reserva. Haz lo que enseña tu escuela.')+' '+Q},
+      {st:'baglock',name:T('Bag lock','Купол застрял в камере','Bag lock'),what:T('The bag is out, but the canopy is stuck inside it.','Камера вышла, а купол остался внутри неё.','La bolsa salió, pero la vela está atascada dentro.'),act:T('<b>Emergency procedure.</b>','<b>Аварийная процедура.</b>','<b>Procedimiento de emergencia.</b>')},
+    ]},
+    {pill:'ep',title:T('Out, but not flyable','Вышел, но не летит','Fuera, pero no se puede volar'),sub:T('Partial: you lose height fast, the canopy is not a rectangle.','Частичный отказ: быстро теряешь высоту, купол не прямоугольник.','Parcial: pierdes altura rápido, la vela no es un rectángulo.'),items:[
+      {st:'streamer',name:T('Streamer','Колбаса','Streamer'),what:T('Canopy out but not inflated, flapping like a flag.','Купол вышел, но не наполнился, полощется как флаг.','Vela fuera pero sin inflar, flameando como una bandera.'),act:T('<b>Emergency procedure.</b>','<b>Аварийная процедура.</b>','<b>Procedimiento de emergencia.</b>')},
+      {st:'lineover',name:T('Line-over','Перехлёст','Line-over'),what:T('A line goes over the top and splits the canopy in two. "Caught on top".','Стропа легла поверх и разделила купол на две части. «Зацепился сверху».','Una línea pasa por encima y parte la vela en dos. "Atrapada por arriba".'),act:T('<b>Emergency procedure. Don\'t try to fix it.</b>','<b>Аварийная процедура. Не пытаться исправить.</b>','<b>Procedimiento de emergencia. No intentes arreglarlo.</b>')},
+      {st:'twist',name:T('Spinning, can\'t control','Вращается, не управляется','Gira, no se puede controlar'),what:T('Fast spin or a turn you can\'t stop, broken lines.','Быстрое вращение или поворот, который не остановить, порванные стропы.','Giro rápido o un giro que no puedes parar, líneas rotas.'),act:T('<b>Emergency procedure.</b> Don\'t wait.','<b>Аварийная процедура.</b> Не ждать.','<b>Procedimiento de emergencia.</b> No esperes.')},
+    ]},
+    {pill:'fix',title:T('Fixable: two tries, watch the altitude','Можно исправить: две попытки, следим за высотой','Arreglable: dos intentos, vigila la altura'),sub:T('The canopy is there and mostly square. Two tries to fix it. Still not good, or at the decision altitude: emergency procedure.','Купол есть и почти квадратный. Две попытки исправить. Не получилось или дошли до высоты принятия решения — аварийная процедура.','La vela está y es casi cuadrada. Dos intentos para arreglarla. ¿Sigue mal, o llegaste a la altura de decisión? Procedimiento de emergencia.'),items:[
+      {st:'twist',fix:1,name:T('Line twists','Перекрут строп','Vueltas en las líneas (twists)'),what:T('Lines twisted under the canopy, you may slowly turn.','Стропы перекручены под куполом, тебя может медленно крутить.','Líneas retorcidas bajo la vela, puede que gires despacio.'),act:T('<b>Grab the rear risers, spread them apart, kick</b> to untwist. Don\'t unstow the toggles until the twists are out.','<b>Взять задние свободные концы, развести их и бить ногами</b>, чтобы раскрутиться. Клеванты не снимать, пока не раскрутишься.','<b>Agarra las bandas traseras, sepáralas, patea</b> para desenroscar. No sueltes los batidores hasta que se quiten las vueltas.')},
+      {st:'slider',fix:1,name:T('Slider stuck up','Слайдер наверху','Slider trabado arriba'),what:T('The slider stays at the top, canopy only half open.','Слайдер остался вверху, купол раскрыт не полностью.','El slider se queda arriba, la vela solo medio abierta.'),act:T('<b>Pump the rear risers</b> a few times. Check altitude.','<b>Покачать задние свободные концы</b> несколько раз. Проверить высоту.','<b>Bombea las bandas traseras</b> unas cuantas veces. Mira la altura.')+' '+Q},
+      {st:'endcells',fix:1,name:T('End cells closed','Закрыты крайние секции','Celdas de los extremos cerradas'),what:T('The outer cells stay folded.','Крайние секции не наполнились.','Las celdas exteriores siguen plegadas.'),act:T('<b>Pull both toggles down</b>, hold 2–3 s, let up.','<b>Обе клеванты вниз</b>, держать 2–3 с, отпустить.','<b>Baja los dos batidores</b>, mantén 2–3 s, suelta.')+' '+Q},
+    ]},
+  ];
+  $('#malGroups').innerHTML=groups.map(g=>`<div class="mgroup"><h4>${g.title}<span class="pill ${g.pill}">${g.pill==='ep'?'EP':'FIX'}</span></h4><p class="lead" style="color:var(--muted);font-size:15px">${g.sub}</p><div class="mals">${g.items.map(m=>`<div class="card ${m.fix?'fixable':''}" tabindex="0">${(()=>{const v=({tow:'pov_tow',baglock:'pov_baglock',streamer:'m_streamer',lineover:'pov_lineover',slider:'m_slider',endcells:'m_endcells'})[m.st]||(m.st==='twist'&&m.fix?'pov_twist':null);return v?`<video src="media/${v}.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>`:`<svg viewBox="0 0 200 200" aria-hidden="true">${canopy(m.st)}</svg>`})()}<div class="name">${m.name}</div><div class="what">${m.what}</div><div class="act">${m.act}</div></div>`).join('')}</div></div>`).join('');
+
+  // ---------- real footage clips (short silent loops cut from public tutorials) ----------
+  const C=(v,t,src,id,s)=>({v,t,src,id,s});
+  const clips={
+    climb:[C('climb',T('Real climb-out and exit, step by step','Настоящий выход в дверь и отделение','Climb-out y salida reales, paso a paso'),'Skydive Spaceland','ufz1HjyYs_0',28)],
+    body:[C('arch',T('Arch practice on the ground, against a wall','Тренировка прогиба у стены','Práctica del arco en tierra, contra una pared'),'Skydive Fundamentals','7OT3X9lVt8c',19),C('tunnel',T('The box in the wind tunnel: hips, knees, chin','Коробочка в аэротрубе: таз, колени, подбородок','La caja en el túnel de viento: cadera, rodillas, barbilla'),'Rhythm Skydiving','YCe5OHjtQF0',129)],
+    flow:[C('coa',T('Circle of awareness: horizon, altimeter, instructors','Круг внимания: горизонт, высотомер, инструкторы','Círculo de atención: horizonte, altímetro, instructores'),'Skydive Fundamentals','LpoztnjW5c8',233),C('touches',T('Three practice touches','Три касания ручки','Tres toques de práctica'),'Skydive Fundamentals','LpoztnjW5c8',274)],
+    deploy:[C('deploy',T('Lock on, wave off, reach, throw','Высотомер, отмашка, дотянуться, выбросить','Lock on, wave-off, alcanzar, lanzar'),'Skydive Spaceland','ufz1HjyYs_0',146),C('throw',T('Locate, grip, throw, arch, count','Найти, взять, выбросить, прогиб, счёт','Ubicar, agarrar, lanzar, arquear, contar'),'APF','PTYsjH7DSVA',124),C('check',T('Canopy check: shape, slider, toggles, practice flares','Проверка купола: форма, слайдер, клеванты, пробные flare','Revisión de la vela: forma, slider, batidores, flares de práctica'),'APF','PTYsjH7DSVA',154)],
+    pattern:[C('holding',T('Holding area, explained on a real dropzone','Зона ожидания на настоящей площадке','La zona de espera, explicada en una zona de salto real'),'Skydive Spaceland','puD56VJ8loA',84),C('pattern',T('Flying the pattern: downwind, base, final','Схема захода: по ветру, базовая, финал','Volar el circuito: viento en cola, base, final'),'Skydive Spaceland','puD56VJ8loA',110)],
+    flare:[C('flare_cue',T('Where to start the flare','Где начинать flare','Dónde empezar el flare'),'Rhythm Skydiving','tUFSss3guic',33),C('flare_end',T('Level out just above the ground, slide','Выровняться у самой земли и скользить','Nivelar justo sobre el suelo, deslizar'),'Rhythm Skydiving','tUFSss3guic',148),C('plf',T('PLF: feet, calf, thigh, hip, back','PLF: стопы, икра, бедро, ягодица, спина','PLF: pies, pantorrilla, muslo, cadera, espalda'),'USPA','lCWKPIQuK8Q',0)],
+    ep:[C('ep2',T('Two hands on the red handle (what USPA\'s safety director recommends)','Обе руки на красной ручке (так советует директор по безопасности USPA)','Dos manos en la manija roja (lo que recomienda el director de seguridad de USPA)'),'Bodyflight Spotlight','nC6D6NHjccI',192)],
+  };
+  Object.entries(clips).forEach(([sec,list])=>{const el=document.getElementById(sec);if(!el)return;
+    const d=document.createElement('div');d.className='clips';
+    d.innerHTML=list.map(c=>`<figure class="clip"><video src="media/${c.v}.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span>${c.t}</span><a href="https://www.youtube.com/watch?v=${c.id}&t=${c.s}s" target="_blank" rel="noopener">▶ ${c.src} · YouTube</a></figcaption></figure>`).join('');
+    el.appendChild(d);});
+
+  // ---------- videos to rewatch (open YouTube at the exact second) ----------
+  const V=(id,s,t,src)=>({id,s,t,src});
+  const vids={
+    climb:[V('ufz1HjyYs_0',28,T('Climb-out and exit','Выход в дверь и отделение','Climb-out y salida'),'Skydive Spaceland'),V('7YxgNbzzwHk',43,T('Door and climb-out, Twin Otter','Дверь и выход, Twin Otter','Puerta y climb-out, Twin Otter'),'Rhythm Skydiving')],
+    count:[V('kd8HVlIfzqc',0,T('Real AFF exit with instructors','Настоящее отделение AFF с инструкторами','Salida AFF real con instructores'),'Perris'),V('LpoztnjW5c8',134,T('Exit count explained','Объяснение отсчёта','El conteo de salida explicado'),'Skydive Fundamentals')],
+    body:[V('7OT3X9lVt8c',19,T('Arch practice on the ground','Тренировка прогиба на земле','Práctica del arco en tierra'),'Skydive Fundamentals'),V('YCe5OHjtQF0',0,T('Box position in the tunnel','Коробочка в аэротрубе','Posición de caja en el túnel'),'Rhythm Skydiving')],
+    flow:[V('LpoztnjW5c8',233,T('Circle of awareness and 3 practice touches','Круг внимания и 3 касания','Círculo de atención y 3 toques de práctica'),'Skydive Fundamentals'),V('zVEcVYljD6Y',10,T('Category A jump in the air','Прыжок категории A в воздухе','Salto de categoría A en el aire'),'Skydive Palatka')],
+    signals:[V('V4rn53L4isw',105,T('All freefall hand signals','Все жесты свободного падения','Todas las señales de mano en caída libre'),'Skydive Fundamentals'),V('o6hGuKffq1k',399,T('Signals, longer version','Жесты, подробнее','Señales, versión larga'),'Skydive Fundamentals')],
+    deploy:[V('ufz1HjyYs_0',146,T('Lock on, wave off, throw','Высотомер, отмашка, выброс','Lock on, wave-off, lanzar'),'Skydive Spaceland'),V('PTYsjH7DSVA',124,T('Locate, grip, throw, count','Найти, взять, выбросить, считать','Ubicar, agarrar, lanzar, contar'),'APF'),V('PTYsjH7DSVA',154,T('Canopy check and practice flares','Проверка купола и пробные flare','Revisión de la vela y flares de práctica'),'APF')],
+    ep:[V('nC6D6NHjccI',149,T('Cutaway and reserve: one hand per handle, then two hands','Отцеп и запасной: по руке на ручку, потом обеими','Liberación y reserva: una mano por manija, luego dos manos'),'Bodyflight Spotlight'),V('YD1we-F9-3c',0,T('Emergency procedures drill','Отработка аварийной процедуры','Simulacro de procedimientos de emergencia'),'APF')],
+    mal:[V('MwIcFPK6DKU',59,T('Malfunction types overview','Обзор видов отказов','Resumen de tipos de malfunción'),'Skydive Vibes'),V('MZx3lN-lwok',65,T('Line twists: risers apart, kick','Перекрут: развести концы, бить ногами','Vueltas en las líneas: bandas separadas, patada'),'APF'),V('lPmK9OJHdXc',107,T('Line twists, real footage','Перекрут, реальное видео','Vueltas en las líneas, imágenes reales'),'Skydive Vibes'),V('iBNf-HsD3Ms',101,T('Pilot chute in tow','Вытяжной в следе','Extractor remolcado (pilot chute in tow)'),'APF'),V('iBNf-HsD3Ms',242,T('Bag lock','Купол в камере','Bag lock'),'APF'),V('iBNf-HsD3Ms',303,T('Streamer','Колбаса','Streamer'),'APF'),V('UL87Ceo02L4',150,T('Line-over','Перехлёст','Line-over'),'APF'),V('MZx3lN-lwok',125,T('End cells closed','Закрыты крайние секции','Celdas de los extremos cerradas'),'APF'),V('MZx3lN-lwok',240,T('Slider stuck','Слайдер наверху','Slider trabado'),'APF')],
+  };
+  const mmss=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+  Object.entries(vids).forEach(([sec,list])=>{const el=document.getElementById(sec);if(!el)return;
+    const d=document.createElement('div');d.className='watch';
+    d.innerHTML=`<span class="lbl">${T('Watch','Смотреть','Ver')}</span>`+list.map(v=>`<a href="https://www.youtube.com/watch?v=${v.id}&t=${v.s}s" target="_blank" rel="noopener"><span class="tc">▶ ${mmss(v.s)}</span><span>${v.t}</span><span class="src">· ${v.src}</span></a>`).join('');
+    el.appendChild(d);});
+
+  // quiz toggles + reveal
+  document.querySelectorAll('.card').forEach(c=>{c.onclick=()=>c.classList.toggle('reveal');c.onkeydown=e=>{if(e.key==='Enter'){c.classList.toggle('reveal')}}});
+  document.querySelectorAll('.quizBtn').forEach(b=>b.onclick=()=>{const on=document.body.classList.toggle('quiz');document.querySelectorAll('.quizBtn').forEach(x=>x.setAttribute('aria-pressed',on));document.querySelectorAll('.card').forEach(c=>c.classList.remove('reveal'))});
+})();
+</script>

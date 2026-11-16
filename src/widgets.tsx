@@ -1,0 +1,273 @@
+import { useEffect, useRef, useState } from 'react';
+import type { AltRow, Block, L, Step } from './content/types';
+import { Rich, useLang } from './i18n';
+import { ui } from './ui';
+import { ClipFigure } from './components/Blocks';
+
+// Drawings are ink on the card; only the emergency red is a colour, as in the rest of the page.
+
+function StepList({ steps, on, onPick }: { steps: Step[]; on: number; onPick: (i: number) => void }) {
+  return (
+    <ol className="steps click">
+      {steps.map((s, i) => (
+        <li key={i} className={i === on ? 'on' : ''} tabIndex={0} onClick={() => onPick(i)}
+          onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPick(i); } }}>
+          <div><span className="st"><Rich s={s.title} /></span>{s.sub && <span className="sub"><Rich s={s.sub} /></span>}</div>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function useTimers() {
+  const ids = useRef<number[]>([]);
+  useEffect(() => () => ids.current.forEach(clearTimeout), []);
+  return {
+    clear: () => { ids.current.forEach(clearTimeout); ids.current = []; },
+    after: (ms: number, f: () => void) => { ids.current.push(window.setTimeout(f, ms)); },
+  };
+}
+
+/* ---------- climb-out: six moves into the door ---------- */
+const POSES = [
+  { RA: 0, RL: 0, LA: 0, LL: 0, B: '', H: 0 },
+  { RA: -95, RL: 0, LA: 0, LL: 0, B: '', H: 0 },
+  { RA: -95, RL: -22, LA: 0, LL: 0, B: 'translateX(10px)', H: 0 },
+  { RA: -95, RL: -22, LA: -80, LL: 0, B: 'translateX(10px)', H: 0 },
+  { RA: -95, RL: -22, LA: -80, LL: -18, B: 'translateX(26px)', H: 0 },
+  { RA: -95, RL: -22, LA: -80, LL: -18, B: 'translateX(36px) rotate(10deg)', H: -22 },
+];
+const HL = ['', 'RA', 'RL', 'LA', 'LL', 'H'];
+
+export function Climb({ steps, captions }: { steps: Step[]; captions: L[] }) {
+  const { t } = useLang();
+  const [i, setI] = useState(0);
+  const timers = useTimers();
+  const p = POSES[i];
+  const play = () => { timers.clear(); setI(0); for (let k = 1; k < 6; k++) timers.after(k * 1500, () => setI(k)); };
+  const limb = (id: string, x1: number, y1: number, y2: number, rot: number) => (
+    <g className={`pose ${HL[i] === id ? 'hl' : ''}`} style={{ transformOrigin: `${x1}px ${y1}px`, transform: `rotate(${rot}deg)` }}>
+      <line x1={x1} y1={y1} x2={x1} y2={y2} />
+    </g>
+  );
+  return (
+    <div className="split">
+      <div><StepList steps={steps} on={i} onPick={k => { timers.clear(); setI(k); }} /></div>
+      <div className="stage sticky">
+        <svg viewBox="0 0 320 220" role="img" aria-label="Climb-out">
+          <rect x="228" y="30" width="80" height="162" rx="4" fill="var(--soft)" />
+          <rect x="222" y="24" width="8" height="170" fill="var(--line)" />
+          <rect x="0" y="190" width="320" height="6" fill="var(--line)" />
+          <g className="prop" transform="translate(286 52)"><rect x="-3" y="-20" width="6" height="40" rx="3" fill="var(--faint)" /><rect x="-20" y="-3" width="40" height="6" rx="3" fill="var(--faint)" /></g>
+          <g className="fig pose" style={{ transformOrigin: '150px 190px', transform: p.B }}>
+            <g className="far">{limb('LL', 150, 132, 188, p.LL)}{limb('LA', 150, 84, 126, p.LA)}</g>
+            <line x1="150" y1="80" x2="150" y2="132" />
+            {limb('RL', 150, 132, 188, p.RL)}{limb('RA', 150, 84, 126, p.RA)}
+            <g className="pose" style={{ transformOrigin: '150px 74px', transform: `rotate(${p.H}deg)` }}>
+              <circle className="head" cx="150" cy="62" r="13" style={HL[i] === 'H' ? { fill: 'var(--red)' } : undefined} />
+              <rect x="155" y="56" width="9" height="7" rx="2" fill="var(--paper)" />
+            </g>
+          </g>
+        </svg>
+        <div className="cap"><Rich s={captions[i]} /></div>
+        <div className="controls">
+          <button type="button" className="btn primary" onClick={play}>{t(ui.play)}</button>
+          <button type="button" className="btn" onClick={() => { timers.clear(); setI((i + 1) % 6); }}>{t(ui.next)}</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ---------- exit count: check in, check out, prop, up, down, arch ---------- */
+const SEQ = [
+  { say: '"Check in"', look: 'L', body: '', head: -30 }, { say: '"OK"', ok: 'L', body: '', head: -30 },
+  { say: '"Check out"', look: 'R', body: '', head: 20 }, { say: '"OK"', ok: 'R', body: '', head: 20 },
+  { say: '"Prop"', body: '', head: -25 }, { say: '"Up"', body: 'rotate(12deg)', head: -25 },
+  { say: '"Down"', body: 'rotate(-6deg)', head: -25 }, { say: '"Arch!"', body: 'rotate(14deg)', head: -25 },
+  { say: '', body: 'translate(110px,50px) rotate(80deg)', head: -25 },
+] as const;
+
+export function ExitCount({ steps }: { steps: Step[] }) {
+  const { t } = useLang();
+  const [k, setK] = useState(4);
+  const timers = useTimers();
+  const s = SEQ[k] as (typeof SEQ)[number] & { look?: string; ok?: string };
+  const play = () => { timers.clear(); let at = 0; SEQ.forEach((_, j) => { timers.after(at, () => setK(j)); at += j >= 4 ? 800 : 1100; }); timers.after(at + 1200, () => setK(4)); };
+  const inst = (side: string, cx: number, cy: number, y2: number) => (
+    <g opacity={s.look === side || s.ok === side ? 1 : 0.3}><circle cx={cx} cy={cy} r="11" fill="var(--faint)" /><line x1={cx} y1={cy + 12} x2={cx} y2={y2} stroke="var(--faint)" strokeWidth="7" strokeLinecap="round" /></g>
+  );
+  return (
+    <div className="split">
+      <div><ol className="steps">{steps.map((st, i) => <li key={i}><div><span className="st"><Rich s={st.title} /></span>{st.sub && <span className="sub"><Rich s={st.sub} /></span>}</div></li>)}</ol></div>
+      <div className="stage sticky">
+        <svg viewBox="0 0 320 220" role="img" aria-label="Exit count">
+          <rect x="150" y="0" width="170" height="220" fill="var(--soft)" />
+          <rect x="0" y="150" width="152" height="8" fill="var(--line)" />
+          <rect x="146" y="10" width="8" height="142" fill="var(--line)" />
+          {inst('L', 60, 74, 148)}{inst('R', 212, 64, 120)}
+          <text x="44" y="50" fontFamily="var(--mono)" fontSize="14" fill="var(--ok)" opacity={s.ok === 'L' ? 1 : 0}>OK</text>
+          <text x="196" y="40" fontFamily="var(--mono)" fontSize="14" fill="var(--ok)" opacity={s.ok === 'R' ? 1 : 0}>OK</text>
+          <g className="fig pose" style={{ transformOrigin: '140px 150px', transform: s.body }}>
+            <line x1="140" y1="96" x2="140" y2="148" /><line x1="140" y1="104" x2="152" y2="80" />
+            <g className="pose" style={{ transformOrigin: '140px 92px', transform: `rotate(${s.head}deg)` }}><circle className="head" cx="140" cy="80" r="12" /><rect x="144" y="74" width="9" height="7" rx="2" fill="var(--paper)" /></g>
+          </g>
+        </svg>
+        <div className="cap">{s.say || '↓'}</div>
+        <div className="controls"><button type="button" className="btn primary" onClick={play}>{t(ui.play)}</button></div>
+      </div>
+    </div>
+  );
+}
+
+/* ---------- dive flow with a live altimeter ---------- */
+const MAX = 15, ang = (v: number) => -135 + (v / MAX) * 270;
+
+function AltRows({ rows, on, onPick }: { rows: AltRow[]; on: number; onPick: (i: number) => void }) {
+  return (
+    <ol className="alt-rows">
+      {rows.map((r, i) => (
+        <li key={i} className={`${r.hot ? 'hot' : ''} ${i === on ? 'on' : ''}`} tabIndex={0} onClick={() => onPick(i)}
+          onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPick(i); } }}>
+          <span className="a">{r.alt || '↓'}</span>
+          <div><span className="rt"><Rich s={r.title} /></span><span className="rs"><Rich s={r.sub} /></span></div>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+export function Altimeter({ rows }: { rows: AltRow[] }) {
+  const [i, setI] = useState(0);
+  const r = rows[i];
+  const ticks = [];
+  for (let v = 0; v <= MAX; v++) {
+    const a = ((ang(v) - 90) * Math.PI) / 180, r1 = v % 5 ? 92 : 86, warn = v === 5 || v === 6;
+    ticks.push(<line key={v} x1={120 + r1 * Math.cos(a)} y1={120 + r1 * Math.sin(a)} x2={120 + 100 * Math.cos(a)} y2={120 + 100 * Math.sin(a)} stroke={warn ? 'var(--red)' : 'var(--faint)'} strokeWidth={v % 5 ? 2 : 4} />);
+    if (v % 3 === 0 || v === 5) ticks.push(<text key={'t' + v} x={120 + 72 * Math.cos(a)} y={124 + 72 * Math.sin(a)} textAnchor="middle" fontFamily="var(--mono)" fontSize="13" fill={warn ? 'var(--red)' : 'var(--muted)'}>{v}</text>);
+  }
+  return (
+    <div className="split">
+      <div><AltRows rows={rows} on={i} onPick={setI} /></div>
+      <div className="stage sticky">
+        <svg viewBox="0 0 240 240" role="img" aria-label="Altimeter">
+          <circle cx="120" cy="120" r="110" fill="var(--paper)" stroke="var(--line)" strokeWidth="2" />
+          {ticks}
+          <g className="pose" style={{ transformOrigin: '120px 120px', transform: `rotate(${ang(r.value)}deg)` }}><line x1="120" y1="132" x2="120" y2="30" stroke="var(--ink)" strokeWidth="5" strokeLinecap="round" /></g>
+          <circle cx="120" cy="120" r="8" fill="var(--ink)" />
+          <text x="120" y="176" textAnchor="middle" fontFamily="var(--mono)" fontSize="11" fill="var(--muted)">× 1000 ft</text>
+          <text x="120" y="200" textAnchor="middle" fontFamily="var(--mono)" fontSize="18" fill="var(--ink)">{(r.value * 1000).toLocaleString('en-US')} ft</text>
+        </svg>
+        <div className="cap"><Rich s={r.title} /></div>
+      </div>
+    </div>
+  );
+}
+
+/* ---------- landing pattern map (drawn like the ground-school test) ---------- */
+export function Pattern({ rows }: { rows: AltRow[] }) {
+  const { t } = useLang();
+  const [i, setI] = useState(Math.min(3, rows.length - 1));
+  const r = rows[i];
+  const reduce = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  return (
+    <div className="split">
+      <div><AltRows rows={rows} on={i} onPick={setI} /></div>
+      <div className="stage sticky">
+        <svg viewBox="0 0 320 270" role="img" aria-label="Landing pattern">
+          <defs>
+            <marker id="arrI" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)" /></marker>
+            <marker id="arrP" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--ink)" /></marker>
+          </defs>
+          <rect x="0" y="0" width="320" height="270" rx="10" fill="var(--paper)" />
+          <line x1="306" y1="26" x2="250" y2="26" stroke="var(--muted)" strokeWidth="3" markerEnd="url(#arrI)" />
+          <text x="278" y="16" textAnchor="middle" fontFamily="var(--mono)" fontSize="10" fill="var(--muted)">{t(ui.wind)}</text>
+          <path d="M262 38 L262 54 L232 46 Z" fill="none" stroke="var(--ink)" strokeWidth="2" />
+          <circle cx="275" cy="205" r="22" fill="none" stroke="var(--faint)" strokeWidth="1.5" strokeDasharray="4 4" />
+          <path id="patPath" d="M275 183 A22 22 0 1 1 275 227 A22 22 0 1 1 275 183 L250 200 L60 200 L60 70 L186 70" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" markerEnd="url(#arrP)" />
+          <path d="M194 62 L210 78 M210 62 L194 78" stroke="var(--ok)" strokeWidth="4" />
+          <g fontFamily="var(--mono)" fontSize="11" fill="var(--ink)"><text x="236" y="192">900</text><text x="66" y="192">600</text><text x="66" y="88">300</text><text x="148" y="56">10 ft</text></g>
+          {!reduce && <circle r="7" fill="var(--red)" stroke="var(--paper)" strokeWidth="2"><animateMotion dur="14s" repeatCount="indefinite"><mpath href="#patPath" /></animateMotion></circle>}
+          {r.point && <circle cx={r.point[0]} cy={r.point[1]} r="12" fill="none" stroke="var(--ink)" strokeWidth="3" />}
+        </svg>
+        <div className="cap">{r.alt} · <Rich s={r.title} /></div>
+      </div>
+    </div>
+  );
+}
+
+/* ---------- low turn: side view ---------- */
+export function LowTurn({ b }: { b: Extract<Block, { type: 'lowturn' }> }) {
+  const { t } = useLang();
+  return (
+    <div className="split">
+      <div className="stage">
+        <svg viewBox="0 0 320 210" role="img" aria-label="Straight final versus a low turn">
+          <rect x="0" y="0" width="320" height="210" rx="10" fill="var(--paper)" />
+          <line x1="0" y1="186" x2="320" y2="186" stroke="var(--ink)" strokeWidth="3" />
+          <path d="M20 40 L230 160 Q262 180 300 182" fill="none" stroke="var(--ink)" strokeWidth="4" strokeLinecap="round" />
+          <path d="M20 40 L110 92 Q125 104 132 128 Q140 158 150 184" fill="none" stroke="var(--red)" strokeWidth="4" strokeLinecap="round" strokeDasharray="7 5" />
+          <path d="M150 186 l-8 -12 l10 4 l2 -12 l6 10 l10 -6 l-4 12 z" fill="var(--red)" />
+          <circle cx="110" cy="92" r="6" fill="var(--red)" />
+          <g fontFamily="var(--mono)" fontSize="10">
+            <text x="104" y="80" textAnchor="end" fill="var(--red)">{t({ en: 'turn starts low', es: 'giro muy bajo', ru: 'поворот низко' })}</text>
+            <text x="124" y="160" textAnchor="end" fill="var(--red)">{t({ en: 'dives, speeds up', es: 'se clava, acelera', ru: 'ныряет, разгоняется' })}</text>
+            <text x="312" y="172" textAnchor="end" fill="var(--ink)">{t({ en: 'straight: glide, flare', es: 'recto: planeo, flare', ru: 'прямо: скольжение, flare' })}</text>
+            <text x="12" y="202" fill="var(--muted)">{t(ui.sideView)}</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <p style={{ margin: 0 }}><Rich s={b.text} /></p>
+        <ul style={{ margin: 0, paddingLeft: 18, display: 'grid', gap: 6, fontSize: 15 }}>{b.points.map((x, i) => <li key={i}><Rich s={x} /></li>)}</ul>
+        <ClipFigure c={b.clip} />
+      </div>
+    </div>
+  );
+}
+
+/* ---------- pull, count to five, check the canopy ---------- */
+export function CanopyCheck({ items }: { items: { word: L; text: L }[] }) {
+  const { t } = useLang();
+  const [n, setN] = useState(-1);      // 0..5 = counting, 6.. = checklist
+  const timers = useTimers();
+  const run = () => { timers.clear(); setN(0); for (let k = 1; k <= 5 + items.length; k++) timers.after(k * 800, () => setN(k)); };
+  const scale = n < 0 ? 0.15 : Math.min(1, 0.15 + n * 0.17);
+  return (
+    <div className="stage canopy">
+      <svg viewBox="0 0 200 190" role="img" aria-label="Canopy opening">
+        <g transform={`translate(100 160) scale(${scale} ${Math.min(1, scale * 1.1)}) translate(-100 -160)`}><CanopyShape /></g>
+        <line x1="100" y1="160" x2="100" y2="180" stroke="var(--ink)" strokeWidth="6" strokeLinecap="round" /><circle cx="100" cy="154" r="7" fill="var(--ink)" />
+      </svg>
+      <div className="count">{[1, 2, 3, 4, 5].map(k => <span key={k} className={n >= k ? 'on' : ''}>{k}000</span>)}</div>
+      <div className="check-list">{items.map((it, i) => <div key={i} className={n >= 6 + i ? 'on' : ''}><b><Rich s={it.word} /></b><span><Rich s={it.text} /></span></div>)}</div>
+      <div className="controls"><button type="button" className="btn primary" onClick={run}>{t(ui.pull)}</button></div>
+    </div>
+  );
+}
+
+function CanopyShape({ cells = 7 }: { cells?: number }) {
+  const x0 = 30, w = 140, top = 36, bot = 72, cw = w / cells;
+  const lines = [x0 + 4, x0 + w * 0.25, x0 + w * 0.5 - 6, x0 + w * 0.5 + 6, x0 + w * 0.75, x0 + w - 4];
+  return (
+    <g>
+      {Array.from({ length: cells }, (_, i) => {
+        const h = (bot - top) * (Math.sin((Math.PI * (i + 0.5)) / cells) * 0.45 + 0.55);
+        return <rect key={i} x={x0 + i * cw} y={bot - h} width={cw} height={h} rx="5" fill={i % 2 ? 'var(--ink)' : 'var(--faint)'} />;
+      })}
+      {lines.map((x, i) => <line key={i} x1={x} y1={bot} x2={x < 100 ? 94 : 106} y2={150} stroke="var(--muted)" strokeWidth="1.2" />)}
+      <rect x="88" y="136" width="24" height="5" rx="2" fill="var(--ink)" />
+    </g>
+  );
+}
+
+/** Small drawing for cards without footage. */
+export function CanopyDrawing({ state }: { state: 'none' | 'spin' | 'twist' | 'good' }) {
+  return (
+    <svg viewBox="0 0 200 190" aria-hidden="true">
+      {state === 'none' ? <text x="100" y="105" textAnchor="middle" fontSize="64" fontWeight="800" fill="var(--red)">?</text>
+        : <g style={state === 'spin' ? { transformOrigin: '100px 60px', animation: 'spin 2.4s linear infinite' } : undefined}><CanopyShape /></g>}
+      <line x1="100" y1="160" x2="100" y2="180" stroke="var(--ink)" strokeWidth="6" strokeLinecap="round" /><circle cx="100" cy="154" r="7" fill="var(--ink)" />
+    </svg>
+  );
+}
