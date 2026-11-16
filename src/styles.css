@@ -30,11 +30,11 @@
   --band-canopy: #1a1209; --acc-canopy: #ff9450; --band-ep: #1d0e10; --acc-ep: #ff6b72;
   --band-dz: #14130e; --acc-dz: #cdc79f; color-scheme: dark; }
 
-.tone-part1 { --band: var(--band-plane); --accent: var(--acc-plane); }
-.tone-part2 { --band: var(--band-free); --accent: var(--acc-free); }
-.tone-part3 { --band: var(--band-canopy); --accent: var(--acc-canopy); }
-.tone-part4 { --band: var(--band-ep); --accent: var(--acc-ep); }
-.tone-dz { --band: var(--band-dz); --accent: var(--acc-dz); }
+.tone-part1 { --band: var(--band-plane); --accent: var(--acc-plane); --prev: var(--paper); }
+.tone-part2 { --band: var(--band-free); --accent: var(--acc-free); --prev: var(--band-plane); }
+.tone-part3 { --band: var(--band-canopy); --accent: var(--acc-canopy); --prev: var(--band-free); }
+.tone-part4 { --band: var(--band-ep); --accent: var(--acc-ep); --prev: var(--band-canopy); }
+.tone-dz { --band: var(--band-dz); --accent: var(--acc-dz); --prev: var(--band-ep); }
 
 * { box-sizing: border-box; }
 html { scrollbar-gutter: stable; scroll-padding-top: calc(var(--header) + 16px); }
@@ -80,7 +80,8 @@ h1 { font-size: clamp(30px, 6vw, 40px); line-height: 1.08; font-weight: 750; let
 .score { margin-top: 14px; font-size: 13px; color: var(--muted); }
 
 /* part bands: full width tint, a cover with a big roman numeral and the part's contents */
-.band { background: var(--band); padding-bottom: 96px; }
+/* each band starts in the previous part's colour and fades into its own, so parts flow into each other */
+.band { background: linear-gradient(to bottom, var(--prev) 0, var(--band) 220px) var(--band); padding-bottom: 96px; }
 .part { position: relative; padding-block: 88px 24px; }
 .part .roman { position: absolute; right: 0; top: 40px; font: 800 clamp(96px, 18vw, 168px)/1 var(--font); letter-spacing: -.05em; color: var(--accent); opacity: .14; pointer-events: none; }
 .part .kicker { font: 600 13px var(--font); color: var(--accent); display: flex; align-items: center; gap: 10px; }
@@ -267,7 +268,7 @@ details p { margin: 10px 0 0; color: var(--muted); }
 .count span { font: 500 12px var(--mono); padding: 3px 8px; border-radius: 999px; background: var(--soft); opacity: .4; transition: opacity .2s; }
 .count span.on { opacity: 1; }
 
-footer { padding-block: 32px 64px; color: var(--muted); font-size: 13px; }
+footer { padding-block: 120px 64px; color: var(--muted); font-size: 13px; background: linear-gradient(to bottom, var(--band-dz) 0, var(--paper) 160px); }
 
 /* in-page player */
 dialog.player { border: 0; padding: 0; background: transparent; width: min(960px, 94vw); max-width: none; }
