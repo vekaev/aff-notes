@@ -41,8 +41,9 @@ const POSES: Pose[] = [
   { tx: 0, lean: 0, RA: true, LA: false, RL: 0, LL: 0, H: 0 },
   { tx: 12, lean: 0, RA: true, LA: false, RL: -22, LL: 0, H: 0 },
   { tx: 12, lean: 0, RA: true, LA: true, RL: -22, LL: 0, H: 0 },
-  { tx: 26, lean: 0, RA: true, LA: true, RL: -22, LL: -18, H: 0 },
-  { tx: 30, lean: 12, RA: true, LA: true, RL: -22, LL: -18, H: -24 },
+  { tx: 38, lean: 0, RA: true, LA: true, RL: -22, LL: -18, H: 0 },
+  // head and chest out past the door line (x≈230) while both hands keep the handle
+  { tx: 52, lean: 20, RA: true, LA: true, RL: -24, LL: -20, H: -26 },
 ];
 const HL = ['', 'RA', 'RL', 'LA', 'LL', 'H'];
 
@@ -81,7 +82,7 @@ export function Climb({ steps, captions }: { steps: Step[]; captions: L[] }) {
           <rect x="222" y="24" width="8" height="170" fill="var(--line-strong)" />
           <rect x="210" y="58" width="6" height="64" rx="3" fill="var(--ink)" />
           <rect x="210" y="58" width="16" height="5" rx="2" fill="var(--ink)" /><rect x="210" y="117" width="16" height="5" rx="2" fill="var(--ink)" />
-          <text x="196" y="52" fontFamily="var(--mono)" fontSize="9" fill="var(--muted)">{t({ en: 'handle', es: 'agarradera', ru: 'поручень' })}</text>
+          <text x="168" y="140" fontFamily="var(--mono)" fontSize="9" fill="var(--muted)">{t({ en: 'handle', es: 'agarradera', ru: 'поручень' })}</text>
           <rect x="0" y="190" width="320" height="6" fill="var(--line-strong)" />
           <g className="prop" transform="translate(286 52)"><rect x="-3" y="-20" width="6" height="40" rx="3" fill="var(--faint)" /><rect x="-20" y="-3" width="40" height="6" rx="3" fill="var(--faint)" /></g>
           <g className="fig pose" style={{ transformOrigin: `${FEET[0]}px ${FEET[1]}px`, transform: `translateX(${p.tx}px) rotate(${p.lean}deg)` }}>
