@@ -187,7 +187,6 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
     lock: { en: 'lock on', es: 'lock on', uk: 'lock on', ru: 'lock on' },
     pull: { en: 'pull', es: 'abrir', uk: 'розкриття', ru: 'раскрытие' },
     dir: { en: 'one turn = 12,000 ft; falling, the needle turns counterclockwise', es: 'una vuelta = 12,000 ft; al caer, la aguja gira en sentido antihorario', uk: 'один оберт = 12 000 футів; коли падаєш, стрілка йде проти годинникової', ru: 'один оборот = 12 000 футов; при падении стрелка идёт против часовой' },
-    low: { en: 'colour on real dials starts low (check yours)', es: 'en los altímetros reales el color empieza abajo (mira el tuyo)', uk: 'на справжніх висотомірах колір лише внизу (подивись на свій)', ru: 'на настоящих высотомерах цвет только внизу (посмотри на свой)' },
   };
   return (
     <div className="split">
@@ -209,7 +208,6 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
         <ul className="alt-legend">
           <li><i style={{ background: 'var(--acc-canopy)' }} />6,000 · {t(L.lock)}</li>
           <li><i style={{ background: 'var(--red)' }} />5,500 · {t(L.pull)}</li>
-          <li><i className="arc" />{t(L.low)}</li>
           <li className="dir">↺ {t(L.dir)}</li>
         </ul>
       </div>

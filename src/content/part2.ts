@@ -38,10 +38,10 @@ export const part2: Part = {
                 {
                   title: { en: 'Arms square', es: 'Brazos en escuadra', uk: 'Руки «квадратом»', ru: 'Руки «квадратом»' },
                   sub: {
-                    en: 'Elbows bent about <b>90°</b>, hands near <b>head level</b>.',
-                    es: 'Codos doblados a unos <b>90°</b>, manos cerca de la <b>altura de la cabeza</b>.',
-                    uk: 'Лікті зігнуті приблизно на <b>90°</b>, кисті приблизно на <b>рівні голови</b>.',
-                    ru: 'Локти согнуты примерно на <b>90°</b>, кисти примерно на <b>уровне головы</b>.',
+                    en: 'Upper arms about <b>90°</b> or less from your body, elbows bent <b>90–120°</b>, hands near <b>head level</b>. <b>Relaxed</b>, not locked (USPA).',
+                    es: 'Brazos a unos <b>90°</b> o menos del cuerpo, codos doblados <b>90–120°</b>, manos cerca de la <b>altura de la cabeza</b>. <b>Relajados</b>, no rígidos (USPA).',
+                    uk: 'Плечі приблизно під <b>90°</b> або менше до тулуба, лікті зігнуті на <b>90–120°</b>, кисті приблизно на <b>рівні голови</b>. <b>Розслаблено</b>, не напружено (USPA).',
+                    ru: 'Плечи примерно под <b>90°</b> или меньше к туловищу, локти согнуты на <b>90–120°</b>, кисти примерно на <b>уровне головы</b>. <b>Расслабленно</b>, не зажато (USPA).',
                   },
                 },
                 {
@@ -65,10 +65,10 @@ export const part2: Part = {
                 {
                   title: { en: 'Relax, breathe', es: 'Relájate, respira', uk: 'Розслабся, дихай', ru: 'Расслабься, дыши' },
                   sub: {
-                    en: 'USPA cue: <b>altitude, arch, legs, relax</b>. A <b>stiff</b> body is one of the most common student faults.',
-                    es: 'La consigna de la USPA: <b>altura, arco, piernas, relájate</b>. Un cuerpo <b>rígido</b> es uno de los fallos más comunes del alumno.',
-                    uk: 'Підказка USPA: <b>висота, прогин, ноги, розслабся</b>. <b>Скуте</b> тіло — одна з найчастіших помилок студента.',
-                    ru: 'Подсказка USPA: <b>высота, прогиб, ноги, расслабься</b>. <b>Скованное</b> тело — одна из самых частых ошибок студента.',
+                    en: 'USPA cue: <b>heading (horizon), altitude, arch, legs, relax</b>. A <b>stiff</b> body is one of the most common student faults.',
+                    es: 'La consigna de la USPA: <b>rumbo (horizonte), altura, arco, piernas, relájate</b>. Un cuerpo <b>rígido</b> es uno de los fallos más comunes del alumno.',
+                    uk: 'Підказка USPA: <b>напрямок (горизонт), висота, прогин, ноги, розслабся</b>. <b>Скуте</b> тіло — одна з найчастіших помилок студента.',
+                    ru: 'Подсказка USPA: <b>направление (горизонт), высота, прогиб, ноги, расслабься</b>. <b>Скованное</b> тело — одна из самых частых ошибок студента.',
                   },
                 },
               ],
@@ -189,10 +189,10 @@ export const part2: Part = {
               value: 12.5,
               title: { en: 'Circle of awareness', es: 'Círculo de atención', uk: 'Коло уваги', ru: 'Круг внимания' },
               sub: {
-                en: '<b>Altitude</b> → left instructor → right instructor → chin up (horizon) → <b>altitude</b>.',
-                es: '<b>Altura</b> → instructor izquierdo → instructor derecho → barbilla arriba (horizonte) → <b>altura</b>.',
-                uk: '<b>Висота</b> → лівий інструктор → правий інструктор → підборіддя вгору (горизонт) → <b>висота</b>.',
-                ru: '<b>Высота</b> → левый инструктор → правый инструктор → подбородок вверх (горизонт) → <b>высота</b>.',
+                en: '<b>Altitude</b> → left instructor → right instructor → chin up (horizon) → <b>altitude</b>. (USPA starts with the horizon: horizon → altitude → left → right.)',
+                es: '<b>Altura</b> → instructor izquierdo → instructor derecho → barbilla arriba (horizonte) → <b>altura</b>. (La USPA empieza por el horizonte: horizonte → altura → izquierdo → derecho.)',
+                uk: '<b>Висота</b> → лівий інструктор → правий інструктор → підборіддя вгору (горизонт) → <b>висота</b>. (USPA починає з горизонту: горизонт → висота → лівий → правий.)',
+                ru: '<b>Высота</b> → левый инструктор → правый инструктор → подбородок вверх (горизонт) → <b>высота</b>. (USPA начинает с горизонта: горизонт → высота → левый → правый.)',
               },
             },
             {
@@ -241,13 +241,23 @@ export const part2: Part = {
               hot: true,
               title: { en: 'PULL', es: 'ABRIR', uk: 'РОЗКРИТТЯ', ru: 'РАСКРЫТИЕ' },
               sub: {
-                en: 'Wave off just before you pull, if your school teaches it <q-check/>. Then <b>look, reach, throw</b> and count to five (Part III).',
-                es: 'Haz el wave-off justo antes de abrir, si tu escuela lo enseña <q-check/>. Luego <b>mira, alcanza, lanza</b> y cuenta hasta cinco (Parte III).',
-                uk: 'Відмашка просто перед розкриттям, якщо так навчає твоя школа <q-check/>. Потім <b>подивись, дотягнись, викинь</b> і рахуй до п’яти (частина III).',
-                ru: 'Отмашка прямо перед раскрытием, если так учит твоя школа <q-check/>. Потом <b>посмотри, дотянись, выбрось</b> и считай до пяти (часть III).',
+                en: '<b>Wave off</b>: wave both arms smoothly over your head ("I know my altitude, I\'m pulling"). How many waves your school wants <q-check/>. Then <b>look, reach, throw</b> and count to five (Part III).',
+                es: '<b>Wave-off</b>: agita los dos brazos suavemente por encima de la cabeza ("sé mi altura, voy a abrir"). Cuántas veces lo pide tu escuela <q-check/>. Luego <b>mira, alcanza, lanza</b> y cuenta hasta cinco (Parte III).',
+                uk: '<b>Відмашка</b>: плавно помахай обома руками над головою («знаю висоту, розкриваюся»). Скільки разів — як навчає твоя школа <q-check/>. Потім <b>подивись, дотягнись, викинь</b> і рахуй до п’яти (частина III).',
+                ru: '<b>Отмашка</b>: плавно помаши обеими руками над головой («знаю высоту, раскрываюсь»). Сколько раз — как учит твоя школа <q-check/>. Потом <b>посмотри, дотянись, выбрось</b> и считай до пяти (часть III).',
               },
             },
           ],
+        },
+        {
+          type: 'p',
+          muted: true,
+          text: {
+            en: 'A real student altimeter has colour only on the <b>low part</b> of the dial: the Alti-2 Galaxy, for example, has a yellow and red arc that starts at <b>3,000 ft</b> (Para Gear). Nothing marks 6,000 or 5,500: <b>read the numbers</b>. Look at your own altimeter before the jump.',
+            es: 'Un altímetro de alumno real solo tiene color en la <b>parte baja</b> de la esfera: el Alti-2 Galaxy, por ejemplo, tiene un arco amarillo y rojo que empieza a <b>3,000 ft</b> (Para Gear). Nada marca 6,000 ni 5,500: <b>lee los números</b>. Mira tu propio altímetro antes del salto.',
+            uk: 'На справжньому студентському висотомірі колір є лише в <b>нижній частині</b> циферблата: в Alti-2 Galaxy, наприклад, жовто-червона дуга починається з <b>3 000 футів</b> (Para Gear). 6 000 і 5 500 нічим не позначені: <b>читай цифри</b>. Роздивися свій висотомір до стрибка.',
+            ru: 'На настоящем студенческом высотомере цвет есть только в <b>нижней части</b> циферблата: у Alti-2 Galaxy, например, жёлто-красная дуга начинается с <b>3 000 футов</b> (Para Gear). 6 000 и 5 500 ничем не отмечены: <b>читай цифры</b>. Рассмотри свой высотомер до прыжка.',
+          },
         },
         {
           type: 'callout',
@@ -257,6 +267,15 @@ export const part2: Part = {
             es: '¿Perdiste a <b>un</b> instructor? <b>Sigue</b> con el salto. ¿Perdiste a <b>los dos</b>? <b>Abre ya</b>.',
             uk: 'Втратив <b>одного</b> інструктора — <b>продовжуй</b> стрибок. Втратив <b>обох</b> — <b>розкривайся одразу</b>.',
             ru: 'Потерял <b>одного</b> инструктора — <b>продолжай</b> прыжок. Потерял <b>обоих</b> — <b>раскрывайся сразу</b>.',
+          },
+        },
+        {
+          type: 'callout',
+          text: {
+            en: 'Unstable after exit: <b>check altitude</b>, <b>arch</b> until the horizon comes flat into view, and follow your instructors\' <b>signals</b> (USPA).',
+            es: 'Inestable tras la salida: <b>mira la altura</b>, <b>arquea</b> hasta que el horizonte se vea plano y sigue las <b>señales</b> de tus instructores (USPA).',
+            uk: 'Нестабільно після відокремлення: <b>перевір висоту</b>, <b>прогинайся</b>, поки горизонт не стане рівним, і виконуй <b>жести</b> інструкторів (USPA).',
+            ru: 'Нестабильно после отделения: <b>проверь высоту</b>, <b>прогибайся</b>, пока горизонт не станет ровным, и выполняй <b>жесты</b> инструкторов (USPA).',
           },
         },
         {
@@ -297,10 +316,10 @@ export const part2: Part = {
               ],
               answer: 0,
               why: {
-                en: 'You start and finish with the altimeter: altitude, left, right, chin up, altitude.',
-                es: 'Empiezas y terminas con el altímetro: altura, izquierda, derecha, barbilla arriba, altura.',
-                uk: 'Починаєш і закінчуєш висотоміром: висота, ліворуч, праворуч, підборіддя вгору, висота.',
-                ru: 'Начинаешь и заканчиваешь высотомером: высота, влево, вправо, подбородок вверх, высота.',
+                en: 'As taught in our ground course: altitude, left, right, chin up, altitude. USPA starts with the horizon (horizon, altitude, left, right), which is fine too. What matters: left (reserve side) before right, and never skip the altimeter.',
+                es: 'Como se enseña en nuestro curso de tierra: altura, izquierda, derecha, barbilla arriba, altura. La USPA empieza por el horizonte (horizonte, altura, izquierda, derecha), y también vale. Lo importante: izquierda (lado de la reserva) antes que derecha, y nunca saltarte el altímetro.',
+                uk: 'Як навчали на нашому наземному курсі: висота, ліворуч, праворуч, підборіддя вгору, висота. USPA починає з горизонту (горизонт, висота, ліворуч, праворуч) — так теж правильно. Головне: лівий (бік запасного) перед правим і ніколи не пропускай висотомір.',
+                ru: 'Как учили на нашем наземном курсе: высота, влево, вправо, подбородок вверх, высота. USPA начинает с горизонта (горизонт, высота, влево, вправо) — так тоже правильно. Главное: левый (сторона запасного) перед правым и никогда не пропускай высотомер.',
               },
             },
             {
@@ -387,11 +406,27 @@ export const part2: Part = {
         {
           type: 'callout',
           text: {
-            en: 'Overloaded or lost? Default to: <b>altitude, arch, pull at 5,500</b>.',
-            es: '¿Saturado o perdido? Vuelve a lo básico: <b>altura, arco, abrir a 5,500</b>.',
-            uk: 'Перевантажений чи загубився? За замовчуванням: <b>висота, прогин, розкриття на 5 500</b>.',
-            ru: 'Перегружен или потерялся? По умолчанию: <b>высота, прогиб, раскрытие на 5 500</b>.',
+            en: 'Overloaded or lost? Default to: <b>altitude, arch, pull at 5,500</b>, or <b>right now</b> if you\'re already lower.',
+            es: '¿Saturado o perdido? Vuelve a lo básico: <b>altura, arco, abrir a 5,500</b>, o <b>ahora mismo</b> si ya estás más bajo.',
+            uk: 'Перевантажений чи загубився? За замовчуванням: <b>висота, прогин, розкриття на 5 500</b> або <b>одразу</b>, якщо ти вже нижче.',
+            ru: 'Перегружен или потерялся? По умолчанию: <b>высота, прогиб, раскрытие на 5 500</b> или <b>сразу</b>, если ты уже ниже.',
           },
+        },
+        {
+          type: 'callout',
+          tone: 'red',
+          title: { en: 'Pull priorities (USPA), in this order', es: 'Prioridades de apertura (USPA), en este orden', uk: 'Пріоритети розкриття (USPA), саме в такому порядку', ru: 'Приоритеты раскрытия (USPA), именно в таком порядке' },
+          points: [
+            { en: '<b>Pull</b>.', es: '<b>Abre</b>.', uk: '<b>Розкрийся</b>.', ru: '<b>Раскройся</b>.' },
+            { en: 'Pull <b>at your altitude</b>.', es: 'Abre <b>a tu altura</b>.', uk: 'Розкрийся <b>на своїй висоті</b>.', ru: 'Раскройся <b>на своей высоте</b>.' },
+            { en: 'Pull <b>stable</b>, if you can.', es: 'Abre <b>estable</b>, si puedes.', uk: 'Розкрийся <b>стабільно</b>, якщо можеш.', ru: 'Раскройся <b>стабильно</b>, если можешь.' },
+            {
+              en: 'Altitude comes before stability: unstable or spinning at 5,500? <b>Pull anyway</b>.',
+              es: 'La altura va antes que la estabilidad: ¿inestable o girando a 5,500? <b>Abre igual</b>.',
+              uk: 'Висота важливіша за стабільність: нестабільно чи крутить на 5 500? <b>Все одно розкривайся</b>.',
+              ru: 'Высота важнее стабильности: нестабильно или крутит на 5 500? <b>Всё равно раскрывайся</b>.',
+            },
+          ],
         },
         {
           type: 'rules',
@@ -401,10 +436,10 @@ export const part2: Part = {
               tone: 'accent',
               title: { en: 'Lock on', es: 'Lock on', uk: 'Лише висотомір', ru: 'Только высотомер' },
               text: {
-                en: 'Stop <b>all exercises</b>. Watch the <b>altimeter only</b>. The pull takes about <b>1,000 ft</b>, so this leaves time to pull at 5,500.',
-                es: 'Deja <b>todos los ejercicios</b>. Mira <b>solo el altímetro</b>. La apertura lleva unos <b>1,000 ft</b>, así te da tiempo a abrir a 5,500.',
-                uk: 'Припини <b>усі вправи</b>. Дивися <b>лише на висотомір</b>. Розкриття забирає близько <b>1 000 футів</b>, тож так устигаєш розкритися на 5 500.',
-                ru: 'Прекрати <b>все упражнения</b>. Смотри <b>только на высотомер</b>. Раскрытие занимает около <b>1 000 футов</b>, так что успеваешь раскрыться на 5 500.',
+                en: 'Stop <b>all exercises</b>. Watch the <b>altimeter only</b>: from 6,000 you have about <b>3 seconds</b> to 5,500. At 5,500 wave off and pull. Wave-off and pull together take about <b>1,000 ft</b> (USPA), so start on time.',
+                es: 'Deja <b>todos los ejercicios</b>. Mira <b>solo el altímetro</b>: de 6,000 a 5,500 tienes unos <b>3 segundos</b>. A 5,500 haz el wave-off y abre. El wave-off y la apertura juntos llevan unos <b>1,000 ft</b> (USPA), así que empieza a tiempo.',
+                uk: 'Припини <b>усі вправи</b>. Дивися <b>лише на висотомір</b>: від 6 000 до 5 500 у тебе близько <b>3 секунд</b>. На 5 500 — відмашка й розкриття. Відмашка й розкриття разом забирають близько <b>1 000 футів</b> (USPA), тож починай вчасно.',
+                ru: 'Прекрати <b>все упражнения</b>. Смотри <b>только на высотомер</b>: от 6 000 до 5 500 у тебя около <b>3 секунд</b>. На 5 500 — отмашка и раскрытие. Отмашка и раскрытие вместе занимают около <b>1 000 футов</b> (USPA), так что начинай вовремя.',
               },
             },
             {
@@ -458,14 +493,29 @@ export const part2: Part = {
               options: [
                 { en: 'Look for the instructors until you find them', es: 'Buscar a los instructores hasta encontrarlos', uk: 'Шукати інструкторів, поки не знайдеш', ru: 'Искать инструкторов, пока не найдёшь' },
                 { en: 'Repeat the practice touches until calm', es: 'Repetir los toques de práctica hasta calmarte', uk: 'Повторювати тренувальні дотики, поки не заспокоїшся', ru: 'Повторять тренировочные касания, пока не успокоишься' },
-                { en: 'Altitude, arch, pull at 5,500', es: 'Altura, arco, abrir a 5,500', uk: 'Висота, прогин, розкриття на 5 500', ru: 'Высота, прогиб, раскрытие на 5 500' },
+                { en: 'Altitude, arch, pull at 5,500 (or now, if lower)', es: 'Altura, arco, abrir a 5,500 (o ya, si estás más bajo)', uk: 'Висота, прогин, розкриття на 5 500 (або одразу, якщо нижче)', ru: 'Высота, прогиб, раскрытие на 5 500 (или сразу, если ниже)' },
               ],
               answer: 2,
               why: {
-                en: 'When in doubt, go back to the basics: altitude, arch, pull at 5,500.',
-                es: 'Ante la duda, vuelve a lo básico: altura, arco, abrir a 5,500.',
-                uk: 'Сумніваєшся — повертайся до основ: висота, прогин, розкриття на 5 500.',
-                ru: 'Сомневаешься — возвращайся к основам: высота, прогиб, раскрытие на 5 500.',
+                en: 'When in doubt, go back to the basics: altitude, arch, pull at 5,500. If the altimeter already reads lower, pull right now.',
+                es: 'Ante la duda, vuelve a lo básico: altura, arco, abrir a 5,500. Si el altímetro ya marca menos, abre ahora mismo.',
+                uk: 'Сумніваєшся — повертайся до основ: висота, прогин, розкриття на 5 500. Якщо висотомір уже показує менше, розкривайся одразу.',
+                ru: 'Сомневаешься — возвращайся к основам: высота, прогиб, раскрытие на 5 500. Если высотомер уже показывает меньше, раскрывайся сразу.',
+              },
+            },
+            {
+              q: { en: 'It\'s 5,500 ft and you\'re unstable, slowly spinning. What do you do?', es: 'Estás a 5,500 ft, inestable y girando despacio. ¿Qué haces?', uk: 'Висота 5 500 футів, ти нестабільний і повільно обертаєшся. Що робиш?', ru: 'Высота 5 500 футов, ты нестабилен и медленно вращаешься. Что делаешь?' },
+              options: [
+                { en: 'Get stable first, then pull', es: 'Primero estabilizarte, luego abrir', uk: 'Спершу стабілізуватися, потім розкритися', ru: 'Сначала стабилизироваться, потом раскрыться' },
+                { en: 'Pull now: altitude comes first', es: 'Abrir ya: la altura va primero', uk: 'Розкритися одразу: висота важливіша', ru: 'Раскрыться сразу: высота важнее' },
+                { en: 'Wait for an instructor to stop the spin', es: 'Esperar a que un instructor pare el giro', uk: 'Чекати, поки інструктор зупинить обертання', ru: 'Ждать, пока инструктор остановит вращение' },
+              ],
+              answer: 1,
+              why: {
+                en: 'USPA pull priorities: pull, pull at your altitude, pull stable if you can. Arch as you pull, but never delay the pull to get stable.',
+                es: 'Prioridades de apertura de la USPA: abrir, abrir a tu altura, abrir estable si puedes. Arquea mientras abres, pero nunca retrases la apertura para estabilizarte.',
+                uk: 'Пріоритети розкриття USPA: розкритися, розкритися на своїй висоті, розкритися стабільно, якщо можеш. Прогинайся під час розкриття, але ніколи не відкладай його заради стабільності.',
+                ru: 'Приоритеты раскрытия USPA: раскрыться, раскрыться на своей высоте, раскрыться стабильно, если можешь. Прогибайся при раскрытии, но никогда не откладывай его ради стабильности.',
               },
             },
           ],
@@ -539,10 +589,10 @@ export const part2: Part = {
               name: { en: 'Legs out', es: 'Estira las piernas', uk: 'Випрями ноги', ru: 'Выпрями ноги' },
               what: { en: 'Two fingers, V.', es: 'Dos dedos en V.', uk: 'Два пальці літерою V.', ru: 'Два пальца буквой V.' },
               act: {
-                en: 'Smoothly extend your legs until you get a thumbs up.',
-                es: 'Estira las piernas suavemente hasta que te hagan pulgar arriba.',
-                uk: 'Плавно випрямляй ноги, поки не покажуть «палець угору».',
-                ru: 'Плавно выпрямляй ноги, пока не покажут «палец вверх».',
+                en: 'Extend your legs <b>a little</b> (about 6 in / 15 cm) and <b>hold</b> (USPA). Thumbs up = good.',
+                es: 'Estira las piernas <b>un poco</b> (unos 15 cm) y <b>mantén</b> (USPA). Pulgar arriba = bien.',
+                uk: 'Випрями ноги <b>трохи</b> (приблизно на 15 см) і <b>тримай</b> (USPA). «Палець угору» = добре.',
+                ru: 'Выпрями ноги <b>немного</b> (примерно на 15 см) и <b>держи</b> (USPA). «Палец вверх» = хорошо.',
               },
             },
             {
@@ -567,10 +617,10 @@ export const part2: Part = {
               name: { en: 'Arms 90/90', es: 'Brazos 90/90', uk: 'Руки 90/90', ru: 'Руки 90/90' },
               what: { en: 'Thumb and pinky out, an "L".', es: 'Pulgar y meñique extendidos, una "L".', uk: 'Великий палець і мізинець убік, літера «L».', ru: 'Большой палец и мизинец в стороны, буква «L».' },
               act: {
-                en: 'Check arm position: 90° at the shoulder, 90° at the elbow.',
-                es: 'Revisa la posición de los brazos: 90° en el hombro, 90° en el codo.',
-                uk: 'Перевір положення рук: 90° у плечі, 90° у лікті.',
-                ru: 'Проверь положение рук: 90° в плече, 90° в локте.',
+                en: 'Check arm position: about 90° at the shoulder, 90–120° at the elbow, relaxed.',
+                es: 'Revisa la posición de los brazos: unos 90° en el hombro, 90–120° en el codo, relajados.',
+                uk: 'Перевір положення рук: приблизно 90° у плечі, 90–120° у лікті, розслаблено.',
+                ru: 'Проверь положение рук: примерно 90° в плече, 90–120° в локте, расслабленно.',
               },
             },
             {
@@ -597,6 +647,21 @@ export const part2: Part = {
               act: { en: 'Do one more practice touch, slowly.', es: 'Haz un toque de práctica más, despacio.', uk: 'Зроби ще один тренувальний дотик, повільно.', ru: 'Сделай ещё одно тренировочное касание, медленно.' },
             },
             {
+              name: { en: 'Open hand', es: 'Mano abierta', uk: 'Відкрита долоня', ru: 'Открытая ладонь' },
+              what: {
+                en: 'An open hand, after you throw (USPA list; not in the filmed set).',
+                es: 'Una mano abierta, después de lanzar (lista de la USPA; no está en las grabadas).',
+                uk: 'Відкрита долоня після кидка (список USPA; у знятих жестах її немає).',
+                ru: 'Открытая ладонь после броска (список USPA; в снятых жестах её нет).',
+              },
+              act: {
+                en: '<b>Let go</b> of the pilot chute: you\'re still holding it.',
+                es: '<b>Suelta</b> el extractor: todavía lo tienes en la mano.',
+                uk: '<b>Відпусти</b> витяжний парашут: ти досі його тримаєш.',
+                ru: '<b>Отпусти</b> вытяжной: ты всё ещё его держишь.',
+              },
+            },
+            {
               clip: 's_chin',
               name: { en: 'Chin up', es: 'Barbilla arriba', uk: 'Підборіддя вгору', ru: 'Подбородок вверх' },
               what: { en: 'Tap on the chin.', es: 'Toque en la barbilla.', uk: 'Дотик до підборіддя.', ru: 'Касание по подбородку.' },
@@ -605,10 +670,10 @@ export const part2: Part = {
             {
               name: { en: 'Shaking you on exit', es: 'Te sacuden al salir', uk: 'Трусять після відокремлення', ru: 'Трясут после отделения' },
               what: {
-                en: 'An instructor shakes your harness right after exit.',
-                es: 'Un instructor sacude tu arnés justo después de salir.',
-                uk: 'Інструктор трусить тебе за підвісну систему одразу після відокремлення.',
-                ru: 'Инструктор трясёт тебя за подвесную систему сразу после отделения.',
+                en: 'An instructor shakes your harness right after exit. Not a USPA signal: ask your school what it means. <q-check/>',
+                es: 'Un instructor sacude tu arnés justo después de salir. No es una señal de la USPA: pregunta en tu escuela qué significa. <q-check/>',
+                uk: 'Інструктор трусить тебе за підвісну систему одразу після відокремлення. Це не жест USPA: запитай у своїй школі, що він означає. <q-check/>',
+                ru: 'Инструктор трясёт тебя за подвесную систему сразу после отделения. Это не жест USPA: спроси в своей школе, что он значит. <q-check/>',
               },
               act: {
                 en: 'Push your hips further forward, into the wind, chin up.',
@@ -664,14 +729,14 @@ export const part2: Part = {
               options: [
                 { en: 'Do two more practice touches, slowly', es: 'Hacer dos toques de práctica más, despacio', uk: 'Зробити ще два тренувальні дотики, повільно', ru: 'Сделать ещё два тренировочных касания, медленно' },
                 { en: 'Bring your knees up to your chest', es: 'Llevar las rodillas hacia el pecho', uk: 'Підтягнути коліна до грудей', ru: 'Подтянуть колени к груди' },
-                { en: 'Extend your legs until you see a thumbs up', es: 'Estirar las piernas hasta ver un pulgar arriba', uk: 'Випрямляти ноги, поки не побачиш «палець угору»', ru: 'Выпрямлять ноги, пока не увидишь «палец вверх»' },
+                { en: 'Extend your legs about 6 in (15 cm) and hold', es: 'Estirar las piernas unos 15 cm y mantener', uk: 'Випрямити ноги приблизно на 15 см і тримати', ru: 'Выпрямить ноги примерно на 15 см и держать' },
               ],
               answer: 2,
               why: {
-                en: 'V is legs out. Extend smoothly; a thumbs up means good, hold it.',
-                es: 'La V es estirar las piernas. Estíralas suavemente; el pulgar arriba significa bien, mantenlo así.',
-                uk: 'V — випрями ноги. Випрямляй плавно; «палець угору» означає «добре», так і тримай.',
-                ru: 'V — выпрями ноги. Выпрямляй плавно; «палец вверх» значит «хорошо», так и держи.',
+                en: 'V is legs out: extend them a little, about 6 in (15 cm), and hold (USPA). Not all the way. A thumbs up means good.',
+                es: 'La V es estirar las piernas: un poco, unos 15 cm, y mantener (USPA). No del todo. El pulgar arriba significa bien.',
+                uk: 'V — випрями ноги: трохи, приблизно на 15 см, і тримай (USPA). Не до кінця. «Палець угору» означає «добре».',
+                ru: 'V — выпрями ноги: немного, примерно на 15 см, и держи (USPA). Не до конца. «Палец вверх» значит «хорошо».',
               },
             },
             {
