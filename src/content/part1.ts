@@ -18,27 +18,27 @@ export const part1: Part = {
               icon: 'seatbelt',
               title: { en: 'Seatbelt on', es: 'Cinturón puesto', ru: 'Ремень пристёгнут' },
               text: {
-                en: 'From take-off until the instructor says it\'s time to get ready.',
-                es: 'Desde el despegue hasta que el instructor diga que es hora de prepararse.',
-                ru: 'Со взлёта и до тех пор, пока инструктор не скажет готовиться.',
+                en: 'From <b>take-off</b> until the instructor says it\'s time to <b>get ready</b>.',
+                es: 'Desde el <b>despegue</b> hasta que el instructor diga que es hora de <b>prepararse</b>.',
+                ru: 'Со <b>взлёта</b> и до тех пор, пока инструктор не скажет <b>готовиться</b>.',
               },
             },
             {
               icon: 'helmet',
               title: { en: 'Helmet on, handles covered', es: 'Casco puesto, manijas cubiertas', ru: 'Шлем надет, ручки прикрыты' },
               text: {
-                en: 'Protect your main and reserve handles when you move. <q-check/>',
-                es: 'Protege las manijas de la principal y de la reserva cuando te muevas. <q-check/>',
-                ru: 'Когда двигаешься, прикрывай ручки основного и запасного. <q-check/>',
+                en: '<b>Protect</b> your main and reserve handles when you move. <q-check/>',
+                es: '<b>Protege</b> las manijas de la principal y de la reserva cuando te muevas. <q-check/>',
+                ru: 'Когда двигаешься, <b>прикрывай</b> ручки основного и запасного. <q-check/>',
               },
             },
             {
               icon: 'door',
               title: { en: 'Instructors lead', es: 'Los instructores guían', ru: 'Ведут инструкторы' },
               text: {
-                en: 'They take you to the door. Move only on their signal.',
-                es: 'Te llevan a la puerta. Muévete solo cuando te den la señal.',
-                ru: 'Они подводят тебя к двери. Двигайся только по их команде.',
+                en: 'They take you to the door. Move <b>only on their signal</b>.',
+                es: 'Te llevan a la puerta. Muévete <b>solo cuando te den la señal</b>.',
+                ru: 'Они подводят тебя к двери. Двигайся <b>только по их команде</b>.',
               },
             },
           ],
@@ -48,10 +48,25 @@ export const part1: Part = {
           check: true,
           title: { en: 'Aircraft emergency', es: 'Emergencia en el avión', ru: 'Аварийная ситуация в самолёте' },
           text: {
-            en: 'Covered in the course; the details are not in these notes. Stay calm and wait for the instructor\'s command. Typical rule: low = stay in, belt on, brace (hands clasped behind your head); mid altitude = exit on command; high = normal exit. If you land with the plane, get out calmly and move at least 100 ft (30 m) away. Our school\'s altitudes: <q-check/>',
-            es: 'Se vio en el curso; los detalles no están en estas notas. Mantén la calma y espera la orden del instructor. Regla típica: bajo = quédate dentro, con el cinturón puesto, en posición de impacto (manos entrelazadas detrás de la cabeza); altura media = salida a la orden; alto = salida normal. Si aterrizas con el avión, sal con calma y aléjate al menos 100 ft (30 m). Alturas de nuestra escuela: <q-check/>',
-            ru: 'Разбирали на курсе, но подробностей в этих заметках нет. Сохраняй спокойствие и жди команды инструктора. Обычное правило: низко — остаёмся в самолёте, пристёгнуты, в группировке (руки сцеплены на затылке); средняя высота — покидаем самолёт по команде; высоко — обычное отделение. Если сели вместе с самолётом, спокойно выходим и отходим минимум на 100 футов (30 м). Высоты в нашей школе: <q-check/>',
+            en: 'Covered in the course, not in these notes. <b>Stay calm</b> and wait for the instructor\'s command. Typical rule:',
+            es: 'Se vio en el curso, no en estas notas. <b>Mantén la calma</b> y espera la orden del instructor. Regla típica:',
+            ru: 'Разбирали на курсе, в заметках подробностей нет. <b>Сохраняй спокойствие</b> и жди команды инструктора. Обычное правило:',
           },
+          points: [
+            {
+              en: '<b>Low</b>: stay in, belt on, <b>brace</b> (hands clasped behind your head)',
+              es: '<b>Bajo</b>: quédate dentro, con cinturón, en <b>posición de impacto</b> (manos entrelazadas detrás de la cabeza)',
+              ru: '<b>Низко</b>: остаёмся в самолёте, пристёгнуты, в <b>группировке</b> (руки сцеплены на затылке)',
+            },
+            { en: '<b>Mid altitude</b>: exit on command', es: '<b>Altura media</b>: salida a la orden', ru: '<b>Средняя высота</b>: покидаем самолёт по команде' },
+            { en: '<b>High</b>: normal exit', es: '<b>Alto</b>: salida normal', ru: '<b>Высоко</b>: обычное отделение' },
+            {
+              en: 'Landed with the plane: get out calmly, move <b>at least 100 ft (30 m)</b> away',
+              es: 'Aterrizaste con el avión: sal con calma y aléjate <b>al menos 100 ft (30 m)</b>',
+              ru: 'Сели вместе с самолётом: спокойно выходим, отходим <b>минимум на 100 футов (30 м)</b>',
+            },
+            { en: 'Our school\'s altitudes: <q-check/>', es: 'Alturas de nuestra escuela: <q-check/>', ru: 'Высоты в нашей школе: <q-check/>' },
+          ],
         },
         {
           type: 'quiz',
@@ -111,9 +126,9 @@ export const part1: Part = {
         {
           type: 'p',
           text: {
-            en: 'As a student you don\'t pack anything. Trained people pack and check every part of your rig. Trust it, but check it.',
-            es: 'Como alumno no pliegas nada. Personal capacitado pliega y revisa cada parte de tu equipo. Confía en él, pero revísalo.',
-            ru: 'Ты студент и сам ничего не укладываешь. Каждую часть системы укладывают и проверяют обученные люди. Доверяй системе, но проверяй.',
+            en: 'As a student you <b>don\'t pack</b> anything. Trained people pack and check every part of your rig. <b>Trust it, but check it.</b>',
+            es: 'Como alumno <b>no pliegas</b> nada. Personal capacitado pliega y revisa cada parte de tu equipo. <b>Confía en él, pero revísalo.</b>',
+            ru: 'Ты студент и сам <b>ничего не укладываешь</b>. Каждую часть системы укладывают и проверяют обученные люди. <b>Доверяй системе, но проверяй.</b>',
           },
         },
         {
@@ -123,28 +138,27 @@ export const part1: Part = {
               icon: 'rig',
               title: { en: 'Main', es: 'Principal', ru: 'Основной' },
               text: {
-                en: 'Packed by a packer.',
-                es: 'La pliega un plegador.',
-                ru: 'Укладывает укладчик.',
+                en: 'Packed by a <b>packer</b>.',
+                es: 'La pliega un <b>plegador</b>.',
+                ru: 'Укладывает <b>укладчик</b>.',
               },
             },
             {
               icon: 'reserve',
               title: { en: 'Reserve', es: 'Reserva', ru: 'Запасной' },
-              text: {
-                en: 'Packed only by a certified rigger. Inspected and sealed on a schedule.',
-                es: 'Solo la pliega un rigger certificado. Se inspecciona y se precinta según un calendario.',
-                ru: 'Укладывает только сертифицированный риггер. Его осматривают и пломбируют по графику.',
-              },
+              points: [
+                { en: 'Packed only by a <b>certified rigger</b>', es: 'Solo la pliega un <b>rigger certificado</b>', ru: 'Укладывает только <b>сертифицированный риггер</b>' },
+                { en: '<b>Inspected and sealed</b> on a schedule', es: 'Se <b>inspecciona y se precinta</b> según un calendario', ru: 'Его <b>осматривают и пломбируют</b> по графику' },
+              ],
             },
             {
               icon: 'chip',
               title: { en: 'AAD', es: 'AAD', ru: 'AAD (страхующий прибор)' },
-              text: {
-                en: 'Fires the reserve automatically as a backup. It is only a backup: pulling is always your job.',
-                es: 'Abre la reserva automáticamente como respaldo. Es solo un respaldo: abrir siempre es tu responsabilidad.',
-                ru: 'Автоматически раскрывает запасной в качестве подстраховки. Это только подстраховка: раскрываться — всегда твоя задача.',
-              },
+              points: [
+                { en: 'Fires the reserve <b>automatically</b>', es: 'Abre la reserva <b>automáticamente</b>', ru: '<b>Автоматически</b> раскрывает запасной' },
+                { en: 'It is <b>only a backup</b>', es: 'Es <b>solo un respaldo</b>', ru: 'Это <b>только подстраховка</b>' },
+                { en: 'Pulling is always <b>your job</b>', es: 'Abrir siempre es <b>tu responsabilidad</b>', ru: 'Раскрываться — всегда <b>твоя задача</b>' },
+              ],
             },
           ],
         },
@@ -161,11 +175,13 @@ export const part1: Part = {
         },
         {
           type: 'callout',
-          text: {
-            en: 'What gets checked: handles in place, three rings, leg and chest straps, pins, AAD switched on. Ask for a pin check before exit.',
-            es: 'Qué se revisa: manijas en su sitio, tres anillos, perneras y cinta de pecho, pines, AAD encendido. Pide un pin check antes de salir.',
-            ru: 'Что проверяют: ручки на месте, три кольца, ножные обхваты и грудная перемычка, чеки (пины), AAD включён. Перед отделением попроси проверить чеки (pin check).',
-          },
+          title: { en: 'What gets checked', es: 'Qué se revisa', ru: 'Что проверяют' },
+          points: [
+            { en: '<b>Handles</b> in place, <b>three rings</b>', es: '<b>Manijas</b> en su sitio, <b>tres anillos</b>', ru: '<b>Ручки</b> на месте, <b>три кольца</b>' },
+            { en: '<b>Leg and chest straps</b>, <b>pins</b>', es: '<b>Perneras y cinta de pecho</b>, <b>pines</b>', ru: '<b>Ножные обхваты и грудная перемычка</b>, <b>чеки (пины)</b>' },
+            { en: '<b>AAD</b> switched on', es: '<b>AAD</b> encendido', ru: '<b>AAD</b> включён' },
+            { en: 'Before exit: ask for a <b>pin check</b>', es: 'Antes de salir: pide un <b>pin check</b>', ru: 'Перед отделением попроси <b>проверить чеки (pin check)</b>' },
+          ],
         },
         {
           type: 'quiz',
@@ -225,9 +241,9 @@ export const part1: Part = {
         {
           type: 'p',
           text: {
-            en: 'Six moves, always in this order. Right side first, then left. The red part is the one that moves.',
-            es: 'Seis movimientos, siempre en este orden. Primero el lado derecho, luego el izquierdo. La parte roja es la que se mueve.',
-            ru: 'Шесть движений, всегда в этом порядке. Сначала правая сторона, потом левая. Красным показано то, что движется.',
+            en: '<b>Six moves</b>, always in this order. <b>Right side first</b>, then left. The red part is the one that moves.',
+            es: '<b>Seis movimientos</b>, siempre en este orden. <b>Primero el lado derecho</b>, luego el izquierdo. La parte roja es la que se mueve.',
+            ru: '<b>Шесть движений</b>, всегда в этом порядке. <b>Сначала правая сторона</b>, потом левая. Красным показано то, что движется.',
           },
         },
         {
@@ -235,27 +251,27 @@ export const part1: Part = {
           steps: [
             {
               title: { en: 'Set up facing the propeller', es: 'Colócate de cara a la hélice', ru: 'Встаём лицом к пропеллеру' },
-              sub: { en: 'Look forward, toward the prop.', es: 'Mira hacia adelante, hacia la hélice.', ru: 'Смотрим вперёд, на пропеллер.' },
+              sub: { en: 'Look forward, toward the <b>prop</b>.', es: 'Mira hacia adelante, hacia la <b>hélice</b>.', ru: 'Смотрим вперёд, на <b>пропеллер</b>.' },
             },
             {
               title: { en: 'Right hand', es: 'Mano derecha', ru: 'Правая рука' },
-              sub: { en: 'On the door frame.', es: 'En el marco de la puerta.', ru: 'На край дверного проёма.' },
+              sub: { en: 'On the <b>door frame</b>.', es: 'En el <b>marco de la puerta</b>.', ru: 'На <b>край дверного проёма</b>.' },
             },
             {
               title: { en: 'Right foot closer', es: 'Pie derecho más cerca', ru: 'Правую ногу ближе' },
-              sub: { en: 'Toward the edge of the door.', es: 'Hacia el borde de la puerta.', ru: 'К краю двери.' },
+              sub: { en: 'Toward the <b>edge</b> of the door.', es: 'Hacia el <b>borde</b> de la puerta.', ru: 'К <b>краю</b> двери.' },
             },
             {
               title: { en: 'Left hand', es: 'Mano izquierda', ru: 'Левая рука' },
-              sub: { en: 'On the frame next to the right.', es: 'En el marco, junto a la derecha.', ru: 'На край проёма рядом с правой.' },
+              sub: { en: 'On the frame <b>next to the right</b>.', es: 'En el marco, <b>junto a la derecha</b>.', ru: 'На край проёма <b>рядом с правой</b>.' },
             },
             {
               title: { en: 'Left foot closer', es: 'Pie izquierdo más cerca', ru: 'Левую ногу ближе' },
-              sub: { en: 'Next to the right foot.', es: 'Junto al pie derecho.', ru: 'Рядом с правой ногой.' },
+              sub: { en: '<b>Next to the right foot</b>.', es: '<b>Junto al pie derecho</b>.', ru: '<b>Рядом с правой ногой</b>.' },
             },
             {
               title: { en: 'Head out: chin up, chest out', es: 'Cabeza afuera: barbilla arriba, pecho afuera', ru: 'Голову наружу: подбородок вверх, грудь вперёд' },
-              sub: { en: 'You are in the exit position.', es: 'Estás en posición de salida.', ru: 'Ты в позиции для отделения.' },
+              sub: { en: 'You are in the <b>exit position</b>.', es: 'Estás en <b>posición de salida</b>.', ru: 'Ты в <b>позиции для отделения</b>.' },
             },
           ],
           captions: [
@@ -346,15 +362,15 @@ export const part1: Part = {
           steps: [
             {
               title: { en: '"Check in"', es: '"Check in"', ru: '«Check in»' },
-              sub: { en: 'Look at the first instructor. They answer "OK".', es: 'Mira al primer instructor. Te responde "OK".', ru: 'Смотришь на первого инструктора. Он отвечает «OK».' },
+              sub: { en: 'Look at the <b>first instructor</b>. They answer "OK".', es: 'Mira al <b>primer instructor</b>. Te responde "OK".', ru: 'Смотришь на <b>первого инструктора</b>. Он отвечает «OK».' },
             },
             {
               title: { en: '"Check out"', es: '"Check out"', ru: '«Check out»' },
-              sub: { en: 'Look at the second instructor. They answer "OK".', es: 'Mira al segundo instructor. Te responde "OK".', ru: 'Смотришь на второго инструктора. Он отвечает «OK».' },
+              sub: { en: 'Look at the <b>second instructor</b>. They answer "OK".', es: 'Mira al <b>segundo instructor</b>. Te responde "OK".', ru: 'Смотришь на <b>второго инструктора</b>. Он отвечает «OK».' },
             },
             {
               title: { en: '"Prop"', es: '"Prop"', ru: '«Prop»' },
-              sub: { en: 'Look at the propeller, chin up.', es: 'Mira a la hélice, barbilla arriba.', ru: 'Смотришь на пропеллер, подбородок вверх.' },
+              sub: { en: 'Look at the <b>propeller</b>, chin up.', es: 'Mira a la <b>hélice</b>, barbilla arriba.', ru: 'Смотришь на <b>пропеллер</b>, подбородок вверх.' },
             },
             {
               title: { en: '"Up" · rock out', es: '"Up" · balanceo hacia afuera', ru: '«Up» · качнуться наружу' },
@@ -364,18 +380,22 @@ export const part1: Part = {
             },
             {
               title: { en: '"Arch!" · rock out and go', es: '"Arch!" · balanceo hacia afuera y sales', ru: '«Arch!» · качнуться наружу и отделиться' },
-              sub: { en: 'Hips forward, chin up, arch.', es: 'Cadera adelante, barbilla arriba, arquea.', ru: 'Таз вперёд, подбородок вверх, прогиб.' },
+              sub: { en: '<b>Hips forward</b>, chin up, arch.', es: '<b>Cadera adelante</b>, barbilla arriba, arquea.', ru: '<b>Таз вперёд</b>, подбородок вверх, прогиб.' },
             },
           ],
         },
         {
           type: 'callout',
           check: true,
-          text: {
-            en: 'Words differ by school and aircraft ("Ready, set, go", "Out, in, out"). One instructor on each side. Who you check first: <q-check/>',
-            es: 'Las palabras cambian según la escuela y el avión ("Ready, set, go", "Out, in, out"). Un instructor a cada lado. A quién miras primero: <q-check/>',
-            ru: 'Слова зависят от школы и самолёта («Ready, set, go», «Out, in, out»). По одному инструктору с каждой стороны. На кого смотреть первым: <q-check/>',
-          },
+          points: [
+            {
+              en: 'Words <b>differ</b> by school and aircraft ("Ready, set, go", "Out, in, out")',
+              es: 'Las palabras <b>cambian</b> según la escuela y el avión ("Ready, set, go", "Out, in, out")',
+              ru: 'Слова <b>зависят</b> от школы и самолёта («Ready, set, go», «Out, in, out»)',
+            },
+            { en: '<b>One instructor</b> on each side', es: '<b>Un instructor</b> a cada lado', ru: 'По <b>одному инструктору</b> с каждой стороны' },
+            { en: 'Who you check first: <q-check/>', es: 'A quién miras primero: <q-check/>', ru: 'На кого смотреть первым: <q-check/>' },
+          ],
         },
         {
           type: 'watch',

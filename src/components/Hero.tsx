@@ -31,15 +31,19 @@ const T = {
   numbers: h('The numbers to know by heart', 'Las cifras que hay que saber de memoria', 'Цифры, которые надо знать наизусть'),
 };
 
-const NUMBERS: { big: string; label: L; to: string; red?: boolean }[] = [
-  { big: '3 s', label: h('check altitude', 'mira el altímetro', 'смотри на высоту'), to: 'altitude' },
+/** The altitudes in the order you pass them, plus two timers. Each links to its chapter. */
+const TAPE: { big: string; label: L; to: string; red?: boolean }[] = [
+  { big: '13,500', label: h('exit', 'salida', 'отделение'), to: 'count' },
   { big: '6,000', label: h('lock on: altimeter only', 'solo el altímetro', 'только высотомер'), to: 'altitude' },
   { big: '5,500', label: h('pull', 'abre', 'раскрытие'), to: 'deploy' },
-  { big: '5 s', label: h('count, then check the canopy', 'cuenta y revisa la vela', 'счёт, потом проверка купола'), to: 'deploy' },
   { big: '2,500', label: h('decide: fix or cut away', 'decide: arreglar o liberar', 'решение: исправить или отцепка'), to: 'ep', red: true },
   { big: '1,000', label: h('no cutaway below', 'no liberar por debajo', 'ниже не отцепляться'), to: 'ep', red: true },
-  { big: '900·600·300', label: h('landing pattern', 'circuito de aterrizaje', 'схема захода'), to: 'pattern' },
-  { big: '10 ft', label: h('flare, then PLF', 'flare y luego PLF', 'flare, потом PLF'), to: 'flare' },
+  { big: '900 · 600 · 300', label: h('landing pattern', 'circuito', 'схема захода'), to: 'pattern' },
+  { big: '10 ft', label: h('flare, then PLF', 'flare y PLF', 'flare, потом PLF'), to: 'flare' },
+];
+const TIMERS: { big: string; label: L; to: string }[] = [
+  { big: '3 s', label: h('check altitude, all the time', 'mira el altímetro, siempre', 'смотри на высоту, всегда'), to: 'altitude' },
+  { big: '5 s', label: h('count after the pull, then check the canopy', 'cuenta tras abrir y revisa la vela', 'счёт после раскрытия, потом проверка купола'), to: 'deploy' },
 ];
 
 /**
@@ -161,12 +165,15 @@ export function Hero() {
 
       <div className="numbers">
         <span className="nh">{t(T.numbers)}</span>
-        <div className="ngrid">
-          {NUMBERS.map((x, i) => (
-            <a key={i} href={`#${x.to}`} className={`num surface ${x.red ? 'red' : ''}`}>
-              <span className="big">{x.big}</span><span className="lbl">{t(x.label)}</span>
-            </a>
+        <ol className="tape surface">
+          {TAPE.map((x, i) => (
+            <li key={i} className={x.red ? 'red' : ''}>
+              <a href={`#${x.to}`}><span className="big">{x.big}</span><span className="dot" aria-hidden="true" /><span className="lbl">{t(x.label)}</span></a>
+            </li>
           ))}
+        </ol>
+        <div className="timers">
+          {TIMERS.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface"><span className="big">{x.big}</span><span className="lbl">{t(x.label)}</span></a>)}
         </div>
       </div>
     </div></div>

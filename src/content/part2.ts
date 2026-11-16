@@ -17,9 +17,9 @@ export const part2: Part = {
             {
               type: 'p',
               text: {
-                en: 'Right after exit: push the hips down toward the ground and arch. This is the most stable position, belly to earth.',
-                es: 'Justo después de salir: empuja la cadera hacia el suelo y arquea. Es la posición más estable, panza a tierra.',
-                ru: 'Сразу после отделения: таз толкаем вниз, к земле, и прогибаемся. Это самое устойчивое положение — животом к земле.',
+                en: 'Right after exit: push the <b>hips down</b> toward the ground and <b>arch</b>. This is the most stable position, belly to earth.',
+                es: 'Justo después de salir: empuja la <b>cadera hacia el suelo</b> y <b>arquea</b>. Es la posición más estable, panza a tierra.',
+                ru: 'Сразу после отделения: <b>таз толкаем вниз</b>, к земле, и <b>прогибаемся</b>. Это самое устойчивое положение — животом к земле.',
               },
             },
             {
@@ -27,30 +27,30 @@ export const part2: Part = {
               items: [
                 {
                   title: { en: 'Hips down, arch', es: 'Cadera abajo, arquea', ru: 'Таз вниз, прогиб' },
-                  sub: { en: 'The hips are the lowest point of the body.', es: 'La cadera es el punto más bajo del cuerpo.', ru: 'Таз — самая нижняя точка тела.' },
+                  sub: { en: 'The hips are the <b>lowest point</b> of the body.', es: 'La cadera es el <b>punto más bajo</b> del cuerpo.', ru: 'Таз — <b>самая нижняя точка</b> тела.' },
                 },
                 {
                   title: { en: 'Arms square', es: 'Brazos en escuadra', ru: 'Руки «квадратом»' },
                   sub: {
-                    en: 'Elbows bent about 90°, hands near head level.',
-                    es: 'Codos doblados a unos 90°, manos cerca de la altura de la cabeza.',
-                    ru: 'Локти согнуты примерно на 90°, кисти примерно на уровне головы.',
+                    en: 'Elbows bent about <b>90°</b>, hands near <b>head level</b>.',
+                    es: 'Codos doblados a unos <b>90°</b>, manos cerca de la <b>altura de la cabeza</b>.',
+                    ru: 'Локти согнуты примерно на <b>90°</b>, кисти примерно на <b>уровне головы</b>.',
                   },
                 },
                 {
                   title: { en: 'Thumb-to-ear check', es: 'Pulgares a las orejas', ru: 'Проверка: большие пальцы к ушам' },
                   sub: {
-                    en: 'Touch your thumbs to your ears, then open back out: that\'s where square arms are.',
-                    es: 'Toca las orejas con los pulgares y vuelve a abrir: ahí están los brazos en escuadra.',
-                    ru: 'Приложи большие пальцы к ушам и разведи руки обратно: это и есть руки «квадратом».',
+                    en: 'Touch your <b>thumbs to your ears</b>, then <b>open back out</b>: that\'s where square arms are.',
+                    es: 'Toca las <b>orejas con los pulgares</b> y <b>vuelve a abrir</b>: ahí están los brazos en escuadra.',
+                    ru: 'Приложи <b>большие пальцы к ушам</b> и <b>разведи руки обратно</b>: это и есть руки «квадратом».',
                   },
                 },
                 {
                   title: { en: 'Legs', es: 'Piernas', ru: 'Ноги' },
                   sub: {
-                    en: 'You said "legs together and up". Many schools teach knees about shoulder width, shins up, toes pointed. <q-check/>',
-                    es: 'Dijiste "piernas juntas y arriba". Muchas escuelas enseñan rodillas más o menos a la anchura de los hombros, espinillas arriba, puntas de los pies estiradas. <q-check/>',
-                    ru: 'Ты сказал «ноги вместе и вверх». Во многих школах учат: колени примерно на ширине плеч, голени вверх, носки вытянуты. <q-check/>',
+                    en: 'You said "legs together and up". Many schools teach knees about <b>shoulder width</b>, shins up, toes pointed. <q-check/>',
+                    es: 'Dijiste "piernas juntas y arriba". Muchas escuelas enseñan rodillas más o menos a la <b>anchura de los hombros</b>, espinillas arriba, puntas de los pies estiradas. <q-check/>',
+                    ru: 'Ты сказал «ноги вместе и вверх». Во многих школах учат: колени примерно на <b>ширине плеч</b>, голени вверх, носки вытянуты. <q-check/>',
                   },
                 },
               ],
@@ -143,9 +143,9 @@ export const part2: Part = {
         {
           type: 'p',
           text: {
-            en: 'Tap a line to see the altimeter. Between every block: check altitude.',
-            es: 'Toca una línea para ver el altímetro. Entre bloque y bloque: mira la altura.',
-            ru: 'Нажми на строку, чтобы увидеть высотомер. Между блоками — проверка высоты.',
+            en: 'Tap a line to see the altimeter. Between every block: <b>check altitude</b>.',
+            es: 'Toca una línea para ver el altímetro. Entre bloque y bloque: <b>mira la altura</b>.',
+            ru: 'Нажми на строку, чтобы увидеть высотомер. Между блоками — <b>проверка высоты</b>.',
           },
         },
         {
@@ -156,9 +156,9 @@ export const part2: Part = {
               value: 13.5,
               title: { en: 'Exit, arch', es: 'Salida, arquea', ru: 'Отделение, прогиб' },
               sub: {
-                en: 'Hips down, chin up. Exit altitude not confirmed. <q-check/>',
-                es: 'Cadera abajo, barbilla arriba. Altura de salida sin confirmar. <q-check/>',
-                ru: 'Таз вниз, подбородок вверх. Высота отделения не подтверждена. <q-check/>',
+                en: '<b>Hips down</b>, chin up. Exit altitude not confirmed. <q-check/>',
+                es: '<b>Cadera abajo</b>, barbilla arriba. Altura de salida sin confirmar. <q-check/>',
+                ru: '<b>Таз вниз</b>, подбородок вверх. Высота отделения не подтверждена. <q-check/>',
               },
             },
             {
@@ -166,9 +166,9 @@ export const part2: Part = {
               value: 12.5,
               title: { en: 'Circle of awareness', es: 'Círculo de atención', ru: 'Круг внимания' },
               sub: {
-                en: 'Altitude → left instructor → right instructor → chin up → altitude.',
-                es: 'Altura → instructor izquierdo → instructor derecho → barbilla arriba → altura.',
-                ru: 'Высота → левый инструктор → правый инструктор → подбородок вверх → высота.',
+                en: '<b>Altitude</b> → left instructor → right instructor → chin up → <b>altitude</b>.',
+                es: '<b>Altura</b> → instructor izquierdo → instructor derecho → barbilla arriba → <b>altura</b>.',
+                ru: '<b>Высота</b> → левый инструктор → правый инструктор → подбородок вверх → <b>высота</b>.',
               },
             },
             {
@@ -176,9 +176,9 @@ export const part2: Part = {
               value: 11.5,
               title: { en: '3 practice touches', es: '3 toques de práctica', ru: '3 тренировочных касания' },
               sub: {
-                en: 'Left hand over your head, right hand back to the pilot chute. Back to arch. Three times. Then altitude.',
-                es: 'Mano izquierda sobre la cabeza, mano derecha atrás al extractor. De vuelta al arco. Tres veces. Luego la altura.',
-                ru: 'Левая рука над головой, правая назад к вытяжному. Обратно в прогиб. Три раза. Потом высота.',
+                en: 'Left hand over your head, right hand back to the <b>pilot chute</b>. Back to arch. <b>Three times</b>. Then altitude.',
+                es: 'Mano izquierda sobre la cabeza, mano derecha atrás al <b>extractor</b>. De vuelta al arco. <b>Tres veces</b>. Luego la altura.',
+                ru: 'Левая рука над головой, правая назад к <b>вытяжному</b>. Обратно в прогиб. <b>Три раза</b>. Потом высота.',
               },
             },
             {
@@ -186,9 +186,9 @@ export const part2: Part = {
               value: 10,
               title: { en: 'Circle of awareness again', es: 'Círculo de atención otra vez', ru: 'Снова круг внимания' },
               sub: {
-                en: 'Left → right → chin up → altitude.',
-                es: 'Izquierda → derecha → barbilla arriba → altura.',
-                ru: 'Влево → вправо → подбородок вверх → высота.',
+                en: 'Left → right → chin up → <b>altitude</b>.',
+                es: 'Izquierda → derecha → barbilla arriba → <b>altura</b>.',
+                ru: 'Влево → вправо → подбородок вверх → <b>высота</b>.',
               },
             },
             {
@@ -196,9 +196,9 @@ export const part2: Part = {
               value: 8,
               title: { en: 'Hold the box, check altitude every 3–5 s', es: 'Mantén la caja, mira la altura cada 3–5 s', ru: 'Держим коробочку, высота каждые 3–5 с' },
               sub: {
-                en: 'Relax, legs, arch. Answer instructor signals.',
-                es: 'Relájate, piernas, arco. Responde a las señales de los instructores.',
-                ru: 'Расслабься, ноги, прогиб. Отвечай на жесты инструкторов.',
+                en: 'Relax, legs, arch. Answer <b>instructor signals</b>.',
+                es: 'Relájate, piernas, arco. Responde a las <b>señales de los instructores</b>.',
+                ru: 'Расслабься, ноги, прогиб. Отвечай на <b>жесты инструкторов</b>.',
               },
             },
             {
@@ -206,7 +206,7 @@ export const part2: Part = {
               value: 6,
               hot: true,
               title: { en: 'Lock on', es: 'Lock on', ru: 'Только высотомер' },
-              sub: { en: 'No more exercises.', es: 'Se acabaron los ejercicios.', ru: 'Больше никаких упражнений.' },
+              sub: { en: '<b>No more</b> exercises.', es: '<b>Se acabaron</b> los ejercicios.', ru: 'Больше <b>никаких</b> упражнений.' },
             },
             {
               alt: '5,500',
@@ -214,9 +214,9 @@ export const part2: Part = {
               hot: true,
               title: { en: 'PULL', es: 'ABRIR', ru: 'РАСКРЫТИЕ' },
               sub: {
-                en: 'Look, reach, pull. Then count to five (Part III).',
-                es: 'Mira, alcanza, tira. Luego cuenta hasta cinco (Parte III).',
-                ru: 'Посмотри, дотянись, выдерни. Потом счёт до пяти (часть III).',
+                en: '<b>Look, reach, pull</b>. Then count to five (Part III).',
+                es: '<b>Mira, alcanza, tira</b>. Luego cuenta hasta cinco (Parte III).',
+                ru: '<b>Посмотри, дотянись, выдерни</b>. Потом счёт до пяти (часть III).',
               },
             },
           ],
@@ -305,9 +305,9 @@ export const part2: Part = {
         {
           type: 'p',
           text: {
-            en: 'Altitude awareness is the number-one job in freefall. Check it:',
-            es: 'Controlar la altura es la tarea número uno en caída libre. Mírala:',
-            ru: 'Контроль высоты — задача номер один в свободном падении. Смотри на высотомер:',
+            en: 'Altitude awareness is the <b>number-one job</b> in freefall. Check it:',
+            es: 'Controlar la altura es la <b>tarea número uno</b> en caída libre. Mírala:',
+            ru: 'Контроль высоты — <b>задача номер один</b> в свободном падении. Смотри на высотомер:',
           },
         },
         {
@@ -317,25 +317,25 @@ export const part2: Part = {
               icon: 'altimeter',
               big: '3–5 s',
               text: {
-                en: 'USPA says every 3 seconds; some schools teach about 5. All the time.',
-                es: 'La USPA dice cada 3 segundos; algunas escuelas enseñan unos 5. Todo el tiempo.',
-                ru: 'USPA: каждые 3 секунды; некоторые школы учат около 5. Постоянно.',
+                en: 'USPA says <b>every 3 seconds</b>; some schools teach about 5. <b>All the time.</b>',
+                es: 'La USPA dice <b>cada 3 segundos</b>; algunas escuelas enseñan unos 5. <b>Todo el tiempo.</b>',
+                ru: 'USPA: <b>каждые 3 секунды</b>; некоторые школы учат около 5. <b>Постоянно.</b>',
               },
             },
             {
               icon: 'repeat',
-              text: { en: 'Before and after every maneuver.', es: 'Antes y después de cada maniobra.', ru: 'До и после каждого манёвра.' },
+              text: { en: '<b>Before and after</b> every maneuver.', es: '<b>Antes y después</b> de cada maniobra.', ru: '<b>До и после</b> каждого манёвра.' },
             },
             {
               icon: 'question',
-              text: { en: 'Whenever in doubt.', es: 'Siempre que tengas dudas.', ru: 'Всегда, когда сомневаешься.' },
+              text: { en: 'Whenever <b>in doubt</b>.', es: 'Siempre que tengas <b>dudas</b>.', ru: 'Всегда, когда <b>сомневаешься</b>.' },
             },
             {
               icon: 'tap',
               text: {
-                en: 'When an instructor signals you to. <q-check/>',
-                es: 'Cuando un instructor te lo indique. <q-check/>',
-                ru: 'Когда инструктор подаёт знак. <q-check/>',
+                en: 'When an <b>instructor signals</b> you to. <q-check/>',
+                es: 'Cuando un <b>instructor te lo indique</b>. <q-check/>',
+                ru: 'Когда <b>инструктор подаёт знак</b>. <q-check/>',
               },
             },
           ],
@@ -343,11 +343,23 @@ export const part2: Part = {
         {
           type: 'callout',
           check: true,
-          text: {
-            en: 'You remembered three reasons; "instructor signal" (a slap on the wrist) is the usual fourth. Your "every 3" is USPA\'s rule: an altitude check every 3 seconds. Overloaded or lost? Default to: altitude, arch, pull at 5,500.',
-            es: 'Recordaste tres motivos; "señal del instructor" (una palmada en la muñeca) suele ser el cuarto. Tu "cada 3" es la regla de la USPA: mirar la altura cada 3 segundos. ¿Saturado o perdido? Vuelve a lo básico: altura, arco, abrir a 5,500.',
-            ru: 'Ты запомнил три причины; обычно четвёртая — «по знаку инструктора» (хлопок по запястью). Твоё «каждые 3» — это правило USPA: проверка высоты каждые 3 секунды. Перегружен или потерялся? По умолчанию: высота, прогиб, раскрытие на 5 500.',
-          },
+          points: [
+            {
+              en: 'You remembered three reasons; the usual fourth is <b>instructor signal</b> (a slap on the wrist)',
+              es: 'Recordaste tres motivos; el cuarto suele ser <b>señal del instructor</b> (una palmada en la muñeca)',
+              ru: 'Ты запомнил три причины; обычно четвёртая — <b>по знаку инструктора</b> (хлопок по запястью)',
+            },
+            {
+              en: 'Your "every 3" is <b>USPA\'s rule</b>: an altitude check every 3 seconds',
+              es: 'Tu "cada 3" es la <b>regla de la USPA</b>: mirar la altura cada 3 segundos',
+              ru: 'Твоё «каждые 3» — <b>правило USPA</b>: проверка высоты каждые 3 секунды',
+            },
+            {
+              en: 'Overloaded or lost? Default to: <b>altitude, arch, pull at 5,500</b>',
+              es: '¿Saturado o perdido? Vuelve a lo básico: <b>altura, arco, abrir a 5,500</b>',
+              ru: 'Перегружен или потерялся? По умолчанию: <b>высота, прогиб, раскрытие на 5 500</b>',
+            },
+          ],
         },
         {
           type: 'rules',
@@ -357,9 +369,9 @@ export const part2: Part = {
               tone: 'accent',
               title: { en: 'Lock on', es: 'Lock on', ru: 'Только высотомер' },
               text: {
-                en: 'Stop all exercises. Watch the altimeter only.',
-                es: 'Deja todos los ejercicios. Mira solo el altímetro.',
-                ru: 'Прекрати все упражнения. Смотри только на высотомер.',
+                en: 'Stop <b>all exercises</b>. Watch the <b>altimeter only</b>.',
+                es: 'Deja <b>todos los ejercicios</b>. Mira <b>solo el altímetro</b>.',
+                ru: 'Прекрати <b>все упражнения</b>. Смотри <b>только на высотомер</b>.',
               },
             },
             {
@@ -367,9 +379,9 @@ export const part2: Part = {
               tone: 'accent',
               title: { en: 'Pull', es: 'Abrir', ru: 'Раскрытие' },
               text: {
-                en: 'Our pull altitude is 5,500 ft, not 5,000.',
-                es: 'Nuestra altura de apertura es 5,500 ft, no 5,000.',
-                ru: 'Мы раскрываемся на высоте 5 500 футов, а не 5 000.',
+                en: 'Our pull altitude is <b>5,500 ft</b>, not 5,000.',
+                es: 'Nuestra altura de apertura es <b>5,500 ft</b>, no 5,000.',
+                ru: 'Мы раскрываемся на высоте <b>5 500 футов</b>, а не 5 000.',
               },
             },
           ],
@@ -432,9 +444,18 @@ export const part2: Part = {
         {
           type: 'p',
           text: {
-            en: 'It\'s too loud to talk, so instructors show these right in front of your face, or touch you. Filmed by an AFF school (Skydive Fundamentals); most schools use the same set, but confirm each one with yours.',
-            es: 'Hay demasiado ruido para hablar, así que los instructores las muestran justo delante de tu cara o te tocan. Las grabó una escuela AFF (Skydive Fundamentals); la mayoría de las escuelas usa las mismas, pero confirma cada una con la tuya.',
-            ru: 'Слишком шумно, чтобы говорить, поэтому инструкторы показывают жесты прямо перед лицом или касаются тебя. Сняты школой AFF (Skydive Fundamentals); в большинстве школ жесты те же, но сверь каждый со своей.',
+            en: 'Too loud to talk: instructors <b>show</b> these right in front of your face, or <b>touch</b> you.',
+            es: 'Hay demasiado ruido para hablar: los instructores las <b>muestran</b> justo delante de tu cara o te <b>tocan</b>.',
+            ru: 'Слишком шумно, чтобы говорить: инструкторы <b>показывают</b> жесты прямо перед лицом или <b>касаются</b> тебя.',
+          },
+        },
+        {
+          type: 'p',
+          muted: true,
+          text: {
+            en: 'Filmed by an AFF school (Skydive Fundamentals). Most schools use the same set, but <b>confirm each one</b> with yours.',
+            es: 'Las grabó una escuela AFF (Skydive Fundamentals). La mayoría usa las mismas, pero <b>confirma cada una</b> con la tuya.',
+            ru: 'Сняты школой AFF (Skydive Fundamentals). В большинстве школ жесты те же, но <b>сверь каждый</b> со своей.',
           },
         },
         {
@@ -446,9 +467,9 @@ export const part2: Part = {
               name: { en: 'Pull', es: 'Abre', ru: 'Раскрывайся' },
               what: { en: 'One finger pointed, in any direction.', es: 'Un dedo apuntando, en cualquier dirección.', ru: 'Один вытянутый палец, в любую сторону.' },
               act: {
-                en: 'Pull right now; you\'ll talk about why on the ground.',
-                es: 'Abre ahora mismo; el porqué lo hablarán en tierra.',
-                ru: 'Раскрывайся сразу; почему — обсудите на земле.',
+                en: '<b>Pull right now</b>; you\'ll talk about why on the ground.',
+                es: '<b>Abre ahora mismo</b>; el porqué lo hablarán en tierra.',
+                ru: '<b>Раскрывайся сразу</b>; почему — обсудите на земле.',
               },
             },
             {
