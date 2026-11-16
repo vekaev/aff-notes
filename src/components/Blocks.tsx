@@ -83,7 +83,10 @@ function Cards({ b }: { b: Extract<Block, { type: 'cards' }> }) {
   const wide = b.items.every(c => c.source);
   return (
     <div className={`cardgroup blocks ${quiz ? 'quizzing' : ''}`}>
-      {b.groupTitle && <h4><Rich s={b.groupTitle} />{b.pill && <span className={`pill ${b.pill}`}>{b.pill}</span>}</h4>}
+      {b.groupTitle && <h4><Rich s={b.groupTitle} />{b.pill && (
+        <a href="#ep" className={`pill ${b.pill} tip tip-left`} data-tip={t(b.pill === 'EP' ? ui.epTip : ui.fixTip)} aria-label={t(b.pill === 'EP' ? ui.epTip : ui.fixTip)}>{b.pill}</a>
+      )}</h4>}
+      {b.pill === 'FIX' && <p className="fix-rule"><Rich s={ui.fixRule} /></p>}
       {b.groupSub && <p className="muted" style={{ margin: 0 }}><Rich s={b.groupSub} /></p>}
       {!wide && (
         <div className="toggle-row">

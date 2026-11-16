@@ -45,6 +45,9 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] Make sure every ask is tracked and done: this inbox + rule in CLAUDE.md + the 2-hourly run reads it.
 - [ ] Curriculum proposals: new chapters (landing off the DZ and after landing; other canopies; wind for students),
       decision-style test questions, "act now" rules where they're used. One per run, sourced.
+- [x] EP / FIX labels on the malfunction groups: EP links to the emergency procedure with a hover hint
+      ("how to do the emergency procedure →"); FIX explains "two tries only, keep checking altitude, not fixed by 2,500 → EP".
+      Make "two tries + watch altitude" stand out in the malfunctions chapter.
 - [?] Big reorder (Part IV "act now" first, statistics and real cases in their own part, EP button in the header): ask.
 
 ## Waiting on you

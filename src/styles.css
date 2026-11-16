@@ -680,3 +680,9 @@ h4 { margin: var(--s8) 0 var(--s3); font-size: 17px; }
 /* player: a clear way out when the uploader allows YouTube only */
 .player-foot { display: flex; align-items: center; justify-content: space-between; gap: var(--s3); flex-wrap: wrap; padding: var(--s3) var(--s4); background: var(--card); color: var(--muted); font-size: 14px; }
 .player-foot .btn { flex: none; display: inline-flex; align-items: center; text-decoration: none; }
+
+/* EP / FIX labels: links to the emergency procedure, with a hint; the fixable group carries its rule in plain sight */
+a.pill { text-decoration: none; cursor: pointer; }
+a.pill:hover { filter: brightness(1.1); }
+.tip-left::after { left: 0; right: auto; z-index: 5; white-space: normal; width: max-content; max-width: 260px; line-height: 1.35; hyphens: none; }
+.fix-rule { margin: 0; padding: var(--s3) var(--s4); border-radius: var(--r); background: color-mix(in srgb, var(--ok) 10%, var(--card)); box-shadow: inset 3px 0 0 var(--ok), 0 0 0 1px var(--hair); font-size: 16px; }
