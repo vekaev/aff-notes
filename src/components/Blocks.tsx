@@ -7,7 +7,7 @@ import { mmss, ytUrl } from '../lib';
 import { Icon } from './Icon';
 import { useOpenVideo } from './Player';
 import { Quiz } from './Quiz';
-import { Altimeter, CanopyCheck, Climb, CanopyDrawing, ExitCount, LowTurn, Pattern } from '../widgets';
+import { Altimeter, CanopyCheck, Rig, Climb, CanopyDrawing, ExitCount, LowTurn, Pattern } from '../widgets';
 
 
 export function ClipFigure({ c }: { c: Clip }) {
@@ -173,6 +173,7 @@ export function BlockView({ b, chapterId }: { b: Block; chapterId: string }) {
     case 'altimeter': return <Altimeter rows={b.rows} />;
     case 'pattern': return <Pattern rows={b.rows} />;
     case 'lowturn': return <LowTurn b={b} />;
+    case 'rig': return <Rig parts={b.parts} />;
     case 'canopyCheck': return <CanopyCheck items={b.items} />;
     case 'quiz': return <Quiz id={chapterId} questions={b.questions} />;
     case 'split':

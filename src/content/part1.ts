@@ -172,6 +172,52 @@ export const part1: Part = {
             },
           ],
         },
+        { type: 'h', text: { en: 'Know your rig', es: 'Conoce tu equipo', uk: 'Знай свою систему', ru: 'Знай свою систему' } },
+        {
+          type: 'rig',
+          parts: [
+            {
+              id: 'reserve',
+              name: { en: 'Reserve', es: 'Reserva', uk: 'Запасний', ru: 'Запасной' },
+              text: { en: '<b>Top</b> of the container. Packed and sealed by a rigger.', es: '<b>Arriba</b> en el contenedor. La pliega y precinta un rigger.', uk: '<b>Верхній</b> відсік ранця. Вкладає й пломбує ригер.', ru: '<b>Верхний</b> отсек ранца. Укладывает и пломбирует риггер.' },
+            },
+            {
+              id: 'main',
+              name: { en: 'Main', es: 'Principal', uk: 'Основний', ru: 'Основной' },
+              text: { en: '<b>Bottom</b> of the container. You open it at <b>5,500 ft</b>.', es: '<b>Abajo</b> en el contenedor. La abres a <b>5,500 ft</b>.', uk: '<b>Нижній</b> відсік ранця. Розкриваєш його на <b>5 500 футах</b>.', ru: '<b>Нижний</b> отсек ранца. Раскрываешь его на <b>5 500 футах</b>.' },
+            },
+            {
+              id: 'pc',
+              name: { en: 'Pilot chute handle', es: 'Manija del extractor', uk: 'Ручка витяжного', ru: 'Ручка вытяжного' },
+              text: { en: 'The little <b>ball</b> at the bottom of the container, <b>right side</b>. Right hand.', es: 'La <b>bolita</b> abajo del contenedor, <b>lado derecho</b>. Mano derecha.', uk: '<b>Кулька</b> внизу ранця, <b>праворуч</b>. Права рука.', ru: '<b>Шарик</b> внизу ранца, <b>справа</b>. Правая рука.' },
+            },
+            {
+              id: 'aad',
+              name: { en: 'AAD', es: 'AAD', uk: 'AAD (страхувальний прилад)', ru: 'AAD (страхующий прибор)' },
+              text: { en: 'Small computer <b>inside the reserve</b>. Opens it if you are still falling fast too low. <b>Switched on</b> before the jump.', es: 'Pequeña computadora <b>dentro de la reserva</b>. La abre si sigues cayendo rápido demasiado bajo. Se <b>enciende</b> antes del salto.', uk: 'Маленький комп’ютер <b>у відсіку запасного</b>. Розкриває його, якщо ти ще швидко падаєш надто низько. <b>Вмикається</b> перед стрибком.', ru: 'Маленький компьютер <b>в отсеке запасного</b>. Раскрывает его, если ты ещё быстро падаешь слишком низко. <b>Включается</b> перед прыжком.' },
+            },
+            {
+              id: 'cutaway',
+              name: { en: 'Cutaway handle (red)', es: 'Manija de liberación (roja)', uk: 'Подушка відчеплення (червона)', ru: 'Подушка отцепки (красная)' },
+              text: { en: '<b>Right chest</b>. Releases the main.', es: '<b>Pecho derecho</b>. Suelta la principal.', uk: '<b>Праворуч на грудях</b>. Відчіплює основний.', ru: '<b>Справа на груди</b>. Отцепляет основной.' },
+            },
+            {
+              id: 'silver',
+              name: { en: 'Reserve handle (silver)', es: 'Manija de la reserva (plateada)', uk: 'Кільце запасного (срібне)', ru: 'Кольцо запасного (серебристое)' },
+              text: { en: '<b>Left chest</b>. Opens the reserve.', es: '<b>Pecho izquierdo</b>. Abre la reserva.', uk: '<b>Зліва на грудях</b>. Розкриває запасний.', ru: '<b>Слева на груди</b>. Раскрывает запасной.' },
+            },
+            {
+              id: 'rings',
+              name: { en: 'Three rings', es: 'Tres anillos', uk: 'Три кільця', ru: 'Три кольца' },
+              text: { en: 'On <b>each shoulder</b>, where the main is attached. The red handle opens them.', es: 'En <b>cada hombro</b>, donde se une la principal. La manija roja los suelta.', uk: 'На <b>кожному плечі</b>, де кріпиться основний. Червона подушка їх відчіплює.', ru: 'На <b>каждом плече</b>, где крепится основной. Красная подушка их отцепляет.' },
+            },
+            {
+              id: 'straps',
+              name: { en: 'Chest and leg straps', es: 'Cinta de pecho y perneras', uk: 'Грудна перемичка й ножні обхвати', ru: 'Грудная перемычка и ножные обхваты' },
+              text: { en: '<b>Snug</b> and threaded right. Hold you in the harness.', es: '<b>Ajustadas</b> y bien pasadas. Te sujetan al arnés.', uk: '<b>Щільно</b> затягнуті й правильно протягнуті. Тримають тебе в підвісній системі.', ru: '<b>Плотно</b> затянуты и правильно продеты. Держат тебя в подвесной системе.' },
+            },
+          ],
+        },
         { type: 'h', text: { en: 'Checked four times', es: 'Se revisa cuatro veces', uk: 'Перевіряється чотири рази', ru: 'Проверяется четыре раза' } },
         {
           type: 'steps',

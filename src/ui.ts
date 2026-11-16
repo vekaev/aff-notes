@@ -37,6 +37,8 @@ export const ui = {
     es: 'Apuntes de uso personal, no son instrucción. Los clips son fragmentos breves de tutoriales públicos; cada uno enlaza a su original.',
     ru: 'Конспект для личного использования, а не инструкция. Клипы — короткие отрывки из публичных уроков, у каждого есть ссылка на оригинал.', uk: 'Конспект для особистого використання, а не інструкція. Кліпи — короткі уривки з публічних уроків, у кожного є посилання на оригінал.',
   },
+  backView: { en: 'back', es: 'espalda', ru: 'сзади', uk: 'ззаду' },
+  frontView: { en: 'front', es: 'frente', ru: 'спереди', uk: 'спереду' },
   sideView: { en: 'side view', es: 'vista lateral', ru: 'вид сбоку', uk: 'вигляд збоку' },
   wind: { en: 'wind', es: 'viento', ru: 'ветер', uk: 'вітер' },
 } satisfies Record<string, L>;

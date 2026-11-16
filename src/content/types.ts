@@ -54,6 +54,10 @@ export interface Card {
 /** Ordered rows with an altitude on the left; tapping one moves the altimeter / map marker. */
 export interface AltRow { alt: string; value: number; title: L; sub: L; hot?: boolean; point?: [number, number] }
 
+/** One part of the rig drawing; `id` picks what lights up in the picture. */
+export type RigPartId = 'reserve' | 'main' | 'pc' | 'aad' | 'cutaway' | 'silver' | 'rings' | 'straps';
+export interface RigPart { id: RigPartId; name: L; text: L }
+
 export type Block =
   | { type: 'p'; text: L; muted?: boolean }
   | { type: 'h'; text: L; id?: string }
@@ -75,6 +79,7 @@ export type Block =
   | { type: 'altimeter'; rows: AltRow[] }                    // dive flow with a live altimeter
   | { type: 'pattern'; rows: AltRow[] }                      // landing pattern map
   | { type: 'lowturn'; text: L; points: L[]; clip: Clip }    // low-turn diagram
+  | { type: 'rig'; parts: RigPart[] }                       // the rig, back and front, part by part
   | { type: 'canopyCheck'; items: { word: L; text: L }[] }   // pull, count, there/square/stable/steerable
   | { type: 'quiz'; questions: QuizQuestion[] }
   | { type: 'split'; left: Block[]; right: Block[] };        // two columns on wide screens

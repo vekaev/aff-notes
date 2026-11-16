@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import type { AltRow, Block, L, Step } from './content/types';
+import type { AltRow, Block, L, RigPart, RigPartId, Step } from './content/types';
 import { Rich, useLang } from './i18n';
 import { ui } from './ui';
 import { ClipFigure } from './components/Blocks';
@@ -297,5 +297,64 @@ export function CanopyDrawing({ state }: { state: 'none' | 'spin' | 'twist' | 'g
         : <g style={state === 'spin' ? { transformOrigin: '100px 60px', animation: 'spin 2.4s linear infinite' } : undefined}><CanopyShape /></g>}
       <line x1="100" y1="160" x2="100" y2="180" stroke="var(--ink)" strokeWidth="6" strokeLinecap="round" /><circle cx="100" cy="154" r="7" fill="var(--ink)" />
     </svg>
+  );
+}
+
+
+/* ---------- the rig, back and front: tap a part, it lights up ---------- */
+export function Rig({ parts }: { parts: RigPart[] }) {
+  const { t } = useLang();
+  const [i, setI] = useState(0);
+  const on = parts[i].id;
+  const rp = (id: RigPartId) => `rp ${id === on ? 'on' : ''}`;
+  return (
+    <div className="split">
+      <div className="stage sticky rig">
+        <svg viewBox="0 0 320 250" role="img" aria-label={`${t(parts[i].name)}`}>
+          <rect x="0" y="0" width="320" height="250" rx="10" fill="var(--paper)" />
+          {/* back: reserve on top, main below, pilot chute handle at the bottom right */}
+          <g className={rp('straps')} fill="none" stroke="var(--ink)" strokeWidth="5" strokeLinecap="round">
+            <path d="M50 24 L52 40 M110 24 L108 40" />
+            <path d="M46 186 Q40 212 58 226 M114 186 Q120 212 102 226" />
+          </g>
+          <g className={rp('reserve')}>
+            <path d="M40 98 V52 Q40 40 52 40 H108 Q120 40 120 52 V98 Z" fill="var(--card)" stroke="var(--ink)" strokeWidth="3" />
+          </g>
+          <g className={rp('aad')}>
+            <rect x="62" y="58" width="36" height="22" rx="4" fill="var(--soft)" stroke="var(--ink)" strokeWidth="2" strokeDasharray="4 3" />
+            <text x="80" y="73" textAnchor="middle" fontFamily="var(--mono)" fontSize="9" fill="var(--ink)">AAD</text>
+          </g>
+          <g className={rp('main')}>
+            <path d="M40 100 H120 V178 Q120 190 108 190 H52 Q40 190 40 178 Z" fill="var(--card)" stroke="var(--ink)" strokeWidth="3" />
+          </g>
+          <g className={rp('pc')}>
+            <circle cx="108" cy="202" r="8" fill="var(--ink)" />
+            <path d="M108 194 V188" stroke="var(--ink)" strokeWidth="3" />
+          </g>
+          {/* front: harness on a body; right side of the jumper = left side of the picture */}
+          <g fill="none" stroke="var(--line-strong)" strokeWidth="2">
+            <circle cx="240" cy="22" r="13" />
+            <path d="M206 160 V62 Q206 40 228 40 H252 Q274 40 274 62 V160 Z" />
+            <path d="M222 160 V236 M258 160 V236" />
+          </g>
+          <g stroke="var(--ink)" strokeWidth="5" strokeLinecap="round"><path d="M224 40 V160 M256 40 V160" /></g>
+          <g className={rp('rings')} fill="none" stroke="var(--ink)" strokeWidth="2">
+            <circle cx="224" cy="46" r="7" /><circle cx="224" cy="56" r="5" /><circle cx="224" cy="63" r="3" />
+            <circle cx="256" cy="46" r="7" /><circle cx="256" cy="56" r="5" /><circle cx="256" cy="63" r="3" />
+          </g>
+          <g className={rp('straps')} fill="none" stroke="var(--ink)" strokeWidth="5" strokeLinecap="round">
+            <path d="M224 88 H256" />
+            <ellipse cx="222" cy="176" rx="15" ry="7" /><ellipse cx="258" cy="176" rx="15" ry="7" />
+          </g>
+          <g className={rp('cutaway')}><rect x="206" y="98" width="16" height="26" rx="6" fill="var(--red)" /></g>
+          <g className={rp('silver')}><rect x="258" y="98" width="16" height="26" rx="6" fill="#c9ccd2" stroke="var(--ink)" strokeWidth="2" /></g>
+          <g fontFamily="var(--mono)" fontSize="11" fill="var(--muted)" textAnchor="middle">
+            <text x="80" y="244">{t(ui.backView)}</text><text x="240" y="248">{t(ui.frontView)}</text>
+          </g>
+        </svg>
+        <div className="cap"><Rich s={parts[i].name} /></div>
+      </div>
+      <div><StepList steps={parts.map(p => ({ title: p.name, sub: p.text }))} on={i} onPick={setI} /></div>
+    </div>
   );
 }

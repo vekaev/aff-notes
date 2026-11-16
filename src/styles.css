@@ -529,3 +529,9 @@ dialog.player::backdrop { background: rgba(0,0,0,.72); }
 }
 .card .src-link { font-size: 12px; color: var(--muted); text-decoration: none; margin-top: 6px; }
 .card .src-link:hover { color: var(--ink); }
+
+/* rig drawing: the picked part stays, the rest steps back */
+.rig .rp { transition: opacity .2s; opacity: .22; }
+.rig .rp.on { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .rig .rp { transition: none; } }
+@media (max-width: 760px) { .rig.sticky { position: static; } }

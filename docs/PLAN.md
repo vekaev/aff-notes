@@ -23,7 +23,8 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
       contents; accent tick per chapter; header takes the part's tint (design review applied).
 - [x] Icons where there was only text: plane rules, gear (+ 4-check timeline), altitude rules, obstacles.
 - [x] Less wall of text: every chapter rewritten as short bullet lists with bold key words (helpers, all 5 files).
-- [ ] Gear chapter drawing of the rig (container, reserve, main, AAD, red/silver handles) (design review #12).
+- [x] Gear chapter drawing of the rig (design review #12). 2026-11-16 autopilot: "Know your rig" — back and front
+      drawing, tap one of 8 parts (reserve, main, pilot chute, AAD, red, silver, three rings, straps) and it lights up.
 - [x] Climb-out drawing: hands grab the door handle and stay on it as the body moves.
 - [x] Videos open inside the page (player at the right second), not a new tab; same for the "watch" links.
 - [x] Exit count: steps clickable to see each pose (check in, check out, …).
