@@ -31,7 +31,8 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - [x] "Hide the names" button renamed to "Test yourself: hide the names" with a hint.
 - [x] Design review by a separate agent; new palette (paper vs card contrast), posters for clips, quiz styles.
 - [x] Text review agents: all 5 content files reviewed in EN/ES/RU (~700 fixes; terms unified).
-- [ ] More research: where people most often get injured (phase, body part, students) — shown visually.
+- [x] More research: where people get injured → `docs/research/injury-data.md`; 4 bar charts in the injury chapter (phase,
+      body region, leg, landing causes); fixed 73–90% → 73–88%, ankle 30–60% (unsourced) removed, the 20% is tandems.
 
 - [x] New first screen (owner picked A + C + D): the jump as a clickable picture, continue where you stopped with
       test progress, and the key numbers as cards.
@@ -47,7 +48,7 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - [ ] "5–6 s at full brakes without stalling" depends on the canopy.
 - [ ] Water landing wording vs the current SIM 4-1; "flare about 10 ft" before a building: height or distance?
 - [ ] Tips use "level A/B/C" from Sharp's articles, the rest says "category": make consistent.
-- [ ] Source links inline for "6× injured" and "73–90% at landing".
+- [x] Source links for the injury charts (Sweden 2007, USPA, Netherlands 2024).
 
 ## 1. Content the owner dictated (must all be on the page)
 

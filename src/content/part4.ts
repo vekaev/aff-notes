@@ -740,12 +740,12 @@ export const part4: Part = {
           type: 'stats',
           items: [
             {
-              big: '73–90%',
+              big: '73–88%',
               tone: 'red',
               text: t(
-                `of injuries happen at <b>landing</b> (Danish, Swedish, Dutch studies).`,
-                `de las lesiones ocurren en el <b>aterrizaje</b> (estudios daneses, suecos y neerlandeses).`,
-                `травм — при <b>приземлении</b> (датские, шведские и нидерландские исследования).`,
+                `of injuries happen under canopy and at <b>landing</b> (Swedish, Danish, French, Dutch studies).`,
+                `de las lesiones ocurren bajo la vela y en el <b>aterrizaje</b> (estudios suecos, daneses, franceses y neerlandeses).`,
+                `травм — под куполом и при <b>приземлении</b> (шведские, датские, французские и нидерландские исследования).`,
               ),
             },
             {
@@ -758,9 +758,13 @@ export const part4: Part = {
               ),
             },
             {
-              big: '30–60%',
+              big: '41%',
               tone: 'red',
-              text: t(`of injuries are to the ankle.`, `de las lesiones son en el tobillo.`, `травм приходится на лодыжку.`),
+              text: t(
+                `of student injuries in a Swedish study happened on the <b>first two jumps</b>.`,
+                `de las lesiones de alumnos en un estudio sueco ocurrieron en los <b>dos primeros saltos</b>.`,
+                `травм студентов в шведском исследовании случились на <b>первых двух прыжках</b>.`,
+              ),
             },
             {
               big: '46%',
@@ -772,6 +776,59 @@ export const part4: Part = {
               ),
             },
           ],
+        },
+        {
+          type: 'bars',
+          title: t(`When in the jump people get hurt`, `En qué momento del salto se lesiona la gente`, `На каком этапе прыжка травмируются`),
+          items: [
+            { label: t(`Exit`, `Salida`, `Отделение`), value: 1.9 },
+            { label: t(`Freefall`, `Caída libre`, `Свободное падение`), value: 2.7 },
+            { label: t(`Opening`, `Apertura`, `Раскрытие`), value: 7.4 },
+            { label: t(`Canopy and landing`, `Vela y aterrizaje`, `Купол и приземление`), value: 87.9, hl: true },
+          ],
+          source: { label: 'Westman & Björnstig 2007, Sweden, 257 injuries / 540,000 jumps', href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/' },
+        },
+        {
+          type: 'bars',
+          title: t(`Which part of the body`, `Qué parte del cuerpo`, `Какая часть тела`),
+          items: [
+            { label: t(`Legs`, `Piernas`, `Ноги`), value: 51, hl: true },
+            { label: t(`Arms`, `Brazos`, `Руки`), value: 19 },
+            { label: t(`Spine`, `Columna`, `Позвоночник`), value: 18 },
+            { label: t(`Other`, `Otras`, `Другое`), value: 12 },
+          ],
+          source: { label: 'Westman & Björnstig 2007, Sweden (via a 2023 review)', href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/' },
+        },
+        {
+          type: 'bars',
+          title: t(`Inside the leg: where it breaks`, `Dentro de la pierna: dónde se rompe`, `Нога: где ломается`),
+          items: [
+            { label: t(`Ankle`, `Tobillo`, `Лодыжка`), value: 37, hl: true },
+            { label: t(`Thigh`, `Muslo`, `Бедро`), value: 25 },
+            { label: t(`Shin`, `Espinilla`, `Голень`), value: 23 },
+            { label: t(`Knee`, `Rodilla`, `Колено`), value: 10 },
+            { label: t(`Foot`, `Pie`, `Стопа`), value: 6 },
+          ],
+          source: { label: 'USPA incident reports, 130 leg injuries (one person can count twice)', href: 'http://www.uspa.org/thats-how-we-roll-ankle-injuries-in-skydiving' },
+        },
+        {
+          type: 'bars',
+          title: t(`What went wrong at landing`, `Qué salió mal al aterrizar`, `Что пошло не так при посадке`),
+          items: [
+            { label: t(`Wrong flare`, `Flare incorrecto`, `Неправильный flare`), value: 31, hl: true },
+            { label: t(`Terrain`, `Terreno`, `Рельеф и препятствия`), value: 30 },
+            { label: t(`Bad landing position`, `Mala posición al aterrizar`, `Неправильное положение тела`), value: 19 },
+          ],
+          source: { label: 'Netherlands 2015–2020, 2.1 M jumps', href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/' },
+        },
+        {
+          type: 'callout',
+          title: t(`What this means for you`, `Qué significa para ti`, `Что это значит для тебя`),
+          text: t(
+            `The risky moment is the last few seconds, on the first few jumps. Finish the flare, feet and knees together, PLF every time, look at the horizon. In Canada in 2025 all three student landing injuries were a slow or half flare with no PLF.`,
+            `El momento de riesgo son los últimos segundos, en los primeros saltos. Termina el flare, pies y rodillas juntos, PLF siempre, mira al horizonte. En Canadá en 2025 las tres lesiones de alumnos al aterrizar fueron un flare lento o a medias sin PLF.`,
+            `Опасный момент — последние секунды на первых прыжках. Доведи flare до конца, ступни и колени вместе, PLF всегда, смотри на горизонт. В Канаде в 2025 году все три травмы студентов при посадке — медленный или неполный flare без PLF.`,
+          ),
         },
         {
           type: 'h',
@@ -806,9 +863,9 @@ export const part4: Part = {
               big: '20%',
               tone: 'red',
               text: t(
-                `of those were students and tandems, usually because they <b>didn't lift their legs</b>.`,
-                `de esos fueron alumnos y tándems, por lo general por <b>no levantar las piernas</b>.`,
-                `из них — студенты и тандемы, обычно потому, что <b>не подняли ноги</b>.`,
+                `of those were tandem landings, usually the passenger <b>not lifting their legs</b>. Lift yours too.`,
+                `de esos fueron aterrizajes en tándem, por lo general el pasajero <b>no levantó las piernas</b>. Levanta las tuyas también.`,
+                `из них — тандемные посадки, обычно пассажир <b>не поднял ноги</b>. Ты тоже поднимай свои.`,
               ),
             },
             {
@@ -964,9 +1021,9 @@ export const part4: Part = {
               ],
               answer: 0,
               why: t(
-                `73–90% of injuries happen at landing, and landings were 52% of USPA's 2024 incident reports.`,
-                `El 73–90% de las lesiones ocurren al aterrizar, y los aterrizajes fueron el 52% de los incidentes de USPA en 2024.`,
-                `73–90 % травм — при приземлении, а посадки дали 52 % инцидентов в отчёте USPA за 2024 год.`,
+                `73–88% of injuries happen at landing, and landings were 52% of USPA's 2024 incident reports.`,
+                `El 73–88% de las lesiones ocurren al aterrizar, y los aterrizajes fueron el 52% de los incidentes de USPA en 2024.`,
+                `73–88 % травм — при приземлении, а посадки дали 52 % инцидентов в отчёте USPA за 2024 год.`,
               ),
             },
             {
