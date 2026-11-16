@@ -41,11 +41,15 @@ function Jumper({ pose }: { pose: Pose }) {
   const ink = { stroke: 'var(--ink)', strokeWidth: 3, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const, fill: 'none' };
   const head = (x: number, y: number) => <circle cx={x} cy={y} r="4.2" fill="var(--ink)" />;
   switch (pose) {
-    case 'sit': // in the plane, by the door
+    case 'sit': // side view of the plane; the jumper sits in the open door, legs out
       return (<g>
-        <rect x="2" y="10" width="36" height="22" rx="8" fill="var(--card)" stroke="var(--line-strong)" strokeWidth="1.5" />
-        <rect x="24" y="14" width="10" height="14" rx="2" fill="var(--sky-tint)" />
-        {head(16, 17)}<path d="M16 21 v6 l6 0 M16 24 l5 -2" {...ink} />
+        <path d="M6 18 L3 9 L10 17 Z" fill="var(--faint)" />
+        <path d="M4 22 Q4 17 11 17 H31 Q38 17 39.5 22 Q38 27 31 27 H11 Q4 27 4 22 Z" fill="var(--card)" stroke="var(--faint)" strokeWidth="1.5" />
+        <path d="M13 25 h13" stroke="var(--faint)" strokeWidth="2.5" strokeLinecap="round" />
+        <rect x="22" y="18.5" width="8" height="8" rx="1.5" fill="var(--sky-tint)" stroke="var(--line-strong)" strokeWidth="1" />
+        <line x1="40" y1="18" x2="40" y2="26" stroke="var(--faint)" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="26" cy="21" r="2.6" fill="var(--ink)" />
+        <path d="M26 23.5 v3 M26 26.5 l3 7 M26 26.5 l5 6" {...ink} strokeWidth={2.2} />
       </g>);
     case 'box': // belly to earth, arms and legs out
       return (<g>{head(20, 22)}<path d="M20 26 v8 M20 28 l-9 -6 M20 28 l9 -6 M20 34 l-7 7 M20 34 l7 7" {...ink} /></g>);
@@ -96,7 +100,7 @@ export function SkyRail() {
 
   return (
     <div className="skyrail" aria-hidden="true" onPointerDown={down} title={`${alt.toLocaleString('en-US')} ft`}>
-      <svg className="sky-plane" viewBox="0 0 24 12"><path d="M1 6 l8 -1 l3 -4 h1.5 l-1 4 l5 .5 l1.5 -2 h1.5 l-.7 2.5 l.7 2.5 h-1.5 l-1.5 -2 l-5 .5 l1 4 h-1.5 l-3 -4 z" fill="var(--faint)" /></svg>
+      <svg className="sky-plane" viewBox="0 0 24 12" style={{ opacity: pose === 'sit' ? 0 : 1 }}><path d="M1 6 l8 -1 l3 -4 h1.5 l-1 4 l5 .5 l1.5 -2 h1.5 l-.7 2.5 l.7 2.5 h-1.5 l-1.5 -2 l-5 .5 l1 4 h-1.5 l-3 -4 z" fill="var(--faint)" /></svg>
       <div className="sky-track" />
       <div className="sky-ground">
         <svg viewBox="0 0 40 28">

@@ -377,3 +377,4 @@ dialog.player::backdrop { background: rgba(0,0,0,.72); }
   .sky-ground { height: 20px; }
   .gutter { padding-right: max(34px, env(safe-area-inset-right, 0px)); }
 }
+.sky-plane { transition: opacity .3s; }
