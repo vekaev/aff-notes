@@ -294,3 +294,9 @@ dialog.player::backdrop { background: rgba(0,0,0,.72); }
 .steps.timeline li::before { display: none; }
 .steps.timeline .ico { margin: 0 auto 8px; }
 @media (max-width: 620px) { .steps.timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.clip.link { cursor: pointer; transition: box-shadow .15s, transform .15s; }
+.clip.link:hover { box-shadow: 0 0 0 1px var(--line-strong); }
+.clip.link:hover figcaption a { color: var(--ink); }
+.clip.link:active { transform: scale(.99); }
+.clip.link .vid::after { content: "▶"; position: absolute; right: 10px; bottom: 10px; width: 34px; height: 34px; border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; font-size: 13px; display: grid; place-items: center; opacity: 0; transition: opacity .15s; }
+.clip.link:hover .vid::after, .clip.link:focus-visible .vid::after { opacity: 1; }

@@ -13,11 +13,17 @@ import { Altimeter, CanopyCheck, Climb, CanopyDrawing, ExitCount, LowTurn, Patte
 export function ClipFigure({ c }: { c: Clip }) {
   const { t } = useLang();
   const open = useOpenVideo();
-  const play = (e: React.MouseEvent) => { if (e.metaKey || e.ctrlKey) return; e.preventDefault(); open({ yt: c.yt, t: c.t, title: t(c.caption) }); };
+  const show = () => open({ yt: c.yt, t: c.t, title: t(c.caption) });
+  // The whole card opens the original in the in-page player; the link inside stays for cmd/ctrl-click to a new tab.
+  const play = (e: React.MouseEvent) => {
+    if ((e.target as HTMLElement).closest('a') && (e.metaKey || e.ctrlKey)) return;
+    e.preventDefault(); show();
+  };
   return (
-    <figure className="clip">
+    <figure className="clip link" role="button" tabIndex={0} aria-label={`${t(ui.watch)}: ${t(c.caption)}`} onClick={play}
+      onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(); } }}>
       <Video src={c.src} label={t(c.caption)} />
-      <figcaption><Rich s={c.caption} /><a href={ytUrl(c.yt, c.t)} onClick={play}>▶ {t(ui.watch)} · {c.credit} · {mmss(c.t)}</a></figcaption>
+      <figcaption><Rich s={c.caption} /><a href={ytUrl(c.yt, c.t)} tabIndex={-1}>▶ {t(ui.watch)} · {c.credit} · {mmss(c.t)}</a></figcaption>
     </figure>
   );
 }
