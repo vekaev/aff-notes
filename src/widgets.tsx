@@ -237,7 +237,7 @@ export function Pattern({ rows }: { rows: AltRow[] }) {
           <text x="278" y="16" textAnchor="middle" fontFamily="var(--mono)" fontSize="10" fill="var(--muted)">{t(ui.wind)}</text>
           <path d="M262 38 L262 54 L232 46 Z" fill="none" stroke="var(--ink)" strokeWidth="2" />
           <circle cx="275" cy="205" r="22" fill="none" stroke="var(--faint)" strokeWidth="1.5" strokeDasharray="4 4" />
-          <path id="patPath" d="M298 186 C 252 178, 248 198, 280 198 C 308 198, 304 218, 272 216 C 254 215, 250 207, 250 200 L60 200 L60 70 L186 70" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" markerEnd="url(#arrP)" />
+          <path id="patPath" d="M294 226 L294 190 Q294 182 286 182 Q278 182 278 190 L278 220 Q278 228 270 228 Q262 228 262 220 L262 207 Q262 200 255 200 L60 200 L60 70 L186 70" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" markerEnd="url(#arrP)" />
           <path d="M194 62 L210 78 M210 62 L194 78" stroke="var(--ok)" strokeWidth="4" />
           <g fontFamily="var(--mono)" fontSize="11" fill="var(--ink)"><text x="226" y="228">900</text><text x="72" y="228">600</text><text x="72" y="100">300</text><text x="148" y="56">10 ft</text></g>
           {!reduce && <circle r="7" fill="var(--red)" stroke="var(--paper)" strokeWidth="2"><animateMotion dur="14s" repeatCount="indefinite"><mpath href="#patPath" /></animateMotion></circle>}
