@@ -48,6 +48,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] EP / FIX labels on the malfunction groups: EP links to the emergency procedure with a hover hint
       ("how to do the emergency procedure →"); FIX explains "two tries only, keep checking altitude, not fixed by 2,500 → EP".
       Make "two tries + watch altitude" stand out in the malfunctions chapter.
+- [x] Numbers block: say what the numbers are (feet above the ground), "ft" next to each altitude, no word breaks.
 - [?] Big reorder (Part IV "act now" first, statistics and real cases in their own part, EP button in the header): ask.
 
 ## Waiting on you

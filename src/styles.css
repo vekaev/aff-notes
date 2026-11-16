@@ -686,3 +686,9 @@ a.pill { text-decoration: none; cursor: pointer; }
 a.pill:hover { filter: brightness(1.1); }
 .tip-left::after { left: 0; right: auto; z-index: 5; white-space: normal; width: max-content; max-width: 260px; line-height: 1.35; hyphens: none; }
 .fix-rule { margin: 0; padding: var(--s3) var(--s4); border-radius: var(--r); background: color-mix(in srgb, var(--ok) 10%, var(--card)); box-shadow: inset 3px 0 0 var(--ok), 0 0 0 1px var(--hair); font-size: 16px; }
+
+/* numbers block: units and a line that says what the numbers are */
+.tape .big .u, .timer .big .u { font-size: .62em; font-weight: 650; margin-left: 2px; color: var(--muted); letter-spacing: 0; }
+.timer.red .big .u { color: inherit; opacity: .75; }
+.numbers .nh small { display: block; font-weight: 500; color: var(--muted); margin-top: 2px; }
+.tape .lbl, .timer .lbl { hyphens: none; }

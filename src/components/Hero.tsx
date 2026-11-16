@@ -28,6 +28,7 @@ const T = {
   nextTest: h('Next test', 'Siguiente prueba', 'Следующий тест', 'Наступний тест'),
   allDone: h('All tests passed. Review the numbers before every jump.', 'Todas las pruebas aprobadas. Repasa las cifras antes de cada salto.', 'Все тесты сданы. Перед каждым прыжком повторяй цифры.', 'Усі тести складено. Перед кожним стрибком повторюй цифри.'),
   tests: h('tests passed', 'pruebas aprobadas', 'тестов сдано', 'тестів складено'),
+  feet: h('Altitudes in feet above the ground (1,000 ft ≈ 300 m)', 'Alturas en pies sobre el suelo (1,000 ft ≈ 300 m)', 'Высота над землёй в футах (1 000 футов ≈ 300 м)', 'Висота над землею у футах (1 000 футів ≈ 300 м)'),
   ifBad: h('If the main is bad', 'Si la principal falla', 'Если основной плохой', 'Якщо основний поганий'),
   numbers: h('The numbers to know by heart', 'Las cifras que hay que saber de memoria', 'Цифры, которые надо знать наизусть', 'Цифри, які треба знати напам’ять'),
 };
@@ -173,18 +174,18 @@ export function Hero() {
       </div>
 
       <div className="numbers">
-        <span className="nh">{t(T.numbers)}</span>
+        <span className="nh">{t(T.numbers)}<small>{t(T.feet)}</small></span>
         <ol className="tape surface">
           {TAPE.map((x, i) => (
             <li key={i} className={x.red ? 'red' : ''}>
-              <a href={`#${x.to}`}><span className="big">{x.big}</span><span className="dot" aria-hidden="true" /><span className="lbl">{t(x.label)}</span></a>
+              <a href={`#${x.to}`}><span className="big">{x.big}{!/ft|s$/.test(x.big) && <small className="u">ft</small>}</span><span className="dot" aria-hidden="true" /><span className="lbl">{t(x.label)}</span></a>
             </li>
           ))}
         </ol>
         <div className="emerg">
           <span className="eh">{t(T.ifBad)}</span>
           <div className="timers">
-            {EMERGENCY.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface red"><span className="big">{x.big}</span><span className="lbl">{t(x.label)}</span></a>)}
+            {EMERGENCY.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface red"><span className="big">{x.big}<small className="u">ft</small></span><span className="lbl">{t(x.label)}</span></a>)}
           </div>
         </div>
         <div className="timers">

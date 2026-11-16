@@ -970,30 +970,30 @@ export const part4: Part = {
               big: '~6×',
               tone: 'red',
               text: t(
-                `<b>Students</b> are about six times as likely to be injured as licensed jumpers.`,
-                `Los <b>alumnos</b> tienen unas seis veces más probabilidad de lesionarse que los paracaidistas con licencia.`,
-                `<b>Студенты</b> травмируются примерно в шесть раз чаще, чем прыгуны с лицензией.`,
-                `<b>Студенти</b> травмуються приблизно вшестеро частіше, ніж парашутисти з ліцензією.`,
+                `<b>Students</b> are about six times as likely to be injured as licensed jumpers (France 2010–19, 6.2 M jumps).`,
+                `Los <b>alumnos</b> tienen unas seis veces más probabilidad de lesionarse que los paracaidistas con licencia (Francia 2010–19, 6,2 M de saltos).`,
+                `<b>Студенты</b> травмируются примерно в шесть раз чаще, чем прыгуны с лицензией (Франция 2010–19, 6,2 млн прыжков).`,
+                `<b>Студенти</b> травмуються приблизно вшестеро частіше, ніж парашутисти з ліцензією (Франція 2010–19, 6,2 млн стрибків).`,
               ),
             },
             {
               big: '41%',
               tone: 'red',
               text: t(
-                `of student injuries in a Swedish study happened on the <b>first two jumps</b>.`,
-                `de las lesiones de alumnos en un estudio sueco ocurrieron en los <b>dos primeros saltos</b>.`,
-                `травм студентов в шведском исследовании случились на <b>первых двух прыжках</b>.`,
-                `травм студентів у шведському дослідженні сталися на <b>перших двох стрибках</b>.`,
+                `of student injuries in a Swedish study happened on the <b>first two jumps</b> (most of those students were on static line, not AFF).`,
+                `de las lesiones de alumnos en un estudio sueco ocurrieron en los <b>dos primeros saltos</b> (la mayoría eran alumnos de cuerda estática, no de AFF).`,
+                `травм студентов в шведском исследовании случились на <b>первых двух прыжках</b> (в основном это были студенты на принудительном раскрытии, не AFF).`,
+                `травм студентів у шведському дослідженні сталися на <b>перших двох стрибках</b> (здебільшого це були студенти на примусовому розкритті, не AFF).`,
               ),
             },
             {
               big: '46%',
               tone: 'red',
               text: t(
-                `of US deaths in 2001–2020 came from landing problems, many from <a href="#lowturn">low turns</a>. <q-check/>`,
-                `de las muertes en EE. UU. entre 2001 y 2020 fueron por problemas de aterrizaje, muchas por <a href="#lowturn">giros bajos</a>. <q-check/>`,
-                `смертей в США в 2001–2020 годах — при посадке, многие из-за <a href="#lowturn">низких разворотов</a>. <q-check/>`,
-                `смертей у США у 2001–2020 роках — під час посадки, багато через <a href="#lowturn">низькі розвороти</a>. <q-check/>`,
+                `of US deaths in 2001–2020 came from landing problems, about half of them <a href="#lowturn">low turns</a>, more often deliberate than accidental.`,
+                `de las muertes en EE. UU. entre 2001 y 2020 fueron por problemas de aterrizaje, cerca de la mitad por <a href="#lowturn">giros bajos</a>, más a menudo intencionados que accidentales.`,
+                `смертей в США в 2001–2020 годах — при посадке, около половины из них — <a href="#lowturn">низкие развороты</a>, чаще намеренные, чем случайные.`,
+                `смертей у США у 2001–2020 роках — під час посадки, близько половини з них — <a href="#lowturn">низькі розвороти</a>, частіше навмисні, ніж випадкові.`,
               ),
             },
           ],
@@ -1018,11 +1018,11 @@ export const part4: Part = {
             { label: t(`Spine`, `Columna`, `Позвоночник`, `Хребет`), value: 18 },
             { label: t(`Other`, `Otras`, `Другое`, `Інше`), value: 12 },
           ],
-          source: { label: 'Westman & Björnstig 2007, Sweden, 311 injuries (via Barthel et al. 2023 review)', href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/' },
+          source: { label: 'Westman & Björnstig 2007, Sweden, 311 injuries (via Barthel et al. 2023 review); "Other" is the remainder, not given in the papers', href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/' },
         },
         {
           type: 'bars',
-          title: t(`Inside the leg: where it breaks`, `Dentro de la pierna: dónde se rompe`, `Нога: где ломается`, `Нога: де ламається`),
+          title: t(`Inside the leg: where it gets hurt`, `Dentro de la pierna: dónde se lesiona`, `Нога: где травма`, `Нога: де травма`),
           items: [
             { label: t(`Ankle`, `Tobillo`, `Лодыжка`, `Щиколотка`), value: 37, hl: true },
             { label: t(`Thigh`, `Muslo`, `Бедро`, `Стегно`), value: 25 },
@@ -1030,7 +1030,7 @@ export const part4: Part = {
             { label: t(`Knee`, `Rodilla`, `Колено`, `Коліно`), value: 10 },
             { label: t(`Foot`, `Pie`, `Стопа`, `Стопа`), value: 6 },
           ],
-          source: { label: 'USPA incident reports 2008–2023 (Forrester 2023), 130 leg injuries; one person can count twice', href: 'https://lermagazine.com/?p=39724' },
+          source: { label: 'USPA incident reports 2008–2023 (Forrester 2023), 130 leg injuries (77% fractures); one person can count twice; 12% "leg, not specified" not shown', href: 'https://lermagazine.com/?p=39724' },
         },
         {
           type: 'bars',
@@ -1054,10 +1054,10 @@ export const part4: Part = {
               `Небезпечний момент — <b>останні секунди</b> на <b>перших стрибках</b>.`,
             ),
             t(
-              `Canada 2025: all three student landing injuries were a <b>slow or half flare, no PLF</b>.`,
-              `Canadá 2025: las tres lesiones de alumnos al aterrizar fueron un <b>flare lento o a medias sin PLF</b>.`,
-              `Канада, 2025: все три травмы студентов при посадке — <b>медленный или неполный flare без PLF</b>.`,
-              `Канада, 2025: усі три травми студентів під час посадки — <b>повільний або неповний flare без PLF</b>.`,
+              `Canada, Jan–May 2025: all three student landing injuries were a <b>slow or half flare, no PLF</b>.`,
+              `Canadá, enero–mayo de 2025: las tres lesiones de alumnos al aterrizar fueron un <b>flare lento o a medias sin PLF</b>.`,
+              `Канада, январь–май 2025: все три травмы студентов при посадке — <b>медленный или неполный flare без PLF</b>.`,
+              `Канада, січень–травень 2025: усі три травми студентів під час посадки — <b>повільний або неповний flare без PLF</b>.`,
             ),
           ],
         },
@@ -1081,19 +1081,19 @@ export const part4: Part = {
             {
               title: t(`Bad flare, no PLF`, `Flare malo, sin PLF`, `Плохой flare, нет PLF`, `Поганий flare, немає PLF`),
               sub: t(
-                `<b>22%</b> of landing incidents without a turn: early, late, half or jerky, then trying to stand. No flare at all gave the worst injuries. <b>Full flare at ~10 ft</b>, hold, legs up, feet and knees together, <b>PLF every time</b>: even an imperfect PLF meant milder injuries.`,
-                `<b>22%</b> de los incidentes de aterrizaje sin giro: temprano, tardío, a medias o brusco, y luego intentar quedar de pie. Sin flare, las peores lesiones. <b>Flare completo a ~10 ft</b>, mantenlo, piernas arriba, pies y rodillas juntos, <b>PLF siempre</b>: incluso un PLF imperfecto dio lesiones más leves.`,
-                `<b>22 %</b> посадочных инцидентов без разворота: ранний, поздний, неполный или резкий, а потом попытка устоять. Без flare — самые тяжёлые травмы. <b>Полный flare на ~10 футах</b>, держи, ноги вверх, ступни и колени вместе, <b>PLF всегда</b>: даже неидеальный PLF давал более лёгкие травмы.`,
-                `<b>22 %</b> посадкових інцидентів без розвороту: ранній, пізній, неповний або різкий, а потім спроба встояти. Без flare — найважчі травми. <b>Повний flare на ~10 футах</b>, тримай, ноги вгору, стопи й коліна разом, <b>PLF завжди</b>: навіть неідеальний PLF давав легші травми.`,
+                `<b>22%</b> of landing incidents without a turn: flaring too early, too late or not at all. No flare at all gave the worst injuries. <b>Full flare at ~10 ft</b>, hold it, feet and knees together, knees slightly bent, <b>feet touch first</b>, <b>PLF every time</b>: even an imperfect PLF meant milder injuries.`,
+                `<b>22%</b> de los incidentes de aterrizaje sin giro: flare demasiado pronto, demasiado tarde o sin flare. Sin flare, las peores lesiones. <b>Flare completo a ~10 ft</b>, mantenlo, pies y rodillas juntos, rodillas un poco flexionadas, <b>los pies tocan primero</b>, <b>PLF siempre</b>: incluso un PLF imperfecto dio lesiones más leves.`,
+                `<b>22 %</b> посадочных инцидентов без разворота: flare слишком рано, слишком поздно или без flare вообще. Без flare — самые тяжёлые травмы. <b>Полный flare на ~10 футах</b>, держи, ступни и колени вместе, колени чуть согнуты, <b>первыми касаются ступни</b>, <b>PLF всегда</b>: даже неидеальный PLF давал более лёгкие травмы.`,
+                `<b>22 %</b> посадкових інцидентів без розвороту: flare зарано, запізно або взагалі без flare. Без flare — найважчі травми. <b>Повний flare на ~10 футах</b>, тримай, стопи й коліна разом, коліна трохи зігнуті, <b>першими торкаються стопи</b>, <b>PLF завжди</b>: навіть неідеальний PLF давав легші травми.`,
               ),
             },
             {
               title: t(`Legs down on a tandem`, `Piernas abajo en un tándem`, `Ноги вниз на тандеме`, `Ноги вниз на тандемі`),
               sub: t(
-                `<b>20%</b> were tandem landings, usually the passenger not lifting their legs. On your own jumps, <b>legs up</b> too.`,
-                `<b>20%</b> fueron aterrizajes en tándem, casi siempre porque el pasajero no levantó las piernas. En tus saltos, <b>piernas arriba</b> también.`,
-                `<b>20 %</b> — тандемные посадки, обычно пассажир не поднял ноги. На своих прыжках тоже <b>ноги вверх</b>.`,
-                `<b>20 %</b> — тандемні посадки, зазвичай пасажир не підняв ноги. На своїх стрибках теж <b>ноги вгору</b>.`,
+                `<b>20%</b> were tandem landings, usually the passenger not lifting their legs. That's a tandem rule: on your own jumps, <b>feet and knees together, feet first</b>.`,
+                `<b>20%</b> fueron aterrizajes en tándem, casi siempre porque el pasajero no levantó las piernas. Es una regla del tándem: en tus saltos, <b>pies y rodillas juntos, primero los pies</b>.`,
+                `<b>20 %</b> — тандемные посадки, обычно пассажир не поднял ноги. Это правило тандема: на своих прыжках — <b>ступни и колени вместе, первыми касаются ступни</b>.`,
+                `<b>20 %</b> — тандемні посадки, зазвичай пасажир не підняв ноги. Це правило тандему: на своїх стрибках — <b>стопи й коліна разом, першими торкаються стопи</b>.`,
               ),
             },
             {
@@ -1117,10 +1117,10 @@ export const part4: Part = {
             {
               title: t(`Low turns`, `Giros bajos`, `Низкие развороты`, `Низькі розвороти`),
               sub: t(
-                `<b>7%</b> of all landing incidents were unintended low turns. A big turn low makes the canopy dive. In trouble: <b>stop turning</b>, fly straight, flare. <b>Level wing</b> first, then target and wind.`,
-                `<b>7%</b> de todos los incidentes de aterrizaje fueron giros bajos involuntarios. Un giro grande abajo hace picar la vela. ¿Problemas? <b>Deja de girar</b>, vuela recto, flare. <b>Ala nivelada</b> antes que blanco y viento.`,
-                `<b>7 %</b> всех посадочных инцидентов — непреднамеренные низкие развороты. Большой разворот у земли — купол ныряет. Что-то не так: <b>прекрати разворот</b>, лети прямо, flare. <b>Ровное крыло</b> важнее цели и ветра.`,
-                `<b>7 %</b> усіх посадкових інцидентів — ненавмисні низькі розвороти. Великий розворот біля землі — купол пірнає. Щось не так: <b>припини розворот</b>, лети прямо, flare. <b>Рівне крило</b> важливіше за ціль і вітер.`,
+                `<b>7%</b> of all reported 2024 incidents (about 13% of landing incidents) were unintended low turns. A big turn low makes the canopy dive. In trouble: <b>stop turning</b>, fly straight, flare. <b>Level wing</b> first, then target and wind.`,
+                `<b>7%</b> de todos los incidentes reportados en 2024 (cerca del 13% de los de aterrizaje) fueron giros bajos involuntarios. Un giro grande abajo hace picar la vela. ¿Problemas? <b>Deja de girar</b>, vuela recto, flare. <b>Ala nivelada</b> antes que blanco y viento.`,
+                `<b>7 %</b> всех инцидентов 2024 года (около 13 % посадочных) — непреднамеренные низкие развороты. Большой разворот у земли — купол ныряет. Что-то не так: <b>прекрати разворот</b>, лети прямо, flare. <b>Ровное крыло</b> важнее цели и ветра.`,
+                `<b>7 %</b> усіх інцидентів 2024 року (близько 13 % посадкових) — ненавмисні низькі розвороти. Великий розворот біля землі — купол пірнає. Щось не так: <b>припини розворот</b>, лети прямо, flare. <b>Рівне крило</b> важливіше за ціль і вітер.`,
               ),
             },
             {
@@ -1140,10 +1140,10 @@ export const part4: Part = {
                 `Пізня або неправильна аварійна процедура`,
               ),
               sub: t(
-                `More than <b>4,000 cutaways a year</b> in the US, and reserves rarely fail: <b>delay is what kills</b>. Too long fixing a spinning canopy? <b>Two tries</b>, then cut away, straight to the reserve.`,
-                `Más de <b>4,000 liberaciones al año</b> en EE. UU., y las reservas casi nunca fallan: <b>lo que mata es la demora</b>. ¿Demasiado tiempo arreglando una vela que gira? <b>Dos intentos</b>, luego libera, directo a la reserva.`,
-                `Больше <b>4 000 отцепок в год</b> в США, а запасные отказывают редко: <b>убивает промедление</b>. Слишком долго исправляешь вращающийся купол? <b>Две попытки</b>, потом отцепка и сразу запасной.`,
-                `Понад <b>4 000 відчеплень на рік</b> у США, а запасні відмовляють рідко: <b>убиває зволікання</b>. Надто довго виправляєш купол, що обертається? <b>Дві спроби</b>, потім відчеплення й одразу запасний.`,
+                `More than <b>4,000 cutaways a year</b> in the US, and reserves rarely fail: <b>delay is what kills</b>. Spinning canopy? <b>About 5 s</b> to see it clearly getting better; if not, cut away and go to the reserve, and as a student never below 2,500 ft.`,
+                `Más de <b>4,000 liberaciones al año</b> en EE. UU., y las reservas casi nunca fallan: <b>lo que mata es la demora</b>. ¿La vela gira? <b>Unos 5 s</b> para ver que mejora claramente; si no, libera y ve a la reserva, y como alumno nunca por debajo de 2,500 ft.`,
+                `Больше <b>4 000 отцепок в год</b> в США, а запасные отказывают редко: <b>убивает промедление</b>. Купол вращается? <b>Около 5 с</b>, чтобы увидеть, что явно становится лучше; если нет — отцепка и запасной, а студенту никогда не ниже 2 500 футов.`,
+                `Понад <b>4 000 відчеплень на рік</b> у США, а запасні відмовляють рідко: <b>убиває зволікання</b>. Купол обертається? <b>Близько 5 с</b>, щоб побачити, що явно стає краще; якщо ні — відчеплення й запасний, а студентові ніколи не нижче 2 500 футів.`,
               ),
             },
             {
@@ -1182,6 +1182,12 @@ export const part4: Part = {
                   `El <b>AAD abrió</b> la reserva a unos 700 ft`,
                   `<b>AAD раскрыл</b> запасной примерно на 700 футах`,
                   `<b>AAD розкрив</b> запасний приблизно на 700 футах`,
+                ),
+                t(
+                  `Pilot chute wrapped or in tow: <b>emergency procedure now</b>, by 2,500 ft. The AAD is not a plan`,
+                  `Extractor enredado o remolcado: <b>procedimiento de emergencia ya</b>, antes de 2,500 ft. El AAD no es un plan`,
+                  `Вытяжной обмотался или в следе: <b>аварийная процедура сразу</b>, не ниже 2 500 футов. AAD — не план`,
+                  `Витяжний обмотався або в сліді: <b>аварійна процедура одразу</b>, не нижче 2 500 футів. AAD — не план`,
                 ),
               ],
             },
@@ -1282,10 +1288,10 @@ export const part4: Part = {
               ],
               answer: 0,
               why: t(
-                `In four national studies, 73–88% of injuries happened under canopy and at landing. Exit and freefall were under 5%.`,
-                `En cuatro estudios nacionales, el 73–88% de las lesiones ocurrieron bajo la vela y al aterrizar. Salida y caída libre, menos del 5%.`,
-                `В четырёх национальных исследованиях 73–88 % травм случились под куполом и при приземлении. Отделение и свободное падение — меньше 5 %.`,
-                `У чотирьох національних дослідженнях 73–88 % травм сталися під куполом і під час приземлення. Відокремлення й вільне падіння — менше 5 %.`,
+                `In four national studies, 73–88% of injuries happened under canopy and at landing. In the Swedish study, exit and freefall together were under 5%.`,
+                `En cuatro estudios nacionales, el 73–88% de las lesiones ocurrieron bajo la vela y al aterrizar. En el estudio sueco, salida y caída libre juntas, menos del 5%.`,
+                `В четырёх национальных исследованиях 73–88 % травм случились под куполом и при приземлении. В шведском исследовании отделение и свободное падение вместе — меньше 5 %.`,
+                `У чотирьох національних дослідженнях 73–88 % травм сталися під куполом і під час приземлення. У шведському дослідженні відокремлення й вільне падіння разом — менше 5 %.`,
               ),
             },
             {
@@ -1342,10 +1348,10 @@ export const part4: Part = {
         {
           type: 'p',
           text: t(
-            `Real jumps where something went wrong, and the <b>one lesson</b> from each. Nobody is badly hurt on screen.`,
-            `Saltos reales donde algo salió mal y la <b>lección</b> de cada uno. Nadie sale gravemente herido en pantalla.`,
-            `Настоящие прыжки, где что-то пошло не так, и <b>один урок</b> из каждого. Тяжёлых травм в кадре нет.`,
-            `Справжні стрибки, де щось пішло не так, і <b>один урок</b> із кожного. Важких травм у кадрі немає.`,
+            `Real jumps where something went wrong, and the <b>one lesson</b> from each. No injury is shown on screen.`,
+            `Saltos reales donde algo salió mal y la <b>lección</b> de cada uno. Ninguna lesión se ve en pantalla.`,
+            `Настоящие прыжки, где что-то пошло не так, и <b>один урок</b> из каждого. Самих травм в кадре не видно.`,
+            `Справжні стрибки, де щось пішло не так, і <b>один урок</b> із кожного. Самих травм у кадрі не видно.`,
           ),
         },
         {
@@ -1379,7 +1385,7 @@ export const part4: Part = {
             {
               clip: 'x_flarefast', tone: 'ep', source: { yt: 'N8vpe-olEYs', t: 9, credit: 'jpelligrinelli' },
               name: t(`Flare stabbed too fast`, `Flare demasiado brusco`, `Flare рывком`, `Flare ривком`),
-              what: t(`An AFF B student stabs the toggles down; the canopy still has speed at touchdown and he tumbles.`, `Un alumno AFF B tira de golpe; la vela aún tiene velocidad al tocar y rueda.`, `Студент AFF B дёрнул клеванты; у купола ещё скорость при касании, и он кувыркается.`, `Студент AFF B смикнув клеванти; у купола ще швидкість при торканні, і він перекидається.`),
+              what: t(`An AFF B student; the uploader says only "too fast of a flare". He hits hard and tumbles.`, `Un alumno AFF B; quien subió el video solo dice "un flare demasiado rápido". Golpea fuerte y rueda.`, `Студент AFF B; автор видео пишет только «слишком быстрый flare». Жёсткий удар, и он кувыркается.`, `Студент AFF B; автор відео пише лише «надто швидкий flare». Жорсткий удар, і він перекидається.`),
               act: t(`Flare <b>smoothly and all the way</b>; feet and knees together, PLF.`, `Flare <b>suave y hasta abajo</b>; pies y rodillas juntos, PLF.`, `Flare <b>плавно и до конца</b>; ступни и колени вместе, PLF.`, `Flare <b>плавно й до кінця</b>; стопи й коліна разом, PLF.`),
             },
           ],
@@ -1397,8 +1403,8 @@ export const part4: Part = {
             {
               clip: 'x_downwind', tone: 'ep', source: { yt: 'tG63N8Y-ti4', t: 11, credit: 'Paul Lewis' },
               name: t(`Downwind landing`, `Aterrizaje con viento de cola`, `Посадка по ветру`, `Посадка за вітром`),
-              what: t(`The landing direction was set wrong; he landed downwind, too fast, and his legs folded.`, `La dirección de aterrizaje estaba mal; aterrizó con viento de cola, demasiado rápido, y se le doblaron las piernas.`, `Направление посадки было выставлено неверно; сел по ветру, слишком быстро, ноги подломились.`, `Напрямок посадки було виставлено неправильно; сів за вітром, надто швидко, ноги підломилися.`),
-              act: t(`Check the <b>windsock</b> yourself. Downwind: flare fully and PLF.`, `Mira tú el <b>cono de viento</b>. Con viento de cola: flare completo y PLF.`, `Сам смотри на <b>колдун</b>. По ветру: полный flare и PLF.`, `Сам дивись на <b>вітровказ</b>. За вітром: повний flare і PLF.`),
+              what: t(`The landing direction was set wrong. He saw it at 300 ft but, with 19 canopies around, chose not to turn low: landed downwind, too fast, and his legs folded.`, `La dirección de aterrizaje estaba mal. Lo vio a 300 ft, pero con 19 velas alrededor decidió no girar bajo: aterrizó con viento de cola, demasiado rápido, y se le doblaron las piernas.`, `Направление посадки было выставлено неверно. Он заметил это на 300 футах, но вокруг было 19 куполов, и он не стал разворачиваться низко: сел по ветру, слишком быстро, ноги подломились.`, `Напрямок посадки було виставлено неправильно. Він помітив це на 300 футах, але навколо було 19 куполів, і він не став розвертатися низько: сів за вітром, надто швидко, ноги підломилися.`),
+              act: t(`Check the <b>windsock</b> yourself. Wrong way low, with traffic around? <b>Don't turn low</b>: land downwind, flare fully, PLF.`, `Mira tú el <b>cono de viento</b>. ¿Al revés, abajo y con tráfico? <b>No gires bajo</b>: aterriza con viento de cola, flare completo, PLF.`, `Сам смотри на <b>колдун</b>. Низко, не в ту сторону, вокруг купола? <b>Не разворачивайся низко</b>: садись по ветру, полный flare, PLF.`, `Сам дивись на <b>вітровказ</b>. Низько, не в той бік, навколо куполи? <b>Не розвертайся низько</b>: сідай за вітром, повний flare, PLF.`),
             },
           ],
         },
@@ -1445,8 +1451,8 @@ export const part4: Part = {
             {
               clip: 'x_nohandle', tone: 'ep', source: { yt: 'qidpLSdggOo', t: 46, credit: 'Zach Foreman' },
               name: t(`Can't find the handle`, `No encuentra la manija`, `Не находит ручку`, `Не знаходить ручку`),
-              what: t(`The student searches for the pilot chute; the instructor docks and throws it for him.`, `El alumno busca el extractor; el instructor se acerca y lo lanza por él.`, `Студент ищет вытяжной; инструктор подлетает и выбрасывает его за него.`, `Студент шукає витяжний; інструктор підлітає й викидає його за нього.`),
-              act: t(`<b>Two tries</b>, then the emergency procedure. Practise touches on the ground.`, `<b>Dos intentos</b>, luego el procedimiento de emergencia. Practica en tierra.`, `<b>Две попытки</b>, потом аварийная процедура. Тренируй касания на земле.`, `<b>Дві спроби</b>, потім аварійна процедура. Тренуй дотики на землі.`),
+              what: t(`He stopped arching as he reached back, so the handle rode up his back and he couldn't find it; the instructor docks and throws the pilot chute for him.`, `Dejó de arquear al llevar la mano atrás, la manija subió por la espalda y no la encontraba; el instructor se acerca y lanza el extractor por él.`, `Он перестал прогибаться, когда потянулся назад, ручка уехала вверх по спине, и он её не нашёл; инструктор подлетает и выбрасывает вытяжной за него.`, `Він перестав прогинатися, коли потягнувся назад, ручка з’їхала вгору по спині, і він її не знайшов; інструктор підлітає й викидає витяжний за нього.`),
+              act: t(`<b>Keep the arch</b> while you reach. <b>Two tries or 5 s</b>, then the emergency procedure.`, `<b>Mantén el arco</b> mientras buscas la manija. <b>Dos intentos o 5 s</b>, luego el procedimiento de emergencia.`, `<b>Держи прогиб</b>, когда тянешься к ручке. <b>Две попытки или 5 с</b>, потом аварийная процедура.`, `<b>Тримай прогин</b>, коли тягнешся до ручки. <b>Дві спроби або 5 с</b>, потім аварійна процедура.`),
             },
             {
               clip: 'x_cutaway', tone: 'fix', source: { yt: 'wx1gJRlAdPE', t: 20, credit: 'JOINTHETEEM' },
@@ -1619,10 +1625,10 @@ export const part4: Part = {
                   `Щоранку перед стрибками: план стрибка вголос, дотики до ручки із заплющеними очима.`,
                 ),
                 t(
-                  `About 10 minutes of wind tunnel before AFF helps, if you tell the coach you're on AFF.`,
-                  `Unos 10 minutos de túnel de viento antes del AFF ayudan, si le dices al entrenador que estás en AFF.`,
-                  `Около 10 минут в аэротрубе до AFF помогают, если сказать тренеру, что ты на AFF.`,
-                  `Близько 10 хвилин в аеротрубі до AFF допомагають, якщо сказати тренерові, що ти на AFF.`,
+                  `One AFF instructor: about 10 minutes of wind tunnel before the course lowers the chance of repeating levels. Tell the tunnel coach you have AFF booked.`,
+                  `Un instructor de AFF: unos 10 minutos de túnel de viento antes del curso reducen la probabilidad de repetir niveles. Dile al entrenador del túnel que tienes AFF reservado.`,
+                  `Один инструктор AFF: около 10 минут в аэротрубе до курса снижают шанс повторять уровни. Скажи тренеру трубы, что у тебя впереди AFF.`,
+                  `Один інструктор AFF: близько 10 хвилин в аеротрубі до курсу знижують шанс повторювати рівні. Скажи тренерові труби, що в тебе попереду AFF.`,
                 ),
                 t(
                   `Category A has two goals: arch and pull on time. Everything else is a bonus.`,
@@ -1766,10 +1772,10 @@ export const part4: Part = {
                   `Flare зарано, запізно або взагалі без flare. Без flare — найважчі травми.`,
                 ),
                 t(
-                  `Not lifting the legs; reaching for the ground with a foot or a hand.`,
-                  `No levantar las piernas; buscar el suelo con un pie o una mano.`,
-                  `Не поднять ноги; тянуться к земле ногой или рукой.`,
-                  `Не підняти ноги; тягнутися до землі ногою чи рукою.`,
+                  `Feet apart, or reaching for the ground with one foot or a hand.`,
+                  `Pies separados, o buscar el suelo con un pie o una mano.`,
+                  `Ступни врозь или тянуться к земле одной ногой или рукой.`,
+                  `Стопи нарізно або тягнутися до землі однією ногою чи рукою.`,
                 ),
                 t(
                   `Trying to stand it up after a few soft landings (the classic AFF 2–4 broken ankle).`,
@@ -1802,10 +1808,10 @@ export const part4: Part = {
                   `Сприймати «5, 4, 3, 2, 1» як п’ять повних секунд гальмування.`,
                 ),
                 t(
-                  `Dropping a toggle near the ground: the most severe injuries of all 2024 US landings without a turn.`,
-                  `Soltar un batidor cerca del suelo: las lesiones más graves de todos los aterrizajes sin giro en EE. UU. en 2024.`,
-                  `Выпустить клеванту у земли: самые тяжёлые травмы среди всех посадок без разворота в США в 2024 году.`,
-                  `Випустити клеванту біля землі: найважчі травми серед усіх посадок без розвороту у США у 2024 році.`,
+                  `Dropping a toggle near the ground: the single worst injury among 2024 US landings without a turn.`,
+                  `Soltar un batidor cerca del suelo: la lesión más grave de todos los aterrizajes sin giro en EE. UU. en 2024.`,
+                  `Выпустить клеванту у земли: самая тяжёлая травма среди всех посадок без разворота в США в 2024 году.`,
+                  `Випустити клеванту біля землі: найважча травма серед усіх посадок без розвороту у США у 2024 році.`,
                 ),
               ],
               good: [
@@ -1882,10 +1888,10 @@ export const part4: Part = {
               ],
               good: [
                 t(
-                  `A-license: 25 jumps, progression card, check dive, written (75%+) and oral exam.`,
-                  `Licencia A: 25 saltos, tarjeta de progresión, salto de verificación (check dive), examen escrito (75%+) y oral.`,
-                  `Лицензия A: 25 прыжков, карточка прогресса, контрольный прыжок (check dive), письменный (от 75 %) и устный экзамен.`,
-                  `Ліцензія A: 25 стрибків, картка прогресу, контрольний стрибок (check dive), письмовий (від 75 %) та усний іспит.`,
+                  `A-license: 25 jumps, progression card, check dive, written (75%+) and oral exam (100%).`,
+                  `Licencia A: 25 saltos, tarjeta de progresión, salto de verificación (check dive), examen escrito (75%+) y oral (100%).`,
+                  `Лицензия A: 25 прыжков, карточка прогресса, контрольный прыжок (check dive), письменный (от 75 %) и устный экзамен (100 %).`,
+                  `Ліцензія A: 25 стрибків, картка прогресу, контрольний стрибок (check dive), письмовий (від 75 %) та усний іспит (100 %).`,
                 ),
                 t(
                   `Student wind limit 14 mph; no alcohol 8 h before; after 30 days off, a supervised jump.`,
@@ -1936,6 +1942,7 @@ export const part4: Part = {
             { label: '2024 incidents', href: 'http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents' },
             { label: 'Foundations of Flight', href: 'https://parachutist.com/p/PgrID/2839/PageID/52/artmid/2830/articleid/9015' },
             { label: 'Scott Miller', href: 'https://www.skydivemag.com/new?p=16580' },
+            { label: 'Pointer 2020', href: 'https://www.skydivemag.com/new/5-hot-tips-for-your-aff-course/' },
             { label: 'r/SkyDiving', href: 'https://www.reddit.com/r/SkyDiving/comments/1o7djbb/student_flare_timing/' },
             { label: 'A-license', href: 'https://www.uspa.org/members/licenses/a-license-requirements-and-forms' },
             { label: 'SIM 2-1', href: 'https://www.uspa.org/SIM/2-1' },
@@ -1997,7 +2004,7 @@ export const part4: Part = {
               options: [
                 t(`Every 3 seconds`, `Cada 3 segundos`, `Каждые 3 секунды`, `Кожні 3 секунди`),
                 t(`Every 10 seconds`, `Cada 10 segundos`, `Каждые 10 секунд`, `Кожні 10 секунд`),
-                t(`Only at lock-on`, `Solo en el lock on`, `Только на 6 000`, `Лише на 6 000`),
+                t(`Only at 6,000 ft`, `Solo a 6,000 ft`, `Только на 6 000`, `Лише на 6 000`),
               ],
               answer: 0,
               why: t(
