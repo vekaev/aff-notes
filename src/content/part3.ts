@@ -440,52 +440,58 @@ export const part3: Part = {
       title: l('Landing on an obstacle', 'Aterrizar sobre un obstáculo', 'Посадка на препятствие'),
       blocks: [
         {
-          type: 'p',
-          text: l(
-            "Best plan: see it early and steer away above 1,000 ft. That is why we are over the holding point by 2,000 ft: there is still time to see if we can reach the landing area, and to pick a clear field if not. If you still end up on one, these are the steps from our instructors and USPA (SIM 4-1).",
-            'El mejor plan: verlo temprano y alejarte por encima de 1,000 ft. Por eso estamos sobre el punto de espera a 2,000 ft: todavía hay tiempo para ver si llegamos a la zona de aterrizaje y, si no, elegir un campo despejado. Si aun así caes sobre uno, estos son los pasos de nuestros instructores y de USPA (SIM 4-1).',
-            'Лучший план: заметить заранее и уйти от него выше 1 000 футов. Поэтому к 2 000 футам мы уже над точкой ожидания: есть время понять, долетим ли до зоны приземления, а если нет — выбрать чистое поле. Если всё же садишься на препятствие, вот шаги от наших инструкторов и USPA (SIM 4-1).',
-          ),
+          type: 'list',
+          kind: 'do',
+          title: l('Best plan: never get there', 'El mejor plan: no llegar ahí', 'Лучший план: туда не попасть'),
+          items: [
+            l('<b>See it early</b> and steer away <b>above 1,000 ft</b>.', '<b>Detéctalo temprano</b> y aléjate <b>por encima de 1,000 ft</b>.', '<b>Заметь заранее</b> и уйди <b>выше 1 000 футов</b>.'),
+            l('Be over the holding point <b>by 2,000 ft</b>: still time to judge if you reach the landing area.', 'Estar sobre el punto de espera <b>a 2,000 ft</b>: aún hay tiempo para ver si llegas.', 'К <b>2 000 футам</b> будь над точкой ожидания: ещё есть время понять, долетишь ли.'),
+            l("Can't make it? <b>Pick a clear field</b> and land there, into the wind.", '¿No llegas? <b>Elige un campo despejado</b> y aterriza ahí, contra el viento.', 'Не долетаешь? <b>Выбери чистое поле</b> и садись туда, против ветра.'),
+          ],
         },
+        { type: 'p', muted: true, text: l('Still ending up on one? The steps from our instructors and USPA (SIM 4-1):', '¿Aun así vas a caer sobre uno? Los pasos de nuestros instructores y de USPA (SIM 4-1):', 'Всё равно садишься на препятствие? Шаги от наших инструкторов и USPA (SIM 4-1):') },
         {
           type: 'rules',
           items: [
             {
               icon: 'tree',
               title: l('Trees', 'Árboles', 'Деревья'),
-              text: l(
-                'Half brakes, feet and knees tight together, legs not crossed, protect your face with your arms. Stuck up there: stay put and wait for help, don\'t climb down alone.',
-                'Medio freno, pies y rodillas bien juntos, piernas sin cruzar, protege la cara con los brazos. Si quedas atrapado arriba: no te muevas y espera ayuda, no bajes solo.',
-                'Полутормоза, ступни и колени плотно вместе, ноги не скрещивать, лицо прикрыть руками. Застрял: оставайся на месте и жди помощи, сам не слезай.',
-              ),
+              points: [
+                l('<b>Half brakes</b>', '<b>Medio freno</b>', '<b>Полутормоза</b>'),
+                l('<b>Feet and knees tight</b>, legs not crossed', '<b>Pies y rodillas juntos</b>, piernas sin cruzar', '<b>Ступни и колени плотно</b>, ноги не скрещивать'),
+                l('<b>Protect your face</b> with your arms', '<b>Protege la cara</b> con los brazos', '<b>Закрой лицо</b> руками'),
+                l('Stuck: <b>stay put, wait for help</b>, don\'t climb down', 'Atrapado: <b>quieto, espera ayuda</b>, no bajes solo', 'Застрял: <b>не двигайся, жди помощи</b>, сам не слезай'),
+              ],
             },
             {
               icon: 'water',
               title: l('Water', 'Agua', 'Вода'),
-              text: l(
-                'Half brakes at about 10 ft above the water, take a deep breath before you go in, feet and knees together as for a PLF. Stay in the harness until you are in the water, then get out of it and swim away from the canopy fast. Leave the gear.',
-                'Medio freno a unos 10 ft sobre el agua, respira hondo antes de entrar, pies y rodillas juntos como para un PLF. Quédate en el arnés hasta estar en el agua, luego sal de él y nada rápido lejos de la vela. Deja el equipo.',
-                'Полутормоза примерно в 10 футах над водой, глубокий вдох перед входом, ступни и колени вместе, как для PLF. Из подвесной системы не выбираться до касания воды, потом вылезти и быстро отплыть от купола. Снаряжение бросить.',
-              ),
+              points: [
+                l('<b>Half brakes</b> at about 10 ft', '<b>Medio freno</b> a unos 10 ft', '<b>Полутормоза</b> примерно на 10 футах'),
+                l('<b>Deep breath</b>, feet and knees together', '<b>Respira hondo</b>, pies y rodillas juntos', '<b>Глубокий вдох</b>, ступни и колени вместе'),
+                l('<b>Stay in the harness</b> until you are in the water', '<b>Quédate en el arnés</b> hasta estar en el agua', '<b>Из системы не выбирайся</b> до касания воды'),
+                l('Then <b>get out and swim away</b> from the canopy fast', 'Luego <b>sal y nada lejos</b> de la vela rápido', 'Потом <b>выберись и отплыви</b> от купола быстро'),
+              ],
             },
             {
               icon: 'building',
               title: l('Buildings', 'Edificios', 'Здания'),
-              text: l(
-                'Flare about 10 ft before you hit, then PLF. Near a wall, fly along it with a flat turn rather than into it. On a roof, collapse the canopy so the wind can\'t drag you off the edge.',
-                'Haz el flare unos 10 ft antes de golpear, luego PLF. Cerca de una pared, vuela a lo largo de ella con un giro plano en vez de ir contra ella. En un techo, colapsa la vela para que el viento no te arrastre por el borde.',
-                'Flare примерно за 10 футов до удара, потом PLF. Рядом со стеной лети вдоль неё плоским поворотом, а не в неё. На крыше погаси купол, чтобы ветер не стащил тебя с края.',
-              ),
+              points: [
+                l('Near a wall: <b>fly along it</b> with a flat turn, not into it', 'Cerca de una pared: <b>vuela a lo largo</b> con un giro plano, no contra ella', 'У стены: <b>лети вдоль неё</b> плоским поворотом, не в неё'),
+                l('Going to hit: <b>flare about 10 ft before</b>, then PLF', 'Si vas a golpear: <b>flare unos 10 ft antes</b>, luego PLF', 'Удар неизбежен: <b>flare примерно за 10 футов</b>, потом PLF'),
+                l('On a roof: <b>collapse the canopy</b> so the wind can\'t drag you off', 'En un techo: <b>colapsa la vela</b> para que el viento no te arrastre', 'На крыше: <b>погаси купол</b>, чтобы ветер не стащил'),
+              ],
             },
             {
               icon: 'power',
               title: l('Power lines', 'Cables eléctricos', 'Линии электропередачи'),
               tone: 'red',
-              text: l(
-                "Spot them early and steer away. If you can't: land parallel to the lines so you touch only one, feet and knees together, turn your head. Don't touch anything. If you hang there, nobody touches you until the power is off: wait for help.",
-                'Detéctalos temprano y aléjate. Si no puedes: aterriza paralelo a los cables para tocar solo uno, pies y rodillas juntos, gira la cabeza. No toques nada. Si quedas colgado, nadie te toca hasta que corten la corriente: espera ayuda.',
-                'Заметить рано и уйти. Если нельзя: садиться параллельно проводам, чтобы коснуться только одного, ступни и колени вместе, голову отвернуть. Ничего не трогать. Если повис — никто тебя не трогает, пока не отключат ток: жди помощи.',
-              ),
+              points: [
+                l('<b>Spot them early</b>, steer away', '<b>Detéctalos temprano</b> y aléjate', '<b>Заметь рано</b> и уйди'),
+                l("Can't: land <b>parallel</b>, so you touch only one", 'Si no: aterriza <b>paralelo</b> para tocar solo uno', 'Не получается: садись <b>параллельно</b>, чтобы коснуться одного'),
+                l('Feet and knees together, <b>turn your head</b>', 'Pies y rodillas juntos, <b>gira la cabeza</b>', 'Ступни и колени вместе, <b>голову отверни</b>'),
+                l('Hanging: <b>touch nothing</b>, nobody touches you until the power is off', 'Colgado: <b>no toques nada</b>, nadie te toca hasta cortar la corriente', 'Повис: <b>ничего не трогай</b>, никто не трогает, пока не отключат ток'),
+              ],
             },
           ],
         },
@@ -494,9 +500,9 @@ export const part3: Part = {
           tone: 'red',
           title: l('Everywhere', 'En todos los casos', 'В любом случае'),
           text: l(
-            'Never try to save the gear. It gets collected later; you come first.',
-            'Nunca intentes salvar el equipo. Lo recogen después; tú vas primero.',
-            'Никогда не пытайся спасти снаряжение. Его соберут потом; главное — ты.',
+            '<b>Never try to save the gear.</b> It gets collected later; you come first.',
+            '<b>Nunca intentes salvar el equipo.</b> Lo recogen después; tú vas primero.',
+            '<b>Никогда не спасай снаряжение.</b> Его соберут потом; главное — ты.',
           ),
         },
         {

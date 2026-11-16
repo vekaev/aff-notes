@@ -28,7 +28,8 @@ import type { IconName } from '../components/Icon';
 export type { IconName };
 
 export interface Step { title: L; sub?: L; icon?: IconName }
-export interface Rule { big?: string; icon?: IconName; title?: L; text?: L; tone?: 'red' | 'accent' }
+/** A card: optional icon or big number, a title, and either a short text or (better) a few bullet points. */
+export interface Rule { big?: string; icon?: IconName; title?: L; text?: L; points?: L[]; tone?: 'red' | 'accent' }
 /** One bar: a label and a share in percent. */
 export interface Bar { label: L; value: number; hl?: boolean }
 export interface Mistakes { title: L; bad: L[]; good: L[]; badTitle?: L; goodTitle?: L }
@@ -53,7 +54,9 @@ export type Block =
   | { type: 'h'; text: L; id?: string }
   | { type: 'steps'; items: Step[]; timeline?: boolean }
   | { type: 'rules'; items: Rule[] }
-  | { type: 'callout'; text: L; title?: L; tone?: 'note' | 'red'; check?: boolean }
+  | { type: 'callout'; text?: L; points?: L[]; title?: L; tone?: 'note' | 'red'; check?: boolean }
+  /** Bullets instead of a paragraph. 'do' = green ticks, 'dont' = red crosses, default = accent dots. */
+  | { type: 'list'; items: L[]; title?: L; kind?: 'do' | 'dont' }
   | { type: 'clips'; items: Clip[] }
   | { type: 'watch'; items: Watch[] }
   | { type: 'cards'; items: Card[]; groupTitle?: L; groupSub?: L; pill?: 'EP' | 'FIX'; small?: boolean }

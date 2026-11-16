@@ -106,12 +106,26 @@ export function BlockView({ b, chapterId }: { b: Block; chapterId: string }) {
               {r.big && <div className="big">{r.big}</div>}
               {r.title && <span className="rt"><Rich s={r.title} /></span>}
               {r.text && <span className="rx"><Rich s={r.text} /></span>}
+              {r.points && <ul className="pts">{r.points.map((x, j) => <li key={j}><Rich s={x} /></li>)}</ul>}
             </div>
           ))}
         </div>
       );
     case 'callout':
-      return <div className={`callout ${b.tone === 'red' ? 'red' : ''}`}>{b.title && <span className="ct"><Rich s={b.title} /></span>}<Rich s={b.text} /></div>;
+      return (
+        <div className={`callout ${b.tone === 'red' ? 'red' : ''}`}>
+          {b.title && <span className="ct"><Rich s={b.title} /></span>}
+          {b.text && <Rich s={b.text} />}
+          {b.points && <ul className="pts">{b.points.map((x, j) => <li key={j}><Rich s={x} /></li>)}</ul>}
+        </div>
+      );
+    case 'list':
+      return (
+        <div className={`list surface ${b.kind ?? ''}`}>
+          {b.title && <span className="lt"><Rich s={b.title} /></span>}
+          <ul className="pts">{b.items.map((x, j) => <li key={j}><Rich s={x} /></li>)}</ul>
+        </div>
+      );
     case 'clips': return <div className="clips">{b.items.map((c, i) => <ClipFigure key={i} c={c} />)}</div>;
     case 'watch': return <WatchRow items={b.items} />;
     case 'cards': return <Cards b={b} />;
