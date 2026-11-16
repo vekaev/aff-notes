@@ -51,6 +51,10 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] Numbers block: say what the numbers are (feet above the ground), "ft" next to each altitude, no word breaks.
 - [~] Know your rig: a real photo for each of the 8 parts (reserve, main, pilot chute handle, AAD, red handle, silver
       handle, three rings, straps), shown next to the drawing when the part is picked.
+- [~] Re-check every owner message of this whole chat (before and after the summary) against this inbox; add what's
+      missing; result in docs/review/owner-asks-audit.md.
+- [x] Rule: every owner message is first split into tasks / subtasks / questions, written here, and the reply points to
+      these lines (CLAUDE.md + ~/agent-tools/rules/working.md).
 - [?] Big reorder (Part IV "act now" first, statistics and real cases in their own part, EP button in the header): ask.
 
 ## Waiting on you

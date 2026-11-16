@@ -5,6 +5,9 @@ Personal study app for AFF skydiving (Vite + React + TypeScript). Plan and statu
 - **Every ask is tracked.** Each thing the owner asks for (in any message, even mid-task or by voice) gets a line in
   the inbox at the top of `docs/PLAN.md` before work starts, and is closed only when done and seen on screen (with the
   commit) or dropped by the owner. Before ending a turn, check the inbox against the owner's last messages.
+- **Every message is split first.** Before acting on an owner message, break it into tasks, subtasks and questions,
+  write each as a line in the inbox (questions also under "Waiting on you"), then work; the reply names which lines
+  were added and which are done.
 
 Research: `docs/research/`. Content brief: `docs/content-brief.md`.
 
