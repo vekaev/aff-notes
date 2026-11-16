@@ -49,6 +49,8 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       ("how to do the emergency procedure →"); FIX explains "two tries only, keep checking altitude, not fixed by 2,500 → EP".
       Make "two tries + watch altitude" stand out in the malfunctions chapter.
 - [x] Numbers block: say what the numbers are (feet above the ground), "ft" next to each altitude, no word breaks.
+- [~] Know your rig: a real photo for each of the 8 parts (reserve, main, pilot chute handle, AAD, red handle, silver
+      handle, three rings, straps), shown next to the drawing when the part is picked.
 - [?] Big reorder (Part IV "act now" first, statistics and real cases in their own part, EP button in the header): ask.
 
 ## Waiting on you
