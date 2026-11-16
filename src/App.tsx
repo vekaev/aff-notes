@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { parts } from './content';
 import { LANGS } from './content/types';
-import { headline, Rich, useLang } from './i18n';
+import { headline, useLang } from './i18n';
 import { ui } from './ui';
 import { usePassed } from './progress';
 import { BlockView } from './components/Blocks';
+import { Hero, useTrackLastChapter } from './components/Hero';
 import { ICONS, PART_ICON } from './components/Icon';
 
 function useScrollProgress(bar: React.RefObject<HTMLDivElement | null>) {
@@ -35,26 +36,13 @@ function useActivePart() {
   return active;
 }
 
-function Mark() {
-  // A small canopy over a horizon line: the app's one quiet glyph.
-  return (
-    <svg className="mark" viewBox="0 0 120 70" aria-hidden="true">
-      <path d="M14 30 Q60 -4 106 30 Q60 18 14 30 Z" fill="var(--ink)" />
-      <path d="M22 28 L58 58 M98 28 L62 58" stroke="var(--ink)" strokeWidth="2" />
-      <circle cx="60" cy="58" r="4" fill="var(--ink)" />
-      <line x1="0" y1="68" x2="120" y2="68" stroke="var(--ink)" strokeWidth="2" />
-    </svg>
-  );
-}
-
 export function App() {
   const { lang, setLang, t } = useLang();
   const bar = useRef<HTMLDivElement>(null);
   useScrollProgress(bar);
+  useTrackLastChapter();
   const active = useActivePart();
   const passed = usePassed();
-  const hasQuiz = (c: (typeof parts)[number]['chapters'][number]) => c.blocks.some(b => b.type === 'quiz' || (b.type === 'split' && [...b.left, ...b.right].some(x => x.type === 'quiz')));
-  const quizChapters = parts.flatMap(p => p.chapters).filter(hasQuiz);
   const acc = (id: string) => ({ ['--a' as string]: `var(--acc-${({ part1: 'plane', part2: 'free', part3: 'canopy', part4: 'ep', dz: 'dz' } as Record<string, string>)[id]})` });
   let n = 0;
 
@@ -74,20 +62,7 @@ export function App() {
       </header>
 
       <main id="top">
-        <div className="gutter"><div className="col hero">
-          <Mark />
-          <div className="eyebrow">{t(ui.heroEyebrow)}</div>
-          <h1>{headline(t(ui.heroTitle))}</h1>
-          <p><Rich s={ui.heroText} /></p>
-          <nav className="ladder surface">
-            {parts.map(p => {
-              const qs = p.chapters.filter(hasQuiz);
-              const ok = qs.filter(c => passed.has(c.id)).length;
-              return <a key={p.id} href={`#${p.id}`} style={acc(p.id)}><span className="alt">{t(p.range)}</span><span className="t">{t(p.title)}</span><span className="sc">{qs.length ? `${ok}/${qs.length}${ok === qs.length ? ' ✓' : ''}` : '›'}</span></a>;
-            })}
-          </nav>
-          {quizChapters.length > 0 && <div className="score">{passed.size} / {quizChapters.length} {t(ui.testsDone)}</div>}
-        </div></div>
+        <Hero />
 
         {parts.map(p => (
           <div key={p.id} data-part={p.id} className={`band gutter tone-${p.id}`}>

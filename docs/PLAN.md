@@ -33,6 +33,9 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - [x] Text review agents: all 5 content files reviewed in EN/ES/RU (~700 fixes; terms unified).
 - [ ] More research: where people most often get injured (phase, body part, students) — shown visually.
 
+- [x] New first screen (owner picked A + C + D): the jump as a clickable picture, continue where you stopped with
+      test progress, and the key numbers as cards.
+
 ## Facts to verify (doubts raised by the text reviewers; check against sources, then fix or mark <q-check/>)
 - [ ] Arms 90/90 signal is described as "thumb and pinky, an L": check the clip (L = thumb + index).
 - [ ] Slider stuck: we say pump the rear risers; many sources say pump the toggles/brakes.

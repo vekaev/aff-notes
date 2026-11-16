@@ -301,3 +301,49 @@ dialog.player::backdrop { background: rgba(0,0,0,.72); }
 .clip.link:active { transform: scale(.99); }
 .clip.link .vid::after { content: "▶"; position: absolute; right: 10px; bottom: 10px; width: 34px; height: 34px; border-radius: 50%; background: rgba(0,0,0,.55); color: #fff; font-size: 13px; display: grid; place-items: center; opacity: 0; transition: opacity .15s; }
 .clip.link:hover .vid::after, .clip.link:focus-visible .vid::after { opacity: 1; }
+
+/* hero: the jump as a picture, continue, the numbers */
+.hero { padding-block: 48px 72px; }
+.jump { display: block; width: 100%; max-width: 680px; height: auto; margin: 28px auto 8px; overflow: visible; }
+.jump .ground { stroke: var(--line-strong); stroke-width: 2; }
+.jump .plane { fill: var(--acc-plane); }
+.jump .ff { fill: none; stroke: var(--acc-free); stroke-width: 2.5; stroke-dasharray: 5 5; }
+.jump .flyer circle { fill: var(--ink); } .jump .flyer path { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.jump .canopy { fill: none; stroke: var(--acc-canopy); stroke-width: 7; stroke-linecap: round; }
+.jump .glide { fill: none; stroke: var(--acc-canopy); stroke-width: 2.5; stroke-linejoin: round; }
+.jump .target { stroke: var(--ok); stroke-width: 3.5; stroke-linecap: round; }
+.jump .stop { cursor: pointer; text-decoration: none; }
+.jump .stop circle { fill: var(--card); stroke: var(--c); stroke-width: 2.5; transition: fill .15s; }
+.jump .stop .n { font: 700 11px var(--font); fill: var(--c); }
+.jump .stop .lb { font: 650 15px var(--font); fill: var(--ink); }
+.jump .stop .al { font: 500 11px var(--mono); fill: var(--muted); }
+.jump .stop:hover circle, .jump .stop:focus-visible circle { fill: var(--c); }
+.jump .stop:hover .n, .jump .stop:focus-visible .n { fill: var(--card); }
+.resume { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 16px; align-items: center; text-align: left; padding: 16px 18px; max-width: 620px; margin: 8px auto 0; }
+.ring { width: 64px; height: 64px; }
+.ring .track { fill: none; stroke: var(--soft); stroke-width: 7; }
+.ring .val { fill: none; stroke: var(--ok); stroke-width: 7; stroke-linecap: round; transition: stroke-dasharray .4s; }
+.ring text { font: 700 14px var(--font); fill: var(--ink); font-variant-numeric: tabular-nums; }
+.rtext { display: grid; gap: 2px; min-width: 0; }
+.rtext b { font-size: 18px; letter-spacing: -.01em; }
+.rtext .rl { font-size: 13px; color: var(--muted); }
+.go { display: inline-flex; align-items: center; text-decoration: none; white-space: nowrap; }
+@media (max-width: 560px) { .resume { grid-template-columns: auto minmax(0, 1fr); } .resume .go { grid-column: 1 / -1; justify-content: center; } }
+.numbers { margin: 32px auto 0; max-width: 760px; text-align: left; display: grid; gap: 10px; }
+.numbers .nh { font: 650 13px var(--font); color: var(--faint); text-align: center; }
+.ngrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+@media (max-width: 640px) { .ngrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.num { display: grid; gap: 2px; padding: 12px 14px; text-decoration: none; transition: box-shadow .15s; }
+.num:hover { box-shadow: 0 0 0 1px var(--line-strong); }
+.num .big { font-size: 22px; font-weight: 800; letter-spacing: -.02em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.num .lbl { font-size: 13px; color: var(--muted); line-height: 1.3; }
+.num.red { background: var(--red-soft); box-shadow: 0 0 0 1px color-mix(in srgb, var(--red) 25%, transparent); }
+.num.red .big { color: var(--red); }
+.jump-legend { display: none; justify-content: center; margin-top: 4px; }
+.jump-legend .rn { font: 700 11px var(--font); color: var(--c); min-width: 1.4em; }
+@media (max-width: 560px) {
+  .jump .lb, .jump .al { display: none; }
+  .jump .stop circle { r: 18; }
+  .jump .stop .n { font-size: 15px; }
+  .jump-legend { display: flex; }
+}
