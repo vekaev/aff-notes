@@ -38,5 +38,10 @@ export const ui = {
     ru: 'Конспект для личного использования, а не инструкция. Клипы — короткие отрывки из публичных уроков, у каждого есть ссылка на оригинал.', uk: 'Конспект для особистого використання, а не інструкція. Кліпи — короткі уривки з публічних уроків, у кожного є посилання на оригінал.',
   },
   sideView: { en: 'side view', es: 'vista lateral', ru: 'вид сбоку', uk: 'вигляд збоку' },
+  skip: { en: 'Skip to content', es: 'Saltar al contenido', uk: 'Перейти до змісту', ru: 'Перейти к содержанию' },
+  offline: { en: 'Save everything for offline', es: 'Guardar todo sin conexión', uk: 'Зберегти все для офлайну', ru: 'Сохранить всё для офлайна' },
+  offlineBusy: { en: 'Saving clips…', es: 'Guardando clips…', uk: 'Зберігаю кліпи…', ru: 'Сохраняю клипы…' },
+  offlineDone: { en: 'Saved: works without internet', es: 'Guardado: funciona sin internet', uk: 'Збережено: працює без інтернету', ru: 'Сохранено: работает без интернета' },
+  offlineFail: { en: 'Some clips failed, try again online', es: 'Fallaron algunos clips, reintenta con conexión', uk: 'Деякі кліпи не зберіглися, спробуй онлайн', ru: 'Часть клипов не сохранилась, попробуй онлайн' },
   wind: { en: 'wind', es: 'viento', ru: 'ветер', uk: 'вітер' },
 } satisfies Record<string, L>;
