@@ -35,7 +35,20 @@ export function Rich({ s, className }: { s: L; className?: string }) {
   return <span className={className}>{renderInline(t(s))}</span>;
 }
 
-export function renderInline(text: string): ReactNode[] {
+const NB = '\u00a0';
+/**
+ * Keeps a number with its unit and its digit groups on one line: "5 s", "10 ft", "2 500 футов", "SIM 4-1"
+ * never break in the middle.
+ */
+export function glue(text: string): string {
+  return text
+    .replace(/(\d) (?=\d{3}(?!\d))/g, `$1${NB}`)
+    .replace(/(\d) (?=(?:s|ft|m|kt|mph|min|%|°|с|м|мин|сек|футов|футах|футів|фута|фути|фут|км)(?![\p{L}]))/gu, `$1${NB}`)
+    .replace(/\bSIM (?=\d)/g, `SIM${NB}`);
+}
+
+export function renderInline(raw: string): ReactNode[] {
+  const text = glue(raw);
   const out: ReactNode[] = [];
   const re = /<b>(.*?)<\/b>|<a href="([^"]+)"[^>]*>(.*?)<\/a>|<q-check\s*\/>/gs;
   let last = 0, m: RegExpExecArray | null, i = 0;

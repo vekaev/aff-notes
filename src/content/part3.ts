@@ -249,10 +249,10 @@ export const part3: Part = {
               point: [275, 205],
               title: l('Hold there', 'Espera ahí', 'Ожидание над точкой', 'Очікування над точкою'),
               sub: l(
-                '<b>Circle or S-turns</b> over the point. Watch the <b>windsock</b> and the <b>other canopies</b>. Why: you stay upwind with height to spare, and the traffic stays predictable. At <b>1,000 ft</b> leave the point and fly to the entry.',
-                'Haz <b>círculos o eses</b> sobre el punto. Mira la <b>manga de viento</b> y las <b>otras velas</b>. Por qué: te quedas a barlovento (viento arriba) con altura de sobra y el tráfico es predecible. A <b>1,000 ft</b> deja el punto y vuela a la entrada.',
-                '<b>Кружим или летаем «змейкой»</b> над точкой. Смотрим на <b>колдун</b> и на <b>другие купола</b>. Почему: ты остаёшься с наветренной стороны с запасом высоты, а движение куполов предсказуемо. На <b>1 000 футов</b> уходи с точки к входу в схему.',
-                '<b>Кружляємо або летимо «змійкою»</b> над точкою. Дивимося на <b>колдун</b> і на <b>інші куполи</b>. Чому: ти лишаєшся з навітряного боку із запасом висоти, а рух куполів передбачуваний. На <b>1 000 футів</b> іди з точки до входу в схему.',
+                '<b>S-turns or figure-eights</b> over the point, each turn <b>180° or less</b> <q-check/>. Watch the <b>windsock</b> and the <b>other canopies</b>. Why: you stay upwind with height to spare, and the traffic stays predictable. At <b>1,000 ft</b> leave the point and fly to the entry.',
+                'Haz <b>eses u ochos</b> sobre el punto, cada giro de <b>180° o menos</b> <q-check/>. Mira la <b>manga de viento</b> y las <b>otras velas</b>. Por qué: te quedas a barlovento (viento arriba) con altura de sobra y el tráfico es predecible. A <b>1,000 ft</b> deja el punto y vuela a la entrada.',
+                'Летаем <b>«змейкой» или восьмёрками</b> над точкой, каждый разворот <b>не больше 180°</b> <q-check/>. Смотрим на <b>колдун</b> и на <b>другие купола</b>. Почему: ты остаёшься с наветренной стороны с запасом высоты, а движение куполов предсказуемо. На <b>1 000 футов</b> уходи с точки к входу в схему.',
+                'Летимо <b>«змійкою» або вісімками</b> над точкою, кожен розворот <b>не більше 180°</b> <q-check/>. Дивимося на <b>колдун</b> і на <b>інші куполи</b>. Чому: ти лишаєшся з навітряного боку із запасом висоти, а рух куполів передбачуваний. На <b>1 000 футів</b> іди з точки до входу в схему.',
               ),
             },
             {

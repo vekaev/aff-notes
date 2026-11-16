@@ -2100,6 +2100,12 @@ export const part4: Part = {
               `Висота ухвалення рішення й нижня межа у твоїй школі: 2 500 і 1 000 футів?`,
             ),
             t(
+              `Over the holding point: S-turns only, or full circles too (the turn limit above 1,000 ft is 180°)?`,
+              `Sobre el punto de espera: ¿solo eses o también círculos completos (el límite por encima de 1,000 ft es 180°)?`,
+              `Над точкой ожидания: только «змейка» или можно и полные круги (выше 1 000 футов ограничение 180°)?`,
+              `Над точкою очікування: лише «змійка» чи можна й повні кола (вище 1 000 футів обмеження 180°)?`,
+            ),
+            t(
               `Slider stuck or end cells closed: pump the toggles or the rear risers?`,
               `Slider trabado o celdas laterales cerradas: ¿bombear los batidores o las bandas traseras?`,
               `Слайдер застрял или закрыты концевые секции: подкачивать клевантами или задними свободными концами?`,

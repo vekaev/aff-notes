@@ -58,7 +58,7 @@ export function Quiz({ id, questions }: { id: string; questions: QuizQuestion[] 
           {picked[i] !== null && <p className="why"><b>{t(picked[i] === questions[i].answer ? ui.right : ui.wrong)}</b> <Rich s={questions[i].why} /></p>}
           <div className="qnav">
             <button type="button" className="btn" style={{ visibility: i === 0 ? 'hidden' : undefined }} onClick={() => setI(i - 1)}>{t(ui.prev)}</button>
-            <button type="button" className="btn primary" disabled={picked[i] === null} onClick={() => setI(i + 1)}>{t(i === questions.length - 1 ? ui.finish : ui.next)}</button>
+            <button type="button" className="btn primary" disabled={picked[i] === null} onClick={() => setI(i + 1)}>{t(i === questions.length - 1 ? ui.finish : ui.nextQ)}</button>
           </div>
         </div>
       ) : (

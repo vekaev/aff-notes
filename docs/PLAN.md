@@ -15,6 +15,8 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - Photo of the dropzone map the instructors drew in ground school (holding point, pattern, landing area): send it and
   it goes next to the pattern drawing in Part III and into Part V.
 
+- aff-notes.vercel.app (public, created 2026-11-16, auto-deploys on push): owner removes it (2026-11-16).
+
 ## Owner decides later
 - Publishing: **private GitHub repo only** (vekaev/aff-notes, owner 2026-11-16); the app itself is not published. A web version would need the clips replaced by links or own footage.
 - Public version for the dropzone / other students (needs own footage or licensed clips instead of YouTube cuts).
@@ -88,6 +90,8 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 - [x] Phone scrolling jumped: the progress rail on the right edge caught the thumb and jumped the page. On touch screens
       the rail now only shows progress; the header re-renders alone when the part changes. No layout shifts measured.
 - [x] Header: title left, part in the middle (numeral only on phones), language + theme pinned right.
+- [x] Numbers stay with their units on one line ("5 s", "2 500 футов", "SIM 4-1"); quiz button "Next question";
+      holding point: S-turns / figure-eights within the 180° limit (asked the instructors: circles allowed?).
 - [ ] Owner to re-check scrolling on the iPhone (the fix is seen in the emulator only).
 - [x] Numbers tape fixed: 2,500 = can you reach the holding point (canopy plan), then 2,000 over it, 1,000 leave it;
       the emergency 2,500 (decide and act on a bad main) and 1,000 (no cutaway below) moved to their own red row.

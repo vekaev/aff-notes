@@ -14,6 +14,7 @@ export const ui = {
   chapter: { en: 'Chapter', es: 'Capítulo', ru: 'Глава', uk: 'Розділ' },
   watch: { en: 'Watch the original', es: 'Ver el original', ru: 'Смотреть оригинал', uk: 'Дивитися оригінал' },
   next: { en: 'Next step', es: 'Siguiente', ru: 'Дальше', uk: 'Далі' },
+  nextQ: { en: 'Next question', es: 'Siguiente pregunta', ru: 'Следующий вопрос', uk: 'Наступне питання' },
   play: { en: 'Play', es: 'Reproducir', ru: 'Пуск', uk: 'Пуск' },
   thumbCheck: { en: 'Thumb-to-ear check', es: 'Pulgares a las orejas', ru: 'Пальцы к ушам', uk: 'Пальці до вух' },
   pull: { en: 'Pull', es: 'Abrir', ru: 'Раскрыть', uk: 'Розкрити' },
