@@ -62,6 +62,10 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       YouTube, pros, official manuals), a study app like this one, expert fact-check, curriculum review, page guard,
       notes capture, final exam + AI-tutor prompt, then reinforcement after the course. Skill `/study` in agent-tools,
       mission: knowledge that can save a life (2026-11-16).
+- [ ] Page guard findings (docs/review/page-guard/2026-11-16-full.md): "ft" on every altitude everywhere (cards, prose,
+      altimeter rows, legend, pattern labels, hero axis); label the canopy-check count chips as the count, not altitudes;
+      one number format per language (UK/RU "5 500" vs "5,500"); translate the English injury-chart sources in ES/UK/RU;
+      UK "викидання" → "відокремлення"; label the hero "0/20" ring; phone: sticky exit-count drawing covers the steps.
 - [?] Big reorder (Part IV "act now" first, statistics and real cases in their own part, EP button in the header): ask.
 
 Added by the owner-asks audit (docs/review/owner-asks-audit.md):
@@ -70,7 +74,7 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - [x] Part IV emergencies expert fixes (both reports, the safety items in docs/review/fixes.md) applied, checked and committed; the expert fact-check line above is ticked but this scope is still todo (from 2026-11-16)
 - [x] Collect the ask-owner questions from every fixer log (docs/review/fixes/*.md) into "Waiting on you", one question each with a recommended answer; fixes.md says they are there, they are not (from 2026-11-16)
 - [x] Put the two open questions under "Waiting on you": lowercase headlines everywhere (§0b) and the big reorder (line above) (from 2026-11-16)
-- [~] Run the page guard (.claude/agents/aff-page-guard.md) on all chapters: never run yet, docs/review/page-guard/ doesn't exist (from 2026-11-16)
+- [x] Run the page guard (.claude/agents/aff-page-guard.md) on all chapters: never run yet, docs/review/page-guard/ doesn't exist (from 2026-11-16)
 - [ ] Tidy stale ticks: §0c "Two more checkers" and "24-hour finishing run" are [ ] while this inbox has them [x] (from 2026-11-16)
 
 ### Standing preferences (apply to all future work)
