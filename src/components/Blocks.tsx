@@ -107,8 +107,8 @@ function Pct({ v }: { v: number }) {
 
 /** A big number in the reader's language format ("2 500 фт" in UK/RU). */
 function Big({ s }: { s: string }) {
-  const { lang } = useLang();
-  return <div className="big">{num(s, lang)}</div>;
+  const { lang, units } = useLang();
+  return <div className="big">{num(s, lang, units)}</div>;
 }
 
 /** A source label: plain (names, papers) or translated. */

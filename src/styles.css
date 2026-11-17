@@ -762,3 +762,9 @@ a.pill:hover { filter: brightness(1.1); }
 /* right-to-left (Arabic): mirror the few physically placed bits */
 [dir="rtl"] .questions li::before { left: auto; right: var(--s5); }
 [dir="rtl"] .questions li { padding: var(--s4) 56px var(--s4) var(--s5); }
+
+/* Units (ft / ft·m / m) */
+.chip.units { font: 600 12px var(--mono); min-width: 44px; justify-content: center; }
+.big:has(.mline) { flex-wrap: wrap; justify-content: center; }
+.big .mline { flex-basis: 100%; display: block; font-size: 12px; font-weight: 600; letter-spacing: 0; color: var(--muted); line-height: 1.2; }
+@media (max-width: 700px) { .tape .big:has(.mline) { justify-content: flex-start; } }

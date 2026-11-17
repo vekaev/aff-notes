@@ -7,7 +7,7 @@ import { usePassed } from './progress';
 import { BlockView } from './components/Blocks';
 import { Hero, useTrackLastChapter } from './components/Hero';
 import { SkyRail } from './components/SkyRail';
-import { LangMenu, ThemeButton } from './components/Settings';
+import { LangMenu, ThemeButton, UnitsButton } from './components/Settings';
 import { OfflineButton } from './components/Offline';
 import { FinalCheck } from './components/FinalCheck';
 import { AboutAuthor, FeedbackBubble } from './components/Author';
@@ -63,7 +63,7 @@ function Header() {
         <nav className="parts" aria-label={t(ui.part)}>
           {parts.map(p => <a key={p.id} href={`#${p.id}`} style={acc(p.id)} className={active === p.id ? 'on' : ''} aria-current={active === p.id ? 'location' : undefined}><span className="pr">{p.roman}</span><span className="pt"> · {t(p.title)}</span></a>)}
         </nav>
-        <div className="settings"><LangMenu /><ThemeButton /></div>
+        <div className="settings"><LangMenu /><UnitsButton /><ThemeButton /></div>
       </div>
     </header>
   );

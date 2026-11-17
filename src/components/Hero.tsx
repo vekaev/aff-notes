@@ -2,6 +2,18 @@ import { useEffect, useState } from 'react';
 import { parts } from '../content';
 import type { L } from '../content/types';
 import { ftWord, headline, num, Rich, useLang } from '../i18n';
+import { group, toMetres } from '../units';
+import { ui } from '../ui';
+import type { Lang } from '../content/types';
+
+/** A big altitude on the first screen: feet as written, metres (≈) instead or underneath, per the reader's units. */
+function Big({ v, lang, units }: { v: string; lang: Lang; units: 'ft' | 'm' | 'both' }) {
+  const mW = lang === 'uk' || lang === 'ru' || lang === 'bg' ? 'м' : 'm';
+  // "900 · 600 · 300" is three altitudes: convert each one.
+  const metres = v.split(/\s*·\s*/).map(p => group(toMetres(Number(p.replace(/[^\d]/g, ''))), lang)).join(' · ');
+  if (units === 'm') return <span className="big">≈{metres}<small className="u">{mW}</small></span>;
+  return <span className="big">{num(v, lang)}<small className="u">{ftWord(lang)}</small>{units === 'both' && <span className="mline">≈{metres} {mW}</span>}</span>;
+}
 import { usePassed } from '../progress';
 
 const LAST = 'aff-last-chapter';
@@ -133,7 +145,7 @@ function JumpPicture() {
 }
 
 export function Hero() {
-  const { t, lang } = useLang();
+  const { t, lang, units } = useLang();
   const passed = usePassed();
   const chapters = parts.flatMap(p => p.chapters.map(c => ({ c, p })));
   const quizIds = new Set(chapters.filter(({ c }) => JSON.stringify(c.blocks).includes('"type":"quiz"')).map(({ c }) => c.id));
@@ -175,22 +187,22 @@ export function Hero() {
       </div>
 
       <div className="numbers">
-        <span className="nh">{t(T.numbers)}<small>{t(T.feet)}</small></span>
+        <span className="nh">{t(T.numbers)}<small>{units === 'ft' ? t(T.feet) : t(ui.unitsNote)}</small></span>
         <ol className="tape surface">
           {TAPE.map((x, i) => (
             <li key={i} className={x.red ? 'red' : ''}>
-              <a href={`#${x.to}`}><span className="big">{num(x.big, lang)}{!/ft|s$/.test(x.big) && <small className="u">{ftWord(lang)}</small>}</span><span className="dot" aria-hidden="true" /><span className="lbl">{t(x.label)}</span></a>
+              <a href={`#${x.to}`}>{/ft|s$/.test(x.big) ? <span className="big">{num(x.big, lang, units)}</span> : <Big v={x.big} lang={lang} units={units} />}<span className="dot" aria-hidden="true" /><span className="lbl">{t(x.label)}</span></a>
             </li>
           ))}
         </ol>
         <div className="emerg">
           <span className="eh">{t(T.ifBad)}</span>
           <div className="timers">
-            {EMERGENCY.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface red"><span className="big">{num(x.big, lang)}<small className="u">{ftWord(lang)}</small></span><span className="lbl">{t(x.label)}</span></a>)}
+            {EMERGENCY.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface red"><Big v={x.big} lang={lang} units={units} /><span className="lbl">{t(x.label)}</span></a>)}
           </div>
         </div>
         <div className="timers">
-          {TIMERS.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface"><span className="big">{num(x.big, lang)}</span><span className="lbl">{t(x.label)}</span></a>)}
+          {TIMERS.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface"><span className="big">{num(x.big, lang, units)}</span><span className="lbl">{t(x.label)}</span></a>)}
         </div>
       </div>
     </div></div>

@@ -1308,5 +1308,7 @@
  "zuax6m": "açış",
  "zwpecf": "Açış yok ya da alçak açış",
  "zx50gg": "Biplane uçar. İkisini de tutun, öndekini arka askılarıyla yumuşakça yönlendirin, arkadakine dokunmayın, flare yok, PLF (USPA SIM 4-1). Flare öndeki kanopiyi yavaşlatıp arkadakinin onun üzerinden geçmesine yol açabilir.",
- "zx731q": "flare, sonra PLF"
+ "zx731q": "flare, sonra PLF",
+ "wtsfx1": "Fit değerleri USPA'nın sayılarıdır. Metreler (≈) dönüşümdür, metrik bir okulun öğrettiği yuvarlak sayılar değildir: okulunu izle.",
+ "s8jd91": "Birimler: fit, ikisi, metre"
 }

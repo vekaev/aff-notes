@@ -38,6 +38,13 @@ export const ui = {
   fixRule: { en: '<b>Two tries only.</b> Check your <b>altitude</b> between them. Not fixed by <b>2,500 ft</b>? Emergency procedure.', es: '<b>Solo dos intentos.</b> Mira la <b>altura</b> entre uno y otro. ¿Sin arreglar a <b>2,500 ft</b>? Procedimiento de emergencia.', uk: '<b>Лише дві спроби.</b> Між ними дивись на <b>висоту</b>. Не виправив до <b>2 500 футів</b>? Аварійна процедура.', ru: '<b>Только две попытки.</b> Между ними смотри на <b>высоту</b>. Не исправил к <b>2 500 футов</b>? Аварийная процедура.' },
   notPlaying: { en: 'Doesn\'t play here? Some videos play only on YouTube.', es: '¿No se reproduce aquí? Algunos vídeos solo se ven en YouTube.', uk: 'Не відтворюється тут? Деякі відео працюють лише на YouTube.', ru: 'Не играет здесь? Некоторые видео работают только на YouTube.' },
   openYoutube: { en: 'Open on YouTube', es: 'Abrir en YouTube', ru: 'Открыть на YouTube', uk: 'Відкрити на YouTube' },
+  unitsNote: {
+    en: 'Feet are the USPA numbers. Metres (≈) are conversions, not the round numbers a metric school teaches: follow your school.',
+    es: 'Los pies son los números de la USPA. Los metros (≈) son conversiones, no los números redondos que enseña una escuela métrica: sigue a tu escuela.',
+    uk: 'Фути — це числа USPA. Метри (≈) — це перерахунок, а не круглі числа, яких навчає школа з метричною системою: слухай свою школу.',
+    ru: 'Футы — это числа USPA. Метры (≈) — это пересчёт, а не круглые числа, которым учит школа с метрической системой: слушай свою школу.',
+  },
+  unitsLabel: { en: 'Units: feet, both, metres', es: 'Unidades: pies, ambos, metros', uk: 'Одиниці: фути, обидва, метри', ru: 'Единицы: футы, оба, метры' },
   mtNote: {
     en: 'This language is translated from the English notes and not yet checked by a native-speaking instructor. If a term is unclear, ask your instructor or switch to English.',
     es: 'Este idioma está traducido de los apuntes en inglés y aún no lo ha revisado un instructor nativo. Si un término no está claro, pregunta a tu instructor o cambia a inglés.',

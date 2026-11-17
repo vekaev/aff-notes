@@ -1,6 +1,7 @@
 import { createContext, Fragment, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { ALL_LANGS, isCore, RTL, type L, type Lang } from './content/types';
 import { keyOf } from './content/i18n/key';
+import { convertQuantities, initialUnits, saveUnits, type Units } from './units';
 
 // Extra languages load on demand (one JSON per language, built from English by the translators).
 const CATALOGS = import.meta.glob<Record<string, string>>('./content/i18n/*.json', { import: 'default' });
@@ -25,8 +26,8 @@ export function initialLang(): Lang {
   return 'en';
 }
 
-interface Ctx { lang: Lang; setLang: (l: Lang) => void; t: (s: L) => string }
-const LangContext = createContext<Ctx>({ lang: 'en', setLang: () => {}, t: s => s.en });
+interface Ctx { lang: Lang; setLang: (l: Lang) => void; t: (s: L) => string; units: Units; setUnits: (u: Units) => void }
+const LangContext = createContext<Ctx>({ lang: 'en', setLang: () => {}, t: s => s.en, units: 'ft', setUnits: () => {} });
 
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>(initialLang);
@@ -34,6 +35,8 @@ export function LangProvider({ children }: { children: ReactNode }) {
     setLangState(l);
     try { localStorage.setItem(KEY, l); } catch { /* ignore */ }
   }, []);
+  const [units, setUnitsState] = useState<Units>(initialUnits);
+  const setUnits = useCallback((u: Units) => { setUnitsState(u); saveUnits(u); }, []);
   const [cat, setCat] = useState<{ lang: Lang; map: Record<string, string> } | null>(null);
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -44,9 +47,10 @@ export function LangProvider({ children }: { children: ReactNode }) {
   }, [lang]);
   const value = useMemo(() => {
     const map = cat && cat.lang === lang ? cat.map : null;
-    const t = (s: L) => (isCore(lang) ? s[lang] || s.en : (map && map[keyOf(s.en)]) || s.en);
-    return { lang, setLang, t };
-  }, [lang, setLang, cat]);
+    const raw = (s: L) => (isCore(lang) ? s[lang] || s.en : (map && map[keyOf(s.en)]) || s.en);
+    const t = (s: L) => convertQuantities(raw(s), lang, units);
+    return { lang, setLang, t, units, setUnits };
+  }, [lang, setLang, cat, units, setUnits]);
   return <LangContext.Provider value={value}>{children}</LangContext.Provider>;
 }
 
@@ -79,7 +83,11 @@ const UNIT: Partial<Record<Lang, Record<string, string>>> = {
 const SPACE_GROUP: readonly Lang[] = ['uk', 'ru', 'fr', 'pl', 'sv', 'nb', 'fi', 'cs', 'sk', 'hu', 'bg', 'lt'];
 const DOT_GROUP: readonly Lang[] = ['de', 'it', 'pt', 'da', 'nl', 'ro', 'hr', 'sr', 'sl', 'el', 'tr', 'id'];
 /** A big number in each language's own format: "2,500 ft" stays in EN/ES, becomes "2 500 фт" in UK/RU. */
-export function num(s: string, lang: Lang): string {
+export function num(s: string, lang: Lang, units: Units = 'ft'): string {
+  if (units !== 'ft' && /\d\s?ft\b/.test(s)) return glue(convertQuantities(numFt(s, lang), lang, units));
+  return numFt(s, lang);
+}
+function numFt(s: string, lang: Lang): string {
   if (DOT_GROUP.includes(lang)) return glue(s.replace(/(\d),(?=\d{3}(?!\d))/g, '$1.'));
   if (!SPACE_GROUP.includes(lang)) return glue(s);
   if (lang !== 'uk' && lang !== 'ru') return glue(s.replace(/(\d),(?=\d{3}(?!\d))/g, '$1 '));

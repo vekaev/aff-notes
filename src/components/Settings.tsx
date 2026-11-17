@@ -1,6 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 import { ALL_LANGS, LANG_NAMES, type L, type Lang } from '../content/types';
 import { useLang } from '../i18n';
+import { UNITS } from '../units';
+import { ui } from '../ui';
+
+/** Units button: ft → ft + m → m. Shows the current choice; every altitude in the app follows it. */
+export function UnitsButton() {
+  const { t, units, setUnits } = useLang();
+  const label = units === 'both' ? 'ft·m' : units;
+  return (
+    <button type="button" className="chip units" title={t(ui.unitsLabel)} aria-label={`${t(ui.unitsLabel)}: ${label}`} onClick={() => setUnits(UNITS[(UNITS.indexOf(units) + 1) % UNITS.length])}>{label}</button>
+  );
+}
 
 /** Language menu: scales to any number of languages, each shown in its own name. */
 export function LangMenu() {

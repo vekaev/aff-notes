@@ -1,5 +1,6 @@
+import { group, toMetres, type Units } from './units';
 import { useEffect, useRef, useState } from 'react';
-import type { AltRow, Block, L, RigPart, RigPartId, Step } from './content/types';
+import type { AltRow, Block, L, Lang, RigPart, RigPartId, Step } from './content/types';
 import { num, Rich, useLang } from './i18n';
 import { ui } from './ui';
 import { ClipFigure } from './components/Blocks';
@@ -52,6 +53,14 @@ const HL = ['', 'RA', 'RL', 'LA', 'LL', 'H'];
 function toLocal([wx, wy]: [number, number], p: Pose): [number, number] {
   const a = (-p.lean * Math.PI) / 180, x = wx - p.tx - FEET[0], y = wy - FEET[1];
   return [FEET[0] + x * Math.cos(a) - y * Math.sin(a), FEET[1] + x * Math.sin(a) + y * Math.cos(a)];
+}
+
+/** An altitude label inside a drawing: feet, and in "both" mode the metres on a second line (no long one-liners). */
+function SvgAlt({ x, y, ft, anchor, lang, units }: { x: number; y: number; ft: number; anchor?: 'end'; lang: Lang; units: Units }) {
+  const feet = num(`${ft.toLocaleString('en-US')} ft`, lang);
+  const m = `≈${group(toMetres(ft), lang)}${lang === 'uk' || lang === 'ru' || lang === 'bg' ? '\u00a0м' : '\u00a0m'}`;
+  if (units === 'm') return <text x={x} y={y} textAnchor={anchor}>{m}</text>;
+  return <text x={x} y={y} textAnchor={anchor}>{feet}{units === 'both' && <tspan x={x} dy="12" opacity=".7">{m}</tspan>}</text>;
 }
 
 export function Climb({ steps, captions }: { steps: Step[]; captions: L[] }) {
@@ -154,13 +163,13 @@ export function ExitCount({ steps }: { steps: Step[] }) {
 const ang = (v: number) => (v / 12) * 360;
 
 function AltRows({ rows, on, onPick }: { rows: AltRow[]; on: number; onPick: (i: number) => void }) {
-  const { lang } = useLang();
+  const { lang, units } = useLang();
   return (
     <ol className="alt-rows">
       {rows.map((r, i) => (
         <li key={i} className={`${r.hot ? 'hot' : ''} ${i === on ? 'on' : ''}`} tabIndex={0} onClick={() => onPick(i)}
           onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPick(i); } }}>
-          <span className="a">{r.alt ? num(r.alt, lang) : '↓'}</span>
+          <span className="a">{r.alt ? num(r.alt, lang, units) : '↓'}</span>
           <div><span className="rt"><Rich s={r.title} /></span><span className="rs"><Rich s={r.sub} /></span></div>
         </li>
       ))}
@@ -169,7 +178,7 @@ function AltRows({ rows, on, onPick }: { rows: AltRow[]; on: number; onPick: (i:
 }
 
 export function Altimeter({ rows }: { rows: AltRow[] }) {
-  const { t, lang } = useLang();
+  const { t, lang, units } = useLang();
   const [i, setI] = useState(0);
   const r = rows[i];
   const C = 120;
@@ -207,10 +216,10 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
           </g>
           <circle cx={C} cy={C} r="9" fill="var(--ink)" /><circle cx={C} cy={C} r="3" fill="var(--card)" />
         </svg>
-        <div className="cap"><b className="alt-now">{num(`${(r.value * 1000).toLocaleString('en-US')} ft`, lang)}</b><span><Rich s={r.title} /></span></div>
+        <div className="cap"><b className="alt-now">{num(`${(r.value * 1000).toLocaleString('en-US')} ft`, lang, units)}</b><span><Rich s={r.title} /></span></div>
         <ul className="alt-legend">
-          <li><i style={{ background: 'var(--acc-canopy)' }} />{num('6,000 ft', lang)} · {t(L.lock)}</li>
-          <li><i style={{ background: 'var(--red)' }} />{num('5,500 ft', lang)} · {t(L.pull)}</li>
+          <li><i style={{ background: 'var(--acc-canopy)' }} />{num('6,000 ft', lang, units)} · {t(L.lock)}</li>
+          <li><i style={{ background: 'var(--red)' }} />{num('5,500 ft', lang, units)} · {t(L.pull)}</li>
           <li className="dir">↺ {t(L.dir)}</li>
         </ul>
       </div>
@@ -220,7 +229,7 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
 
 /* ---------- landing pattern map (drawn like the ground-school test) ---------- */
 export function Pattern({ rows }: { rows: AltRow[] }) {
-  const { t, lang } = useLang();
+  const { t, lang, units } = useLang();
   const [i, setI] = useState(Math.min(3, rows.length - 1));
   const r = rows[i];
   const reduce = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -240,11 +249,11 @@ export function Pattern({ rows }: { rows: AltRow[] }) {
           <circle cx="275" cy="205" r="22" fill="none" stroke="var(--faint)" strokeWidth="1.5" strokeDasharray="4 4" />
           <path id="patPath" d="M294 226 L294 190 Q294 182 286 182 Q278 182 278 190 L278 220 Q278 228 270 228 Q262 228 262 220 L262 207 Q262 200 255 200 L60 200 L60 70 L186 70" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" markerEnd="url(#arrP)" />
           <path d="M194 62 L210 78 M210 62 L194 78" stroke="var(--ok)" strokeWidth="4" />
-          <g fontFamily="var(--mono)" fontSize="11" fill="var(--ink)"><text x="252" y="228" textAnchor="end">{num('900 ft', lang)}</text><text x="72" y="228">{num('600 ft', lang)}</text><text x="72" y="100">{num('300 ft', lang)}</text><text x="148" y="56">{num('10 ft', lang)}</text></g>
+          <g fontFamily="var(--mono)" fontSize="11" fill="var(--ink)"><SvgAlt x={252} y={228} anchor="end" ft={900} lang={lang} units={units} /><SvgAlt x={72} y={228} ft={600} lang={lang} units={units} /><SvgAlt x={72} y={100} ft={300} lang={lang} units={units} /><SvgAlt x={148} y={56} ft={10} lang={lang} units={units} /></g>
           {!reduce && <circle r="7" fill="var(--red)" stroke="var(--paper)" strokeWidth="2"><animateMotion dur="14s" repeatCount="indefinite"><mpath href="#patPath" /></animateMotion></circle>}
           {r.point && <circle cx={r.point[0]} cy={r.point[1]} r="12" fill="none" stroke="var(--ink)" strokeWidth="3" />}
         </svg>
-        <div className="cap">{num(r.alt, lang)} · <Rich s={r.title} /></div>
+        <div className="cap">{num(r.alt, lang, units)} · <Rich s={r.title} /></div>
       </div>
     </div>
   );
