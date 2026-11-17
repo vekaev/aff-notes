@@ -11,6 +11,35 @@ Every request from the owner goes here first. `[x]` = in the app (content tests 
 Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check, landing pattern, EP, malfunctions
 (desktop, light, EN); canopy check, obstacles, a chapter test (phone, dark, RU).
 
+## Resume here (written 2026-11-16 ~23:00 PST, owner out of tokens; scheduled runs continue from this)
+Work in this order; tick each line here and in the inbox below; one item per run is fine.
+1. [~] **Translations** (branch `i18n`, worktree `../aff-notes-i18n`, pushed to origin/i18n; brief
+   `docs/i18n/TRANSLATE.md`). At the time of writing: 10 translator agents had started; glossaries done for ar, it,
+   pl; no `<lang>.json` written yet. Resume: for each of fr, de, it, pt, pl, sv, nb, da, fi, ar check
+   `src/content/i18n/<lang>.json` with `npx vitest run tests/i18n.test.ts`; missing or failing → run one agent with
+   the brief for that language (glossary first if `docs/i18n/glossary-<lang>.md` is missing). Commit each language
+   on `i18n` as it passes.
+2. [ ] **Merge i18n**: merge main into `i18n`, run `node scripts/i18n-extract.mjs` (the mission paragraph "Imagine…"
+   was added on main after the branch: translate its new strings into all 10), `npm run check`, `npx vite build`,
+   look at every language on screen (phone 375 + desktop, light + dark, Arabic right-to-left, the language menu,
+   the "translated" note), then merge into main, push, remove the worktree.
+3. [!] **Outreach research redo lines** (below, "Outreach research cut short"): one agent per line with
+   `docs/outreach/BRIEF.md`, output `docs/outreach/raw/redo_<name>.csv`, then `python3 scripts/merge-contacts.py`.
+   Sub-chat C (existing lists) was still running: if `docs/outreach/raw/w2_existing_lists.csv` is missing, run it again
+   (scope in `docs/outreach/WAVE2.md`, section C).
+4. [ ] **Analyse everything the agents found** (owner 2026-11-16): read every `docs/outreach/raw/*.md` (sources,
+   gaps, best contacts, posting rules, how-to-ask) and `contacts.csv`, and write `docs/outreach/ANALYSIS.md`:
+   the best sources per country, ready-made lists, who to ask first (fact-check experts, safety officers, instructors,
+   creators), where to post and their rules, what's still missing and how to get it, duplicates and dead sites to
+   clean, and how all of it helps build the most complete list and knowledge base. Then clean `contacts.csv`
+   (dead/parked sites, personal addresses flagged, closed dropzones) and add a `priority` column.
+5. [ ] **The ask**: from `docs/outreach/raw/how-to-ask.md` and the analysis, write `docs/outreach/email.md` (email,
+   follow-up, Reddit post, creator DM) with the owner's mission. Nothing is sent: the owner approves each wave.
+6. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
+   (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
+Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
+`docs/outreach/raw/`; nothing in them needs a commit except what's listed above.
+
 ## Owner requests: the inbox (every ask lands here first, nothing is dropped)
 Rule: each thing the owner asks for, in any message, gets a line here **before** work starts, with the date and the
 owner's words in short. Status: `[ ]` planned · `[~]` started · `[!]` blocked / redo (why) · `[-]` cancelled by the
@@ -35,6 +64,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   strings / 78k characters, tests (all keys, same tags, same numbers), note "translated, not yet checked by a native
   instructor" on extra languages. Translators (one agent each, glossary from the federation first, then back-check):
   - [~] fr  - [~] de  - [~] it  - [~] pt  - [~] pl  - [~] sv  - [~] nb  - [~] da  - [~] fi  - [~] ar (right-to-left)
+    (2026-11-16 23:00: glossaries for ar/it/pl only, no translations yet; resume per "Resume here" step 1)
   - [ ] After: look at every language on screen (phone + desktop, light + dark), Arabic layout right-to-left, merge.
   - [ ] Later: native skydivers check each language (ask through the outreach list), more languages (nl, cs, tr, ja,
         zh, ko, he) if wanted.
