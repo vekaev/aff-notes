@@ -14,6 +14,8 @@ const KEY = 'aff-units';
 const METRIC_REGIONS = new Set(['RU', 'UA', 'BY', 'KZ', 'UZ', 'KG', 'CN', 'MN']);
 
 export function initialUnits(): Units {
+  const fromUrl = typeof location !== 'undefined' ? new URLSearchParams(location.search).get('units') : null;
+  if (fromUrl === 'ft' || fromUrl === 'm' || fromUrl === 'both') { saveUnits(fromUrl); return fromUrl; }
   try {
     const saved = localStorage.getItem(KEY);
     if (saved === 'ft' || saved === 'm' || saved === 'both') return saved;

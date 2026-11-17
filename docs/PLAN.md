@@ -184,6 +184,11 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
+2026-11-17 (chat, language links):
+- [x] (2026-11-17, seen: ?lang=th&units=both opens Thai + ft·m; switching to ES rewrites the address to ?lang=es) Language in the link: `?lang=fr` (and `?units=m`) opens the site in that language/units, so each outreach email
+      can carry a link in the recipient's language; the menu still switches; the address bar keeps the current
+      language so a shared link opens the same way.
+
 2026-11-17 (chat, feedback bubble 2):
 - [x] Bubble: a "Not now" that hides the bubble and its icon completely (it's annoying and takes space on the phone).
 - [x] Bubble: a link "Why I made this" to the mission section at the bottom (#about).

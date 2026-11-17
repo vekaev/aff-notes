@@ -377,3 +377,10 @@ Sending tools
 Not checked this time: Reddit opinions (r/coldemail, r/gsuite) were skipped. Not verified: Fastmail and Proton paid
 prices, the Kickbox price (site blocked), whether each merge tool adds a List-Unsubscribe header, and where each tool
 turns off tracking.
+
+## Links in the recipient's language (added 2026-11-17)
+The app reads the language and units from the link: `…/?lang=<code>` (any of the 32 codes, `pt-BR` → `pt`,
+unknown → browser language) and optionally `&units=both` or `&units=m`. The address bar keeps the current choice, so
+a link copied from the page opens the same way. In the mail merge, add a `link` column built from the contact's
+language, e.g. `https://<site>/?lang=fr` for France, `?lang=ru&units=both` for Russia/Kazakhstan, and use `#about`
+to land on the mission. A reply's link (or the `lang` column) shows which language the recipient got.

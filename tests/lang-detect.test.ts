@@ -23,3 +23,19 @@ describe('second wave languages', () => {
     vi.stubGlobal('navigator', { languages: ['th-TH'] }); expect(initialLang()).toBe('th');
   });
 });
+describe('language from the link', () => {
+  it('?lang= wins over the browser and the saved choice, and is saved', () => {
+    let saved = 'uk';
+    vi.stubGlobal('localStorage', { getItem: () => saved, setItem: (_k: string, v: string) => { saved = v; } });
+    vi.stubGlobal('navigator', { languages: ['de-DE'] });
+    vi.stubGlobal('location', { search: '?lang=fr' });
+    expect(initialLang()).toBe('fr');
+    expect(saved).toBe('fr');
+  });
+  it('accepts regional codes and ignores unknown ones', () => {
+    vi.stubGlobal('localStorage', { getItem: () => null, setItem: () => {} });
+    vi.stubGlobal('navigator', { languages: ['de-DE'] });
+    vi.stubGlobal('location', { search: '?lang=pt-BR' }); expect(initialLang()).toBe('pt');
+    vi.stubGlobal('location', { search: '?lang=xx' }); expect(initialLang()).toBe('de');
+  });
+});

@@ -9,19 +9,31 @@ const CATALOGS = import.meta.glob<Record<string, string>>('./content/i18n/*.json
 const KEY = 'aff-lang';
 
 /** Saved choice, else the browser language, else English. Read once, before the first render. */
+/** "pt-BR" → "pt", old or variant codes → ours; null when we don't have that language. */
+export function toLang(code: string | null | undefined): Lang | null {
+  let base = (code || '').toLowerCase().split(/[-_]/)[0];
+  if (base === 'no' || base === 'nn') base = 'nb';
+  if (base === 'iw') base = 'he';
+  if (base === 'in') base = 'id';
+  if (base === 'bs') base = 'hr';
+  return (ALL_LANGS as readonly string[]).includes(base) ? (base as Lang) : null;
+}
+
+/** ?lang=fr in the link wins (an email can carry the reader's language), then the saved choice, then the browser. */
 export function initialLang(): Lang {
+  const fromUrl = typeof location !== 'undefined' ? toLang(new URLSearchParams(location.search).get('lang')) : null;
+  if (fromUrl) {
+    try { localStorage.setItem(KEY, fromUrl); } catch { /* ignore */ }
+    return fromUrl;
+  }
   try {
     const saved = localStorage.getItem(KEY);
     if (saved && (ALL_LANGS as readonly string[]).includes(saved)) return saved as Lang;
   } catch { /* storage blocked: fall through */ }
   const prefs = typeof navigator !== 'undefined' ? (navigator.languages?.length ? navigator.languages : [navigator.language]) : [];
   for (const p of prefs) {
-    let base = (p || '').toLowerCase().split('-')[0];
-    if (base === 'no' || base === 'nn') base = 'nb';
-    if (base === 'iw') base = 'he';
-    if (base === 'in') base = 'id';
-    if (base === 'bs') base = 'hr';
-    if ((ALL_LANGS as readonly string[]).includes(base)) return base as Lang;
+    const l = toLang(p);
+    if (l) return l;
   }
   return 'en';
 }
@@ -37,6 +49,14 @@ export function LangProvider({ children }: { children: ReactNode }) {
   }, []);
   const [units, setUnitsState] = useState<Units>(initialUnits);
   const setUnits = useCallback((u: Units) => { setUnitsState(u); saveUnits(u); }, []);
+  useEffect(() => {
+    try {
+      const u = new URL(location.href);
+      u.searchParams.set('lang', lang);
+      if (units === 'ft') u.searchParams.delete('units'); else u.searchParams.set('units', units);
+      if (u.href !== location.href) history.replaceState(history.state, '', u.href);
+    } catch { /* ignore */ }
+  }, [lang, units]);
   const [cat, setCat] = useState<{ lang: Lang; map: Record<string, string> } | null>(null);
   useEffect(() => {
     document.documentElement.lang = lang;
