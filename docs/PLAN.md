@@ -220,6 +220,8 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [~] Project tooling for contributors (sub-chat): ESLint, Prettier, Husky + lint-staged, i18n checks on commit
       (all languages, tags, numbers), CI on GitHub, CONTRIBUTING, best practices / boilerplates; "TanStack Query" (by
       ear "10 stack query"): check whether the app needs it (no server data today).
+      Owner 2026-11-17: look at the whole TanStack (Router, Start, Query, Form…) and Vite ecosystems (Vitest, PWA plugin,
+      Rolldown, oxlint/Biome, Vite+…) for a production-ready setup; recommend what fits, adopt what's clearly worth it.
 
 2026-11-17 (chat, project link):
 - [x] (seen RU phone light) "Why I made this": link to the project on GitHub (https://github.com/vekaev/aff-notes), now public, so people can
