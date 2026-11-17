@@ -1,0 +1,13 @@
+Sub-brief for tunnel contact collectors (part of w2_tunnels).
+Read /Users/yevheniipetrenko/Documents/dev/aff-notes/docs/outreach/BRIEF.md first and follow its rules exactly:
+collect PUBLIC business contacts only, never contact anyone, never submit forms, never sign up, no guessed emails,
+no logins/paywalls/CAPTCHAs. Tools: WebSearch, WebFetch (curl via Bash is fine for plain public pages; grep for
+mailto:/tel:). Spend about 1-2 fetches per tunnel; breadth over depth.
+Write ONLY your own part CSV into /Users/yevheniipetrenko/Documents/dev/aff-notes/docs/outreach/raw/parts_w2_tunnels/
+with exactly this header:
+name,type,country,region,city,website,email,phone,contact_form,instagram,youtube,facebook,other_links,person,role,languages,audience_size,source_url,confidence,notes
+type = tunnel (or coach_school for a tunnel coaching school, association for a federation). Quote fields containing commas
+(use Python csv module to write). confidence: high = email seen on their own site, medium = seen in a directory,
+low = not verified. notes: one short line; mention AFF-prep / skydiver training / pro flying / coaching programs if the
+tunnel offers them (e.g. "AFF prep course; IBA tunnel; 14 ft"). languages = site languages (ISO codes like en;fr).
+Do not edit anything else, do not commit. Finish by replying: rows written, rows with email, what you could not reach.

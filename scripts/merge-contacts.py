@@ -10,12 +10,18 @@ def dom(u):
     d = urlparse(u).netloc.lower()
     return d[4:] if d.startswith("www.") else d
 SOCIAL = ("facebook.com","instagram.com","youtube.com","tiktok.com","reddit.com","discord","linktr.ee","x.com","twitter.com")
+ALIASES = {"us":"United States","usa":"United States","u.s.":"United States","united states of america":"United States",
+  "uk":"United Kingdom","gb":"United Kingdom","great britain":"United Kingdom","england":"United Kingdom","scotland":"United Kingdom","wales":"United Kingdom","northern ireland":"United Kingdom",
+  "uae":"United Arab Emirates","de":"Germany","deutschland":"Germany","fr":"France","es":"Spain","españa":"Spain","it":"Italy","italia":"Italy","br":"Brazil","brasil":"Brazil",
+  "au":"Australia","nz":"New Zealand","ca":"Canada","mx":"Mexico","méxico":"Mexico","ru":"Russia","russian federation":"Russia","ua":"Ukraine","czech republic":"Czechia","türkiye":"Turkey"}
+def country(c): return ALIASES.get(c.strip().lower(), c.strip())
 rows, seen, stats = [], {}, {}
 for f in sorted(glob.glob(os.path.join(root, "raw", "*.csv"))):
     n = 0
     with open(f, newline="", encoding="utf-8-sig") as fh:
         for r in csv.DictReader(fh):
             r = {c: (r.get(c) or "").strip() for c in COLS}
+            r["country"] = country(r["country"])
             if not r["name"]: continue
             emails = EMAIL.findall(r["email"])
             r["email"] = "; ".join(dict.fromkeys(e.lower() for e in emails))
