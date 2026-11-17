@@ -11,16 +11,22 @@ export type L = Record<Core, string>;
  * Languages translated from English into src/content/i18n/<lang>.json (key = keyOf(english), see
  * scripts/i18n-extract.mjs). A string missing there shows in English. Menu order = this list.
  */
-export const ALL_LANGS = ['en', 'es', 'fr', 'de', 'it', 'pt', 'pl', 'sv', 'nb', 'da', 'fi', 'uk', 'ru', 'ar'] as const;
+export const ALL_LANGS = [
+  'en', 'es', 'fr', 'de', 'it', 'pt', 'nl', 'pl', 'cs', 'sk', 'hu', 'ro', 'bg', 'hr', 'sr', 'sl', 'el', 'tr', 'lt',
+  'sv', 'nb', 'da', 'fi', 'uk', 'ru', 'he', 'ar', 'zh', 'ja', 'ko', 'th', 'id',
+] as const;
 export type Lang = (typeof ALL_LANGS)[number];
 export type Extra = Exclude<Lang, Core>;
 export const isCore = (l: Lang): l is Core => (LANGS as readonly string[]).includes(l);
-export const RTL: readonly Lang[] = ['ar'];
+export const RTL: readonly Lang[] = ['ar', 'he'];
 
 /** Each language in its own name, for the language menu. */
 export const LANG_NAMES: Record<Lang, string> = {
   en: 'English', es: 'Español', fr: 'Français', de: 'Deutsch', it: 'Italiano', pt: 'Português', pl: 'Polski',
   sv: 'Svenska', nb: 'Norsk', da: 'Dansk', fi: 'Suomi', uk: 'Українська', ru: 'Русский', ar: 'العربية',
+  nl: 'Nederlands', cs: 'Čeština', sk: 'Slovenčina', hu: 'Magyar', ro: 'Română', bg: 'Български', hr: 'Hrvatski',
+  sr: 'Srpski', sl: 'Slovenščina', el: 'Ελληνικά', tr: 'Türkçe', lt: 'Lietuvių', he: 'עברית', zh: '中文',
+  ja: '日本語', ko: '한국어', th: 'ไทย', id: 'Bahasa Indonesia',
 };
 
 /** A short silent looping clip cut from a public tutorial, served from /media. */
