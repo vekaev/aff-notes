@@ -108,7 +108,6 @@ export function AboutAuthor() {
   );
 }
 
-const SEEN = 'aff-feedback-seen';
 const HIDDEN = 'aff-feedback-hidden';
 
 export function FeedbackBubble() {
@@ -117,15 +116,11 @@ export function FeedbackBubble() {
   const [shown, setShown] = useState(false);
   const [hidden, setHidden] = useState(() => { try { return localStorage.getItem(HIDDEN) === '1'; } catch { return false; } });
   useEffect(() => {
-    const id = setTimeout(() => {
-      setShown(true);
-      let seen = false;
-      try { seen = localStorage.getItem(SEEN) === '1'; } catch { /* ignore */ }
-      if (!seen) setOpen(true);
-    }, 10000);
+    // Only the round icon appears; the card never opens by itself over what the reader is reading (owner, 2026-11-17).
+    const id = setTimeout(() => setShown(true), 10000);
     return () => clearTimeout(id);
   }, []);
-  const close = () => { setOpen(false); try { localStorage.setItem(SEEN, '1'); } catch { /* ignore */ } };
+  const close = () => setOpen(false);
   // "Not now": the bubble and its icon go away for good on this device; the "write to me" card at the end stays.
   const hide = () => { close(); setHidden(true); try { localStorage.setItem(HIDDEN, '1'); } catch { /* ignore */ } };
   if (!shown || hidden) return null;

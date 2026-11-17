@@ -183,6 +183,10 @@ owner · `[x]` done and seen on screen (commit) · `[?]` waiting on the owner (t
 A re-ask is marked `re-asked <date>: why it wasn't done` on the same line. The 2-hourly run and the autopilot work the open
 lines top down; a line is closed only when it's done and seen, or the owner drops it.
 
+2026-11-17 (chat, phone screenshot):
+- [x] Feedback card opened by itself over the page (after ~2 min on iPhone): owner chose "icon only": after 10 s only
+  the round icon shows; the card opens only on tap.
+
 2026-11-16 (chat, plan discipline):
 - [x] "Also to all other apps" (by ear: the app ending with feedback + more languages, saved to /study, should apply
       to every app) → rule in ~/agent-tools/rules/ui.md.
