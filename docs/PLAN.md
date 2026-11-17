@@ -194,8 +194,9 @@ Work in this order; tick each line here and in the inbox below; one item per run
      each (sessions can't start over Remote Control).
 7. [?] Waiting on the owner (link + clips settled 2026-11-17: public, clips kept): sender = a project domain + one
    Workspace mailbox, never the personal Gmail (docs/outreach/sending.md: domain name? ~$100 budget? postal address for
-   the footer?); first wave = own school and instructor; keep the GitHub photo at the end or send another; the 9
-   community questions in docs/community/PLAN.md §11 (hub platform, founding moderators, time budget…).
+   the footer?); first wave = own school and instructor; photo: the GitHub one stays (owner 2026-11-17);
+   community: answered 2026-11-17 (owner not admin, the community decides everything; propose Discord, Reddit and a
+   forum), see docs/community/PLAN.md §11.
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
 `docs/outreach/raw/`; nothing in them needs a commit except what's listed above.
 
@@ -207,6 +208,8 @@ A re-ask is marked `re-asked <date>: why it wasn't done` on the same line. The 2
 lines top down; a line is closed only when it's done and seen, or the owner drops it.
 
 2026-11-17 (chat, phone screenshot):
+- [x] Community: owner won't be admin, "they can do everything"; propose Discord, Reddit and a forum (Discourse); answers in docs/community/PLAN.md §11.
+- [~] Open Gemini in Dia (Tavus account) and process its deep-research chat "Skydiving Safety Directory" (helper agent; line 6k).
 - [x] Nothing gets lost: every pushed branch gets a PR at once; "pushed" isn't done, "merged into main" is. School-rules branch got draft PR #6; `~/agent-tools/scripts/unmerged` lists uncommitted files, unpushed branches, branches without a PR and open PRs (agent-tools 264fb7d).
 - [x] Commit messages: switch to Conventional Commits (`feat:`, `fix:`, `docs:`…) with commitlint in the commit hook; rule in AGENTS.md + CONTRIBUTING (owner: "sounds good").
 - [x] /learn on this stretch (sub-chats, feedback icon, commit style).
@@ -416,10 +419,10 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       something unclear? Tell me, I want to make it better to help others." Done: section "Why I made this" (#about)
       after the final check, email vekaev4@gmail.com ("vkf4" by ear, checked against Gmail), bubble opens once, then
       only the icon; seen EN desktop light, RU/UK phone dark, ES phone light.
-- [?] Photo at the end is the GitHub avatar for now: keep it or send another.
+- [x] Photo at the end is the GitHub avatar: keep it (owner 2026-11-17: "why do you need my picture if you already have from GitHub").
 
 2026-11-16 (chat, outreach):
-- [ ] Put the 9 owner questions from docs/community/PLAN.md §11 (domain name first; sending.md waits on it) under
+- [x] (answered 2026-11-17) Put the 9 owner questions from docs/community/PLAN.md §11 (domain name first; sending.md waits on it) under
       "Waiting on you", one question each with the recommended answer (from audit 2026-11-17).
 - [~] Research every skydiving school / dropzone worldwide (US, Australia, UK, Canada, Europe, rest of the world),
       plus coaches, gear makers, associations: one CSV (docs/outreach/contacts.csv), public business contacts only.
