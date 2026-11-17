@@ -193,9 +193,12 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [x] all 10 (fr de it pt pl sv nb da fi ar) translated, tests pass, merged 2026-11-17; each glossary lists 5 terms
         for a native instructor (docs/i18n/glossary-<lang>.md) (committed on i18n; not seen on screen yet: check RTL ranges like "2,000 ← 1,000 ft"; 5 terms for a native instructor in glossary-ar.md)
     (2026-11-16 23:00: glossaries for ar/it/pl only, no translations yet; resume per "Resume here" step 1)
-  - [~] After: look at every language on screen (FR, AR, DE seen; IT, PT, PL, SV, NB, DA, FI not yet) (phone + desktop, light + dark), Arabic layout right-to-left, merge.
+  - [~] re-asked 2026-11-16 23:23 (6e c), still not done: 7 here + 16 of the i18n2 languages unseen. After: look at every language on screen (FR, AR, DE seen; IT, PT, PL, SV, NB, DA, FI not yet) (phone + desktop, light + dark), Arabic layout right-to-left, merge.
   - [ ] Later: native skydivers check each language (ask through the outreach list), more languages (nl, cs, tr, ja,
         zh, ko, he) if wanted.
+- [ ] Languages of the remaining contact countries (owner 2026-11-16 23:23 "add all of their languages"): fa, et, lv, vi,
+      ms, ka, hy, kk, uz, mn, km are not in the app; add them the same way (glossary, translate, back-check, tests) or
+      ask the owner to skip the ones with few contacts (from audit 2026-11-17).
 - [x] Auto-detect the visitor's browser language and open that version; the language menu at the top still switches.
       (already existed for 4 languages; now checks every preferred browser language, all 14, on branch i18n)
 - [x] Rule: every ask goes into the plan first (tasks, what else may be needed), then work; every delegated agent or
@@ -218,7 +221,13 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
 2026-11-17 (chat, playbook):
+- [ ] Make the plan true again (found by audit 2, docs/review/owner-asks-audit-2.md W1–W6): "Waiting on you" drops the
+      private dropzone link, "owner removes aff-notes.vercel.app" and "needs the private link"; "Owner decides later"
+      and the header drop "private repo only / not published / personal use"; Resume 7's "sender (Gmail…)" follows
+      sending.md (own domain); the About-section line loses its stale [?] notes; languages ticked [x] without being seen
+      say so; tick the playbook line (27cd54f, bb581fe); remove the merged worktree .claude/worktrees/tooling-8c5524 (from audit 2026-11-17).
 - [~] Check that everything the owner asked was done (audit of all owner messages since 2026-11-16 against this plan).
+      re-asked 2026-11-17 00:57 (first 2026-11-16 10:17 / 10:25). Audit 2: docs/review/owner-asks-audit-2.md.
 - [x] (agent-tools skills/study/references/playbook.md; docs/AGENT-TOOLS.md here) A reusable playbook of how this project was made (license, collecting content, clips/photos/GIFs, researching
       organisations, deployment, attention/marketing, outreach to companies and people, telling the mission, agent
       tools), saved in ~/agent-tools for future projects; in this repo, docs/AGENT-TOOLS.md says which agent tools and
@@ -231,6 +240,9 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       agents), saved as docs/ARCHITECTURE.md so people (and agents, to save tokens) learn it from one page; then /learn.
 
 2026-11-17 (chat, units default 2):
+- [ ] Owner asked "What's the question" (00:50) about the school-rules sub-chat: find the question it waits on (open its
+      chat or the worktree `.claude/worktrees/rules-profiles-206c10`, 49 uncommitted files), put it under "Waiting on you"
+      with a recommended answer; 6j and the round metric numbers are blocked on it (from audit 2026-11-17).
 - [x] (owner: "Yes" 2026-11-17: US/CA/UK/IE/AU/NZ/ZA/NL ft, metric federations m, everyone else ft + m; tests + seen RU m, IT in a US browser ft) Which countries use feet vs metres in skydiving (owner thinks Canada and England may be metric); should the
       default be "ft + m" for everyone except the US? Metres look unrounded (≈760, ≈610): check what Russian, Italian,
       French materials actually teach and use those numbers.
@@ -238,7 +250,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 2026-11-17 (chat, research in repo + PRs):
 - [x] (checked: all in docs/research + docs/outreach/raw; rule in AGENTS.md) Deep research (ours and other AI tools') is saved in the repo too: check nothing lives only outside it, and say
       where it goes in AGENTS.md.
-- [x] Merge the open PRs (owner: "merge open prs"): #1 and #3 merged; #2 conflicted after #1, same change made on main.
+- [x] re-asked 2026-11-17 00:35 (first "PR merge" 00:22). Merge the open PRs (owner: "merge open prs"): #1 and #3 merged; #2 conflicted after #1, same change made on main.
 
 2026-11-17 (chat, repo description + agent rules):
 - [x] GitHub description is outdated ("personal, EN/ES/UK/RU"): update description, website and topics.
@@ -287,7 +299,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
         translations are lazy-loaded static JSON loaded once, progress is localStorage). It would add ~13 kB and a
         provider for nothing. Revisit only if the app gets a server (accounts, synced progress, live wind data).
       - Commit-message convention: not enforced (one-person repo, messages are descriptive); revisit if many PRs.
-      - Owner's wider ask (TanStack + Vite ecosystems): comparison in `docs/TOOLING.md`. Added after it: size budget in
+      - Owner's wider ask (TanStack + Vite ecosystems; re-asked 2026-11-17 00:08 after the 00:03 ask): comparison in `docs/TOOLING.md`. Added after it: size budget in
         CI (`npm run size`), Playwright screen tests on the build (7 languages × phone/desktop × light/dark, screenshots
         uploaded by CI, `npm run e2e`). Bigger moves (per-language URLs + prerender / TanStack Router + Start, smaller
         offline install, Weblate) are under "Owner decides later".
@@ -313,11 +325,13 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       see the code and contribute.
 
 2026-11-17 (chat, settings menu):
-- [x] (seen: ?lang=uk opens in metres, switching to EN gives feet) Metres by default where schools use metres (Russia, Ukraine: "no one uses feet"), chosen from the region or,
+- [x] re-asked 2026-11-17 00:45 (defaults questioned: Canada, UK, ft + m), redone in 3925505. (seen: ?lang=uk opens in metres, switching to EN gives feet) Metres by default where schools use metres (Russia, Ukraine: "no one uses feet"), chosen from the region or,
       without one, the language (docs/i18n/units-and-rules.md list); feet elsewhere.
 - [x] (seen UK light + EN dark on the phone) Units and theme go into a "⋯" menu at the right of the header; the language stays visible on top.
 
 2026-11-17 (chat, going public):
+- [x] (agent-tools c2f73a8) Owner "Yes" (00:32) to the /learn lesson: repeat the owner's words as said, never stronger
+      ("asked" is not "cleared"), as a rule for all chats (from audit 2026-11-17).
 - [x] (40c3def) LinkedIn https://www.linkedin.com/in/vekaev next to GitHub at the end (+ saved in ~/me).
 - [x] Make the GitHub repo public (owner's OK 2026-11-17). Checked: no secrets in history (.env holds only the site URL);
       the contacts list (3,816 rows, 2,024 emails) is published as is by the owner's choice.
@@ -355,6 +369,8 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [?] Photo at the end is the GitHub avatar for now: keep it or send another.
 
 2026-11-16 (chat, outreach):
+- [ ] Put the 9 owner questions from docs/community/PLAN.md §11 (domain name first; sending.md waits on it) under
+      "Waiting on you", one question each with the recommended answer (from audit 2026-11-17).
 - [~] Research every skydiving school / dropzone worldwide (US, Australia, UK, Canada, Europe, rest of the world),
       plus coaches, gear makers, associations: one CSV (docs/outreach/contacts.csv), public business contacts only.
 - [~] Also creators and communities: YouTube, Instagram/TikTok, blogs, podcasts, Reddit, Discord, Facebook groups,
@@ -419,7 +435,8 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] Re-check every owner message of this whole chat (before and after the summary) against this inbox; add what's
       missing; result in docs/review/owner-asks-audit.md.
 - [x] Rule: every owner message is first split into tasks / subtasks / questions, written here, and the reply points to
-      these lines (CLAUDE.md + ~/agent-tools/rules/working.md).
+      these lines (CLAUDE.md + ~/agent-tools/rules/working.md). re-asked 2026-11-16 22:32 and 22:41: the rule existed;
+      made stronger then (plan-first, statuses, redo lines; agent-tools d44fe9a, 0924b7d).
 - [x] Final check at the end of the app: a "test yourself on everything" button (mixed decision-style questions from all
       chapters), a list of open self-answers to show an instructor, and "practise with your AI": one button copies a
       ready prompt (all key facts + quiz instructions) to paste into ChatGPT / Claude / any assistant (2026-11-16).
