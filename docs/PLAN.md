@@ -217,6 +217,15 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
+2026-11-17 (chat, playbook):
+- [~] Check that everything the owner asked was done (audit of all owner messages since 2026-11-16 against this plan).
+- [~] A reusable playbook of how this project was made (license, collecting content, clips/photos/GIFs, researching
+      organisations, deployment, attention/marketing, outreach to companies and people, telling the mission, agent
+      tools), saved in ~/agent-tools for future projects; in this repo, docs/AGENT-TOOLS.md says which agent tools and
+      skills built it.
+- [ ] Marketing / launch plan (gap found while writing the playbook): where and when to announce, creators,
+      newsletters, search (per-language pages), measure.
+
 2026-11-17 (chat, project guide):
 - [x] (docs/ARCHITECTURE.md, linked from README and AGENTS.md) Walk the owner through the whole project (stack, build, linters, structure, i18n, tests, CI, publishing,
       agents), saved as docs/ARCHITECTURE.md so people (and agents, to save tokens) learn it from one page; then /learn.
