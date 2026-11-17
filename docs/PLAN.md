@@ -157,7 +157,7 @@ Work in this order; tick each line here and in the inbox below; one item per run
    Finland: pull 1,600→1,400 m, decide 600 m), so a ft/m switch alone would teach wrong altitudes. Build a visible
    "rules: USPA / DFV / FFP / British Skydiving / RU-UA metric" profile from the region, in that order; unofficial
    numbers marked check. Gaps: FPSR/FPSU syllabi, DFV AHB Teil I, APF, Form 330 values, CBPq, KNVvL.
-7. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
+7. [?] Waiting on the owner (link + clips settled 2026-11-17: public, clips kept): sender
    (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
 `docs/outreach/raw/`; nothing in them needs a commit except what's listed above.
@@ -290,10 +290,10 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 2026-11-17 (chat, feedback bubble 2):
 - [x] Bubble: a "Not now" that hides the bubble and its icon completely (it's annoying and takes space on the phone).
 - [x] Bubble: a link "Why I made this" to the mission section at the bottom (#about).
-- [~] About section: links to GitHub (the project, to contribute) and LinkedIn, so people can reach the owner there.
+- [x] (dd445e2, 40c3def) About section: links to GitHub (the project, to contribute) and LinkedIn, so people can reach the owner there.
       Done: GitHub profile link (seen EN phone dark). [?] LinkedIn URL from the owner (not in ~/me or mail); [?] repo is
       private: make it public for contributions? (it holds clips of other people's videos: replace them first).
-- [?] Seen on the owner's phone: aff-notes.vercel.app is still public and auto-deploys on push (clips of other people's
+- [x] (owner 2026-11-17: repo public, site stays, clips OK) Seen on the owner's phone: aff-notes.vercel.app is still public and auto-deploys on push (clips of other people's
       videos). Owner said he'd remove it; ask again.
 
 2026-11-16 (chat, feedback):
@@ -326,14 +326,14 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       tunnels, events, researchers, non-English communities). Second wave of agents, raw files in docs/outreach/raw.
 - [x] One big copy-paste prompt for other deep-research tools (ChatGPT, Gemini, Perplexity, Grok…) that returns the
       same CSV, so the owner can run it elsewhere and compare (docs/outreach/deep-research-prompt.md).
-- [?] Before sending to anyone: private link ready, clips question (the app holds cuts of other people's videos),
+- [x] (resolved 2026-11-17: public site + repo, clips kept) Before sending to anyone: private link ready, clips question (the app holds cuts of other people's videos),
       sending tool and pace. Nothing is sent without the owner's OK.
 
 2026-11-16 (chat):
 - [x] Remove "decide by 2,500" under part IV of the jump picture (bb861dd).
 - [x] Content general, not tied to Tracy; Skydive California only in Part V (6eea713).
 - [x] Find the dropzone's email, draft the review/help email in the owner's words, don't send (docs/email-draft.md).
-- [?] Private link only the dropzone can open (Cloudflare Access proposed); owner removes the public Vercel site first.
+- [-] (owner 2026-11-17: everything public instead) Private link only the dropzone can open (Cloudflare Access proposed); owner removes the public Vercel site first.
 - [x] Future ideas into "Owner decides later": open source, ML model for packing mistakes.
 - [x] Sections felt cramped: more space, margins, sizes (6eea713).
 - [x] Incident cards: the clip opens the full YouTube video (6eea713).
