@@ -43,3 +43,7 @@ and status: [docs/PLAN.md](docs/PLAN.md).
 Code: [MIT](LICENSE). Written notes, translations and drawings: [CC BY-SA 4.0](LICENSE-CONTENT). The video clips in
 `public/media` are short excerpts from other people's YouTube videos; they belong to their creators (each is credited
 and linked in the app) and are not covered by either license.
+
+## How it's built
+
+The whole project on one page: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md). Contributing: [CONTRIBUTING.md](CONTRIBUTING.md).

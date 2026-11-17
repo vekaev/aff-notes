@@ -1,6 +1,7 @@
 # AGENTS.md: rules for AI agents and LLMs working on AFF notes
 
-Read this before changing anything, whatever tool you are (Claude Code, Codex, Cursor, Copilot, Gemini, Aider…).
+Read this, then [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) (the whole project on one page: read it before
+exploring code, it saves time and tokens), before changing anything, whatever tool you are (Claude Code, Codex, Cursor, Copilot, Gemini, Aider…).
 Humans: the same rules are in [CONTRIBUTING.md](CONTRIBUTING.md) with more detail.
 
 ## What this is

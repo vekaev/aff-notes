@@ -217,6 +217,10 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
+2026-11-17 (chat, project guide):
+- [x] (docs/ARCHITECTURE.md, linked from README and AGENTS.md) Walk the owner through the whole project (stack, build, linters, structure, i18n, tests, CI, publishing,
+      agents), saved as docs/ARCHITECTURE.md so people (and agents, to save tokens) learn it from one page; then /learn.
+
 2026-11-17 (chat, units default 2):
 - [x] (owner: "Yes" 2026-11-17: US/CA/UK/IE/AU/NZ/ZA/NL ft, metric federations m, everyone else ft + m; tests + seen RU m, IT in a US browser ft) Which countries use feet vs metres in skydiving (owner thinks Canada and England may be metric); should the
       default be "ft + m" for everyone except the US? Metres look unrounded (≈760, ≈610): check what Russian, Italian,
