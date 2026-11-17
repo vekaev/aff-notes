@@ -125,6 +125,10 @@ Work in this order; tick each line here and in the inbox below; one item per run
    dropzone.com closed 31 Dec 2024 (not 2026); its successor skydiveforum.com died Nov 2025. Blocker: the app is
    private, so a community can't link to it yet. 9 owner questions in the file (§11).
    [ ] redo: unverified — Facebook group names/sizes (needs login), VK groups, Zoom/Meet free limits, r/SkyDiving size now.
+6i. [~] **Deep localization** (owner 2026-11-17): not only text — units (feet vs metres by country), rules, links and
+   facts that differ by country/federation; a clean, scalable design. Research common practice, propose, build phase 1
+   (units), plan phase 2 (country/federation variants). Safety: metre altitudes must not be silent conversions of
+   feet; schools in metric countries teach their own round numbers.
 7. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
    (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
