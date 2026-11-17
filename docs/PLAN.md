@@ -46,6 +46,12 @@ Work in this order; tick each line here and in the inbox below; one item per run
    (41 rows) + `.md` (its report). Verify each row's email on the cited page (drop invented or legal/RMA inboxes),
    fix shifted columns (Cookie row), merge, and fact-check its content claims against sources; useful, sourced facts
    → app content tasks here; new people (Westman, Edouard, Vidovic, Brodsky-Chenfeld) → priority contacts.
+6c. [~] **Process the second AI deep-research run** (owner 2026-11-17, uploaded file, tool not named):
+   `docs/outreach/raw/ext_ai_run2.md` (report) + `ext_ai_run2.unverified.csv.txt` (73 rows). Same steps as 6b, same
+   sub-chat: verify, write `ext_ai_run2_verified.csv`, merge; harvest its lists (OTGApps USPA GeoJSON, USPA S&TA
+   locator, PIA directory, DAeC LSG-B register, tunnel directories, FAI delegates, SkydivingFatalities.info as content);
+   fact-check its numbers (Rauer 2023 review: 62M jumps, injury 0.044 %, fatality 0.0011 %; FFP 2010–2019: 35 deaths,
+   3,015 injuries, ~6.2M jumps) and note what the app should cite.
 7. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
    (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
