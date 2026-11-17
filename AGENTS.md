@@ -44,6 +44,10 @@ so accuracy beats speed, style and completeness.
    `type(scope): what changed`, types `feat fix docs style refactor perf test build ci chore revert`
    (e.g. `fix(units): …`, `docs(plan): …`); the body gives the source of any fact. The commit-msg hook checks it.
 4. Pull requests: say if AI helped and what you verified by hand.
+5. **Never commit on `main`** (the pre-commit hook refuses it). Several agents work in parallel: every change, even
+   one plan line, goes in its own worktree and branch (`git worktree add ../aff-notes-<task> -b <task> origin/main`),
+   pushed early as a draft PR, merged when checked. On a conflict keep both sides; regenerate `en.json` and the
+   lockfile instead of hand-merging. `docs/PLAN.md` merges keep both sides' lines (`.gitattributes`).
 
 ## Never
 - Commit secrets, personal data, or anything from the owner's private files.

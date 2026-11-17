@@ -1,0 +1,2 @@
+# Two chats editing the plan at once: keep both sides' lines, never drop one (tidy duplicates later)
+docs/PLAN.md merge=union

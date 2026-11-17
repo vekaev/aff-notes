@@ -289,6 +289,10 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       agents follow the same facts, safety, language and check rules.
 
 2026-11-17 (chat, license + PRs):
+- [x] Owner: "every change in its own workspace, see the parallel chats, PR and merge, never drop lines" → yes + learn:
+      every change in its own worktree + draft PR (shared rule, all apps); here: `.gitattributes` keeps both sides of
+      `docs/PLAN.md` on a merge, the pre-commit hook refuses commits on main (`scripts/no-commit-on-main.sh`),
+      AGENTS.md rule 5; same guards in the bootstrap template; the chat audit flags uncommitted worktrees 3+ h old.
 - [x] License (owner: "License yes"): MIT for code (`LICENSE`), CC BY-SA 4.0 for notes, translations and drawings
       (`LICENSE-CONTENT`, says what it covers), clips in public/media belong to their creators and are under neither;
       README + CONTRIBUTING say so, package.json `license: MIT`.
