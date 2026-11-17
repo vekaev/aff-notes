@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { AltRow, Block, L, RigPart, RigPartId, Step } from './content/types';
-import { Rich, useLang } from './i18n';
+import { num, Rich, useLang } from './i18n';
 import { ui } from './ui';
 import { ClipFigure } from './components/Blocks';
 import { useOpenVideo } from './components/Player';
@@ -117,7 +117,7 @@ const SEQ = [
 const STEP_TO_SEQ = [0, 2, 4, 5, 6, 7];
 
 export function ExitCount({ steps }: { steps: Step[] }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [k, setK] = useState(4);
   const timers = useTimers();
   const s = SEQ[k] as (typeof SEQ)[number] & { look?: string; ok?: string };
@@ -129,7 +129,7 @@ export function ExitCount({ steps }: { steps: Step[] }) {
   return (
     <div className="split">
       <div><StepList steps={steps} on={stepOn} onPick={n => { timers.clear(); setK(STEP_TO_SEQ[n]); }} /></div>
-      <div className="stage sticky">
+      <div className="stage sticky compact">
         <svg viewBox="0 0 320 220" role="img" aria-label="Exit count">
           <rect x="150" y="0" width="170" height="220" fill="var(--sky-tint)" />
           <rect x="0" y="150" width="152" height="8" fill="var(--line-strong)" />
@@ -142,7 +142,7 @@ export function ExitCount({ steps }: { steps: Step[] }) {
             <g className="pose" style={{ transformOrigin: '140px 92px', transform: `rotate(${s.head}deg)` }}><circle className="head" cx="140" cy="80" r="12" /><rect x="144" y="74" width="9" height="7" rx="2" fill="var(--paper)" /></g>
           </g>
         </svg>
-        <div className="cap">{s.say || '↓'}</div>
+        <div className="cap">{s.say ? (lang === 'uk' || lang === 'ru' ? s.say.replace(/"([^"]*)"/, '«$1»') : s.say) : '↓'}</div>
         <div className="controls"><button type="button" className="btn primary" onClick={play}>{t(ui.play)}</button></div>
       </div>
     </div>
@@ -154,12 +154,13 @@ export function ExitCount({ steps }: { steps: Step[] }) {
 const ang = (v: number) => (v / 12) * 360;
 
 function AltRows({ rows, on, onPick }: { rows: AltRow[]; on: number; onPick: (i: number) => void }) {
+  const { lang } = useLang();
   return (
     <ol className="alt-rows">
       {rows.map((r, i) => (
         <li key={i} className={`${r.hot ? 'hot' : ''} ${i === on ? 'on' : ''}`} tabIndex={0} onClick={() => onPick(i)}
           onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPick(i); } }}>
-          <span className="a">{r.alt || '↓'}</span>
+          <span className="a">{r.alt ? num(r.alt, lang) : '↓'}</span>
           <div><span className="rt"><Rich s={r.title} /></span><span className="rs"><Rich s={r.sub} /></span></div>
         </li>
       ))}
@@ -168,7 +169,7 @@ function AltRows({ rows, on, onPick }: { rows: AltRow[]; on: number; onPick: (i:
 }
 
 export function Altimeter({ rows }: { rows: AltRow[] }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [i, setI] = useState(0);
   const r = rows[i];
   const C = 120;
@@ -185,7 +186,7 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
   // the two numbers to act on, marked on the rim
   const mark = (v: number, color: string) => { const [x1, y1] = pt(v, 100), [x2, y2] = pt(v, 114); return <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={color} strokeWidth="5" strokeLinecap="round" />; };
   const L = {
-    lock: { en: 'lock on', es: 'lock on', uk: 'lock on', ru: 'lock on' },
+    lock: { en: 'lock on', es: 'lock on', uk: 'лише висотомір', ru: 'только высотомер' },
     pull: { en: 'pull', es: 'abrir', uk: 'розкриття', ru: 'раскрытие' },
     dir: { en: 'one turn = 12,000 ft; falling, the needle turns counterclockwise', es: 'una vuelta = 12,000 ft; al caer, la aguja gira en sentido antihorario', uk: 'один оберт = 12 000 футів; коли падаєш, стрілка йде проти годинникової', ru: 'один оборот = 12 000 футов; при падении стрелка идёт против часовой' },
   };
@@ -206,10 +207,10 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
           </g>
           <circle cx={C} cy={C} r="9" fill="var(--ink)" /><circle cx={C} cy={C} r="3" fill="var(--card)" />
         </svg>
-        <div className="cap"><b className="alt-now">{(r.value * 1000).toLocaleString('en-US')} ft</b><span><Rich s={r.title} /></span></div>
+        <div className="cap"><b className="alt-now">{num(`${(r.value * 1000).toLocaleString('en-US')} ft`, lang)}</b><span><Rich s={r.title} /></span></div>
         <ul className="alt-legend">
-          <li><i style={{ background: 'var(--acc-canopy)' }} />6,000 ft · {t(L.lock)}</li>
-          <li><i style={{ background: 'var(--red)' }} />5,500 ft · {t(L.pull)}</li>
+          <li><i style={{ background: 'var(--acc-canopy)' }} />{num('6,000 ft', lang)} · {t(L.lock)}</li>
+          <li><i style={{ background: 'var(--red)' }} />{num('5,500 ft', lang)} · {t(L.pull)}</li>
           <li className="dir">↺ {t(L.dir)}</li>
         </ul>
       </div>
@@ -219,7 +220,7 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
 
 /* ---------- landing pattern map (drawn like the ground-school test) ---------- */
 export function Pattern({ rows }: { rows: AltRow[] }) {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [i, setI] = useState(Math.min(3, rows.length - 1));
   const r = rows[i];
   const reduce = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -239,11 +240,11 @@ export function Pattern({ rows }: { rows: AltRow[] }) {
           <circle cx="275" cy="205" r="22" fill="none" stroke="var(--faint)" strokeWidth="1.5" strokeDasharray="4 4" />
           <path id="patPath" d="M294 226 L294 190 Q294 182 286 182 Q278 182 278 190 L278 220 Q278 228 270 228 Q262 228 262 220 L262 207 Q262 200 255 200 L60 200 L60 70 L186 70" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" markerEnd="url(#arrP)" />
           <path d="M194 62 L210 78 M210 62 L194 78" stroke="var(--ok)" strokeWidth="4" />
-          <g fontFamily="var(--mono)" fontSize="11" fill="var(--ink)"><text x="226" y="228">900</text><text x="72" y="228">600</text><text x="72" y="100">300</text><text x="148" y="56">10 ft</text></g>
+          <g fontFamily="var(--mono)" fontSize="11" fill="var(--ink)"><text x="252" y="228" textAnchor="end">{num('900 ft', lang)}</text><text x="72" y="228">{num('600 ft', lang)}</text><text x="72" y="100">{num('300 ft', lang)}</text><text x="148" y="56">{num('10 ft', lang)}</text></g>
           {!reduce && <circle r="7" fill="var(--red)" stroke="var(--paper)" strokeWidth="2"><animateMotion dur="14s" repeatCount="indefinite"><mpath href="#patPath" /></animateMotion></circle>}
           {r.point && <circle cx={r.point[0]} cy={r.point[1]} r="12" fill="none" stroke="var(--ink)" strokeWidth="3" />}
         </svg>
-        <div className="cap">{r.alt} · <Rich s={r.title} /></div>
+        <div className="cap">{num(r.alt, lang)} · <Rich s={r.title} /></div>
       </div>
     </div>
   );

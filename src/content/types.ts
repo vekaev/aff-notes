@@ -73,7 +73,7 @@ export type Block =
   | { type: 'tips'; items: Mistakes[]; sources: { label: string; href: string }[] }
   | { type: 'questions'; items: L[] }
   | { type: 'stats'; items: Rule[] }
-  | { type: 'bars'; title: L; items: Bar[]; source: { label: string; href: string } }
+  | { type: 'bars'; title: L; items: Bar[]; source: { label: string | L; href: string } }
   | { type: 'climb'; steps: Step[]; captions: L[] }          // animated door climb-out
   | { type: 'exit'; steps: Step[] }                          // animated exit count
   | { type: 'altimeter'; rows: AltRow[] }                    // dive flow with a live altimeter

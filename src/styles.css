@@ -560,6 +560,9 @@ h3, h4, .rule .rt, .card .nm, .timeline .st, .tape .lbl { overflow-wrap: break-w
   .split > .stage.sticky { order: -1; top: calc(var(--header) + env(safe-area-inset-top, 0px) + 6px); z-index: 3; box-shadow: 0 0 0 1px var(--hair), 0 8px 18px rgba(0,0,0,.08); }
   .split > .stage.sticky svg { max-height: 190px; }
   .split > .stage.sticky .controls .btn { height: 32px; }
+  /* the exit count has eight steps: keep its picture small so the list under it stays readable */
+  .split > .stage.sticky.compact svg { max-height: 130px; }
+  .split > .stage.sticky.compact { padding-block: var(--s2); }
 }
 
 /* wide incident cards: the video gets room, the text sits beside it with clear spacing */

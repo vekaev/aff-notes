@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { parts } from '../content';
 import type { L } from '../content/types';
-import { headline, Rich, useLang } from '../i18n';
+import { ftWord, headline, num, Rich, useLang } from '../i18n';
 import { usePassed } from '../progress';
 
 const LAST = 'aff-last-chapter';
@@ -133,7 +133,7 @@ function JumpPicture() {
 }
 
 export function Hero() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const passed = usePassed();
   const chapters = parts.flatMap(p => p.chapters.map(c => ({ c, p })));
   const quizIds = new Set(chapters.filter(({ c }) => JSON.stringify(c.blocks).includes('"type":"quiz"')).map(({ c }) => c.id));
@@ -160,14 +160,16 @@ export function Hero() {
       </ol>
 
       <div className="resume surface">
-        <svg className="ring" viewBox="0 0 64 64" aria-hidden="true">
+        <svg className="ring" viewBox="0 0 64 64" role="img" aria-label={`${done}/${total} ${t(T.tests)}`}>
+          <title>{`${done}/${total} ${t(T.tests)}`}</title>
           <circle cx="32" cy="32" r="27" className="track" />
           <circle cx="32" cy="32" r="27" className="val" strokeDasharray={`${pct * 169.6} 169.6`} transform="rotate(-90 32 32)" />
+          <text x="32" y="37" textAnchor="middle">{done}/{total}</text>
         </svg>
         <div className="rtext">
-          <span className="rl">{lastCh ? `${t(T.where)}` : t(T.tests).replace(/^./, c => c.toUpperCase()) + `: ${done}/${total}`}</span>
+          <span className="rl">{lastCh ? t(T.where) : t(T.tests).replace(/^./, c => c.toUpperCase())}</span>
           <b>{lastCh ? headline(t(lastCh.c.title)) : headline(t(chapters[0].c.title))}</b>
-          <span className="rl">{lastCh ? `${done}/${total} ${t(T.tests)} · ` : ''}{nextTest ? <>{t(T.nextTest)}: <a href={`#${nextTest.c.id}`}>{t(nextTest.c.title)}</a></> : t(T.allDone)}</span>
+          <span className="rl">{nextTest ? <>{t(T.nextTest)}: <a href={`#${nextTest.c.id}`}>{t(nextTest.c.title)}</a></> : t(T.allDone)}</span>
         </div>
         <a className="btn primary go" href={`#${target}`}>{t(lastCh ? T.cont : T.start)} →</a>
       </div>
@@ -177,18 +179,18 @@ export function Hero() {
         <ol className="tape surface">
           {TAPE.map((x, i) => (
             <li key={i} className={x.red ? 'red' : ''}>
-              <a href={`#${x.to}`}><span className="big">{x.big}{!/ft|s$/.test(x.big) && <small className="u">ft</small>}</span><span className="dot" aria-hidden="true" /><span className="lbl">{t(x.label)}</span></a>
+              <a href={`#${x.to}`}><span className="big">{num(x.big, lang)}{!/ft|s$/.test(x.big) && <small className="u">{ftWord(lang)}</small>}</span><span className="dot" aria-hidden="true" /><span className="lbl">{t(x.label)}</span></a>
             </li>
           ))}
         </ol>
         <div className="emerg">
           <span className="eh">{t(T.ifBad)}</span>
           <div className="timers">
-            {EMERGENCY.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface red"><span className="big">{x.big}<small className="u">ft</small></span><span className="lbl">{t(x.label)}</span></a>)}
+            {EMERGENCY.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface red"><span className="big">{num(x.big, lang)}<small className="u">{ftWord(lang)}</small></span><span className="lbl">{t(x.label)}</span></a>)}
           </div>
         </div>
         <div className="timers">
-          {TIMERS.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface"><span className="big">{x.big}</span><span className="lbl">{t(x.label)}</span></a>)}
+          {TIMERS.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface"><span className="big">{num(x.big, lang)}</span><span className="lbl">{t(x.label)}</span></a>)}
         </div>
       </div>
     </div></div>

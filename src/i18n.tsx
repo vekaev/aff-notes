@@ -47,6 +47,19 @@ export function glue(text: string): string {
     .replace(/\bSIM (?=\d)/g, `SIM${NB}`);
 }
 
+const UNIT: Record<Lang, Record<string, string>> = {
+  en: {}, es: {},
+  uk: { ft: 'фт', s: 'с' },
+  ru: { ft: 'фт', s: 'с' },
+};
+/** A big number in each language's own format: "2,500 ft" stays in EN/ES, becomes "2 500 фт" in UK/RU. */
+export function num(s: string, lang: Lang): string {
+  if (lang !== 'uk' && lang !== 'ru') return glue(s);
+  return glue(s.replace(/(\d),(?=\d{3}(?!\d))/g, '$1 ').replace(/(\d|°) ?(ft|s)\b/g, (_m, d: string, u: string) => `${d}${d === '°' ? '' : ' '}${UNIT[lang][u]}`));
+}
+/** The unit word for a bare big number. */
+export const ftWord = (lang: Lang) => UNIT[lang].ft ?? 'ft';
+
 export function renderInline(raw: string): ReactNode[] {
   const text = glue(raw);
   const out: ReactNode[] = [];

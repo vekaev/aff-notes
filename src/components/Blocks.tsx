@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import type { Block, Card, Clip, Watch } from '../content/types';
-import { Rich, useLang } from '../i18n';
+import type { Block, Card, Clip, L, Watch } from '../content/types';
+import { num, Rich, useLang } from '../i18n';
 import { ui } from '../ui';
 import { Video } from './Video';
 import { mmss, ytUrl } from '../lib';
@@ -99,6 +99,18 @@ function Cards({ b }: { b: Extract<Block, { type: 'cards' }> }) {
   );
 }
 
+/** A big number in the reader's language format ("2 500 фт" in UK/RU). */
+function Big({ s }: { s: string }) {
+  const { lang } = useLang();
+  return <div className="big">{num(s, lang)}</div>;
+}
+
+/** A source label: plain (names, papers) or translated. */
+function SrcLabel({ label }: { label: string | L }) {
+  const { t } = useLang();
+  return <>{typeof label === 'string' ? label : t(label)}</>;
+}
+
 export function BlockView({ b, chapterId }: { b: Block; chapterId: string }) {
   switch (b.type) {
     case 'p': return <p className={b.muted ? 'muted' : undefined}><Rich s={b.text} /></p>;
@@ -127,7 +139,7 @@ export function BlockView({ b, chapterId }: { b: Block; chapterId: string }) {
               <span className="pct">{x.value}%</span>
             </div>
           ))}
-          <span className="src"><a href={b.source.href} target="_blank" rel="noopener">{b.source.label}</a></span>
+          <span className="src"><a href={b.source.href} target="_blank" rel="noopener"><SrcLabel label={b.source.label} /></a></span>
         </div>
       );
     }
@@ -137,7 +149,7 @@ export function BlockView({ b, chapterId }: { b: Block; chapterId: string }) {
         <div className="rules">
           {b.items.map((r, i) => (
             <div key={i} className={`rule ${r.tone ?? ''} ${r.big ? 'has-big' : ''}`}>
-              {r.big && <div className="big">{r.big}</div>}
+              {r.big && <Big s={r.big} />}
               {(r.icon || r.title) && <div className="rh">{r.icon && <Icon name={r.icon} />}{r.title && <span className="rt"><Rich s={r.title} /></span>}</div>}
               {r.text && <span className="rx"><Rich s={r.text} /></span>}
               {r.points && <ul className="pts">{r.points.map((x, j) => <li key={j}><Rich s={x} /></li>)}</ul>}

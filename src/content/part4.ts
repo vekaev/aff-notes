@@ -808,8 +808,8 @@ export const part4: Part = {
               why: t(
                 `Not inflated by 2,500 ft is on the "cut away anyway" list. Decision altitude means you act now.`,
                 `No inflada a 2,500 ft está en la lista de "libera de todos modos". Altura de decisión: actúas ya.`,
-                `Не наполнился к 2 500 — это из списка «отцепляйся в любом случае». Высота принятия решения: действуешь сейчас.`,
-                `Не наповнився до 2 500 — це зі списку «відчіплюйся в будь-якому разі». Висота ухвалення рішення: дієш зараз.`,
+                `Не наполнился к 2 500 футов — это из списка «отцепляйся в любом случае». Высота принятия решения: действуешь сейчас.`,
+                `Не наповнився до 2 500 футів — це зі списку «відчіплюйся в будь-якому разі». Висота ухвалення рішення: дієш зараз.`,
               ),
             },
           ],
@@ -1066,7 +1066,7 @@ export const part4: Part = {
             { label: t(`Opening`, `Apertura`, `Раскрытие`, `Розкриття`), value: 7.4 },
             { label: t(`Canopy and landing`, `Vela y aterrizaje`, `Купол и приземление`, `Купол і приземлення`), value: 87.9, hl: true },
           ],
-          source: { label: 'Westman & Björnstig 2007, Sweden, 257 injuries / 540,000 jumps', href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/' },
+          source: { label: { en: 'Westman & Björnstig 2007, Sweden, 257 injuries / 540,000 jumps', es: 'Westman y Björnstig 2007, Suecia, 257 lesiones / 540,000 saltos', uk: 'Westman і Björnstig 2007, Швеція, 257 травм / 540 000 стрибків', ru: 'Westman и Björnstig 2007, Швеция, 257 травм / 540 000 прыжков' }, href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/' },
         },
         {
           type: 'bars',
@@ -1077,7 +1077,7 @@ export const part4: Part = {
             { label: t(`Spine`, `Columna`, `Позвоночник`, `Хребет`), value: 18 },
             { label: t(`Other`, `Otras`, `Другое`, `Інше`), value: 12 },
           ],
-          source: { label: 'Westman & Björnstig 2007, Sweden, 311 injuries (via Barthel et al. 2023 review); "Other" is the remainder, not given in the papers', href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/' },
+          source: { label: { en: 'Westman & Björnstig 2007, Sweden, 311 injuries (via Barthel et al. 2023 review); "Other" is the remainder, not given in the papers', es: 'Westman y Björnstig 2007, Suecia, 311 lesiones (vía la revisión de Barthel et al. 2023); «Otras» es el resto, no figura en los artículos', uk: 'Westman і Björnstig 2007, Швеція, 311 травм (за оглядом Barthel et al. 2023); «Інше» — залишок, у статтях його немає', ru: 'Westman и Björnstig 2007, Швеция, 311 травм (по обзору Barthel et al. 2023); «Другое» — остаток, в статьях его нет' }, href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/' },
         },
         {
           type: 'bars',
@@ -1089,7 +1089,7 @@ export const part4: Part = {
             { label: t(`Knee`, `Rodilla`, `Колено`, `Коліно`), value: 10 },
             { label: t(`Foot`, `Pie`, `Стопа`, `Стопа`), value: 6 },
           ],
-          source: { label: 'USPA incident reports 2008–2023 (Forrester 2023), 130 leg injuries (77% fractures); one person can count twice; 12% "leg, not specified" not shown', href: 'https://lermagazine.com/?p=39724' },
+          source: { label: { en: 'USPA incident reports 2008–2023 (Forrester 2023), 130 leg injuries (77% fractures); one person can count twice; 12% "leg, not specified" not shown', es: 'Informes de incidentes de USPA 2008–2023 (Forrester 2023), 130 lesiones de pierna (77% fracturas); una persona puede contar dos veces; no se muestra el 12% «pierna, sin especificar»', uk: 'Звіти USPA про інциденти 2008–2023 (Forrester 2023), 130 травм ніг (77% переломи); одна людина може рахуватися двічі; 12% «нога, без уточнення» не показано', ru: 'Отчёты USPA об инцидентах 2008–2023 (Forrester 2023), 130 травм ног (77% переломы); один человек может считаться дважды; 12% «нога, без уточнения» не показаны' }, href: 'https://lermagazine.com/?p=39724' },
         },
         {
           type: 'bars',
@@ -1100,7 +1100,7 @@ export const part4: Part = {
             { label: t(`Bad landing position`, `Mala posición al aterrizar`, `Неправильное положение тела`, `Неправильне положення тіла`), value: 19 },
             { label: t(`Other`, `Otras`, `Другое`, `Інше`), value: 20 },
           ],
-          source: { label: 'Damhuis et al. 2024, Netherlands 2015–2020, 234 landing injuries', href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/' },
+          source: { label: { en: 'Damhuis et al. 2024, Netherlands 2015–2020, 234 landing injuries', es: 'Damhuis et al. 2024, Países Bajos 2015–2020, 234 lesiones al aterrizar', uk: 'Damhuis et al. 2024, Нідерланди 2015–2020, 234 травми при приземленні', ru: 'Damhuis et al. 2024, Нидерланды 2015–2020, 234 травмы при приземлении' }, href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/' },
         },
         {
           type: 'callout',
@@ -1262,10 +1262,10 @@ export const part4: Part = {
                 t(`Thought it was <b>already too low</b>`, `Creyó que ya era <b>demasiado bajo</b>`, `Решил, что <b>уже слишком низко</b>`, `Вирішив, що <b>вже надто низько</b>`),
                 t(`The hard deck is <b>1,000 ft</b>`, `El límite mínimo es <b>1,000 ft</b>`, `Нижняя граница — <b>1 000 футов</b>`, `Нижня межа — <b>1 000 футів</b>`),
                 t(
-                  `Between 2,500 and 1,000 you <b>can still cut away</b>`,
-                  `Entre 2,500 y 1,000 <b>todavía puedes liberar</b>`,
-                  `Между 2 500 и 1 000 <b>отцепляться ещё можно</b>`,
-                  `Між 2 500 і 1 000 <b>відчіплюватися ще можна</b>`,
+                  `Between 2,500 and 1,000 ft you <b>can still cut away</b>`,
+                  `Entre 2,500 y 1,000 ft <b>todavía puedes liberar</b>`,
+                  `Между 2 500 и 1 000 футов <b>отцепляться ещё можно</b>`,
+                  `Між 2 500 і 1 000 футів <b>відчіплюватися ще можна</b>`,
                 ),
               ],
             },
@@ -1387,10 +1387,10 @@ export const part4: Part = {
               ],
               answer: 0,
               why: t(
-                `2,500 ft is when you should have decided; 1,000 ft is the lowest you cut away. A jumper with 1,200+ jumps mixed these up and didn't cut away at 2,100.`,
-                `2,500 ft es cuando ya deberías haber decidido; 1,000 ft es lo más bajo para liberar. Un paracaidista con más de 1,200 saltos los confundió y no liberó a 2,100.`,
-                `К 2 500 футам решение уже должно быть принято; 1 000 футов — ниже не отцепляются. Парашютист с 1 200+ прыжками это перепутал и не отцепился на 2 100.`,
-                `До 2 500 футів рішення вже має бути ухвалене; 1 000 футів — нижче не відчіплюються. Парашутист із 1 200+ стрибками це переплутав і не відчепився на 2 100.`,
+                `2,500 ft is when you should have decided; 1,000 ft is the lowest you cut away. A jumper with 1,200+ jumps mixed these up and didn't cut away at 2,100 ft.`,
+                `2,500 ft es cuando ya deberías haber decidido; 1,000 ft es lo más bajo para liberar. Un paracaidista con más de 1,200 saltos los confundió y no liberó a 2,100 ft.`,
+                `К 2 500 футам решение уже должно быть принято; 1 000 футов — ниже не отцепляются. Парашютист с 1 200+ прыжками это перепутал и не отцепился на 2 100 футах.`,
+                `До 2 500 футів рішення вже має бути ухвалене; 1 000 футів — нижче не відчіплюються. Парашутист із 1 200+ стрибками це переплутав і не відчепився на 2 100 футах.`,
               ),
             },
           ],
@@ -1648,8 +1648,8 @@ export const part4: Part = {
                 t(
                   `Skipping a practice touch, looking away at lock-on: instructors read it as "won't pull".`,
                   `Saltarte un toque de práctica o mirar a otro lado en el lock on: los instructores lo leen como "no va a abrir".`,
-                  `Пропустил тренировочное касание, отвёл взгляд на 6 000: инструкторы читают это как «не раскроется».`,
-                  `Пропустив тренувальний дотик, відвів погляд на 6 000: інструктори читають це як «не розкриється».`,
+                  `Пропустил тренировочное касание, отвёл взгляд на 6 000 футах: инструкторы читают это как «не раскроется».`,
+                  `Пропустив тренувальний дотик, відвів погляд на 6 000 футах: інструктори читають це як «не розкриється».`,
                 ),
                 t(
                   `Thinking nine good pulls mean the tenth is automatic: students still freeze.`,
@@ -1672,10 +1672,10 @@ export const part4: Part = {
                   `Перевіряй висоту кожні 3 секунди (USPA; деякі школи навчають близько 5), після кожного маневру і за будь-якої несподіванки.`,
                 ),
                 t(
-                  `Overloaded or lost? Default to: altitude, arch, pull at 5,500.`,
-                  `¿Saturado o perdido? Vuelve a lo básico: altura, arco, abrir a 5,500.`,
-                  `Перегружен или потерялся? По умолчанию: высота, прогиб, раскрытие на 5 500.`,
-                  `Перевантажений або загубився? За замовчуванням: висота, прогин, розкриття на 5 500.`,
+                  `Overloaded or lost? Default to: altitude, arch, pull at 5,500 ft.`,
+                  `¿Saturado o perdido? Vuelve a lo básico: altura, arco, abrir a 5,500 ft.`,
+                  `Перегружен или потерялся? По умолчанию: высота, прогиб, раскрытие на 5 500 футах.`,
+                  `Перевантажений або загубився? За замовчуванням: висота, прогин, розкриття на 5 500 футах.`,
                 ),
                 t(
                   `Every jump morning: dive flow out loud, handle touches with your eyes closed.`,
@@ -1769,10 +1769,10 @@ export const part4: Part = {
               bad: [
                 t(`Trying to fix a spinning canopy for too long.`, `Intentar arreglar demasiado tiempo una vela que gira.`, `Слишком долго пытаться исправить вращающийся купол.`, `Надто довго намагатися виправити купол, що обертається.`),
                 t(
-                  `Mixing up decision altitude (2,500) and hard deck (1,000), and not cutting away when you still could.`,
-                  `Confundir la altura de decisión (2,500) con el límite mínimo (1,000), y no liberar cuando todavía podías.`,
-                  `Путать высоту принятия решения (2 500) и нижнюю границу (1 000) и не отцепиться, когда ещё можно.`,
-                  `Плутати висоту ухвалення рішення (2 500) і нижню межу (1 000) та не відчепитися, коли ще можна.`,
+                  `Mixing up decision altitude (2,500 ft) and hard deck (1,000 ft), and not cutting away when you still could.`,
+                  `Confundir la altura de decisión (2,500 ft) con el límite mínimo (1,000 ft), y no liberar cuando todavía podías.`,
+                  `Путать высоту принятия решения (2 500 футов) и нижнюю границу (1 000 футов) и не отцепиться, когда ещё можно.`,
+                  `Плутати висоту ухвалення рішення (2 500 футів) і нижню межу (1 000 футів) та не відчепитися, коли ще можна.`,
                 ),
                 t(`Waiting for the AAD after a cutaway.`, `Esperar al AAD después de liberar.`, `Ждать AAD после отцепки.`, `Чекати на AAD після відчеплення.`),
                 t(
@@ -2043,7 +2043,7 @@ export const part4: Part = {
               options: [
                 t(`Arch and pull right now`, `Arqueo y abro ya mismo`, `Прогибаюсь и сразу раскрываюсь`, `Прогинаюся й одразу розкриваюся`),
                 t(`Carry on with the dive flow`, `Sigue con el plan de salto`, `Продолжаю план прыжка`, `Продовжую план стрибка`),
-                t(`Wait for them until 5,500`, `Espéralos hasta 5,500`, `Жду их до 5 500`, `Чекаю на них до 5 500`),
+                t(`Wait for them until 5,500 ft`, `Espéralos hasta 5,500 ft`, `Жду их до 5 500 футов`, `Чекаю на них до 5 500 футів`),
               ],
               answer: 0,
               why: t(
@@ -2063,7 +2063,7 @@ export const part4: Part = {
               options: [
                 t(`Every 3 seconds`, `Cada 3 segundos`, `Каждые 3 секунды`, `Кожні 3 секунди`),
                 t(`Every 10 seconds`, `Cada 10 segundos`, `Каждые 10 секунд`, `Кожні 10 секунд`),
-                t(`Only at 6,000 ft`, `Solo a 6,000 ft`, `Только на 6 000`, `Лише на 6 000`),
+                t(`Only at 6,000 ft`, `Solo a 6,000 ft`, `Только на 6 000 футах`, `Лише на 6 000 футах`),
               ],
               answer: 0,
               why: t(
@@ -2161,7 +2161,7 @@ export const part4: Part = {
             t(
               `Exit count: exact words, which instructor first, exit altitude.`,
               `Conteo de salida: palabras exactas, qué instructor primero, altura de salida.`,
-              `Отсчёт на выходе: точные слова, на какого инструктора смотрим первым, высота выброски.`,
+              `Отсчёт на выходе: точные слова, на какого инструктора смотрим первым, высота отделения.`,
               `Відлік на виході: точні слова, на якого інструктора дивимося першим, висота відокремлення.`,
             ),
           ],
@@ -2171,10 +2171,16 @@ export const part4: Part = {
           type: 'questions',
           items: [
             t(
-              `Signals: thumb down = arch (hips forward), like in the filmed signals? How do you show "legs in" and "let go of the pilot chute"? What does a shake of my harness right after exit mean?`,
-              `Señales: ¿pulgar abajo = arquearse (cadera adelante), como en el video? ¿Cómo muestran "piernas adentro" y "suelta el extractor"? ¿Qué significa que me sacudan el arnés justo después de salir?`,
-              `Сигналы: большой палец вниз = прогиб (таз вперёд), как в видео? Как вы показываете «подбери ноги» и «отпусти вытяжной»? Что значит, когда трясут за подвесную систему сразу после отделения?`,
-              `Сигнали: великий палець униз = прогин (таз уперед), як у відео? Як ви показуєте «підбери ноги» і «відпусти витяжний»? Що означає, коли трусять за підвісну систему одразу після відокремлення?`,
+              `Signals: thumb down = arch (hips forward), like in the filmed signals? How do you show "legs in", "OK" and "let go of the pilot chute"? Does a closed fist mean "practice touch" or "pull now" here? What does a shake of my harness right after exit mean?`,
+              `Señales: ¿pulgar abajo = arquearse (cadera adelante), como en el video? ¿Cómo muestran "piernas adentro", "OK" y "suelta el extractor"? ¿El puño cerrado aquí es "toque de práctica" o "abre ya"? ¿Qué significa que me sacudan el arnés justo después de salir?`,
+              `Сигналы: большой палец вниз = прогиб (таз вперёд), как в видео? Как вы показываете «подбери ноги», «OK» и «отпусти вытяжной»? Кулак у вас значит «тренировочное касание» или «раскрывайся сейчас»? Что значит, когда трясут за подвесную систему сразу после отделения?`,
+              `Сигнали: великий палець униз = прогин (таз уперед), як у відео? Як ви показуєте «підбери ноги», «OK» і «відпусти витяжний»? Кулак у вас означає «тренувальний дотик» чи «розкривайся зараз»? Що означає, коли трусять за підвісну систему одразу після відокремлення?`,
+            ),
+            t(
+              `Can't find the handle or a hard pull after two tries: straight to the reserve (as the USPA SIM says) or cut away first, then the reserve? And when my pilot chute hesitates behind me, which shoulder do I look over?`,
+              `Si no encuentro la manija o está dura tras dos intentos: ¿directo a la reserva (como dice el SIM de USPA) o primero liberar y luego la reserva? Y si el extractor se queda detrás de mí, ¿por encima de qué hombro miro?`,
+              `Не нашёл ручку или тугое раскрытие после двух попыток: сразу запасной (как в USPA SIM) или сначала отцепка, потом запасной? И если вытяжной завис за спиной, через какое плечо смотреть?`,
+              `Не знайшов ручку або туге розкриття після двох спроб: одразу запасний (як у USPA SIM) чи спочатку відчеплення, потім запасний? І якщо витяжний завис за спиною, через яке плече дивитися?`,
             ),
             t(
               `Wave-off: how many times, and does it start exactly at 5,500 ft? Pull altitude on categories D and E? Is D-1 my first exit without being held?`,
@@ -2203,8 +2209,8 @@ export const part4: Part = {
             t(
               `USPA says students decide by 2,500 ft and don't cut away below 1,000 ft. Does our school use higher numbers?`,
               `USPA dice que los alumnos deciden antes de 2,500 ft y no liberan por debajo de 1,000 ft. ¿Nuestra escuela usa alturas más altas?`,
-              `USPA говорит: студенты решают не ниже 2 500 футов и не отцепляются ниже 1 000. В нашей школе высоты выше?`,
-              `USPA каже: студенти вирішують не нижче 2 500 футів і не відчіплюються нижче 1 000. У нашій школі висоти вищі?`,
+              `USPA говорит: студенты решают не ниже 2 500 футов и не отцепляются ниже 1 000 футов. В нашей школе высоты выше?`,
+              `USPA каже: студенти вирішують не нижче 2 500 футів і не відчіплюються нижче 1 000 футів. У нашій школі висоти вищі?`,
             ),
             t(
               `Emergency procedure: the exact first words ("altitude, arch, look red…"?), one hand per handle or both hands on red, and one or two hands on silver?`,

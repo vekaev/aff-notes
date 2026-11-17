@@ -468,10 +468,10 @@ export const part3: Part = {
               ],
               answer: 2,
               why: l(
-                'Hold from 2,000 to 1,000, enter downwind at 900, base at 600, final at 300, flare at about 10 ft.',
-                'Espera de 2,000 a 1,000, entra con viento en cola a 900, base a 600, final a 300, flare a unos 10 ft.',
-                'Ожидание с 2 000 до 1 000, вход по ветру на 900, базовая прямая на 600, финал на 300, flare примерно на 10 футах.',
-                'Очікування з 2 000 до 1 000, вхід по вітру на 900, базова пряма на 600, фінал на 300, flare приблизно на 10 футах.',
+                'Hold from 2,000 to 1,000 ft, enter downwind at 900 ft, base at 600 ft, final at 300 ft, flare at about 10 ft.',
+                'Espera de 2,000 a 1,000 ft, entra con viento en cola a 900 ft, base a 600 ft, final a 300 ft, flare a unos 10 ft.',
+                'Ожидание с 2 000 до 1 000 футов, вход по ветру на 900 футах, базовая прямая на 600, финал на 300, flare примерно на 10 футах.',
+                'Очікування з 2 000 до 1 000 футів, вхід по вітру на 900 футах, базова пряма на 600, фінал на 300, flare приблизно на 10 футах.',
               ),
             },
             {

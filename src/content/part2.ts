@@ -253,10 +253,10 @@ export const part2: Part = {
           type: 'p',
           muted: true,
           text: {
-            en: 'A real student altimeter has colour only on the <b>low part</b> of the dial: the Alti-2 Galaxy, for example, has a yellow and red arc that starts at <b>3,000 ft</b> (Para Gear). Nothing marks 6,000 or 5,500: <b>read the numbers</b>. Look at your own altimeter before the jump.',
-            es: 'Un altímetro de alumno real solo tiene color en la <b>parte baja</b> de la esfera: el Alti-2 Galaxy, por ejemplo, tiene un arco amarillo y rojo que empieza a <b>3,000 ft</b> (Para Gear). Nada marca 6,000 ni 5,500: <b>lee los números</b>. Mira tu propio altímetro antes del salto.',
-            uk: 'На справжньому студентському висотомірі колір є лише в <b>нижній частині</b> циферблата: в Alti-2 Galaxy, наприклад, жовто-червона дуга починається з <b>3 000 футів</b> (Para Gear). 6 000 і 5 500 нічим не позначені: <b>читай цифри</b>. Роздивися свій висотомір до стрибка.',
-            ru: 'На настоящем студенческом высотомере цвет есть только в <b>нижней части</b> циферблата: у Alti-2 Galaxy, например, жёлто-красная дуга начинается с <b>3 000 футов</b> (Para Gear). 6 000 и 5 500 ничем не отмечены: <b>читай цифры</b>. Рассмотри свой высотомер до прыжка.',
+            en: 'A real student altimeter has colour only on the <b>low part</b> of the dial: the Alti-2 Galaxy, for example, has a yellow and red arc that starts at <b>3,000 ft</b> (Para Gear). Nothing marks 6,000 or 5,500 ft: <b>read the numbers</b>. Look at your own altimeter before the jump.',
+            es: 'Un altímetro de alumno real solo tiene color en la <b>parte baja</b> de la esfera: el Alti-2 Galaxy, por ejemplo, tiene un arco amarillo y rojo que empieza a <b>3,000 ft</b> (Para Gear). Nada marca 6,000 ni 5,500 ft: <b>lee los números</b>. Mira tu propio altímetro antes del salto.',
+            uk: 'На справжньому студентському висотомірі колір є лише в <b>нижній частині</b> циферблата: в Alti-2 Galaxy, наприклад, жовто-червона дуга починається з <b>3 000 футів</b> (Para Gear). 6 000 і 5 500 футів нічим не позначені: <b>читай цифри</b>. Роздивися свій висотомір до стрибка.',
+            ru: 'На настоящем студенческом высотомере цвет есть только в <b>нижней части</b> циферблата: у Alti-2 Galaxy, например, жёлто-красная дуга начинается с <b>3 000 футов</b> (Para Gear). 6 000 и 5 500 футов ничем не отмечены: <b>читай цифры</b>. Рассмотри свой высотомер до прыжка.',
           },
         },
         {
@@ -418,10 +418,10 @@ export const part2: Part = {
         {
           type: 'callout',
           text: {
-            en: 'Overloaded or lost? Default to: <b>altitude, arch, pull at 5,500</b>, or <b>right now</b> if you\'re already lower.',
-            es: '¿Saturado o perdido? Vuelve a lo básico: <b>altura, arco, abrir a 5,500</b>, o <b>ahora mismo</b> si ya estás más bajo.',
-            uk: 'Перевантажений чи загубився? За замовчуванням: <b>висота, прогин, розкриття на 5 500</b> або <b>одразу</b>, якщо ти вже нижче.',
-            ru: 'Перегружен или потерялся? По умолчанию: <b>высота, прогиб, раскрытие на 5 500</b> или <b>сразу</b>, если ты уже ниже.',
+            en: 'Overloaded or lost? Default to: <b>altitude, arch, pull at 5,500 ft</b>, or <b>right now</b> if you\'re already lower.',
+            es: '¿Saturado o perdido? Vuelve a lo básico: <b>altura, arco, abrir a 5,500 ft</b>, o <b>ahora mismo</b> si ya estás más bajo.',
+            uk: 'Перевантажений чи загубився? За замовчуванням: <b>висота, прогин, розкриття на 5 500 футах</b> або <b>одразу</b>, якщо ти вже нижче.',
+            ru: 'Перегружен или потерялся? По умолчанию: <b>высота, прогиб, раскрытие на 5 500 футах</b> или <b>сразу</b>, если ты уже ниже.',
           },
         },
         {
@@ -433,10 +433,10 @@ export const part2: Part = {
             { en: 'Pull <b>at your altitude</b>.', es: 'Abre <b>a tu altura</b>.', uk: 'Розкрийся <b>на своїй висоті</b>.', ru: 'Раскройся <b>на своей высоте</b>.' },
             { en: 'Pull <b>stable</b>, if you can.', es: 'Abre <b>estable</b>, si puedes.', uk: 'Розкрийся <b>стабільно</b>, якщо можеш.', ru: 'Раскройся <b>стабильно</b>, если можешь.' },
             {
-              en: 'Altitude comes before stability: unstable or spinning at 5,500? <b>Pull anyway</b>.',
-              es: 'La altura va antes que la estabilidad: ¿inestable o girando a 5,500? <b>Abre igual</b>.',
-              uk: 'Висота важливіша за стабільність: нестабільно чи крутить на 5 500? <b>Все одно розкривайся</b>.',
-              ru: 'Высота важнее стабильности: нестабильно или крутит на 5 500? <b>Всё равно раскрывайся</b>.',
+              en: 'Altitude comes before stability: unstable or spinning at 5,500 ft? <b>Pull anyway</b>.',
+              es: 'La altura va antes que la estabilidad: ¿inestable o girando a 5,500 ft? <b>Abre igual</b>.',
+              uk: 'Висота важливіша за стабільність: нестабільно чи крутить на 5 500 футах? <b>Все одно розкривайся</b>.',
+              ru: 'Высота важнее стабильности: нестабильно или крутит на 5 500 футах? <b>Всё равно раскрывайся</b>.',
             },
           ],
         },
@@ -448,10 +448,10 @@ export const part2: Part = {
               tone: 'accent',
               title: { en: 'Lock on', es: 'Lock on', uk: 'Лише висотомір', ru: 'Только высотомер' },
               text: {
-                en: 'Stop <b>all exercises</b>. Watch the <b>altimeter only</b>: from 6,000 you have about <b>3 seconds</b> to 5,500. At 5,500 wave off and pull. Wave-off and pull together take about <b>1,000 ft</b> (USPA), so start on time.',
-                es: 'Deja <b>todos los ejercicios</b>. Mira <b>solo el altímetro</b>: de 6,000 a 5,500 tienes unos <b>3 segundos</b>. A 5,500 haz el wave-off y abre. El wave-off y la apertura juntos llevan unos <b>1,000 ft</b> (USPA), así que empieza a tiempo.',
-                uk: 'Припини <b>усі вправи</b>. Дивися <b>лише на висотомір</b>: від 6 000 до 5 500 у тебе близько <b>3 секунд</b>. На 5 500 — відмашка й розкриття. Відмашка й розкриття разом забирають близько <b>1 000 футів</b> (USPA), тож починай вчасно.',
-                ru: 'Прекрати <b>все упражнения</b>. Смотри <b>только на высотомер</b>: от 6 000 до 5 500 у тебя около <b>3 секунд</b>. На 5 500 — отмашка и раскрытие. Отмашка и раскрытие вместе занимают около <b>1 000 футов</b> (USPA), так что начинай вовремя.',
+                en: 'Stop <b>all exercises</b>. Watch the <b>altimeter only</b>: from 6,000 ft you have about <b>3 seconds</b> to 5,500. At 5,500 ft wave off and pull. Wave-off and pull together take about <b>1,000 ft</b> (USPA), so start on time.',
+                es: 'Deja <b>todos los ejercicios</b>. Mira <b>solo el altímetro</b>: de 6,000 a 5,500 ft tienes unos <b>3 segundos</b>. A 5,500 ft haz el wave-off y abre. El wave-off y la apertura juntos llevan unos <b>1,000 ft</b> (USPA), así que empieza a tiempo.',
+                uk: 'Припини <b>усі вправи</b>. Дивися <b>лише на висотомір</b>: від 6 000 до 5 500 футів у тебе близько <b>3 секунд</b>. На 5 500 футах — відмашка й розкриття. Відмашка й розкриття разом забирають близько <b>1 000 футів</b> (USPA), тож починай вчасно.',
+                ru: 'Прекрати <b>все упражнения</b>. Смотри <b>только на высотомер</b>: от 6 000 до 5 500 футов у тебя около <b>3 секунд</b>. На 5 500 футах — отмашка и раскрытие. Отмашка и раскрытие вместе занимают около <b>1 000 футов</b> (USPA), так что начинай вовремя.',
               },
             },
             {
@@ -459,10 +459,10 @@ export const part2: Part = {
               tone: 'accent',
               title: { en: 'Pull', es: 'Abrir', uk: 'Розкриття', ru: 'Раскрытие' },
               text: {
-                en: 'On <b>category A</b> we pull at <b>5,500 ft</b>, not 5,000. Ask about later categories.',
-                es: 'En la <b>categoría A</b> abrimos a <b>5,500 ft</b>, no a 5,000. Pregunta por las categorías siguientes.',
-                uk: 'На <b>категорії A</b> розкриваємося на <b>5 500 футах</b>, а не на 5 000. Про наступні категорії запитай.',
-                ru: 'На <b>категории A</b> раскрываемся на <b>5 500 футах</b>, а не на 5 000. Про следующие категории спроси.',
+                en: 'On <b>category A</b> we pull at <b>5,500 ft</b>, not 5,000 ft. Ask about later categories.',
+                es: 'En la <b>categoría A</b> abrimos a <b>5,500 ft</b>, no a 5,000 ft. Pregunta por las categorías siguientes.',
+                uk: 'На <b>категорії A</b> розкриваємося на <b>5 500 футах</b>, а не на 5 000 футах. Про наступні категорії запитай.',
+                ru: 'На <b>категории A</b> раскрываемся на <b>5 500 футах</b>, а не на 5 000 футах. Про следующие категории спроси.',
               },
             },
           ],
@@ -494,10 +494,10 @@ export const part2: Part = {
               ],
               answer: 1,
               why: {
-                en: 'We pull at 5,500 ft, not 5,000. 6,000 is lock on.',
-                es: 'Abrimos a 5,500 ft, no a 5,000. 6,000 es lock on.',
-                uk: 'Розкриваємося на 5 500 футах, а не на 5 000. На 6 000 — лише висотомір.',
-                ru: 'Раскрываемся на 5 500 футах, а не на 5 000. На 6 000 — только высотомер.',
+                en: 'We pull at 5,500 ft, not 5,000 ft. 6,000 ft is lock on.',
+                es: 'Abrimos a 5,500 ft, no a 5,000 ft. 6,000 ft es lock on.',
+                uk: 'Розкриваємося на 5 500 футах, а не на 5 000. На 6 000 футів — лише висотомір.',
+                ru: 'Раскрываемся на 5 500 футах, а не на 5 000. На 6 000 футов — только высотомер.',
               },
             },
             {
@@ -505,14 +505,14 @@ export const part2: Part = {
               options: [
                 { en: 'Look for the instructors until you find them', es: 'Buscar a los instructores hasta encontrarlos', uk: 'Шукати інструкторів, поки не знайдеш', ru: 'Искать инструкторов, пока не найдёшь' },
                 { en: 'Repeat the practice touches until calm', es: 'Repetir los toques de práctica hasta calmarte', uk: 'Повторювати тренувальні дотики, поки не заспокоїшся', ru: 'Повторять тренировочные касания, пока не успокоишься' },
-                { en: 'Altitude, arch, pull at 5,500 (or now, if lower)', es: 'Altura, arco, abrir a 5,500 (o ya, si estás más bajo)', uk: 'Висота, прогин, розкриття на 5 500 (або одразу, якщо нижче)', ru: 'Высота, прогиб, раскрытие на 5 500 (или сразу, если ниже)' },
+                { en: 'Altitude, arch, pull at 5,500 ft (or now, if lower)', es: 'Altura, arco, abrir a 5,500 ft (o ya, si estás más bajo)', uk: 'Висота, прогин, розкриття на 5 500 футах (або одразу, якщо нижче)', ru: 'Высота, прогиб, раскрытие на 5 500 футах (или сразу, если ниже)' },
               ],
               answer: 2,
               why: {
-                en: 'When in doubt, go back to the basics: altitude, arch, pull at 5,500. If the altimeter already reads lower, pull right now.',
-                es: 'Ante la duda, vuelve a lo básico: altura, arco, abrir a 5,500. Si el altímetro ya marca menos, abre ahora mismo.',
-                uk: 'Сумніваєшся — повертайся до основ: висота, прогин, розкриття на 5 500. Якщо висотомір уже показує менше, розкривайся одразу.',
-                ru: 'Сомневаешься — возвращайся к основам: высота, прогиб, раскрытие на 5 500. Если высотомер уже показывает меньше, раскрывайся сразу.',
+                en: 'When in doubt, go back to the basics: altitude, arch, pull at 5,500 ft. If the altimeter already reads lower, pull right now.',
+                es: 'Ante la duda, vuelve a lo básico: altura, arco, abrir a 5,500 ft. Si el altímetro ya marca menos, abre ahora mismo.',
+                uk: 'Сумніваєшся — повертайся до основ: висота, прогин, розкриття на 5 500 футах. Якщо висотомір уже показує менше, розкривайся одразу.',
+                ru: 'Сомневаешься — возвращайся к основам: высота, прогиб, раскрытие на 5 500 футах. Если высотомер уже показывает меньше, раскрывайся сразу.',
               },
             },
             {
@@ -528,6 +528,254 @@ export const part2: Part = {
                 es: 'Prioridades de apertura de la USPA: abrir, abrir a tu altura, abrir estable si puedes. Arquea mientras abres, pero nunca retrases la apertura para estabilizarte.',
                 uk: 'Пріоритети розкриття USPA: розкритися, розкритися на своїй висоті, розкритися стабільно, якщо можеш. Прогинайся під час розкриття, але ніколи не відкладай його заради стабільності.',
                 ru: 'Приоритеты раскрытия USPA: раскрыться, раскрыться на своей высоте, раскрыться стабильно, если можешь. Прогибайся при раскрытии, но никогда не откладывай его ради стабильности.',
+              },
+            },
+          ],
+        },
+      ],
+    },
+
+    // ---------------------------------------------------------------- freefall goes wrong
+    {
+      id: 'ffwrong',
+      title: { en: 'When freefall goes wrong', es: 'Cuando la caída libre sale mal', uk: 'Коли у вільному падінні щось не так', ru: 'Когда в свободном падении что-то не так' },
+      blocks: [
+        {
+          type: 'p',
+          text: {
+            en: 'One limit for every problem below: <b>two tries or 5 s</b>, whichever comes first (USPA Cat A). Then stop fixing and go to the <b>reserve</b>.',
+            es: 'Un solo límite para todos los problemas de abajo: <b>dos intentos o 5 s</b>, lo que llegue antes (USPA Cat A). Luego deja de arreglar y ve a la <b>reserva</b>.',
+            uk: 'Одне обмеження для кожної проблеми нижче: <b>дві спроби або 5 с</b>, що настане раніше (USPA Cat A). Далі перестань виправляти й переходь до <b>запасного</b>.',
+            ru: 'Одно ограничение для каждой проблемы ниже: <b>две попытки или 5 с</b>, что наступит раньше (USPA Cat A). Дальше перестань исправлять и переходи к <b>запасному</b>.',
+          },
+        },
+        {
+          type: 'list',
+          title: { en: 'Covered in other chapters', es: 'En otros capítulos', uk: 'В інших розділах', ru: 'В других главах' },
+          items: [
+            {
+              en: 'Unstable or spinning at 5,500 ft: <b>pull anyway</b>. Altitude comes before stability: <a href="#altitude">pull priorities</a>.',
+              es: '¿Inestable o girando a 5,500 ft? <b>Abre igual</b>. La altura va antes que la estabilidad: <a href="#altitude">prioridades de apertura</a>.',
+              uk: 'Нестабільно чи крутить на 5 500 футах — <b>все одно розкривайся</b>. Висота важливіша за стабільність: <a href="#altitude">пріоритети розкриття</a>.',
+              ru: 'Нестабильно или крутит на 5 500 футах — <b>всё равно раскрывайся</b>. Высота важнее стабильности: <a href="#altitude">приоритеты раскрытия</a>.',
+            },
+            {
+              en: 'Lost <b>one</b> instructor: carry on. Lost <b>both</b>: <b>pull now</b> (<a href="#flow">freefall dive flow</a>).',
+              es: '¿Perdiste a <b>un</b> instructor? Sigue. ¿A <b>los dos</b>? <b>Abre ya</b> (<a href="#flow">plan de salto</a>).',
+              uk: 'Втратив <b>одного</b> інструктора — продовжуй. <b>Обох</b> — <b>розкривайся одразу</b> (<a href="#flow">план стрибка</a>).',
+              ru: 'Потерял <b>одного</b> инструктора — продолжай. <b>Обоих</b> — <b>раскрывайся сразу</b> (<a href="#flow">план прыжка</a>).',
+            },
+            {
+              en: 'Hard pull, pilot chute in tow and the emergency procedure itself: <a href="#mal">what can go wrong</a>.',
+              es: 'Tirón duro, extractor remolcado y el propio procedimiento de emergencia: <a href="#mal">qué puede salir mal</a>.',
+              uk: 'Туге витягування, витяжний у сліді та сама аварійна процедура: <a href="#mal">які бувають відмови</a>.',
+              ru: 'Тугое вытягивание, вытяжной в следе и сама аварийная процедура: <a href="#mal">какие бывают отказы</a>.',
+            },
+          ],
+        },
+        {
+          type: 'rules',
+          items: [
+            {
+              icon: 'question',
+              title: { en: "Can't find the handle", es: 'No encuentras la manija', uk: 'Не знаходиш ручку', ru: 'Не находишь ручку' },
+              points: [
+                {
+                  en: 'Feel along the <b>bottom of the container</b> to the corner, then <b>down the side</b> to the corner (USPA Cat A).',
+                  es: 'Pasa la mano por la <b>parte de abajo del contenedor</b> hasta la esquina y luego <b>por el costado</b> hasta la otra esquina (USPA Cat A).',
+                  uk: 'Проведи рукою по <b>низу ранця</b> до кута, потім <b>вниз по боку</b> до кута (USPA Cat A).',
+                  ru: 'Проведи рукой по <b>низу ранца</b> до угла, потом <b>вниз по боку</b> до угла (USPA Cat A).',
+                },
+                {
+                  en: 'Keep the <b>arch</b>. <b>Two tries or 5 s</b>.',
+                  es: 'Mantén el <b>arco</b>. <b>Dos intentos o 5 s</b>.',
+                  uk: 'Тримай <b>прогин</b>. <b>Дві спроби або 5 с</b>.',
+                  ru: 'Держи <b>прогиб</b>. <b>Две попытки или 5 с</b>.',
+                },
+                {
+                  en: "Not found: your school's <b>emergency procedure</b>: reserve only (USPA SIM) or cut away, then reserve. <q-check/>",
+                  es: 'No la encuentras: el <b>procedimiento de emergencia</b> de tu escuela: solo la reserva (USPA SIM) o liberar y luego la reserva. <q-check/>',
+                  uk: 'Не знайшов — <b>аварійна процедура</b> твоєї школи: одразу запасний (USPA SIM) або відчеплення, потім запасний. <q-check/>',
+                  ru: 'Не нашёл — <b>аварийная процедура</b> твоей школы: сразу запасной (USPA SIM) или отцепка, потом запасной. <q-check/>',
+                },
+              ],
+            },
+            {
+              icon: 'repeat',
+              title: { en: 'Pilot chute hesitates', es: 'El extractor se queda atrás', uk: 'Витяжний «завис»', ru: 'Вытяжной «завис»' },
+              points: [
+                {
+                  en: 'Thrown, but it hangs in the <b>calm air behind your back</b> (the burble).',
+                  es: 'Lo lanzaste, pero se queda en el <b>aire quieto detrás de tu espalda</b> (el burble).',
+                  uk: 'Викинув, але він висить у <b>затінку за спиною</b>, де повітря спокійне.',
+                  ru: 'Выбросил, но он висит в <b>затенении за спиной</b>, где воздух спокойный.',
+                },
+                {
+                  en: '<b>Twist at the waist</b> and <b>look over your shoulder</b> to change the airflow (USPA Cat A). Which shoulder: <q-check/>',
+                  es: '<b>Gira la cintura</b> y <b>mira por encima del hombro</b> para cambiar el flujo de aire (USPA Cat A). ¿Qué hombro? <q-check/>',
+                  uk: '<b>Повернися в поясі</b> й <b>подивися через плече</b>, щоб змінити потік (USPA Cat A). Через яке плече: <q-check/>',
+                  ru: '<b>Повернись в поясе</b> и <b>посмотри через плечо</b>, чтобы изменить поток (USPA Cat A). Через какое плечо: <q-check/>',
+                },
+                {
+                  en: '<b>Two tries or 5 s</b>. Still on your back: <b>emergency procedure</b>.',
+                  es: '<b>Dos intentos o 5 s</b>. ¿Sigue en tu espalda? <b>Procedimiento de emergencia</b>.',
+                  uk: '<b>Дві спроби або 5 с</b>. Досі на спині — <b>аварійна процедура</b>.',
+                  ru: '<b>Две попытки или 5 с</b>. Всё ещё на спине — <b>аварийная процедура</b>.',
+                },
+              ],
+            },
+            {
+              icon: 'warn',
+              tone: 'red',
+              title: { en: 'Container opens early', es: 'El contenedor se abre antes de tiempo', uk: 'Ранець відкрився раніше', ru: 'Ранец открылся раньше' },
+              points: [
+                {
+                  en: 'The main pin came out: the <b>bag leaves your back</b>, but the <b>pilot chute is still in its pouch</b> (USPA SIM 4-1 E).',
+                  es: 'Se soltó el pin de la principal: la <b>bolsa sale de tu espalda</b>, pero el <b>extractor sigue en su bolsillo</b> (USPA SIM 4-1 E).',
+                  uk: 'Вискочила шпилька основного: <b>камера йде зі спини</b>, а <b>витяжний ще в кишені</b> (USPA SIM 4-1 E).',
+                  ru: 'Выскочила шпилька основного: <b>камера уходит со спины</b>, а <b>вытяжной ещё в кармане</b> (USPA SIM 4-1 E).',
+                },
+                {
+                  en: 'Find the pilot chute and <b>throw it</b>: <b>two tries or 5 s</b>.',
+                  es: 'Busca el extractor y <b>lánzalo</b>: <b>dos intentos o 5 s</b>.',
+                  uk: 'Знайди витяжний і <b>викинь його</b>: <b>дві спроби або 5 с</b>.',
+                  ru: 'Найди вытяжной и <b>выбрось его</b>: <b>две попытки или 5 с</b>.',
+                },
+                {
+                  en: 'Not found: <b>cut away, then reserve</b>.',
+                  es: '¿No lo encuentras? <b>Libera y luego la reserva</b>.',
+                  uk: 'Не знайшов — <b>відчеплення, потім запасний</b>.',
+                  ru: 'Не нашёл — <b>отцепка, потом запасной</b>.',
+                },
+                {
+                  en: 'Thrown: be <b>ready for the emergency procedure</b>, the main may not come out of the bag.',
+                  es: '¿Lo lanzaste? Prepárate para el <b>procedimiento de emergencia</b>: la principal puede no salir de la bolsa.',
+                  uk: 'Викинув — будь <b>готовий до аварійної процедури</b>: основний може не вийти з камери.',
+                  ru: 'Выбросил — будь <b>готов к аварийной процедуре</b>: основной может не выйти из камеры.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          type: 'list',
+          kind: 'do',
+          title: { en: 'Prevent an early opening (USPA SIM 4-1 E)', es: 'Evita una apertura antes de tiempo (USPA SIM 4-1 E)', uk: 'Як не допустити раннього розкриття (USPA SIM 4-1 E)', ru: 'Как не допустить раннего раскрытия (USPA SIM 4-1 E)' },
+          items: [
+            {
+              en: 'Ask for a <b>pin check</b> before exit.',
+              es: 'Pide una <b>revisión del pin</b> antes de salir.',
+              uk: 'Попроси <b>перевірити шпильку</b> перед відокремленням.',
+              ru: 'Попроси <b>проверить шпильку</b> перед отделением.',
+            },
+            {
+              en: 'Move carefully in the plane: <b>keep your rig off the door frame</b> on climb-out and exit.',
+              es: 'Muévete con cuidado en el avión: <b>que tu equipo no roce el marco de la puerta</b> al asomarte y al salir.',
+              uk: 'Рухайся в літаку обережно: <b>не чіпляй ранцем дверну раму</b>, коли виходиш у двері й відокремлюєшся.',
+              ru: 'Двигайся в самолёте осторожно: <b>не задевай ранцем дверной проём</b>, когда выходишь в дверь и отделяешься.',
+            },
+          ],
+        },
+        {
+          type: 'callout',
+          tone: 'red',
+          title: { en: 'The AAD is not a plan', es: 'El AAD no es un plan', uk: 'AAD — це не план', ru: 'AAD — это не план' },
+          points: [
+            {
+              en: 'It fires the reserve only at a <b>preset altitude and speed</b>, far lower than your pull (USPA Cat A).',
+              es: 'Abre la reserva solo a una <b>altura y velocidad fijadas</b>, muy por debajo de tu apertura (USPA Cat A).',
+              uk: 'Він розкриває запасний лише на <b>заданій висоті й швидкості</b>, набагато нижче за твоє розкриття (USPA Cat A).',
+              ru: 'Он раскрывает запасной только на <b>заданной высоте и скорости</b>, намного ниже твоего раскрытия (USPA Cat A).',
+            },
+            {
+              en: 'It is a <b>backup</b>. Pulling the handles is <b>always your job</b>.',
+              es: 'Es un <b>respaldo</b>. Tirar de las manijas es <b>siempre tu trabajo</b>.',
+              uk: 'Це <b>підстраховка</b>. Висмикувати ручки — <b>завжди твоя робота</b>.',
+              ru: 'Это <b>подстраховка</b>. Выдёргивать ручки — <b>всегда твоя работа</b>.',
+            },
+          ],
+        },
+        {
+          type: 'quiz',
+          questions: [
+            {
+              q: {
+                en: 'In freefall you feel the main bag leave your back, but the pilot chute is still in its pouch. What do you do?',
+                es: 'En caída libre sientes que la bolsa de la principal sale de tu espalda, pero el extractor sigue en su bolsillo. ¿Qué haces?',
+                uk: 'У вільному падінні відчуваєш, що камера основного пішла зі спини, а витяжний ще в кишені. Що робиш?',
+                ru: 'В свободном падении чувствуешь, что камера основного ушла со спины, а вытяжной ещё в кармане. Что делаешь?',
+              },
+              options: [
+                { en: 'Pull silver at once, before anything else', es: 'Tirar de la plateada enseguida, antes que nada', uk: 'Одразу висмикнути кільце запасного, перш за все', ru: 'Сразу выдернуть кольцо запасного, прежде всего' },
+                { en: 'Throw the pilot chute: two tries or 5 s, else cut away', es: 'Lanzar el extractor: dos intentos o 5 s, si no, liberar', uk: 'Викинути витяжний: дві спроби або 5 с, інакше відчеплення', ru: 'Выбросить вытяжной: две попытки или 5 с, иначе отцепка' },
+                { en: 'Keep the arch and wait for the AAD to fire', es: 'Mantener el arco y esperar a que actúe el AAD', uk: 'Тримати прогин і чекати, поки спрацює AAD', ru: 'Держать прогиб и ждать, пока сработает AAD' },
+              ],
+              answer: 1,
+              why: {
+                en: 'USPA SIM 4-1 E: first try to throw the pilot chute, twice or for 5 s. If that fails, cut away and deploy the reserve. If you do throw it, be ready for the emergency procedure.',
+                es: 'USPA SIM 4-1 E: primero intenta lanzar el extractor, dos veces o 5 s. Si no puedes, libera y abre la reserva. Si lo lanzas, prepárate para el procedimiento de emergencia.',
+                uk: 'USPA SIM 4-1 E: спершу спробуй викинути витяжний, двічі або 5 с. Не вийшло — відчеплення і запасний. Якщо викинув, будь готовий до аварійної процедури.',
+                ru: 'USPA SIM 4-1 E: сначала попробуй выбросить вытяжной, дважды или 5 с. Не вышло — отцепка и запасной. Если выбросил, будь готов к аварийной процедуре.',
+              },
+            },
+            {
+              q: {
+                en: 'You threw the pilot chute, but it hangs behind your back and the main does not open. What now?',
+                es: 'Lanzaste el extractor, pero se queda detrás de tu espalda y la principal no se abre. ¿Y ahora?',
+                uk: 'Ти викинув витяжний, але він висить за спиною, і основний не розкривається. Що далі?',
+                ru: 'Ты выбросил вытяжной, но он висит за спиной, и основной не раскрывается. Что дальше?',
+              },
+              options: [
+                { en: 'Arch harder and wait for it to catch air', es: 'Arquear más y esperar a que tome aire', uk: 'Прогнутися сильніше й чекати, поки підхопить потік', ru: 'Прогнуться сильнее и ждать, пока подхватит поток' },
+                { en: 'Reach back behind you and pull it by hand', es: 'Llevar la mano atrás y tirar de él a mano', uk: 'Дістати його рукою за спиною й потягнути', ru: 'Достать его рукой за спиной и потянуть' },
+                { en: 'Twist and look over your shoulder; 2 tries or 5 s', es: 'Girar y mirar por encima del hombro; 2 intentos o 5 s', uk: 'Повернутися й глянути через плече; 2 спроби або 5 с', ru: 'Повернуться и глянуть через плечо; 2 попытки или 5 с' },
+              ],
+              answer: 2,
+              why: {
+                en: 'Pilot-chute hesitation: twisting changes the airflow behind you (USPA Cat A). Still stuck after two tries or 5 s: emergency procedure.',
+                es: 'El extractor se queda atrás: girar cambia el flujo de aire detrás de ti (USPA Cat A). ¿Sigue igual tras dos intentos o 5 s? Procedimiento de emergencia.',
+                uk: 'Витяжний «завис»: поворот змінює потік за спиною (USPA Cat A). Після двох спроб або 5 с усе ще висить — аварійна процедура.',
+                ru: 'Вытяжной «завис»: поворот меняет поток за спиной (USPA Cat A). После двух попыток или 5 с всё ещё висит — аварийная процедура.',
+              },
+            },
+            {
+              q: {
+                en: "Second sweep for the pilot chute handle, and your hand still can't find it. What next?",
+                es: 'Segunda pasada buscando la manija del extractor y tu mano sigue sin encontrarla. ¿Qué sigue?',
+                uk: 'Друга спроба знайти ручку витяжного, а рука її досі не знаходить. Що далі?',
+                ru: 'Вторая попытка найти ручку вытяжного, а рука её всё ещё не находит. Что дальше?',
+              },
+              options: [
+                { en: "A third try, you're nearly there", es: 'Un tercer intento, ya casi está', uk: 'Третя спроба, вже майже', ru: 'Третья попытка, уже почти' },
+                { en: "Your school's emergency procedure", es: 'El procedimiento de emergencia de tu escuela', uk: 'Аварійна процедура твоєї школи', ru: 'Аварийная процедура твоей школы' },
+                { en: 'Signal the instructor and wait', es: 'Hacer una señal al instructor y esperar', uk: 'Подати знак інструктору й чекати', ru: 'Подать знак инструктору и ждать' },
+              ],
+              answer: 1,
+              why: {
+                en: 'Two tries or 5 s, whichever comes first, then the emergency procedure (USPA Cat A). USPA SIM says reserve; ask whether your school teaches reserve only or a cutaway first.',
+                es: 'Dos intentos o 5 s, lo que llegue antes, y luego el procedimiento de emergencia (USPA Cat A). El SIM de USPA dice la reserva; pregunta si tu escuela enseña solo la reserva o liberar primero.',
+                uk: 'Дві спроби або 5 с, що настане раніше, потім аварійна процедура (USPA Cat A). USPA SIM каже: запасний; запитай, чи твоя школа вчить одразу запасний, чи спершу відчеплення.',
+                ru: 'Две попытки или 5 с, что наступит раньше, потом аварийная процедура (USPA Cat A). USPA SIM говорит: запасной; спроси, учит ли твоя школа сразу запасной или сначала отцепку.',
+              },
+            },
+            {
+              q: {
+                en: 'Climbing out, your rig scrapes the door frame. What do you do?',
+                es: 'Al asomarte a la puerta, tu equipo roza el marco. ¿Qué haces?',
+                uk: 'Коли виходиш у двері, ранець чіпляє дверну раму. Що робиш?',
+                ru: 'Когда выходишь в дверь, ранец задевает дверной проём. Что делаешь?',
+              },
+              options: [
+                { en: "Nothing, a scraped rig is normal on exit", es: 'Nada, rozar el equipo al salir es normal', uk: 'Нічого, зачепити рюкзак на виході — нормально', ru: 'Ничего, задеть ранец на выходе — нормально' },
+                { en: 'Hold your reserve handle in freefall', es: 'Agarrar la manija de la reserva en caída libre', uk: 'Тримати кільце запасного у вільному падінні', ru: 'Держать кольцо запасного в свободном падении' },
+                { en: 'Tell your instructor; get a pin check', es: 'Decírselo al instructor; pedir revisión del pin', uk: 'Сказати інструктору; перевірити шпильку', ru: 'Сказать инструктору; проверить шпильку' },
+              ],
+              answer: 2,
+              why: {
+                en: 'A pin knocked loose can open the container early. USPA SIM 4-1 E: ask for a pin check before exit and keep your rig off the door frame.',
+                es: 'Un pin que se suelta puede abrir el contenedor antes de tiempo. USPA SIM 4-1 E: pide una revisión del pin antes de salir y que tu equipo no roce el marco de la puerta.',
+                uk: 'Збита шпилька може відкрити ранець раніше часу. USPA SIM 4-1 E: попроси перевірити шпильку перед відокремленням і не чіпляй ранцем дверну раму.',
+                ru: 'Сбитая шпилька может открыть ранец раньше времени. USPA SIM 4-1 E: попроси проверить шпильку перед отделением и не задевай ранцем дверной проём.',
               },
             },
           ],

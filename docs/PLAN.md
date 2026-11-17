@@ -43,8 +43,11 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] Holding point: S-turns across the wind (east–west with a north wind), not circles (68e8d72).
 - [x] Header highlight wrong after clicking a part (scroll stopped 8 px short of the line); fixed, all 5 parts checked.
 - [x] Make sure every ask is tracked and done: this inbox + rule in CLAUDE.md + the 2-hourly run reads it.
-- [ ] Curriculum proposals: new chapters (landing off the DZ and after landing; other canopies; wind for students),
+- [~] Curriculum proposals: new chapters (landing off the DZ and after landing; other canopies; wind for students),
       decision-style test questions, "act now" rules where they're used. One per run, sourced.
+      16:00 run: Part II "When freefall goes wrong" (proposal #2: early container opening, pilot-chute hesitation,
+      can't find the handle, the AAD is not a plan, 4 decision questions; USPA SIM 4-1 E + Cat A). Next: landing
+      priorities (#3), traffic (#4), low-turn recovery (#5).
 - [x] EP / FIX labels on the malfunction groups: EP links to the emergency procedure with a hover hint
       ("how to do the emergency procedure →"); FIX explains "two tries only, keep checking altitude, not fixed by 2,500 → EP".
       Make "two tries + watch altitude" stand out in the malfunctions chapter.
@@ -70,11 +73,18 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       altimeter rows, legend, pattern labels, hero axis); label the canopy-check count chips as the count, not altitudes;
       one number format per language (UK/RU "5 500" vs "5,500"); translate the English injury-chart sources in ES/UK/RU;
       UK "викидання" → "відокремлення"; label the hero "0/20" ring; phone: sticky exit-count drawing covers the steps.
+      16:00 run done (seen headless EN/ES/UK/RU, light/dark, 375/1280; page guard 2026-11-16-1615.md): "ft" in prose (dropzone cards, altitude, pattern, malfunctions, mistakes, quiz answers), big numbers
+      and timelines per language (UK/RU "2 500 фт", "3 с"), map labels and altimeter legend with units, RU "выброска" →
+      "отделение", injury-chart sources translated, hero ring shows done/total inside (count no longer twice), exit-count
+      picture smaller on phones, pattern clip poster shows the drawn pattern.
 - [?] Big reorder (Part IV "act now" first, statistics and real cases in their own part, EP button in the header): ask.
 
 Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - [x] Email draft: also ask for the ground-course presentation (slides, pictures, videos) the owner wanted from the dropzone (from 2026-11-16)
-- [ ] Hand signals: owner remembers about 15 instructor signals from the course, the app has 13; find the missing ones (USPA Cat A list, ground course) or ask (from 2026-11-16)
+- [~] Hand signals: owner remembers about 15 instructor signals from the course, the app has 13; find the missing ones (USPA Cat A list, ground course) or ask (from 2026-11-16).
+      16:00 run: research done (docs/research/hand-signals-gap.md): the USPA chart (SIM App. A) has 11, the app covers 9;
+      missing **legs in** and **OK** (+ wave-off as a student signal). Needs filmed hands for the two new cards; the
+      instructor question (how they show legs in / OK, closed fist = practice touch or pull now?) added to "questions".
 - [x] Part IV emergencies expert fixes (both reports, the safety items in docs/review/fixes.md) applied, checked and committed; the expert fact-check line above is ticked but this scope is still todo (from 2026-11-16)
 - [x] Collect the ask-owner questions from every fixer log (docs/review/fixes/*.md) into "Waiting on you", one question each with a recommended answer; fixes.md says they are there, they are not (from 2026-11-16)
 - [x] Put the two open questions under "Waiting on you": lowercase headlines everywhere (§0b) and the big reorder (line above) (from 2026-11-16)
