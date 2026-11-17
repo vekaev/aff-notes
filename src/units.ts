@@ -29,13 +29,22 @@ export function savedUnits(): Units | null {
 
 /** Languages whose skydiving schools train in metres (docs/i18n/units-and-rules.md). */
 const METRIC_LANGS: readonly string[] = ['ru', 'uk', 'fr', 'de', 'fi', 'da', 'sv', 'pl', 'cs', 'sk', 'lt', 'hu'];
+/** Regions whose federation rules are in feet (USPA, CSPA, British Skydiving, PAI, APF, NZ, PASA, KNVvL). */
+const FEET_REGIONS = new Set(['US', 'CA', 'GB', 'UK', 'IE', 'AU', 'NZ', 'ZA', 'NL']);
 
-/** Default units: metres where schools use metres (by the browser region, else by the app language), else feet. */
+/**
+ * Default units until the reader picks (owner 2026-11-17): a metric-training language → metres; else the browser
+ * region: feet countries → feet, metric countries → metres; English with no region → feet; everyone else → feet and
+ * metres side by side.
+ */
 export function defaultUnits(lang: Lang): Units {
+  if (METRIC_LANGS.includes(lang)) return 'm';
   const prefs = typeof navigator !== 'undefined' ? (navigator.languages?.length ? navigator.languages : [navigator.language]) : [];
   const region = (prefs[0] || '').split('-')[1]?.toUpperCase();
+  if (region && FEET_REGIONS.has(region)) return 'ft';
   if (region && METRIC_REGIONS.has(region)) return 'm';
-  return METRIC_LANGS.includes(lang) ? 'm' : 'ft';
+  if (!region && lang === 'en') return 'ft';
+  return 'both';
 }
 export function saveUnits(u: Units) { try { localStorage.setItem(KEY, u); } catch { /* ignore */ } }
 

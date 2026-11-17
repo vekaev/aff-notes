@@ -38,8 +38,14 @@ describe('default units', () => {
     vi.stubGlobal('navigator', { languages: ['en'] });
     expect(defaultUnits('ru')).toBe('m'); expect(defaultUnits('uk')).toBe('m'); expect(defaultUnits('en')).toBe('ft');
   });
-  it('a metric browser region wins over an English app language', () => {
+  it('by region: feet countries, metric countries, everyone else both', () => {
     vi.stubGlobal('navigator', { languages: ['en-DE'] }); expect(defaultUnits('en')).toBe('m');
-    vi.stubGlobal('navigator', { languages: ['ru-US'] }); expect(defaultUnits('es')).toBe('ft');
+    vi.stubGlobal('navigator', { languages: ['en-US'] }); expect(defaultUnits('en')).toBe('ft');
+    vi.stubGlobal('navigator', { languages: ['en-CA'] }); expect(defaultUnits('en')).toBe('ft');
+    vi.stubGlobal('navigator', { languages: ['en-GB'] }); expect(defaultUnits('en')).toBe('ft');
+    vi.stubGlobal('navigator', { languages: ['es-MX'] }); expect(defaultUnits('es')).toBe('both');
+    vi.stubGlobal('navigator', { languages: ['it-IT'] }); expect(defaultUnits('it')).toBe('both');
+    vi.stubGlobal('navigator', { languages: ['th-TH'] }); expect(defaultUnits('th')).toBe('both');
+    vi.stubGlobal('navigator', { languages: ['ru-US'] }); expect(defaultUnits('ru')).toBe('m');
   });
 });

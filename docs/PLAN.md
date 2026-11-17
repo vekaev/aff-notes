@@ -218,7 +218,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
 2026-11-17 (chat, units default 2):
-- [?] (answered from docs/i18n/units-and-rules.md; proposal: US/CA/UK/IE/AU/NZ/ZA/NL ft, metric federations m, everyone else ft + m; owner to confirm) Which countries use feet vs metres in skydiving (owner thinks Canada and England may be metric); should the
+- [x] (owner: "Yes" 2026-11-17: US/CA/UK/IE/AU/NZ/ZA/NL ft, metric federations m, everyone else ft + m; tests + seen RU m, IT in a US browser ft) Which countries use feet vs metres in skydiving (owner thinks Canada and England may be metric); should the
       default be "ft + m" for everyone except the US? Metres look unrounded (≈760, ≈610): check what Russian, Italian,
       French materials actually teach and use those numbers.
 
