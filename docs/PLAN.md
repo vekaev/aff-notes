@@ -38,18 +38,18 @@ Work in this order; tick each line here and in the inbox below; one item per run
    collection, so re-source those rows from each org's own site or mark them (found 2026-11-17, 6b/6c).
    **Content tasks from the AI-run fact-checks** (2026-11-17; sources in `docs/outreach/raw/ext_chatgpt_1_factcheck.md`
    and `ext_ai_run2_factcheck.md`; facts rule applies: re-check the source before editing):
-   - [ ] part1 AAD card: replace "around 750–1,000 ft <q-check/>" with model figures (CYPRES 2 Student ~750 ft in
+   - [x] (0e9f702) part1 AAD card: replace "around 750–1,000 ft <q-check/>" with model figures (CYPRES 2 Student ~750 ft in
      freefall, ~1,000 ft under a canopy faster than 29 mph; Vigil II Student 1,040 ft) + "ask which unit your school
      uses" (cypres.aero/?p=3130; Vigil II manual v2.0.6).
-   - [ ] part4 two canopies: one line: a late pull or riding a fast partial malfunction below ~1,000 ft can fire the
+   - [x] (0e9f702) part4 two canopies: one line: a late pull or riding a fast partial malfunction below ~1,000 ft can fire the
      student AAD → two canopies out, possibly a downplane; pull on time, act by decision altitude (CYPRES; Parachutist
      Safety Check Jan 2026; SIM 4-1).
    - [ ] part2 "Overloaded or lost?": one-line why: first-jump stress impairs learning complex new tasks, so keep the
      plan to a few rehearsed moves (Taverniers et al. 2011, PMID 21607782). Don't use the cadet "cognitive flexibility"
      claim (false).
-   - [ ] part4 `real` sources: add "Fer 2021: France 2010–19" (doi:10.1016/j.jsams.2020.11.002); the "~6×" figure
+   - [x] (0e9f702) part4 `real` sources: add "Fer 2021: France 2010–19" (doi:10.1016/j.jsams.2020.11.002); the "~6×" figure
      comes from it.
-   - [ ] part4 `real` stats: "how rare" figure: 49 injuries and 0.57 deaths per 100,000 jumps (France 2010–19,
+   - [x] (0e9f702) part4 `real` stats: "how rare" figure: 49 injuries and 0.57 deaths per 100,000 jumps (France 2010–19,
      6.2 M jumps, no tandem deaths) (Fer 2021 abstract). Don't use Barthel 2023's ">62 M jumps / 0.044 % / 0.0011 %"
      (the paper contradicts itself).
    - [ ] part4 `real`, optional: name the studies behind "73–88 %" (Westman 87.9 % canopy + landing; France 83.3 %).
