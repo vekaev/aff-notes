@@ -13,6 +13,12 @@ The most useful help:
 
 You can open an [issue](https://github.com/vekaev/aff-notes/issues/new/choose) without touching code.
 
+## Using an AI agent?
+
+Claude Code, Codex, Cursor, Copilot, Gemini and similar tools read [AGENTS.md](AGENTS.md): facts need a source,
+emergency steps keep their order, every language keeps the same tags and numbers, and the checks must pass. Say in
+your pull request if AI helped and what you checked by hand.
+
 ## Set up
 
 Node 22 or newer.

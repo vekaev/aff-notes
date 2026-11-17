@@ -1,6 +1,9 @@
 # AFF notes: working rules
 
-Personal study app for AFF skydiving (Vite + React + TypeScript). Plan and status: `docs/PLAN.md`.
+@AGENTS.md
+
+The rules above apply to every agent. Below: how agents working **for the owner** run the project. Plan and
+status: `docs/PLAN.md`.
 
 - **Every ask is tracked.** Each thing the owner asks for (in any message, even mid-task or by voice) gets a line in
   the inbox at the top of `docs/PLAN.md` before work starts, and is closed only when done and seen on screen (with the
@@ -16,12 +19,11 @@ Research: `docs/research/`. Content brief: `docs/content-brief.md`.
   push). Clips in `public/media` are cut from other people's YouTube videos; the owner has asked the creators (not a
   clearance: don't call them cleared). Keep every clip, its credit and its link; never remove or replace clips
   without the owner. Never commit secrets or the owner's private data (that lives in ~/me).
-- **Content** lives in `src/content/part*.ts` + `dropzone.ts` as typed data; every string is `{ en, es, uk, ru }` (languages listed in `LANGS` in `types.ts`).
-  Interface words in `src/ui.ts`. Inline tags allowed: `<b>`, `<a href>`, `<q-check/>`. No emoji in content.
 - **Facts**: never change a number or procedure without a source (USPA SIM / ISP, the dropzone, the research
   notes). Unsure → `<q-check/>` and a line in the "ask the instructors" chapter. The instructors' briefing wins.
-- **Checks before every commit**: `npm run check` (types + content tests) and `npx vite build`. Then look at the
-  changed chapters in the browser (`npx vite --port 5193`), light and dark, desktop and 375 px, in EN, ES, UK and RU.
+- **Checks before every commit**: `npm run check` and `npm run build` (see AGENTS.md). Then look at the changed
+  chapters in the browser (`npx vite --port 5193`), light and dark, desktop and 375 px, in EN, ES, UK and RU plus one
+  JSON language and one right-to-left language.
 - **Design**: Stoic-like (`~/agent-tools/skills/bootstrap/references/design-taste.md`): paper, ink, bold lowercase
   headlines with a period, black pills; colour only for content and part tints. Tokens in `src/styles.css`.
 - Clips: cut with ffmpeg to 480 px, silent, H.264, `+faststart`, into `public/media/<name>.mp4`; credit + YouTube id

@@ -217,6 +217,11 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
+2026-11-17 (chat, repo description + agent rules):
+- [x] GitHub description is outdated ("personal, EN/ES/UK/RU"): update description, website and topics.
+- [x] Rules for LLMs/agents in the project: AGENTS.md (CLAUDE.md imports it; Copilot + Gemini pointers; CONTRIBUTING section) (AGENTS.md for any tool: Claude, Codex, Cursor, Copilot…), so contributors'
+      agents follow the same facts, safety, language and check rules.
+
 2026-11-17 (chat, license + PRs):
 - [x] License (owner: "License yes"): MIT for code (`LICENSE`), CC BY-SA 4.0 for notes, translations and drawings
       (`LICENSE-CONTENT`, says what it covers), clips in public/media belong to their creators and are under neither;
