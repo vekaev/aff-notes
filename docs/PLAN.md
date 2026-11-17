@@ -185,9 +185,10 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
 2026-11-17 (chat, going public):
-- [~] LinkedIn https://www.linkedin.com/in/vekaev next to GitHub at the end (+ saved in ~/me).
-- [~] Make the GitHub repo public (owner's OK 2026-11-17). Check first for secrets and personal data (contacts list).
-- [~] Clips are fine: the owner asked the content creators. Update CLAUDE.md (no more "never publish") and close the
+- [x] (40c3def) LinkedIn https://www.linkedin.com/in/vekaev next to GitHub at the end (+ saved in ~/me).
+- [x] Make the GitHub repo public (owner's OK 2026-11-17). Checked: no secrets in history (.env holds only the site URL);
+      the contacts list (3,816 rows, 2,024 emails) is published as is by the owner's choice.
+- [x] Clips are fine: the owner asked the content creators. Update CLAUDE.md (no more "never publish") and close the
       "public version / clips" questions; aff-notes.vercel.app stays.
 
 2026-11-17 (chat, language links):

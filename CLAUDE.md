@@ -11,9 +11,10 @@ Personal study app for AFF skydiving (Vite + React + TypeScript). Plan and statu
 
 Research: `docs/research/`. Content brief: `docs/content-brief.md`.
 
-- **Private repo only.** Remote: github.com/vekaev/aff-notes (**private**). Push commits there; never make it public,
-  never publish the app (artifact, Vercel or anywhere): `public/media` holds clips cut from other people's YouTube
-  videos, fine for personal use only. The owner decides later about a public version.
+- **Public repo** (owner's decision 2026-11-17): github.com/vekaev/aff-notes is public, including `docs/outreach`
+  (the owner chose to publish the contact research as is). The site is public at aff-notes.vercel.app (auto-deploys on
+  push). Clips in `public/media` are cut from other people's YouTube videos with the creators asked by the owner; keep
+  the credit + link on every clip. Never commit secrets or the owner's private data (that lives in ~/me).
 - **Content** lives in `src/content/part*.ts` + `dropzone.ts` as typed data; every string is `{ en, es, uk, ru }` (languages listed in `LANGS` in `types.ts`).
   Interface words in `src/ui.ts`. Inline tags allowed: `<b>`, `<a href>`, `<q-check/>`. No emoji in content.
 - **Facts**: never change a number or procedure without a source (USPA SIM / ISP, the dropzone, the research
