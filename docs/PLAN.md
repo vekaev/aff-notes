@@ -157,6 +157,11 @@ Work in this order; tick each line here and in the inbox below; one item per run
    Finland: pull 1,600→1,400 m, decide 600 m), so a ft/m switch alone would teach wrong altitudes. Build a visible
    "rules: USPA / DFV / FFP / British Skydiving / RU-UA metric" profile from the region, in that order; unofficial
    numbers marked check. Gaps: FPSR/FPSU syllabi, DFV AHB Teil I, APF, Form 330 values, CBPq, KNVvL.
+6k. [?] **Owner sends the latest deep-research results from Gemini, Claude and ChatGPT** (owner 2026-11-17, "I will come
+   back to it later"). When they arrive: save each as `docs/outreach/raw/ext_<tool>_<scope>.unverified.csv.txt` + `.md`
+   (a pasted chat or uploaded file), then process like 6b/6c/6h: verify every row at its source, drop legal/privacy
+   inboxes, fact-check the claims, merge with `scripts/merge-contacts.py` and report new vs already-known rows
+   (repeats are expected and fine).
 7. [?] Waiting on the owner (link + clips settled 2026-11-17: public, clips kept): sender
    (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
