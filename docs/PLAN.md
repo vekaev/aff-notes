@@ -217,6 +217,11 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
+2026-11-17 (chat, units default 2):
+- [?] (answered from docs/i18n/units-and-rules.md; proposal: US/CA/UK/IE/AU/NZ/ZA/NL ft, metric federations m, everyone else ft + m; owner to confirm) Which countries use feet vs metres in skydiving (owner thinks Canada and England may be metric); should the
+      default be "ft + m" for everyone except the US? Metres look unrounded (≈760, ≈610): check what Russian, Italian,
+      French materials actually teach and use those numbers.
+
 2026-11-17 (chat, research in repo + PRs):
 - [x] (checked: all in docs/research + docs/outreach/raw; rule in AGENTS.md) Deep research (ours and other AI tools') is saved in the repo too: check nothing lives only outside it, and say
       where it goes in AGENTS.md.
