@@ -34,6 +34,27 @@ Work in this order; tick each line here and in the inbox below; one item per run
    creators), where to post and their rules, what's still missing and how to get it, duplicates and dead sites to
    clean, and how all of it helps build the most complete list and knowledge base. Then clean `contacts.csv`
    (dead/parked sites, personal addresses flagged, closed dropzones) and add a `priority` column.
+   While cleaning: ~45 rows sourced from burblesoftware.com and ~174 from pia.com: both sites' terms forbid automated
+   collection, so re-source those rows from each org's own site or mark them (found 2026-11-17, 6b/6c).
+   **Content tasks from the AI-run fact-checks** (2026-11-17; sources in `docs/outreach/raw/ext_chatgpt_1_factcheck.md`
+   and `ext_ai_run2_factcheck.md`; facts rule applies: re-check the source before editing):
+   - [ ] part1 AAD card: replace "around 750–1,000 ft <q-check/>" with model figures (CYPRES 2 Student ~750 ft in
+     freefall, ~1,000 ft under a canopy faster than 29 mph; Vigil II Student 1,040 ft) + "ask which unit your school
+     uses" (cypres.aero/?p=3130; Vigil II manual v2.0.6).
+   - [ ] part4 two canopies: one line: a late pull or riding a fast partial malfunction below ~1,000 ft can fire the
+     student AAD → two canopies out, possibly a downplane; pull on time, act by decision altitude (CYPRES; Parachutist
+     Safety Check Jan 2026; SIM 4-1).
+   - [ ] part2 "Overloaded or lost?": one-line why: first-jump stress impairs learning complex new tasks, so keep the
+     plan to a few rehearsed moves (Taverniers et al. 2011, PMID 21607782). Don't use the cadet "cognitive flexibility"
+     claim (false).
+   - [ ] part4 `real` sources: add "Fer 2021: France 2010–19" (doi:10.1016/j.jsams.2020.11.002); the "~6×" figure
+     comes from it.
+   - [ ] part4 `real` stats: "how rare" figure: 49 injuries and 0.57 deaths per 100,000 jumps (France 2010–19,
+     6.2 M jumps, no tandem deaths) (Fer 2021 abstract). Don't use Barthel 2023's ">62 M jumps / 0.044 % / 0.0011 %"
+     (the paper contradicts itself).
+   - [ ] part4 `real`, optional: name the studies behind "73–88 %" (Westman 87.9 % canopy + landing; France 83.3 %).
+   - [ ] optional: USPA 2024 "9 deaths in ~3.88 M jumps": check Parachutist's 2024 fatality summary first. Accident
+     lessons: link USPA yearly summaries / FAI safety report, not SkydivingFatalities.info (unsigned, outdated).
 5. [ ] **The ask**: from `docs/outreach/raw/how-to-ask.md` and the analysis, write `docs/outreach/email.md` (email,
    follow-up, Reddit post, creator DM) with the owner's mission. Nothing is sent: the owner approves each wave.
 6. [ ] **Outreach pipeline** (owner 2026-11-17): send emails in each contact's language and track everything:
@@ -42,19 +63,63 @@ Work in this order; tick each line here and in the inbox below; one item per run
    ready tools (open source or cheap: e.g. a Gmail mail-merge with reply tracking, an open-source CRM / outreach tool,
    a Google Sheet + Gmail labels, a small local app), compare cost and effort, then build or set up the best one.
    Reusable for any future research (the /outreach skill gets a "track" step). Nothing is sent without the owner.
-6b. [~] **Process the ChatGPT deep-research run 1** (owner 2026-11-17, in a sub-chat): `docs/outreach/raw/ext_chatgpt_1.csv`
+6b. [x] **Process the ChatGPT deep-research run 1** (owner 2026-11-17, in a sub-chat): `docs/outreach/raw/ext_chatgpt_1.csv`
    (41 rows) + `.md` (its report). Verify each row's email on the cited page (drop invented or legal/RMA inboxes),
    fix shifted columns (Cookie row), merge, and fact-check its content claims against sources; useful, sourced facts
    → app content tasks here; new people (Westman, Edouard, Vidovic, Brodsky-Chenfeld) → priority contacts.
-6c. [~] **Process the second AI deep-research run** (owner 2026-11-17, uploaded file, tool not named):
+   Done 2026-11-17: 41 rows checked on their own sites → 40 kept (31 with email), 1 dropped (Dropzone.com now
+   redirects to tanzu.nl). ChatGPT's email was wrong or unconfirmed for APF, CBPq, UPT, NAA, Monterey, ChutingStar
+   (PIA has it), LB; Burble privacy@ and iFLY legal@/ccpa@ kept out. `ext_chatgpt_1_verified.csv`: 6 new vs 34
+   already in contacts. Lists: skydivinghubs behind a bot check, Burble terms forbid scraping, the iOS app copies
+   USPA → 0 new (`ext_chatgpt_1_leads.md`). Fact-check `ext_chatgpt_1_factcheck.md`: 22 claims, 7 true, 12 partly,
+   1 false, 2 unverified (115A/B are tandem forms, AFF uses 115C/D; static line ~4,000 ft; USPA categories A–H,
+   British Skydiving 8 levels). Priority people: Westman (anton.westman@umu.se, 2024 paper), Edouard (staff page),
+   Brodsky-Chenfeld (via marypat@), Germain; Vidovic: no current address.
+   - [!] redo: skydivinghubs.com/dropzones by hand in a browser (Vercel check; terms unread), then decide.
+   - [!] redo: Westman & Björnstig 2005 full text: is "no pull / low pull" really ranked 2nd? (abstract only)
+6c. [x] **Process the second AI deep-research run** (owner 2026-11-17, uploaded file, tool not named):
    `docs/outreach/raw/ext_ai_run2.md` (report) + `ext_ai_run2.unverified.csv.txt` (73 rows). Same steps as 6b, same
    sub-chat: verify, write `ext_ai_run2_verified.csv`, merge; harvest its lists (OTGApps USPA GeoJSON, USPA S&TA
    locator, PIA directory, DAeC LSG-B register, tunnel directories, FAI delegates, SkydivingFatalities.info as content);
    fact-check its numbers (Rauer 2023 review: 62M jumps, injury 0.044 %, fatality 0.0011 %; FFP 2010–2019: 35 deaths,
    3,015 injuries, ~6.2M jumps) and note what the app should cite.
+   Done 2026-11-17: 73 rows checked → 62 kept, 9 list/source rows dropped (Dropzone.com, SkydivingFatalities.info,
+   OTGApps, tunnel directories, S&TA locator, registries), 2 folded into the run 1 researcher rows. Mexico fixed to
+   info@fedparmex.org; stale paper emails (Hart 2003, Vidovic/Westman 2007) marked low; personal webmail published as
+   a club contact flagged in notes. `ext_ai_run2_verified.csv`: 11 new vs 51 already. Lists (`ext_ai_run2_leads.*`):
+   13 rows, 7 new (DAeC register: 4 Land air-sport associations + Berlin; Indoor Skydiving World: Viernheim,
+   Leipzig); USPA GeoJSON 318 DZs and FAI delegates all already in; PIA not harvested (terms). Fact-check
+   `ext_ai_run2_factcheck.md`: 9 claims, 6 true, 2 partly, 0 false, 1 unverified (the review is Barthel 2023, Rauer
+   last author; its 62 M vs 10 M jumps contradict) → content tasks under step 4. contacts.csv 3,795 → 3,816 rows.
+   - [!] redo: uspacourses.com unreadable (fetch blocked) → Angie Aragon's published email unverified.
+   - [!] redo: USPA S&TA locator names need its search form per DZ (not submitted); owner decides if worth doing.
+   - [ ] DAeC register adds emails / contact names for OFC Nobitz, FSV Zerbst, FSC Oberhausen
+     (`ext_ai_run2_leads.md`): apply in the step 4 clean-up.
 6d. [x] Owner 2026-11-17: AI runs return too little → prompt v2 for volume (one narrow scope per run, table only,
    harvest whole directories, "continue" follow-ups, 29 scopes): `docs/outreach/deep-research-prompt-v2.md`.
    Owner runs it in other tools; each answer saved as `raw/ext_<tool>_<scope>.unverified.csv.txt`, verified + merged.
+6e. [~] Owner 2026-11-17: (a) status of every task; (b) for every country in contacts.csv: is its language in the app
+   (default English)? add the missing ones (e.g. Thai) the same way as the 10 (glossary, translate, back-check, tests);
+   (c) make sure every language is translated as expected: look at each on screen (phone + desktop, light + dark).
+   (b) [~] 18 more languages from the contact countries (nl cs sk hu ro bg hr sr sl el tr lt he zh ja ko th id) on
+       branch `i18n2` (worktree ../aff-notes-i18n2, wiring f1f3b8e): one translator each, started 2026-11-17.
+       Still missing (few contacts): fa, et, lv, vi, ms, ka, hy, kk, uz, mn, km. (c) [ ] screen check of all languages.
+6f. [x] Sender address (owner 2026-11-17): worried the personal Gmail gets flagged as spam or locked; a new address?
+   Research deliverability for this kind of outreach (separate address/domain, warm-up, daily limits, SPF/DKIM/DMARC,
+   tools) → `docs/outreach/sending.md` with a recommendation. (sub-chat "community")
+   Done 2026-11-16: never the personal Gmail; own domain (~$11/yr) + 1 Google Workspace mailbox ($7/mo), SPF/DKIM/DMARC,
+   2-week manual warm-up to ≤100/day, Reoon address check, Mailmeteor ($18/mo); ~9–10 weeks, ~$75–100 total.
+   Corrects how-to-ask.md (YAMM free 20/day; new Workspace 500/day until $100 paid). Owner picks the domain name.
+6g. [x] **Extra project: a worldwide community** (owner 2026-11-17): where skydivers and students would discuss and
+   help each other (Reddit, Facebook group, Discord, forum, Telegram/WhatsApp, a site with comments…), how such
+   communities start, grow and are moderated, safety/liability for advice, cost and time to run. Research →
+   `docs/community/PLAN.md` with options compared and a recommended first step. Nothing is created or posted
+   without the owner. (sub-chat "community")
+   Done 2026-11-16: don't build yet; help in r/SkyDiving + SkyCentre + own DZ chat, ask in the outreach email "would you
+   answer one student question a week?"; build a hosted Discourse (free plan) only when 10+ rated jumpers say yes.
+   dropzone.com closed 31 Dec 2024 (not 2026); its successor skydiveforum.com died Nov 2025. Blocker: the app is
+   private, so a community can't link to it yet. 9 owner questions in the file (§11).
+   [ ] redo: unverified — Facebook group names/sizes (needs login), VK groups, Zoom/Meet free limits, r/SkyDiving size now.
 7. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
    (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
