@@ -274,8 +274,13 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
         language is cached when it loads, also on the very first visit (`src/pwa-langs.ts`). Seen in a Playwright test
         (`e2e/offline.spec.ts`): first visit in German, go offline, reload, still German; budget lowered to 3 MB.
         Trade-off: a language never opened shows English offline.
-  - [ ] Per-language pages, light way: `dist/<lang>/index.html` pre-rendered, language from the path, hreflang +
-        sitemap, `?lang=` links keep working (touches i18n.tsx, which the school-rules branch edits: waits for its merge).
+  - [~] Per-language pages, light way (owner 2026-11-17: "why not a worktree and a PR instead of waiting" → branch
+        `langpages`, PR, no wait): every language at its own address (`/fr/`, English at `/`), pre-rendered at build
+        (`scripts/prerender.mjs`): text, `<html lang dir>`, translated title/description/og, canonical, hreflang × 33,
+        `sitemap.xml`, `robots.txt`; old `?lang=fr` links redirect to `/fr/` (vercel.json); language menu moves the
+        address; offline keeps the reader's language page. Tested on a real Vercel preview first: `/?lang=fr` can't serve
+        another file (static files win), so real folders it is. Seen: FR/JA desktop light/dark, UK/AR phone, DE without
+        JavaScript; 32 Playwright checks. Overlap with the school-rules branch: a few lines in `src/i18n.tsx`.
 
 2026-11-17 (chat, translations + tooling):
 - [x] (seen FR + AR phone; mail subject "AFF notes: translation (fr)") "Something wrong or a better word in the translation? Tell me": on every translated language (the top note) and
@@ -514,17 +519,6 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - ~~aff-notes.vercel.app: owner removes it~~ (2026-11-17: the site stays public).
 
 ## Owner decides later
-- **Real URLs + pre-rendered page per language** (`/fr/`, `/de/`; today `?lang=fr`, built in the browser, so search
-  engines and link previews see English only). Comparison in `docs/TOOLING.md`. Recommended: the light way first,
-  after the school-rules branch merges (it touches `main.tsx` / `i18n.tsx`):
-  1. `scripts/prerender.mjs` after `vite build`: render `<App>` per language with `react-dom/server` into
-     `dist/<lang>/index.html` with translated `<title>`, description, `og:` tags, `<html lang dir>`.
-  2. App reads the language from the path first (`/fr/` > `?lang=` > saved > browser); the language menu changes the path.
-  3. `hreflang` alternates on every page + `sitemap.xml`; `vercel.json` rewrites `/:lang/(.*)` and redirects `/?lang=fr` → `/fr/`
-     (outreach links keep working).
-  4. Playwright: each `/xx/` page has its language in the HTML before scripts run; link previews checked.
-  Full alternative: TanStack Router + Start with static prerender and per-chapter URLs (several days; only if the app
-  grows past one page).
 - **Translation platform** (Weblate, free for open source) once outside translators show up: they edit in a web page,
   Weblate opens PRs to `src/content/i18n/*.json`, CI checks them.
 - (Decided 2026-11-17: the repo and the site are public; clips kept with credits, creators asked.)

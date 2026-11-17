@@ -46,15 +46,9 @@ Clips (17 MB) are cached only when played.
 
 Details and steps are in `docs/PLAN.md` under "Owner decides later".
 
-1. **Real URLs and pre-rendered pages per language** (`/fr/`, `/de/`, …). Today the language is `?lang=fr` and the
-   page is built in the browser, so search engines and link previews see English only. Two ways:
-   - *Light (recommended first):* a build step renders the page once per language with React's server renderer into
-     `dist/<lang>/index.html` (translated title, description, `hreflang` links, sitemap); the app reads the language
-     from the path; `?lang=` links (used in outreach emails) keep working and redirect. No router, ~1 day, touches
-     `main.tsx`, `i18n.tsx`, `vite.config.ts`, `vercel.json`.
-   - *Full:* **TanStack Router + Start** with static prerendering: type-safe routes, per-chapter pages
-     (`/fr/emergencies/cutaway`) and a natural place for more pages later. Several days, rewrites the app shell and
-     how chapters are found (today `#anchors` on one page); worth it only if the app grows beyond one page.
+1. ~~Real URLs and pre-rendered pages per language~~ **done 2026-11-17** (owner: yes), the light way: `/fr/` etc.
+   pre-rendered by `scripts/prerender.mjs` (React's server renderer, no framework). TanStack Router + Start stays the
+   option if the app ever needs a page per chapter.
 2. ~~Smaller offline install~~ **done 2026-11-17** (owner: yes): 4.9 → 1.8 MB; the reader's language is cached when
    it loads (`src/pwa-langs.ts`, `e2e/offline.spec.ts`).
 3. **Translation platform** (Weblate, free for open source): native speakers fix translations in a web page,

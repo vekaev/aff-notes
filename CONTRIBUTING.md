@@ -83,7 +83,8 @@ Changing an English sentence gives it a new key, so every JSON language needs it
 ### Add a language
 
 Follow [docs/i18n/TRANSLATE.md](docs/i18n/TRANSLATE.md): glossary first, then the JSON file, then add the code to
-`ALL_LANGS` and `LANG_NAMES` in `src/content/types.ts`.
+`ALL_LANGS` and `LANG_NAMES` in `src/content/types.ts`, and to the two language lists in `vercel.json` (a test
+checks it). The build then makes its page at `/<code>/`.
 
 ## Facts and safety
 

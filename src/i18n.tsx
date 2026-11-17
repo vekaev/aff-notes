@@ -19,9 +19,29 @@ export function toLang(code: string | null | undefined): Lang | null {
   return (ALL_LANGS as readonly string[]).includes(base) ? (base as Lang) : null;
 }
 
-/** ?lang=fr in the link wins (an email can carry the reader's language), then the saved choice, then the browser. */
+/** "/fr/" (a per-language page, scripts/prerender.mjs) → "fr"; null on the root page or anywhere else. */
+export function langFromPath(path: string): Lang | null {
+  const m = /\/([a-z]{2})\/(?:index\.html)?$/.exec(path);
+  return m && (ALL_LANGS as readonly string[]).includes(m[1]) ? (m[1] as Lang) : null;
+}
+
+/** Where the address bar should point for a language: "/fr/", English at the root "/"; null if the app isn't at a
+ * root or language folder (e.g. a host that serves it under its own path), then ?lang= is used instead. */
+export function langPath(path: string, lang: Lang): string | null {
+  let root: string;
+  if (langFromPath(path)) root = path.replace(/[a-z]{2}\/(?:index\.html)?$/, '');
+  else if (/\/(?:index\.html)?$/.test(path)) root = path.replace(/index\.html$/, '');
+  else return null;
+  return root + (lang === 'en' ? '' : `${lang}/`);
+}
+
+/** ?lang=fr in the link wins (an email can carry the reader's language), then the page's language folder (/fr/),
+ * then the saved choice, then the browser. */
 export function initialLang(): Lang {
-  const fromUrl = typeof location !== 'undefined' ? toLang(new URLSearchParams(location.search).get('lang')) : null;
+  const fromUrl =
+    typeof location !== 'undefined'
+      ? toLang(new URLSearchParams(location.search).get('lang')) ?? langFromPath(location.pathname)
+      : null;
   if (fromUrl) {
     try { localStorage.setItem(KEY, fromUrl); } catch { /* ignore */ }
     return fromUrl;
@@ -41,24 +61,28 @@ export function initialLang(): Lang {
 interface Ctx { lang: Lang; setLang: (l: Lang) => void; t: (s: L) => string; units: Units; setUnits: (u: Units) => void }
 const LangContext = createContext<Ctx>({ lang: 'en', setLang: () => {}, t: s => s.en, units: 'ft', setUnits: () => {} });
 
-export function LangProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(initialLang);
+/** `initial` is for pre-rendering a language page at build time (scripts/prerender.mjs): no browser, catalogue given. */
+export function LangProvider({ children, initial }: { children: ReactNode; initial?: { lang: Lang; catalog?: Record<string, string> } }) {
+  const [lang, setLangState] = useState<Lang>(() => initial?.lang ?? initialLang());
   const setLang = useCallback((l: Lang) => {
     setLangState(l);
     try { localStorage.setItem(KEY, l); } catch { /* ignore */ }
   }, []);
-  const [chosenUnits, setChosenUnits] = useState<Units | null>(savedUnits);
+  const [chosenUnits, setChosenUnits] = useState<Units | null>(() => (initial ? null : savedUnits()));
   const units: Units = chosenUnits ?? defaultUnits(lang);
   const setUnits = useCallback((u: Units) => { setChosenUnits(u); saveUnits(u); }, []);
   useEffect(() => {
     try {
       const u = new URL(location.href);
-      u.searchParams.set('lang', lang);
+      const path = langPath(u.pathname, lang);
+      if (path) { u.pathname = path; u.searchParams.delete('lang'); } else u.searchParams.set('lang', lang);
       if (!chosenUnits) u.searchParams.delete('units'); else u.searchParams.set('units', chosenUnits);
-      if (u.href !== location.href) history.replaceState(history.state, '', u.href);
+      if (u.href !== location.href) { history.replaceState(history.state, '', u.href); dispatchEvent(new Event('aff:url')); }
     } catch { /* ignore */ }
   }, [lang, chosenUnits]);
-  const [cat, setCat] = useState<{ lang: Lang; map: Record<string, string> } | null>(null);
+  const [cat, setCat] = useState<{ lang: Lang; map: Record<string, string> } | null>(
+    initial?.catalog ? { lang: initial.lang, map: initial.catalog } : null,
+  );
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = RTL.includes(lang) ? 'rtl' : 'ltr';
