@@ -9,7 +9,7 @@ export const EMAIL = 'vekaev4@gmail.com';
 /** Where people can find the owner. LinkedIn is empty until the owner gives the link (then it shows). */
 export const LINKS = {
   github: 'https://github.com/vekaev',
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/vekaev',
 };
 const h = (en: string, es: string, ru: string, uk: string): L => ({ en, es, ru, uk });
 

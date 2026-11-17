@@ -184,6 +184,12 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
+2026-11-17 (chat, going public):
+- [~] LinkedIn https://www.linkedin.com/in/vekaev next to GitHub at the end (+ saved in ~/me).
+- [~] Make the GitHub repo public (owner's OK 2026-11-17). Check first for secrets and personal data (contacts list).
+- [~] Clips are fine: the owner asked the content creators. Update CLAUDE.md (no more "never publish") and close the
+      "public version / clips" questions; aff-notes.vercel.app stays.
+
 2026-11-17 (chat, language links):
 - [x] (2026-11-17, seen: ?lang=th&units=both opens Thai + ft·m; switching to ES rewrites the address to ?lang=es) Language in the link: `?lang=fr` (and `?units=m`) opens the site in that language/units, so each outreach email
       can carry a link in the recipient's language; the menu still switches; the address bar keeps the current
