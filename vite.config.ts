@@ -1,3 +1,4 @@
+/// <reference types="vitest/config" />
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
@@ -50,4 +51,6 @@ export default defineConfig({
       },
     }),
   ],
+  // Other chats' git worktrees live in .claude/worktrees: never run their tests from here.
+  test: { exclude: ['**/node_modules/**', '**/dist/**', '.claude/**'] },
 });

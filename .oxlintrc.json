@@ -43,5 +43,5 @@
       }
     }
   ],
-  "ignorePatterns": ["dist", "dev-dist", "node_modules", "public", "docs"]
+  "ignorePatterns": [".claude", "dist", "dev-dist", "node_modules", "public", "docs"]
 }
