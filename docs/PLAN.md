@@ -25,7 +25,7 @@ Work in this order; tick each line here and in the inbox below; one item per run
    the "translated" note), then merge into main, push, remove the worktree.
 3. [!] **Outreach research redo lines** (below, "Outreach research cut short"): one agent per line with
    `docs/outreach/BRIEF.md`, output `docs/outreach/raw/redo_<name>.csv`, then `python3 scripts/merge-contacts.py`.
-   Sub-chat C (existing lists) stopped by the 5-hour limit 2026-11-16, resumed 2026-11-17: if `docs/outreach/raw/w2_existing_lists.csv` is missing, run it again
+   Sub-chat C (existing lists) [x] done 2026-11-17 after the limit stop: if `docs/outreach/raw/w2_existing_lists.csv` is missing, run it again
    (scope in `docs/outreach/WAVE2.md`, section C).
 4. [ ] **Analyse everything the agents found** (owner 2026-11-16): read every `docs/outreach/raw/*.md` (sources,
    gaps, best contacts, posting rules, how-to-ask) and `contacts.csv`, and write `docs/outreach/ANALYSIS.md`:
@@ -94,7 +94,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [ ] w2_experts, w2_clubs_events, w2_coaches_lofts: finish what their notes list as missing.
   - [ ] how-to-ask: dropzone.com forum threads (site gone: use the Internet Archive).
   - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
-        C: existing-lists agent still running.
+        C done (2,449 rows incl. existing lists, 2026-11-17).
 
 2026-11-16 (chat, feedback):
 - [x] Mission, one more thought (2026-11-16): imagine saving at least one life by sharing this knowledge; the greatest
