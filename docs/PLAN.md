@@ -11,35 +11,96 @@ Every request from the owner goes here first. `[x]` = in the app (content tests 
 Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check, landing pattern, EP, malfunctions
 (desktop, light, EN); canopy check, obstacles, a chapter test (phone, dark, RU).
 
+## Resume here (written 2026-11-16 ~23:00 PST, owner out of tokens; scheduled runs continue from this)
+Work in this order; tick each line here and in the inbox below; one item per run is fine.
+1. [~] **Translations** (branch `i18n`, worktree `../aff-notes-i18n`, pushed to origin/i18n; brief
+   `docs/i18n/TRANSLATE.md`). At the time of writing: 10 translator agents had started; glossaries done for ar, it,
+   pl; no `<lang>.json` written yet. Resume: for each of fr, de, it, pt, pl, sv, nb, da, fi, ar check
+   `src/content/i18n/<lang>.json` with `npx vitest run tests/i18n.test.ts`; missing or failing → run one agent with
+   the brief for that language (glossary first if `docs/i18n/glossary-<lang>.md` is missing). Commit each language
+   on `i18n` as it passes.
+2. [ ] **Merge i18n**: merge main into `i18n`, run `node scripts/i18n-extract.mjs` (the mission paragraph "Imagine…"
+   was added on main after the branch: translate its new strings into all 10), `npm run check`, `npx vite build`,
+   look at every language on screen (phone 375 + desktop, light + dark, Arabic right-to-left, the language menu,
+   the "translated" note), then merge into main, push, remove the worktree.
+3. [!] **Outreach research redo lines** (below, "Outreach research cut short"): one agent per line with
+   `docs/outreach/BRIEF.md`, output `docs/outreach/raw/redo_<name>.csv`, then `python3 scripts/merge-contacts.py`.
+   Sub-chat C (existing lists) [x] done 2026-11-17 after the limit stop: if `docs/outreach/raw/w2_existing_lists.csv` is missing, run it again
+   (scope in `docs/outreach/WAVE2.md`, section C).
+4. [ ] **Analyse everything the agents found** (owner 2026-11-16): read every `docs/outreach/raw/*.md` (sources,
+   gaps, best contacts, posting rules, how-to-ask) and `contacts.csv`, and write `docs/outreach/ANALYSIS.md`:
+   the best sources per country, ready-made lists, who to ask first (fact-check experts, safety officers, instructors,
+   creators), where to post and their rules, what's still missing and how to get it, duplicates and dead sites to
+   clean, and how all of it helps build the most complete list and knowledge base. Then clean `contacts.csv`
+   (dead/parked sites, personal addresses flagged, closed dropzones) and add a `priority` column.
+5. [ ] **The ask**: from `docs/outreach/raw/how-to-ask.md` and the analysis, write `docs/outreach/email.md` (email,
+   follow-up, Reddit post, creator DM) with the owner's mission. Nothing is sent: the owner approves each wave.
+6. [ ] **Outreach pipeline** (owner 2026-11-17): send emails in each contact's language and track everything:
+   who got which email (link to the sent mail / thread), opened or not if possible, replied or not, what they said
+   (summary + link), follow-ups due, stats by country / type / language / wave, all in one place. First research
+   ready tools (open source or cheap: e.g. a Gmail mail-merge with reply tracking, an open-source CRM / outreach tool,
+   a Google Sheet + Gmail labels, a small local app), compare cost and effort, then build or set up the best one.
+   Reusable for any future research (the /outreach skill gets a "track" step). Nothing is sent without the owner.
+7. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
+   (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
+Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
+`docs/outreach/raw/`; nothing in them needs a commit except what's listed above.
+
 ## Owner requests: the inbox (every ask lands here first, nothing is dropped)
 Rule: each thing the owner asks for, in any message, gets a line here **before** work starts, with the date and the
-owner's words in short. Status: `[ ]` open · `[~]` in progress · `[x]` done and seen on screen (commit) ·
-`[?]` waiting on the owner (the question is under "Waiting on you"). The 2-hourly run and the autopilot work the open
+owner's words in short. Status: `[ ]` planned · `[~]` started · `[!]` blocked / redo (why) · `[-]` cancelled by the
+owner · `[x]` done and seen on screen (commit) · `[?]` waiting on the owner (the question is under "Waiting on you").
+A re-ask is marked `re-asked <date>: why it wasn't done` on the same line. The 2-hourly run and the autopilot work the open
 lines top down; a line is closed only when it's done and seen, or the owner drops it.
+
+2026-11-16 (chat, plan discipline):
+- [x] "Also to all other apps" (by ear: the app ending with feedback + more languages, saved to /study, should apply
+      to every app) → rule in ~/agent-tools/rules/ui.md.
+- [x] Every ask: a plan file first (the ask, analysis, extra checks from other directions), clarify only when truly
+      unclear; research keeps statuses (planned / started / blocked / cancelled / done) and redo lines when out of
+      tokens, agents or limits, finished later, never dropped; a re-ask is marked on the same line with why it wasn't
+      done. → ~/agent-tools rules + a plan-format reference + /learn reads the plan (re-asks, stuck, dropped).
+      Done: agent-tools (format in skills/bootstrap/assets/docs/PLAN.md), probes pass.
 
 2026-11-16 (chat, languages + tracking):
 - [~] More languages so people anywhere can read it: French, Italian, Nordic (Swedish, Norwegian, Danish, Finnish),
       Arabic (right-to-left) and more (German, Portuguese, Polish…). Research the best way to translate safety
       content (terms each country's federation uses, a check by a second agent and later native skydivers).
-- [ ] Auto-detect the visitor's browser language and open that version; the language menu at the top still switches.
+  Built on branch i18n (worktree ../aff-notes-i18n, 6892afa): per-language files keyed by the English text, 1,309
+  strings / 78k characters, tests (all keys, same tags, same numbers), note "translated, not yet checked by a native
+  instructor" on extra languages. Translators (one agent each, glossary from the federation first, then back-check):
+  - [!] fr  - [!] de  - [!] it  - [!] pt  - [!] pl  - [!] sv  - [!] nb  - [!] da  - [!] fi: stopped by the 5-hour
+        limit 2026-11-16 23:00, resumed 2026-11-17 after the reset  - [x] ar (committed on i18n; not seen on screen yet: check RTL ranges like "2,000 ← 1,000 ft"; 5 terms for a native instructor in glossary-ar.md)
+    (2026-11-16 23:00: glossaries for ar/it/pl only, no translations yet; resume per "Resume here" step 1)
+  - [ ] After: look at every language on screen (phone + desktop, light + dark), Arabic layout right-to-left, merge.
+  - [ ] Later: native skydivers check each language (ask through the outreach list), more languages (nl, cs, tr, ja,
+        zh, ko, he) if wanted.
+- [x] Auto-detect the visitor's browser language and open that version; the language menu at the top still switches.
+      (already existed for 4 languages; now checks every preferred browser language, all 14, on branch i18n)
 - [x] Rule: every ask goes into the plan first (tasks, what else may be needed), then work; every delegated agent or
       sub-chat gets a line with its status (done / blocked / ran out of limit → redo), so nothing found is lost.
       (~/agent-tools/rules/working.md + /outreach skill)
-- Outreach research cut short by the shared search limit (redo with a fresh budget, one agent per line):
+- [!] Outreach research cut short by the shared search limit (redo with a fresh budget, one agent per line):
   - [ ] us_west: MT, NE, ND, WY, northern CA, second pass OR/WA, open the 31 low-confidence rows.
   - [ ] us_east: non-USPA dropzones state by state (MS, LA, DE, NH, KY, IN, small clubs).
   - [ ] au_nz: GoSkydive NZ, Skydive Kaikoura.
   - [ ] eu_west: Spain, Flanders, non-federation dropzones (DE under DAeC, FR non-FFP).
   - [ ] eu_north_east: Czechia, Slovakia, Ukraine, Turkey, Greece, Bulgaria, Iceland, Cyprus, Georgia.
   - [ ] w2_ukraine_central_east, w2_asia_pacific, w2_latam, w2_tunnels: finish what their notes list as missing.
+  - [ ] world_rest: Japan, China, India, Gulf federations, FAI member list (403), Africa beyond SA, Ecuador/Chile/Peru.
   - [ ] industry: insurers, rigger schools, book authors.
   - [ ] communities: Facebook groups, Discord, national forums (needs a fresh budget; Facebook needs Dia login).
   - [ ] instagram_tiktok_blogs: Instagram bios/linktrees (needs Dia), RU/UK/ES creators, Medium/Substack.
   - [ ] w2_experts, w2_clubs_events, w2_coaches_lofts: finish what their notes list as missing.
   - [ ] how-to-ask: dropzone.com forum threads (site gone: use the Internet Archive).
-  - [ ] Still running in sub-chats: Russia/CIS, existing lists, (check each when it reports).
+  - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
+        C done (2,449 rows incl. existing lists, 2026-11-17).
 
 2026-11-16 (chat, feedback):
+- [x] Mission, one more thought (2026-11-16): imagine saving at least one life by sharing this knowledge; the greatest
+      thing is that we can now build the most complete worldwide place to learn to skydive, with fewer injuries and
+      deaths, and more people enjoying life and the feeling of flight. (New English text → translate into the 10 new
+      languages when the i18n branch merges.) Done in EN/ES/UK/RU, seen RU light + EN dark on the phone.
 - [x] End of the site: "share feedback" (something to add, share or fix, found a mistake → write to the owner's email).
 - [x] End of the site: the owner's mission and a short "about me" with a small photo (tried the course himself, it's
       hard; wants to help new learners avoid injuries, connect the community worldwide; from Ukraine, loves learning
