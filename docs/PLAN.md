@@ -213,7 +213,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
 2026-11-17 (chat, translations + tooling):
-- [~] "Something wrong or a better word in the translation? Tell me": on every translated language (the top note) and
+- [x] (seen FR + AR phone; mail subject "AFF notes: translation (fr)") "Something wrong or a better word in the translation? Tell me": on every translated language (the top note) and
       in the feedback card; mail subject carries the language.
 - [~] By ear "start a separate branch to fix everything you just said": build the school-rules profiles (6j), checked in
       every language, on its own branch (sub-chat).
