@@ -243,7 +243,8 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       agents), saved as docs/ARCHITECTURE.md so people (and agents, to save tokens) learn it from one page; then /learn.
 
 2026-11-17 (chat, units default 2):
-- [ ] Owner asked "What's the question" (00:50) about the school-rules sub-chat: find the question it waits on (open its
+- [~] (04:00 run: the sub-chat "School-rules profiles" is running again since ~04:01 PST, 46 files uncommitted in its
+      worktree; let it post its own question; content edits on main paused until it commits) Owner asked "What's the question" (00:50) about the school-rules sub-chat: find the question it waits on (open its
       chat or the worktree `.claude/worktrees/rules-profiles-206c10`, 49 uncommitted files), put it under "Waiting on you"
       with a recommended answer; 6j and the round metric numbers are blocked on it (from audit 2026-11-17).
 - [x] (owner: "Yes" 2026-11-17: US/CA/UK/IE/AU/NZ/ZA/NL ft, metric federations m, everyone else ft + m; tests + seen RU m, IT in a US browser ft) Which countries use feet vs metres in skydiving (owner thinks Canada and England may be metric); should the
@@ -615,10 +616,16 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 
 ## Facts to verify (doubts raised by the text reviewers; check against sources, then fix or mark <q-check/>)
 - [x] Arms 90/90 = thumb and pinky: confirmed by the video's narration (lines along thumb and pinky form 90°).
-- [ ] Slider stuck: we say pump the rear risers; many sources say pump the toggles/brakes.
-- [ ] "~4,000 cutaways a year, about one per 700–800 jumps": check against USPA jump totals (~3.5 M → ~1 per 875).
-- [ ] "5–6 s at full brakes without stalling" depends on the canopy.
-- [ ] Water landing wording vs the current SIM 4-1; "flare about 10 ft" before a building: height or distance?
+- [x] Slider stuck: the app already says "pump the toggles (some schools teach rear risers)" + <q-check/> + an
+  instructor question; USPA SIM 4-1 has no slider procedure (checked 2026-11-17 04:00 run, uspa.org/sim/4-1).
+- [~] "~4,000 cutaways a year": the per-jumps ratio is gone; part4 now says "more than 4,000 cutaways a year (USPA,
+  2019)". Newer USPA figure (uspa.org/find/faqs/safety, member survey): 2025 ≈ 4,777 reserve rides, ~1 per 726 jumps
+  (2023: 4,913). Content task: update the part4 line to the 2025 figure and say "reserve rides" (a survey estimate);
+  waits until the school-rules chat (all content files open, running 04:01) commits.
+- [x] "5–6 s at full brakes" is no longer in the app; the stall time is a question for the instructors (part4 questions).
+- [x] Water + buildings match SIM 4-1 G (checked 2026-11-17 04:00): "Flare to half brakes at 10 feet above the
+  surface"; building: "flare 10 feet above the first point of contact" = height, as the app says. Not in the app
+  yet (optional): open the face shield, activate flotation; "poor depth perception over water".
 - [x] Tips now say "category A/B/C" like the rest of the app.
 - [x] Source links for the injury charts (Sweden 2007, USPA, Netherlands 2024).
 

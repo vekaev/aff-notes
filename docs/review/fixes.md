@@ -7,6 +7,20 @@ Expert reports: `docs/review/expert/<scope>.md`. A second, independent pass on P
 first one was being fixed) is kept in `docs/review/expert/second-opinion/part4-emergencies.md`: compare it with the fixer
 log when Part IV is done.
 
+## Status 2026-11-17 04:00 PST
+
+04:00 run: no content edits: the school-rules sub-chat is running (since ~04:01) with all four part files, dropzone.ts
+and the language files open and uncommitted in its worktree; editing them on main now would collide. Done instead:
+the four open "Facts to verify" lines in docs/PLAN.md checked against USPA SIM 4-1 (uspa.org/sim/4-1, section G):
+- Water: "Flare to half brakes at 10 feet above the surface" = the app. Building: "flare 10 feet above the first point
+  of contact" = a height, as the app says. Both closed.
+- Slider stuck: SIM 4-1 has no procedure; the app already says toggles (some schools rear risers) + q-check +
+  instructor question. Closed. "5–6 s at full brakes" no longer in the app. Closed.
+- Cutaways a year: part4 says "more than 4,000 (USPA, 2019)"; USPA's safety FAQ now gives ~4,777 reserve rides in 2025
+  (~1 per 726 jumps, member survey). Open content task: update the line once the school-rules chat commits.
+Still open from the AI-run fact-checks: downsizing line, MARD line, "Two instructors" line, 73–88 % anchors, USPA 2024
+fatality figure.
+
 ## Status 2026-11-17 02:00 PST
 
 02:00 run: two more content tasks from the AI-run fact-checks (PLAN "Resume here" step 4), sources re-checked:
