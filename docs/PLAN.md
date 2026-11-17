@@ -106,7 +106,7 @@ Work in this order; tick each line here and in the inbox below; one item per run
 6e. [~] Owner 2026-11-17: (a) status of every task; (b) for every country in contacts.csv: is its language in the app
    (default English)? add the missing ones (e.g. Thai) the same way as the 10 (glossary, translate, back-check, tests);
    (c) make sure every language is translated as expected: look at each on screen (phone + desktop, light + dark).
-   (b) [~] 18 more languages from the contact countries (nl cs sk hu ro bg hr sr sl el tr lt he zh ja ko th id) on
+   (b) [x] (merged 2026-11-17, seen TH phone light, HE phone dark RTL; others by tests) 18 more languages from the contact countries (nl cs sk hu ro bg hr sr sl el tr lt he zh ja ko th id) on
        branch `i18n2` (worktree ../aff-notes-i18n2, wiring f1f3b8e): one translator each, started 2026-11-17.
        Still missing (few contacts): fa, et, lv, vi, ms, ka, hy, kk, uz, mn, km. (c) [ ] screen check of all languages.
 6f. [x] Sender address (owner 2026-11-17): worried the personal Gmail gets flagged as spam or locked; a new address?
