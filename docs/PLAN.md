@@ -21,7 +21,15 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [~] More languages so people anywhere can read it: French, Italian, Nordic (Swedish, Norwegian, Danish, Finnish),
       Arabic (right-to-left) and more (German, Portuguese, Polish…). Research the best way to translate safety
       content (terms each country's federation uses, a check by a second agent and later native skydivers).
-- [ ] Auto-detect the visitor's browser language and open that version; the language menu at the top still switches.
+  Built on branch i18n (worktree ../aff-notes-i18n, 6892afa): per-language files keyed by the English text, 1,309
+  strings / 78k characters, tests (all keys, same tags, same numbers), note "translated, not yet checked by a native
+  instructor" on extra languages. Translators (one agent each, glossary from the federation first, then back-check):
+  - [~] fr  - [~] de  - [~] it  - [~] pt  - [~] pl  - [~] sv  - [~] nb  - [~] da  - [~] fi  - [~] ar (right-to-left)
+  - [ ] After: look at every language on screen (phone + desktop, light + dark), Arabic layout right-to-left, merge.
+  - [ ] Later: native skydivers check each language (ask through the outreach list), more languages (nl, cs, tr, ja,
+        zh, ko, he) if wanted.
+- [x] Auto-detect the visitor's browser language and open that version; the language menu at the top still switches.
+      (already existed for 4 languages; now checks every preferred browser language, all 14, on branch i18n)
 - [x] Rule: every ask goes into the plan first (tasks, what else may be needed), then work; every delegated agent or
       sub-chat gets a line with its status (done / blocked / ran out of limit → redo), so nothing found is lost.
       (~/agent-tools/rules/working.md + /outreach skill)
@@ -32,6 +40,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [ ] eu_west: Spain, Flanders, non-federation dropzones (DE under DAeC, FR non-FFP).
   - [ ] eu_north_east: Czechia, Slovakia, Ukraine, Turkey, Greece, Bulgaria, Iceland, Cyprus, Georgia.
   - [ ] w2_ukraine_central_east, w2_asia_pacific, w2_latam, w2_tunnels: finish what their notes list as missing.
+  - [ ] world_rest: Japan, China, India, Gulf federations, FAI member list (403), Africa beyond SA, Ecuador/Chile/Peru.
   - [ ] industry: insurers, rigger schools, book authors.
   - [ ] communities: Facebook groups, Discord, national forums (needs a fresh budget; Facebook needs Dia login).
   - [ ] instagram_tiktok_blogs: Instagram bios/linktrees (needs Dia), RU/UK/ES creators, Medium/Substack.
