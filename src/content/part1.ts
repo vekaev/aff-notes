@@ -3,7 +3,7 @@ import type { Part } from './types';
 export const part1: Part = {
   id: 'part1',
   roman: 'I',
-  range: { en: '0 → 13,000 ft', es: '0 → 13,000 ft', uk: '0 → 13 000 футів', ru: '0 → 13 000 футов' },
+  range: { en: '0 → 13,000 ft{exit}', es: '0 → 13,000 ft', uk: '0 → 13 000 футів', ru: '0 → 13 000 футов' },
   title: { en: 'In the plane', es: 'En el avión', uk: 'У літаку', ru: 'В самолёте' },
   chapters: [
     // ---------------------------------------------------------------- plane
@@ -188,7 +188,7 @@ export const part1: Part = {
               points: [
                 { en: 'Packed by a <b>packer</b>', es: 'La pliega un <b>plegador</b>', uk: 'Вкладає <b>укладальник</b>', ru: 'Укладывает <b>укладчик</b>' },
                 { en: 'Checked by your <b>instructor</b> before the jump', es: 'La revisa tu <b>instructor</b> antes del salto', uk: 'Перевіряє твій <b>інструктор</b> перед стрибком', ru: 'Проверяет твой <b>инструктор</b> перед прыжком' },
-                { en: 'Opened by <b>you</b>, at 5,500 ft (category A)', es: 'La abres <b>tú</b>, a 5,500 ft (categoría A)', uk: 'Розкриваєш <b>ти</b>, на 5 500 футах (категорія A)', ru: 'Раскрываешь <b>ты</b>, на 5 500 футах (категория A)' },
+                { en: 'Opened by <b>you</b>, at 5,500 ft{pull} (category A)', es: 'La abres <b>tú</b>, a 5,500 ft (categoría A)', uk: 'Розкриваєш <b>ти</b>, на 5 500 футах (категорія A)', ru: 'Раскрываешь <b>ты</b>, на 5 500 футах (категория A)' },
               ],
             },
             {
@@ -232,7 +232,7 @@ export const part1: Part = {
             {
               id: 'main',
               name: { en: 'Main', es: 'Principal', uk: 'Основний', ru: 'Основной' },
-              text: { en: '<b>Bottom</b> of the container. You open it at <b>5,500 ft</b> (category A).', es: '<b>Abajo</b> en el contenedor. La abres a <b>5,500 ft</b> (categoría A).', uk: '<b>Нижній</b> відсік ранця. Розкриваєш його на <b>5 500 футах</b> (категорія A).', ru: '<b>Нижний</b> отсек ранца. Раскрываешь его на <b>5 500 футах</b> (категория A).' },
+              text: { en: '<b>Bottom</b> of the container. You open it at <b>5,500 ft{pull}</b> (category A).', es: '<b>Abajo</b> en el contenedor. La abres a <b>5,500 ft</b> (categoría A).', uk: '<b>Нижній</b> відсік ранця. Розкриваєш його на <b>5 500 футах</b> (категорія A).', ru: '<b>Нижний</b> отсек ранца. Раскрываешь его на <b>5 500 футах</b> (категория A).' },
             },
             {
               id: 'pc',
@@ -350,7 +350,7 @@ export const part1: Part = {
               q: { en: 'What is the AAD?', es: '¿Qué es el AAD?', uk: 'Що таке AAD?', ru: 'Что такое AAD?' },
               options: [
                 { en: 'A backup that fires the reserve; pulling is still your job', es: 'Un respaldo que abre la reserva; abrir sigue siendo tu responsabilidad', uk: 'Підстраховка, яка розкриває запасний; розкриватися все одно маєш ти', ru: 'Подстраховка, которая раскрывает запасной; раскрываться всё равно должен ты' },
-                { en: 'The device that opens your main for you at 5,500 ft', es: 'El aparato que abre la principal por ti a 5,500 ft', uk: 'Прилад, який сам розкриває основний на 5 500 футах', ru: 'Прибор, который сам раскрывает основной на 5 500 футах' },
+                { en: 'The device that opens your main for you at 5,500 ft{pull}', es: 'El aparato que abre la principal por ti a 5,500 ft', uk: 'Прилад, який сам розкриває основний на 5 500 футах', ru: 'Прибор, который сам раскрывает основной на 5 500 футах' },
                 { en: 'The red handle on your chest that releases the main', es: 'La manija roja del pecho que suelta la principal', uk: 'Червона подушка на грудях, що відчіплює основний', ru: 'Красная подушка на груди, которая отцепляет основной' },
               ],
               answer: 0,

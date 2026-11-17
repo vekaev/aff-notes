@@ -1,1 +1,1 @@
-{ "version": "0.0.1", "configurations": [ { "name": "aff-notes", "runtimeExecutable": "npx", "runtimeArgs": ["vite", "--port", "5191", "--strictPort"], "port": 5191 } ] }
+{ "version": "0.0.1", "configurations": [ { "name": "aff-notes", "runtimeExecutable": "npx", "runtimeArgs": ["vite", "--port", "5191", "--strictPort"], "port": 5191 }, { "name": "aff-rules", "runtimeExecutable": "npx", "runtimeArgs": ["vite", "--port", "5199", "--strictPort"], "port": 5199 } ] }

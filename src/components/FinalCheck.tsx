@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { parts } from '../content';
 import { LANG_NAMES, type L, type QuizQuestion } from '../content/types';
 import { glue, headline, useLang } from '../i18n';
+import { forRules } from '../rules';
 import { Quiz } from './Quiz';
 
 // The end of the notes: check everything you learned before the jump, three ways.
@@ -46,12 +47,12 @@ const T = {
 /** Open questions: decisions a student must be able to explain, not just recognise. */
 const OWN: L[] = [
   h('Walk through your climb-out and exit count.', 'Explica tu salida a la puerta y la cuenta de salida.', 'Расскажи выход в дверь и счёт на отделение.', 'Розкажи вихід у двері й рахунок на відокремлення.'),
-  h('What do you do at 6,000 ft, and at 5,500 ft?', '¿Qué haces a 6,000 ft y a 5,500 ft?', 'Что ты делаешь на 6 000 и на 5 500 футов?', 'Що ти робиш на 6 000 і на 5 500 футів?'),
+  h('What do you do at 6,000 ft{lockOn}, and at 5,500 ft{pull}?', '¿Qué haces a 6,000 ft y a 5,500 ft?', 'Что ты делаешь на 6 000 и на 5 500 футов?', 'Що ти робиш на 6 000 і на 5 500 футів?'),
   h('You reach for the pilot chute and can\'t find it. What exactly do you do?', 'Buscas el extractor y no lo encuentras. ¿Qué haces exactamente?', 'Тянешься к вытяжному и не находишь его. Что именно ты делаешь?', 'Тягнешся до витяжного й не знаходиш його. Що саме ти робиш?'),
   h('Your canopy opens. How do you check it, and what makes you cut away?', 'Se abre tu vela. ¿Cómo la revisas y qué te hace liberar?', 'Купол открылся. Как ты его проверяешь и что заставит отцепиться?', 'Купол відкрився. Як ти його перевіряєш і що змусить відчепитися?'),
   h('Say your emergency procedure out loud, step by step, with the altitudes.', 'Di tu procedimiento de emergencia en voz alta, paso a paso, con las alturas.', 'Произнеси аварийную процедуру вслух, по шагам, с высотами.', 'Промов аварійну процедуру вголос, крок за кроком, з висотами.'),
   h('Line twists: when do you fix them, and when is it an emergency?', 'Twists: ¿cuándo los arreglas y cuándo es una emergencia?', 'Закрутка строп: когда исправляешь, а когда это авария?', 'Закрутка строп: коли виправляєш, а коли це аварія?'),
-  h('Plan today\'s landing: 2,500, 2,000, 1,000, 900, 600, 300 ft and the flare.', 'Planea el aterrizaje de hoy: 2,500, 2,000, 1,000, 900, 600, 300 ft y el flare.', 'Спланируй сегодняшнюю посадку: 2 500, 2 000, 1 000, 900, 600, 300 футов и flare.', 'Сплануй сьогоднішню посадку: 2 500, 2 000, 1 000, 900, 600, 300 футів і flare.'),
+  h('Plan today\'s landing: 2,500{holdingReach}, 2,000{holding}, 1,000{patternEntry}, 900{downwind}, 600{base}, 300 ft{final} and the flare.', 'Planea el aterrizaje de hoy: 2,500, 2,000, 1,000, 900, 600, 300 ft y el flare.', 'Спланируй сегодняшнюю посадку: 2 500, 2 000, 1 000, 900, 600, 300 футов и flare.', 'Сплануй сьогоднішню посадку: 2 500, 2 000, 1 000, 900, 600, 300 футів і flare.'),
   h('What are your turn limits under canopy, and why?', '¿Cuáles son tus límites de giro bajo la vela y por qué?', 'Какие у тебя ограничения разворотов под куполом и почему?', 'Які в тебе обмеження розворотів під куполом і чому?'),
   h('You\'re going to land in trees, water or near power lines. What do you do for each?', 'Vas a caer en árboles, agua o cerca de cables. ¿Qué haces en cada caso?', 'Ты садишься на деревья, в воду или у проводов. Что делаешь в каждом случае?', 'Ти сідаєш на дерева, у воду чи біля дротів. Що робиш у кожному випадку?'),
   h('Two canopies out: what do you do in each case?', 'Dos velas fuera: ¿qué haces en cada caso?', 'Вышли два купола: что делаешь в каждом случае?', 'Вийшли два куполи: що робиш у кожному випадку?'),
@@ -63,8 +64,8 @@ const ALL: QuizQuestion[] = parts.flatMap(p => p.chapters.flatMap(c => c.blocks.
 const KEY = 'aff-own-answers';
 const strip = (s: string) => glue(s).replace(/<q-check\s*\/>/g, '(check)').replace(/<[^>]+>/g, '');
 
-function sample(n: number, seed: number): QuizQuestion[] {
-  const a = ALL.map((q, i) => ({ q, k: Math.sin(i * 12.9898 + seed * 78.233) * 43758.5453 % 1 }));
+function sample(n: number, seed: number, pool: QuizQuestion[] = ALL): QuizQuestion[] {
+  const a = pool.map((q, i) => ({ q, k: Math.sin(i * 12.9898 + seed * 78.233) * 43758.5453 % 1 }));
   return a.sort((x, y) => x.k - y.k).slice(0, n).map(x => x.q);
 }
 
@@ -90,9 +91,9 @@ function aiPrompt(t: (l: L) => string, lang: string): string {
 }
 
 export function FinalCheck() {
-  const { t, lang } = useLang();
+  const { t, lang, rules } = useLang();
   const [seed, setSeed] = useState(0);
-  const exam = useMemo(() => (seed ? sample(20, seed) : []), [seed]);
+  const exam = useMemo(() => (seed ? sample(20, seed, forRules(ALL, rules)) : []), [seed, rules]);
   const [own, setOwn] = useState<string[]>(() => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; } });
   const [copied, setCopied] = useState<'' | 'own' | 'ai'>('');
   const save = (i: number, v: string) => {

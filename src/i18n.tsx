@@ -2,6 +2,8 @@ import { createContext, Fragment, useCallback, useContext, useEffect, useMemo, u
 import { ALL_LANGS, isCore, RTL, type L, type Lang } from './content/types';
 import { keyOf } from './content/i18n/key';
 import { convertQuantities, defaultUnits, savedUnits, saveUnits, type Units } from './units';
+import { applyRules, defaultRules, savedRules, saveRules, stripMarks } from './rules';
+import type { Fed } from './content/rules';
 
 // Extra languages load on demand (one JSON per language, built from English by the translators).
 const CATALOGS = import.meta.glob<Record<string, string>>('./content/i18n/*.json', { import: 'default' });
@@ -38,8 +40,14 @@ export function initialLang(): Lang {
   return 'en';
 }
 
-interface Ctx { lang: Lang; setLang: (l: Lang) => void; t: (s: L) => string; units: Units; setUnits: (u: Units) => void }
-const LangContext = createContext<Ctx>({ lang: 'en', setLang: () => {}, t: s => s.en, units: 'ft', setUnits: () => {} });
+interface Ctx {
+  lang: Lang; setLang: (l: Lang) => void; t: (s: L) => string; units: Units; setUnits: (u: Units) => void;
+  /** School rules the numbers come from (USPA, DFV, FFP, British Skydiving, RU/UA metric). */
+  rules: Fed; setRules: (f: Fed) => void; rulesChosen: boolean;
+  /** A short quantity string from the content ("5,500 ft{pull}"): rules, units and this language's number format. */
+  qty: (s: string) => string;
+}
+const LangContext = createContext<Ctx>({ lang: 'en', setLang: () => {}, t: s => stripMarks(s.en), units: 'ft', setUnits: () => {}, rules: 'uspa', setRules: () => {}, rulesChosen: false, qty: s => stripMarks(s) });
 
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>(initialLang);
@@ -50,14 +58,18 @@ export function LangProvider({ children }: { children: ReactNode }) {
   const [chosenUnits, setChosenUnits] = useState<Units | null>(savedUnits);
   const units: Units = chosenUnits ?? defaultUnits(lang);
   const setUnits = useCallback((u: Units) => { setChosenUnits(u); saveUnits(u); }, []);
+  const [chosenRules, setChosenRules] = useState<Fed | null>(savedRules);
+  const rules: Fed = chosenRules ?? defaultRules();
+  const setRules = useCallback((f: Fed) => { setChosenRules(f); saveRules(f); }, []);
   useEffect(() => {
     try {
       const u = new URL(location.href);
       u.searchParams.set('lang', lang);
       if (!chosenUnits) u.searchParams.delete('units'); else u.searchParams.set('units', chosenUnits);
+      if (!chosenRules) u.searchParams.delete('rules'); else u.searchParams.set('rules', chosenRules);
       if (u.href !== location.href) history.replaceState(history.state, '', u.href);
     } catch { /* ignore */ }
-  }, [lang, chosenUnits]);
+  }, [lang, chosenUnits, chosenRules]);
   const [cat, setCat] = useState<{ lang: Lang; map: Record<string, string> } | null>(null);
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -68,10 +80,16 @@ export function LangProvider({ children }: { children: ReactNode }) {
   }, [lang]);
   const value = useMemo(() => {
     const map = cat && cat.lang === lang ? cat.map : null;
-    const raw = (s: L) => (isCore(lang) ? s[lang] || s.en : (map && map[keyOf(s.en)]) || s.en);
-    const t = (s: L) => convertQuantities(raw(s), lang, units);
-    return { lang, setLang, t, units, setUnits };
-  }, [lang, setLang, cat, units, setUnits]);
+    const raw = (s: L) => (isCore(lang) ? s[lang] || s.en : (map && map[keyOf(stripMarks(s.en))]) || s.en);
+    const t = (s: L) => applyRules(raw(s), s.en, rules, lang, units);
+    // Big numbers: the rule value in English format without a unit hint, then this language's format and units.
+    const qty = (s: string) => {
+      const r = applyRules(s, s, rules, 'en', 'ft', false);
+      const out = /\d\s?ft\b/.test(r) ? num(r, lang, units) : num(r, lang);
+      return lang === 'uk' || lang === 'ru' || lang === 'bg' ? out.replace(/(\d)(\s?)m\b/g, '$1$2м').replace(/m\/s\b/g, 'м/с') : out;
+    };
+    return { lang, setLang, t, units, setUnits, rules, setRules, rulesChosen: chosenRules !== null, qty };
+  }, [lang, setLang, cat, units, setUnits, rules, setRules, chosenRules]);
   return <LangContext.Provider value={value}>{children}</LangContext.Provider>;
 }
 

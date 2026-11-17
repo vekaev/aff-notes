@@ -3,7 +3,7 @@ import type { Part } from './types';
 export const part2: Part = {
   id: 'part2',
   roman: 'II',
-  range: { en: '13,000 → 5,500 ft', es: '13,000 → 5,500 ft', uk: '13 000 → 5 500 футів', ru: '13 000 → 5 500 футов' },
+  range: { en: '13,000{exit} → 5,500 ft{pull}', es: '13,000 → 5,500 ft', uk: '13 000 → 5 500 футів', ru: '13 000 → 5 500 футов' },
   title: { en: 'Freefall', es: 'Caída libre', uk: 'Вільне падіння', ru: 'Свободное падение' },
   chapters: [
     // ---------------------------------------------------------------- body
@@ -174,7 +174,7 @@ export const part2: Part = {
           type: 'altimeter',
           rows: [
             {
-              alt: '13,000 ft',
+              alt: '13,000 ft{exit}',
               value: 13,
               title: { en: 'Exit, arch', es: 'Salida, arquea', uk: 'Відокремлення, прогин', ru: 'Отделение, прогиб' },
               sub: {
@@ -229,14 +229,14 @@ export const part2: Part = {
               },
             },
             {
-              alt: '6,000 ft',
+              alt: '6,000 ft{lockOn}',
               value: 6,
               hot: true,
               title: { en: 'Lock on', es: 'Lock on', uk: 'Лише висотомір', ru: 'Только высотомер' },
               sub: { en: '<b>No more</b> exercises.', es: '<b>Se acabaron</b> los ejercicios.', uk: 'Більше <b>жодних</b> вправ.', ru: 'Больше <b>никаких</b> упражнений.' },
             },
             {
-              alt: '5,500 ft',
+              alt: '5,500 ft{pull}',
               value: 5.5,
               hot: true,
               title: { en: 'PULL', es: 'ABRIR', uk: 'РОЗКРИТТЯ', ru: 'РАСКРЫТИЕ' },
@@ -253,7 +253,7 @@ export const part2: Part = {
           type: 'p',
           muted: true,
           text: {
-            en: 'A real student altimeter has colour only on the <b>low part</b> of the dial: the Alti-2 Galaxy, for example, has a yellow and red arc that starts at <b>3,000 ft</b> (Para Gear). Nothing marks 6,000 or 5,500 ft: <b>read the numbers</b>. Look at your own altimeter before the jump.',
+            en: 'A real student altimeter has colour only on the <b>low part</b> of the dial: the Alti-2 Galaxy, for example, has a yellow and red arc that starts at <b>3,000 ft</b> (Para Gear). Nothing marks 6,000{lockOn} or 5,500 ft{pull}: <b>read the numbers</b>. Look at your own altimeter before the jump.',
             es: 'Un altímetro de alumno real solo tiene color en la <b>parte baja</b> de la esfera: el Alti-2 Galaxy, por ejemplo, tiene un arco amarillo y rojo que empieza a <b>3,000 ft</b> (Para Gear). Nada marca 6,000 ni 5,500 ft: <b>lee los números</b>. Mira tu propio altímetro antes del salto.',
             uk: 'На справжньому студентському висотомірі колір є лише в <b>нижній частині</b> циферблата: в Alti-2 Galaxy, наприклад, жовто-червона дуга починається з <b>3 000 футів</b> (Para Gear). 6 000 і 5 500 футів нічим не позначені: <b>читай цифри</b>. Роздивися свій висотомір до стрибка.',
             ru: 'На настоящем студенческом высотомере цвет есть только в <b>нижней части</b> циферблата: у Alti-2 Galaxy, например, жёлто-красная дуга начинается с <b>3 000 футов</b> (Para Gear). 6 000 и 5 500 футов ничем не отмечены: <b>читай цифры</b>. Рассмотри свой высотомер до прыжка.',
@@ -418,7 +418,7 @@ export const part2: Part = {
         {
           type: 'callout',
           text: {
-            en: 'Overloaded or lost? Default to: <b>altitude, arch, pull at 5,500 ft</b>, or <b>right now</b> if you\'re already lower.',
+            en: 'Overloaded or lost? Default to: <b>altitude, arch, pull at 5,500 ft{pull}</b>, or <b>right now</b> if you\'re already lower.',
             es: '¿Saturado o perdido? Vuelve a lo básico: <b>altura, arco, abrir a 5,500 ft</b>, o <b>ahora mismo</b> si ya estás más bajo.',
             uk: 'Перевантажений чи загубився? За замовчуванням: <b>висота, прогин, розкриття на 5 500 футах</b> або <b>одразу</b>, якщо ти вже нижче.',
             ru: 'Перегружен или потерялся? По умолчанию: <b>высота, прогиб, раскрытие на 5 500 футах</b> или <b>сразу</b>, если ты уже ниже.',
@@ -433,7 +433,7 @@ export const part2: Part = {
             { en: 'Pull <b>at your altitude</b>.', es: 'Abre <b>a tu altura</b>.', uk: 'Розкрийся <b>на своїй висоті</b>.', ru: 'Раскройся <b>на своей высоте</b>.' },
             { en: 'Pull <b>stable</b>, if you can.', es: 'Abre <b>estable</b>, si puedes.', uk: 'Розкрийся <b>стабільно</b>, якщо можеш.', ru: 'Раскройся <b>стабильно</b>, если можешь.' },
             {
-              en: 'Altitude comes before stability: unstable or spinning at 5,500 ft? <b>Pull anyway</b>.',
+              en: 'Altitude comes before stability: unstable or spinning at 5,500 ft{pull}? <b>Pull anyway</b>.',
               es: 'La altura va antes que la estabilidad: ¿inestable o girando a 5,500 ft? <b>Abre igual</b>.',
               uk: 'Висота важливіша за стабільність: нестабільно чи крутить на 5 500 футах? <b>Все одно розкривайся</b>.',
               ru: 'Высота важнее стабильности: нестабильно или крутит на 5 500 футах? <b>Всё равно раскрывайся</b>.',
@@ -444,22 +444,22 @@ export const part2: Part = {
           type: 'rules',
           items: [
             {
-              big: '6,000 ft',
+              big: '6,000 ft{lockOn}',
               tone: 'accent',
               title: { en: 'Lock on', es: 'Lock on', uk: 'Лише висотомір', ru: 'Только высотомер' },
               text: {
-                en: 'Stop <b>all exercises</b>. Watch the <b>altimeter only</b>: from 6,000 ft you have about <b>3 seconds</b> to 5,500 ft. At 5,500 ft wave off and pull. Wave-off and pull together take about <b>1,000 ft</b> (USPA), so start on time.',
+                en: '{uspa}Stop <b>all exercises</b>. Watch the <b>altimeter only</b>: from 6,000 ft{lockOn} you have about <b>3 seconds</b> to 5,500 ft{pull}. At 5,500 ft{pull} wave off and pull. Wave-off and pull together take about <b>1,000 ft{~}</b> (USPA), so start on time.',
                 es: 'Deja <b>todos los ejercicios</b>. Mira <b>solo el altímetro</b>: de 6,000 a 5,500 ft tienes unos <b>3 segundos</b>. A 5,500 ft haz el wave-off y abre. El wave-off y la apertura juntos llevan unos <b>1,000 ft</b> (USPA), así que empieza a tiempo.',
                 uk: 'Припини <b>усі вправи</b>. Дивися <b>лише на висотомір</b>: від 6 000 до 5 500 футів у тебе близько <b>3 секунд</b>. На 5 500 футах — відмашка й розкриття. Відмашка й розкриття разом забирають близько <b>1 000 футів</b> (USPA), тож починай вчасно.',
                 ru: 'Прекрати <b>все упражнения</b>. Смотри <b>только на высотомер</b>: от 6 000 до 5 500 футов у тебя около <b>3 секунд</b>. На 5 500 футах — отмашка и раскрытие. Отмашка и раскрытие вместе занимают около <b>1 000 футов</b> (USPA), так что начинай вовремя.',
               },
             },
             {
-              big: '5,500 ft',
+              big: '5,500 ft{pull}',
               tone: 'accent',
               title: { en: 'Pull', es: 'Abrir', uk: 'Розкриття', ru: 'Раскрытие' },
               text: {
-                en: 'On <b>category A</b> we pull at <b>5,500 ft</b>, not 5,000 ft. Ask about later categories.',
+                en: '{uspa}On <b>category A</b> we pull at <b>5,500 ft{pull}</b>, not 5,000 ft. Ask about later categories.',
                 es: 'En la <b>categoría A</b> abrimos a <b>5,500 ft</b>, no a 5,000 ft. Pregunta por las categorías siguientes.',
                 uk: 'На <b>категорії A</b> розкриваємося на <b>5 500 футах</b>, а не на 5 000 футах. Про наступні категорії запитай.',
                 ru: 'На <b>категории A</b> раскрываемся на <b>5 500 футах</b>, а не на 5 000 футах. Про следующие категории спроси.',
@@ -475,7 +475,7 @@ export const part2: Part = {
               options: [
                 { en: 'Every 3 seconds', es: 'Cada 3 segundos', uk: 'Кожні 3 секунди', ru: 'Каждые 3 секунды' },
                 { en: 'Every 15 seconds', es: 'Cada 15 segundos', uk: 'Кожні 15 секунд', ru: 'Каждые 15 секунд' },
-                { en: 'Only at 6,000 ft', es: 'Solo a 6,000 ft', uk: 'Тільки на висоті 6 000 футів', ru: 'Только на высоте 6 000 футов' },
+                { en: 'Only at 6,000 ft{lockOn}', es: 'Solo a 6,000 ft', uk: 'Тільки на висоті 6 000 футів', ru: 'Только на высоте 6 000 футов' },
               ],
               answer: 0,
               why: {
@@ -489,12 +489,12 @@ export const part2: Part = {
               q: { en: 'What is the pull altitude on category A?', es: '¿Cuál es la altura de apertura en la categoría A?', uk: 'На якій висоті розкриваються на категорії A?', ru: 'На какой высоте раскрываются на категории A?' },
               options: [
                 { en: '5,000 ft', es: '5,000 ft', uk: '5 000 футів', ru: '5 000 футов' },
-                { en: '5,500 ft', es: '5,500 ft', uk: '5 500 футів', ru: '5 500 футов' },
-                { en: '6,000 ft', es: '6,000 ft', uk: '6 000 футів', ru: '6 000 футов' },
+                { en: '5,500 ft{pull}', es: '5,500 ft', uk: '5 500 футів', ru: '5 500 футов' },
+                { en: '6,000 ft{lockOn}', es: '6,000 ft', uk: '6 000 футів', ru: '6 000 футов' },
               ],
               answer: 1,
               why: {
-                en: 'We pull at 5,500 ft, not 5,000 ft. 6,000 ft is lock on.',
+                en: 'We pull at 5,500 ft{pull}, not 5,000 ft. 6,000 ft{lockOn} is lock on.',
                 es: 'Abrimos a 5,500 ft, no a 5,000 ft. 6,000 ft es lock on.',
                 uk: 'Розкриваємося на 5 500 футах, а не на 5 000 футах. На 6 000 футів — лише висотомір.',
                 ru: 'Раскрываемся на 5 500 футах, а не на 5 000 футах. На 6 000 футов — только высотомер.',
@@ -505,18 +505,18 @@ export const part2: Part = {
               options: [
                 { en: 'Look for the instructors until you find them', es: 'Buscar a los instructores hasta encontrarlos', uk: 'Шукати інструкторів, поки не знайдеш', ru: 'Искать инструкторов, пока не найдёшь' },
                 { en: 'Repeat the practice touches until calm', es: 'Repetir los toques de práctica hasta calmarte', uk: 'Повторювати тренувальні дотики, поки не заспокоїшся', ru: 'Повторять тренировочные касания, пока не успокоишься' },
-                { en: 'Altitude, arch, pull at 5,500 ft (or now, if lower)', es: 'Altura, arco, abrir a 5,500 ft (o ya, si estás más bajo)', uk: 'Висота, прогин, розкриття на 5 500 футах (або одразу, якщо нижче)', ru: 'Высота, прогиб, раскрытие на 5 500 футах (или сразу, если ниже)' },
+                { en: 'Altitude, arch, pull at 5,500 ft{pull} (or now, if lower)', es: 'Altura, arco, abrir a 5,500 ft (o ya, si estás más bajo)', uk: 'Висота, прогин, розкриття на 5 500 футах (або одразу, якщо нижче)', ru: 'Высота, прогиб, раскрытие на 5 500 футах (или сразу, если ниже)' },
               ],
               answer: 2,
               why: {
-                en: 'When in doubt, go back to the basics: altitude, arch, pull at 5,500 ft. If the altimeter already reads lower, pull right now.',
+                en: 'When in doubt, go back to the basics: altitude, arch, pull at 5,500 ft{pull}. If the altimeter already reads lower, pull right now.',
                 es: 'Ante la duda, vuelve a lo básico: altura, arco, abrir a 5,500 ft. Si el altímetro ya marca menos, abre ahora mismo.',
                 uk: 'Сумніваєшся — повертайся до основ: висота, прогин, розкриття на 5 500 футах. Якщо висотомір уже показує менше, розкривайся одразу.',
                 ru: 'Сомневаешься — возвращайся к основам: высота, прогиб, раскрытие на 5 500 футах. Если высотомер уже показывает меньше, раскрывайся сразу.',
               },
             },
             {
-              q: { en: 'It\'s 5,500 ft and you\'re unstable, slowly spinning. What do you do?', es: 'Estás a 5,500 ft, inestable y girando despacio. ¿Qué haces?', uk: 'Висота 5 500 футів, ти нестабільний і повільно обертаєшся. Що робиш?', ru: 'Высота 5 500 футов, ты нестабилен и медленно вращаешься. Что делаешь?' },
+              q: { en: 'It\'s 5,500 ft{pull} and you\'re unstable, slowly spinning. What do you do?', es: 'Estás a 5,500 ft, inestable y girando despacio. ¿Qué haces?', uk: 'Висота 5 500 футів, ти нестабільний і повільно обертаєшся. Що робиш?', ru: 'Высота 5 500 футов, ты нестабилен и медленно вращаешься. Что делаешь?' },
               options: [
                 { en: 'Get stable first, then pull', es: 'Primero estabilizarte, luego abrir', uk: 'Спершу стабілізуватися, потім розкритися', ru: 'Сначала стабилизироваться, потом раскрыться' },
                 { en: 'Pull now: altitude comes first', es: 'Abrir ya: la altura va primero', uk: 'Розкритися одразу: висота важливіша', ru: 'Раскрыться сразу: высота важнее' },
@@ -554,7 +554,7 @@ export const part2: Part = {
           title: { en: 'Covered in other chapters', es: 'En otros capítulos', uk: 'В інших розділах', ru: 'В других главах' },
           items: [
             {
-              en: 'Unstable or spinning at 5,500 ft: <b>pull anyway</b>. Altitude comes before stability: <a href="#altitude">pull priorities</a>.',
+              en: 'Unstable or spinning at 5,500 ft{pull}: <b>pull anyway</b>. Altitude comes before stability: <a href="#altitude">pull priorities</a>.',
               es: '¿Inestable o girando a 5,500 ft? <b>Abre igual</b>. La altura va antes que la estabilidad: <a href="#altitude">prioridades de apertura</a>.',
               uk: 'Нестабільно чи крутить на 5 500 футах — <b>все одно розкривайся</b>. Висота важливіша за стабільність: <a href="#altitude">пріоритети розкриття</a>.',
               ru: 'Нестабильно или крутит на 5 500 футах — <b>всё равно раскрывайся</b>. Высота важнее стабильности: <a href="#altitude">приоритеты раскрытия</a>.',

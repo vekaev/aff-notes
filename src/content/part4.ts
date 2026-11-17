@@ -63,7 +63,7 @@ export const part4: Part = {
         {
           type: 'p',
           text: t(
-            `First, <b>altitude</b>: above 1,000 ft you cut away; below it, silver only (USPA ISP). Then schools teach one of two ways. Learn <b>one clean sequence</b>: which one does your school teach? <q-check/>`,
+            `First, <b>altitude</b>: above 1,000 ft{hardDeck} you cut away; below it, silver only (USPA ISP). Then schools teach one of two ways. Learn <b>one clean sequence</b>: which one does your school teach? <q-check/>`,
             `Primero, la <b>altura</b>: por encima de 1,000 ft liberas; por debajo, solo la plateada (USPA ISP). Luego las escuelas enseñan una de dos formas. Aprende <b>una sola secuencia</b>: ¿cuál enseña tu escuela? <q-check/>`,
             `Сначала <b>высота</b>: выше 1 000 футов отцепляешься, ниже — только кольцо (USPA ISP). Дальше школы учат одним из двух способов. Выучи <b>одну чёткую последовательность</b>: какую учат в твоей школе? <q-check/>`,
             `Спершу <b>висота</b>: вище 1 000 футів відчіплюєшся, нижче — лише кільце (USPA ISP). Далі школи навчають одним із двох способів. Вивчи <b>одну чітку послідовність</b>: яку навчають у твоїй школі? <q-check/>`,
@@ -245,7 +245,7 @@ export const part4: Part = {
                   `Обертається, пікірує або явно не летить: <b>жодних 5 с, дій одразу</b>`,
                 ),
                 t(
-                  `Students: <b>never below 2,500 ft</b>`,
+                  `Students: <b>never below 2,500 ft{decision}</b>`,
                   `Alumnos: <b>nunca por debajo de 2,500 ft</b>`,
                   `Студенты: <b>никогда ниже 2 500 футов</b>`,
                   `Студенти: <b>ніколи нижче 2 500 футів</b>`,
@@ -259,12 +259,12 @@ export const part4: Part = {
               ],
             },
             {
-              big: '2,500 ft',
+              big: '2,500 ft{decision}',
               tone: 'red',
               title: t(`Decision altitude`, `Altura de decisión`, `Высота принятия решения`, `Висота ухвалення рішення`),
               points: [
                 t(
-                  `Students <b>decide and act</b> by 2,500 ft (USPA SIM 4-1)`,
+                  `{uspa}Students <b>decide and act</b> by 2,500 ft{decision} (USPA SIM 4-1)`,
                   `Los alumnos <b>deciden y actúan</b> antes de 2,500 ft (USPA SIM 4-1)`,
                   `Студенты <b>решают и действуют</b> не ниже 2 500 футов (USPA SIM 4-1)`,
                   `Студенти <b>вирішують і діють</b> не нижче 2 500 футів (USPA SIM 4-1)`,
@@ -276,7 +276,7 @@ export const part4: Part = {
                   `Проблема з куполом, яку можна виправити: <b>лише дві спроби</b>, між ними дивись на <b>висоту</b>`,
                 ),
                 t(
-                  `Not fixed by 2,500 ft? <b>Emergency procedure</b>`,
+                  `Not fixed by 2,500 ft{decision}? <b>Emergency procedure</b>`,
                   `¿Sin arreglar a 2,500 ft? <b>Procedimiento de emergencia</b>`,
                   `Не исправил к 2 500 футов? <b>Аварийная процедура</b>`,
                   `Не виправив до 2 500 футів? <b>Аварійна процедура</b>`,
@@ -284,11 +284,11 @@ export const part4: Part = {
               ],
             },
             {
-              big: '1,000 ft',
+              big: '1,000 ft{hardDeck}',
               tone: 'red',
               title: t(`Hard deck`, `Límite mínimo`, `Нижняя граница`, `Нижня межа`),
               points: [
-                t(`Below 1,000 ft <b>don't cut away</b>`, `Por debajo de 1,000 ft <b>no liberes</b>`, `Ниже 1 000 футов <b>не отцепляйся</b>`, `Нижче 1 000 футів <b>не відчіплюйся</b>`),
+                t(`Below 1,000 ft{hardDeck} <b>don't cut away</b>`, `Por debajo de 1,000 ft <b>no liberes</b>`, `Ниже 1 000 футов <b>не отцепляйся</b>`, `Нижче 1 000 футів <b>не відчіплюйся</b>`),
                 t(
                   `<b>Pull the reserve</b> and land with two canopies`,
                   `<b>Abre la reserva</b> y aterriza con dos velas`,
@@ -305,13 +305,13 @@ export const part4: Part = {
           title: t(`Same number, different question`, `Mismo número, otra pregunta`, `Число то же, вопрос другой`, `Число те саме, питання інше`),
           points: [
             t(
-              `This 2,500 ft: <b>keep or drop</b> a bad main.`,
+              `This 2,500 ft{decision}: <b>keep or drop</b> a bad main.`,
               `Estos 2,500 ft: <b>quedarte o liberar</b> una principal mala.`,
               `Эти 2 500 футов: <b>оставить или отцепить</b> плохой основной.`,
               `Ці 2 500 футів: <b>залишити чи відчепити</b> поганий основний.`,
             ),
             t(
-              `The 2,500 ft point in the landing pattern (good canopy): <b>where to fly</b>.`,
+              `The 2,500 ft{holdingReach} point in the landing pattern (good canopy): <b>where to fly</b>.`,
               `El punto de 2,500 ft del circuito (vela buena): <b>adónde volar</b>.`,
               `Точка 2 500 футов в схеме захода (купол хороший): <b>куда лететь</b>.`,
               `Точка 2 500 футів у схемі заходу (купол добрий): <b>куди летіти</b>.`,
@@ -399,10 +399,10 @@ export const part4: Part = {
                 `До какой высоты студент должен принять решение и действовать, если основной плохой?`,
                 `До якої висоти студент має ухвалити рішення й діяти, якщо основний поганий?`,
               ),
-              options: [t(`2,500 ft`, `2,500 ft`, `2 500 футов`, `2 500 футів`), t(`1,000 ft`, `1,000 ft`, `1 000 футов`, `1 000 футів`), t(`4,000 ft`, `4,000 ft`, `4 000 футов`, `4 000 футів`)],
+              options: [t(`2,500 ft{decision}`, `2,500 ft`, `2 500 футов`, `2 500 футів`), t(`1,000 ft{hardDeck}`, `1,000 ft`, `1 000 футов`, `1 000 футів`), t(`4,000 ft`, `4,000 ft`, `4 000 футов`, `4 000 футів`)],
               answer: 0,
               why: t(
-                `Decision altitude for students is 2,500 ft (USPA SIM 4-1). 1,000 ft is the hard deck, the lowest point for a cutaway.`,
+                `Decision altitude for students is 2,500 ft{decision} (USPA SIM 4-1). 1,000 ft{hardDeck} is the hard deck, the lowest point for a cutaway.`,
                 `La altura de decisión para alumnos es 2,500 ft (USPA SIM 4-1). 1,000 ft es el límite mínimo, la altura más baja para liberar.`,
                 `Высота принятия решения для студентов — 2 500 футов (USPA SIM 4-1). 1 000 футов — нижняя граница, ниже которой не отцепляются.`,
                 `Висота ухвалення рішення для студентів — 2 500 футів (USPA SIM 4-1). 1 000 футів — нижня межа, нижче якої не відчіплюються.`,
@@ -418,7 +418,7 @@ export const part4: Part = {
               options: [
                 t(`You, pulling silver right away`, `Tú, tirando de la plateada enseguida`, `Ты сам: сразу выдёргиваешь кольцо`, `Ти сам: одразу висмикуєш кільце`),
                 t(`The AAD, a second later`, `El AAD, un segundo después`, `AAD, через секунду`, `AAD, за секунду`),
-                t(`Nothing until 1,000 ft`, `Nada hasta 1,000 ft`, `Ничего до 1 000 футов`, `Нічого до 1 000 футів`),
+                t(`Nothing until 1,000 ft{~}`, `Nada hasta 1,000 ft`, `Ничего до 1 000 футов`, `Нічого до 1 000 футів`),
               ],
               answer: 0,
               why: t(
@@ -437,12 +437,12 @@ export const part4: Part = {
               ),
               options: [
                 t(`About 5 seconds`, `Unos 5 segundos`, `Около 5 секунд`, `Близько 5 секунд`),
-                t(`Until about 1,000 ft`, `Hasta unos 1,000 ft`, `До 1 000 футов`, `До 1 000 футів`),
+                t(`Until about 1,000 ft{~}`, `Hasta unos 1,000 ft`, `До 1 000 футов`, `До 1 000 футів`),
                 t(`As long as it improves`, `Mientras vaya mejorando`, `Пока становится лучше`, `Доки стає краще`),
               ],
               answer: 0,
               why: t(
-                `The 5-second rule: 5 s is the upper limit, not a wait. Not clearly better? Emergency procedure, and as a student never below 2,500 ft. A spin or a canopy that clearly can't fly gets no 5 s: act now.`,
+                `The 5-second rule: 5 s is the upper limit, not a wait. Not clearly better? Emergency procedure, and as a student never below 2,500 ft{decision}. A spin or a canopy that clearly can't fly gets no 5 s: act now.`,
                 `La regla de los 5 segundos: 5 s es el máximo, no una espera. ¿No mejora claramente? Procedimiento de emergencia, y como alumno nunca por debajo de 2,500 ft. Un giro o una vela que claramente no vuela no tiene 5 s: actúa ya.`,
                 `Правило 5 секунд: 5 с — это предел, а не ожидание. Явно не лучше — аварийная процедура, а студенту никогда не ниже 2 500 футов. При вращении или явно не летящем куполе никаких 5 с: действуй сразу.`,
                 `Правило 5 секунд: 5 с — це межа, а не очікування. Явно не краще — аварійна процедура, а студентові ніколи не нижче 2 500 футів. При обертанні або куполі, що явно не летить, жодних 5 с: дій одразу.`,
@@ -450,7 +450,7 @@ export const part4: Part = {
             },
             {
               q: t(
-                `Below 1,000 ft the main is bad (not a downplane). What do you do?`,
+                `Below 1,000 ft{hardDeck} the main is bad (not a downplane). What do you do?`,
                 `Por debajo de 1,000 ft la principal está mal (no es un downplane). ¿Qué haces?`,
                 `Ниже 1 000 футов основной плохой (не «даунплейн»). Что делаешь?`,
                 `Нижче 1 000 футів основний поганий (не «даунплейн»). Що робиш?`,
@@ -706,7 +706,7 @@ export const part4: Part = {
               `Діра <b>завбільшки з голову</b> або видно небо крізь нижню оболонку.`,
             ),
             t(
-              `Still <b>not inflated at 2,500 ft</b>.`,
+              `Still <b>not inflated at 2,500 ft{decision}</b>.`,
               `La vela todavía <b>no está inflada a 2,500 ft</b>.`,
               `К <b>2 500 футам</b> купол так и не наполнился.`,
               `Досі <b>не наповнився на 2 500 футах</b>.`,
@@ -794,7 +794,7 @@ export const part4: Part = {
             },
             {
               q: t(
-                `You're at 2,500 ft and the canopy still isn't inflated. Now what?`,
+                `You're at 2,500 ft{decision} and the canopy still isn't inflated. Now what?`,
                 `Estás a 2,500 ft y la vela todavía no está inflada. ¿Y ahora?`,
                 `2 500 футов, а купол всё ещё не наполнился. Что теперь?`,
                 `2 500 футів, а купол досі не наповнився. Що тепер?`,
@@ -802,11 +802,11 @@ export const part4: Part = {
               options: [
                 t(`Cut away and pull the reserve`, `Libera y abre la reserva`, `Отцепка и запасной`, `Відчеплення і запасний`),
                 t(`Keep pumping the toggles`, `Sigue bombeando los batidores`, `Продолжать подкачивать клевантами`, `Далі підкачувати клевантами`),
-                t(`Wait until 1,000 ft`, `Espera hasta 1,000 ft`, `Ждать до 1 000 футов`, `Чекати до 1 000 футів`),
+                t(`Wait until 1,000 ft{hardDeck}`, `Espera hasta 1,000 ft`, `Ждать до 1 000 футов`, `Чекати до 1 000 футів`),
               ],
               answer: 0,
               why: t(
-                `Not inflated by 2,500 ft is on the "cut away anyway" list. Decision altitude means you act now.`,
+                `Not inflated by 2,500 ft{decision} is on the "cut away anyway" list. Decision altitude means you act now.`,
                 `No inflada a 2,500 ft está en la lista de "libera de todos modos". Altura de decisión: actúas ya.`,
                 `Не наполнился к 2 500 футов — это из списка «отцепляйся в любом случае». Высота принятия решения: действуешь сейчас.`,
                 `Не наповнився до 2 500 футів — це зі списку «відчіплюйся в будь-якому разі». Висота ухвалення рішення: дієш зараз.`,
@@ -966,7 +966,7 @@ export const part4: Part = {
               ],
               answer: 0,
               why: t(
-                `A downplane falls fast. It's the one exception to the 1,000 ft hard deck: cut away the main whatever the altitude.`,
+                `A downplane falls fast. It's the one exception to the 1,000 ft{hardDeck} hard deck: cut away the main whatever the altitude.`,
                 `Un downplane cae rápido. Es la única excepción al límite de 1,000 ft: libera la principal a cualquier altura.`,
                 `«Даунплейн» падает быстро. Это единственное исключение из нижней границы 1 000 футов: отцепить основной на любой высоте.`,
                 `«Даунплейн» падає швидко. Це єдиний виняток із нижньої межі 1 000 футів: відчепити основний на будь-якій висоті.`,
@@ -982,7 +982,7 @@ export const part4: Part = {
               options: [
                 t(`No: clear what you can, ready to PLF`, `No: desenredo lo que pueda, listo para el PLF`, `Нет: освобождаю, что могу, готовлюсь к PLF`, `Ні: звільняю, що можу, готуюся до PLF`),
                 t(`Yes: cut away the main at once`, `Sí: libero la principal enseguida`, `Да: сразу отцепляю основной`, `Так: одразу відчіплюю основний`),
-                t(`Yes, but only above 1,000 ft`, `Sí, pero solo por encima de 1,000 ft`, `Да, но только выше 1 000 футов`, `Так, але лише вище 1 000 футів`),
+                t(`Yes, but only above 1,000 ft{hardDeck}`, `Sí, pero solo por encima de 1,000 ft`, `Да, но только выше 1 000 футов`, `Так, але лише вище 1 000 футів`),
               ],
               answer: 0,
               why: t(
@@ -1199,7 +1199,7 @@ export const part4: Part = {
                 `Пізня або неправильна аварійна процедура`,
               ),
               sub: t(
-                `More than <b>4,000 cutaways a year</b> in the US, and reserves rarely fail: <b>delay is what kills</b>. Unclear canopy? <b>5 s at most</b> to see it clearly getting better; if not, cut away and go to the reserve. Spinning line twists: <b>cut away right away</b> (USPA, 2019). As a student, never below 2,500 ft.`,
+                `More than <b>4,000 cutaways a year</b> in the US, and reserves rarely fail: <b>delay is what kills</b>. Unclear canopy? <b>5 s at most</b> to see it clearly getting better; if not, cut away and go to the reserve. Spinning line twists: <b>cut away right away</b> (USPA, 2019). As a student, never below 2,500 ft{decision}.`,
                 `Más de <b>4,000 liberaciones al año</b> en EE. UU., y las reservas casi nunca fallan: <b>lo que mata es la demora</b>. ¿Vela dudosa? <b>5 s como máximo</b> para ver que mejora claramente; si no, libera y ve a la reserva. Vueltas en las líneas que giran: <b>libera enseguida</b> (USPA, 2019). Como alumno, nunca por debajo de 2,500 ft.`,
                 `Больше <b>4 000 отцепок в год</b> в США, а запасные отказывают редко: <b>убивает промедление</b>. Купол непонятный? <b>Не больше 5 с</b>, чтобы увидеть, что явно становится лучше; если нет — отцепка и запасной. Закрутка с вращением — <b>отцепка сразу</b> (USPA, 2019). Студенту никогда не ниже 2 500 футов.`,
                 `Понад <b>4 000 відчеплень на рік</b> у США, а запасні відмовляють рідко: <b>убиває зволікання</b>. Купол незрозумілий? <b>Не більше 5 с</b>, щоб побачити, що явно стає краще; якщо ні — відчеплення й запасний. Закрутка з обертанням — <b>відчеплення одразу</b> (USPA, 2019). Студентові ніколи не нижче 2 500 футів.`,
@@ -1221,7 +1221,7 @@ export const part4: Part = {
           type: 'rules',
           items: [
             {
-              title: t(`Distracted at 6,000 ft`, `Distraída a 6,000 ft`, `Отвлеклась на 6 000 футах`, `Відволіклася на 6 000 футах`),
+              title: t(`Distracted at 6,000 ft{lockOn}`, `Distraída a 6,000 ft`, `Отвлеклась на 6 000 футах`, `Відволіклася на 6 000 футах`),
               points: [
                 t(
                   `Category F student: fixed her goggles, <b>stared at the altimeter</b>`,
@@ -1243,7 +1243,7 @@ export const part4: Part = {
                   `<b>AAD розкрив</b> запасний приблизно на 700 футах`,
                 ),
                 t(
-                  `Pilot chute wrapped or in tow: <b>emergency procedure now</b>, by 2,500 ft. The AAD is not a plan`,
+                  `Pilot chute wrapped or in tow: <b>emergency procedure now</b>, by 2,500 ft{decision}. The AAD is not a plan`,
                   `Extractor enredado o remolcado: <b>procedimiento de emergencia ya</b>, antes de 2,500 ft. El AAD no es un plan`,
                   `Вытяжной обмотался или в следе: <b>аварийная процедура сразу</b>, не ниже 2 500 футов. AAD — не план`,
                   `Витяжний обмотався або в сліді: <b>аварійна процедура одразу</b>, не нижче 2 500 футів. AAD — не план`,
@@ -1260,9 +1260,9 @@ export const part4: Part = {
                   `Понад <b>1 200 стрибків</b>, не відчепився на 2 100 футах`,
                 ),
                 t(`Thought it was <b>already too low</b>`, `Creyó que ya era <b>demasiado bajo</b>`, `Решил, что <b>уже слишком низко</b>`, `Вирішив, що <b>вже надто низько</b>`),
-                t(`The hard deck is <b>1,000 ft</b>`, `El límite mínimo es <b>1,000 ft</b>`, `Нижняя граница — <b>1 000 футов</b>`, `Нижня межа — <b>1 000 футів</b>`),
+                t(`The hard deck is <b>1,000 ft{hardDeck}</b>`, `El límite mínimo es <b>1,000 ft</b>`, `Нижняя граница — <b>1 000 футов</b>`, `Нижня межа — <b>1 000 футів</b>`),
                 t(
-                  `Between 2,500 and 1,000 ft you <b>can still cut away</b>`,
+                  `Between 2,500{decision} and 1,000 ft{hardDeck} you <b>can still cut away</b>`,
                   `Entre 2,500 y 1,000 ft <b>todavía puedes liberar</b>`,
                   `Между 2 500 и 1 000 футов <b>отцепляться ещё можно</b>`,
                   `Між 2 500 і 1 000 футів <b>відчіплюватися ще можна</b>`,
@@ -1381,13 +1381,13 @@ export const part4: Part = {
                 `На 2 100 футах основний поганий. Ще можна відчепитися?`,
               ),
               options: [
-                t(`Yes, the hard deck is 1,000 ft`, `Sí, el límite mínimo es 1,000 ft`, `Да, нижняя граница — 1 000 футов`, `Так, нижня межа — 1 000 футів`),
-                t(`No, it's below 2,500 ft`, `No, ya estás por debajo de 2,500 ft`, `Нет, уже ниже 2 500 футов`, `Ні, вже нижче 2 500 футів`),
+                t(`Yes, the hard deck is 1,000 ft{hardDeck}`, `Sí, el límite mínimo es 1,000 ft`, `Да, нижняя граница — 1 000 футов`, `Так, нижня межа — 1 000 футів`),
+                t(`No, it's below 2,500 ft{decision}`, `No, ya estás por debajo de 2,500 ft`, `Нет, уже ниже 2 500 футов`, `Ні, вже нижче 2 500 футів`),
                 t(`Only if the AAD has fired`, `Solo si el AAD se activó`, `Только если сработал AAD`, `Лише якщо спрацював AAD`),
               ],
               answer: 0,
               why: t(
-                `2,500 ft is when you should have decided; 1,000 ft is the lowest you cut away. A jumper with 1,200+ jumps mixed these up and didn't cut away at 2,100 ft.`,
+                `2,500 ft{decision} is when you should have decided; 1,000 ft{hardDeck} is the lowest you cut away. A jumper with 1,200+ jumps mixed these up and didn't cut away at 2,100 ft.`,
                 `2,500 ft es cuando ya deberías haber decidido; 1,000 ft es lo más bajo para liberar. Un paracaidista con más de 1,200 saltos los confundió y no liberó a 2,100 ft.`,
                 `К 2 500 футам решение уже должно быть принято; 1 000 футов — ниже не отцепляются. Парашютист с 1 200+ прыжками это перепутал и не отцепился на 2 100 футах.`,
                 `До 2 500 футів рішення вже має бути ухвалене; 1 000 футів — нижче не відчіплюються. Парашутист із 1 200+ стрибками це переплутав і не відчепився на 2 100 футах.`,
@@ -1672,7 +1672,7 @@ export const part4: Part = {
                   `Перевіряй висоту кожні 3 секунди (USPA; деякі школи навчають близько 5), після кожного маневру і за будь-якої несподіванки.`,
                 ),
                 t(
-                  `Overloaded or lost? Default to: altitude, arch, pull at 5,500 ft.`,
+                  `Overloaded or lost? Default to: altitude, arch, pull at 5,500 ft{pull}.`,
                   `¿Saturado o perdido? Vuelve a lo básico: altura, arco, abrir a 5,500 ft.`,
                   `Перегружен или потерялся? По умолчанию: высота, прогиб, раскрытие на 5 500 футах.`,
                   `Перевантажений або загубився? За замовчуванням: висота, прогин, розкриття на 5 500 футах.`,
@@ -1769,7 +1769,7 @@ export const part4: Part = {
               bad: [
                 t(`Trying to fix a spinning canopy for too long.`, `Intentar arreglar demasiado tiempo una vela que gira.`, `Слишком долго пытаться исправить вращающийся купол.`, `Надто довго намагатися виправити купол, що обертається.`),
                 t(
-                  `Mixing up decision altitude (2,500 ft) and hard deck (1,000 ft), and not cutting away when you still could.`,
+                  `Mixing up decision altitude (2,500 ft{decision}) and hard deck (1,000 ft{hardDeck}), and not cutting away when you still could.`,
                   `Confundir la altura de decisión (2,500 ft) con el límite mínimo (1,000 ft), y no liberar cuando todavía podías.`,
                   `Путать высоту принятия решения (2 500 футов) и нижнюю границу (1 000 футов) и не отцепиться, когда ещё можно.`,
                   `Плутати висоту ухвалення рішення (2 500 футів) і нижню межу (1 000 футів) та не відчепитися, коли ще можна.`,
@@ -1790,7 +1790,7 @@ export const part4: Part = {
               ],
               good: [
                 t(
-                  `5-second rule (Parachutist, 2019): unclear canopy, 5 s at most to decide, counting out loud; spinning or clearly not flying, act now. Clearly getting better? The article allows more 5-second blocks, rarely past 15 s in all; as a student it's still two tries, and never below 2,500 ft.`,
+                  `5-second rule (Parachutist, 2019): unclear canopy, 5 s at most to decide, counting out loud; spinning or clearly not flying, act now. Clearly getting better? The article allows more 5-second blocks, rarely past 15 s in all; as a student it's still two tries, and never below 2,500 ft{decision}.`,
                   `Regla de los 5 segundos (Parachutist, 2019): vela dudosa, 5 s como máximo para decidir, contando en voz alta; si gira o claramente no vuela, actúa ya. ¿Mejora claramente? El artículo permite más bloques de 5 s, casi nunca más de 15 en total; como alumno siguen siendo dos intentos, y nunca por debajo de 2,500 ft.`,
                   `Правило 5 секунд (Parachutist, 2019): купол непонятный — не больше 5 с на решение, считая вслух; вращается или явно не летит — действуй сразу. Явно становится лучше? Статья допускает ещё блоки по 5 с, но редко больше 15 в сумме; студенту всё равно две попытки и никогда не ниже 2 500 футов.`,
                   `Правило 5 секунд (Parachutist, 2019): купол незрозумілий — не більше 5 с на рішення, рахуючи вголос; обертається або явно не летить — дій одразу. Явно стає краще? Стаття допускає ще блоки по 5 с, але рідко більше ніж 15 загалом; студентові все одно дві спроби і ніколи не нижче 2 500 футів.`,
@@ -1900,7 +1900,7 @@ export const part4: Part = {
                   `Радіо — лише підстраховка: земля близько, а команди «flare» немає? Роби flare.`,
                 ),
                 t(
-                  `At 2,500 ft decide whether you can reach the holding point; if not, pick a clear alternate by 2,000 ft at the latest.`,
+                  `At 2,500 ft{holdingReach} decide whether you can reach the holding point; if not, pick a clear alternate by 2,000 ft{holding} at the latest.`,
                   `A 2,500 ft decide si llegas al punto de espera; si no, elige una zona alternativa despejada a más tardar a 2,000 ft.`,
                   `На 2 500 футах реши, долетишь ли до точки ожидания; если нет, выбери чистую запасную площадку не позже 2 000 футов.`,
                   `На 2 500 футах виріши, чи долетиш до точки очікування; якщо ні, обери чистий запасний майданчик не пізніше ніж на 2 000 футах.`,
@@ -1938,7 +1938,7 @@ export const part4: Part = {
                   `Проскочив категорію B на мінімумі: тоді C з першого разу майже не складають.`,
                 ),
                 t(
-                  `Sloppy pull altitude. Category A passes within 1,000 ft of the planned altitude, category B within 500 ft, category C with no written margin.`,
+                  `Sloppy pull altitude. Category A passes within 1,000 ft{~} of the planned altitude, category B within 500 ft, category C with no written margin.`,
                   `Altura de apertura descuidada. La categoría A se aprueba a menos de 1,000 ft de la altura prevista, la B a menos de 500 ft, la C sin margen escrito.`,
                   `Небрежная высота раскрытия. Категорию A засчитывают в пределах 1 000 футов от заданной высоты, B — в пределах 500, на C письменного допуска нет.`,
                   `Недбала висота розкриття. Категорію A зараховують у межах 1 000 футів від заданої висоти, B — у межах 500, на C письмового допуску немає.`,
@@ -1953,7 +1953,7 @@ export const part4: Part = {
                   `Ліцензія A: 25 стрибків, картка прогресу, контрольний стрибок (check dive), письмовий (від 75 %) та усний іспит (100 %).`,
                 ),
                 t(
-                  `Student wind limit 14 mph; no alcohol 8 h before; after 30 days off, a supervised jump.`,
+                  `Student wind limit 14 mph{wind}; no alcohol 8 h before; after 30 days off, a supervised jump.`,
                   `Límite de viento para alumnos 14 mph; nada de alcohol 8 h antes; tras 30 días sin saltar, un salto supervisado.`,
                   `Лимит ветра для студентов 14 миль/ч; без алкоголя за 8 ч до прыжка; после 30 дней перерыва — прыжок под контролем инструктора.`,
                   `Ліміт вітру для студентів 14 миль/год; без алкоголю за 8 год до стрибка; після 30 днів перерви — стрибок під наглядом інструктора.`,
@@ -2043,7 +2043,7 @@ export const part4: Part = {
               options: [
                 t(`Arch and pull right now`, `Arqueo y abro ya mismo`, `Прогибаюсь и сразу раскрываюсь`, `Прогинаюся й одразу розкриваюся`),
                 t(`Carry on with the dive flow`, `Sigue con el plan de salto`, `Продолжаю план прыжка`, `Продовжую план стрибка`),
-                t(`Wait for them until 5,500 ft`, `Espéralos hasta 5,500 ft`, `Жду их до 5 500 футов`, `Чекаю на них до 5 500 футів`),
+                t(`Wait for them until 5,500 ft{pull}`, `Espéralos hasta 5,500 ft`, `Жду их до 5 500 футов`, `Чекаю на них до 5 500 футів`),
               ],
               answer: 0,
               why: t(
@@ -2063,7 +2063,7 @@ export const part4: Part = {
               options: [
                 t(`Every 3 seconds`, `Cada 3 segundos`, `Каждые 3 секунды`, `Кожні 3 секунди`),
                 t(`Every 10 seconds`, `Cada 10 segundos`, `Каждые 10 секунд`, `Кожні 10 секунд`),
-                t(`Only at 6,000 ft`, `Solo a 6,000 ft`, `Только на 6 000 футах`, `Лише на 6 000 футах`),
+                t(`Only at 6,000 ft{lockOn}`, `Solo a 6,000 ft`, `Только на 6 000 футах`, `Лише на 6 000 футах`),
               ],
               answer: 0,
               why: t(
@@ -2124,6 +2124,57 @@ export const part4: Part = {
       eyebrow: t(`Before the next session`, `Antes de la próxima sesión`, `Перед следующим занятием`, `Перед наступним заняттям`),
       title: t(`Ask the instructors`, `Pregunta a los instructores`, `Спросить у инструкторов`, `Запитати в інструкторів`),
       blocks: [
+        // School rules (src/content/rules): numbers the app could not source for the reader's federation.
+        { type: 'h', only: ['ruua'], text: t(`Metric school numbers to confirm`, `Cifras de escuela métrica que hay que confirmar`, `Цифры метрической школы, которые надо уточнить`, `Цифри метричної школи, які треба уточнити`) },
+        {
+          type: 'questions',
+          only: ['ruua'],
+          items: [
+            t(
+              `Exit altitude for AFF here: 4,000 m or 4,200 m?`,
+              `Altura de salida para AFF aquí: ¿4,000 m o 4,200 m?`,
+              `Высота отделения для AFF у нас: 4 000 м или 4 200 м?`,
+              `Висота відокремлення для AFF у нас: 4 000 м чи 4 200 м?`,
+            ),
+            t(
+              `Pull altitude on the first AFF levels: 1,500 m, 1,300 m or 1,200 m? (Schools differ; the legal minimum for beginners is 1,000 m.)`,
+              `Altura de apertura en los primeros niveles AFF: ¿1,500 m, 1,300 m o 1,200 m? (Las escuelas difieren; el mínimo legal para principiantes es 1,000 m.)`,
+              `Высота раскрытия на первых уровнях AFF: 1 500 м, 1 300 м или 1 200 м? (В школах по-разному; законный минимум для начинающих — 1 000 м.)`,
+              `Висота розкриття на перших рівнях AFF: 1 500 м, 1 300 м чи 1 200 м? (У школах по-різному; законний мінімум для початківців — 1 000 м.)`,
+            ),
+            t(
+              `Decision altitude for a bad main: 600 m or 800 m? (Study notes give both.)`,
+              `Altura de decisión con una principal mala: ¿600 m u 800 m? (Los apuntes dan las dos.)`,
+              `Высота принятия решения при плохом основном: 600 м или 800 м? (В методичках встречаются обе.)`,
+              `Висота ухвалення рішення при поганому основному: 600 м чи 800 м? (У методичках трапляються обидві.)`,
+            ),
+            t(
+              `Below what altitude do we not cut away and open the reserve straight away: 300 m?`,
+              `¿Por debajo de qué altura no liberamos y abrimos la reserva directamente: 300 m?`,
+              `Ниже какой высоты не отцепляемся и сразу открываем запасной: 300 м?`,
+              `Нижче якої висоти не відчіпляємося і одразу відкриваємо запасний: 300 м?`,
+            ),
+            t(
+              `Student wind limit: 8 m/s, or 5 m/s up to 30 jumps?`,
+              `Límite de viento para alumnos: ¿8 m/s, o 5 m/s hasta 30 saltos?`,
+              `Лимит ветра для студентов: 8 м/с или 5 м/с до 30 прыжков?`,
+              `Ліміт вітру для студентів: 8 м/с чи 5 м/с до 30 стрибків?`,
+            ),
+          ],
+        },
+        { type: 'h', only: ['dfv', 'ffp', 'bs'], text: t(`Numbers your federation leaves to the school`, `Cifras que tu federación deja a la escuela`, `Цифры, которые федерация оставляет школе`, `Цифри, які федерація залишає школі`) },
+        {
+          type: 'questions',
+          only: ['dfv', 'ffp', 'bs'],
+          items: [
+            t(
+              `Decision altitude, the cutaway hard deck and the landing pattern points: this app found no number for them in the federation's documents and shows USPA's. What does our school teach?`,
+              `Altura de decisión, límite mínimo para liberar y puntos del circuito: esta app no encontró cifras en los documentos de la federación y muestra las de la USPA. ¿Qué enseña nuestra escuela?`,
+              `Высота принятия решения, нижняя граница отцепки и точки схемы захода: в документах федерации приложение не нашло цифр и показывает цифры USPA. Чему учит наша школа?`,
+              `Висота ухвалення рішення, нижня межа відчеплення і точки схеми заходу: у документах федерації застосунок не знайшов цифр і показує цифри USPA. Чого навчає наша школа?`,
+            ),
+          ],
+        },
         { type: 'h', text: t(`Gear`, `Equipo`, `Снаряжение`, `Спорядження`) },
         {
           type: 'questions',
@@ -2243,7 +2294,7 @@ export const part4: Part = {
               `Витяжний завис за спиною: через яке плече дивитися?`,
             ),
             t(
-              `Wave-off: how many times, and does it start exactly at 5,500 ft?`,
+              `Wave-off: how many times, and does it start exactly at 5,500 ft{pull}?`,
               `Wave-off: ¿cuántas veces y empieza justo a 5,500 ft?`,
               `Отмашка: сколько раз и начинать ровно на 5 500 футах?`,
               `Відмашка: скільки разів і починати рівно на 5 500 футах?`,
@@ -2279,7 +2330,7 @@ export const part4: Part = {
               `Рахунок після розкриття: до трьох чи до п'яти, і що саме перевіряємо наприкінці?`,
             ),
             t(
-              `USPA says students decide by 2,500 ft and don't cut away below 1,000 ft. Does our school use higher numbers?`,
+              `USPA says students decide by 2,500 ft{~} and don't cut away below 1,000 ft{~}. Does our school use higher numbers?`,
               `USPA dice que los alumnos deciden antes de 2,500 ft y no liberan por debajo de 1,000 ft. ¿Nuestra escuela usa alturas más altas?`,
               `USPA говорит: студенты решают не ниже 2 500 футов и не отцепляются ниже 1 000 футов. В нашей школе высоты выше?`,
               `USPA каже: студенти вирішують не нижче 2 500 футів і не відчіплюються нижче 1 000 футів. У нашій школі висоти вищі?`,
@@ -2345,7 +2396,7 @@ export const part4: Part = {
               `На карті: точка очікування, висоти схеми, звичайний вітер і бік схеми, що показує напрямок посадки, де не можна сідати, запасні поля, дроти та інші небезпеки.`,
             ),
             t(
-              `Over the holding point: S-turns only, or full circles too? Our ground course said turns up to 180° above 1,000 ft: is that your rule?`,
+              `Over the holding point: S-turns only, or full circles too? Our ground course said turns up to 180° above 1,000 ft{~}: is that your rule?`,
               `Sobre el punto de espera: ¿solo eses o también círculos completos? En el curso de tierra dijimos giros de hasta 180° por encima de 1,000 ft: ¿es su regla?`,
               `Над точкой ожидания: только «змейка» или можно и полные круги? На наземном курсе говорили: развороты до 180° выше 1 000 футов. Это ваше правило?`,
               `Над точкою очікування: лише «змійка» чи можна й повні кола? На наземному курсі казали: розвороти до 180° вище 1 000 футів. Це ваше правило?`,
@@ -2357,7 +2408,7 @@ export const part4: Part = {
               `Flare: в один рух чи у два, і куди дивимося — на горизонт чи вперед і вниз приблизно під 45°? Скільки наш студентський купол летить на повних гальмах до звалювання?`,
             ),
             t(
-              `Ground-school test Q27: what altitude stops major turns, 1,000 ft or 300 ft?`,
+              `Ground-school test Q27: what altitude stops major turns, 1,000 ft{~} or 300 ft?`,
               `Pregunta 27 del examen: ¿a qué altura se dejan los giros grandes, 1,000 ft o 300 ft?`,
               `Вопрос 27 теста: на какой высоте прекращаем большие развороты, 1 000 или 300 футов?`,
               `Питання 27 тесту: на якій висоті припиняємо великі розвороти, 1 000 чи 300 футів?`,

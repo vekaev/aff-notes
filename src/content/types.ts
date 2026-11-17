@@ -78,7 +78,8 @@ export interface AltRow { alt: string; value: number; title: L; sub: L; hot?: bo
 export type RigPartId = 'reserve' | 'main' | 'pc' | 'aad' | 'cutaway' | 'silver' | 'rings' | 'straps';
 export interface RigPart { id: RigPartId; name: L; text: L }
 
-export type Block =
+/** `only`: show the block just for these school rules (src/content/rules). */
+export type Block = { only?: import('./rules').Fed[] } & (
   | { type: 'p'; text: L; muted?: boolean }
   | { type: 'h'; text: L; id?: string }
   | { type: 'steps'; items: Step[]; timeline?: boolean }
@@ -102,7 +103,8 @@ export type Block =
   | { type: 'rig'; parts: RigPart[] }                       // the rig, back and front, part by part
   | { type: 'canopyCheck'; items: { word: L; text: L }[] }   // pull, count, there/square/stable/steerable
   | { type: 'quiz'; questions: QuizQuestion[] }
-  | { type: 'split'; left: Block[]; right: Block[] };        // two columns on wide screens
+  | { type: 'split'; left: Block[]; right: Block[] }        // two columns on wide screens
+);
 
 export interface Chapter { id: string; title: L; eyebrow?: L; blocks: Block[] }
 export interface Part { id: string; roman: string; range: L; title: L; chapters: Chapter[]; tone?: 'red' }

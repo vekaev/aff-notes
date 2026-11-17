@@ -1,7 +1,8 @@
 import { group, toMetres, type Units } from './units';
 import { useEffect, useRef, useState } from 'react';
 import type { AltRow, Block, L, Lang, RigPart, RigPartId, Step } from './content/types';
-import { num, Rich, useLang } from './i18n';
+import { num, renderInline, Rich, useLang } from './i18n';
+import { altFt } from './rules';
 import { ui } from './ui';
 import { ClipFigure } from './components/Blocks';
 import { useOpenVideo } from './components/Player';
@@ -163,13 +164,13 @@ export function ExitCount({ steps }: { steps: Step[] }) {
 const ang = (v: number) => (v / 12) * 360;
 
 function AltRows({ rows, on, onPick }: { rows: AltRow[]; on: number; onPick: (i: number) => void }) {
-  const { lang, units } = useLang();
+  const { qty } = useLang();
   return (
     <ol className="alt-rows">
       {rows.map((r, i) => (
         <li key={i} className={`${r.hot ? 'hot' : ''} ${i === on ? 'on' : ''}`} tabIndex={0} onClick={() => onPick(i)}
           onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPick(i); } }}>
-          <span className="a">{r.alt ? num(r.alt, lang, units) : '↓'}</span>
+          <span className="a">{r.alt ? renderInline(qty(r.alt)) : '↓'}</span>
           <div><span className="rt"><Rich s={r.title} /></span><span className="rs"><Rich s={r.sub} /></span></div>
         </li>
       ))}
@@ -177,10 +178,13 @@ function AltRows({ rows, on, onPick }: { rows: AltRow[]; on: number; onPick: (i:
   );
 }
 
-export function Altimeter({ rows }: { rows: AltRow[] }) {
-  const { t, lang, units } = useLang();
+export function Altimeter({ rows: raw }: { rows: AltRow[] }) {
+  const { t, lang, units, qty, rules } = useLang();
   const [i, setI] = useState(0);
+  // the needle follows the reader's rules: a metric school's 1,500 m sits at ≈4.9 on this feet dial
+  const rows = raw.map(x => ({ ...x, value: altFt(x.alt, rules) ?? x.value }));
   const r = rows[i];
+  const lockV = altFt('6,000 ft{lockOn}', rules)!, pullV = altFt('5,500 ft{pull}', rules)!;
   const C = 120;
   const pt = (v: number, rad: number) => { const a = ((ang(v) - 90) * Math.PI) / 180; return [C + rad * Math.cos(a), C + rad * Math.sin(a)] as const; };
   const ticks = [];
@@ -208,7 +212,7 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
           <circle cx={C} cy={C} r="110" fill="var(--card)" />
           {low}
           {ticks}
-          {mark(6, 'var(--acc-canopy)')}{mark(5.5, 'var(--red)')}
+          {mark(lockV, 'var(--acc-canopy)')}{mark(pullV, 'var(--red)')}
           {/* between 3 and 4: the needle never rests there (13 is at 1, 5.5 near 6) and its tail stays nearer the hub */}
           <text x={C + 39} y={C + 6} textAnchor="middle" fontFamily="var(--mono)" fontSize="9" letterSpacing=".5" fill="var(--muted)"><tspan x={C + 39}>×1000</tspan><tspan x={C + 39} dy="11">FT</tspan></text>
           <g className="pose" style={{ transformOrigin: `${C}px ${C}px`, transform: `rotate(${ang(r.value)}deg)` }}>
@@ -216,10 +220,10 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
           </g>
           <circle cx={C} cy={C} r="9" fill="var(--ink)" /><circle cx={C} cy={C} r="3" fill="var(--card)" />
         </svg>
-        <div className="cap"><b className="alt-now">{num(`${(r.value * 1000).toLocaleString('en-US')} ft`, lang, units)}</b><span><Rich s={r.title} /></span></div>
+        <div className="cap"><b className="alt-now">{r.alt && r.alt !== '↓' ? renderInline(qty(r.alt)) : num(`${(Math.round(r.value * 10) * 100).toLocaleString('en-US')} ft`, lang, units)}</b><span><Rich s={r.title} /></span></div>
         <ul className="alt-legend">
-          <li><i style={{ background: 'var(--acc-canopy)' }} />{num('6,000 ft', lang, units)} · {t(L.lock)}</li>
-          <li><i style={{ background: 'var(--red)' }} />{num('5,500 ft', lang, units)} · {t(L.pull)}</li>
+          <li><i style={{ background: 'var(--acc-canopy)' }} />{renderInline(qty('6,000 ft{lockOn}'))} · {t(L.lock)}</li>
+          <li><i style={{ background: 'var(--red)' }} />{renderInline(qty('5,500 ft{pull}'))} · {t(L.pull)}</li>
           <li className="dir">↺ {t(L.dir)}</li>
         </ul>
       </div>
@@ -229,7 +233,7 @@ export function Altimeter({ rows }: { rows: AltRow[] }) {
 
 /* ---------- landing pattern map (drawn like the ground-school test) ---------- */
 export function Pattern({ rows }: { rows: AltRow[] }) {
-  const { t, lang, units } = useLang();
+  const { t, lang, units, qty } = useLang();
   const [i, setI] = useState(Math.min(3, rows.length - 1));
   const r = rows[i];
   const reduce = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -253,7 +257,7 @@ export function Pattern({ rows }: { rows: AltRow[] }) {
           {!reduce && <circle r="7" fill="var(--red)" stroke="var(--paper)" strokeWidth="2"><animateMotion dur="14s" repeatCount="indefinite"><mpath href="#patPath" /></animateMotion></circle>}
           {r.point && <circle cx={r.point[0]} cy={r.point[1]} r="12" fill="none" stroke="var(--ink)" strokeWidth="3" />}
         </svg>
-        <div className="cap">{num(r.alt, lang, units)} · <Rich s={r.title} /></div>
+        <div className="cap">{renderInline(qty(r.alt))} · <Rich s={r.title} /></div>
       </div>
     </div>
   );

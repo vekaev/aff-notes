@@ -12,7 +12,7 @@ const en: Record<string, string> = JSON.parse(fs.readFileSync(path.join(dir, 'en
 function collect(o: unknown, out: string[] = []): string[] {
   if (!o || typeof o !== 'object') return out;
   const r = o as Record<string, unknown>;
-  if (typeof r.en === 'string' && typeof r.es === 'string') { out.push(r.en); return out; }
+  if (typeof r.en === 'string' && typeof r.es === 'string') { out.push(r.en.replace(/\{(?:[a-zA-Z]+|~)\}/g, '')); return out; }
   for (const v of Object.values(r)) collect(v, out);
   return out;
 }

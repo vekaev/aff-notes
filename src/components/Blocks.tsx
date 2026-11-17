@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import type { Block, Card, Clip, L, Watch } from '../content/types';
-import { num, Rich, useLang } from '../i18n';
+import { renderInline, Rich, useLang } from '../i18n';
 import { ui } from '../ui';
 import { Video } from './Video';
 import { mmss, ytUrl } from '../lib';
 import { Icon } from './Icon';
 import { useOpenVideo } from './Player';
 import { Quiz } from './Quiz';
+import { forRules } from '../rules';
 import { Altimeter, CanopyCheck, Rig, Climb, CanopyDrawing, ExitCount, LowTurn, Pattern } from '../widgets';
 
 
@@ -107,8 +108,8 @@ function Pct({ v }: { v: number }) {
 
 /** A big number in the reader's language format ("2 500 фт" in UK/RU). */
 function Big({ s }: { s: string }) {
-  const { lang, units } = useLang();
-  return <div className="big">{num(s, lang, units)}</div>;
+  const { qty } = useLang();
+  return <div className="big">{renderInline(qty(s))}</div>;
 }
 
 /** A source label: plain (names, papers) or translated. */
@@ -118,6 +119,8 @@ function SrcLabel({ label }: { label: string | L }) {
 }
 
 export function BlockView({ b, chapterId }: { b: Block; chapterId: string }) {
+  const { rules } = useLang();
+  if (b.only && !b.only.includes(rules)) return null;
   switch (b.type) {
     case 'p': return <p className={b.muted ? 'muted' : undefined}><Rich s={b.text} /></p>;
     case 'h': return <h4 id={b.id}><Rich s={b.text} /></h4>;
@@ -206,7 +209,7 @@ export function BlockView({ b, chapterId }: { b: Block; chapterId: string }) {
     case 'lowturn': return <LowTurn b={b} />;
     case 'rig': return <Rig parts={b.parts} />;
     case 'canopyCheck': return <CanopyCheck items={b.items} />;
-    case 'quiz': return <Quiz id={chapterId} questions={b.questions} />;
+    case 'quiz': { const qs = forRules(b.questions, rules); return qs.length ? <Quiz key={rules} id={chapterId} questions={qs} /> : null; }
     case 'split':
       return (
         <div className="split">

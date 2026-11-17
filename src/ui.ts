@@ -34,8 +34,8 @@ export const ui = {
   someWrong: { en: 'Read the chapter again and retry. All answers right passes it.', es: 'Vuelve a leer el capítulo y repite. Con todo correcto, lo apruebas.', ru: 'Перечитай главу и попробуй ещё раз. Глава сдана, когда все ответы верны.', uk: 'Перечитай розділ і спробуй ще раз. Розділ складено, коли всі відповіді правильні.' },
   close: { en: 'Close', es: 'Cerrar', ru: 'Закрыть', uk: 'Закрити' },
   epTip: { en: 'EP = emergency procedure: how to do it →', es: 'EP = procedimiento de emergencia: cómo hacerlo →', uk: 'EP — аварійна процедура: як її робити →', ru: 'EP — аварийная процедура: как её делать →' },
-  fixTip: { en: 'Fixable, but only two tries: not fixed by 2,500 ft → EP →', es: 'Arreglable, pero solo dos intentos: sin arreglar a 2,500 ft → EP →', uk: 'Можна виправити, але лише дві спроби: не вийшло до 2 500 футів → EP →', ru: 'Можно исправить, но только две попытки: не вышло к 2 500 футов → EP →' },
-  fixRule: { en: '<b>Two tries only.</b> Check your <b>altitude</b> between them. Not fixed by <b>2,500 ft</b>? Emergency procedure.', es: '<b>Solo dos intentos.</b> Mira la <b>altura</b> entre uno y otro. ¿Sin arreglar a <b>2,500 ft</b>? Procedimiento de emergencia.', uk: '<b>Лише дві спроби.</b> Між ними дивись на <b>висоту</b>. Не виправив до <b>2 500 футів</b>? Аварійна процедура.', ru: '<b>Только две попытки.</b> Между ними смотри на <b>высоту</b>. Не исправил к <b>2 500 футов</b>? Аварийная процедура.' },
+  fixTip: { en: 'Fixable, but only two tries: not fixed by 2,500 ft{decision} → EP →', es: 'Arreglable, pero solo dos intentos: sin arreglar a 2,500 ft → EP →', uk: 'Можна виправити, але лише дві спроби: не вийшло до 2 500 футів → EP →', ru: 'Можно исправить, но только две попытки: не вышло к 2 500 футов → EP →' },
+  fixRule: { en: '<b>Two tries only.</b> Check your <b>altitude</b> between them. Not fixed by <b>2,500 ft{decision}</b>? Emergency procedure.', es: '<b>Solo dos intentos.</b> Mira la <b>altura</b> entre uno y otro. ¿Sin arreglar a <b>2,500 ft</b>? Procedimiento de emergencia.', uk: '<b>Лише дві спроби.</b> Між ними дивись на <b>висоту</b>. Не виправив до <b>2 500 футів</b>? Аварійна процедура.', ru: '<b>Только две попытки.</b> Между ними смотри на <b>высоту</b>. Не исправил к <b>2 500 футов</b>? Аварийная процедура.' },
   notPlaying: { en: 'Doesn\'t play here? Some videos play only on YouTube.', es: '¿No se reproduce aquí? Algunos vídeos solo se ven en YouTube.', uk: 'Не відтворюється тут? Деякі відео працюють лише на YouTube.', ru: 'Не играет здесь? Некоторые видео работают только на YouTube.' },
   openYoutube: { en: 'Open on YouTube', es: 'Abrir en YouTube', ru: 'Открыть на YouTube', uk: 'Відкрити на YouTube' },
   unitsNote: {
@@ -65,4 +65,33 @@ export const ui = {
   offlineDone: { en: 'Saved: works without internet', es: 'Guardado: funciona sin internet', uk: 'Збережено: працює без інтернету', ru: 'Сохранено: работает без интернета' },
   offlineFail: { en: 'Some clips failed, try again online', es: 'Fallaron algunos clips, reintenta con conexión', uk: 'Деякі кліпи не зберіглися, спробуй онлайн', ru: 'Часть клипов не сохранилась, попробуй онлайн' },
   wind: { en: 'wind', es: 'viento', ru: 'ветер', uk: 'вітер' },
+  // School rules (src/content/rules, src/rules.ts)
+  rules: { en: 'School rules', es: 'Reglas de la escuela', uk: 'Правила школи', ru: 'Правила школы' },
+  rulesShown: { en: 'Rules shown', es: 'Reglas mostradas', uk: 'Показано правила', ru: 'Показаны правила' },
+  rulesChange: { en: 'change', es: 'cambiar', uk: 'змінити', ru: 'изменить' },
+  rulesFrom: { en: 'Where these numbers come from', es: 'De dónde salen estas cifras', uk: 'Звідки ці цифри', ru: 'Откуда эти цифры' },
+  rulesNote: {
+    en: 'Numbers without ≈ come from the rules you picked. ≈ is a USPA number converted where those rules give none.',
+    es: 'Las cifras sin ≈ salen de las reglas que elegiste. ≈ es una cifra de la USPA convertida donde esas reglas no dan ninguna.',
+    uk: 'Цифри без ≈ взято з обраних правил. ≈ — це перерахована цифра USPA там, де ці правила її не дають.',
+    ru: 'Цифры без ≈ взяты из выбранных правил. ≈ — пересчитанная цифра USPA там, где эти правила её не дают.',
+  },
+  rulesMissing: {
+    en: 'No number found in this federation\'s documents: the USPA number is shown. Ask your school.',
+    es: 'No se encontró cifra en los documentos de esta federación: se muestra la de la USPA. Pregunta en tu escuela.',
+    uk: 'У документах цієї федерації цифри не знайдено: показано цифру USPA. Запитай у своїй школі.',
+    ru: 'В документах этой федерации цифры не нашлось: показана цифра USPA. Спроси в своей школе.',
+  },
+  rulesUnofficial: {
+    en: 'From schools and study notes, not an official document.',
+    es: 'De escuelas y apuntes, no de un documento oficial.',
+    uk: 'Зі шкіл і методичок, не з офіційного документа.',
+    ru: 'Из школ и методичек, не из официального документа.',
+  },
+  rulesWin: {
+    en: 'Your school\'s briefing always wins.',
+    es: 'El briefing de tu escuela siempre manda.',
+    uk: 'Брифінг твоєї школи завжди важливіший.',
+    ru: 'Брифинг твоей школы всегда важнее.',
+  },
 } satisfies Record<string, L>;

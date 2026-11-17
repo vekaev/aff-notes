@@ -32,6 +32,7 @@ for (const file of files) {
   const ast = parse(src, { sourceType: 'module', plugins: ['typescript', 'jsx'] });
   const add = (n, en) => {
     if (en == null) { skipped.push(`${path.relative(root, file)}:${n.loc.start.line}`); return; }
+    en = en.replace(/\{(?:[a-zA-Z]+|~)\}/g, ''); // rule marks (src/rules.ts) are not part of the text
     if (en.trim()) out[keyOf(en)] = en;
   };
   (function visit(n) {

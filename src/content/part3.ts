@@ -8,7 +8,7 @@ const clip = (src: string, caption: L, credit: string, yt: string, t: number): C
 export const part3: Part = {
   id: 'part3',
   roman: 'III',
-  range: l('5,500 ft → ground', '5,500 ft → suelo', '5 500 футов → земля', '5 500 футів → земля'),
+  range: l('5,500 ft{pull} → ground', '5,500 ft → suelo', '5 500 футов → земля', '5 500 футів → земля'),
   title: l('Under canopy', 'Bajo vela', 'Под куполом', 'Під куполом'),
   chapters: [
     // ---------------------------------------------------------------- deploy
@@ -23,7 +23,7 @@ export const part3: Part = {
               type: 'steps',
               items: [
                 {
-                  title: l('Pull at 5,500 ft', 'Abre a 5,500 ft', 'Раскрытие на 5 500 футах', 'Розкриття на 5 500 футах'),
+                  title: l('Pull at 5,500 ft{pull}', 'Abre a 5,500 ft', 'Раскрытие на 5 500 футах', 'Розкриття на 5 500 футах'),
                   sub: l(
                     "Right hand to the <b>pilot chute handle</b> (the little “ball” at the bottom of the container, right side), <b>left hand overhead</b> for balance. Pull it out and <b>throw it</b> to the side at arm's length, then back to the arch while you count. Can't find it or it won't come out? <b>Two tries or 5 s</b>, then <a href=\"#mal\">Part IV</a>.",
                     "Mano derecha a la <b>manija del extractor</b> (la “pelotita” en la parte de abajo del contenedor, lado derecho), <b>mano izquierda arriba</b> para equilibrarte. Sácalo y <b>lánzalo</b> hacia el costado con el brazo estirado, y vuelve al arco mientras cuentas. ¿No la encuentras o no sale? <b>Dos intentos o 5 s</b>, y luego la <a href=\"#mal\">Parte IV</a>.",
@@ -96,7 +96,7 @@ export const part3: Part = {
               tone: 'red',
               title: l('Any “no”?', '¿Algún “no”?', 'Хоть одно «нет»?', 'Хоч одне «ні»?'),
               text: l(
-                'Try the fixes in <a href="#ep">Part IV</a>. Not fixed: <b>decide and act by 2,500 ft</b>, the decision altitude.',
+                'Try the fixes in <a href="#ep">Part IV</a>. Not fixed: <b>decide and act by 2,500 ft{decision}</b>, the decision altitude.',
                 'Prueba los arreglos de la <a href="#ep">Parte IV</a>. ¿No se arregla? <b>Decide y actúa antes de 2,500 ft</b>, la altura de decisión.',
                 'Попробуй исправить по <a href="#ep">части IV</a>. Не исправилось — <b>реши и действуй до 2 500 футов</b> (высота принятия решения).',
                 'Спробуй виправити за <a href="#ep">частиною IV</a>. Не виправилося — <b>виріши й дій до 2 500 футів</b> (висота ухвалення рішення).',
@@ -128,7 +128,7 @@ export const part3: Part = {
               options: [
                 l('Right away, as soon as you feel the tug', 'Enseguida, en cuanto sientes el tirón', 'Сразу, как только почувствовал рывок', 'Одразу, щойно відчув ривок'),
                 l('At the end of your count, then look up', 'Al terminar tu cuenta, luego miras arriba', 'В конце счёта, потом смотришь вверх', 'Наприкінці рахунку, потім дивишся вгору'),
-                l('Only once you are down to 2,500 ft', 'Solo cuando bajas a 2,500 ft', 'Только когда снизишься до 2 500 футов', 'Лише коли знизишся до 2 500 футів'),
+                l('Only once you are down to 2,500 ft{decision}', 'Solo cuando bajas a 2,500 ft', 'Только когда снизишься до 2 500 футов', 'Лише коли знизишся до 2 500 футів'),
               ],
               answer: 1,
               why: l(
@@ -166,13 +166,13 @@ export const part3: Part = {
                 'Одна відповідь під час перевірки — «ні», і виправити не виходить. До якої висоти треба вирішити й діяти?',
               ),
               options: [
-                l('By 1,000 ft, before the pattern', 'Antes de 1,000 ft, antes del circuito', 'До 1 000 футов, до входа в схему', 'До 1 000 футів, до входу в схему'),
-                l('By 2,500 ft, the decision altitude', 'Antes de 2,500 ft, la altura de decisión', 'До 2 500 футов, высоты решения', 'До 2 500 футів, висоти рішення'),
-                l('By 300 ft, before final', 'Antes de 300 ft, antes del final', 'До 300 футов, до финала', 'До 300 футів, до фіналу'),
+                l('By 1,000 ft{patternEntry}, before the pattern', 'Antes de 1,000 ft, antes del circuito', 'До 1 000 футов, до входа в схему', 'До 1 000 футів, до входу в схему'),
+                l('By 2,500 ft{decision}, the decision altitude', 'Antes de 2,500 ft, la altura de decisión', 'До 2 500 футов, высоты решения', 'До 2 500 футів, висоти рішення'),
+                l('By 300 ft{final}, before final', 'Antes de 300 ft, antes del final', 'До 300 футов, до финала', 'До 300 футів, до фіналу'),
               ],
               answer: 1,
               why: l(
-                'Small problems (an end cell closed, the slider up) are often fixed with a canopy-control check (Part IV). Not fixed: decide and act by 2,500 ft (USPA SIM 4-1).',
+                'Small problems (an end cell closed, the slider up) are often fixed with a canopy-control check (Part IV). Not fixed: decide and act by 2,500 ft{~} (USPA SIM 4-1).',
                 'Los problemas pequeños (una celda lateral cerrada, el slider arriba) suelen arreglarse con una prueba de control de la vela (Parte IV). Si no se arregla: decide y actúa antes de 2,500 ft (USPA SIM 4-1).',
                 'Мелкие проблемы (закрытая крайняя секция, слайдер вверху) часто исправляются проверкой управления куполом (часть IV). Не исправилось — реши и действуй до 2 500 футов (USPA SIM 4-1).',
                 'Дрібні проблеми (закрита крайня секція, слайдер угорі) часто виправляються перевіркою керування куполом (частина IV). Не виправилося — виріши й дій до 2 500 футів (USPA SIM 4-1).',
@@ -215,7 +215,7 @@ export const part3: Part = {
           type: 'pattern',
           rows: [
             {
-              alt: '2,500 ft',
+              alt: '2,500 ft{holdingReach}',
               value: 2.5,
               point: [275, 205],
               title: l('Decide where to go', 'Decide adónde ir', 'Решаем, куда лететь', 'Вирішуємо, куди летіти'),
@@ -227,7 +227,7 @@ export const part3: Part = {
               ),
             },
             {
-              alt: '2,000 ft',
+              alt: '2,000 ft{holding}',
               value: 2,
               point: [275, 205],
               title: l('Over the holding point', 'Sobre el punto de espera', 'Над точкой ожидания', 'Над точкою очікування'),
@@ -239,19 +239,19 @@ export const part3: Part = {
               ),
             },
             {
-              alt: '2,000→1,000 ft',
+              alt: '2,000{holding}→1,000 ft{patternEntry}',
               value: 1.5,
               point: [275, 205],
               title: l('Hold there', 'Espera ahí', 'Ожидание над точкой', 'Очікування над точкою'),
               sub: l(
-                '<b>S-turns or figure-eights</b> over the point, each turn <b>180° or less</b> <q-check/>. Watch the <b>windsock</b> and the <b>other canopies</b>. Why: you stay upwind with height to spare, and the traffic stays predictable. At <b>1,000 ft</b> leave the point and fly to the entry.',
+                '<b>S-turns or figure-eights</b> over the point, each turn <b>180° or less</b> <q-check/>. Watch the <b>windsock</b> and the <b>other canopies</b>. Why: you stay upwind with height to spare, and the traffic stays predictable. At <b>1,000 ft{patternEntry}</b> leave the point and fly to the entry.',
                 'Haz <b>eses u ochos</b> sobre el punto, cada giro de <b>180° o menos</b> <q-check/>. Mira la <b>manga de viento</b> y las <b>otras velas</b>. Por qué: te quedas a barlovento (viento arriba) con altura de sobra y el tráfico es predecible. A <b>1,000 ft</b> deja el punto y vuela a la entrada.',
                 'Летаем <b>«змейкой» или восьмёрками</b> над точкой, каждый разворот <b>не больше 180°</b> <q-check/>. Смотрим на <b>колдун</b> и на <b>другие купола</b>. Почему: ты остаёшься с наветренной стороны с запасом высоты, а движение куполов предсказуемо. На <b>1 000 футов</b> уходи с точки к входу в схему.',
                 'Летимо <b>«змійкою» або вісімками</b> над точкою, кожен розворот <b>не більше 180°</b> <q-check/>. Дивимося на <b>колдун</b> і на <b>інші куполи</b>. Чому: ти лишаєшся з навітряного боку із запасом висоти, а рух куполів передбачуваний. На <b>1 000 футів</b> іди з точки до входу в схему.',
               ),
             },
             {
-              alt: '900 ft',
+              alt: '900 ft{downwind}',
               value: 0.9,
               hot: true,
               point: [250, 200],
@@ -264,7 +264,7 @@ export const part3: Part = {
               ),
             },
             {
-              alt: '600 ft',
+              alt: '600 ft{base}',
               value: 0.6,
               hot: true,
               point: [60, 200],
@@ -277,7 +277,7 @@ export const part3: Part = {
               ),
             },
             {
-              alt: '300 ft',
+              alt: '300 ft{final}',
               value: 0.3,
               hot: true,
               point: [60, 70],
@@ -306,7 +306,8 @@ export const part3: Part = {
         },
         {
           type: 'callout',
-          title: l('Two different 2,500 ft', 'Dos 2,500 ft distintos', 'Две разные отметки 2 500 футов', 'Дві різні позначки 2 500 футів'),
+          only: ['uspa'],
+          title: l('Two different 2,500 ft{~}', 'Dos 2,500 ft distintos', 'Две разные отметки 2 500 футов', 'Дві різні позначки 2 500 футів'),
           points: [
             l(
               '<b>Good canopy</b>: plan the landing. Holding point, left or right pattern.',
@@ -382,12 +383,12 @@ export const part3: Part = {
           items: [
             {
               big: '≤ 180°',
-              title: l('Above 1,000 ft', 'Por encima de 1,000 ft', 'Выше 1 000 футов', 'Вище 1 000 футів'),
+              title: l('Above 1,000 ft{~}', 'Por encima de 1,000 ft', 'Выше 1 000 футов', 'Вище 1 000 футів'),
               text: l('Setting up and <b>looking around</b>.', 'Para prepararte y <b>mirar alrededor</b>.', 'Подготовка к заходу, <b>смотрим вокруг</b>.', 'Підготовка до заходу, <b>дивимося довкола</b>.'),
             },
             {
               big: '≤ 90°',
-              title: l('1,000 → 300 ft', '1,000 → 300 ft', '1 000 → 300 футов', '1 000 → 300 футів'),
+              title: l('1,000{~} → 300 ft', '1,000 → 300 ft', '1 000 → 300 футов', '1 000 → 300 футів'),
               text: l('<b>Pattern turns only</b>: downwind → base → final.', '<b>Solo los giros del circuito</b>: viento en cola → base → final.', '<b>Только повороты схемы</b>: по ветру → базовая → финал.', '<b>Лише повороти схеми</b>: по вітру → базова → фінал.'),
             },
             {
@@ -471,7 +472,7 @@ export const part3: Part = {
           questions: [
             {
               q: l(
-                'At 2,500 ft under a good canopy, what do you decide?',
+                'At 2,500 ft{holdingReach} under a good canopy, what do you decide?',
                 'A 2,500 ft con una vela buena, ¿qué decides?',
                 'Что решаешь на 2 500 футах под хорошим куполом?',
                 'Що вирішуєш на 2 500 футах під добрим куполом?',
@@ -483,7 +484,7 @@ export const part3: Part = {
               ],
               answer: 1,
               why: l(
-                "This 2,500 ft is the canopy plan for today's wind. The cutaway decision altitude is also 2,500 ft, but it's a different decision, for emergencies.",
+                "{uspa}This 2,500 ft{holdingReach} is the canopy plan for today's wind. The cutaway decision altitude is also 2,500 ft{decision}, but it's a different decision, for emergencies.",
                 'Estos 2,500 ft son el plan de vuelo para el viento de hoy. La altura de decisión para liberar también es 2,500 ft, pero es otra decisión, para emergencias.',
                 'Эти 2 500 футов — план полёта под сегодняшний ветер. Высота решения об отцепке тоже 2 500 футов, но это другое решение, аварийное.',
                 'Ці 2 500 футів — план польоту під сьогоднішній вітер. Висота рішення про відчеплення теж 2 500 футів, але це інше рішення, аварійне.',
@@ -491,7 +492,7 @@ export const part3: Part = {
             },
             {
               q: l(
-                'Where are you at 900 ft?',
+                'Where are you at 900 ft{downwind}?',
                 '¿Dónde estás a 900 ft?',
                 'Где ты на 900 футах?',
                 'Де ти на 900 футах?',
@@ -503,7 +504,7 @@ export const part3: Part = {
               ],
               answer: 2,
               why: l(
-                'Hold from 2,000 to 1,000 ft, enter downwind at 900 ft, base at 600 ft, final at 300 ft, flare at about 10 ft.',
+                'Hold from 2,000{holding} to 1,000 ft{patternEntry}, enter downwind at 900 ft{downwind}, base at 600 ft{base}, final at 300 ft{final}, flare at about 10 ft.',
                 'Espera de 2,000 a 1,000 ft, entra con viento en cola a 900 ft, base a 600 ft, final a 300 ft, flare a unos 10 ft.',
                 'Ожидание с 2 000 до 1 000 футов, вход по ветру на 900 футах, базовая прямая на 600, финал на 300, flare примерно на 10 футах.',
                 'Очікування з 2 000 до 1 000 футів, вхід по вітру на 900 футах, базова пряма на 600, фінал на 300, flare приблизно на 10 футах.',
@@ -511,7 +512,7 @@ export const part3: Part = {
             },
             {
               q: l(
-                'How big a turn is allowed between 1,000 and 300 ft?',
+                'How big a turn is allowed between 1,000{~} and 300 ft?',
                 '¿Qué tan grande puede ser un giro entre 1,000 y 300 ft?',
                 'Какой разворот допустим между 1 000 и 300 футами?',
                 'Який розворот допустимий між 1 000 і 300 футами?',
@@ -523,7 +524,7 @@ export const part3: Part = {
               ],
               answer: 1,
               why: l(
-                'Above 1,000 ft up to 180°, from 1,000 to 300 ft up to 90°, below 300 ft up to 45° and flat.',
+                'Above 1,000 ft{~} up to 180°, from 1,000{~} to 300 ft up to 90°, below 300 ft up to 45° and flat.',
                 'Por encima de 1,000 ft hasta 180°, de 1,000 a 300 ft hasta 90°, por debajo de 300 ft hasta 45° y plano.',
                 'Выше 1 000 футов — до 180°, с 1 000 до 300 — до 90°, ниже 300 — до 45° и плоско.',
                 'Вище 1 000 футів — до 180°, з 1 000 до 300 — до 90°, нижче 300 — до 45° і пласко.',
@@ -564,8 +565,8 @@ export const part3: Part = {
           kind: 'do',
           title: l('Best plan: never get there', 'El mejor plan: no llegar ahí', 'Лучший план: туда не попасть', 'Найкращий план: туди не потрапити'),
           items: [
-            l('<b>See it early</b> and turn away from it <b>while you are still above 1,000 ft</b>.', '<b>Detéctalo temprano</b> y aléjate de él <b>mientras estés por encima de 1,000 ft</b>.', '<b>Заметь заранее</b> и отверни от него, <b>пока ты выше 1 000 футов</b>.', '<b>Помічай заздалегідь</b> і відвертай від неї, <b>поки ти вище 1 000 футів</b>.'),
-            l('Be over the holding point <b>by 2,000 ft</b>: still time to judge if you reach the landing area.', 'Llega sobre el punto de espera <b>antes de 2,000 ft</b>: aún hay tiempo para ver si llegas.', 'К <b>2 000 футам</b> будь над точкой ожидания: ещё есть время понять, долетишь ли.', 'На <b>2 000 футах</b> будь над точкою очікування: ще є час зрозуміти, чи долетиш.'),
+            l('<b>See it early</b> and turn away from it <b>while you are still above 1,000 ft{~}</b>.', '<b>Detéctalo temprano</b> y aléjate de él <b>mientras estés por encima de 1,000 ft</b>.', '<b>Заметь заранее</b> и отверни от него, <b>пока ты выше 1 000 футов</b>.', '<b>Помічай заздалегідь</b> і відвертай від неї, <b>поки ти вище 1 000 футів</b>.'),
+            l('Be over the holding point <b>by 2,000 ft{holding}</b>: still time to judge if you reach the landing area.', 'Llega sobre el punto de espera <b>antes de 2,000 ft</b>: aún hay tiempo para ver si llegas.', 'К <b>2 000 футам</b> будь над точкой ожидания: ещё есть время понять, долетишь ли.', 'На <b>2 000 футах</b> будь над точкою очікування: ще є час зрозуміти, чи долетиш.'),
             l("Can't make it? <b>Pick a clear field</b> and land there, into the wind if you can do it without a low turn.", '¿No llegas? <b>Elige un campo despejado</b> y aterriza ahí, contra el viento si puedes hacerlo sin un giro bajo.', 'Не долетаешь? <b>Выбери чистое поле</b> и садись туда, против ветра, если для этого не нужен низкий разворот.', 'Не долітаєш? <b>Обери чисте поле</b> й сідай туди, проти вітру, якщо для цього не потрібен низький розворот.'),
           ],
         },
@@ -1108,7 +1109,7 @@ export const part3: Part = {
               n: '26',
               q: l('Draw the landing pattern with its key altitudes.', 'Dibuja el circuito de aterrizaje con sus alturas clave.', 'Нарисуй схему захода с ключевыми высотами.', 'Намалюй схему заходу з ключовими висотами.'),
               a: l(
-                '<b>2,500 ft</b>: decide where to go and which side the pattern is on.\n<b>2,000 → 1,000 ft</b>: hold over the holding point.\n<b>900 ft</b>: start the downwind leg.\n<b>600 ft</b>: turn onto base.\n<b>300 ft</b>: turn onto final, into the wind.\n<b>About 10 ft</b>: flare.\nSee <a href="#pattern">the landing pattern</a>.',
+                '<b>2,500 ft{holdingReach}</b>: decide where to go and which side the pattern is on.\n<b>2,000{holding} → 1,000 ft{patternEntry}</b>: hold over the holding point.\n<b>900 ft{downwind}</b>: start the downwind leg.\n<b>600 ft{base}</b>: turn onto base.\n<b>300 ft{final}</b>: turn onto final, into the wind.\n<b>About 10 ft</b>: flare.\nSee <a href="#pattern">the landing pattern</a>.',
                 '<b>2,500 ft</b>: decide adónde ir y de qué lado va el circuito.\n<b>2,000 → 1,000 ft</b>: espera sobre el punto de espera.\n<b>900 ft</b>: empieza el tramo con viento en cola.\n<b>600 ft</b>: gira a base.\n<b>300 ft</b>: gira a final, contra el viento.\n<b>Unos 10 ft</b>: flare.\nVer <a href="#pattern">el circuito de aterrizaje</a>.',
                 '<b>2 500 футов</b>: решаем, куда лететь и с какой стороны схема.\n<b>2 000 → 1 000 футов</b>: ожидание над точкой.\n<b>900 футов</b>: начало участка по ветру.\n<b>600 футов</b>: поворот на базовую прямую.\n<b>300 футов</b>: поворот на финал, против ветра.\n<b>Около 10 футов</b>: flare.\nСм. <a href="#pattern">схему захода</a>.',
                 '<b>2 500 футів</b>: вирішуємо, куди летіти і з якого боку схема.\n<b>2 000 → 1 000 футів</b>: очікування над точкою.\n<b>900 футів</b>: початок ділянки по вітру.\n<b>600 футів</b>: поворот на базову пряму.\n<b>300 футів</b>: поворот на фінал, проти вітру.\n<b>Близько 10 футів</b>: flare.\nДив. <a href="#pattern">схему заходу</a>.',
@@ -1123,7 +1124,7 @@ export const part3: Part = {
                 'На якій висоті припиняємо великі розвороти і які розвороти дозволені?',
               ),
               a: l(
-                '<b>300 ft.</b> <q-check/> Below it, only small flat corrections, up to <b>45°</b>. (Question 28 asks about 300 ft too, so the answer key may say <b>1,000 ft</b>: below it, only the 90° pattern turns.)\nThe full ladder (ask your dropzone):\nAbove 1,000 ft: up to <b>180°</b>.\n1,000 → 300 ft: up to <b>90°</b>.',
+                '<b>300 ft.</b> <q-check/> Below it, only small flat corrections, up to <b>45°</b>. (Question 28 asks about 300 ft too, so the answer key may say <b>1,000 ft{~}</b>: below it, only the 90° pattern turns.)\nThe full ladder (ask your dropzone):\nAbove 1,000 ft{~}: up to <b>180°</b>.\n1,000{~} → 300 ft: up to <b>90°</b>.',
                 '<b>300 ft.</b> <q-check/> Por debajo, solo correcciones pequeñas y planas, hasta <b>45°</b>. (La pregunta 28 también pregunta por 300 ft, así que la respuesta oficial puede ser <b>1,000 ft</b>: por debajo, solo los giros de 90° del circuito.)\nLa escala completa (pregunta en tu zona de salto):\nPor encima de 1,000 ft: hasta <b>180°</b>.\n1,000 → 300 ft: hasta <b>90°</b>.',
                 '<b>300 футов.</b> <q-check/> Ниже — только небольшие плоские поправки, до <b>45°</b>. (Вопрос 28 тоже про 300 футов, поэтому в ключе может быть <b>1 000 футов</b>: ниже — только повороты схемы на 90°.)\nВся лесенка (уточни на своей площадке):\nВыше 1 000 футов: до <b>180°</b>.\n1 000 → 300 футов: до <b>90°</b>.',
                 '<b>300 футів.</b> <q-check/> Нижче — лише невеликі пласкі поправки, до <b>45°</b>. (Питання 28 теж про 300 футів, тож у ключі може бути <b>1 000 футів</b>: нижче — лише повороти схеми на 90°.)\nУся драбинка (уточни на своєму майданчику):\nВище 1 000 футів: до <b>180°</b>.\n1 000 → 300 футів: до <b>90°</b>.',

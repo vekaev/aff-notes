@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { ALL_LANGS, LANG_NAMES, type L, type Lang } from '../content/types';
 import { useLang } from '../i18n';
 import { UNITS } from '../units';
+import { FEDS, PROFILES } from '../content/rules';
+import { ui } from '../ui';
 
 
 /** Language menu: scales to any number of languages, each shown in its own name. */
@@ -78,10 +80,16 @@ const M: Record<string, L> = {
 
 /** "⋯" menu at the right of the header: units and theme (the language stays visible next to it). */
 export function MoreMenu() {
-  const { t, units, setUnits } = useLang();
+  const { t, units, setUnits, rules, setRules } = useLang();
   const [theme, setTheme] = useTheme();
   const [open, setOpen] = useState(false);
   const box = useRef<HTMLDivElement>(null);
+  // "Rules shown: … change" in the hero opens this menu
+  useEffect(() => {
+    const o = () => { setOpen(true); box.current?.querySelector('button')?.focus(); };
+    addEventListener('open-more', o);
+    return () => removeEventListener('open-more', o);
+  }, []);
   useEffect(() => {
     if (!open) return;
     const close = (e: MouseEvent | KeyboardEvent) => {
@@ -100,6 +108,8 @@ export function MoreMenu() {
       </button>
       {open && (
         <ul className="menu-list surface more" role="menu" aria-label={t(M.more)}>
+          <li className="mh">{t(ui.rules)}</li>
+          {FEDS.map(f => item(rules === f, t(PROFILES[f].name), () => setRules(f), `r-${f}`))}
           <li className="mh">{t(M.units)}</li>
           {UNITS.map(u => item(units === u, t(M[u]), () => setUnits(u), `u-${u}`))}
           <li className="mh">{t(THEME_WORD)}</li>

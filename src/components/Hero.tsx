@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { parts } from '../content';
 import type { L } from '../content/types';
-import { ftWord, headline, num, Rich, useLang } from '../i18n';
+import { CheckBadge, ftWord, headline, num, renderInline, Rich, useLang } from '../i18n';
+import { PROFILES, RULE_IDS, RULE_NAMES, type RuleId } from '../content/rules';
+import { forRules, ruleValue, toFeet } from '../rules';
 import { group, toMetres } from '../units';
 import { ui } from '../ui';
 import type { Lang } from '../content/types';
@@ -15,6 +17,54 @@ function Big({ v, lang, units }: { v: string; lang: Lang; units: 'ft' | 'm' | 'b
   return <span className="big">{num(v, lang)}<small className="u">{ftWord(lang)}</small>{units === 'both' && <span className="mline">≈{metres} {mW}</span>}</span>;
 }
 import { usePassed } from '../progress';
+
+/** A big altitude from the reader's school rules: its own unit, or USPA's feet with the check badge. */
+function RuleBig({ ids }: { ids: RuleId[] }) {
+  const { lang, units, rules } = useLang();
+  const shown = ids.map(id => ruleValue(id, rules));
+  const check = shown.some(x => x.check);
+  const mW = lang === 'uk' || lang === 'ru' || lang === 'bg' ? 'м' : 'm';
+  if (shown.every(x => x.v.unit === 'm')) {
+    const ft = shown.map(x => group(toFeet(x.v.n), lang)).join(' · ');
+    return <span className="big">{shown.map(x => group(x.v.n, lang)).join(' · ')}<small className="u">{mW}</small>{check && <CheckBadge />}{units !== 'm' && <span className="mline">≈{ft} {ftWord(lang)}</span>}</span>;
+  }
+  const v = shown.map(x => x.v.n.toLocaleString('en-US')).join(' · ');
+  return <span className="rb"><Big v={v} lang={lang} units={units} />{check && <CheckBadge />}</span>;
+}
+
+/** Each key number of the reader's rules with its source; missing ones say USPA's number is shown. */
+function RulesSources() {
+  const { t, lang, rules } = useLang();
+  const p = PROFILES[rules];
+  const fmt = (n: number, to: number | undefined, unit: string) => {
+    const u = unit === 'm' ? (lang === 'uk' || lang === 'ru' || lang === 'bg' ? 'м' : 'm') : unit === 'jumps' ? '' : unit === 'ft' ? ftWord(lang) : unit;
+    return `${group(n, lang)}${to ? `–${group(to, lang)}` : ''}${u ? `\u00a0${u}` : ''}`;
+  };
+  return (
+    <details className="rules-src">
+      <summary>{t(ui.rulesFrom)} · {p.short}</summary>
+      <p className="muted">{t(ui.rulesNote)} {t(ui.rulesWin)}</p>
+      <dl>
+        {RULE_IDS.map(id => {
+          const { v, fallback } = ruleValue(id, rules);
+          return (
+            <div key={id} className={fallback ? 'fb' : ''}>
+              <dt>{t(RULE_NAMES[id])}</dt>
+              <dd>
+                <b>{fmt(v.n, v.to, v.unit)}</b>{(fallback || v.check) && <CheckBadge />}{' '}
+                {fallback ? <span className="muted">{t(ui.rulesMissing)}</span> : <>
+                  {v.note && <span>{renderInline(t(v.note))} </span>}
+                  {v.check && <span className="muted">{t(ui.rulesUnofficial)} </span>}
+                  <a href={v.src.href} {...(v.src.href.startsWith('#') ? {} : { target: '_blank', rel: 'noopener' })}>{v.src.label}</a>
+                </>}
+              </dd>
+            </div>
+          );
+        })}
+      </dl>
+    </details>
+  );
+}
 
 const LAST = 'aff-last-chapter';
 const h = (en: string, es: string, ru: string, uk: string): L => ({ en, es, ru, uk });
@@ -40,26 +90,26 @@ const T = {
   nextTest: h('Next test', 'Siguiente prueba', 'Следующий тест', 'Наступний тест'),
   allDone: h('All tests passed. Review the numbers before every jump.', 'Todas las pruebas aprobadas. Repasa las cifras antes de cada salto.', 'Все тесты сданы. Перед каждым прыжком повторяй цифры.', 'Усі тести складено. Перед кожним стрибком повторюй цифри.'),
   tests: h('tests passed', 'pruebas aprobadas', 'тестов сдано', 'тестів складено'),
-  feet: h('Altitudes in feet above the ground (1,000 ft ≈ 300 m)', 'Alturas en pies sobre el suelo (1,000 ft ≈ 300 m)', 'Высота над землёй в футах (1 000 футов ≈ 300 м)', 'Висота над землею у футах (1 000 футів ≈ 300 м)'),
+  feet: h('Altitudes in feet above the ground (1,000 ft{~} ≈ 300 m)', 'Alturas en pies sobre el suelo (1,000 ft ≈ 300 m)', 'Высота над землёй в футах (1 000 футов ≈ 300 м)', 'Висота над землею у футах (1 000 футів ≈ 300 м)'),
   ifBad: h('If the main is bad', 'Si la principal falla', 'Если основной плохой', 'Якщо основний поганий'),
   numbers: h('The numbers to know by heart', 'Las cifras que hay que saber de memoria', 'Цифры, которые надо знать наизусть', 'Цифри, які треба знати напам’ять'),
 };
 
 /** The altitudes in the order you pass them, plus two timers. Each links to its chapter. */
-const TAPE: { big: string; label: L; to: string; red?: boolean }[] = [
-  { big: '13,000', label: h('exit', 'salida', 'отделение', 'відокремлення'), to: 'count' },
-  { big: '6,000', label: h('lock on: altimeter only', 'solo el altímetro', 'только высотомер', 'лише висотомір'), to: 'altitude' },
-  { big: '5,500', label: h('pull', 'abre', 'раскрытие', 'розкриття'), to: 'deploy' },
-  { big: '2,500', label: h('can you reach the holding point?', '¿llegas al punto de espera?', 'долетаешь до точки ожидания?', 'долітаєш до точки очікування?'), to: 'pattern' },
-  { big: '2,000', label: h('over the holding point', 'sobre el punto de espera', 'над точкой ожидания', 'над точкою очікування'), to: 'pattern' },
-  { big: '1,000', label: h('leave it, start the pattern', 'déjalo, empieza el circuito', 'уходи в схему захода', 'виходь на схему заходу'), to: 'pattern' },
-  { big: '900 · 600 · 300', label: h('landing pattern', 'circuito', 'схема захода', 'схема заходу'), to: 'pattern' },
+const TAPE: { rule?: RuleId[]; big?: string; label: L; to: string; red?: boolean }[] = [
+  { rule: ['exit'], label: h('exit', 'salida', 'отделение', 'відокремлення'), to: 'count' },
+  { rule: ['lockOn'], label: h('lock on: altimeter only', 'solo el altímetro', 'только высотомер', 'лише висотомір'), to: 'altitude' },
+  { rule: ['pull'], label: h('pull', 'abre', 'раскрытие', 'розкриття'), to: 'deploy' },
+  { rule: ['holdingReach'], label: h('can you reach the holding point?', '¿llegas al punto de espera?', 'долетаешь до точки ожидания?', 'долітаєш до точки очікування?'), to: 'pattern' },
+  { rule: ['holding'], label: h('over the holding point', 'sobre el punto de espera', 'над точкой ожидания', 'над точкою очікування'), to: 'pattern' },
+  { rule: ['patternEntry'], label: h('leave it, start the pattern', 'déjalo, empieza el circuito', 'уходи в схему захода', 'виходь на схему заходу'), to: 'pattern' },
+  { rule: ['downwind', 'base', 'final'], label: h('landing pattern', 'circuito', 'схема захода', 'схема заходу'), to: 'pattern' },
   { big: '10 ft', label: h('flare, then PLF', 'flare y PLF', 'flare, потом PLF', 'flare, потім PLF'), to: 'flare' },
 ];
 /** Only if the main is bad: the emergency numbers, kept apart so they don't mix with the canopy ones. */
-const EMERGENCY: { big: string; label: L; to: string }[] = [
-  { big: '2,500', label: h('decide and act (fix or cut away) by here', 'decide y actúa (arreglar o liberar) antes de aquí', 'реши и действуй (исправить или отцепка) до этой высоты', 'виріши й дій (виправити чи відчеплення) до цієї висоти'), to: 'ep' },
-  { big: '1,000', label: h('no cutaway below: pull the reserve only (one exception: a downplane)', 'por debajo no liberes: solo la reserva (excepción: downplane)', 'ниже не отцепляйся: только запасной (исключение: «даунплейн»)', 'нижче не відчіплюйся: лише запасний (виняток: «даунплейн»)'), to: 'ep' },
+const EMERGENCY: { rule: RuleId[]; label: L; to: string }[] = [
+  { rule: ['decision'], label: h('decide and act (fix or cut away) by here', 'decide y actúa (arreglar o liberar) antes de aquí', 'реши и действуй (исправить или отцепка) до этой высоты', 'виріши й дій (виправити чи відчеплення) до цієї висоти'), to: 'ep' },
+  { rule: ['hardDeck'], label: h('no cutaway below: pull the reserve only (one exception: a downplane)', 'por debajo no liberes: solo la reserva (excepción: downplane)', 'ниже не отцепляйся: только запасной (исключение: «даунплейн»)', 'нижче не відчіплюйся: лише запасний (виняток: «даунплейн»)'), to: 'ep' },
 ];
 const TIMERS: { big: string; label: L; to: string }[] = [
   { big: '3 s', label: h('check altitude, all the time', 'mira el altímetro, siempre', 'смотри на высоту, всегда', 'дивись на висоту, завжди'), to: 'altitude' },
@@ -73,7 +123,8 @@ const TIMERS: { big: string; label: L; to: string }[] = [
  */
 const FLIGHT = 'M182 58 C 222 62, 276 104, 302 156 C 400 188, 560 210, 700 226 L 850 246 L 938 264';
 function JumpPicture() {
-  const { t } = useLang();
+  const { t, qty } = useLang();
+  const plain = (s: string) => qty(s).replace(/\s*<q-check\/>/g, '');
   const [run, setRun] = useState(0);
   const reduce = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const stop = (id: string, x: number, y: number, n: string, label: L, sub: L | string, color: string, anchor: 'start' | 'end' = 'start') => (
@@ -91,7 +142,7 @@ function JumpPicture() {
         {/* altitude axis */}
         <g className="axis">
           <line x1="34" y1="40" x2="34" y2="276" />
-          {[[58, '13,000'], [156, '5,500'], [206, '2,500'], [276, '0']].map(([y, v]) => (
+          {[[58, plain('13,000{exit}')], [156, plain('5,500{pull}')], [206, plain('2,500{decision}')], [276, '0']].map(([y, v]) => (
             <g key={v as string}><line x1="30" y1={y as number} x2="38" y2={y as number} /><text x="44" y={(y as number) + 4}>{v}</text></g>
           ))}
         </g>
@@ -133,9 +184,9 @@ function JumpPicture() {
             </g>
           </g>
         )}
-        {stop('part1', 70, 108, 'I', parts[0].title, '0 → 13,000 ft', 'var(--acc-plane)')}
-        {stop('part2', 330, 98, 'II', parts[1].title, '13,000 → 5,500', 'var(--acc-free)')}
-        {stop('part3', 520, 150, 'III', parts[2].title, '5,500 → 0', 'var(--acc-canopy)')}
+        {stop('part1', 70, 108, 'I', parts[0].title, plain('0 → 13,000 ft{exit}'), 'var(--acc-plane)')}
+        {stop('part2', 330, 98, 'II', parts[1].title, plain('13,000{exit} → 5,500{pull}'), 'var(--acc-free)')}
+        {stop('part3', 520, 150, 'III', parts[2].title, plain('5,500{pull} → 0'), 'var(--acc-canopy)')}
         {stop('part4', 376, 236, 'IV', parts[3].title, '', 'var(--acc-ep)')}
         {stop('dz', 930, 172, 'V', parts[4].title, '', 'var(--acc-dz)', 'end')}
       </svg>
@@ -145,10 +196,10 @@ function JumpPicture() {
 }
 
 export function Hero() {
-  const { t, lang, units } = useLang();
+  const { t, lang, units, rules } = useLang();
   const passed = usePassed();
   const chapters = parts.flatMap(p => p.chapters.map(c => ({ c, p })));
-  const quizIds = new Set(chapters.filter(({ c }) => JSON.stringify(c.blocks).includes('"type":"quiz"')).map(({ c }) => c.id));
+  const quizIds = new Set(chapters.filter(({ c }) => c.blocks.some(b => b.type === 'quiz' && (!b.only || b.only.includes(rules)) && forRules(b.questions, rules).length)).map(({ c }) => c.id));
   const [last, setLast] = useState<string | null>(null);
   useEffect(() => { try { setLast(localStorage.getItem(LAST)); } catch { /* ignore */ } }, []);
   const lastCh = chapters.find(x => x.c.id === last);
@@ -187,23 +238,25 @@ export function Hero() {
       </div>
 
       <div className="numbers">
-        <span className="nh">{t(T.numbers)}<small>{units === 'ft' ? t(T.feet) : t(ui.unitsNote)}</small></span>
+        <span className="nh">{t(T.numbers)}<small>{rules !== 'uspa' ? t(ui.rulesNote) : units === 'ft' ? t(T.feet) : t(ui.unitsNote)}</small></span>
+        <p className="rules-line">{t(ui.rulesShown)}: <b>{t(PROFILES[rules].name)}</b> · <button type="button" className="linkish" onClick={() => dispatchEvent(new Event('open-more'))}>{t(ui.rulesChange)}</button></p>
         <ol className="tape surface">
           {TAPE.map((x, i) => (
             <li key={i} className={x.red ? 'red' : ''}>
-              <a href={`#${x.to}`}>{/ft|s$/.test(x.big) ? <span className="big">{num(x.big, lang, units)}</span> : <Big v={x.big} lang={lang} units={units} />}<span className="dot" aria-hidden="true" /><span className="lbl">{t(x.label)}</span></a>
+              <a href={`#${x.to}`}>{x.rule ? <RuleBig ids={x.rule} /> : <span className="big">{num(x.big!, lang, units)}</span>}<span className="dot" aria-hidden="true" /><span className="lbl">{t(x.label)}</span></a>
             </li>
           ))}
         </ol>
         <div className="emerg">
           <span className="eh">{t(T.ifBad)}</span>
           <div className="timers">
-            {EMERGENCY.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface red"><Big v={x.big} lang={lang} units={units} /><span className="lbl">{t(x.label)}</span></a>)}
+            {EMERGENCY.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface red"><RuleBig ids={x.rule} /><span className="lbl">{t(x.label)}</span></a>)}
           </div>
         </div>
         <div className="timers">
           {TIMERS.map((x, i) => <a key={i} href={`#${x.to}`} className="timer surface"><span className="big">{num(x.big, lang, units)}</span><span className="lbl">{t(x.label)}</span></a>)}
         </div>
+        <RulesSources />
       </div>
     </div></div>
   );
