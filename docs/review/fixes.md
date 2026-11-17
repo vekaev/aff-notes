@@ -7,6 +7,21 @@ Expert reports: `docs/review/expert/<scope>.md`. A second, independent pass on P
 first one was being fixed) is kept in `docs/review/expert/second-opinion/part4-emergencies.md`: compare it with the fixer
 log when Part IV is done.
 
+## Status 2026-11-17 06:00 PST
+
+06:00 run: the school-rules sub-chat saved its work as draft PR #6 (05:58, not merged; it changes all four part files
+and every language file), so this run edited on its own branch and kept the change to two lines; #6 will need a merge
+of main (regenerate en.json, keep both sides).
+- part4 EP chapter: "More than 4,000 cutaways a year (USPA, 2019)" → "About 4,777 reserve rides in 2025 in the US
+  (USPA survey estimate, 1 per 726 jumps)". Source re-read: uspa.org/find/faqs/safety (2025 USPA Member Survey).
+  The page has no 2023 figure; the "2023: 4,913" in PLAN is unconfirmed.
+- part4 tips: new line "Later, downsize one size at a time, and change size or canopy type, never both at once (USPA
+  downsizing checklist)". Source re-read: uspa.org/downsize (USPA Downsizing Checklist PDF: "Downsize one size at a
+  time"; "Change planform (type of canopy) or size, not both"). UK/France binding size rules left for the school-rules
+  profiles.
+- All 32 languages. Still open from the AI-run fact-checks: MARD line, "Two instructors" line, 73–88 % anchors, USPA
+  2024 fatality figure (all optional).
+
 ## Status 2026-11-17 04:00 PST
 
 04:00 run: no content edits: the school-rules sub-chat is running (since ~04:01) with all four part files, dropzone.ts

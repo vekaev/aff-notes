@@ -1218,10 +1218,10 @@ export const part4: Part = {
                 `Пізня або неправильна аварійна процедура`,
               ),
               sub: t(
-                `More than <b>4,000 cutaways a year</b> in the US, and reserves rarely fail: <b>delay is what kills</b>. Unclear canopy? <b>5 s at most</b> to see it clearly getting better; if not, cut away and go to the reserve. Spinning line twists: <b>cut away right away</b> (USPA, 2019). As a student, never below 2,500 ft.`,
-                `Más de <b>4,000 liberaciones al año</b> en EE. UU., y las reservas casi nunca fallan: <b>lo que mata es la demora</b>. ¿Vela dudosa? <b>5 s como máximo</b> para ver que mejora claramente; si no, libera y ve a la reserva. Vueltas en las líneas que giran: <b>libera enseguida</b> (USPA, 2019). Como alumno, nunca por debajo de 2,500 ft.`,
-                `Больше <b>4 000 отцепок в год</b> в США, а запасные отказывают редко: <b>убивает промедление</b>. Купол непонятный? <b>Не больше 5 с</b>, чтобы увидеть, что явно становится лучше; если нет — отцепка и запасной. Закрутка с вращением — <b>отцепка сразу</b> (USPA, 2019). Студенту никогда не ниже 2 500 футов.`,
-                `Понад <b>4 000 відчеплень на рік</b> у США, а запасні відмовляють рідко: <b>убиває зволікання</b>. Купол незрозумілий? <b>Не більше 5 с</b>, щоб побачити, що явно стає краще; якщо ні — відчеплення й запасний. Закрутка з обертанням — <b>відчеплення одразу</b> (USPA, 2019). Студентові ніколи не нижче 2 500 футів.`,
+                `About <b>4,777 reserve rides in 2025</b> in the US (USPA survey estimate, 1 per 726 jumps), and reserves rarely fail: <b>delay is what kills</b>. Unclear canopy? <b>5 s at most</b> to see it clearly getting better; if not, cut away and go to the reserve. Spinning line twists: <b>cut away right away</b> (USPA, 2019). As a student, never below 2,500 ft.`,
+                `Unas <b>4,777 aperturas de reserva en 2025</b> en EE. UU. (estimación de la encuesta de USPA, 1 por cada 726 saltos), y las reservas casi nunca fallan: <b>lo que mata es la demora</b>. ¿Vela dudosa? <b>5 s como máximo</b> para ver que mejora claramente; si no, libera y ve a la reserva. Vueltas en las líneas que giran: <b>libera enseguida</b> (USPA, 2019). Como alumno, nunca por debajo de 2,500 ft.`,
+                `Около <b>4 777 раскрытий запасного в 2025 году</b> в США (оценка по опросу USPA, 1 на 726 прыжков), а запасные отказывают редко: <b>убивает промедление</b>. Купол непонятный? <b>Не больше 5 с</b>, чтобы увидеть, что явно становится лучше; если нет — отцепка и запасной. Закрутка с вращением — <b>отцепка сразу</b> (USPA, 2019). Студенту никогда не ниже 2 500 футов.`,
+                `Близько <b>4 777 розкриттів запасного у 2025 році</b> у США (оцінка за опитуванням USPA, 1 на 726 стрибків), а запасні відмовляють рідко: <b>убиває зволікання</b>. Купол незрозумілий? <b>Не більше 5 с</b>, щоб побачити, що явно стає краще; якщо ні — відчеплення й запасний. Закрутка з обертанням — <b>відчеплення одразу</b> (USPA, 2019). Студентові ніколи не нижче 2 500 футів.`,
               ),
             },
             {
@@ -1988,6 +1988,12 @@ export const part4: Part = {
                   `Salta seguido, sin largas pausas; después del AFF, haz un curso de pilotaje de vela.`,
                   `Прыгай плотно, без больших пауз; после AFF — курс пилотирования купола.`,
                   `Стрибай щільно, без великих пауз; після AFF — курс пілотування купола.`,
+                ),
+                t(
+                  `Later, downsize one size at a time, and change size or canopy type, never both at once (USPA downsizing checklist).`,
+                  `Más adelante, reduce el tamaño de vela de una talla en una, y cambia el tamaño o el tipo de vela, nunca las dos cosas a la vez (lista de USPA para reducir vela).`,
+                  `Позже уменьшай купол на один размер за раз и меняй либо размер, либо тип купола, никогда оба сразу (чек-лист USPA по переходу на меньший купол).`,
+                  `Згодом зменшуй купол на один розмір за раз і змінюй або розмір, або тип купола, ніколи обидва одразу (чек-лист USPA щодо переходу на менший купол).`,
                 ),
                 t(
                   `Learn only what today's jump needs; skip scary videos without context.`,

@@ -115,8 +115,8 @@ Work in this order; tick each line here and in the inbox below; one item per run
    not a finding; Vigil battery 8–12 yrs; BS Form 330(i) + Ops Manual s.6 and FFP DT 48 are binding canopy-size rules.
    - [x] (02:00 run 2026-11-17, source re-checked: USPA BSR 2-1 M.2.b + SIM 4-3 F; q-check removed; all 32 languages; not seen on screen) content, part4 `ep` RSL line: "Student rigs must have one (USPA SIM 4-3 F); it's a backup: pull silver
      anyway, straight away" instead of "if your rig has one <q-check/>".
-   - [ ] content, part4 `tips` next to the canopy course: downsizing: one size at a time, change size or type not
-     both (uspa.org/downsize); UK and France set binding minimum sizes by weight and jumps (BS Form 330(i); FFP DT 48).
+   - [x] (06:00 run 2026-11-17, source re-read: USPA Downsizing Checklist PDF, uspa.org/downsize) content, part4 `tips` next to the canopy course: downsizing: one size at a time, change size or type not
+     both (uspa.org/downsize). Not added (owner may want it in the school-rules profiles): UK and France set binding minimum sizes by weight and jumps (BS Form 330(i); FFP DT 48).
    - [ ] content, optional: MARD line (Skyhook: reserve out ~0.5 s after cutaway, still pull silver; UPT, USPA 2018).
    - [ ] content, optional: part1 "Two instructors": USPA allows one AFF instructor after set tunnel training
      (BSR 2-1 G.4.2.1), ask your school.
@@ -654,7 +654,7 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - [x] Arms 90/90 = thumb and pinky: confirmed by the video's narration (lines along thumb and pinky form 90°).
 - [x] Slider stuck: the app already says "pump the toggles (some schools teach rear risers)" + <q-check/> + an
   instructor question; USPA SIM 4-1 has no slider procedure (checked 2026-11-17 04:00 run, uspa.org/sim/4-1).
-- [~] "~4,000 cutaways a year": the per-jumps ratio is gone; part4 now says "more than 4,000 cutaways a year (USPA,
+- [x] (06:00 run 2026-11-17: part4 now "about 4,777 reserve rides in 2025 … (USPA survey estimate, 1 per 726 jumps)", all 32 languages; uspa.org/find/faqs/safety re-read; it has no 2023 figure, so "2023: 4,913" below is unconfirmed) "~4,000 cutaways a year": the per-jumps ratio is gone; part4 now says "more than 4,000 cutaways a year (USPA,
   2019)". Newer USPA figure (uspa.org/find/faqs/safety, member survey): 2025 ≈ 4,777 reserve rides, ~1 per 726 jumps
   (2023: 4,913). Content task: update the part4 line to the 2025 figure and say "reserve rides" (a survey estimate);
   waits until the school-rules chat (all content files open, running 04:01) commits.
