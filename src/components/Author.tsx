@@ -6,6 +6,11 @@ import { headline, useLang } from '../i18n';
 // Plus a small feedback bubble (bottom right) that opens once by itself after 10 s.
 
 export const EMAIL = 'vekaev4@gmail.com';
+/** Where people can find the owner. LinkedIn is empty until the owner gives the link (then it shows). */
+export const LINKS = {
+  github: 'https://github.com/vekaev',
+  linkedin: '',
+};
 const h = (en: string, es: string, ru: string, uk: string): L => ({ en, es, ru, uk });
 
 const T = {
@@ -51,6 +56,9 @@ const T = {
   ),
   open: h('Send feedback', 'Enviar comentarios', 'Оставить отзыв', 'Залишити відгук'),
   close: h('Close', 'Cerrar', 'Закрыть', 'Закрити'),
+  notNow: h('Not now, hide this', 'Ahora no, ocultar', 'Не сейчас, скрыть', 'Не зараз, сховати'),
+  why: h('Why I made this', 'Por qué hice esto', 'Зачем я это сделал', 'Навіщо я це зробив'),
+  findMe: h('Find me and the project:', 'Encuéntrame a mí y al proyecto:', 'Где найти меня и проект:', 'Де знайти мене і проєкт:'),
 };
 
 function mailto(subject: string) {
@@ -84,6 +92,11 @@ export function AboutAuthor() {
             <button type="button" className="btn" onClick={copy}>{copied ? t(T.copied) : t(T.copy)}</button>
             <span className="mail">{EMAIL}</span>
           </div>
+          <p className="links">
+            <span className="muted">{t(T.findMe)}</span>{' '}
+            <a href={LINKS.github} target="_blank" rel="noopener">GitHub</a>
+            {LINKS.linkedin && <>{' · '}<a href={LINKS.linkedin} target="_blank" rel="noopener">LinkedIn</a></>}
+          </p>
         </div>
       </section>
     </div>
@@ -91,11 +104,13 @@ export function AboutAuthor() {
 }
 
 const SEEN = 'aff-feedback-seen';
+const HIDDEN = 'aff-feedback-hidden';
 
 export function FeedbackBubble() {
   const { t } = useLang();
   const [open, setOpen] = useState(false);
   const [shown, setShown] = useState(false);
+  const [hidden, setHidden] = useState(() => { try { return localStorage.getItem(HIDDEN) === '1'; } catch { return false; } });
   useEffect(() => {
     const id = setTimeout(() => {
       setShown(true);
@@ -106,7 +121,9 @@ export function FeedbackBubble() {
     return () => clearTimeout(id);
   }, []);
   const close = () => { setOpen(false); try { localStorage.setItem(SEEN, '1'); } catch { /* ignore */ } };
-  if (!shown) return null;
+  // "Not now": the bubble and its icon go away for good on this device; the "write to me" card at the end stays.
+  const hide = () => { close(); setHidden(true); try { localStorage.setItem(HIDDEN, '1'); } catch { /* ignore */ } };
+  if (!shown || hidden) return null;
   return (
     <div className="fbub">
       {open && (
@@ -116,7 +133,11 @@ export function FeedbackBubble() {
           </button>
           <div className="nm">{t(T.bubbleT)}</div>
           <p>{t(T.bubbleS)}</p>
-          <a className="btn primary" href={mailto(t(T.subject))} onClick={close}>{t(T.write)}</a>
+          <div className="row">
+            <a className="btn primary" href={mailto(t(T.subject))} onClick={close}>{t(T.write)}</a>
+            <a className="why" href="#about" onClick={close}>{t(T.why)} ↓</a>
+          </div>
+          <button type="button" className="later" onClick={hide}>{t(T.notNow)}</button>
         </div>
       )}
       <button type="button" className="fbub-btn" aria-label={t(T.open)} aria-expanded={open} onClick={() => (open ? close() : setOpen(true))}>

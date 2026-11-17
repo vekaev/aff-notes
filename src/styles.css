@@ -768,3 +768,9 @@ a.pill:hover { filter: brightness(1.1); }
 .big:has(.mline) { flex-wrap: wrap; justify-content: center; }
 .big .mline { flex-basis: 100%; display: block; font-size: 12px; font-weight: 600; letter-spacing: 0; color: var(--muted); line-height: 1.2; }
 @media (max-width: 700px) { .tape .big:has(.mline) { justify-content: flex-start; } }
+
+.fbub-card .row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3); }
+.fbub-card .why { font-size: 14px; color: var(--ink); text-underline-offset: 3px; }
+.fbub-card .later { display: block; margin-top: var(--s3); padding: 0; border: 0; background: none; color: var(--muted); font: 500 13px var(--font); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.author .links { margin-top: var(--s4); font-size: 15px; }
+.author .links .muted { color: var(--muted); }

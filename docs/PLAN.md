@@ -184,6 +184,15 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
+2026-11-17 (chat, feedback bubble 2):
+- [x] Bubble: a "Not now" that hides the bubble and its icon completely (it's annoying and takes space on the phone).
+- [x] Bubble: a link "Why I made this" to the mission section at the bottom (#about).
+- [~] About section: links to GitHub (the project, to contribute) and LinkedIn, so people can reach the owner there.
+      Done: GitHub profile link (seen EN phone dark). [?] LinkedIn URL from the owner (not in ~/me or mail); [?] repo is
+      private: make it public for contributions? (it holds clips of other people's videos: replace them first).
+- [?] Seen on the owner's phone: aff-notes.vercel.app is still public and auto-deploys on push (clips of other people's
+      videos). Owner said he'd remove it; ask again.
+
 2026-11-16 (chat, feedback):
 - [x] Mission, one more thought (2026-11-16): imagine saving at least one life by sharing this knowledge; the greatest
       thing is that we can now build the most complete worldwide place to learn to skydive, with fewer injuries and
