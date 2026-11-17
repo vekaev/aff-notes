@@ -198,6 +198,7 @@ A re-ask is marked `re-asked <date>: why it wasn't done` on the same line. The 2
 lines top down; a line is closed only when it's done and seen, or the owner drops it.
 
 2026-11-17 (chat, phone screenshot):
+- [x] Nothing gets lost: every pushed branch gets a PR at once; "pushed" isn't done, "merged into main" is. School-rules branch got draft PR #6; `~/agent-tools/scripts/unmerged` lists uncommitted files, unpushed branches, branches without a PR and open PRs (agent-tools 264fb7d).
 - [x] Commit messages: switch to Conventional Commits (`feat:`, `fix:`, `docs:`…) with commitlint in the commit hook; rule in AGENTS.md + CONTRIBUTING (owner: "sounds good").
 - [x] /learn on this stretch (sub-chats, feedback icon, commit style).
 - [x] Feedback icon: show it only after a minute (was 10 s); a question-mark icon instead of the message bubble.
