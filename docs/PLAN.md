@@ -13,9 +13,19 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 
 ## Owner requests: the inbox (every ask lands here first, nothing is dropped)
 Rule: each thing the owner asks for, in any message, gets a line here **before** work starts, with the date and the
-owner's words in short. Status: `[ ]` open · `[~]` in progress · `[x]` done and seen on screen (commit) ·
-`[?]` waiting on the owner (the question is under "Waiting on you"). The 2-hourly run and the autopilot work the open
+owner's words in short. Status: `[ ]` planned · `[~]` started · `[!]` blocked / redo (why) · `[-]` cancelled by the
+owner · `[x]` done and seen on screen (commit) · `[?]` waiting on the owner (the question is under "Waiting on you").
+A re-ask is marked `re-asked <date>: why it wasn't done` on the same line. The 2-hourly run and the autopilot work the open
 lines top down; a line is closed only when it's done and seen, or the owner drops it.
+
+2026-11-16 (chat, plan discipline):
+- [x] "Also to all other apps" (by ear: the app ending with feedback + more languages, saved to /study, should apply
+      to every app) → rule in ~/agent-tools/rules/ui.md.
+- [x] Every ask: a plan file first (the ask, analysis, extra checks from other directions), clarify only when truly
+      unclear; research keeps statuses (planned / started / blocked / cancelled / done) and redo lines when out of
+      tokens, agents or limits, finished later, never dropped; a re-ask is marked on the same line with why it wasn't
+      done. → ~/agent-tools rules + a plan-format reference + /learn reads the plan (re-asks, stuck, dropped).
+      Done: agent-tools (format in skills/bootstrap/assets/docs/PLAN.md), probes pass.
 
 2026-11-16 (chat, languages + tracking):
 - [~] More languages so people anywhere can read it: French, Italian, Nordic (Swedish, Norwegian, Danish, Finnish),
@@ -33,7 +43,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] Rule: every ask goes into the plan first (tasks, what else may be needed), then work; every delegated agent or
       sub-chat gets a line with its status (done / blocked / ran out of limit → redo), so nothing found is lost.
       (~/agent-tools/rules/working.md + /outreach skill)
-- Outreach research cut short by the shared search limit (redo with a fresh budget, one agent per line):
+- [!] Outreach research cut short by the shared search limit (redo with a fresh budget, one agent per line):
   - [ ] us_west: MT, NE, ND, WY, northern CA, second pass OR/WA, open the 31 low-confidence rows.
   - [ ] us_east: non-USPA dropzones state by state (MS, LA, DE, NH, KY, IN, small clubs).
   - [ ] au_nz: GoSkydive NZ, Skydive Kaikoura.
