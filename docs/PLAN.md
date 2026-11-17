@@ -17,6 +17,28 @@ owner's words in short. Status: `[ ]` open · `[~]` in progress · `[x]` done an
 `[?]` waiting on the owner (the question is under "Waiting on you"). The 2-hourly run and the autopilot work the open
 lines top down; a line is closed only when it's done and seen, or the owner drops it.
 
+2026-11-16 (chat, languages + tracking):
+- [~] More languages so people anywhere can read it: French, Italian, Nordic (Swedish, Norwegian, Danish, Finnish),
+      Arabic (right-to-left) and more (German, Portuguese, Polish…). Research the best way to translate safety
+      content (terms each country's federation uses, a check by a second agent and later native skydivers).
+- [ ] Auto-detect the visitor's browser language and open that version; the language menu at the top still switches.
+- [x] Rule: every ask goes into the plan first (tasks, what else may be needed), then work; every delegated agent or
+      sub-chat gets a line with its status (done / blocked / ran out of limit → redo), so nothing found is lost.
+      (~/agent-tools/rules/working.md + /outreach skill)
+- Outreach research cut short by the shared search limit (redo with a fresh budget, one agent per line):
+  - [ ] us_west: MT, NE, ND, WY, northern CA, second pass OR/WA, open the 31 low-confidence rows.
+  - [ ] us_east: non-USPA dropzones state by state (MS, LA, DE, NH, KY, IN, small clubs).
+  - [ ] au_nz: GoSkydive NZ, Skydive Kaikoura.
+  - [ ] eu_west: Spain, Flanders, non-federation dropzones (DE under DAeC, FR non-FFP).
+  - [ ] eu_north_east: Czechia, Slovakia, Ukraine, Turkey, Greece, Bulgaria, Iceland, Cyprus, Georgia.
+  - [ ] w2_ukraine_central_east, w2_asia_pacific, w2_latam, w2_tunnels: finish what their notes list as missing.
+  - [ ] industry: insurers, rigger schools, book authors.
+  - [ ] communities: Facebook groups, Discord, national forums (needs a fresh budget; Facebook needs Dia login).
+  - [ ] instagram_tiktok_blogs: Instagram bios/linktrees (needs Dia), RU/UK/ES creators, Medium/Substack.
+  - [ ] w2_experts, w2_clubs_events, w2_coaches_lofts: finish what their notes list as missing.
+  - [ ] how-to-ask: dropzone.com forum threads (site gone: use the Internet Archive).
+  - [ ] Still running in sub-chats: Russia/CIS, existing lists, (check each when it reports).
+
 2026-11-16 (chat, feedback):
 - [x] End of the site: "share feedback" (something to add, share or fix, found a mistake → write to the owner's email).
 - [x] End of the site: the owner's mission and a short "about me" with a small photo (tried the course himself, it's
