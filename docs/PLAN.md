@@ -275,12 +275,13 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       #2 conflicted after #1 and was applied by hand (3a4680d); CI on main green.
 - [x] README: mission (owner's words from "Why I made this"), all 32 languages, translation help first (owner: "update
       readme, there are many more languages than these 4, add the mission") — 4293d9f.
-- [~] Owner "Yes" (2026-11-17) to both tooling proposals, after the school-rules branch merges:
+- [x] Owner "Yes" (2026-11-17) to both tooling proposals:
   - [x] Smaller offline install: 4.9 → 1.8 MB. The 28 extra languages are no longer pre-downloaded; the reader's
         language is cached when it loads, also on the very first visit (`src/pwa-langs.ts`). Seen in a Playwright test
         (`e2e/offline.spec.ts`): first visit in German, go offline, reload, still German; budget lowered to 3 MB.
         Trade-off: a language never opened shows English offline.
-  - [~] Per-language pages, light way (owner 2026-11-17: "why not a worktree and a PR instead of waiting" → branch
+  - [x] Per-language pages, light way (live 2026-11-17 via vekaev/aff-notes#4: aff-notes.vercel.app/fr/ is French
+        without scripts, /?lang=de → /de/, CI green; owner 2026-11-17: "why not a worktree and a PR instead of waiting" → branch
         `langpages`, PR, no wait): every language at its own address (`/fr/`, English at `/`), pre-rendered at build
         (`scripts/prerender.mjs`): text, `<html lang dir>`, translated title/description/og, canonical, hreflang × 33,
         `sitemap.xml`, `robots.txt`; old `?lang=fr` links redirect to `/fr/` (vercel.json); language menu moves the
