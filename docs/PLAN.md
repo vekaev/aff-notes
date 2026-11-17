@@ -45,7 +45,7 @@ Work in this order; tick each line here and in the inbox below; one item per run
    - [x] (0e9f702) part4 two canopies: one line: a late pull or riding a fast partial malfunction below ~1,000 ft can fire the
      student AAD → two canopies out, possibly a downplane; pull on time, act by decision altitude (CYPRES; Parachutist
      Safety Check Jan 2026; SIM 4-1).
-   - [ ] part2 "Overloaded or lost?": one-line why: first-jump stress impairs learning complex new tasks, so keep the
+   - [x] (this run, 02:00 run 2026-11-17; not seen on screen: preview declined) part2 "Overloaded or lost?": one-line why: first-jump stress impairs learning complex new tasks, so keep the
      plan to a few rehearsed moves (Taverniers et al. 2011, PMID 21607782). Don't use the cadet "cognitive flexibility"
      claim (false).
    - [x] (0e9f702) part4 `real` sources: add "Fer 2021: France 2010–19" (doi:10.1016/j.jsams.2020.11.002); the "~6×" figure
@@ -113,7 +113,7 @@ Work in this order; tick each line here and in the inbox below; one item per run
    Fact-check `ext_ai_run3_factcheck.md`: 26 claims, 14 true, 10 partly, 1 false (NTSB doesn't investigate skydiver
    deaths), 1 unverified (failed PLF "leading cause"). Dutch tunnel-overconfidence = speculation in the Discussion,
    not a finding; Vigil battery 8–12 yrs; BS Form 330(i) + Ops Manual s.6 and FFP DT 48 are binding canopy-size rules.
-   - [ ] content, part4 `ep` RSL line: "Student rigs must have one (USPA SIM 4-3 F); it's a backup: pull silver
+   - [x] (02:00 run 2026-11-17, source re-checked: USPA BSR 2-1 M.2.b + SIM 4-3 F; q-check removed; all 32 languages; not seen on screen) content, part4 `ep` RSL line: "Student rigs must have one (USPA SIM 4-3 F); it's a backup: pull silver
      anyway, straight away" instead of "if your rig has one <q-check/>".
    - [ ] content, part4 `tips` next to the canopy course: downsizing: one size at a time, change size or type not
      both (uspa.org/downsize); UK and France set binding minimum sizes by weight and jumps (BS Form 330(i); FFP DT 48).

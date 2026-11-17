@@ -7,6 +7,21 @@ Expert reports: `docs/review/expert/<scope>.md`. A second, independent pass on P
 first one was being fixed) is kept in `docs/review/expert/second-opinion/part4-emergencies.md`: compare it with the fixer
 log when Part IV is done.
 
+## Status 2026-11-17 02:00 PST
+
+02:00 run: two more content tasks from the AI-run fact-checks (PLAN "Resume here" step 4), sources re-checked:
+- part4 `ep` RSL line: "if your rig has one <q-check/>" → "Student rigs must have an RSL (USPA BSR 2-1 M): … pull
+  silver anyway, straight away." Source: USPA BSR 2-1 M.2.b ("a reserve static line" required for all students until
+  the A license) and SIM 4-3 F ("RSL use is mandatory for students"). q-check resolved (safety).
+- part2 "Overloaded or lost?": one-line why: first-jump stress impairs learning of complex new tasks (Taverniers et
+  al. 2011, Cogn Affect Behav Neurosci 11:332–343, 61 cadets). The false "cognitive flexibility" claim not used.
+- All 32 languages (28 JSON by a translator agent from each language's old wording + glossary; back-checked ar, th,
+  zh). Native check wanted: sr ("samo pomoć" replaced an odd "rezerva za rezervu"), hu, sl, ko/ja bold placement.
+- Checks: `npm run check` 0, `npx vite build` 0, strings present in the build. **Not seen on screen**: the dev-server
+  preview was declined in this unattended run. Page guard not run (text-only change).
+- Still open from step 4: downsizing line (part4 tips), MARD line, "Two instructors" line, 73–88 % anchors, USPA 2024
+  fatality figure (optional ones).
+
 ## Status 2026-11-17 00:00 PST
 
 00:00 run: content tasks from the AI-run fact-checks (PLAN "Resume here" step 4), sources re-checked this run:

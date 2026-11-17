@@ -418,10 +418,10 @@ export const part2: Part = {
         {
           type: 'callout',
           text: {
-            en: 'Overloaded or lost? Default to: <b>altitude, arch, pull at 5,500 ft</b>, or <b>right now</b> if you\'re already lower.',
-            es: '¿Saturado o perdido? Vuelve a lo básico: <b>altura, arco, abrir a 5,500 ft</b>, o <b>ahora mismo</b> si ya estás más bajo.',
-            uk: 'Перевантажений чи загубився? За замовчуванням: <b>висота, прогин, розкриття на 5 500 футах</b> або <b>одразу</b>, якщо ти вже нижче.',
-            ru: 'Перегружен или потерялся? По умолчанию: <b>высота, прогиб, раскрытие на 5 500 футах</b> или <b>сразу</b>, если ты уже ниже.',
+            en: 'Overloaded or lost? Default to: <b>altitude, arch, pull at 5,500 ft</b>, or <b>right now</b> if you\'re already lower. Why: first-jump stress makes new, complex tasks hard to learn (Taverniers 2011), so keep your plan to a few moves you\'ve rehearsed.',
+            es: '¿Saturado o perdido? Vuelve a lo básico: <b>altura, arco, abrir a 5,500 ft</b>, o <b>ahora mismo</b> si ya estás más bajo. Por qué: el estrés del primer salto dificulta aprender tareas nuevas y complejas (Taverniers 2011), así que limita tu plan a unos pocos movimientos ensayados.',
+            uk: 'Перевантажений чи загубився? За замовчуванням: <b>висота, прогин, розкриття на 5 500 футах</b> або <b>одразу</b>, якщо ти вже нижче. Чому: стрес першого стрибка заважає засвоювати нові складні дії (Taverniers 2011), тож тримай у плані кілька відрепетируваних рухів.',
+            ru: 'Перегружен или потерялся? По умолчанию: <b>высота, прогиб, раскрытие на 5 500 футах</b> или <b>сразу</b>, если ты уже ниже. Почему: стресс первого прыжка мешает усваивать новые сложные действия (Taverniers 2011), так что держи в плане несколько отрепетированных движений.',
           },
         },
         {
