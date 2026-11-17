@@ -199,7 +199,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 
 2026-11-17 (chat, phone screenshot):
 - [x] Commit messages: switch to Conventional Commits (`feat:`, `fix:`, `docs:`…) with commitlint in the commit hook; rule in AGENTS.md + CONTRIBUTING (owner: "sounds good").
-- [~] /learn on this stretch (sub-chats, feedback icon, commit style).
+- [x] /learn on this stretch (sub-chats, feedback icon, commit style).
 - [x] Feedback icon: show it only after a minute (was 10 s); a question-mark icon instead of the message bubble.
 - [x] Feedback card opened by itself over the page (after ~2 min on iPhone): owner chose "icon only": after 10 s only
   the round icon shows; the card opens only on tap.
