@@ -10,8 +10,11 @@ export type Units = 'ft' | 'm' | 'both';
 export const UNITS: readonly Units[] = ['ft', 'both', 'm'];
 const KEY = 'aff-units';
 
-/** Regions whose skydiving schools train in metres: the default there is "both". Provisional, from research. */
-const METRIC_REGIONS = new Set(['RU', 'UA', 'BY', 'KZ', 'UZ', 'KG', 'CN', 'MN']);
+/**
+ * Regions whose skydiving schools train in metres: the default there is "both" (docs/i18n/units-and-rules.md:
+ * federation documents for FR DE RU UA FI DK SE PL CZ EE; likely for AT and post-Soviet / Central European countries).
+ */
+const METRIC_REGIONS = new Set(['FR', 'DE', 'AT', 'RU', 'UA', 'BY', 'KZ', 'UZ', 'KG', 'FI', 'DK', 'SE', 'PL', 'CZ', 'SK', 'EE', 'LV', 'LT', 'HU', 'MD']);
 
 export function initialUnits(): Units {
   const fromUrl = typeof location !== 'undefined' ? new URLSearchParams(location.search).get('units') : null;
@@ -23,7 +26,8 @@ export function initialUnits(): Units {
   const prefs = typeof navigator !== 'undefined' ? (navigator.languages?.length ? navigator.languages : [navigator.language]) : [];
   const region = (prefs[0] || '').split('-')[1]?.toUpperCase();
   const lang = (prefs[0] || '').split('-')[0].toLowerCase();
-  if ((region && METRIC_REGIONS.has(region)) || (!region && (lang === 'ru' || lang === 'uk' || lang === 'be'))) return 'both';
+  const metricLang = ['ru', 'uk', 'be', 'fr', 'de', 'fi', 'da', 'sv', 'pl', 'cs', 'sk', 'et', 'lv', 'lt', 'hu'];
+  if ((region && METRIC_REGIONS.has(region)) || (!region && metricLang.includes(lang))) return 'both';
   return 'ft';
 }
 export function saveUnits(u: Units) { try { localStorage.setItem(KEY, u); } catch { /* ignore */ } }

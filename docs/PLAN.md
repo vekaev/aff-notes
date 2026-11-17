@@ -125,10 +125,15 @@ Work in this order; tick each line here and in the inbox below; one item per run
    dropzone.com closed 31 Dec 2024 (not 2026); its successor skydiveforum.com died Nov 2025. Blocker: the app is
    private, so a community can't link to it yet. 9 owner questions in the file (§11).
    [ ] redo: unverified — Facebook group names/sizes (needs login), VK groups, Zoom/Meet free limits, r/SkyDiving size now.
-6i. [~] (phase 1 units done 2026-11-17: ft / ft+m / m chip, seen RU phone light ft+m, EN dark m; design in docs/i18n/DEEP-LOCALIZATION.md; [ ] phase 2 school rules by federation after research docs/i18n/units-and-rules.md; [ ] update metric default regions from that research) **Deep localization** (owner 2026-11-17): not only text — units (feet vs metres by country), rules, links and
+6i. [~] (phase 1 units done 2026-11-17: ft / ft+m / m chip, seen RU phone light ft+m, EN dark m; design in docs/i18n/DEEP-LOCALIZATION.md; [ ] phase 2 school rules by federation after research docs/i18n/units-and-rules.md; [x] metric default regions updated from docs/i18n/units-and-rules.md) **Deep localization** (owner 2026-11-17): not only text — units (feet vs metres by country), rules, links and
    facts that differ by country/federation; a clean, scalable design. Research common practice, propose, build phase 1
    (units), plan phase 2 (country/federation variants). Safety: metre altitudes must not be silent conversions of
    feet; schools in metric countries teach their own round numbers.
+6j. [ ] **School-rules profiles** (phase 2 of deep localization, research done: docs/i18n/units-and-rules.md):
+   metric schools teach their own round numbers (DFV: wave-off 1,500 m, pull ≥1,200 m L1; FFP: open ≥1,500 m;
+   Finland: pull 1,600→1,400 m, decide 600 m), so a ft/m switch alone would teach wrong altitudes. Build a visible
+   "rules: USPA / DFV / FFP / British Skydiving / RU-UA metric" profile from the region, in that order; unofficial
+   numbers marked check. Gaps: FPSR/FPSU syllabi, DFV AHB Teil I, APF, Form 330 values, CBPq, KNVvL.
 7. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
    (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
