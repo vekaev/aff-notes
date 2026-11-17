@@ -6,7 +6,7 @@ So the questions are: will contributors break something without noticing, is the
 small, can people share and find a page in their language.
 
 Measured on today's build: main JS 240 KB gzip (app + all content + the 4 inline languages), each extra language
-40–50 KB gzip, offline install (service-worker precache) 4.9 MB, of which **3.2 MB are the 28 extra languages**.
+40–50 KB gzip, offline install (service-worker precache) 4.9 MB, of which **3.2 MB were the 28 extra languages** (now 1.8 MB, see proposal 2).
 Clips (17 MB) are cached only when played.
 
 ## Adopted (on main)
@@ -55,8 +55,7 @@ Details and steps are in `docs/PLAN.md` under "Owner decides later".
    - *Full:* **TanStack Router + Start** with static prerendering: type-safe routes, per-chapter pages
      (`/fr/emergencies/cutaway`) and a natural place for more pages later. Several days, rewrites the app shell and
      how chapters are found (today `#anchors` on one page); worth it only if the app grows beyond one page.
-2. **Smaller offline install**: stop pre-downloading all 28 extra languages (3.2 of 4.9 MB). Precache the app and the
-   reader's language, cache other languages when picked. Trade-off: switching to a never-used language offline shows
-   English. Config-only change in `vite.config.ts`.
+2. ~~Smaller offline install~~ **done 2026-11-17** (owner: yes): 4.9 → 1.8 MB; the reader's language is cached when
+   it loads (`src/pwa-langs.ts`, `e2e/offline.spec.ts`).
 3. **Translation platform** (Weblate, free for open source): native speakers fix translations in a web page,
    Weblate opens pull requests to the JSON files, CI checks tags and numbers. Good once outside translators show up.

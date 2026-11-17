@@ -231,7 +231,17 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] License (owner: "License yes"): MIT for code (`LICENSE`), CC BY-SA 4.0 for notes, translations and drawings
       (`LICENSE-CONTENT`, says what it covers), clips in public/media belong to their creators and are under neither;
       README + CONTRIBUTING say so, package.json `license: MIT`.
-- [~] Merge the Dependabot PRs vekaev/aff-notes#1–#3 (owner: "PR merge"), after CI passes on each.
+- [x] Merge the Dependabot PRs vekaev/aff-notes#1–#3 (owner: "PR merge"), after CI passes on each: #1 and #3 merged,
+      #2 conflicted after #1 and was applied by hand (3a4680d); CI on main green.
+- [x] README: mission (owner's words from "Why I made this"), all 32 languages, translation help first (owner: "update
+      readme, there are many more languages than these 4, add the mission") — 4293d9f.
+- [~] Owner "Yes" (2026-11-17) to both tooling proposals, after the school-rules branch merges:
+  - [x] Smaller offline install: 4.9 → 1.8 MB. The 28 extra languages are no longer pre-downloaded; the reader's
+        language is cached when it loads, also on the very first visit (`src/pwa-langs.ts`). Seen in a Playwright test
+        (`e2e/offline.spec.ts`): first visit in German, go offline, reload, still German; budget lowered to 3 MB.
+        Trade-off: a language never opened shows English offline.
+  - [ ] Per-language pages, light way: `dist/<lang>/index.html` pre-rendered, language from the path, hreflang +
+        sitemap, `?lang=` links keep working (touches i18n.tsx, which the school-rules branch edits: waits for its merge).
 
 2026-11-17 (chat, translations + tooling):
 - [x] (seen FR + AR phone; mail subject "AFF notes: translation (fr)") "Something wrong or a better word in the translation? Tell me": on every translated language (the top note) and
@@ -478,8 +488,6 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
   4. Playwright: each `/xx/` page has its language in the HTML before scripts run; link previews checked.
   Full alternative: TanStack Router + Start with static prerender and per-chapter URLs (several days; only if the app
   grows past one page).
-- **Smaller offline install**: don't pre-download the 28 extra languages (3.2 of 4.9 MB); precache the app + the
-  reader's language, cache others when picked. Trade-off: an unused language offline shows English. Config only.
 - **Translation platform** (Weblate, free for open source) once outside translators show up: they edit in a web page,
   Weblate opens PRs to `src/content/i18n/*.json`, CI checks them.
 - Publishing: **private GitHub repo only** (vekaev/aff-notes, owner 2026-11-16); the app itself is not published. A web version would need the clips replaced by links or own footage.

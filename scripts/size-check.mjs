@@ -10,7 +10,7 @@ const LIMITS = {
   mainJs: 300 * KB, // gzip, the app + content + 4 inline languages (240 KB on 2026-11-17)
   langJs: 70 * KB, // gzip, each extra language chunk (49 KB max, Greek, on 2026-11-17)
   css: 20 * KB, // gzip
-  precache: 6 * KB * KB, // raw bytes the service worker downloads on install (4.9 MB on 2026-11-17, 3.2 MB of it the 28 extra languages)
+  precache: 3 * KB * KB, // raw bytes the service worker downloads on install (1.8 MB on 2026-11-17; extra languages are cached when used)
 };
 const gz = file => zlib.gzipSync(fs.readFileSync(file)).length;
 const assets = fs.readdirSync(path.join(dist, 'assets')).map(f => path.join(dist, 'assets', f));
