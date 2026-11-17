@@ -17,6 +17,17 @@ owner's words in short. Status: `[ ]` open · `[~]` in progress · `[x]` done an
 `[?]` waiting on the owner (the question is under "Waiting on you"). The 2-hourly run and the autopilot work the open
 lines top down; a line is closed only when it's done and seen, or the owner drops it.
 
+2026-11-16 (chat, feedback):
+- [x] End of the site: "share feedback" (something to add, share or fix, found a mistake → write to the owner's email).
+- [x] End of the site: the owner's mission and a short "about me" with a small photo (tried the course himself, it's
+      hard; wants to help new learners avoid injuries, connect the community worldwide; from Ukraine, loves learning
+      new skills and helping people). Not in the header; only at the end.
+- [x] A small feedback bubble bottom right that opens after 10 s, with a close (X): "questions, improvements,
+      something unclear? Tell me, I want to make it better to help others." Done: section "Why I made this" (#about)
+      after the final check, email vekaev4@gmail.com ("vkf4" by ear, checked against Gmail), bubble opens once, then
+      only the icon; seen EN desktop light, RU/UK phone dark, ES phone light.
+- [?] Photo at the end is the GitHub avatar for now: keep it or send another.
+
 2026-11-16 (chat, outreach):
 - [~] Research every skydiving school / dropzone worldwide (US, Australia, UK, Canada, Europe, rest of the world),
       plus coaches, gear makers, associations: one CSV (docs/outreach/contacts.csv), public business contacts only.
