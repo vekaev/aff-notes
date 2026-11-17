@@ -18,7 +18,7 @@ const T = {
   eyebrow: h('About these notes', 'Sobre estos apuntes', 'Об этих заметках', 'Про ці нотатки'),
   title: h('Why I made this', 'Por qué hice esto', 'Зачем я это сделал', 'Навіщо я це зробив'),
   me: h('Yevhenii Petrenko', 'Yevhenii Petrenko', 'Евгений Петренко', 'Євгеній Петренко'),
-  from: h('From Ukraine. I love learning new skills and helping people get better.', 'De Ucrania. Me encanta aprender cosas nuevas y ayudar a otros a mejorar.', 'Из Украины. Люблю учиться новому и помогать людям становиться лучше.', 'З України. Люблю вчитися нового й допомагати людям ставати кращими.'),
+  from: h('From Ukraine. I love learning new skills, getting better and helping people.', 'De Ucrania. Me encanta aprender cosas nuevas, mejorar y ayudar a la gente.', 'Из Украины. Люблю учиться новому, становиться лучше и помогать людям.', 'З України. Люблю вчитися нового, ставати кращим і допомагати людям.'),
   story: h(
     'I went through the AFF course myself. It is an incredible sport, and the course is not easy: a lot to remember, and the things that matter most happen in seconds. I made these notes to learn it properly, and then wanted them to help others too.',
     'Hice el curso AFF yo mismo. Es un deporte increíble, y el curso no es fácil: hay mucho que recordar, y lo más importante pasa en segundos. Hice estos apuntes para aprenderlo bien, y luego quise que ayudaran a otros también.',
