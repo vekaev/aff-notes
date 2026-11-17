@@ -45,7 +45,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] Make sure every ask is tracked and done: this inbox + rule in CLAUDE.md + the 2-hourly run reads it.
 - [~] Curriculum proposals: new chapters (landing off the DZ and after landing; other canopies; wind for students),
       decision-style test questions, "act now" rules where they're used. One per run, sourced.
-      16:00 run: Part II "When freefall goes wrong" (proposal #2: early container opening, pilot-chute hesitation,
+      16:00 run (29068bb): Part II "When freefall goes wrong" (proposal #2: early container opening, pilot-chute hesitation,
       can't find the handle, the AAD is not a plan, 4 decision questions; USPA SIM 4-1 E + Cat A). Next: landing
       priorities (#3), traffic (#4), low-turn recovery (#5).
 - [x] EP / FIX labels on the malfunction groups: EP links to the emergency procedure with a hover hint
@@ -73,7 +73,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       altimeter rows, legend, pattern labels, hero axis); label the canopy-check count chips as the count, not altitudes;
       one number format per language (UK/RU "5 500" vs "5,500"); translate the English injury-chart sources in ES/UK/RU;
       UK "викидання" → "відокремлення"; label the hero "0/20" ring; phone: sticky exit-count drawing covers the steps.
-      16:00 run done (seen headless EN/ES/UK/RU, light/dark, 375/1280; page guard 2026-11-16-1615.md): "ft" in prose (dropzone cards, altitude, pattern, malfunctions, mistakes, quiz answers), big numbers
+      16:00 run done (29068bb, seen headless EN/ES/UK/RU, light/dark, 375/1280; page guard 2026-11-16-1615.md): "ft" in prose (dropzone cards, altitude, pattern, malfunctions, mistakes, quiz answers), big numbers
       and timelines per language (UK/RU "2 500 фт", "3 с"), map labels and altimeter legend with units, RU "выброска" →
       "отделение", injury-chart sources translated, hero ring shows done/total inside (count no longer twice), exit-count
       picture smaller on phones, pattern clip poster shows the drawn pattern.
@@ -104,6 +104,9 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
   school-specific doubt from the fact-check (count 3 or 5 after the pull, where to look in the flare, aircraft-emergency
   altitudes, which instructor is outside, hard pull: reserve only or cut away first, RSL/MARD, reserve handle type,
   wave-off count, the shake on exit, AAD model). Bring the answers; each fixes a `check` badge.
+- Hand signals: add **legs in** and **OK** (USPA chart, SIM App. A) as two new cards? They need filmed hands; the
+  instructors' version (and whether a closed fist means practice touch or pull now) is in the questions chapter.
+  Recommended: yes, add both once a clip is found.
 - Ground-school test photo: Q27 key says 300 ft or 1,000 ft? (Q28 already asks about 300.)
 - Lowercase headlines everywhere (Stoic) or sentence case like the first screen? Recommended: sentence case.
 - Big reorder: Part IV "act now" chapters first, statistics and real cases in their own part "learn from others", an
