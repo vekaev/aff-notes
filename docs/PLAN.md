@@ -25,7 +25,7 @@ Work in this order; tick each line here and in the inbox below; one item per run
    the "translated" note), then merge into main, push, remove the worktree.
 3. [!] **Outreach research redo lines** (below, "Outreach research cut short"): one agent per line with
    `docs/outreach/BRIEF.md`, output `docs/outreach/raw/redo_<name>.csv`, then `python3 scripts/merge-contacts.py`.
-   Sub-chat C (existing lists) was still running: if `docs/outreach/raw/w2_existing_lists.csv` is missing, run it again
+   Sub-chat C (existing lists) stopped by the 5-hour limit 2026-11-16, resumed 2026-11-17: if `docs/outreach/raw/w2_existing_lists.csv` is missing, run it again
    (scope in `docs/outreach/WAVE2.md`, section C).
 4. [ ] **Analyse everything the agents found** (owner 2026-11-16): read every `docs/outreach/raw/*.md` (sources,
    gaps, best contacts, posting rules, how-to-ask) and `contacts.csv`, and write `docs/outreach/ANALYSIS.md`:
@@ -35,7 +35,13 @@ Work in this order; tick each line here and in the inbox below; one item per run
    (dead/parked sites, personal addresses flagged, closed dropzones) and add a `priority` column.
 5. [ ] **The ask**: from `docs/outreach/raw/how-to-ask.md` and the analysis, write `docs/outreach/email.md` (email,
    follow-up, Reddit post, creator DM) with the owner's mission. Nothing is sent: the owner approves each wave.
-6. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
+6. [ ] **Outreach pipeline** (owner 2026-11-17): send emails in each contact's language and track everything:
+   who got which email (link to the sent mail / thread), opened or not if possible, replied or not, what they said
+   (summary + link), follow-ups due, stats by country / type / language / wave, all in one place. First research
+   ready tools (open source or cheap: e.g. a Gmail mail-merge with reply tracking, an open-source CRM / outreach tool,
+   a Google Sheet + Gmail labels, a small local app), compare cost and effort, then build or set up the best one.
+   Reusable for any future research (the /outreach skill gets a "track" step). Nothing is sent without the owner.
+7. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
    (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
 `docs/outreach/raw/`; nothing in them needs a commit except what's listed above.
@@ -63,7 +69,8 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   Built on branch i18n (worktree ../aff-notes-i18n, 6892afa): per-language files keyed by the English text, 1,309
   strings / 78k characters, tests (all keys, same tags, same numbers), note "translated, not yet checked by a native
   instructor" on extra languages. Translators (one agent each, glossary from the federation first, then back-check):
-  - [~] fr  - [~] de  - [~] it  - [~] pt  - [~] pl  - [~] sv  - [~] nb  - [~] da  - [~] fi  - [x] ar (committed on i18n; not seen on screen yet: check RTL ranges like "2,000 ← 1,000 ft"; 5 terms for a native instructor in glossary-ar.md)
+  - [!] fr  - [!] de  - [!] it  - [!] pt  - [!] pl  - [!] sv  - [!] nb  - [!] da  - [!] fi: stopped by the 5-hour
+        limit 2026-11-16 23:00, resumed 2026-11-17 after the reset  - [x] ar (committed on i18n; not seen on screen yet: check RTL ranges like "2,000 ← 1,000 ft"; 5 terms for a native instructor in glossary-ar.md)
     (2026-11-16 23:00: glossaries for ar/it/pl only, no translations yet; resume per "Resume here" step 1)
   - [ ] After: look at every language on screen (phone + desktop, light + dark), Arabic layout right-to-left, merge.
   - [ ] Later: native skydivers check each language (ask through the outreach list), more languages (nl, cs, tr, ja,
