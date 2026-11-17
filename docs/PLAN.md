@@ -56,6 +56,12 @@ Work in this order; tick each line here and in the inbox below; one item per run
    - [ ] part4 `real`, optional: name the studies behind "73–88 %" (Westman 87.9 % canopy + landing; France 83.3 %).
    - [ ] optional: USPA 2024 "9 deaths in ~3.88 M jumps": check Parachutist's 2024 fatality summary first. Accident
      lessons: link USPA yearly summaries / FAI safety report, not SkydivingFatalities.info (unsigned, outdated).
+   - [ ] part4 `real`, one line on why causes changed (Gemini run 1 fact-check, `ext_gemini_1_factcheck.md` #2): "AADs
+     and reserve static lines have nearly eliminated deaths from no pulls and equipment; most US deaths now happen
+     under an open canopy, at landing" (USPA 2023 Fatality Summary, parachutist.com articleid 9378: 10 deaths, 6
+     landing, 1 equipment).
+   - [ ] optional, tunnel: Newcomb et al. 2022 (PMC8929224), anterior shoulder dislocations from indoor skydiving:
+     read the full text first; if useful, a tunnel-safety tip marked check.
 5. [ ] **The ask**: from `docs/outreach/raw/how-to-ask.md` and the analysis, write `docs/outreach/email.md` (email,
    follow-up, Reddit post, creator DM) with the owner's mission. Nothing is sent: the owner approves each wave.
 6. [ ] **Outreach pipeline** (owner 2026-11-17): send emails in each contact's language and track everything:
@@ -171,6 +177,19 @@ Work in this order; tick each line here and in the inbox below; one item per run
    (repeats are expected and fine).
    2026-11-17: fetched by the agent itself in Dia (owner: "open Gemini/ChatGPT under my Tavus account").
    - [x] Gemini "Skydiving Safety Directory": its 193-row CSV was never written (49 drafts, 48 known) → 6h.
+   - [x] Gemini run 1, turn 6 (owner asked "Can u run this plan and collect this data"; fetched again 2026-11-17 in a
+     sub-chat): the CSV now exists: 232 rows (it says 193; 216 with shifted columns), saved unchanged
+     (`raw/ext_gemini_1.md`, `ext_gemini_1.unverified.csv.txt`). ~190 already known; ~60 checked on own sites →
+     21 rows in `ext_gemini_1_verified.csv`: 14 new (10 with email: McNeil, Barry, Wang, Jacoby, Iowa State,
+     FSC Lipperland, Western Parachute Service, 2 YouTube creators, + 5 PASA-listed Facebook groups), 1 email fill
+     (WeFly), 4 CSPA rows + board addresses; dropped pissedconsumer iFLY info.<city>@, legal/RMA inboxes, PIA-only
+     emails, iFLY Hollywood (closed), the Smith & Pell satire paper. contacts.csv 4,159 → 4,173 rows, emails
+     2,322 → 2,332. Fact-check `ext_gemini_1_factcheck.md`: 20 claims, 10 true, 7 partly, 2 false (Peyron 2018 is a
+     suicide case report; Smith & Pell 2003 is satire), 1 unverified. Better inboxes for known rows (Perris manifest@,
+     CSPA, DFV technik@, JYRO) in `ext_gemini_1_leads.md` → step 4 clean-up.
+   - [!] redo: 6 rows not checked (`raw/ext_gemini_1_pending.unverified.csv.txt`: GRISSUL Lausanne emails, Skydiving
+     NSW bigpond address, Parachute Academy mario@, Basik aerosportevents@, 2 Facebook groups). One search each in a
+     fresh session, then merge.
    - [x] ChatGPT "Build Skydiving Contacts" (Tavus 2.0 workspace, agent mode): 3 CSVs, 533 + 1,008 + 817 rows
      (`raw/ext_chatgpt_2{a,b,c}_*.unverified.csv.txt`, report `ext_chatgpt_2_report.md`, chat `ext_chatgpt_2_conversation.md`).
      1,679 already known, 679 new. 86 with a contact verified on own sites → 65 kept (21 dropped: closed, unrelated,
