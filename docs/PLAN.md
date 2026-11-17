@@ -63,7 +63,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   Built on branch i18n (worktree ../aff-notes-i18n, 6892afa): per-language files keyed by the English text, 1,309
   strings / 78k characters, tests (all keys, same tags, same numbers), note "translated, not yet checked by a native
   instructor" on extra languages. Translators (one agent each, glossary from the federation first, then back-check):
-  - [~] fr  - [~] de  - [~] it  - [~] pt  - [~] pl  - [~] sv  - [~] nb  - [~] da  - [~] fi  - [~] ar (right-to-left)
+  - [~] fr  - [~] de  - [~] it  - [~] pt  - [~] pl  - [~] sv  - [~] nb  - [~] da  - [~] fi  - [x] ar (committed on i18n; not seen on screen yet: check RTL ranges like "2,000 ← 1,000 ft"; 5 terms for a native instructor in glossary-ar.md)
     (2026-11-16 23:00: glossaries for ar/it/pl only, no translations yet; resume per "Resume here" step 1)
   - [ ] After: look at every language on screen (phone + desktop, light + dark), Arabic layout right-to-left, merge.
   - [ ] Later: native skydivers check each language (ask through the outreach list), more languages (nl, cs, tr, ja,
