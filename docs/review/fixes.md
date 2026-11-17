@@ -7,6 +7,17 @@ Expert reports: `docs/review/expert/<scope>.md`. A second, independent pass on P
 first one was being fixed) is kept in `docs/review/expert/second-opinion/part4-emergencies.md`: compare it with the fixer
 log when Part IV is done.
 
+## Status 2026-11-17 08:00 PST
+
+08:00 run: part4 `real` new stat "6/10": 6 of the 10 US deaths in 2023 happened at landing under an open canopy, 1
+was an equipment problem; AADs and reserve static lines have nearly ended the no-pull and equipment deaths that once
+caused most of them. Source re-read this run: "A Widespread Improvement: The 2023 Fatality Summary", Parachutist,
+2024-04-09 (parachutist.com ArticleID 9378): record low of 10; landing problems 6 (4 intentional low turns); equipment 1;
+"automatic activation devices and reserve static lines have nearly eliminated fatalities in categories that used to
+contribute significantly". All 32 languages. Still open (optional): MARD line, "Two instructors" line, 73–88 % anchors,
+USPA 2024 fatality figure, tunnel shoulder study. School-rules PR #6 still a draft (no content collision: it doesn't
+touch this stat).
+
 ## Status 2026-11-17 06:00 PST
 
 06:00 run: the school-rules sub-chat saved its work as draft PR #6 (05:58, not merged; it changes all four part files
