@@ -17,6 +17,9 @@ export function initialLang(): Lang {
   for (const p of prefs) {
     let base = (p || '').toLowerCase().split('-')[0];
     if (base === 'no' || base === 'nn') base = 'nb';
+    if (base === 'iw') base = 'he';
+    if (base === 'in') base = 'id';
+    if (base === 'bs') base = 'hr';
     if ((ALL_LANGS as readonly string[]).includes(base)) return base as Lang;
   }
   return 'en';
@@ -73,8 +76,8 @@ const UNIT: Partial<Record<Lang, Record<string, string>>> = {
   ru: { ft: 'фт', s: 'с' },
 };
 /** Thousands separator per language: a space (UK, RU, FR, PL, Nordic) or a dot (DE, IT, PT, DA); else a comma. */
-const SPACE_GROUP: readonly Lang[] = ['uk', 'ru', 'fr', 'pl', 'sv', 'nb', 'fi'];
-const DOT_GROUP: readonly Lang[] = ['de', 'it', 'pt', 'da'];
+const SPACE_GROUP: readonly Lang[] = ['uk', 'ru', 'fr', 'pl', 'sv', 'nb', 'fi', 'cs', 'sk', 'hu', 'bg', 'lt'];
+const DOT_GROUP: readonly Lang[] = ['de', 'it', 'pt', 'da', 'nl', 'ro', 'hr', 'sr', 'sl', 'el', 'tr', 'id'];
 /** A big number in each language's own format: "2,500 ft" stays in EN/ES, becomes "2 500 фт" in UK/RU. */
 export function num(s: string, lang: Lang): string {
   if (DOT_GROUP.includes(lang)) return glue(s.replace(/(\d),(?=\d{3}(?!\d))/g, '$1.'));
@@ -105,7 +108,7 @@ export function renderInline(raw: string): ReactNode[] {
 
 export function CheckBadge() {
   const { lang } = useLang();
-  const word = ({ en: 'check', es: 'verificar', ru: 'уточнить', uk: 'уточнити', fr: 'vérifier', de: 'prüfen', it: 'verificare', pt: 'verificar', pl: 'sprawdź', sv: 'kolla', nb: 'sjekk', da: 'tjek', fi: 'tarkista', ar: 'تحقّق' } as Record<Lang, string>)[lang];
+  const word = ({ en: 'check', es: 'verificar', ru: 'уточнить', uk: 'уточнити', fr: 'vérifier', de: 'prüfen', it: 'verificare', pt: 'verificar', pl: 'sprawdź', sv: 'kolla', nb: 'sjekk', da: 'tjek', fi: 'tarkista', ar: 'تحقّق', nl: 'controleren', cs: 'ověřit', sk: 'overiť', hu: 'ellenőrizd', ro: 'verifică', bg: 'провери', hr: 'provjeri', sr: 'proveri', sl: 'preveri', el: 'έλεγξε', tr: 'kontrol et', lt: 'patikrinti', he: 'לבדוק', zh: '核实', ja: '確認', ko: '확인', th: 'ตรวจสอบ', id: 'periksa' } as Record<Lang, string>)[lang];
   return <span className="badge" title={word}>{word}</span>;
 }
 
