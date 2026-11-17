@@ -212,6 +212,10 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
+2026-11-17 (chat, license + PRs):
+- [~] License (owner: "License yes"): MIT for code, CC BY-SA 4.0 for notes and drawings, clips belong to their creators.
+- [~] Merge the Dependabot PRs vekaev/aff-notes#1–#3 (owner: "PR merge"), after CI passes on each.
+
 2026-11-17 (chat, translations + tooling):
 - [x] (seen FR + AR phone; mail subject "AFF notes: translation (fr)") "Something wrong or a better word in the translation? Tell me": on every translated language (the top note) and
       in the feedback card; mail subject carries the language.
