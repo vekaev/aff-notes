@@ -46,8 +46,12 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [~] Curriculum proposals: new chapters (landing off the DZ and after landing; other canopies; wind for students),
       decision-style test questions, "act now" rules where they're used. One per run, sourced.
       16:00 run (29068bb): Part II "When freefall goes wrong" (proposal #2: early container opening, pilot-chute hesitation,
-      can't find the handle, the AAD is not a plan, 4 decision questions; USPA SIM 4-1 E + Cat A). Next: landing
-      priorities (#3), traffic (#4), low-turn recovery (#5).
+      can't find the handle, the AAD is not a plan, 4 decision questions; USPA SIM 4-1 E + Cat A).
+      20:00 run: #3 landing priorities and #5 low-turn recovery were already in Part III (low-turn chapter); built #4
+      "Traffic: other canopies around you" in the pattern chapter (after opening steer away with rear risers, look before
+      you turn, turn right / head-on both right, lower canopy has right of way but fly the same pattern; USPA SIM 4-1 + Cat G
+      academics) and 2 decision questions in the Part III test (head-on canopy; low turn at 150 ft). Next: #6 landing off
+      and after you land, #7 after you pull silver.
 - [x] EP / FIX labels on the malfunction groups: EP links to the emergency procedure with a hover hint
       ("how to do the emergency procedure →"); FIX explains "two tries only, keep checking altitude, not fixed by 2,500 → EP".
       Make "two tries + watch altitude" stand out in the malfunctions chapter.
@@ -84,8 +88,10 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       questions split one per line. #1 altimeter caption, #4 "Prop" quotes and #6 list heading were already fixed in 29068bb.
       Page guard 2026-11-16-1800.md: all of the above seen headless EN/ES/UK/RU, light/dark, 375/1280. Also fixed: UK/RU
       quiz end text after a wrong answer read as "chapter passed" (now "passed when all answers are right"; checks pass,
-      not yet seen on screen). Still open: split the other long instructor questions (aircraft emergency, which
-      aircraft, wave-off/D/E/D-1, ES radio); ranges like "6,000 or 5,500 ft" carry the unit once (fine to read? owner).
+      not yet seen on screen). 20:00 run: the other long instructor questions split one per line (aircraft emergency, which
+      aircraft, wave-off/D/E/D-1, radio); seen headless by page guard 2026-11-16-2000.md, which also asked for: wrong quiz
+      options as long as the right one (done), same words ("Hit early", ES "esos frenos") (done). Still open: split the
+      remaining long instructor questions (two canopies out, on the map, flare one/two-stage, ES EP, hard pull); ranges like "6,000 or 5,500 ft" carry the unit once (fine to read? owner).
 - [?] Big reorder (Part IV "act now" first, statistics and real cases in their own part, EP button in the header): ask.
 
 Added by the owner-asks audit (docs/review/owner-asks-audit.md):

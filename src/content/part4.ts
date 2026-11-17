@@ -2159,16 +2159,40 @@ export const part4: Part = {
           type: 'questions',
           items: [
             t(
-              `Aircraft emergency: at which altitudes do we land with the plane, exit on the reserve, exit on the main, or exit normally? Same on the Caravan and the Cessna? If we ride down, who switches off my AAD?`,
-              `Emergencia del avión: ¿a qué alturas aterrizamos con el avión, salimos con la reserva, con la principal o normal? ¿Igual en el Caravan y el Cessna? Si bajamos con el avión, ¿quién apaga mi AAD?`,
-              `Авария самолёта: на каких высотах садимся с самолётом, прыгаем на запасном, на основном или обычно? Одинаково на Caravan и Cessna? Если снижаемся с самолётом, кто выключает мой AAD?`,
-              `Аварія літака: на яких висотах сідаємо з літаком, стрибаємо на запасному, на основному чи звичайно? Однаково на Caravan і Cessna? Якщо знижуємося з літаком, хто вимикає мій AAD?`,
+              `Aircraft emergency: at which altitudes do we land with the plane, exit on the reserve, exit on the main, or exit normally?`,
+              `Emergencia del avión: ¿a qué alturas aterrizamos con el avión, salimos con la reserva, con la principal o normal?`,
+              `Авария самолёта: на каких высотах садимся с самолётом, прыгаем на запасном, на основном или обычно?`,
+              `Аварія літака: на яких висотах сідаємо з літаком, стрибаємо на запасному, на основному чи звичайно?`,
             ),
             t(
-              `Which aircraft do AFF students jump? Which instructor is inside and which outside? In the climb-out, which hand and foot go first, which bar do I hold?`,
-              `¿De qué avión saltan los alumnos AFF? ¿Qué instructor va dentro y cuál fuera? En el climb-out, ¿qué mano y qué pie van primero y de qué barra me agarro?`,
-              `С какого самолёта прыгают студенты AFF? Кто из инструкторов внутри, кто снаружи? При выходе в дверь: какая рука и нога первыми, за какой поручень держаться?`,
-              `З якого літака стрибають студенти AFF? Хто з інструкторів усередині, хто назовні? Під час виходу в двері: яка рука й нога першими, за який поручень триматися?`,
+              `Are those altitudes the same on the Caravan and the Cessna?`,
+              `¿Son esas alturas iguales en el Caravan y el Cessna?`,
+              `Эти высоты одинаковы на Caravan и Cessna?`,
+              `Ці висоти однакові на Caravan і Cessna?`,
+            ),
+            t(
+              `If we ride the plane down, who switches off my AAD?`,
+              `Si bajamos con el avión, ¿quién apaga mi AAD?`,
+              `Если снижаемся с самолётом, кто выключает мой AAD?`,
+              `Якщо знижуємося з літаком, хто вимикає мій AAD?`,
+            ),
+            t(
+              `Which aircraft do AFF students jump?`,
+              `¿De qué avión saltan los alumnos AFF?`,
+              `С какого самолёта прыгают студенты AFF?`,
+              `З якого літака стрибають студенти AFF?`,
+            ),
+            t(
+              `Which instructor is inside and which outside?`,
+              `¿Qué instructor va dentro y cuál fuera?`,
+              `Кто из инструкторов внутри, кто снаружи?`,
+              `Хто з інструкторів усередині, хто назовні?`,
+            ),
+            t(
+              `In the climb-out, which hand and foot go first, and which bar do I hold?`,
+              `En el climb-out, ¿qué mano y qué pie van primero y de qué barra me agarro?`,
+              `При выходе в дверь: какая рука и нога первыми, за какой поручень держаться?`,
+              `Під час виходу в двері: яка рука й нога першими, за який поручень триматися?`,
             ),
             t(
               `Exit count: exact words, which instructor first, exit altitude.`,
@@ -2219,10 +2243,22 @@ export const part4: Part = {
               `Витяжний завис за спиною: через яке плече дивитися?`,
             ),
             t(
-              `Wave-off: how many times, and does it start exactly at 5,500 ft? Pull altitude on categories D and E? Is D-1 my first exit without being held?`,
-              `Wave-off: ¿cuántas veces y empieza justo a 5,500 ft? ¿Altura de apertura en las categorías D y E? ¿En D-1 salgo por primera vez sin que me sujeten?`,
-              `Отмашка: сколько раз и начинать ровно на 5 500 футах? Высота раскрытия на категориях D и E? На D-1 я впервые отделяюсь без того, чтобы меня держали?`,
-              `Відмашка: скільки разів і починати рівно на 5 500 футах? Висота розкриття на категоріях D і E? На D-1 я вперше відокремлююсь без того, щоб мене тримали?`,
+              `Wave-off: how many times, and does it start exactly at 5,500 ft?`,
+              `Wave-off: ¿cuántas veces y empieza justo a 5,500 ft?`,
+              `Отмашка: сколько раз и начинать ровно на 5 500 футах?`,
+              `Відмашка: скільки разів і починати рівно на 5 500 футах?`,
+            ),
+            t(
+              `Pull altitude on categories D and E?`,
+              `¿Altura de apertura en las categorías D y E?`,
+              `Высота раскрытия на категориях D и E?`,
+              `Висота розкриття на категоріях D і E?`,
+            ),
+            t(
+              `Is D-1 my first exit without being held?`,
+              `¿En D-1 salgo por primera vez sin que me sujeten?`,
+              `На D-1 я впервые отделяюсь без того, чтобы меня держали?`,
+              `На D-1 я вперше відокремлююсь без того, щоб мене тримали?`,
             ),
             t(
               `Which altimeter will I wear, and where does the colour on its dial start?`,
@@ -2291,10 +2327,16 @@ export const part4: Part = {
           type: 'questions',
           items: [
             t(
-              `Radio: is there a check under canopy? If it's silent or I can't understand it, what do I do, and is there a signal from the ground?`,
-              `Radio: ¿hay prueba bajo la vela? Si no suena o no la entiendo, ¿qué hago? ¿Hay alguna señal desde el suelo?`,
-              `Рация: есть ли проверка под куполом? Если молчит или я не понимаю, что делать, и есть ли сигнал с земли?`,
-              `Рація: чи є перевірка під куполом? Якщо мовчить або я не розумію, що робити, і чи є сигнал із землі?`,
+              `Radio: is there a check under canopy?`,
+              `Radio: ¿hay prueba bajo la vela?`,
+              `Рация: есть ли проверка связи под куполом?`,
+              `Рація: чи є перевірка зв’язку під куполом?`,
+            ),
+            t(
+              `If the radio is silent or I can't understand it, what do I do? Is there a signal from the ground?`,
+              `Si la radio no suena o no la entiendo, ¿qué hago? ¿Hay alguna señal desde el suelo?`,
+              `Если рация молчит или я её не понимаю, что делать? Есть ли сигнал с земли?`,
+              `Якщо рація мовчить або я її не розумію, що робити? Чи є сигнал із землі?`,
             ),
             t(
               `On the map: the holding point, pattern altitudes, the usual wind and pattern side, what shows the landing direction, where not to land, alternate fields, power lines and other hazards.`,

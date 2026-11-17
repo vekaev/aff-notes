@@ -7,6 +7,10 @@ Expert reports: `docs/review/expert/<scope>.md`. A second, independent pass on P
 first one was being fixed) is kept in `docs/review/expert/second-opinion/part4-emergencies.md`: compare it with the fixer
 log when Part IV is done.
 
+## Status 2026-11-16 20:00 PST
+
+20:00 run: curriculum #4 traffic block + 2 decision questions in Part III; the last long instructor questions split.
+
 ## Status 2026-11-16 18:00 PST
 
 18:00 run: page guard 1615 open problems 1–10 closed (3 were already fixed), quiz end text in UK/RU fixed; page guard 1800 passed.
@@ -19,7 +23,7 @@ log when Part IV is done.
 | first-screen-dropzone | yes | yes | 6 | 3 | 0 | 2 (3 questions) | done 92dd8f4 |
 | part4-emergencies | yes | yes | 18 | 1 | 0 | 3 | done 8f436c7; 4 left for later (#17, M1, M2 not added, C3 elsewhere) |
 | part4-injuries-tips | yes | yes | 16 | 1 | 1 | 3 (+1 listed) | done d99a86a |
-| curriculum | 2026-11-16.md | | | | | | proposals; final check (543718d), rig photos (8084813), "When freefall goes wrong" (16:00 run) built; next: landing priorities, traffic, low-turn recovery |
+| curriculum | 2026-11-16.md | | | | | | proposals; final check (543718d), rig photos (8084813), "When freefall goes wrong" (16:00 run) built; #3 and #5 were already there; #4 traffic built (20:00 run); next: #6 landing off, #7 after silver |
 | real footage | real-footage.md | | 6 clips + 8 photos placed | | | | done (rig 8084813; exit, altimeter, canopy check, pattern: 14:00 run) |
 
 ## Safety items from Part IV (applied in 8f436c7 / d99a86a; kept as the checklist)

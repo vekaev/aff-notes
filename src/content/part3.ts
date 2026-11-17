@@ -331,6 +331,41 @@ export const part3: Part = {
             clip('pattern_pov', l('From the canopy: downwind, base and final drawn on a real field (north wind at that dropzone)', 'Desde la vela: viento en cola, base y final dibujados sobre un campo real (viento del norte en esa zona de salto)', 'С купола: участки по ветру, базовая и финал нарисованы на настоящем поле (северный ветер на той площадке)', 'З купола: ділянки по вітру, базова й фінал намальовані на справжньому полі (північний вітер на тому майданчику)'), 'Skydive Miami', 'KUUMP_XCBUE', 217),
           ],
         },
+        {
+          type: 'h',
+          id: 'traffic',
+          text: l('Traffic: other canopies around you', 'Tráfico: otras velas a tu alrededor', 'Трафик: другие купола рядом', 'Трафік: інші куполи поруч'),
+        },
+        {
+          type: 'list',
+          title: l('Rules of the road under canopy (USPA SIM 4-1)', 'Reglas de vuelo bajo vela (USPA SIM 4-1)', 'Правила движения под куполом (USPA SIM 4-1)', 'Правила руху під куполом (USPA SIM 4-1)'),
+          items: [
+            l(
+              'Right after opening: <b>know where the others are</b>. Someone close? <b>Steer away with the rear risers</b>, then do your canopy check.',
+              'Justo al abrir: <b>sabe dónde están los demás</b>. ¿Alguien cerca? <b>Apártate con las bandas traseras</b> y luego haz tu revisión de la vela.',
+              'Сразу после раскрытия: <b>знай, где остальные</b>. Кто-то близко? <b>Уходи задними свободными концами</b>, потом проверка купола.',
+              'Одразу після розкриття: <b>знай, де інші</b>. Хтось близько? <b>Відходь задніми вільними кінцями</b>, потім перевірка купола.',
+            ),
+            l(
+              '<b>Look before you turn</b>, every turn, all the way down.',
+              '<b>Mira antes de girar</b>, en cada giro, hasta el suelo.',
+              '<b>Смотри, прежде чем повернуть</b>, перед каждым разворотом, до самой земли.',
+              '<b>Дивись, перш ніж повернути</b>, перед кожним розворотом, до самої землі.',
+            ),
+            l(
+              'To avoid someone, <b>turn right</b>. Coming at each other head-on? <b>Both turn right</b>.',
+              'Para esquivar a alguien, <b>gira a la derecha</b>. ¿Venís de frente? <b>Los dos giran a la derecha</b>.',
+              'Чтобы разойтись, <b>поворачивай вправо</b>. Летите лоб в лоб? <b>Оба вправо</b>.',
+              'Щоб розминутися, <b>повертай праворуч</b>. Летите лоб у лоб? <b>Обидва праворуч</b>.',
+            ),
+            l(
+              'The <b>lower canopy has the right of way</b>. That doesn’t make the landing area yours: fly the <b>same pattern</b> as everyone and stay predictable.',
+              'La <b>vela más baja tiene preferencia</b>. Eso no te da toda la zona de aterrizaje: vuela el <b>mismo circuito</b> que todos y sé predecible.',
+              'У <b>нижнего купола приоритет</b>. Но площадка от этого не твоя: летай по <b>той же схеме</b>, что и все, и будь предсказуем.',
+              'У <b>нижнього купола пріоритет</b>. Але майданчик від цього не твій: літай за <b>тією самою схемою</b>, що й усі, і будь передбачуваним.',
+            ),
+          ],
+        },
         { type: 'h', text: l('Turn limits', 'Límites de giro', 'Ограничения разворотов', 'Обмеження розворотів') },
         {
           type: 'p',
@@ -413,7 +448,7 @@ export const part3: Part = {
             ),
             l(
               'Already in a low turn? <b>Opposite toggle down</b> to stop the turn and bring the canopy back overhead. Then <b>flare from those brakes</b> and get ready for a hard landing (PLF). Hit early? <b>Keep flying</b> the canopy (USPA SIM 4-1).',
-              '¿Ya estás en un giro bajo? <b>Baja el batidor contrario</b> para parar el giro y volver a tener la vela encima. Luego <b>flare desde ese freno</b> y prepárate para un aterrizaje duro (PLF). ¿Tocas antes? <b>Sigue pilotando</b> la vela (USPA SIM 4-1).',
+              '¿Ya estás en un giro bajo? <b>Baja el batidor contrario</b> para parar el giro y volver a tener la vela encima. Luego <b>flare desde esos frenos</b> y prepárate para un aterrizaje duro (PLF). ¿Tocas antes? <b>Sigue pilotando</b> la vela (USPA SIM 4-1).',
               'Уже в низком развороте? <b>Противоположную клеванту вниз</b>, чтобы остановить разворот и вернуть купол над головой. Потом <b>flare из этих тормозов</b> и готовься к жёсткой посадке (PLF). Коснулся раньше? <b>Продолжай управлять</b> куполом (USPA SIM 4-1).',
               'Уже в низькому розвороті? <b>Протилежну клеванту вниз</b>, щоб зупинити розворот і повернути купол над головою. Потім <b>flare із цих гальм</b> і готуйся до жорсткої посадки (PLF). Торкнувся раніше? <b>Далі керуй</b> куполом (USPA SIM 4-1).',
             ),
@@ -1121,6 +1156,46 @@ export const part3: Part = {
                 'Pregunta 32: árboles, agua, edificios, cables eléctricos.',
                 'Вопрос 32: деревья, вода, здания, линии электропередачи.',
                 'Питання 32: дерева, вода, будівлі, лінії електропередачі.',
+              ),
+            },
+            {
+              q: l(
+                'Under canopy at 3,000 ft, another canopy is flying straight at you, head-on. What do you do?',
+                'Bajo vela a 3,000 ft, otra vela viene directo hacia ti, de frente. ¿Qué haces?',
+                'Под куполом на 3 000 футах на тебя летит другой купол, лоб в лоб. Что делаешь?',
+                'Під куполом на 3 000 футах на тебе летить інший купол, лоб у лоб. Що робиш?',
+              ),
+              options: [
+                l('Turn left, away from the pattern side; the other jumper keeps flying straight', 'Giras a la izquierda, lejos del lado del circuito; el otro sigue recto', 'Поворачиваю влево, в сторону от схемы; другой летит прямо', 'Повертаю ліворуч, убік від схеми; інший летить прямо'),
+                l('Hold straight and wait; the higher canopy has to move out of your way', 'Sigues recto y esperas; la vela más alta tiene que apartarse', 'Лечу прямо и жду; уходить с пути должен купол, который выше', 'Лечу прямо й чекаю; сходити з дороги має купол, який вище'),
+                l('Look, then turn right; the other jumper turns right too', 'Miras y giras a la derecha; el otro también gira a la derecha', 'Смотрю и ухожу вправо; другой тоже уходит вправо', 'Дивлюся й відходжу праворуч; інший теж відходить праворуч'),
+              ],
+              answer: 2,
+              why: l(
+                'Head-on, both canopies steer right (USPA SIM 4-1). Look before every turn.',
+                'De frente, las dos velas giran a la derecha (USPA SIM 4-1). Mira antes de cada giro.',
+                'Лоб в лоб оба купола уходят вправо (USPA SIM 4-1). Смотри перед каждым разворотом.',
+                'Лоб у лоб обидва куполи відходять праворуч (USPA SIM 4-1). Дивись перед кожним розворотом.',
+              ),
+            },
+            {
+              q: l(
+                'At about 150 ft you realise you have started a turn that is too low. What now?',
+                'A unos 150 ft te das cuenta de que empezaste un giro demasiado bajo. ¿Y ahora?',
+                'Примерно на 150 футах понимаешь, что начал слишком низкий разворот. Что теперь?',
+                'Приблизно на 150 футах розумієш, що почав надто низький розворот. Що тепер?',
+              ),
+              options: [
+                l('Opposite toggle down to stop the turn, flare from those brakes, PLF', 'Bajas el batidor contrario para parar el giro, flare desde esos frenos, PLF', 'Противоположную клеванту вниз, чтобы остановить разворот, flare из этих тормозов, PLF', 'Протилежну клеванту вниз, щоб зупинити розворот, flare із цих гальм, PLF'),
+                l('Pull the same toggle harder to finish the turn fast, then flare from there', 'Tiras más del mismo batidor para terminar el giro rápido, y flare desde ahí', 'Сильнее тяну ту же клеванту, чтобы быстрее докрутить, потом flare', 'Сильніше тягну ту саму клеванту, щоб швидше докрутити, потім flare'),
+                l('Let both toggles all the way up for speed, then a hard flare at the end', 'Subes los dos batidores del todo para ganar velocidad, y un flare fuerte al final', 'Отпускаю обе клеванты до конца ради скорости, потом резкий flare', 'Відпускаю обидві клеванти до кінця заради швидкості, потім різкий flare'),
+              ],
+              answer: 0,
+              why: l(
+                'Stop the turn with the opposite toggle, get the canopy back overhead, flare from there and PLF. Hit early? Keep flying the canopy (USPA SIM 4-1).',
+                'Para el giro con el batidor contrario, vuelve a tener la vela encima, flare desde ahí y PLF. ¿Tocas antes? Sigue pilotando la vela (USPA SIM 4-1).',
+                'Останови разворот противоположной клевантой, верни купол над головой, flare оттуда и PLF. Коснулся раньше? Продолжай управлять куполом (USPA SIM 4-1).',
+                'Зупини розворот протилежною клевантою, поверни купол над головою, flare звідти й PLF. Торкнувся раніше? Далі керуй куполом (USPA SIM 4-1).',
               ),
             },
           ],
