@@ -164,11 +164,25 @@ Work in this order; tick each line here and in the inbox below; one item per run
    Finland: pull 1,600→1,400 m, decide 600 m), so a ft/m switch alone would teach wrong altitudes. Build a visible
    "rules: USPA / DFV / FFP / British Skydiving / RU-UA metric" profile from the region, in that order; unofficial
    numbers marked check. Gaps: FPSR/FPSU syllabi, DFV AHB Teil I, APF, Form 330 values, CBPq, KNVvL.
-6k. [?] **Owner sends the latest deep-research results from Gemini, Claude and ChatGPT** (owner 2026-11-17, "I will come
+6k. [~] **Owner sends the latest deep-research results from Gemini, Claude and ChatGPT** (owner 2026-11-17, "I will come
    back to it later"). When they arrive: save each as `docs/outreach/raw/ext_<tool>_<scope>.unverified.csv.txt` + `.md`
    (a pasted chat or uploaded file), then process like 6b/6c/6h: verify every row at its source, drop legal/privacy
    inboxes, fact-check the claims, merge with `scripts/merge-contacts.py` and report new vs already-known rows
    (repeats are expected and fine).
+   2026-11-17: fetched by the agent itself in Dia (owner: "open Gemini/ChatGPT under my Tavus account").
+   - [x] Gemini "Skydiving Safety Directory": its 193-row CSV was never written (49 drafts, 48 known) → 6h.
+   - [x] ChatGPT "Build Skydiving Contacts" (Tavus 2.0 workspace, agent mode): 3 CSVs, 533 + 1,008 + 817 rows
+     (`raw/ext_chatgpt_2{a,b,c}_*.unverified.csv.txt`, report `ext_chatgpt_2_report.md`, chat `ext_chatgpt_2_conversation.md`).
+     1,679 already known, 679 new. 86 with a contact verified on own sites → 65 kept (21 dropped: closed, unrelated,
+     a test record, a gambling domain); + 47 CSPA opt-in rigger emails; + 12 emails for known rows; + 2 published
+     personal addresses (FFP DTN, FSC Remscheid) → `ext_chatgpt_2_verified.csv`. 469 name-only rows researched
+     (owner: "as many emails as possible") → 198 with a contact (146 emails), 102 dropped → `ext_chatgpt_2_names_researched.csv`.
+     contacts.csv 3,985 → 4,122 rows, emails 2,035 → 2,141.
+   - [!] redo: 169 name-only rows not searched (session web-search limit, 200 shared): `raw/ext_chatgpt_2_names_pending.unverified.csv.txt`
+     (US 22, Russia 15, Brazil 13, Italy 11, Germany 10…). One search each in a fresh session, then merge.
+   - [ ] dedupe at step 4: Tandem Skydive Germany ×5 sites (one company), Nuggets ×2, iFLY Orlando ×2, Mendoza ×2,
+     SkydivePorto group, iSkydive America group (Capital City, Charlevoix, DC, NY Tandem).
+   - [ ] Claude research run: not received yet.
 7. [?] Waiting on the owner (link + clips settled 2026-11-17: public, clips kept): sender = a project domain + one
    Workspace mailbox, never the personal Gmail (docs/outreach/sending.md: domain name? ~$100 budget? postal address for
    the footer?); first wave = own school and instructor; keep the GitHub photo at the end or send another; the 9
