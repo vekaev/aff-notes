@@ -95,11 +95,34 @@ Work in this order; tick each line here and in the inbox below; one item per run
    - [!] redo: USPA S&TA locator names need its search form per DZ (not submitted); owner decides if worth doing.
    - [ ] DAeC register adds emails / contact names for OFC Nobitz, FSV Zerbst, FSC Oberhausen
      (`ext_ai_run2_leads.md`): apply in the step 4 clean-up.
-6h. [~] **Process AI run 3** (owner 2026-11-17, pasted, prose, no CSV): `docs/outreach/raw/ext_ai_run3.md`. Same
+6h. [x] **Process AI run 3** (owner 2026-11-17, pasted, prose, no CSV): `docs/outreach/raw/ext_ai_run3.md`. Same
    sub-chat as 6b/6c: verify its leads (harvest what's public and allowed; NOT people from the FAA airmen registry),
    add new contacts (e.g. Michiel Damhuis, Radboud; Vigil service centres; tunnel directories), fact-check its 11
    content claims (tunnel overconfidence, MARD timing, wing-loading rules, Vigil service life, Part 105…), add useful
    sourced facts as content tasks.
+   Done 2026-11-17: `ext_ai_run3_leads.csv` 176 rows (26 with email), 170 new (168 after the merge) → contacts.csv 3,816 → 3,984.
+   USPA lists 188 US group members, not 241 (public GitHub mirror of USPA's list, 2026-08-30); 186 already in, 2 added.
+   CYPRES service-centre directory: 161 new service points (115 riggers, 46 DZs; type guessed from the name; website +
+   phone, no emails: CYPRES publishes none). CSPA rigger list: personal emails → counted only (~76), 2 rigging
+   businesses added. Vigil America, Downward Trend, iFLY Austin, 5 tunnels (FlyTribe Malmö, Indoor Wingsuit Slovenia,
+   FULLFLY Bordeaux…), ISC Technical & Safety Committee (low). People: Damhuis already in (michiel.damhuis@radboudumc.nl,
+   WJES 2024, PMC10900578); Barthel added (Schulthess Klinik office inbox); Elsayed 2024 (Am Surg, no email).
+   Dropzone.com: redirect already in place by Feb 2025 (last forum page 2024-12-03). Not harvested: Burble, Best Maps
+   Ever (terms forbid scraping), FAA/AviationDB (personal records), fai.org (robots.txt blocks ClaudeBot).
+   Fact-check `ext_ai_run3_factcheck.md`: 26 claims, 14 true, 10 partly, 1 false (NTSB doesn't investigate skydiver
+   deaths), 1 unverified (failed PLF "leading cause"). Dutch tunnel-overconfidence = speculation in the Discussion,
+   not a finding; Vigil battery 8–12 yrs; BS Form 330(i) + Ops Manual s.6 and FFP DT 48 are binding canopy-size rules.
+   - [ ] content, part4 `ep` RSL line: "Student rigs must have one (USPA SIM 4-3 F); it's a backup: pull silver
+     anyway, straight away" instead of "if your rig has one <q-check/>".
+   - [ ] content, part4 `tips` next to the canopy course: downsizing: one size at a time, change size or type not
+     both (uspa.org/downsize); UK and France set binding minimum sizes by weight and jumps (BS Form 330(i); FFP DT 48).
+   - [ ] content, optional: MARD line (Skyhook: reserve out ~0.5 s after cutaway, still pull silver; UPT, USPA 2018).
+   - [ ] content, optional: part1 "Two instructors": USPA allows one AFF instructor after set tunnel training
+     (BSR 2-1 G.4.2.1), ask your school.
+   - [ ] step 4 clean-up: apply the better inboxes in `ext_ai_run3_leads.md` (Flyspot per-city, Aero Gravity,
+     KNVvL para@knvvl.nl, PD support@, iFLY merge table with wrong cities, Bottrop phone +49 2041 373730, ISC Bureau names).
+   - [!] redo: live USPA DZ count (fetch to uspa.org was refused by the permission check; mirror used), the 2 new DZs'
+     own pages, Vigil dealer locator (JavaScript only), 5 CYPRES pages that failed, British Skydiving s.6 PDF (404).
 6d. [x] Owner 2026-11-17: AI runs return too little → prompt v2 for volume (one narrow scope per run, table only,
    harvest whole directories, "continue" follow-ups, 29 scopes): `docs/outreach/deep-research-prompt-v2.md`.
    Owner runs it in other tools; each answer saved as `raw/ext_<tool>_<scope>.unverified.csv.txt`, verified + merged.
