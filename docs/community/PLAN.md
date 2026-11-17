@@ -311,6 +311,17 @@ one question a week?" Count the yeses. Nothing is built.
 8. Allow gear buying and selling? **Recommended: no.**
 9. Shut-down rule at 90 days if fewer than 10 weekly posters? **Recommended: yes, keep the archive.**
 
+### Owner's answers (2026-11-17, chat)
+- **Roles:** "In community they can do everything. I will be not admin." The owner is a member, not an admin or
+  moderator: the community runs itself (founding moderators come from the community; Q4 and Q6 no longer depend on
+  the owner's time, Q5 needs a moderator other than the owner).
+- **Platform (Q2):** "Discord is more common and easy to use and have trust other then forums but we can propose all
+  three": offer Discord, Reddit and a searchable forum (Discourse) side by side and let the people who join choose.
+  The research above still holds: chat isn't searchable from Google, so whatever is chosen, good answers also land
+  somewhere searchable (the app's FAQ or a forum).
+- **Rules (Q8, gear sales):** "they can do everything": the community sets its own rules, gear sales included.
+- Q1, Q3, Q7, Q9: not answered; recommendations above stand as proposals for the community.
+
 ## 12. Sources
 
 1. r/SkyDiving "Dropzone.com…End of an online era??" (2024-11-30), via the Arctic Shift archive: https://www.reddit.com/r/SkyDiving/comments/1h3e4s2/
