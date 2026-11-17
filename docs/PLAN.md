@@ -239,7 +239,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
         every push to main and every PR. Dependabot monthly, grouped (npm + actions).
       - Docs: CONTRIBUTING.md (how to fix a translation, change English, add a language, facts need sources, clips are
         third-party), CODE_OF_CONDUCT.md (Contributor Covenant 2.1, short), issue forms (translation, fact, bug), PR
-        template, README updated. No LICENSE yet (question under "Waiting on you").
+        template, README updated. License added later (line above, 2026-11-17).
       - **TanStack Query: no.** It caches and refetches server data; the app has none (content is bundled TypeScript,
         translations are lazy-loaded static JSON loaded once, progress is localStorage). It would add ~13 kB and a
         provider for nothing. Revisit only if the app gets a server (accounts, synced progress, live wind data).
