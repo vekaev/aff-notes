@@ -212,6 +212,19 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
+2026-11-17 (chat, translations + tooling):
+- [~] "Something wrong or a better word in the translation? Tell me": on every translated language (the top note) and
+      in the feedback card; mail subject carries the language.
+- [~] By ear "start a separate branch to fix everything you just said": build the school-rules profiles (6j), checked in
+      every language, on its own branch (sub-chat).
+- [~] Project tooling for contributors (sub-chat): ESLint, Prettier, Husky + lint-staged, i18n checks on commit
+      (all languages, tags, numbers), CI on GitHub, CONTRIBUTING, best practices / boilerplates; "TanStack Query" (by
+      ear "10 stack query"): check whether the app needs it (no server data today).
+
+2026-11-17 (chat, project link):
+- [x] (seen RU phone light) "Why I made this": link to the project on GitHub (https://github.com/vekaev/aff-notes), now public, so people can
+      see the code and contribute.
+
 2026-11-17 (chat, settings menu):
 - [x] (seen: ?lang=uk opens in metres, switching to EN gives feet) Metres by default where schools use metres (Russia, Ukraine: "no one uses feet"), chosen from the region or,
       without one, the language (docs/i18n/units-and-rules.md list); feet elsewhere.

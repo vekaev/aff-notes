@@ -8,6 +8,7 @@ import { headline, useLang } from '../i18n';
 export const EMAIL = 'vekaev4@gmail.com';
 /** Where people can find the owner. LinkedIn is empty until the owner gives the link (then it shows). */
 export const LINKS = {
+  repo: 'https://github.com/vekaev/aff-notes',
   github: 'https://github.com/vekaev',
   linkedin: 'https://www.linkedin.com/in/vekaev',
 };
@@ -58,7 +59,8 @@ const T = {
   close: h('Close', 'Cerrar', 'Закрыть', 'Закрити'),
   notNow: h('Not now, hide this', 'Ahora no, ocultar', 'Не сейчас, скрыть', 'Не зараз, сховати'),
   why: h('Why I made this', 'Por qué hice esto', 'Зачем я это сделал', 'Навіщо я це зробив'),
-  findMe: h('Find me and the project:', 'Encuéntrame a mí y al proyecto:', 'Где найти меня и проект:', 'Де знайти мене і проєкт:'),
+  findMe: h('Find me:', 'Encuéntrame:', 'Где меня найти:', 'Де мене знайти:'),
+  repoText: h('The project is open: read the code, suggest a fix or add something on', 'El proyecto es abierto: lee el código, propón un arreglo o añade algo en', 'Проект открыт: смотри код, предлагай исправления или добавляй своё на', 'Проєкт відкритий: дивись код, пропонуй виправлення або додавай своє на'),
 };
 
 function mailto(subject: string) {
@@ -92,6 +94,9 @@ export function AboutAuthor() {
             <button type="button" className="btn" onClick={copy}>{copied ? t(T.copied) : t(T.copy)}</button>
             <span className="mail">{EMAIL}</span>
           </div>
+          <p className="links">
+            {t(T.repoText)}{' '}<a href={LINKS.repo} target="_blank" rel="noopener">GitHub</a>.
+          </p>
           <p className="links">
             <span className="muted">{t(T.findMe)}</span>{' '}
             <a href={LINKS.github} target="_blank" rel="noopener">GitHub</a>
