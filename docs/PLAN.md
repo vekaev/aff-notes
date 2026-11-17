@@ -101,6 +101,25 @@ Work in this order; tick each line here and in the inbox below; one item per run
 6e. [~] Owner 2026-11-17: (a) status of every task; (b) for every country in contacts.csv: is its language in the app
    (default English)? add the missing ones (e.g. Thai) the same way as the 10 (glossary, translate, back-check, tests);
    (c) make sure every language is translated as expected: look at each on screen (phone + desktop, light + dark).
+   (b) [~] 18 more languages from the contact countries (nl cs sk hu ro bg hr sr sl el tr lt he zh ja ko th id) on
+       branch `i18n2` (worktree ../aff-notes-i18n2, wiring f1f3b8e): one translator each, started 2026-11-17.
+       Still missing (few contacts): fa, et, lv, vi, ms, ka, hy, kk, uz, mn, km. (c) [ ] screen check of all languages.
+6f. [x] Sender address (owner 2026-11-17): worried the personal Gmail gets flagged as spam or locked; a new address?
+   Research deliverability for this kind of outreach (separate address/domain, warm-up, daily limits, SPF/DKIM/DMARC,
+   tools) → `docs/outreach/sending.md` with a recommendation. (sub-chat "community")
+   Done 2026-11-16: never the personal Gmail; own domain (~$11/yr) + 1 Google Workspace mailbox ($7/mo), SPF/DKIM/DMARC,
+   2-week manual warm-up to ≤100/day, Reoon address check, Mailmeteor ($18/mo); ~9–10 weeks, ~$75–100 total.
+   Corrects how-to-ask.md (YAMM free 20/day; new Workspace 500/day until $100 paid). Owner picks the domain name.
+6g. [x] **Extra project: a worldwide community** (owner 2026-11-17): where skydivers and students would discuss and
+   help each other (Reddit, Facebook group, Discord, forum, Telegram/WhatsApp, a site with comments…), how such
+   communities start, grow and are moderated, safety/liability for advice, cost and time to run. Research →
+   `docs/community/PLAN.md` with options compared and a recommended first step. Nothing is created or posted
+   without the owner. (sub-chat "community")
+   Done 2026-11-16: don't build yet; help in r/SkyDiving + SkyCentre + own DZ chat, ask in the outreach email "would you
+   answer one student question a week?"; build a hosted Discourse (free plan) only when 10+ rated jumpers say yes.
+   dropzone.com closed 31 Dec 2024 (not 2026); its successor skydiveforum.com died Nov 2025. Blocker: the app is
+   private, so a community can't link to it yet. 9 owner questions in the file (§11).
+   [ ] redo: unverified — Facebook group names/sizes (needs login), VK groups, Zoom/Meet free limits, r/SkyDiving size now.
 7. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
    (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
