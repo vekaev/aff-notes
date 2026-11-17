@@ -435,13 +435,13 @@ dialog.player::backdrop { background: rgba(0,0,0,.72); }
 
 /* bullets instead of paragraphs; bold words get a soft highlighter in the part's colour */
 .pts { list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 7px; font-size: 15px; color: var(--ink); }
-.pts li { position: relative; padding-left: 18px; line-height: 1.45; }
-.pts li::before { content: ""; position: absolute; left: 2px; top: .55em; width: 7px; height: 7px; border-radius: 2px; background: var(--accent, var(--ink)); }
+.pts li { position: relative; padding-inline-start: 18px; line-height: 1.45; }
+.pts li::before { content: ""; position: absolute; inset-inline-start: 2px; top: .55em; width: 7px; height: 7px; border-radius: 2px; background: var(--accent, var(--ink)); }
 .rule .pts { margin-top: 8px; }
 .list { padding: 14px 18px 16px; }
 .list .lt { display: block; font-weight: 650; margin-bottom: 4px; }
-.list.do .pts li::before { content: "✓"; background: none; color: var(--ok); font-weight: 800; width: auto; height: auto; top: 0; left: 0; }
-.list.dont .pts li::before { content: "✕"; background: none; color: var(--red); font-weight: 800; width: auto; height: auto; top: 0; left: 0; }
+.list.do .pts li::before { content: "✓"; background: none; color: var(--ok); font-weight: 800; width: auto; height: auto; top: 0; inset-inline-start: 0; }
+.list.dont .pts li::before { content: "✕"; background: none; color: var(--red); font-weight: 800; width: auto; height: auto; top: 0; inset-inline-start: 0; }
 .list.dont { box-shadow: inset 3px 0 0 var(--red), 0 0 0 1px var(--hair); }
 .list.do { box-shadow: inset 3px 0 0 var(--ok), 0 0 0 1px var(--hair); }
 .callout .pts { margin-top: 6px; }
@@ -757,4 +757,8 @@ a.pill:hover { filter: brightness(1.1); }
 @media print { .fbub { display: none; } }
 
 /* Translated-language note (extra languages only) */
-.mt-note { margin: 0; padding: var(--s2) var(--s4); font-size: 13px; color: var(--muted); text-align: center; border-bottom: 1px solid var(--line); background: var(--paper); }
+.mt-note { margin: 0; padding: var(--s2) 58px var(--s2) var(--s4); font-size: 13px; color: var(--muted); text-align: center; border-bottom: 1px solid var(--line); background: var(--paper); }
+@media (max-width: 600px) { .mt-note { padding-right: 40px; font-size: 12px; } }
+/* right-to-left (Arabic): mirror the few physically placed bits */
+[dir="rtl"] .questions li::before { left: auto; right: var(--s5); }
+[dir="rtl"] .questions li { padding: var(--s4) 56px var(--s4) var(--s5); }
