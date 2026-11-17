@@ -30,6 +30,8 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [~] Owner (2nd msg): go wider and deeper: every country (Nordics, Italy, Russia, Ukraine, Africa, Latin America,
       Asia…), look for ready-made lists (CSV, directories, datasets, Wikidata), creative directions (Reddit, clubs,
       tunnels, events, researchers, non-English communities). Second wave of agents, raw files in docs/outreach/raw.
+- [x] One big copy-paste prompt for other deep-research tools (ChatGPT, Gemini, Perplexity, Grok…) that returns the
+      same CSV, so the owner can run it elsewhere and compare (docs/outreach/deep-research-prompt.md).
 - [?] Before sending to anyone: private link ready, clips question (the app holds cuts of other people's videos),
       sending tool and pace. Nothing is sent without the owner's OK.
 

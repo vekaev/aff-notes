@@ -18,6 +18,9 @@ post, never submit a form.
 - Tools: WebSearch / WebFetch. Reddit, YouTube, Instagram, TikTok, X: the agent-reach skill (via Skill tool) if you
   have it. Never Exa.
 
+- Overlap with other agents is fine (the merge removes duplicates); go deep in your own scope: every club, not only
+  the big ones. Local-language sources count (search in the country's language). All countries are in scope.
+
 ## Output
 Write a CSV (UTF-8, comma, header row, quote fields that contain commas) to the path in your prompt with exactly
 these columns:
