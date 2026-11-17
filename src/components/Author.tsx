@@ -116,8 +116,8 @@ export function FeedbackBubble() {
   const [shown, setShown] = useState(false);
   const [hidden, setHidden] = useState(() => { try { return localStorage.getItem(HIDDEN) === '1'; } catch { return false; } });
   useEffect(() => {
-    // Only the round icon appears; the card never opens by itself over what the reader is reading (owner, 2026-11-17).
-    const id = setTimeout(() => setShown(true), 10000);
+    // After a minute only the round "?" icon appears; the card never opens by itself over what the reader is reading (owner, 2026-11-17).
+    const id = setTimeout(() => setShown(true), 60000);
     return () => clearTimeout(id);
   }, []);
   const close = () => setOpen(false);
@@ -141,7 +141,7 @@ export function FeedbackBubble() {
         </div>
       )}
       <button type="button" className="fbub-btn" aria-label={t(T.open)} aria-expanded={open} onClick={() => (open ? close() : setOpen(true))}>
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" /><path d="M8 9h8M8 12h5" /></svg>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M9.5 9.25a2.5 2.5 0 0 1 4.9.75c0 1.75-2.4 2.25-2.4 3.75" /><path d="M12 17h.01" /></svg>
       </button>
     </div>
   );
