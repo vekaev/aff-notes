@@ -9,6 +9,7 @@ import { SkyRail } from './components/SkyRail';
 import { LangMenu, ThemeButton } from './components/Settings';
 import { OfflineButton } from './components/Offline';
 import { FinalCheck } from './components/FinalCheck';
+import { AboutAuthor, FeedbackBubble } from './components/Author';
 import { ICONS, PART_ICON } from './components/Icon';
 
 /** Which part is on screen, for the header nav. */
@@ -108,9 +109,11 @@ export function App() {
         ))}
 
         <FinalCheck />
+        <AboutAuthor />
 
         <footer className="gutter"><div className="col footer-in"><span>{t(ui.footer)}</span><OfflineButton /></div></footer>
       </main>
+      <FeedbackBubble />
     </>
   );
 }
