@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { LANGS, LANG_NAMES, type L, type Lang } from '../content/types';
+import { ALL_LANGS, LANG_NAMES, type L, type Lang } from '../content/types';
 import { useLang } from '../i18n';
 
 /** Language menu: scales to any number of languages, each shown in its own name. */
@@ -25,7 +25,7 @@ export function LangMenu() {
       </button>
       {open && (
         <ul className="menu-list surface" role="listbox" aria-label="Language">
-          {LANGS.map(l => (
+          {ALL_LANGS.map(l => (
             <li key={l}>
               <button type="button" role="option" aria-selected={l === lang} onClick={() => pick(l)}>
                 <span>{LANG_NAMES[l]}</span><span className="code">{l.toUpperCase()}</span>

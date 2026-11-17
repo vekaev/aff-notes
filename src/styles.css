@@ -483,8 +483,8 @@ dialog.player::backdrop { background: rgba(0,0,0,.72); }
 .chip .caret { width: 14px; height: 14px; color: var(--muted); }
 .chip.icon { width: 32px; padding: 0; justify-content: center; }
 .menu { position: relative; }
-.menu-list { position: absolute; right: 0; top: calc(100% + 6px); z-index: 20; list-style: none; margin: 0; padding: 6px; min-width: 180px; box-shadow: 0 0 0 1px var(--hair), 0 12px 32px rgba(0,0,0,.14); }
-.menu-list button { width: 100%; display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 9px 10px; border: 0; border-radius: 10px; background: transparent; color: var(--ink); font: 500 14px var(--font); cursor: pointer; text-align: left; }
+.menu-list { position: absolute; inset-inline-end: 0; max-height: min(70vh, 560px); overflow-y: auto; top: calc(100% + 6px); z-index: 20; list-style: none; margin: 0; padding: 6px; min-width: 180px; box-shadow: 0 0 0 1px var(--hair), 0 12px 32px rgba(0,0,0,.14); }
+.menu-list button { width: 100%; display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 9px 10px; border: 0; border-radius: 10px; background: transparent; color: var(--ink); font: 500 14px var(--font); cursor: pointer; text-align: start; }
 .menu-list button:hover { background: var(--soft); }
 .menu-list button[aria-selected="true"] { background: var(--ink); color: var(--paper); }
 .menu-list .code { font: 600 11px var(--mono); opacity: .6; }
@@ -754,3 +754,6 @@ a.pill:hover { filter: brightness(1.1); }
 @keyframes fbub-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .fbub-btn, .fbub-card { animation: none; } }
 @media print { .fbub { display: none; } }
+
+/* Translated-language note (extra languages only) */
+.mt-note { margin: 0; padding: var(--s2) var(--s4); font-size: 13px; color: var(--muted); text-align: center; border-bottom: 1px solid var(--line); background: var(--paper); }

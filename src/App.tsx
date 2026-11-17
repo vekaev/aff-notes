@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { parts } from './content';
 import { headline, useLang } from './i18n';
 import { ui } from './ui';
+import { isCore } from './content/types';
 import { usePassed } from './progress';
 import { BlockView } from './components/Blocks';
 import { Hero, useTrackLastChapter } from './components/Hero';
@@ -68,6 +69,12 @@ function Header() {
   );
 }
 
+function MtNote() {
+  const { t, lang } = useLang();
+  if (isCore(lang)) return null;
+  return <p className="mt-note">{t(ui.mtNote)}</p>;
+}
+
 export function App() {
   const { t } = useLang();
   useTrackLastChapter();
@@ -78,6 +85,7 @@ export function App() {
     <>
       <a className="skip" href="#content">{t(ui.skip)}</a>
       <Header />
+      <MtNote />
 
       <SkyRail />
       <main id="top">

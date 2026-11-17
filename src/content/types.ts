@@ -2,12 +2,26 @@
 // translation is a type error, not a blank on screen. Text may contain a small set of inline tags:
 // <b>, <a href>, and <q-check/> (rendered as the "check with your instructor" badge).
 
+/** Languages written inline in the content (every L has all of them). */
 export const LANGS = ['en', 'es', 'uk', 'ru'] as const;
-export type Lang = (typeof LANGS)[number];
-export type L = Record<Lang, string>;
+export type Core = (typeof LANGS)[number];
+export type L = Record<Core, string>;
 
-/** Each language in its own name, for the language menu. Add a language here and in LANGS. */
-export const LANG_NAMES: Record<Lang, string> = { en: 'English', es: 'Español', uk: 'Українська', ru: 'Русский' };
+/**
+ * Languages translated from English into src/content/i18n/<lang>.json (key = keyOf(english), see
+ * scripts/i18n-extract.mjs). A string missing there shows in English. Menu order = this list.
+ */
+export const ALL_LANGS = ['en', 'es', 'fr', 'de', 'it', 'pt', 'pl', 'sv', 'nb', 'da', 'fi', 'uk', 'ru', 'ar'] as const;
+export type Lang = (typeof ALL_LANGS)[number];
+export type Extra = Exclude<Lang, Core>;
+export const isCore = (l: Lang): l is Core => (LANGS as readonly string[]).includes(l);
+export const RTL: readonly Lang[] = ['ar'];
+
+/** Each language in its own name, for the language menu. */
+export const LANG_NAMES: Record<Lang, string> = {
+  en: 'English', es: 'Español', fr: 'Français', de: 'Deutsch', it: 'Italiano', pt: 'Português', pl: 'Polski',
+  sv: 'Svenska', nb: 'Norsk', da: 'Dansk', fi: 'Suomi', uk: 'Українська', ru: 'Русский', ar: 'العربية',
+};
 
 /** A short silent looping clip cut from a public tutorial, served from /media. */
 export interface Clip {

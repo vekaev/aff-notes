@@ -38,6 +38,12 @@ export const ui = {
   fixRule: { en: '<b>Two tries only.</b> Check your <b>altitude</b> between them. Not fixed by <b>2,500 ft</b>? Emergency procedure.', es: '<b>Solo dos intentos.</b> Mira la <b>altura</b> entre uno y otro. ¿Sin arreglar a <b>2,500 ft</b>? Procedimiento de emergencia.', uk: '<b>Лише дві спроби.</b> Між ними дивись на <b>висоту</b>. Не виправив до <b>2 500 футів</b>? Аварійна процедура.', ru: '<b>Только две попытки.</b> Между ними смотри на <b>высоту</b>. Не исправил к <b>2 500 футов</b>? Аварийная процедура.' },
   notPlaying: { en: 'Doesn\'t play here? Some videos play only on YouTube.', es: '¿No se reproduce aquí? Algunos vídeos solo se ven en YouTube.', uk: 'Не відтворюється тут? Деякі відео працюють лише на YouTube.', ru: 'Не играет здесь? Некоторые видео работают только на YouTube.' },
   openYoutube: { en: 'Open on YouTube', es: 'Abrir en YouTube', ru: 'Открыть на YouTube', uk: 'Відкрити на YouTube' },
+  mtNote: {
+    en: 'This language is translated from the English notes and not yet checked by a native-speaking instructor. If a term is unclear, ask your instructor or switch to English.',
+    es: 'Este idioma está traducido de los apuntes en inglés y aún no lo ha revisado un instructor nativo. Si un término no está claro, pregunta a tu instructor o cambia a inglés.',
+    uk: 'Цю мову перекладено з англійських нотаток, носій мови-інструктор її ще не перевіряв. Якщо термін незрозумілий, спитай інструктора або перемкнися на англійську.',
+    ru: 'Этот язык переведён с английских заметок и ещё не проверен инструктором-носителем языка. Если термин непонятен, спроси инструктора или переключись на английский.',
+  },
   footer: {
     en: 'Study notes for personal use, not instruction. Clips are short excerpts from public tutorials; each links to its original.',
     es: 'Apuntes de uso personal, no son instrucción. Los clips son fragmentos breves de tutoriales públicos; cada uno enlaza a su original.',
