@@ -52,6 +52,9 @@ Work in this order; tick each line here and in the inbox below; one item per run
    locator, PIA directory, DAeC LSG-B register, tunnel directories, FAI delegates, SkydivingFatalities.info as content);
    fact-check its numbers (Rauer 2023 review: 62M jumps, injury 0.044 %, fatality 0.0011 %; FFP 2010–2019: 35 deaths,
    3,015 injuries, ~6.2M jumps) and note what the app should cite.
+6d. [x] Owner 2026-11-17: AI runs return too little → prompt v2 for volume (one narrow scope per run, table only,
+   harvest whole directories, "continue" follow-ups, 29 scopes): `docs/outreach/deep-research-prompt-v2.md`.
+   Owner runs it in other tools; each answer saved as `raw/ext_<tool>_<scope>.unverified.csv.txt`, verified + merged.
 7. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
    (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
