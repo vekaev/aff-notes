@@ -13,13 +13,14 @@ Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check,
 
 ## Resume here (written 2026-11-16 ~23:00 PST, owner out of tokens; scheduled runs continue from this)
 Work in this order; tick each line here and in the inbox below; one item per run is fine.
-1. [~] **Translations** (branch `i18n`, worktree `../aff-notes-i18n`, pushed to origin/i18n; brief
+1. [x] **Translations** done 2026-11-17, all 10 merged into main (6a2f87e). Was: (branch `i18n`, worktree `../aff-notes-i18n`, pushed to origin/i18n; brief
    `docs/i18n/TRANSLATE.md`). At the time of writing: 10 translator agents had started; glossaries done for ar, it,
    pl; no `<lang>.json` written yet. Resume: for each of fr, de, it, pt, pl, sv, nb, da, fi, ar check
    `src/content/i18n/<lang>.json` with `npx vitest run tests/i18n.test.ts`; missing or failing → run one agent with
    the brief for that language (glossary first if `docs/i18n/glossary-<lang>.md` is missing). Commit each language
    on `i18n` as it passes.
-2. [ ] **Merge i18n**: merge main into `i18n`, run `node scripts/i18n-extract.mjs` (the mission paragraph "Imagine…"
+2. [x] **Merge i18n** done 2026-11-17 (seen: FR phone light, AR phone dark right-to-left after fixes, DE desktop
+   light, menu with 14 languages; browser-language detection covered by tests; not seen: the other 7 on screen): merge main into `i18n`, run `node scripts/i18n-extract.mjs` (the mission paragraph "Imagine…"
    was added on main after the branch: translate its new strings into all 10), `npm run check`, `npx vite build`,
    look at every language on screen (phone 375 + desktop, light + dark, Arabic right-to-left, the language menu,
    the "translated" note), then merge into main, push, remove the worktree.
@@ -63,16 +64,16 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       Done: agent-tools (format in skills/bootstrap/assets/docs/PLAN.md), probes pass.
 
 2026-11-16 (chat, languages + tracking):
-- [~] More languages so people anywhere can read it: French, Italian, Nordic (Swedish, Norwegian, Danish, Finnish),
+- [x] More languages so people anywhere can read it (merged 2026-11-17): French, Italian, Nordic (Swedish, Norwegian, Danish, Finnish),
       Arabic (right-to-left) and more (German, Portuguese, Polish…). Research the best way to translate safety
       content (terms each country's federation uses, a check by a second agent and later native skydivers).
   Built on branch i18n (worktree ../aff-notes-i18n, 6892afa): per-language files keyed by the English text, 1,309
   strings / 78k characters, tests (all keys, same tags, same numbers), note "translated, not yet checked by a native
   instructor" on extra languages. Translators (one agent each, glossary from the federation first, then back-check):
-  - [!] fr  - [!] de  - [!] it  - [!] pt  - [!] pl  - [!] sv  - [!] nb  - [!] da  - [!] fi: stopped by the 5-hour
-        limit 2026-11-16 23:00, resumed 2026-11-17 after the reset  - [x] ar (committed on i18n; not seen on screen yet: check RTL ranges like "2,000 ← 1,000 ft"; 5 terms for a native instructor in glossary-ar.md)
+  - [x] all 10 (fr de it pt pl sv nb da fi ar) translated, tests pass, merged 2026-11-17; each glossary lists 5 terms
+        for a native instructor (docs/i18n/glossary-<lang>.md) (committed on i18n; not seen on screen yet: check RTL ranges like "2,000 ← 1,000 ft"; 5 terms for a native instructor in glossary-ar.md)
     (2026-11-16 23:00: glossaries for ar/it/pl only, no translations yet; resume per "Resume here" step 1)
-  - [ ] After: look at every language on screen (phone + desktop, light + dark), Arabic layout right-to-left, merge.
+  - [~] After: look at every language on screen (FR, AR, DE seen; IT, PT, PL, SV, NB, DA, FI not yet) (phone + desktop, light + dark), Arabic layout right-to-left, merge.
   - [ ] Later: native skydivers check each language (ask through the outreach list), more languages (nl, cs, tr, ja,
         zh, ko, he) if wanted.
 - [x] Auto-detect the visitor's browser language and open that version; the language menu at the top still switches.
