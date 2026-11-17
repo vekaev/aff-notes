@@ -217,6 +217,11 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
+2026-11-17 (chat, research in repo + PRs):
+- [x] (checked: all in docs/research + docs/outreach/raw; rule in AGENTS.md) Deep research (ours and other AI tools') is saved in the repo too: check nothing lives only outside it, and say
+      where it goes in AGENTS.md.
+- [x] Merge the open PRs (owner: "merge open prs"): #1 and #3 merged; #2 conflicted after #1, same change made on main.
+
 2026-11-17 (chat, repo description + agent rules):
 - [x] GitHub description is outdated ("personal, EN/ES/UK/RU"): update description, website and topics.
 - [x] Rules for LLMs/agents in the project: AGENTS.md (CLAUDE.md imports it; Copilot + Gemini pointers; CONTRIBUTING section) (AGENTS.md for any tool: Claude, Codex, Cursor, Copilot…), so contributors'

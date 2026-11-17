@@ -51,4 +51,8 @@ so accuracy beats speed, style and completeness.
 ## Project memory
 - Plan and status: `docs/PLAN.md` (the owner's inbox; agents working for the owner follow `CLAUDE.md`).
 - Specialist agent prompts used for reviews: `.claude/agents/` (expert fact-check, fixer, page guard, curriculum).
-- Tooling decisions: `docs/TOOLING.md`. Research: `docs/research/`, `docs/i18n/`, `docs/outreach/`.
+- Tooling decisions: `docs/TOOLING.md`.
+- **All research lives in the repo**, never only in a chat or a temp folder: deep-research reports and their notes in
+  `docs/research/` (`docs/research/notes/<title>/`), units and federation rules in `docs/i18n/`, contacts and every other
+  AI tool's result in `docs/outreach/raw/` (`ext_<tool>_*`, unverified until checked), the prompts in
+  `docs/outreach/deep-research-prompt*.md`. Save new research there and commit it.
