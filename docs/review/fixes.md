@@ -7,6 +7,23 @@ Expert reports: `docs/review/expert/<scope>.md`. A second, independent pass on P
 first one was being fixed) is kept in `docs/review/expert/second-opinion/part4-emergencies.md`: compare it with the fixer
 log when Part IV is done.
 
+## Final summary (2026-11-17 10:00 PST, last run of the 24-hour review task)
+
+The 24-hour review round is over; the regular autopilot (`autopilot-aff-notes`, twice a day) takes over from here.
+
+- **Expert fact-check, 6 scopes, all processed**: 69 fixed, 21 added, 7 rejected (claim didn't hold against the
+  source), 17 ask-owner (school-specific; each is a line in the app's "questions for your instructors" chapter and
+  a `check` badge until the instructors answer).
+- **Curriculum**: proposals #1–#6 built (final check, rig photos, "when freefall goes wrong", traffic, landing off);
+  #7 (after the silver handle) is the next one, todo.
+- **Real footage**: 6 clips + 8 photos placed, all with credit and link.
+- **Todo (needs nothing from the owner)**: Part IV: 4 left for later (#17, M1, M2, C3 elsewhere); optional source
+  checks from the AI-run fact-checks: MARD line, "Two instructors" line, 73–88 % anchors, USPA 2024 fatality figure,
+  tunnel shoulder study; curriculum #7.
+- **Still open, waiting on the owner** (docs/PLAN.md "Waiting on you"): instructor briefing answers, hand signals
+  "legs in" + "OK", Q27 key (300 or 1,000 ft), headline case, big reorder of Part IV, the dropzone map photo.
+- **In progress elsewhere**: school-rules profiles, draft PR #6 (not merged; needs a merge of main, regenerate en.json).
+
 ## Status 2026-11-17 08:00 PST
 
 08:00 run: part4 `real` new stat "6/10": 6 of the 10 US deaths in 2023 happened at landing under an open canopy, 1
