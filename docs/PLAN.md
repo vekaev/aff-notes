@@ -218,7 +218,8 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [~] By ear "start a separate branch to fix everything you just said": build the school-rules profiles (6j), checked in
       every language, on its own branch (sub-chat).
 - [x] Project tooling for contributors (sub-chat, branch claude/tooling-8c5524): set up and checked (pre-commit hook on a
-      test commit, CI steps run in a clean clone; GitHub run seen after push or not, see the commit).
+      test commit, CI steps run in a clean clone, first GitHub CI run on main green in 18 s). Dependabot opened 3 PRs
+      at once (#1 #2 actions v7, #3 @babel/parser 8), all CI green; merging them was blocked for the agent: owner merges.
       - Lint: **Oxlint** instead of ESLint: typescript-eslint does not run on the TypeScript 7 native compiler (peer
         `typescript <6.1`, the TS 7 package has no JS API); Oxlint has react, react-hooks, jsx-a11y, typescript,
         unicorn, import and vitest rules built in, and type-aware rules on TS 7 (oxlint-tsgolint). `.oxlintrc.json`;
