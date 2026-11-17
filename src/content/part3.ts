@@ -630,8 +630,79 @@ export const part3: Part = {
           ),
         },
         {
+          type: 'h',
+          id: 'landoff',
+          text: l('Landing off the dropzone', 'Aterrizar fuera de la zona', 'Посадка вне площадки', 'Посадка поза майданчиком'),
+        },
+        {
+          type: 'list',
+          kind: 'do',
+          title: l('Picking a field', 'Elegir un campo', 'Выбор поля', 'Вибір поля'),
+          items: [
+            l('Choose a <b>clear field by 2,000 ft</b> and plan a pattern with a <b>final free of obstacles</b>.', 'Elige un <b>campo despejado antes de 2,000 ft</b> y planea un circuito con una <b>final sin obstáculos</b>.', 'Выбери <b>чистое поле к 2 000 футам</b> и спланируй коробочку с <b>последней прямой без препятствий</b>.', 'Обери <b>чисте поле до 2 000 футів</b> і сплануй коробочку з <b>останньою прямою без перешкод</b>.'),
+            l('Power lines: look for the <b>poles and towers</b>. They are easier to see than the wires.', 'Cables eléctricos: busca los <b>postes y torres</b>. Se ven más fácil que los cables.', 'Провода: ищи <b>столбы и опоры</b>. Их видно легче, чем сами провода.', 'Дроти: шукай <b>стовпи й опори</b>. Їх видно легше, ніж самі дроти.'),
+            l('Fences are hard to see too, but they run in <b>straight lines</b>.', 'Las cercas también cuestan de ver, pero van en <b>líneas rectas</b>.', 'Заборы тоже плохо видно, но они идут <b>прямыми линиями</b>.', 'Паркани теж погано видно, але вони йдуть <b>прямими лініями</b>.'),
+            l('Know the wind: <b>trees make turbulence on their downwind side</b>. Don\'t land right behind them.', 'Ten en cuenta el viento: <b>los árboles crean turbulencia a sotavento</b>. No aterrices justo detrás de ellos.', 'Учитывай ветер: <b>за деревьями по ветру — турбулентность</b>. Не садись сразу за ними.', 'Зважай на вітер: <b>за деревами за вітром — турбулентність</b>. Не сідай одразу за ними.'),
+            l('Into the wind if you can, but <b>never at the cost of a low turn</b>. A level wing comes first.', 'Contra el viento si puedes, pero <b>nunca a costa de un giro bajo</b>. Primero, el ala nivelada.', 'Против ветра, если можешь, но <b>никогда ценой низкого разворота</b>. Сначала ровное крыло.', 'Проти вітру, якщо можеш, але <b>ніколи ціною низького розвороту</b>. Спершу рівне крило.'),
+            l('<b>PLF</b>: the ground off the dropzone is often uneven.', '<b>PLF</b>: fuera de la zona el suelo suele ser irregular.', '<b>PLF</b>: вне площадки земля часто неровная.', '<b>PLF</b>: поза майданчиком земля часто нерівна.'),
+          ],
+        },
+        {
+          type: 'list',
+          title: l('Once you are down', 'Ya en el suelo', 'Когда ты на земле', 'Коли ти на землі'),
+          items: [
+            l('Let the dropzone know <b>where you are</b>, the way your school teaches. <q-check/>', 'Avisa a la zona <b>dónde estás</b>, como te enseña tu escuela. <q-check/>', 'Сообщи на площадку, <b>где ты</b>, как учит твоя школа. <q-check/>', 'Повідом на майданчик, <b>де ти</b>, як навчає твоя школа. <q-check/>'),
+            l('Don\'t disturb <b>livestock</b>.', 'No molestes al <b>ganado</b>.', 'Не тревожь <b>скот</b>.', 'Не турбуй <b>худобу</b>.'),
+            l('Leave <b>gates</b> as you found them.', 'Deja las <b>puertas</b> como las encontraste.', '<b>Ворота</b> оставь как были.', '<b>Ворота</b> залиш, як були.'),
+            l('Don\'t walk on <b>crops</b>.', 'No pises los <b>cultivos</b>.', 'Не ходи по <b>посевам</b>.', 'Не ходи <b>посівами</b>.'),
+            l('Broke something? <b>Tell the owner</b> and arrange the repair; USPA membership includes insurance for this.', '¿Rompiste algo? <b>Díselo al dueño</b> y acuerda la reparación; la membresía de USPA incluye un seguro para esto.', 'Что-то сломал? <b>Скажи владельцу</b> и договорись о ремонте; членство в USPA включает страховку на такой случай.', 'Щось зламав? <b>Скажи власникові</b> й домовся про ремонт; членство в USPA включає страховку на такий випадок.'),
+            l('Wind dragging you on the ground: USPA gives this step only for water and roofs (<b>pull one toggle in</b>, or <b>cut away</b>). Ask how your school teaches it. <q-check/>', 'Si el viento te arrastra por el suelo: USPA da este paso solo para agua y techos (<b>tira de un batidor</b> o <b>libera</b>). Pregunta cómo lo enseña tu escuela. <q-check/>', 'Ветер тащит по земле: USPA даёт этот шаг только для воды и крыш (<b>подтяни одну клеванту</b> или <b>отцепись</b>). Спроси, как учит твоя школа. <q-check/>', 'Вітер тягне по землі: USPA дає цей крок лише для води й дахів (<b>підтягни одну клеванту</b> або <b>відчепися</b>). Спитай, як навчає твоя школа. <q-check/>'),
+          ],
+        },
+        { type: 'p', muted: true, text: l('Source: USPA SIM 4-1, "Landing Out".', 'Fuente: USPA SIM 4-1, "Landing Out".', 'Источник: USPA SIM 4-1, «Landing Out».', 'Джерело: USPA SIM 4-1, «Landing Out».') },
+        {
           type: 'quiz',
           questions: [
+            {
+              q: l(
+                "2,000 ft, you won't reach the landing area. The best field has a row of trees along its upwind edge and a road with poles on one side. Where do you aim?",
+                'A 2,000 ft ves que no llegas a la zona de aterrizaje. El mejor campo tiene una fila de árboles en su borde contra el viento y una carretera con postes a un lado. ¿Adónde apuntas?',
+                '2 000 футов, до площадки не долетаешь. У лучшего поля с наветренной стороны ряд деревьев, а сбоку дорога со столбами. Куда целишься?',
+                '2 000 футів, до майданчика не долітаєш. У найкращого поля з навітряного боку ряд дерев, а збоку дорога зі стовпами. Куди цілишся?',
+              ),
+              options: [
+                l('Just behind the tree line, sheltered from the wind', 'Justo detrás de los árboles, al abrigo del viento', 'Сразу за деревьями, где ветра почти нет', 'Одразу за деревами, де вітру майже немає'),
+                l('The open middle, clear of the trees and the poles', 'El centro despejado, lejos de árboles y postes', 'В открытую середину, подальше от деревьев и столбов', 'У відкриту середину, подалі від дерев і стовпів'),
+                l('Along the road: it is flat, firm and easy to see', 'Junto a la carretera: es plana, firme y se ve bien', 'Вдоль дороги: она ровная, твёрдая и её хорошо видно', 'Уздовж дороги: вона рівна, тверда й її добре видно'),
+              ],
+              answer: 1,
+              why: l(
+                'Trees make turbulence on their downwind side, and wires run along roads between the poles. Pick the open part by 2,000 ft, land into the wind if you can do it without a low turn (USPA SIM 4-1).',
+                'Los árboles crean turbulencia a sotavento, y los cables van a lo largo de las carreteras entre los postes. Elige la parte despejada antes de 2,000 ft y aterriza contra el viento si puedes hacerlo sin un giro bajo (USPA SIM 4-1).',
+                'За деревьями по ветру турбулентность, а вдоль дорог между столбами идут провода. Выбери открытую часть к 2 000 футам и садись против ветра, если для этого не нужен низкий разворот (USPA SIM 4-1).',
+                'За деревами за вітром турбулентність, а вздовж доріг між стовпами йдуть дроти. Обери відкриту частину до 2 000 футів і сідай проти вітру, якщо для цього не потрібен низький розворот (USPA SIM 4-1).',
+              ),
+            },
+            {
+              q: l(
+                "You land in a farmer's field, unhurt. What do you do?",
+                'Aterrizas en el campo de un granjero, sin lesiones. ¿Qué haces?',
+                'Ты сел на поле фермера, цел. Что делаешь?',
+                'Ти сів на поле фермера, цілий. Що робиш?',
+              ),
+              options: [
+                l('Leave the canopy and walk straight back across the crops', 'Dejas la vela y vuelves recto cruzando los cultivos', 'Бросаешь купол и идёшь назад напрямик через посевы', 'Кидаєш купол і йдеш назад навпростець через посіви'),
+                l('Gather your gear, tell the dropzone, keep off crops and animals', 'Recoges el equipo, avisas a la zona, sin pisar cultivos ni animales', 'Собираешь снаряжение, сообщаешь на площадку, обходишь посевы и скот', 'Збираєш спорядження, повідомляєш на майданчик, обходиш посіви й худобу'),
+                l('Stay by the canopy and wait for someone to come and find you', 'Te quedas junto a la vela esperando a que alguien te encuentre', 'Остаёшься у купола и ждёшь, пока кто-нибудь тебя найдёт', 'Залишаєшся біля купола й чекаєш, доки хтось тебе знайде'),
+              ],
+              answer: 1,
+              why: l(
+                'USPA SIM 4-1: don\'t disturb livestock, leave gates as you found them, avoid crops, report any damage to the owner.',
+                'USPA SIM 4-1: no molestes al ganado, deja las puertas como estaban, evita los cultivos, informa al dueño de cualquier daño.',
+                'USPA SIM 4-1: не тревожь скот, оставляй ворота как были, обходи посевы, о любом ущербе сообщи владельцу.',
+                'USPA SIM 4-1: не турбуй худобу, залишай ворота як були, обходь посіви, про будь-яку шкоду повідом власника.',
+              ),
+            },
             {
               q: l(
                 'You are about to land in water. What do you do with the harness?',

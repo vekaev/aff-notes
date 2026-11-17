@@ -123,7 +123,7 @@ export function FinalCheck() {
           <ol className="own">
             {OWN.map((q, i) => (
               <li key={i}>
-                <label htmlFor={`own-${i}`}>{t(q)}</label>
+                <label htmlFor={`own-${i}`}>{glue(t(q))}</label>
                 <textarea id={`own-${i}`} rows={2} value={own[i] ?? ''} onChange={e => save(i, e.target.value)} />
               </li>
             ))}

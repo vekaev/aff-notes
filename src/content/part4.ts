@@ -2362,6 +2362,18 @@ export const part4: Part = {
               `Вопрос 27 теста: на какой высоте прекращаем большие развороты, 1 000 или 300 футов?`,
               `Питання 27 тесту: на якій висоті припиняємо великі розвороти, 1 000 чи 300 футів?`,
             ),
+            t(
+              `If I land off: how do I tell the dropzone where I am, and what if I'm hurt?`,
+              `Si aterrizo fuera: ¿cómo aviso a la zona dónde estoy, y qué hago si estoy herido?`,
+              `Если сел вне площадки: как сообщить, где я, и что делать, если травмирован?`,
+              `Якщо сів поза майданчиком: як повідомити, де я, і що робити, якщо травмований?`,
+            ),
+            t(
+              `Wind dragging me on the ground after landing: pull one toggle in, or cut away? RSL first?`,
+              `Si el viento me arrastra por el suelo tras aterrizar: ¿tiro de un batidor o libero? ¿Primero el RSL?`,
+              `Ветер тащит по земле после посадки: подтянуть одну клеванту или отцепиться? Сначала RSL?`,
+              `Вітер тягне по землі після посадки: підтягнути одну клеванту чи відчепитися? Спершу RSL?`,
+            ),
           ],
         },
       ],

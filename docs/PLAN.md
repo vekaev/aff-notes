@@ -27,6 +27,9 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [ ] Rewrite the email: the owner's mission (help people get the A license, fewer injuries and deaths, contribute
       to the sport) and the asks (feedback, cross-check facts, books, links, saved materials, what matters most,
       forums, new ideas, a community chat or calls, a version personalised for their school). Plus a Reddit post.
+- [~] Owner (2nd msg): go wider and deeper: every country (Nordics, Italy, Russia, Ukraine, Africa, Latin America,
+      Asia…), look for ready-made lists (CSV, directories, datasets, Wikidata), creative directions (Reddit, clubs,
+      tunnels, events, researchers, non-English communities). Second wave of agents, raw files in docs/outreach/raw.
 - [?] Before sending to anyone: private link ready, clips question (the app holds cuts of other people's videos),
       sending tool and pace. Nothing is sent without the owner's OK.
 
