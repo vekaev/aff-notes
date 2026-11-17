@@ -76,6 +76,7 @@ License: MIT (code), CC BY-SA 4.0 (notes, translations, drawings); clips belong 
   curriculum), logs in `docs/review/`.
 - Outside AI research is saved unverified and checked row by row (`docs/outreach/raw/ext_*`).
 - The owner's plan and inbox: `docs/PLAN.md` (every ask, status, redo lines).
+- Which agent tools and skills built the project: [AGENT-TOOLS.md](AGENT-TOOLS.md).
 
 ## Lessons that save time (and tokens)
 - Read this page, `AGENTS.md` and the relevant `docs/` file before opening code; most answers are here.

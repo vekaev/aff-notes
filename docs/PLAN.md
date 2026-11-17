@@ -219,7 +219,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 
 2026-11-17 (chat, playbook):
 - [~] Check that everything the owner asked was done (audit of all owner messages since 2026-11-16 against this plan).
-- [~] A reusable playbook of how this project was made (license, collecting content, clips/photos/GIFs, researching
+- [x] (agent-tools skills/study/references/playbook.md; docs/AGENT-TOOLS.md here) A reusable playbook of how this project was made (license, collecting content, clips/photos/GIFs, researching
       organisations, deployment, attention/marketing, outreach to companies and people, telling the mission, agent
       tools), saved in ~/agent-tools for future projects; in this repo, docs/AGENT-TOOLS.md says which agent tools and
       skills built it.
