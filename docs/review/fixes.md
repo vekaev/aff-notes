@@ -7,7 +7,9 @@ Expert reports: `docs/review/expert/<scope>.md`. A second, independent pass on P
 first one was being fixed) is kept in `docs/review/expert/second-opinion/part4-emergencies.md`: compare it with the fixer
 log when Part IV is done.
 
-## Status 2026-11-16 16:15 PST
+## Status 2026-11-16 18:00 PST
+
+18:00 run: page guard 1615 open problems 1–10 closed (3 were already fixed), quiz end text in UK/RU fixed; page guard 1800 passed.
 
 | scope | report | fixer log | fixed | added | rejected | ask-owner | status |
 |---|---|---|---|---|---|---|---|

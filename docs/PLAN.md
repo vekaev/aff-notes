@@ -77,6 +77,15 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       and timelines per language (UK/RU "2 500 фт", "3 с"), map labels and altimeter legend with units, RU "выброска" →
       "отделение", injury-chart sources translated, hero ring shows done/total inside (count no longer twice), exit-count
       picture smaller on phones, pattern clip poster shows the drawn pattern.
+      18:00 run (page guard 2026-11-16-1615.md open problems 1–10): "ft" on the last bare altitudes (flow, altitude
+      chapters, all 4 languages); ffwrong and mal quizzes no longer put the right answer in A again and again (now BCAC,
+      ABCC); first-screen card label without "bad main:" repeat; height tape gives its first column more room; percent in
+      each language's format (1,9 %); category letter stays with its number ("E 4 500 футів"); long instructor
+      questions split one per line. #1 altimeter caption, #4 "Prop" quotes and #6 list heading were already fixed in 29068bb.
+      Page guard 2026-11-16-1800.md: all of the above seen headless EN/ES/UK/RU, light/dark, 375/1280. Also fixed: UK/RU
+      quiz end text after a wrong answer read as "chapter passed" (now "passed when all answers are right"; checks pass,
+      not yet seen on screen). Still open: split the other long instructor questions (aircraft emergency, which
+      aircraft, wave-off/D/E/D-1, ES radio); ranges like "6,000 or 5,500 ft" carry the unit once (fine to read? owner).
 - [?] Big reorder (Part IV "act now" first, statistics and real cases in their own part, EP button in the header): ask.
 
 Added by the owner-asks audit (docs/review/owner-asks-audit.md):

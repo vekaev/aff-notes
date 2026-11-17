@@ -31,7 +31,7 @@ export const ui = {
   prev: { en: 'Back', es: 'Atrás', ru: 'Назад', uk: 'Назад' },
   finish: { en: 'See result', es: 'Ver resultado', ru: 'Результат', uk: 'Результат' },
   allRight: { en: 'All right. Chapter passed.', es: 'Todo correcto. Capítulo aprobado.', ru: 'Всё верно. Глава сдана.', uk: 'Усе правильно. Розділ складено.' },
-  someWrong: { en: 'Read the chapter again and retry. All answers right passes it.', es: 'Vuelve a leer el capítulo y repite. Con todo correcto, lo apruebas.', ru: 'Перечитай главу и попробуй ещё раз. Всё верно — глава сдана.', uk: 'Перечитай розділ і спробуй ще раз. Усе правильно — розділ складено.' },
+  someWrong: { en: 'Read the chapter again and retry. All answers right passes it.', es: 'Vuelve a leer el capítulo y repite. Con todo correcto, lo apruebas.', ru: 'Перечитай главу и попробуй ещё раз. Глава сдана, когда все ответы верны.', uk: 'Перечитай розділ і спробуй ще раз. Розділ складено, коли всі відповіді правильні.' },
   close: { en: 'Close', es: 'Cerrar', ru: 'Закрыть', uk: 'Закрити' },
   epTip: { en: 'EP = emergency procedure: how to do it →', es: 'EP = procedimiento de emergencia: cómo hacerlo →', uk: 'EP — аварійна процедура: як її робити →', ru: 'EP — аварийная процедура: как её делать →' },
   fixTip: { en: 'Fixable, but only two tries: not fixed by 2,500 ft → EP →', es: 'Arreglable, pero solo dos intentos: sin arreglar a 2,500 ft → EP →', uk: 'Можна виправити, але лише дві спроби: не вийшло до 2 500 футів → EP →', ru: 'Можно исправить, но только две попытки: не вышло к 2 500 футов → EP →' },

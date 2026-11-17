@@ -99,6 +99,12 @@ function Cards({ b }: { b: Extract<Block, { type: 'cards' }> }) {
   );
 }
 
+/** A percentage in each language's own format: "1.9%" in EN, "1,9 %" in ES/UK/RU. */
+function Pct({ v }: { v: number }) {
+  const { lang } = useLang();
+  return <span className="pct">{lang === 'en' ? `${v}%` : `${String(v).replace('.', ',')}\u00a0%`}</span>;
+}
+
 /** A big number in the reader's language format ("2 500 фт" in UK/RU). */
 function Big({ s }: { s: string }) {
   const { lang } = useLang();
@@ -136,7 +142,7 @@ export function BlockView({ b, chapterId }: { b: Block; chapterId: string }) {
             <div key={i} className={`row ${x.hl ? 'hl' : ''}`}>
               <span><Rich s={x.label} /></span>
               <span className="track"><span className="fill" style={{ ['--v' as string]: `${Math.min(100, x.value)}%` }} /></span>
-              <span className="pct">{x.value}%</span>
+              <Pct v={x.value} />
             </div>
           ))}
           <span className="src"><a href={b.source.href} target="_blank" rel="noopener"><SrcLabel label={b.source.label} /></a></span>

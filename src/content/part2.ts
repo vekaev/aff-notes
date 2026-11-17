@@ -448,7 +448,7 @@ export const part2: Part = {
               tone: 'accent',
               title: { en: 'Lock on', es: 'Lock on', uk: 'Лише висотомір', ru: 'Только высотомер' },
               text: {
-                en: 'Stop <b>all exercises</b>. Watch the <b>altimeter only</b>: from 6,000 ft you have about <b>3 seconds</b> to 5,500. At 5,500 ft wave off and pull. Wave-off and pull together take about <b>1,000 ft</b> (USPA), so start on time.',
+                en: 'Stop <b>all exercises</b>. Watch the <b>altimeter only</b>: from 6,000 ft you have about <b>3 seconds</b> to 5,500 ft. At 5,500 ft wave off and pull. Wave-off and pull together take about <b>1,000 ft</b> (USPA), so start on time.',
                 es: 'Deja <b>todos los ejercicios</b>. Mira <b>solo el altímetro</b>: de 6,000 a 5,500 ft tienes unos <b>3 segundos</b>. A 5,500 ft haz el wave-off y abre. El wave-off y la apertura juntos llevan unos <b>1,000 ft</b> (USPA), así que empieza a tiempo.',
                 uk: 'Припини <b>усі вправи</b>. Дивися <b>лише на висотомір</b>: від 6 000 до 5 500 футів у тебе близько <b>3 секунд</b>. На 5 500 футах — відмашка й розкриття. Відмашка й розкриття разом забирають близько <b>1 000 футів</b> (USPA), тож починай вчасно.',
                 ru: 'Прекрати <b>все упражнения</b>. Смотри <b>только на высотомер</b>: от 6 000 до 5 500 футов у тебя около <b>3 секунд</b>. На 5 500 футах — отмашка и раскрытие. Отмашка и раскрытие вместе занимают около <b>1 000 футов</b> (USPA), так что начинай вовремя.',
@@ -496,8 +496,8 @@ export const part2: Part = {
               why: {
                 en: 'We pull at 5,500 ft, not 5,000 ft. 6,000 ft is lock on.',
                 es: 'Abrimos a 5,500 ft, no a 5,000 ft. 6,000 ft es lock on.',
-                uk: 'Розкриваємося на 5 500 футах, а не на 5 000. На 6 000 футів — лише висотомір.',
-                ru: 'Раскрываемся на 5 500 футах, а не на 5 000. На 6 000 футов — только высотомер.',
+                uk: 'Розкриваємося на 5 500 футах, а не на 5 000 футах. На 6 000 футів — лише висотомір.',
+                ru: 'Раскрываемся на 5 500 футах, а не на 5 000 футах. На 6 000 футов — только высотомер.',
               },
             },
             {
@@ -707,10 +707,10 @@ export const part2: Part = {
               },
               options: [
                 { en: 'Pull silver at once, before anything else', es: 'Tirar de la plateada enseguida, antes que nada', uk: 'Одразу висмикнути кільце запасного, перш за все', ru: 'Сразу выдернуть кольцо запасного, прежде всего' },
-                { en: 'Throw the pilot chute: two tries or 5 s, else cut away', es: 'Lanzar el extractor: dos intentos o 5 s, si no, liberar', uk: 'Викинути витяжний: дві спроби або 5 с, інакше відчеплення', ru: 'Выбросить вытяжной: две попытки или 5 с, иначе отцепка' },
                 { en: 'Keep the arch and wait for the AAD to fire', es: 'Mantener el arco y esperar a que actúe el AAD', uk: 'Тримати прогин і чекати, поки спрацює AAD', ru: 'Держать прогиб и ждать, пока сработает AAD' },
+                { en: 'Throw the pilot chute: two tries or 5 s, else cut away', es: 'Lanzar el extractor: dos intentos o 5 s, si no, liberar', uk: 'Викинути витяжний: дві спроби або 5 с, інакше відчеплення', ru: 'Выбросить вытяжной: две попытки или 5 с, иначе отцепка' },
               ],
-              answer: 1,
+              answer: 2,
               why: {
                 en: 'USPA SIM 4-1 E: first try to throw the pilot chute, twice or for 5 s. If that fails, cut away and deploy the reserve. If you do throw it, be ready for the emergency procedure.',
                 es: 'USPA SIM 4-1 E: primero intenta lanzar el extractor, dos veces o 5 s. Si no puedes, libera y abre la reserva. Si lo lanzas, prepárate para el procedimiento de emergencia.',
@@ -726,11 +726,11 @@ export const part2: Part = {
                 ru: 'Ты выбросил вытяжной, но он висит за спиной, и основной не раскрывается. Что дальше?',
               },
               options: [
-                { en: 'Arch harder and wait for it to catch air', es: 'Arquear más y esperar a que tome aire', uk: 'Прогнутися сильніше й чекати, поки підхопить потік', ru: 'Прогнуться сильнее и ждать, пока подхватит поток' },
-                { en: 'Reach back behind you and pull it by hand', es: 'Llevar la mano atrás y tirar de él a mano', uk: 'Дістати його рукою за спиною й потягнути', ru: 'Достать его рукой за спиной и потянуть' },
                 { en: 'Twist and look over your shoulder; 2 tries or 5 s', es: 'Girar y mirar por encima del hombro; 2 intentos o 5 s', uk: 'Повернутися й глянути через плече; 2 спроби або 5 с', ru: 'Повернуться и глянуть через плечо; 2 попытки или 5 с' },
+                { en: 'Reach back behind you and pull it by hand', es: 'Llevar la mano atrás y tirar de él a mano', uk: 'Дістати його рукою за спиною й потягнути', ru: 'Достать его рукой за спиной и потянуть' },
+                { en: 'Arch harder and wait for it to catch air', es: 'Arquear más y esperar a que tome aire', uk: 'Прогнутися сильніше й чекати, поки підхопить потік', ru: 'Прогнуться сильнее и ждать, пока подхватит поток' },
               ],
-              answer: 2,
+              answer: 0,
               why: {
                 en: 'Pilot-chute hesitation: twisting changes the airflow behind you (USPA Cat A). Still stuck after two tries or 5 s: emergency procedure.',
                 es: 'El extractor se queda atrás: girar cambia el flujo de aire detrás de ti (USPA Cat A). ¿Sigue igual tras dos intentos o 5 s? Procedimiento de emergencia.',

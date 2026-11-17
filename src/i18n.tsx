@@ -44,7 +44,8 @@ export function glue(text: string): string {
   return text
     .replace(/(\d) (?=\d{3}(?!\d))/g, `$1${NB}`)
     .replace(/(\d) (?=(?:s|ft|m|kt|mph|min|%|°|с|м|мин|сек|футов|футах|футів|фута|фути|фут|км)(?![\p{L}]))/gu, `$1${NB}`)
-    .replace(/\bSIM (?=\d)/g, `SIM${NB}`);
+    .replace(/\bSIM (?=\d)/g, `SIM${NB}`)
+    .replace(/(?<![\p{L}\d])([A-H]) (?=\d)/gu, `$1${NB}`);
 }
 
 const UNIT: Record<Lang, Record<string, string>> = {

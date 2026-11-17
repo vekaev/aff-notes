@@ -760,11 +760,11 @@ export const part4: Part = {
                 `Закрутка строп, купол прямо над головою і не обертається. У якому порядку?`,
               ),
               options: [
-                t(`Risers apart and kick, toggles stowed`, `Separa las bandas y patea, batidores puestos`, `Развести концы и работать ногами, клеванты на месте`, `Розвести кінці й працювати ногами, клеванти на місці`),
-                t(`Unstow the toggles, then kick`, `Suelta los batidores, luego patea`, `Снять клеванты, потом работать ногами`, `Зняти клеванти, потім працювати ногами`),
                 t(`Cut away straight away`, `Libera enseguida`, `Сразу отцепиться`, `Одразу відчепитися`),
+                t(`Unstow the toggles, then kick`, `Suelta los batidores, luego patea`, `Снять клеванты, потом работать ногами`, `Зняти клеванти, потім працювати ногами`),
+                t(`Risers apart and kick, toggles stowed`, `Separa las bandas y patea, batidores puestos`, `Развести концы и работать ногами, клеванты на месте`, `Розвести кінці й працювати ногами, клеванти на місці`),
               ],
-              answer: 0,
+              answer: 2,
               why: t(
                 `Releasing the brakes while still twisted can turn the twist into a spin. Untwist first, then unstow. Twists that spin or dive are different: emergency procedure now, no kicking.`,
                 `Soltar los frenos con las líneas aún enroscadas puede convertir las vueltas en un giro. Primero desenróscate, luego suelta los batidores. Si las vueltas giran o caen en picado, es otra cosa: procedimiento de emergencia ya, sin patear.`,
@@ -780,11 +780,11 @@ export const part4: Part = {
                 `Стропа перехлеснула купол згори й розділила його на дві частини. Що робиш?`,
               ),
               options: [
-                t(`Emergency procedure, no fixing`, `Procedimiento de emergencia, sin arreglar`, `Аварийная процедура, без исправлений`, `Аварійна процедура, без виправлень`),
                 t(`Pump the toggles a few times`, `Bombea los batidores varias veces`, `Подкачать клевантами несколько раз`, `Підкачати клевантами кілька разів`),
+                t(`Emergency procedure, no fixing`, `Procedimiento de emergencia, sin arreglar`, `Аварийная процедура, без исправлений`, `Аварійна процедура, без виправлень`),
                 t(`Both toggles down for 2–3 s`, `Los dos batidores abajo 2–3 s`, `Обе клеванты вниз на 2–3 с`, `Обидві клеванти вниз на 2–3 с`),
               ],
-              answer: 0,
+              answer: 1,
               why: t(
                 `A line-over is in the "out, but not flyable" family: emergency procedure, no fixing.`,
                 `El line-over es de la familia "fuera, pero no se puede volar": procedimiento de emergencia, sin intentar arreglarlo.`,
@@ -2129,10 +2129,22 @@ export const part4: Part = {
           type: 'questions',
           items: [
             t(
-              `Student rigs: which pilot chute handle, which reserve handle (metal ring or soft pillow, what colour), which AAD, mode and firing altitude, and is there an RSL or a MARD (Skyhook)?`,
-              `Equipos de alumno: ¿qué manija del extractor, qué manija de reserva (anilla metálica o almohadilla blanda, de qué color), qué AAD, modo y altura de activación, y llevan RSL o MARD (Skyhook)?`,
-              `Студенческие системы: какая ручка вытяжного, какая ручка запасного (металлическое кольцо или мягкая подушка, какого цвета), какой AAD, режим и высота срабатывания, есть ли RSL или MARD (Skyhook)?`,
-              `Студентські системи: яка ручка витяжного, яка ручка запасного (металеве кільце чи м'яка подушка, якого кольору), який AAD, режим і висота спрацювання, чи є RSL або MARD (Skyhook)?`,
+              `Student rigs: which pilot chute handle, and which reserve handle (metal ring or soft pillow, what colour)?`,
+              `Equipos de alumno: ¿qué manija del extractor y qué manija de reserva (anilla metálica o almohadilla blanda, de qué color)?`,
+              `Студенческие системы: какая ручка вытяжного и какая ручка запасного (металлическое кольцо или мягкая подушка, какого цвета)?`,
+              `Студентські системи: яка ручка витяжного і яка ручка запасного (металеве кільце чи м'яка подушка, якого кольору)?`,
+            ),
+            t(
+              `Which AAD, which mode, and at what altitude does it fire?`,
+              `¿Qué AAD, en qué modo y a qué altura se activa?`,
+              `Какой AAD, в каком режиме и на какой высоте срабатывает?`,
+              `Який AAD, у якому режимі й на якій висоті спрацьовує?`,
+            ),
+            t(
+              `Is there an RSL or a MARD (Skyhook) on the student rigs?`,
+              `¿Los equipos de alumno llevan RSL o MARD (Skyhook)?`,
+              `Есть ли на студенческих системах RSL или MARD (Skyhook)?`,
+              `Чи є на студентських системах RSL або MARD (Skyhook)?`,
             ),
             t(
               `"Clear the lines from right to left toward the shoulder": what was that? A bridle over the shoulder, or the RSL?`,
@@ -2171,16 +2183,40 @@ export const part4: Part = {
           type: 'questions',
           items: [
             t(
-              `Signals: thumb down = arch (hips forward), like in the filmed signals? How do you show "legs in", "OK" and "let go of the pilot chute"? Does a closed fist mean "practice touch" or "pull now" here? What does a shake of my harness right after exit mean?`,
-              `Señales: ¿pulgar abajo = arquearse (cadera adelante), como en el video? ¿Cómo muestran "piernas adentro", "OK" y "suelta el extractor"? ¿El puño cerrado aquí es "toque de práctica" o "abre ya"? ¿Qué significa que me sacudan el arnés justo después de salir?`,
-              `Сигналы: большой палец вниз = прогиб (таз вперёд), как в видео? Как вы показываете «подбери ноги», «OK» и «отпусти вытяжной»? Кулак у вас значит «тренировочное касание» или «раскрывайся сейчас»? Что значит, когда трясут за подвесную систему сразу после отделения?`,
-              `Сигнали: великий палець униз = прогин (таз уперед), як у відео? Як ви показуєте «підбери ноги», «OK» і «відпусти витяжний»? Кулак у вас означає «тренувальний дотик» чи «розкривайся зараз»? Що означає, коли трусять за підвісну систему одразу після відокремлення?`,
+              `Signals: does thumb down mean arch (hips forward), like in the filmed signals?`,
+              `Señales: ¿el pulgar abajo significa arquearse (cadera adelante), como en el video?`,
+              `Сигналы: большой палец вниз значит прогиб (таз вперёд), как в видео?`,
+              `Сигнали: великий палець униз означає прогин (таз уперед), як у відео?`,
             ),
             t(
-              `Can't find the handle or a hard pull after two tries: straight to the reserve (as the USPA SIM says) or cut away first, then the reserve? And when my pilot chute hesitates behind me, which shoulder do I look over?`,
-              `Si no encuentro la manija o está dura tras dos intentos: ¿directo a la reserva (como dice el SIM de USPA) o primero liberar y luego la reserva? Y si el extractor se queda detrás de mí, ¿por encima de qué hombro miro?`,
-              `Не нашёл ручку или тугое раскрытие после двух попыток: сразу запасной (как в USPA SIM) или сначала отцепка, потом запасной? И если вытяжной завис за спиной, через какое плечо смотреть?`,
-              `Не знайшов ручку або туге розкриття після двох спроб: одразу запасний (як у USPA SIM) чи спочатку відчеплення, потім запасний? І якщо витяжний завис за спиною, через яке плече дивитися?`,
+              `How do you show "legs in", "OK" and "let go of the pilot chute"?`,
+              `¿Cómo muestran "piernas adentro", "OK" y "suelta el extractor"?`,
+              `Как вы показываете «подбери ноги», «OK» и «отпусти вытяжной»?`,
+              `Як ви показуєте «підбери ноги», «OK» і «відпусти витяжний»?`,
+            ),
+            t(
+              `Does a closed fist mean "practice touch" or "pull now" here?`,
+              `¿El puño cerrado aquí es "toque de práctica" o "abre ya"?`,
+              `Кулак у вас значит «тренировочное касание» или «раскрывайся сейчас»?`,
+              `Кулак у вас означає «тренувальний дотик» чи «розкривайся зараз»?`,
+            ),
+            t(
+              `What does a shake of my harness right after exit mean?`,
+              `¿Qué significa que me sacudan el arnés justo después de salir?`,
+              `Что значит, когда трясут за подвесную систему сразу после отделения?`,
+              `Що означає, коли трусять за підвісну систему одразу після відокремлення?`,
+            ),
+            t(
+              `Can't find the handle or a hard pull after two tries: straight to the reserve (as the USPA SIM says) or cut away first, then the reserve?`,
+              `Si no encuentro la manija o está dura tras dos intentos: ¿directo a la reserva (como dice el SIM de USPA) o primero liberar y luego la reserva?`,
+              `Не нашёл ручку или тугое раскрытие после двух попыток: сразу запасной (как в USPA SIM) или сначала отцепка, потом запасной?`,
+              `Не знайшов ручку або туге розкриття після двох спроб: одразу запасний (як у USPA SIM) чи спочатку відчеплення, потім запасний?`,
+            ),
+            t(
+              `My pilot chute hesitates behind me: which shoulder do I look over?`,
+              `El extractor se queda detrás de mí: ¿por encima de qué hombro miro?`,
+              `Вытяжной завис за спиной: через какое плечо смотреть?`,
+              `Витяжний завис за спиною: через яке плече дивитися?`,
             ),
             t(
               `Wave-off: how many times, and does it start exactly at 5,500 ft? Pull altitude on categories D and E? Is D-1 my first exit without being held?`,
