@@ -25,6 +25,12 @@ const T = {
     '<b>Моя миссия:</b> помочь каждому, кто хочет попробовать этот спорт, хорошо его выучить, предотвратить травмы и объединить парашютистов по всему миру, которые готовы делиться знаниями.',
     '<b>Моя місія:</b> допомогти кожному, хто хоче спробувати цей спорт, добре його вивчити, запобігти травмам і об\'єднати парашутистів по всьому світу, які готові ділитися знаннями.',
   ),
+  imagine: h(
+    'Imagine: if these notes help even one person remember the right thing at the right second, they save a life. I think the greatest thing we can do now is share what we know and build, together with skydivers all over the world, the most complete place to learn to skydive: fewer injuries and deaths, and more people enjoying their life and the feeling of flight.',
+    'Imagina: si estos apuntes ayudan aunque sea a una persona a recordar lo correcto en el segundo justo, salvan una vida. Creo que lo más grande que podemos hacer ahora es compartir lo que sabemos y construir, junto con paracaidistas de todo el mundo, el lugar más completo para aprender a saltar: menos lesiones y muertes, y más gente disfrutando de su vida y de la sensación de volar.',
+    'Представьте: если эти заметки помогут хотя бы одному человеку вспомнить нужное в нужную секунду, они спасут жизнь. Я думаю, самое большое, что мы можем сделать сейчас, это делиться знаниями и вместе с парашютистами со всего мира построить самое полное место, где можно научиться прыгать: меньше травм и смертей, и больше людей, которые радуются жизни и чувству полёта.',
+    'Уявіть: якщо ці нотатки допоможуть хоча б одній людині згадати потрібне в потрібну секунду, вони врятують життя. Я думаю, найбільше, що ми можемо зробити зараз, це ділитися знаннями й разом із парашутистами з усього світу збудувати найповніше місце, де можна навчитися стрибати: менше травм і смертей, і більше людей, які радіють життю й відчуттю польоту.',
+  ),
   fbT: h('Help make it better', 'Ayuda a mejorarlo', 'Помогите сделать лучше', 'Допоможіть зробити краще'),
   fbS: h(
     'Found a mistake or something unclear? Something to add, a book, a link or a tip that helped you? Write to me. Every message makes these notes better for the next student.',
@@ -69,6 +75,7 @@ export function AboutAuthor() {
         </div>
         <p>{t(T.story)}</p>
         <p dangerouslySetInnerHTML={{ __html: t(T.mission) }} />
+        <p className="imagine">{t(T.imagine)}</p>
         <div className="fb">
           <h4>{t(T.fbT)}</h4>
           <p className="muted">{t(T.fbS)}</p>

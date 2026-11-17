@@ -49,6 +49,10 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [ ] Still running in sub-chats: Russia/CIS, existing lists, (check each when it reports).
 
 2026-11-16 (chat, feedback):
+- [x] Mission, one more thought (2026-11-16): imagine saving at least one life by sharing this knowledge; the greatest
+      thing is that we can now build the most complete worldwide place to learn to skydive, with fewer injuries and
+      deaths, and more people enjoying life and the feeling of flight. (New English text → translate into the 10 new
+      languages when the i18n branch merges.) Done in EN/ES/UK/RU, seen RU light + EN dark on the phone.
 - [x] End of the site: "share feedback" (something to add, share or fix, found a mistake → write to the owner's email).
 - [x] End of the site: the owner's mission and a short "about me" with a small photo (tried the course himself, it's
       hard; wants to help new learners avoid injuries, connect the community worldwide; from Ukraine, loves learning

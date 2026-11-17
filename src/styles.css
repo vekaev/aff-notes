@@ -735,6 +735,7 @@ a.pill:hover { filter: brightness(1.1); }
 .author .who .nm { font-weight: 700; letter-spacing: -.01em; }
 .author .who .wh { color: var(--muted); font-size: 15px; }
 .author p { max-width: 62ch; }
+.author .imagine { font-size: 19px; line-height: 1.5; font-weight: 500; border-inline-start: 3px solid var(--accent, var(--ink)); padding-inline-start: var(--s4); margin-block: var(--s5); }
 .author .fb { margin-top: var(--s6); padding: var(--s5); background: var(--card); border-radius: var(--r); box-shadow: 0 0 0 1px var(--hair); }
 .author .fb h4 { margin-top: 0; }
 .author .fb .muted { color: var(--muted); }
