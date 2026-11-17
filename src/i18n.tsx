@@ -1,7 +1,7 @@
 import { createContext, Fragment, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { ALL_LANGS, isCore, RTL, type L, type Lang } from './content/types';
 import { keyOf } from './content/i18n/key';
-import { convertQuantities, initialUnits, saveUnits, type Units } from './units';
+import { convertQuantities, defaultUnits, savedUnits, saveUnits, type Units } from './units';
 
 // Extra languages load on demand (one JSON per language, built from English by the translators).
 const CATALOGS = import.meta.glob<Record<string, string>>('./content/i18n/*.json', { import: 'default' });
@@ -47,16 +47,17 @@ export function LangProvider({ children }: { children: ReactNode }) {
     setLangState(l);
     try { localStorage.setItem(KEY, l); } catch { /* ignore */ }
   }, []);
-  const [units, setUnitsState] = useState<Units>(initialUnits);
-  const setUnits = useCallback((u: Units) => { setUnitsState(u); saveUnits(u); }, []);
+  const [chosenUnits, setChosenUnits] = useState<Units | null>(savedUnits);
+  const units: Units = chosenUnits ?? defaultUnits(lang);
+  const setUnits = useCallback((u: Units) => { setChosenUnits(u); saveUnits(u); }, []);
   useEffect(() => {
     try {
       const u = new URL(location.href);
       u.searchParams.set('lang', lang);
-      if (units === 'ft') u.searchParams.delete('units'); else u.searchParams.set('units', units);
+      if (!chosenUnits) u.searchParams.delete('units'); else u.searchParams.set('units', chosenUnits);
       if (u.href !== location.href) history.replaceState(history.state, '', u.href);
     } catch { /* ignore */ }
-  }, [lang, units]);
+  }, [lang, chosenUnits]);
   const [cat, setCat] = useState<{ lang: Lang; map: Record<string, string> } | null>(null);
   useEffect(() => {
     document.documentElement.lang = lang;

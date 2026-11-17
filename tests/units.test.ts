@@ -30,3 +30,16 @@ describe('units', () => {
     }
   });
 });
+import { defaultUnits } from '../src/units';
+import { vi, afterEach } from 'vitest';
+describe('default units', () => {
+  afterEach(() => vi.unstubAllGlobals());
+  it('metres for Russian and Ukrainian, feet for English', () => {
+    vi.stubGlobal('navigator', { languages: ['en'] });
+    expect(defaultUnits('ru')).toBe('m'); expect(defaultUnits('uk')).toBe('m'); expect(defaultUnits('en')).toBe('ft');
+  });
+  it('a metric browser region wins over an English app language', () => {
+    vi.stubGlobal('navigator', { languages: ['en-DE'] }); expect(defaultUnits('en')).toBe('m');
+    vi.stubGlobal('navigator', { languages: ['ru-US'] }); expect(defaultUnits('es')).toBe('ft');
+  });
+});

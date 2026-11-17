@@ -212,6 +212,11 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
+2026-11-17 (chat, settings menu):
+- [x] (seen: ?lang=uk opens in metres, switching to EN gives feet) Metres by default where schools use metres (Russia, Ukraine: "no one uses feet"), chosen from the region or,
+      without one, the language (docs/i18n/units-and-rules.md list); feet elsewhere.
+- [x] (seen UK light + EN dark on the phone) Units and theme go into a "⋯" menu at the right of the header; the language stays visible on top.
+
 2026-11-17 (chat, going public):
 - [x] (40c3def) LinkedIn https://www.linkedin.com/in/vekaev next to GitHub at the end (+ saved in ~/me).
 - [x] Make the GitHub repo public (owner's OK 2026-11-17). Checked: no secrets in history (.env holds only the site URL);

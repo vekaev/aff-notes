@@ -11,24 +11,31 @@ export const UNITS: readonly Units[] = ['ft', 'both', 'm'];
 const KEY = 'aff-units';
 
 /**
- * Regions whose skydiving schools train in metres: the default there is "both" (docs/i18n/units-and-rules.md:
+ * Regions whose skydiving schools train in metres: the default there is metres (owner 2026-11-17: "no one uses feet") (docs/i18n/units-and-rules.md:
  * federation documents for FR DE RU UA FI DK SE PL CZ EE; likely for AT and post-Soviet / Central European countries).
  */
 const METRIC_REGIONS = new Set(['FR', 'DE', 'AT', 'RU', 'UA', 'BY', 'KZ', 'UZ', 'KG', 'FI', 'DK', 'SE', 'PL', 'CZ', 'SK', 'EE', 'LV', 'LT', 'HU', 'MD']);
 
-export function initialUnits(): Units {
+/** The reader's own choice (from the link or the menu), or null: then the default follows the language. */
+export function savedUnits(): Units | null {
   const fromUrl = typeof location !== 'undefined' ? new URLSearchParams(location.search).get('units') : null;
   if (fromUrl === 'ft' || fromUrl === 'm' || fromUrl === 'both') { saveUnits(fromUrl); return fromUrl; }
   try {
     const saved = localStorage.getItem(KEY);
     if (saved === 'ft' || saved === 'm' || saved === 'both') return saved;
   } catch { /* storage blocked */ }
+  return null;
+}
+
+/** Languages whose skydiving schools train in metres (docs/i18n/units-and-rules.md). */
+const METRIC_LANGS: readonly string[] = ['ru', 'uk', 'fr', 'de', 'fi', 'da', 'sv', 'pl', 'cs', 'sk', 'lt', 'hu'];
+
+/** Default units: metres where schools use metres (by the browser region, else by the app language), else feet. */
+export function defaultUnits(lang: Lang): Units {
   const prefs = typeof navigator !== 'undefined' ? (navigator.languages?.length ? navigator.languages : [navigator.language]) : [];
   const region = (prefs[0] || '').split('-')[1]?.toUpperCase();
-  const lang = (prefs[0] || '').split('-')[0].toLowerCase();
-  const metricLang = ['ru', 'uk', 'be', 'fr', 'de', 'fi', 'da', 'sv', 'pl', 'cs', 'sk', 'et', 'lv', 'lt', 'hu'];
-  if ((region && METRIC_REGIONS.has(region)) || (!region && metricLang.includes(lang))) return 'both';
-  return 'ft';
+  if (region && METRIC_REGIONS.has(region)) return 'm';
+  return METRIC_LANGS.includes(lang) ? 'm' : 'ft';
 }
 export function saveUnits(u: Units) { try { localStorage.setItem(KEY, u); } catch { /* ignore */ } }
 

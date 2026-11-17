@@ -2,16 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ALL_LANGS, LANG_NAMES, type L, type Lang } from '../content/types';
 import { useLang } from '../i18n';
 import { UNITS } from '../units';
-import { ui } from '../ui';
 
-/** Units button: ft → ft + m → m. Shows the current choice; every altitude in the app follows it. */
-export function UnitsButton() {
-  const { t, units, setUnits } = useLang();
-  const label = units === 'both' ? 'ft·m' : units;
-  return (
-    <button type="button" className="chip units" title={t(ui.unitsLabel)} aria-label={`${t(ui.unitsLabel)}: ${label}`} onClick={() => setUnits(UNITS[(UNITS.indexOf(units) + 1) % UNITS.length])}>{label}</button>
-  );
-}
 
 /** Language menu: scales to any number of languages, each shown in its own name. */
 export function LangMenu() {
@@ -60,22 +51,72 @@ export function applySavedTheme() {
   else document.documentElement.setAttribute('data-theme', t);
 }
 
-/** Theme button: system → light → dark → system. */
-export function ThemeButton() {
-  const { t } = useLang();
+const THEME_NAMES: Record<Theme, L> = {
+  system: { en: 'system', es: 'sistema', uk: 'системна', ru: 'системная' },
+  light: { en: 'light', es: 'claro', uk: 'світла', ru: 'светлая' },
+  dark: { en: 'dark', es: 'oscuro', uk: 'темна', ru: 'тёмная' },
+};
+const THEME_WORD = { en: 'Theme', es: 'Tema', uk: 'Тема', ru: 'Тема' };
+
+function useTheme(): [Theme, (t: Theme) => void] {
   const [theme, setTheme] = useState<Theme>(readTheme);
   useEffect(() => {
     if (theme === 'system') document.documentElement.removeAttribute('data-theme');
     else document.documentElement.setAttribute('data-theme', theme);
     try { localStorage.setItem(THEME_KEY, theme); } catch { /* ignore */ }
   }, [theme]);
+  return [theme, setTheme];
+}
+
+const M: Record<string, L> = {
+  more: { en: 'More settings', es: 'Más ajustes', uk: 'Більше налаштувань', ru: 'Ещё настройки' },
+  units: { en: 'Units', es: 'Unidades', uk: 'Одиниці', ru: 'Единицы' },
+  ft: { en: 'Feet', es: 'Pies', uk: 'Фути', ru: 'Футы' },
+  both: { en: 'Feet and metres', es: 'Pies y metros', uk: 'Фути й метри', ru: 'Футы и метры' },
+  m: { en: 'Metres', es: 'Metros', uk: 'Метри', ru: 'Метры' },
+};
+
+/** "⋯" menu at the right of the header: units and theme (the language stays visible next to it). */
+export function MoreMenu() {
+  const { t, units, setUnits } = useLang();
+  const [theme, setTheme] = useTheme();
+  const [open, setOpen] = useState(false);
+  const box = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!open) return;
+    const close = (e: MouseEvent | KeyboardEvent) => {
+      if (e instanceof KeyboardEvent ? e.key === 'Escape' : !box.current?.contains(e.target as Node)) setOpen(false);
+    };
+    addEventListener('mousedown', close); addEventListener('keydown', close);
+    return () => { removeEventListener('mousedown', close); removeEventListener('keydown', close); };
+  }, [open]);
+  const item = (on: boolean, label: string, pick: () => void, key: string) => (
+    <li key={key}><button type="button" role="menuitemradio" aria-checked={on} onClick={pick}><span>{label}</span>{on && <span className="code">✓</span>}</button></li>
+  );
+  return (
+    <div className="menu" ref={box}>
+      <button type="button" className="chip icon" aria-label={t(M.more)} aria-haspopup="menu" aria-expanded={open} onClick={() => setOpen(o => !o)}>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.6" fill="currentColor" /><circle cx="12" cy="12" r="1.6" fill="currentColor" /><circle cx="19" cy="12" r="1.6" fill="currentColor" /></svg>
+      </button>
+      {open && (
+        <ul className="menu-list surface more" role="menu" aria-label={t(M.more)}>
+          <li className="mh">{t(M.units)}</li>
+          {UNITS.map(u => item(units === u, t(M[u]), () => setUnits(u), `u-${u}`))}
+          <li className="mh">{t(THEME_WORD)}</li>
+          {(['system', 'light', 'dark'] as Theme[]).map(th => item(theme === th, t(THEME_NAMES[th]), () => setTheme(th), `t-${th}`))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+/** Theme button: system → light → dark → system (kept for places outside the header). */
+export function ThemeButton() {
+  const { t } = useLang();
+  const [theme, setTheme] = useTheme();
   const next: Record<Theme, Theme> = { system: 'light', light: 'dark', dark: 'system' };
-  const names: Record<Theme, L> = {
-    system: { en: 'system', es: 'sistema', uk: 'системна', ru: 'системная' },
-    light: { en: 'light', es: 'claro', uk: 'світла', ru: 'светлая' },
-    dark: { en: 'dark', es: 'oscuro', uk: 'темна', ru: 'тёмная' },
-  };
-  const word = { en: 'Theme', es: 'Tema', uk: 'Тема', ru: 'Тема' };
+  const names = THEME_NAMES;
+  const word = THEME_WORD;
   const tip = `${t(word)}: ${t(names[theme])}`;
   return (
     <button type="button" className="chip icon tip" aria-label={tip} data-tip={tip} onClick={() => setTheme(next[theme])}>
