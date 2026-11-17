@@ -188,7 +188,8 @@ Work in this order; tick each line here and in the inbox below; one item per run
    - [x] Site email hunt (no search, sites read directly): 557 no-email rows with a website → 182 emails found,
      221 none, 154 dead/hijacked sites (`todo/dead_sites_2026-11-17.csv`, for the step 4 clean-up).
      contacts.csv now 4,129 rows, 2,284 with email.
-   - [ ] M2 AAD dealer list (m2aad.com/contacts-2, ~80 dealer emails): harvesting, second PR.
+   - [x] M2 AAD dealer list (m2aad.com/contacts-2, robots allow): 77 rows, 30 new, 8 email fills (`raw/m2aad_dealers.csv`);
+     check Skydive Breclav and DZ Ignalina (matched on the dealer's domain).
    - [ ] Email hunt batches 01–14 (`todo/email_hunt_*.csv`, ~1,550 rows needing a search): one fresh desktop session
      each (sessions can't start over Remote Control).
 7. [?] Waiting on the owner (link + clips settled 2026-11-17: public, clips kept): sender = a project domain + one
