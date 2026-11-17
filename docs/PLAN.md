@@ -124,6 +124,12 @@ Work in this order; tick each line here and in the inbox below; one item per run
      KNVvL para@knvvl.nl, PD support@, iFLY merge table with wrong cities, Bottrop phone +49 2041 373730, ISC Bureau names).
    - [!] redo: live USPA DZ count (fetch to uspa.org was refused by the permission check; mirror used), the 2 new DZs'
      own pages, Vigil dealer locator (JavaScript only), 5 CYPRES pages that failed, British Skydiving s.6 PDF (404).
+   Full report pasted by the owner 2026-11-17 + its Gemini chat read in Dia (Tavus account, "Skydiving Safety
+   Directory"): `ext_ai_run3_full.md`. Gemini never wrote its "193-row" CSV: 49 rows drafted in its reasoning, 48
+   already in, 1 new (MC Industries). Re-checked leads (`ext_ai_run3_full_leads.csv`): APF careers page is job ads,
+   iFLY info.<city>@ inboxes don't exist (pr@, partnerships@ and Wilmington events@ do), 2 AU DZ emails added.
+   - [!] redo: IBA tunnel list tunnelflight.com/tunnels/all (public, robots allow; fetch blocked by the permission
+     check): open it in Dia or allow the fetch, then dedupe against the 414 tunnel rows.
 6d. [x] Owner 2026-11-17: AI runs return too little → prompt v2 for volume (one narrow scope per run, table only,
    harvest whole directories, "continue" follow-ups, 29 scopes): `docs/outreach/deep-research-prompt-v2.md`.
    Owner runs it in other tools; each answer saved as `raw/ext_<tool>_<scope>.unverified.csv.txt`, verified + merged.
