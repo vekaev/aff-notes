@@ -52,5 +52,5 @@ export default defineConfig({
     }),
   ],
   // Other chats' git worktrees live in .claude/worktrees: never run their tests from here.
-  test: { exclude: ['**/node_modules/**', '**/dist/**', '.claude/**'] },
+  test: { exclude: ['**/node_modules/**', '**/dist/**', '.claude/**', 'e2e/**'] },
 });

@@ -24,18 +24,20 @@ npm install        # also installs the pre-commit hook
 npm run dev        # http://localhost:5173
 ```
 
-| Command                    | What it does                                                                   |
-| -------------------------- | ------------------------------------------------------------------------------ |
-| `npm run check`            | Everything CI checks: types, lint, translations, formatting, tests             |
-| `npm run build`            | Production build into `dist/`                                                  |
-| `npm run lint`             | [Oxlint](https://oxc.rs) with React, hooks, accessibility and type-aware rules |
-| `npm run format`           | [Prettier](https://prettier.io)                                                |
-| `npm run i18n`             | Rebuild `src/content/i18n/en.json` from the English text in the code           |
-| `npm run i18n:check`       | Fail if `en.json` is stale or any language is incomplete                       |
-| `npm run i18n:todo [lang]` | List what each language still needs (`--prune` removes keys nobody uses)       |
+| Command                    | What it does                                                                                                                                               |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm run check`            | Everything CI checks: types, lint, translations, formatting, tests                                                                                         |
+| `npm run build`            | Production build into `dist/`                                                                                                                              |
+| `npm run lint`             | [Oxlint](https://oxc.rs) with React, hooks, accessibility and type-aware rules                                                                             |
+| `npm run format`           | [Prettier](https://prettier.io)                                                                                                                            |
+| `npm run i18n`             | Rebuild `src/content/i18n/en.json` from the English text in the code                                                                                       |
+| `npm run i18n:check`       | Fail if `en.json` is stale or any language is incomplete                                                                                                   |
+| `npm run i18n:todo [lang]` | List what each language still needs (`--prune` removes keys nobody uses)                                                                                   |
+| `npm run e2e`              | Build, then screen tests in 7 languages, phone and desktop, light and dark (screenshots in `test-results/`; first time: `npx playwright install chromium`) |
+| `npm run size`             | Size budget of the build (main bundle, languages, offline install)                                                                                         |
 
 The pre-commit hook formats and lints the files you staged, then runs the type check, the `en.json` check and the
-tests (about two seconds). CI on GitHub runs the same checks plus the build on every pull request.
+tests (about two seconds). CI on GitHub runs the same checks plus the build, the size budget and the screen tests on every pull request; the screenshots are attached to the run. Why these tools: [docs/TOOLING.md](docs/TOOLING.md).
 
 ## How the text works
 

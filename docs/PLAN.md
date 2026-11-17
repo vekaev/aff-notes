@@ -238,6 +238,10 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
         translations are lazy-loaded static JSON loaded once, progress is localStorage). It would add ~13 kB and a
         provider for nothing. Revisit only if the app gets a server (accounts, synced progress, live wind data).
       - Commit-message convention: not enforced (one-person repo, messages are descriptive); revisit if many PRs.
+      - Owner's wider ask (TanStack + Vite ecosystems): comparison in `docs/TOOLING.md`. Added after it: size budget in
+        CI (`npm run size`), Playwright screen tests on the build (7 languages × phone/desktop × light/dark, screenshots
+        uploaded by CI, `npm run e2e`). Bigger moves (per-language URLs + prerender / TanStack Router + Start, smaller
+        offline install, Weblate) are under "Owner decides later".
 - [ ] One-time format + lint pass after the components/content branch (school-rules profiles) merges: remove the
       four TEMPORARY lines in `.prettierignore`, `npm run format`, commit alone ("format only"); fix the a11y warnings
       (clickable `<li>` rows in widgets.tsx and the tap-to-reveal card in Blocks.tsx become `<button>`s) and turn those
@@ -446,8 +450,21 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - aff-notes.vercel.app (public, created 2026-11-16, auto-deploys on push): owner removes it (2026-11-16).
 
 ## Owner decides later
-- Search engines and link previews per language: pre-render the page per language at build time (light) or move to
-  TanStack Start (big). Worth it once people search for the app in their language. Recommended: light way, later.
+- **Real URLs + pre-rendered page per language** (`/fr/`, `/de/`; today `?lang=fr`, built in the browser, so search
+  engines and link previews see English only). Comparison in `docs/TOOLING.md`. Recommended: the light way first,
+  after the school-rules branch merges (it touches `main.tsx` / `i18n.tsx`):
+  1. `scripts/prerender.mjs` after `vite build`: render `<App>` per language with `react-dom/server` into
+     `dist/<lang>/index.html` with translated `<title>`, description, `og:` tags, `<html lang dir>`.
+  2. App reads the language from the path first (`/fr/` > `?lang=` > saved > browser); the language menu changes the path.
+  3. `hreflang` alternates on every page + `sitemap.xml`; `vercel.json` rewrites `/:lang/(.*)` and redirects `/?lang=fr` → `/fr/`
+     (outreach links keep working).
+  4. Playwright: each `/xx/` page has its language in the HTML before scripts run; link previews checked.
+  Full alternative: TanStack Router + Start with static prerender and per-chapter URLs (several days; only if the app
+  grows past one page).
+- **Smaller offline install**: don't pre-download the 28 extra languages (3.2 of 4.9 MB); precache the app + the
+  reader's language, cache others when picked. Trade-off: an unused language offline shows English. Config only.
+- **Translation platform** (Weblate, free for open source) once outside translators show up: they edit in a web page,
+  Weblate opens PRs to `src/content/i18n/*.json`, CI checks them.
 - Publishing: **private GitHub repo only** (vekaev/aff-notes, owner 2026-11-16); the app itself is not published. A web version would need the clips replaced by links or own footage.
 - Public version for the dropzone / other students (needs own footage or licensed clips instead of YouTube cuts).
 - Native app version (iPhone) built on the same content files.
