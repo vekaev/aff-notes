@@ -17,6 +17,19 @@ owner's words in short. Status: `[ ]` open · `[~]` in progress · `[x]` done an
 `[?]` waiting on the owner (the question is under "Waiting on you"). The 2-hourly run and the autopilot work the open
 lines top down; a line is closed only when it's done and seen, or the owner drops it.
 
+2026-11-16 (chat, outreach):
+- [~] Research every skydiving school / dropzone worldwide (US, Australia, UK, Canada, Europe, rest of the world),
+      plus coaches, gear makers, associations: one CSV (docs/outreach/contacts.csv), public business contacts only.
+- [~] Also creators and communities: YouTube, Instagram/TikTok, blogs, podcasts, Reddit, Discord, Facebook groups,
+      forums (where to post, their rules). Goal: as many contacts as possible (owner: "thousands").
+- [~] Research how to ask strangers for expert help so they answer (cold outreach, wording, subject lines), and the
+      rules for bulk email (CAN-SPAM US, GDPR/PECR UK-EU, CASL Canada, Spam Act Australia).
+- [ ] Rewrite the email: the owner's mission (help people get the A license, fewer injuries and deaths, contribute
+      to the sport) and the asks (feedback, cross-check facts, books, links, saved materials, what matters most,
+      forums, new ideas, a community chat or calls, a version personalised for their school). Plus a Reddit post.
+- [?] Before sending to anyone: private link ready, clips question (the app holds cuts of other people's videos),
+      sending tool and pace. Nothing is sent without the owner's OK.
+
 2026-11-16 (chat):
 - [x] Remove "decide by 2,500" under part IV of the jump picture (bb861dd).
 - [x] Content general, not tied to Tracy; Skydive California only in Part V (6eea713).
@@ -50,8 +63,11 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       20:00 run: #3 landing priorities and #5 low-turn recovery were already in Part III (low-turn chapter); built #4
       "Traffic: other canopies around you" in the pattern chapter (after opening steer away with rear risers, look before
       you turn, turn right / head-on both right, lower canopy has right of way but fly the same pattern; USPA SIM 4-1 + Cat G
-      academics) and 2 decision questions in the Part III test (head-on canopy; low turn at 150 ft). Next: #6 landing off
-      and after you land, #7 after you pull silver.
+      academics) and 2 decision questions in the Part III test (head-on canopy; low turn at 150 ft).
+      22:00 run: #6 "Landing off the dropzone, and after you land" in the obstacles chapter (field by 2,000 ft, poles not
+      wires, fences in straight lines, turbulence behind trees, into the wind but no low turn, PLF; livestock, gates, crops,
+      report damage; USPA SIM 4-1 G re-read at uspa.org/SIM/4-1) + 2 decision questions; "tell the DZ" and "wind drags you
+      on the ground" are not in the SIM → <q-check/> + 2 instructor questions. Next: #7 after you pull silver.
 - [x] EP / FIX labels on the malfunction groups: EP links to the emergency procedure with a hover hint
       ("how to do the emergency procedure →"); FIX explains "two tries only, keep checking altitude, not fixed by 2,500 → EP".
       Make "two tries + watch altitude" stand out in the malfunctions chapter.
