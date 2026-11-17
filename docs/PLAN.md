@@ -5,8 +5,9 @@ true to the sources, grouped the way a jump happens, short, readable and shown w
 remembers the right thing at the right second because of it, it was worth it. Every change is checked against that:
 is it true, is it clear, does it help someone on their next jump?
 
-Personal study app for AFF (Accelerated Freefall) after the ground course at Skydive California (Tracy, CA).
-For personal use for now; maybe later shared with the dropzone, or turned into an app for beginner skydivers.
+Study app for AFF (Accelerated Freefall) students, started after the owner's ground course at Skydive California
+(Tracy, CA). Public since 2026-11-17: github.com/vekaev/aff-notes (MIT code, CC BY-SA content, clips belong to their
+creators) and https://aff-notes.vercel.app; 32 languages. Project on one page: docs/ARCHITECTURE.md.
 Every request from the owner goes here first. `[x]` = in the app (content tests pass); `[ ]` = not done.
 Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check, landing pattern, EP, malfunctions
 (desktop, light, EN); canopy check, obstacles, a chapter test (phone, dark, RU).
@@ -162,8 +163,10 @@ Work in this order; tick each line here and in the inbox below; one item per run
    (a pasted chat or uploaded file), then process like 6b/6c/6h: verify every row at its source, drop legal/privacy
    inboxes, fact-check the claims, merge with `scripts/merge-contacts.py` and report new vs already-known rows
    (repeats are expected and fine).
-7. [?] Waiting on the owner (link + clips settled 2026-11-17: public, clips kept): sender
-   (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
+7. [?] Waiting on the owner (link + clips settled 2026-11-17: public, clips kept): sender = a project domain + one
+   Workspace mailbox, never the personal Gmail (docs/outreach/sending.md: domain name? ~$100 budget? postal address for
+   the footer?); first wave = own school and instructor; keep the GitHub photo at the end or send another; the 9
+   community questions in docs/community/PLAN.md §11 (hub platform, founding moderators, time budget…).
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
 `docs/outreach/raw/`; nothing in them needs a commit except what's listed above.
 
@@ -221,7 +224,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
 2026-11-17 (chat, playbook):
-- [ ] Make the plan true again (found by audit 2, docs/review/owner-asks-audit-2.md W1–W6): "Waiting on you" drops the
+- [x] (2026-11-17: header, Waiting on you, Owner decides later, sender line, About line fixed; tooling worktree removed) Make the plan true again (found by audit 2, docs/review/owner-asks-audit-2.md W1–W6): "Waiting on you" drops the
       private dropzone link, "owner removes aff-notes.vercel.app" and "needs the private link"; "Owner decides later"
       and the header drop "private repo only / not published / personal use"; Resume 7's "sender (Gmail…)" follows
       sending.md (own domain); the About-section line loses its stale [?] notes; languages ticked [x] without being seen
@@ -348,8 +351,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] Bubble: a "Not now" that hides the bubble and its icon completely (it's annoying and takes space on the phone).
 - [x] Bubble: a link "Why I made this" to the mission section at the bottom (#about).
 - [x] (dd445e2, 40c3def) About section: links to GitHub (the project, to contribute) and LinkedIn, so people can reach the owner there.
-      Done: GitHub profile link (seen EN phone dark). [?] LinkedIn URL from the owner (not in ~/me or mail); [?] repo is
-      private: make it public for contributions? (it holds clips of other people's videos: replace them first).
+      Done: GitHub profile + project link, LinkedIn (40c3def, dd445e2); repo public 2026-11-17.
 - [x] (owner 2026-11-17: repo public, site stays, clips OK) Seen on the owner's phone: aff-notes.vercel.app is still public and auto-deploys on push (clips of other people's
       videos). Owner said he'd remove it; ask again.
 
@@ -502,14 +504,13 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - Big reorder: Part IV "act now" chapters first, statistics and real cases in their own part "learn from others", an
   always-visible EP button in the header? Recommended: yes.
 - Email to Skydive California (info@skydivecalifornia.com, checked on their contact page): review request + offer to
-  help for free + "what would you add for your school?". Draft: `docs/email-draft.md` (not sent). Needs the private link.
-- Private link only the dropzone can open: Cloudflare Pages + Cloudflare Access (email one-time code, allow-list)?
-  Needs your Cloudflare account and OK; the clips are other people's videos, so keep the allow-list small.
+  help for free + "what would you add for your school?". Draft: `docs/email-draft.md` (not sent). Link: the public site.
+- ~~Private link only the dropzone can open~~ (dropped 2026-11-17: everything public).
 
 - Photo of the dropzone map the instructors drew in ground school (holding point, pattern, landing area): send it and
   it goes next to the pattern drawing in Part III and into Part V.
 
-- aff-notes.vercel.app (public, created 2026-11-16, auto-deploys on push): owner removes it (2026-11-16).
+- ~~aff-notes.vercel.app: owner removes it~~ (2026-11-17: the site stays public).
 
 ## Owner decides later
 - **Real URLs + pre-rendered page per language** (`/fr/`, `/de/`; today `?lang=fr`, built in the browser, so search
@@ -525,8 +526,7 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
   grows past one page).
 - **Translation platform** (Weblate, free for open source) once outside translators show up: they edit in a web page,
   Weblate opens PRs to `src/content/i18n/*.json`, CI checks them.
-- Publishing: **private GitHub repo only** (vekaev/aff-notes, owner 2026-11-16); the app itself is not published. A web version would need the clips replaced by links or own footage.
-- Public version for the dropzone / other students (needs own footage or licensed clips instead of YouTube cuts).
+- (Decided 2026-11-17: the repo and the site are public; clips kept with credits, creators asked.)
 - Native app version (iPhone) built on the same content files.
 - Reuse for other dropzones: content is now general ("your dropzone"); dropzone facts live only in Part V. Needs rights
   from the clip creators (or own footage) before anyone else gets it.
