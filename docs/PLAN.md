@@ -46,7 +46,8 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [ ] instagram_tiktok_blogs: Instagram bios/linktrees (needs Dia), RU/UK/ES creators, Medium/Substack.
   - [ ] w2_experts, w2_clubs_events, w2_coaches_lofts: finish what their notes list as missing.
   - [ ] how-to-ask: dropzone.com forum threads (site gone: use the Internet Archive).
-  - [ ] Still running in sub-chats: Russia/CIS, existing lists, (check each when it reports).
+  - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
+        C: existing-lists agent still running.
 
 2026-11-16 (chat, feedback):
 - [x] Mission, one more thought (2026-11-16): imagine saving at least one life by sharing this knowledge; the greatest
