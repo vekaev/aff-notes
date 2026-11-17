@@ -193,7 +193,8 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] (40c3def) LinkedIn https://www.linkedin.com/in/vekaev next to GitHub at the end (+ saved in ~/me).
 - [x] Make the GitHub repo public (owner's OK 2026-11-17). Checked: no secrets in history (.env holds only the site URL);
       the contacts list (3,816 rows, 2,024 emails) is published as is by the owner's choice.
-- [x] Clips are fine: the owner asked the content creators. Update CLAUDE.md (no more "never publish") and close the
+- [x] Clips stay as they are (owner 2026-11-17: "Don't clear clips", by ear: keep them, and don't call them cleared; he asked the creators).
+      Was: Clips are fine: the owner asked the content creators. Update CLAUDE.md (no more "never publish") and close the
       "public version / clips" questions; aff-notes.vercel.app stays.
 
 2026-11-17 (chat, language links):
