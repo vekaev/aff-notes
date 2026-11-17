@@ -95,6 +95,11 @@ Work in this order; tick each line here and in the inbox below; one item per run
    - [!] redo: USPA S&TA locator names need its search form per DZ (not submitted); owner decides if worth doing.
    - [ ] DAeC register adds emails / contact names for OFC Nobitz, FSV Zerbst, FSC Oberhausen
      (`ext_ai_run2_leads.md`): apply in the step 4 clean-up.
+6h. [~] **Process AI run 3** (owner 2026-11-17, pasted, prose, no CSV): `docs/outreach/raw/ext_ai_run3.md`. Same
+   sub-chat as 6b/6c: verify its leads (harvest what's public and allowed; NOT people from the FAA airmen registry),
+   add new contacts (e.g. Michiel Damhuis, Radboud; Vigil service centres; tunnel directories), fact-check its 11
+   content claims (tunnel overconfidence, MARD timing, wing-loading rules, Vigil service life, Part 105…), add useful
+   sourced facts as content tasks.
 6d. [x] Owner 2026-11-17: AI runs return too little → prompt v2 for volume (one narrow scope per run, table only,
    harvest whole directories, "continue" follow-ups, 29 scopes): `docs/outreach/deep-research-prompt-v2.md`.
    Owner runs it in other tools; each answer saved as `raw/ext_<tool>_<scope>.unverified.csv.txt`, verified + merged.
