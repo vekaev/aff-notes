@@ -125,7 +125,7 @@ Work in this order; tick each line here and in the inbox below; one item per run
    dropzone.com closed 31 Dec 2024 (not 2026); its successor skydiveforum.com died Nov 2025. Blocker: the app is
    private, so a community can't link to it yet. 9 owner questions in the file (§11).
    [ ] redo: unverified — Facebook group names/sizes (needs login), VK groups, Zoom/Meet free limits, r/SkyDiving size now.
-6i. [~] **Deep localization** (owner 2026-11-17): not only text — units (feet vs metres by country), rules, links and
+6i. [~] (phase 1 units done 2026-11-17: ft / ft+m / m chip, seen RU phone light ft+m, EN dark m; design in docs/i18n/DEEP-LOCALIZATION.md; [ ] phase 2 school rules by federation after research docs/i18n/units-and-rules.md; [ ] update metric default regions from that research) **Deep localization** (owner 2026-11-17): not only text — units (feet vs metres by country), rules, links and
    facts that differ by country/federation; a clean, scalable design. Research common practice, propose, build phase 1
    (units), plan phase 2 (country/federation variants). Safety: metre altitudes must not be silent conversions of
    feet; schools in metric countries teach their own round numbers.
