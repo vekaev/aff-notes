@@ -56,7 +56,7 @@ Work in this order; tick each line here and in the inbox below; one item per run
    - [ ] part4 `real`, optional: name the studies behind "73–88 %" (Westman 87.9 % canopy + landing; France 83.3 %).
    - [ ] optional: USPA 2024 "9 deaths in ~3.88 M jumps": check Parachutist's 2024 fatality summary first. Accident
      lessons: link USPA yearly summaries / FAI safety report, not SkydivingFatalities.info (unsigned, outdated).
-   - [ ] part4 `real`, one line on why causes changed (Gemini run 1 fact-check, `ext_gemini_1_factcheck.md` #2): "AADs
+   - [x] (08:00 run 2026-11-17, source re-read: parachutist.com ArticleID 9378: 10 deaths, landing 6, equipment 1; all 32 languages) part4 `real`, one line on why causes changed (Gemini run 1 fact-check, `ext_gemini_1_factcheck.md` #2): "AADs
      and reserve static lines have nearly eliminated deaths from no pulls and equipment; most US deaths now happen
      under an open canopy, at landing" (USPA 2023 Fatality Summary, parachutist.com articleid 9378: 10 deaths, 6
      landing, 1 equipment).

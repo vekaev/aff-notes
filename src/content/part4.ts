@@ -1065,6 +1065,16 @@ export const part4: Part = {
               ),
             },
             {
+              big: '6/10',
+              tone: 'red',
+              text: t(
+                `US deaths in 2023 happened at <b>landing</b>, under an open canopy; only 1 was an equipment problem. AADs and reserve static lines have nearly ended the no-pull and equipment deaths that once caused most of them (<a href="https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9378">USPA 2023</a>).`,
+                `muertes en EE. UU. en 2023 ocurrieron en el <b>aterrizaje</b>, con la vela abierta; solo 1 fue un problema de equipo. Los AAD y las líneas estáticas de reserva casi han acabado con las muertes por no abrir y por fallos de equipo, que antes eran la mayoría (<a href="https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9378">USPA 2023</a>).`,
+                `смертей в США в 2023 году случились при <b>приземлении</b>, под раскрытым куполом; только 1 — из-за снаряжения. AAD и RSL почти покончили со смертями из-за нераскрытия и отказа снаряжения, которые раньше были большинством (<a href="https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9378">USPA 2023</a>).`,
+                `смертей у США у 2023 році сталися під час <b>приземлення</b>, під розкритим куполом; лише 1 — через спорядження. AAD і RSL майже покінчили зі смертями через нерозкриття та відмову спорядження, які раніше були більшістю (<a href="https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9378">USPA 2023</a>).`,
+              ),
+            },
+            {
               big: '49',
               tone: 'accent',
               text: t(
