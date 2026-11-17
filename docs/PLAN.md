@@ -42,6 +42,10 @@ Work in this order; tick each line here and in the inbox below; one item per run
    ready tools (open source or cheap: e.g. a Gmail mail-merge with reply tracking, an open-source CRM / outreach tool,
    a Google Sheet + Gmail labels, a small local app), compare cost and effort, then build or set up the best one.
    Reusable for any future research (the /outreach skill gets a "track" step). Nothing is sent without the owner.
+6b. [~] **Process the ChatGPT deep-research run 1** (owner 2026-11-17, in a sub-chat): `docs/outreach/raw/ext_chatgpt_1.csv`
+   (41 rows) + `.md` (its report). Verify each row's email on the cited page (drop invented or legal/RMA inboxes),
+   fix shifted columns (Cookie row), merge, and fact-check its content claims against sources; useful, sourced facts
+   → app content tasks here; new people (Westman, Edouard, Vidovic, Brodsky-Chenfeld) → priority contacts.
 7. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
    (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
