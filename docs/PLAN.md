@@ -182,7 +182,15 @@ Work in this order; tick each line here and in the inbox below; one item per run
      (US 22, Russia 15, Brazil 13, Italy 11, Germany 10…). One search each in a fresh session, then merge.
    - [ ] dedupe at step 4: Tandem Skydive Germany ×5 sites (one company), Nuggets ×2, iFLY Orlando ×2, Mendoza ×2,
      SkydivePorto group, iSkydive America group (Capital City, Charlevoix, DC, NY Tandem).
-   - [ ] Claude research run: not received yet.
+   - [x] Claude run (Tavus org, chat "Unfilled scope placeholder", fetched 2026-11-17): 539 rows (USPA DZs + FAI),
+     mostly known; 35 new + 3 email fills (`raw/ext_claude_1_verified.csv`); 122 FAI ISC delegates (names only) →
+     `todo/email_hunt_14.csv`. Content lead: FAI Technical & Safety Committee yearly safety reports 2001–2023.
+   - [x] Site email hunt (no search, sites read directly): 557 no-email rows with a website → 182 emails found,
+     221 none, 154 dead/hijacked sites (`todo/dead_sites_2026-11-17.csv`, for the step 4 clean-up).
+     contacts.csv now 4,129 rows, 2,284 with email.
+   - [ ] M2 AAD dealer list (m2aad.com/contacts-2, ~80 dealer emails): harvesting, second PR.
+   - [ ] Email hunt batches 01–14 (`todo/email_hunt_*.csv`, ~1,550 rows needing a search): one fresh desktop session
+     each (sessions can't start over Remote Control).
 7. [?] Waiting on the owner (link + clips settled 2026-11-17: public, clips kept): sender = a project domain + one
    Workspace mailbox, never the personal Gmail (docs/outreach/sending.md: domain name? ~$100 budget? postal address for
    the footer?); first wave = own school and instructor; keep the GitHub photo at the end or send another; the 9
