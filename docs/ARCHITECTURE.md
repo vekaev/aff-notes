@@ -18,7 +18,7 @@ skydive safely and reduce injuries and deaths ([README](../README.md)).
 | Tests | Vitest 5 (content, translations, units, language detection) | runs in ~0.2 s, in the pre-commit hook |
 | Screen tests | Playwright (7 languages, phone + desktop, light + dark) | catches layout breaks CI can't see in code |
 | Lint / format | Oxlint (type-aware, React, hooks, a11y) + Prettier | Rust-fast; works with TS 7 |
-| Git hooks | Husky + lint-staged | format + i18n + tests before every commit |
+| Git hooks | Husky + lint-staged + commitlint | format + i18n + tests before every commit; Conventional Commits messages |
 | CI | GitHub Actions (`.github/workflows/ci.yml`) | typecheck, lint, i18n, format, tests, build, size budget, screens |
 | Deps | Dependabot | weekly update PRs |
 | Hosting | Vercel (auto-deploys `main`), strict security headers in `vercel.json` | free, CDN, previews |

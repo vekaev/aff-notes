@@ -40,7 +40,9 @@ so accuracy beats speed, style and completeness.
    and CI run them too; never skip them (`--no-verify`).
 2. For any visible change: `npm run e2e`, and look at the changed screens yourself at 375 px and desktop, light and
    dark, in English plus at least one other language and one right-to-left language (Arabic or Hebrew).
-3. Small, focused commits with a clear message saying what changed and the source of any fact.
+3. Small, focused commits. Messages follow [Conventional Commits](https://www.conventionalcommits.org):
+   `type(scope): what changed`, types `feat fix docs style refactor perf test build ci chore revert`
+   (e.g. `fix(units): …`, `docs(plan): …`); the body gives the source of any fact. The commit-msg hook checks it.
 4. Pull requests: say if AI helped and what you verified by hand.
 
 ## Never

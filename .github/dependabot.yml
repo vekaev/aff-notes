@@ -5,6 +5,9 @@ updates:
     schedule:
       interval: monthly
     open-pull-requests-limit: 5
+    commit-message:
+      prefix: chore(deps)
+      prefix-development: chore(deps-dev)
     groups:
       dev-tools:
         dependency-type: development
@@ -16,3 +19,5 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    commit-message:
+      prefix: ci

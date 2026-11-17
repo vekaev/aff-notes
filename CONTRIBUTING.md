@@ -45,6 +45,11 @@ npm run dev        # http://localhost:5173
 The pre-commit hook formats and lints the files you staged, then runs the type check, the `en.json` check and the
 tests (about two seconds). CI on GitHub runs the same checks plus the build, the size budget and the screen tests on every pull request; the screenshots are attached to the run. Why these tools: [docs/TOOLING.md](docs/TOOLING.md).
 
+Commit messages follow [Conventional Commits](https://www.conventionalcommits.org): `type(scope): what changed`,
+for example `fix(i18n): Polish word for hard pull`, `feat(widgets): altimeter in metres`, `docs: glossary for Czech`.
+Types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`. Put the source of any
+fact in the body. The `commit-msg` hook (commitlint) rejects a message that doesn't fit and says why.
+
 ## How the text works
 
 - **Content** (chapters, procedures, tests) is typed data in `src/content/part*.ts` and `src/content/dropzone.ts`.
