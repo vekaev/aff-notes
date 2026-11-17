@@ -217,9 +217,30 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       in the feedback card; mail subject carries the language.
 - [~] By ear "start a separate branch to fix everything you just said": build the school-rules profiles (6j), checked in
       every language, on its own branch (sub-chat).
-- [~] Project tooling for contributors (sub-chat): ESLint, Prettier, Husky + lint-staged, i18n checks on commit
-      (all languages, tags, numbers), CI on GitHub, CONTRIBUTING, best practices / boilerplates; "TanStack Query" (by
-      ear "10 stack query"): check whether the app needs it (no server data today).
+- [x] Project tooling for contributors (sub-chat, branch claude/tooling-8c5524): set up and checked (pre-commit hook on a
+      test commit, CI steps run in a clean clone; GitHub run seen after push or not, see the commit).
+      - Lint: **Oxlint** instead of ESLint: typescript-eslint does not run on the TypeScript 7 native compiler (peer
+        `typescript <6.1`, the TS 7 package has no JS API); Oxlint has react, react-hooks, jsx-a11y, typescript,
+        unicorn, import and vitest rules built in, and type-aware rules on TS 7 (oxlint-tsgolint). `.oxlintrc.json`;
+        errors block, warnings show (19 today, each relaxed rule has its reason in the file).
+      - Format: **Prettier** (`.prettierrc.json`, 120 columns, single quotes); `.editorconfig`. oxfmt is still 0.x.
+      - Pre-commit (**Husky + lint-staged**): format + lint the staged files, `tsc -b`, en.json check, all tests (~2 s).
+      - Translations: `npm run i18n:check` fails if en.json is stale (`i18n-extract.mjs --check`), a language file is
+        missing, a key is missing or stray, or tags/numbers differ; `npm run i18n:todo [lang] [--prune]` lists what
+        each language needs after English changes.
+      - CI: `.github/workflows/ci.yml` (Node 24: npm ci, types, lint, translations, formatting, tests, build) on
+        every push to main and every PR. Dependabot monthly, grouped (npm + actions).
+      - Docs: CONTRIBUTING.md (how to fix a translation, change English, add a language, facts need sources, clips are
+        third-party), CODE_OF_CONDUCT.md (Contributor Covenant 2.1, short), issue forms (translation, fact, bug), PR
+        template, README updated. No LICENSE yet (question under "Waiting on you").
+      - **TanStack Query: no.** It caches and refetches server data; the app has none (content is bundled TypeScript,
+        translations are lazy-loaded static JSON loaded once, progress is localStorage). It would add ~13 kB and a
+        provider for nothing. Revisit only if the app gets a server (accounts, synced progress, live wind data).
+      - Commit-message convention: not enforced (one-person repo, messages are descriptive); revisit if many PRs.
+- [ ] One-time format + lint pass after the components/content branch (school-rules profiles) merges: remove the
+      four TEMPORARY lines in `.prettierignore`, `npm run format`, commit alone ("format only"); fix the a11y warnings
+      (clickable `<li>` rows in widgets.tsx and the tap-to-reveal card in Blocks.tsx become `<button>`s) and turn those
+      jsx-a11y rules back to errors in `.oxlintrc.json`. Look at the changed screens in 4 languages.
 
 2026-11-17 (chat, project link):
 - [x] (seen RU phone light) "Why I made this": link to the project on GitHub (https://github.com/vekaev/aff-notes), now public, so people can
@@ -386,6 +407,10 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - For a redesign, propose a few options first and let the owner pick; animations smooth and not distracting.
 
 ## Waiting on you
+- **License** (repo is public; without a LICENSE nobody may legally reuse or contribute). Recommended: code under
+  **MIT**, the written notes and drawings under **CC BY-SA 4.0**, and a line that the clips in `public/media` are
+  third-party content owned by their creators and not covered by either license. OK, or another choice (e.g. text
+  CC BY-NC-SA to stop commercial reuse)?
 - **Instructor briefing:** the app's last Part IV chapter "questions for your instructors" (18, by jump phase) holds every
   school-specific doubt from the fact-check (count 3 or 5 after the pull, where to look in the flare, aircraft-emergency
   altitudes, which instructor is outside, hard pull: reserve only or cut away first, RSL/MARD, reserve handle type,

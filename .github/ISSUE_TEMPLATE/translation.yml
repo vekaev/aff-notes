@@ -1,0 +1,25 @@
+name: Translation fix
+description: A wrong, unclear or missing word in one language
+labels: [translation]
+body:
+  - type: input
+    id: lang
+    attributes:
+      label: Language
+      placeholder: e.g. de, fr, uk
+    validations:
+      required: true
+  - type: textarea
+    id: where
+    attributes:
+      label: Where in the app, and the English text
+      description: Chapter name or a link (the address bar keeps ?lang=…), and the English sentence.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: What it says now, and what it should say
+      description: For skydiving terms, say what your federation or school calls it (a link to the manual helps).
+    validations:
+      required: true

@@ -24,6 +24,9 @@ describe('translations', () => {
     const missing = [...new Set(collect([parts, ui]))].filter(s => s.trim() && !en[keyOf(s)]);
     expect(missing.slice(0, 5)).toEqual([]);
   });
+  it('every listed language has a translation file', () => {
+    expect(ALL_LANGS.filter(l => !isCore(l) && !fs.existsSync(path.join(dir, `${l}.json`)))).toEqual([]);
+  });
   for (const lang of ALL_LANGS.filter(l => !isCore(l))) {
     const file = path.join(dir, `${lang}.json`);
     if (!fs.existsSync(file)) continue;

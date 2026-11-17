@@ -34,11 +34,18 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,jpg,webmanifest}'],
         // clips are cached the first time they play, and served from the cache offline (with range requests)
-        runtimeCaching: [{
-          urlPattern: ({ url }) => url.pathname.includes('/media/') && url.pathname.endsWith('.mp4'),
-          handler: 'CacheFirst',
-          options: { cacheName: 'clips', rangeRequests: true, cacheableResponse: { statuses: [0, 200] }, expiration: { maxEntries: 120 } },
-        }],
+        runtimeCaching: [
+          {
+            urlPattern: ({ url }) => url.pathname.includes('/media/') && url.pathname.endsWith('.mp4'),
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'clips',
+              rangeRequests: true,
+              cacheableResponse: { statuses: [0, 200] },
+              expiration: { maxEntries: 120 },
+            },
+          },
+        ],
         navigateFallback: 'index.html',
       },
     }),

@@ -1,0 +1,20 @@
+name: Fact or safety issue
+description: A number, procedure or rule that looks wrong or unsafe
+labels: [fact-check]
+body:
+  - type: markdown
+    attributes:
+      value: These notes are study help, not training. Your instructors' briefing always wins. Thank you for checking.
+  - type: textarea
+    id: what
+    attributes:
+      label: What the app says (chapter and text)
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: What it should say, and the source
+      description: USPA SIM / ISP section, your federation's manual, a dropzone document, or your instructor rating.
+    validations:
+      required: true

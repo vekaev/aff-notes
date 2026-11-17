@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import { convertQuantities, toMetres } from '../src/units';
-import { ALL_LANGS, type Lang } from '../src/content/types';
+import { ALL_LANGS } from '../src/content/types';
 
 describe('units', () => {
   it('rounds like a person would say it', () => {
@@ -25,7 +25,7 @@ describe('units', () => {
       const file = path.join(dir, `${lang}.json`);
       if (!fs.existsSync(file)) continue;
       const strings: string[] = Object.values(JSON.parse(fs.readFileSync(file, 'utf8')));
-      const left = strings.map(s => convertQuantities(s, lang as Lang, 'm')).filter(s => /\d[\s ]?(ft|feet)\b(?!\s*(≈|=|\(≈))/u.test(s));
+      const left = strings.map(s => convertQuantities(s, lang, 'm')).filter(s => /\d[\s ]?(ft|feet)\b(?!\s*(≈|=|\(≈))/u.test(s));
       expect(left.slice(0, 3), lang).toEqual([]);
     }
   });

@@ -26,7 +26,7 @@ for skydiving students: a wrong word can hurt someone. Accuracy beats style.
    - Short, plain, imperative, like the English. Same meaning, nothing added or dropped. Emergency procedures: the
      order of actions must stay exactly the same.
    - Lowercase headline style with a period is applied by the app; just translate the words.
-3. **Check**: `cd /Users/yevheniipetrenko/Documents/dev/aff-notes-i18n2 && npx vitest run tests/i18n.test.ts` must pass
+3. **Check**: `npm run i18n:check` must pass
    for your language (all keys, same tags, same numbers). Fix and rerun until it does.
 4. **Back-check safety**: in the glossary file, add a section "Back-translation" with 30 of the most safety-critical
    strings (emergency procedures, malfunctions, altitudes, landing, PLF) translated back into English by you, and

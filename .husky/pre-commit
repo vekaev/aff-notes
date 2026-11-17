@@ -1,0 +1,5 @@
+# Runs on every commit (installed by `npm install`). Skip once with `git commit --no-verify` only if you must.
+npx lint-staged
+npx tsc -b
+node scripts/i18n-extract.mjs --check
+npx vitest run --silent

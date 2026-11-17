@@ -1,13 +1,16 @@
 # AFF notes
 
 Study app for AFF skydiving students: from the plane to the landing, emergencies, real footage, a test after each
-chapter. English, Spanish, Russian.
+chapter. 32 languages. Live at [aff-notes.vercel.app](https://aff-notes.vercel.app). Study help only: your
+instructors' briefing always wins.
 
     npm install
     npm run dev      # http://localhost:5173
-    npm run check    # type-check + content tests
+    npm run check    # types, lint, translations, formatting, tests (same as CI)
     npm run build    # dist/ (+ dist/artifact.html for the claude.ai artifact host)
 
-Content lives in `src/content/part*.ts` as typed data with all three languages side by side; a missing translation
-is a type error. Clips are in `public/media` (short excerpts from public tutorials, for personal use).
-Plan and status: `docs/PLAN.md`. Research: `docs/research/`.
+Content lives in `src/content/part*.ts` as typed data with English, Spanish, Ukrainian and Russian side by side; the
+other 28 languages are in `src/content/i18n/<lang>.json`. Clips in `public/media` are short excerpts from other
+people's YouTube videos, each credited and linked; they are third-party content.
+
+Want to fix a translation or a fact? See [CONTRIBUTING.md](CONTRIBUTING.md). Plan and status: `docs/PLAN.md`.
