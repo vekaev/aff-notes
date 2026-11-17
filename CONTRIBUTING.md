@@ -89,7 +89,7 @@ Follow [docs/i18n/TRANSLATE.md](docs/i18n/TRANSLATE.md): glossary first, then th
 ## Video clips
 
 Clips in `public/media` are short excerpts from other people's YouTube videos, each with its credit, link and start
-time in the content. They are third-party content, not covered by this repository's license, and kept with the
+time in the content. They are third-party content, not covered by this repository's licenses, and kept with the
 authors' knowledge. Don't add clips without a credit and a link, and don't remove or replace existing ones in a pull
 request; open an issue instead.
 
@@ -101,5 +101,11 @@ request; open an issue instead.
 - For a UI change, look at it in light and dark, at desktop width and 375 px, in English and at least one other
   language (one right-to-left, `?lang=ar`, if layout changed), and attach screenshots.
 - Keep pull requests small and about one thing.
+
+## License of your contribution
+
+Code you contribute is under the [MIT license](LICENSE); text, translations and drawings under
+[CC BY-SA 4.0](LICENSE-CONTENT), the same as the rest of the project. Video clips are third-party content and are
+not covered by either.
 
 By contributing you agree to follow the [Code of Conduct](CODE_OF_CONDUCT.md).

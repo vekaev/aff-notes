@@ -213,7 +213,9 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
 2026-11-17 (chat, license + PRs):
-- [~] License (owner: "License yes"): MIT for code, CC BY-SA 4.0 for notes and drawings, clips belong to their creators.
+- [x] License (owner: "License yes"): MIT for code (`LICENSE`), CC BY-SA 4.0 for notes, translations and drawings
+      (`LICENSE-CONTENT`, says what it covers), clips in public/media belong to their creators and are under neither;
+      README + CONTRIBUTING say so, package.json `license: MIT`.
 - [~] Merge the Dependabot PRs vekaev/aff-notes#1–#3 (owner: "PR merge"), after CI passes on each.
 
 2026-11-17 (chat, translations + tooling):
@@ -428,10 +430,6 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - For a redesign, propose a few options first and let the owner pick; animations smooth and not distracting.
 
 ## Waiting on you
-- **License** (repo is public; without a LICENSE nobody may legally reuse or contribute). Recommended: code under
-  **MIT**, the written notes and drawings under **CC BY-SA 4.0**, and a line that the clips in `public/media` are
-  third-party content owned by their creators and not covered by either license. OK, or another choice (e.g. text
-  CC BY-NC-SA to stop commercial reuse)?
 - **Instructor briefing:** the app's last Part IV chapter "questions for your instructors" (18, by jump phase) holds every
   school-specific doubt from the fact-check (count 3 or 5 after the pull, where to look in the flare, aircraft-emergency
   altitudes, which instructor is outside, hard pull: reserve only or cut away first, RSL/MARD, reserve handle type,

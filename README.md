@@ -14,3 +14,8 @@ other 28 languages are in `src/content/i18n/<lang>.json`. Clips in `public/media
 people's YouTube videos, each credited and linked; they are third-party content.
 
 Want to fix a translation or a fact? See [CONTRIBUTING.md](CONTRIBUTING.md). Plan and status: `docs/PLAN.md`.
+
+## License
+
+Code: [MIT](LICENSE). Written notes, translations and drawings: [CC BY-SA 4.0](LICENSE-CONTENT). The video clips in
+`public/media` belong to their creators (each is credited and linked in the app) and are not covered by either license.
