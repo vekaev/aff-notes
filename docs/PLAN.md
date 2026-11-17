@@ -38,18 +38,18 @@ Work in this order; tick each line here and in the inbox below; one item per run
    collection, so re-source those rows from each org's own site or mark them (found 2026-11-17, 6b/6c).
    **Content tasks from the AI-run fact-checks** (2026-11-17; sources in `docs/outreach/raw/ext_chatgpt_1_factcheck.md`
    and `ext_ai_run2_factcheck.md`; facts rule applies: re-check the source before editing):
-   - [ ] part1 AAD card: replace "around 750–1,000 ft <q-check/>" with model figures (CYPRES 2 Student ~750 ft in
+   - [x] (0e9f702) part1 AAD card: replace "around 750–1,000 ft <q-check/>" with model figures (CYPRES 2 Student ~750 ft in
      freefall, ~1,000 ft under a canopy faster than 29 mph; Vigil II Student 1,040 ft) + "ask which unit your school
      uses" (cypres.aero/?p=3130; Vigil II manual v2.0.6).
-   - [ ] part4 two canopies: one line: a late pull or riding a fast partial malfunction below ~1,000 ft can fire the
+   - [x] (0e9f702) part4 two canopies: one line: a late pull or riding a fast partial malfunction below ~1,000 ft can fire the
      student AAD → two canopies out, possibly a downplane; pull on time, act by decision altitude (CYPRES; Parachutist
      Safety Check Jan 2026; SIM 4-1).
    - [ ] part2 "Overloaded or lost?": one-line why: first-jump stress impairs learning complex new tasks, so keep the
      plan to a few rehearsed moves (Taverniers et al. 2011, PMID 21607782). Don't use the cadet "cognitive flexibility"
      claim (false).
-   - [ ] part4 `real` sources: add "Fer 2021: France 2010–19" (doi:10.1016/j.jsams.2020.11.002); the "~6×" figure
+   - [x] (0e9f702) part4 `real` sources: add "Fer 2021: France 2010–19" (doi:10.1016/j.jsams.2020.11.002); the "~6×" figure
      comes from it.
-   - [ ] part4 `real` stats: "how rare" figure: 49 injuries and 0.57 deaths per 100,000 jumps (France 2010–19,
+   - [x] (0e9f702) part4 `real` stats: "how rare" figure: 49 injuries and 0.57 deaths per 100,000 jumps (France 2010–19,
      6.2 M jumps, no tandem deaths) (Fer 2021 abstract). Don't use Barthel 2023's ">62 M jumps / 0.044 % / 0.0011 %"
      (the paper contradicts itself).
    - [ ] part4 `real`, optional: name the studies behind "73–88 %" (Westman 87.9 % canopy + landing; France 83.3 %).
@@ -213,7 +213,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
 2026-11-17 (chat, translations + tooling):
-- [~] "Something wrong or a better word in the translation? Tell me": on every translated language (the top note) and
+- [x] (seen FR + AR phone; mail subject "AFF notes: translation (fr)") "Something wrong or a better word in the translation? Tell me": on every translated language (the top note) and
       in the feedback card; mail subject carries the language.
 - [~] By ear "start a separate branch to fix everything you just said": build the school-rules profiles (6j), checked in
       every language, on its own branch (sub-chat).
@@ -241,6 +241,18 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       four TEMPORARY lines in `.prettierignore`, `npm run format`, commit alone ("format only"); fix the a11y warnings
       (clickable `<li>` rows in widgets.tsx and the tap-to-reveal card in Blocks.tsx become `<button>`s) and turn those
       jsx-a11y rules back to errors in `.oxlintrc.json`. Look at the changed screens in 4 languages.
+      - Owner 2026-11-17: whole TanStack and Vite ecosystems, production-ready, adopt what's clearly worth it. Verdict:
+        - Already on the current Vite stack: Vite 8 (Rolldown bundler inside), Vitest, vite-plugin-pwa, and now Oxlint.
+        - **Vite+** (`vp`, MIT, 1.x since 2026-09): one CLI over the same tools (Vite, Vitest, Oxlint, Oxfmt). Not now:
+          1.7 came out today and moves fast; contributors know `npm run` + Prettier. Moving later is small (scripts →
+          `vp`, Prettier → Oxfmt). Recommended: revisit in the one-time format pass or when Oxfmt is 1.0.
+        - Biome: also good (lint + format in one), but its type checks are its own inference, while Oxlint's type-aware
+          rules run on TypeScript 7 itself, and Oxlint is the linter Vite+ ships. Not chosen.
+        - TanStack **Query / Form / Table / Virtual: no** (no server data, no forms: feedback is a mail link, no big
+          tables or long lists). **Router: no** (one scrolling page, chapters are #anchors, settings in ?lang=&units=).
+        - TanStack **Start**: only for one real gain, pre-rendered HTML per language so search engines and link previews
+          see each language. A full move is big; a lighter way is a build step that pre-renders the page per language.
+          Under "Owner decides later".
 
 2026-11-17 (chat, project link):
 - [x] (seen RU phone light) "Why I made this": link to the project on GitHub (https://github.com/vekaev/aff-notes), now public, so people can
@@ -433,6 +445,8 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - aff-notes.vercel.app (public, created 2026-11-16, auto-deploys on push): owner removes it (2026-11-16).
 
 ## Owner decides later
+- Search engines and link previews per language: pre-render the page per language at build time (light) or move to
+  TanStack Start (big). Worth it once people search for the app in their language. Recommended: light way, later.
 - Publishing: **private GitHub repo only** (vekaev/aff-notes, owner 2026-11-16); the app itself is not published. A web version would need the clips replaced by links or own footage.
 - Public version for the dropzone / other students (needs own footage or licensed clips instead of YouTube cuts).
 - Native app version (iPhone) built on the same content files.

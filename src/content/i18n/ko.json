@@ -607,7 +607,9 @@
  "1woed5g": "어느 교관이 밖에 있는지는 문 위치에 따라 다릅니다: 왼쪽 문 비행기(Caravan)에서는 흔히 <b>왼쪽</b>, 리저브 쪽 교관입니다. 당신의 항공기: <q-check/>",
  "1woy102": "2,500 ft에서 대기 지점까지 갈 수 있는지 결정하세요; 못 가면 늦어도 2,000 ft까지 빈 대체 착지장을 고르세요.",
  "1wplhaq": "다리 속: 다치는 곳",
- "1wrg3s5": "출처: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/\">Westman 2007</a> · <a href=\"http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents\">USPA 2024 비치명 사고</a> · <a href=\"https://parachutist.com/another-record-lowthe-2020-fatality-summary\">2020 사망 사고 요약</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/\">네덜란드 연구 2015–2020</a> · <a href=\"https://lermagazine.com/?p=39724\">Forrester 2023: 다리 부상</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/\">Barthel 2023 리뷰</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485\">Planche Wallace 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486\">Bell 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488\">Bell 2024</a> · <a href=\"https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency\">USPA Rating Corner 2023</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/\">r/SkyDiving: AFF 3에서 발목 골절</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/\">r/SkyDiving: 늦은 플레어</a>",
+ "16puusx": "출처: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/\">Westman 2007</a> · <a href=\"http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents\">USPA 2024 비치명 사고</a> · <a href=\"https://parachutist.com/another-record-lowthe-2020-fatality-summary\">2020 사망 사고 요약</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/\">네덜란드 연구 2015–2020</a> · <a href=\"https://lermagazine.com/?p=39724\">Forrester 2023: 다리 부상</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/\">Barthel 2023 리뷰</a> · <a href=\"https://doi.org/10.1016/j.jsams.2020.11.002\">Fer 2021, FFP 2010–19</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485\">Planche Wallace 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486\">Bell 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488\">Bell 2024</a> · <a href=\"https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency\">USPA Rating Corner 2023</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/\">r/SkyDiving: AFF 3에서 발목 골절</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/\">r/SkyDiving: 늦은 플레어</a>",
+ "19vkx8s": "학생에게 캐노피가 두 개 나오는 경우: 늦게 펼치거나, 약 1,000 ft 아래까지 빠른 고장 상태로 내려오면, 메인이 나와 있는 상태에서 학생용 AAD가 리저브를 열 수 있습니다. 제때 펼치고 결정 고도까지 행동하세요.",
+ "lusx0r": "건의 부상과 0.57건의 사망(<b>100,000 점프</b>당): 드물지만 없지는 않습니다. 탠덤 사망은 없음(프랑스 2010–19, 6.2 M 점프).",
  "1wti132": "낮게 회전해야 하나요? <b>브레이크 플랫 회전</b>: 하프 브레이크에서 한쪽 토글을 조금 올리고 다른 쪽을 조금 더 내리세요. 다이빙 없음. 그다음 거기서 플레어.",
  "1wv5bei": "파일럿 슈트 핸들이 빠지지 않거나, 손이 찾지 못합니다.",
  "1wwjmtt": "못 갈 것 같나요? <b>빈 착지장을 고르고</b> 거기에 착지하세요. 낮은 회전 없이 가능하다면 바람을 안고.",
@@ -1172,7 +1174,7 @@
  "sc0a0s": "5,500 ft → 지면",
  "scfckz": "문 손잡이에, <b>오른손 옆에</b>.",
  "sed644": "<b>모든 연습 동작</b>을 멈추세요. <b>고도계만</b> 보세요: 6,000 ft에서 5,500 ft까지 약 <b>3초</b>입니다. 5,500 ft에서 웨이브오프하고 당기세요. 웨이브오프와 당기기를 합치면 약 <b>1,000 ft</b>가 걸리므로(USPA), 제때 시작하세요.",
- "sibblv": "낮은 고도에서 여전히 <b>빠르게</b> 낙하 중이면 <b>자동으로</b> 리저브를 작동시킵니다: 자유낙하 중이거나, 여전히 빠르게 내려오는 나쁜 캐노피 아래에서. 학생용 장치는 약 750–1,000 ft <q-check/>",
+ "ahp4tw": "낮은 고도에서 여전히 <b>빠르게</b> 낙하 중이면 <b>자동으로</b> 리저브를 작동시킵니다: 자유낙하 중이거나, 여전히 빠르게 내려오는 나쁜 캐노피 아래에서. 학생용 CYPRES 2: 자유낙하에서는 약 750 ft, 여전히 29 mph보다 빠르게 내려오는 캐노피 아래에서는 약 1,000 ft. Vigil II 학생 모드: 약 1,040 ft. 내 장비에 어떤 것이 달려 있는지 물어보세요.",
  "sig3x4": "<b>낮은 캐노피에 통행 우선권</b>이 있습니다. 그렇다고 착지 구역이 당신 것은 아닙니다: 모두와 <b>같은 패턴</b>으로 비행하고 예측 가능하게 행동하세요.",
  "slt8tg": "땅이 빠르게 다가오는데 무전기는 아무 말이 없습니다. 어떻게 하나요?",
  "snisaw": "USPA 다이브 순서, 모든 카테고리",
@@ -1318,5 +1320,6 @@
  "ptf3qo": "피트와 미터",
  "1ck30h9": "미터",
  "1ltgake": "이 프로젝트는 공개되어 있다: 코드를 읽고, 수정을 제안하거나 내용을 더할 수 있는 곳은",
- "1j7152i": "나를 찾을 수 있는 곳:"
+ "1j7152i": "나를 찾을 수 있는 곳:",
+ "6e3spd": "잘못된 단어나 더 나은 번역이 있나요? 알려 주세요"
 }

@@ -607,7 +607,9 @@
  "1woed5g": "Кой инструктор е отвън зависи от страната на вратата: при самолет с лява врата (Caravan) често е този <b>отляво</b> от теб, откъм резервата. Твоят самолет: <q-check/>",
  "1woy102": "На 2500 ft реши дали можеш да стигнеш до точката за изчакване; ако не, избери свободно резервно поле най-късно до 2000 ft.",
  "1wplhaq": "Вътре в крака: къде се наранява",
- "1wrg3s5": "Източници: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/\">Westman 2007</a> · <a href=\"http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents\">USPA 2024, инциденти без смъртен изход</a> · <a href=\"https://parachutist.com/another-record-lowthe-2020-fatality-summary\">обзор на смъртните случаи 2020</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/\">холандско проучване 2015–2020</a> · <a href=\"https://lermagazine.com/?p=39724\">Forrester 2023: травми на краката</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/\">обзор Barthel 2023</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485\">Planche Wallace 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486\">Bell 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488\">Bell 2024</a> · <a href=\"https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency\">USPA Rating Corner 2023</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/\">r/SkyDiving: счупих си глезена на AFF 3</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/\">r/SkyDiving: късен флеър</a>",
+ "16puusx": "Източници: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/\">Westman 2007</a> · <a href=\"http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents\">USPA 2024, инциденти без смъртен изход</a> · <a href=\"https://parachutist.com/another-record-lowthe-2020-fatality-summary\">обзор на смъртните случаи 2020</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/\">холандско проучване 2015–2020</a> · <a href=\"https://lermagazine.com/?p=39724\">Forrester 2023: травми на краката</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/\">обзор Barthel 2023</a> · <a href=\"https://doi.org/10.1016/j.jsams.2020.11.002\">Fer 2021, FFP 2010–19</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485\">Planche Wallace 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486\">Bell 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488\">Bell 2024</a> · <a href=\"https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency\">USPA Rating Corner 2023</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/\">r/SkyDiving: счупих си глезена на AFF 3</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/\">r/SkyDiving: късен флеър</a>",
+ "19vkx8s": "Как курсист се оказва с два купола: ако отвори късно или остане под бърза неизправност под около 1000 ft, учебният AAD може да отвори резервата, докато основният е излязъл. Отваряй навреме и действай до височината за решение.",
+ "lusx0r": "наранявания и 0,57 смъртни случая на <b>100 000 скока</b>: рядко, но не нула. Няма смъртни случаи при тандем (Франция 2010–19, 6,2 M скока).",
  "1wti132": "Трябва да завиеш ниско? <b>Плосък завой със спирачки</b>: от половин спирачки пусни единия тогъл малко нагоре и дръпни другия малко повече надолу. Без пикиране. После флеър оттам.",
  "1wv5bei": "Дръжката на пилотния парашут не излиза или ръката ти не може да я намери.",
  "1wwjmtt": "Няма да стигнеш? <b>Избери свободно поле</b> и кацни там, срещу вятъра, ако можеш без нисък завой.",
@@ -1172,7 +1174,7 @@
  "sc0a0s": "5500 ft → земята",
  "scfckz": "На дръжката на вратата, <b>до дясната</b>.",
  "sed644": "Спри <b>всички упражнения</b>. Гледай <b>само висотомера</b>: от 6000 ft имаш около <b>3 секунди</b> до 5500 ft. На 5500 ft wave-off и отваряне. Wave-off и отварянето заедно отнемат около <b>1000 ft</b> (USPA), затова започни навреме.",
- "sibblv": "Отваря резервата <b>автоматично</b>, ако все още падаш <b>бързо</b>, когато си ниско: при свободно падане или под лош купол, който все още слиза бързо. При учебен прибор около 750–1000 ft <q-check/>",
+ "ahp4tw": "Отваря резервата <b>автоматично</b>, ако все още падаш <b>бързо</b>, когато си ниско: при свободно падане или под лош купол, който все още слиза бързо. Учебен CYPRES 2: около 750 ft при свободно падане, около 1000 ft под купол, който още слиза по-бързо от 29 mph. Vigil II в учебен режим: около 1040 ft. Попитай кой е на твоята система.",
  "sig3x4": "<b>По-ниският купол има предимство</b>. Това не прави зоната за кацане твоя: лети <b>същата схема</b> като всички и бъди предвидим.",
  "slt8tg": "Земята се приближава бързо, а радиото мълчи. Какво правиш?",
  "snisaw": "Последователности на скоковете на USPA, всички категории",
@@ -1318,5 +1320,6 @@
  "ptf3qo": "Футове и метри",
  "1ck30h9": "Метри",
  "1ltgake": "Проектът е отворен: чети кода, предложи поправка или добави нещо в",
- "1j7152i": "Къде да ме намериш:"
+ "1j7152i": "Къде да ме намериш:",
+ "6e3spd": "Грешна дума или по-добър превод? Пиши ми"
 }

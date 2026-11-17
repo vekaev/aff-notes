@@ -7,6 +7,22 @@ Expert reports: `docs/review/expert/<scope>.md`. A second, independent pass on P
 first one was being fixed) is kept in `docs/review/expert/second-opinion/part4-emergencies.md`: compare it with the fixer
 log when Part IV is done.
 
+## Status 2026-11-17 00:00 PST
+
+00:00 run: content tasks from the AI-run fact-checks (PLAN "Resume here" step 4), sources re-checked this run:
+- part1 AAD card: "around 750–1,000 ft <q-check/>" → model figures: Student CYPRES 2 ~750 ft in freefall, ~1,000 ft
+  under a canopy still faster than 29 mph (cypres.aero/?p=3130); Vigil II Student 1,040 ft at ≥20 m/s (Vigil II
+  manual v2.0.6 §3.3.2); "ask which one is on your rig". q-check resolved.
+- part4 two canopies: new line on how a student gets two out (late pull / riding a fast malfunction below ~1,000 ft
+  lets the student AAD fire); pull on time, act by decision altitude (CYPRES page above).
+- part4 `real`: new stat "49 injuries and 0.57 deaths per 100,000 jumps, no tandem deaths" and the source link
+  "Fer 2021, FFP 2010–19" (doi:10.1016/j.jsams.2020.11.002; abstract via Europe PMC: 6.2 M jumps, 35 deaths, 3,015
+  injuries, RR 6.1 students).
+- All 32 languages updated (tests: same numbers and tags). Not done yet: part2 Taverniers line, 73–88 % anchors,
+  USPA 2024 fatality figure (optional).
+- Seen: RU phone light (ft+m), UK phone dark, ES desktop light, EN by text. Page guard not run (text-only change).
+- docs/PLAN.md not ticked this run: it had another chat's uncommitted edits.
+
 ## Status 2026-11-16 22:00 PST
 
 22:00 run: curriculum #6 landing off + after you land (Part III obstacles chapter), 2 decision questions, 2 instructor questions (wind drag on the ground and telling the DZ are not in SIM 4-1: <q-check/>).

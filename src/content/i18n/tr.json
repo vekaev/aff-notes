@@ -607,7 +607,9 @@
  "1woed5g": "Hangi eğitmenin dışarıda olduğu kapı tarafına bağlıdır: sol kapılı bir uçakta (Caravan) çoğu zaman <b>solunuzdaki</b>, yedek tarafındaki eğitmendir. Uçağınız: <q-check/>",
  "1woy102": "2.500 ft'te bekleme noktasına yetişip yetişemeyeceğinize karar verin; yetişemiyorsanız en geç 2.000 ft'e kadar açık bir yedek alan seçin.",
  "1wplhaq": "Bacağın içi: nerede sakatlanıyor",
- "1wrg3s5": "Kaynaklar: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/\">Westman 2007</a> · <a href=\"http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents\">USPA 2024 ölümcül olmayan olaylar</a> · <a href=\"https://parachutist.com/another-record-lowthe-2020-fatality-summary\">2020 ölüm özeti</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/\">Hollanda çalışması 2015–2020</a> · <a href=\"https://lermagazine.com/?p=39724\">Forrester 2023: bacak sakatlıkları</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/\">Barthel 2023 derleme</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485\">Planche Wallace 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486\">Bell 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488\">Bell 2024</a> · <a href=\"https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency\">USPA Rating Corner 2023</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/\">r/SkyDiving: AFF 3'te bileğimi kırdım</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/\">r/SkyDiving: geç flare</a>",
+ "16puusx": "Kaynaklar: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/\">Westman 2007</a> · <a href=\"http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents\">USPA 2024 ölümcül olmayan olaylar</a> · <a href=\"https://parachutist.com/another-record-lowthe-2020-fatality-summary\">2020 ölüm özeti</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/\">Hollanda çalışması 2015–2020</a> · <a href=\"https://lermagazine.com/?p=39724\">Forrester 2023: bacak sakatlıkları</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/\">Barthel 2023 derleme</a> · <a href=\"https://doi.org/10.1016/j.jsams.2020.11.002\">Fer 2021, FFP 2010–19</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485\">Planche Wallace 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486\">Bell 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488\">Bell 2024</a> · <a href=\"https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency\">USPA Rating Corner 2023</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/\">r/SkyDiving: AFF 3'te bileğimi kırdım</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/\">r/SkyDiving: geç flare</a>",
+ "19vkx8s": "Bir öğrencide iki kanopi nasıl açılır: geç açarsanız ya da yaklaşık 1.000 ft altına kadar hızlı bir arızanın altında kalırsanız, öğrenci AAD'si ana kanopi dışarıdayken yedeği açabilir. Zamanında açın ve karar irtifanıza kadar harekete geçin.",
+ "lusx0r": "sakatlanma ve 0,57 ölüm <b>100.000 atlayış</b> başına: nadir, ama sıfır değil. Tandemde hiç ölüm yok (Fransa 2010–19, 6,2 milyon atlayış).",
  "1wti132": "Alçakta dönmek zorunda mısınız? <b>Frenli düz dönüş</b>: yarım frenden bir fren kolunu biraz yukarı bırakın, diğerini biraz daha aşağı çekin. Dalış yok. Sonra oradan flare yapın.",
  "1wv5bei": "Pilot paraşüt tutamağı çıkmıyor ya da eliniz onu bulamıyor.",
  "1wwjmtt": "Yetişemiyor musunuz? <b>Açık bir tarla seçin</b> ve oraya inin, alçak dönüş yapmadan yapabiliyorsanız rüzgâra karşı.",
@@ -1172,7 +1174,7 @@
  "sc0a0s": "5.500 ft → yer",
  "scfckz": "Kapı tutamağında, <b>sağın yanında</b>.",
  "sed644": "<b>Tüm egzersizleri</b> bırakın. <b>Yalnızca altimetreyi</b> izleyin: 6.000 ft'ten 5.500 ft'e yaklaşık <b>3 saniyeniz</b> var. 5.500 ft'te el sallayın ve açın. El sallama ve açış birlikte yaklaşık <b>1.000 ft</b> sürer (USPA), bu yüzden zamanında başlayın.",
- "sibblv": "Alçakta hâlâ <b>hızlı</b> düşüyorsanız yedeği <b>otomatik olarak</b> açar: serbest düşüşte ya da hâlâ hızlı inen kötü bir kanopi altında. Öğrenci ünitesinde yaklaşık 750–1.000 ft <q-check/>",
+ "ahp4tw": "Alçakta hâlâ <b>hızlı</b> düşüyorsanız yedeği <b>otomatik olarak</b> açar: serbest düşüşte ya da hâlâ hızlı inen kötü bir kanopi altında. Öğrenci CYPRES 2: serbest düşüşte yaklaşık 750 ft, hâlâ 29 mph'den hızlı inen bir kanopi altında yaklaşık 1.000 ft. Öğrenci modunda Vigil II: yaklaşık 1.040 ft. Teçhizatınızda hangisi olduğunu sorun.",
  "sig3x4": "<b>Alçaktaki kanopinin geçiş üstünlüğü vardır</b>. Bu, iniş alanını sizin yapmaz: herkesle <b>aynı paterni</b> uçun ve öngörülebilir kalın.",
  "slt8tg": "Yer hızla yaklaşıyor ve telsiz hiçbir şey söylemiyor. Ne yaparsınız?",
  "snisaw": "USPA atlayış akışları, tüm kategoriler",
@@ -1318,5 +1320,6 @@
  "ptf3qo": "Fit ve metre",
  "1ck30h9": "Metre",
  "1ltgake": "Proje açık: kodu oku, bir düzeltme öner ya da bir şey ekle:",
- "1j7152i": "Beni bul:"
+ "1j7152i": "Beni bul:",
+ "6e3spd": "Yanlış bir kelime ya da daha iyi bir çeviri mi? Bana yaz"
 }

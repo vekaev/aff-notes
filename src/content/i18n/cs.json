@@ -607,7 +607,9 @@
  "1woed5g": "Který instruktor je venku, záleží na straně dveří: v letadle s dveřmi vlevo (Caravan) je to často ten po tvé <b>levici</b>, na straně záložního padáku. Tvoje letadlo: <q-check/>",
  "1woy102": "Ve 2 500 ft rozhodni, jestli doletíš k vyčkávacímu bodu; pokud ne, vyber volnou náhradní plochu nejpozději do 2 000 ft.",
  "1wplhaq": "Uvnitř nohy: kde se zraní",
- "1wrg3s5": "Zdroje: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/\">Westman 2007</a> · <a href=\"http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents\">USPA 2024, nesmrtelné nehody</a> · <a href=\"https://parachutist.com/another-record-lowthe-2020-fatality-summary\">přehled úmrtí 2020</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/\">nizozemská studie 2015–2020</a> · <a href=\"https://lermagazine.com/?p=39724\">Forrester 2023: zranění nohou</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/\">přehled Barthel 2023</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485\">Planche Wallace 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486\">Bell 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488\">Bell 2024</a> · <a href=\"https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency\">USPA Rating Corner 2023</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/\">r/SkyDiving: zlomený kotník na AFF 3</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/\">r/SkyDiving: pozdní podrovnání</a>",
+ "16puusx": "Zdroje: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/\">Westman 2007</a> · <a href=\"http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents\">USPA 2024, nesmrtelné nehody</a> · <a href=\"https://parachutist.com/another-record-lowthe-2020-fatality-summary\">přehled úmrtí 2020</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/\">nizozemská studie 2015–2020</a> · <a href=\"https://lermagazine.com/?p=39724\">Forrester 2023: zranění nohou</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/\">přehled Barthel 2023</a> · <a href=\"https://doi.org/10.1016/j.jsams.2020.11.002\">Fer 2021, FFP 2010–19</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485\">Planche Wallace 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486\">Bell 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488\">Bell 2024</a> · <a href=\"https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency\">USPA Rating Corner 2023</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/\">r/SkyDiving: zlomený kotník na AFF 3</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/\">r/SkyDiving: pozdní podrovnání</a>",
+ "19vkx8s": "Jak má žák venku dva vrchlíky: když otevře pozdě nebo zůstane pod rychlou závadou pod asi 1 000 ft, žákovský AAD může otevřít záložní padák, i když hlavní už je venku. Otevři včas a jednej do své rozhodovací výšky.",
+ "lusx0r": "zranění a 0,57 úmrtí na <b>100 000 seskoků</b>: vzácné, ale ne nulové. Žádné úmrtí v tandemu (Francie 2010–19, 6,2 mil. seskoků).",
  "1wti132": "Musíš zatočit nízko? <b>Plochá zatáčka v brzdách</b>: z polovičních brzd pusť jedno řídicí poutko trochu nahoru a druhé stáhni trochu víc. Žádný střemhlavý pád. Pak podrovnej odtud.",
  "1wv5bei": "Úchyt výtažného padáčku nejde vytáhnout, nebo ho ruka nemůže najít.",
  "1wwjmtt": "Nedoletíš? <b>Vyber volnou plochu</b> a přistaň tam, proti větru, pokud to zvládneš bez nízké zatáčky.",
@@ -1172,7 +1174,7 @@
  "sc0a0s": "5 500 ft → zem",
  "scfckz": "Na madlo dveří, <b>vedle pravé</b>.",
  "sed644": "Ukonči <b>všechna cvičení</b>. Sleduj <b>jen výškoměr</b>: z 6 000 ft máš do 5 500 ft asi <b>3 sekundy</b>. V 5 500 ft zamávej a otevři. Zamávání a otevření dohromady zaberou asi <b>1 000 ft</b> (USPA), tak začni včas.",
- "sibblv": "Otevře záložní padák <b>automaticky</b>, pokud nízko ještě padáš <b>rychle</b>: ve volném pádu nebo pod špatným vrchlíkem, který stále klesá rychle. U žákovského přístroje asi v 750–1 000 ft <q-check/>",
+ "ahp4tw": "Otevře záložní padák <b>automaticky</b>, pokud nízko ještě padáš <b>rychle</b>: ve volném pádu nebo pod špatným vrchlíkem, který stále klesá rychle. Žákovský CYPRES 2: asi 750 ft ve volném pádu, asi 1 000 ft pod vrchlíkem, který stále klesá rychleji než 29 mph. Vigil II v žákovském režimu: asi 1 040 ft. Zeptej se, který máš na svém systému.",
  "sig3x4": "<b>Níže letící vrchlík má přednost</b>. To ale neznamená, že přistávací plocha patří tobě: leť <b>stejný okruh</b> jako všichni a buď předvídatelný.",
  "slt8tg": "Země se rychle blíží a vysílačka mlčí. Co uděláš?",
  "snisaw": "Dive flow USPA, všechny kategorie",
@@ -1318,5 +1320,6 @@
  "ptf3qo": "Stopy a metry",
  "1ck30h9": "Metry",
  "1ltgake": "Projekt je otevřený: čti kód, navrhni opravu nebo něco přidej na",
- "1j7152i": "Kde mě najdeš:"
+ "1j7152i": "Kde mě najdeš:",
+ "6e3spd": "Špatné slovo nebo lepší překlad? Napiš mi"
 }

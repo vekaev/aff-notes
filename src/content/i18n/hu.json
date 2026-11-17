@@ -607,7 +607,9 @@
  "1woed5g": "Hogy melyik oktató van kint, az ajtó oldalától függ: bal oldali ajtós gépen (Caravan) gyakran a <b>bal</b> oldali, a tartalék oldalán. A te géped: <q-check/>",
  "1woy102": "2500 ft-on döntsd el, eléred-e a várakozási pontot; ha nem, legkésőbb 2000 ft-ig válassz szabad kiesési területet.",
  "1wplhaq": "A láb belseje: hol sérül",
- "1wrg3s5": "Források: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/\">Westman 2007</a> · <a href=\"http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents\">USPA 2024, nem halálos balesetek</a> · <a href=\"https://parachutist.com/another-record-lowthe-2020-fatality-summary\">2020-as halálos balesetek összefoglalója</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/\">Holland vizsgálat 2015–2020</a> · <a href=\"https://lermagazine.com/?p=39724\">Forrester 2023: lábsérülések</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/\">Barthel 2023, áttekintés</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485\">Planche Wallace 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486\">Bell 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488\">Bell 2024</a> · <a href=\"https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency\">USPA Rating Corner 2023</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/\">r/SkyDiving: eltört a bokám az AFF 3-on</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/\">r/SkyDiving: késői kilebegtetés</a>",
+ "16puusx": "Források: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/\">Westman 2007</a> · <a href=\"http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents\">USPA 2024, nem halálos balesetek</a> · <a href=\"https://parachutist.com/another-record-lowthe-2020-fatality-summary\">2020-as halálos balesetek összefoglalója</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/\">Holland vizsgálat 2015–2020</a> · <a href=\"https://lermagazine.com/?p=39724\">Forrester 2023: lábsérülések</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/\">Barthel 2023, áttekintés</a> · <a href=\"https://doi.org/10.1016/j.jsams.2020.11.002\">Fer 2021, FFP 2010–19</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485\">Planche Wallace 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486\">Bell 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488\">Bell 2024</a> · <a href=\"https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency\">USPA Rating Corner 2023</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/\">r/SkyDiving: eltört a bokám az AFF 3-on</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/\">r/SkyDiving: késői kilebegtetés</a>",
+ "19vkx8s": "Így lesz egy tanulónak két kupolája: ha későn nyit, vagy kb. 1000 ft alatt egy gyors hiba alatt marad, a tanulói AAD kinyithatja a tartalékot, miközben a főkupola kint van. Nyiss időben, és cselekedj a döntési magasságig.",
+ "lusx0r": "sérülés és 0,57 haláleset <b>100 000 ugrásonként</b>: ritka, de nem nulla. Tandemben nem volt haláleset (Franciaország 2010–19, 6,2 millió ugrás).",
  "1wti132": "Muszáj alacsonyan fordulnod? <b>Fékezett lapos forduló</b>: félfékből az egyik kormányfogantyút engedd fel kicsit, a másikat húzd le kicsit jobban. Nincs bukás. Aztán onnan lebegtess ki.",
  "1wv5bei": "A kisernyő-fogantyú nem jön ki, vagy a kezed nem találja.",
  "1wwjmtt": "Nem éred el? <b>Válassz szabad mezőt</b>, és ott szállj le, szembeszélben, ha meg tudod tenni alacsony forduló nélkül.",
@@ -1172,7 +1174,7 @@
  "sc0a0s": "5500 ft → talaj",
  "scfckz": "Az ajtó fogantyúján, <b>a jobb mellett</b>.",
  "sed644": "Hagyd abba <b>az összes gyakorlatot</b>. <b>Csak a magasságmérőt</b> figyeld: 6000 ft-tól kb. <b>3 másodperced</b> van 5500 ft-ig. 5500 ft-on integess és nyiss. Az integetés és a nyitás együtt kb. <b>1000 ft</b> (USPA), ezért időben kezdd.",
- "sibblv": "<b>Automatikusan</b> nyitja a tartalékot, ha alacsonyan még mindig <b>gyorsan</b> esel: szabadesésben, vagy rossz kupola alatt, amely még gyorsan süllyed. Tanulói egységnél kb. 750–1000 ft-on <q-check/>",
+ "ahp4tw": "<b>Automatikusan</b> nyitja a tartalékot, ha alacsonyan még mindig <b>gyorsan</b> esel: szabadesésben, vagy rossz kupola alatt, amely még gyorsan süllyed. Tanulói CYPRES 2: kb. 750 ft-on szabadesésben, kb. 1000 ft-on olyan kupola alatt, amely még 29 mph-nál gyorsabban süllyed. Vigil II tanulói módban: kb. 1040 ft-on. Kérdezd meg, melyik van a felszerelésedben.",
  "sig3x4": "Az <b>alacsonyabban lévő kupolának van elsőbbsége</b>. Ettől még nem a tiéd a leszállóterület: ugyanazt a <b>leszállási kört</b> repüld, mint mindenki, és légy kiszámítható.",
  "slt8tg": "Gyorsan közeledik a talaj, és a rádió hallgat. Mit csinálsz?",
  "snisaw": "USPA-feladatleírások, minden kategória",
@@ -1318,5 +1320,6 @@
  "ptf3qo": "Láb és méter",
  "1ck30h9": "Méter",
  "1ltgake": "A projekt nyílt: olvasd a kódot, javasolj javítást vagy tegyél hozzá valamit itt:",
- "1j7152i": "Itt találsz meg:"
+ "1j7152i": "Itt találsz meg:",
+ "6e3spd": "Rossz szó vagy jobb fordítás? Írj nekem"
 }

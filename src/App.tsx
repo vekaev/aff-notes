@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { parts } from './content';
 import { headline, useLang } from './i18n';
 import { ui } from './ui';
-import { isCore } from './content/types';
+import { isCore, RTL } from './content/types';
 import { usePassed } from './progress';
 import { BlockView } from './components/Blocks';
 import { Hero, useTrackLastChapter } from './components/Hero';
@@ -10,7 +10,7 @@ import { SkyRail } from './components/SkyRail';
 import { LangMenu, MoreMenu } from './components/Settings';
 import { OfflineButton } from './components/Offline';
 import { FinalCheck } from './components/FinalCheck';
-import { AboutAuthor, FeedbackBubble } from './components/Author';
+import { AboutAuthor, EMAIL, FeedbackBubble } from './components/Author';
 import { ICONS, PART_ICON } from './components/Icon';
 
 /** Which part is on screen, for the header nav. */
@@ -72,7 +72,8 @@ function Header() {
 function MtNote() {
   const { t, lang } = useLang();
   if (isCore(lang)) return null;
-  return <p className="mt-note">{t(ui.mtNote)}</p>;
+  const href = `mailto:${EMAIL}?subject=${encodeURIComponent(`AFF notes: translation (${lang})`)}&body=${encodeURIComponent(`\n\n(${location.href})`)}`;
+  return <p className="mt-note">{t(ui.mtNote)} <a href={href}>{t(ui.trFix)} {RTL.includes(lang) ? '←' : '→'}</a></p>;
 }
 
 export function App() {

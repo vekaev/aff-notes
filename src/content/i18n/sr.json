@@ -607,7 +607,9 @@
  "1woed5g": "Koji instruktor je spolja zavisi od strane vrata: u avionu sa vratima levo (Caravan) to je često onaj sa tvoje <b>leve</b> strane, strane rezerve. Tvoj avion: <q-check/>",
  "1woy102": "Na 2.500 ft odluči da li možeš da stigneš do tačke čekanja; ako ne, izaberi slobodnu rezervnu livadu najkasnije do 2.000 ft.",
  "1wplhaq": "Unutar noge: gde se povređuje",
- "1wrg3s5": "Izvori: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/\">Westman 2007</a> · <a href=\"http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents\">USPA 2024, nesmrtonosni incidenti</a> · <a href=\"https://parachutist.com/another-record-lowthe-2020-fatality-summary\">pregled smrtnih slučajeva 2020</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/\">holandska studija 2015–2020</a> · <a href=\"https://lermagazine.com/?p=39724\">Forrester 2023: povrede nogu</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/\">Barthel 2023, pregledni rad</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485\">Planche Wallace 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486\">Bell 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488\">Bell 2024</a> · <a href=\"https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency\">USPA Rating Corner 2023</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/\">r/SkyDiving: slomio sam skočni zglob na AFF 3</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/\">r/SkyDiving: zakasnelo kočenje</a>",
+ "16puusx": "Izvori: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/\">Westman 2007</a> · <a href=\"http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents\">USPA 2024, nesmrtonosni incidenti</a> · <a href=\"https://parachutist.com/another-record-lowthe-2020-fatality-summary\">pregled smrtnih slučajeva 2020</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/\">holandska studija 2015–2020</a> · <a href=\"https://lermagazine.com/?p=39724\">Forrester 2023: povrede nogu</a> · <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/\">Barthel 2023, pregledni rad</a> · <a href=\"https://doi.org/10.1016/j.jsams.2020.11.002\">Fer 2021, FFP 2010–19</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485\">Planche Wallace 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486\">Bell 2019</a> · <a href=\"https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488\">Bell 2024</a> · <a href=\"https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency\">USPA Rating Corner 2023</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/\">r/SkyDiving: slomio sam skočni zglob na AFF 3</a> · <a href=\"https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/\">r/SkyDiving: zakasnelo kočenje</a>",
+ "19vkx8s": "Kako učenik dobije dve kupole: ako otvori kasno ili ostane pod brzim kvarom ispod oko 1.000 ft, učenički AAD može da otvori rezervu dok je glavna već napolju. Otvori na vreme i deluj do visine odluke.",
+ "lusx0r": "povreda i 0,57 smrti na <b>100.000 skokova</b>: retko, ali ne nula. Nijedna smrt u tandemu (Francuska 2010–19, 6,2 M skokova).",
  "1wti132": "Moraš da okreneš nisko? <b>Ravan zaokret na kočnicama</b>: iz pola kočnica pusti jednu komandu malo gore, a drugu povuci malo više dole. Bez obrušavanja. Zatim koči odatle.",
  "1wv5bei": "Ručica izvlačnog padobrana neće da izađe, ili je ruka ne nalazi.",
  "1wwjmtt": "Ne možeš da stigneš? <b>Izaberi slobodnu livadu</b> i sleti tamo, u vetar ako to možeš bez niskog zaokreta.",
@@ -1172,7 +1174,7 @@
  "sc0a0s": "5.500 ft → zemlja",
  "scfckz": "Na ručku vrata, <b>pored desne</b>.",
  "sed644": "Prekini <b>sve vežbe</b>. Gledaj <b>samo visinomer</b>: od 6.000 ft imaš oko <b>3 sekunde</b> do 5.500 ft. Na 5.500 ft mahni (wave-off) i otvaraj. Mahanje i otvaranje zajedno traju oko <b>1.000 ft</b> (USPA), pa počni na vreme.",
- "sibblv": "<b>Automatski</b> otvara rezervu ako još <b>brzo</b> padaš kada si nisko: u slobodnom padu, ili pod lošom kupolom koja i dalje brzo silazi. Na učeničkom uređaju, oko 750–1.000 ft <q-check/>",
+ "ahp4tw": "<b>Automatski</b> otvara rezervu ako još <b>brzo</b> padaš kada si nisko: u slobodnom padu, ili pod lošom kupolom koja i dalje brzo silazi. Učenički CYPRES 2: oko 750 ft u slobodnom padu, oko 1.000 ft pod kupolom koja se još spušta brže od 29 mph. Vigil II u učeničkom režimu: oko 1.040 ft. Pitaj koji je na tvojoj opremi.",
  "sig3x4": "<b>Niža kupola ima prednost</b>. To ne znači da je zona sletanja tvoja: leti <b>istu šemu</b> kao svi i budi predvidiv.",
  "slt8tg": "Zemlja se brzo približava, a radio ćuti. Šta radiš?",
  "snisaw": "USPA tokovi skoka, sve kategorije",
@@ -1318,5 +1320,6 @@
  "ptf3qo": "Stope i metri",
  "1ck30h9": "Metri",
  "1ltgake": "Projekat je otvoren: čitaj kod, predloži ispravku ili dodaj nešto na",
- "1j7152i": "Gde da me nađeš:"
+ "1j7152i": "Gde da me nađeš:",
+ "6e3spd": "Pogrešna reč ili bolji prevod? Javi mi"
 }
