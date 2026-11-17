@@ -11,6 +11,8 @@ export const LINKS = {
   repo: 'https://github.com/vekaev/aff-notes',
   github: 'https://github.com/vekaev',
   linkedin: 'https://www.linkedin.com/in/vekaev',
+  facebook: 'https://www.facebook.com/vekaev/',
+  instagram: 'https://www.instagram.com/vekaev.ceramics',
 };
 const h = (en: string, es: string, ru: string, uk: string): L => ({ en, es, ru, uk });
 
@@ -100,7 +102,9 @@ export function AboutAuthor() {
           <p className="links">
             <span className="muted">{t(T.findMe)}</span>{' '}
             <a href={LINKS.github} target="_blank" rel="noopener">GitHub</a>
-            {LINKS.linkedin && <>{' · '}<a href={LINKS.linkedin} target="_blank" rel="noopener">LinkedIn</a></>}
+            {' · '}<a href={LINKS.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+            {' · '}<a href={LINKS.facebook} target="_blank" rel="noopener">Facebook</a>
+            {' · '}<a href={LINKS.instagram} target="_blank" rel="noopener">Instagram</a>
           </p>
         </div>
       </section>
