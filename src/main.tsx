@@ -6,10 +6,12 @@ import { App } from './App';
 import { PlayerProvider } from './components/Player';
 import { applySavedTheme } from './components/Settings';
 import { setUpOffline } from './pwa';
+import { setUpScroll } from './scroll';
 import './styles.css';
 
 applySavedTheme();
 setUpOffline();
+setUpScroll();
 
 // An extra language (e.g. /de/) is fetched before the first render: the pre-rendered page is already on screen in that
 // language, and starting the app in English while the file loads made it flash English → German. Give up after 4 s.
