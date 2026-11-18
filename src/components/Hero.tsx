@@ -41,20 +41,20 @@ const T = {
   allDone: h('All tests passed. Review the numbers before every jump.', 'Todas las pruebas aprobadas. Repasa las cifras antes de cada salto.', 'Все тесты сданы. Перед каждым прыжком повторяй цифры.', 'Усі тести складено. Перед кожним стрибком повторюй цифри.'),
   tests: h('tests passed', 'pruebas aprobadas', 'тестов сдано', 'тестів складено'),
   feet: h('Altitudes in feet above the ground (1,000 ft ≈ 300 m)', 'Alturas en pies sobre el suelo (1,000 ft ≈ 300 m)', 'Высота над землёй в футах (1 000 футов ≈ 300 м)', 'Висота над землею у футах (1 000 футів ≈ 300 м)'),
-  ifBad: h('If the main is bad', 'Si la principal falla', 'Если основной плохой', 'Якщо основний поганий'),
+  ifBad: h('If the main is bad', 'Si la principal falla', 'Если с основным куполом проблема', 'Якщо з основним куполом проблема'),
   numbers: h('The numbers to know by heart', 'Las cifras que hay que saber de memoria', 'Цифры, которые надо знать наизусть', 'Цифри, які треба знати напам’ять'),
 };
 
 /** The altitudes in the order you pass them, plus two timers. Each links to its chapter. */
 const TAPE: { big: string; label: L; to: string; red?: boolean }[] = [
-  { big: '13,000', label: h('exit', 'salida', 'отделение', 'відокремлення'), to: 'count' },
+  { big: '13,000', label: h('exit', 'salida del avión', 'отделение от самолёта', 'відокремлення від літака'), to: 'count' },
   { big: '6,000', label: h('lock on: altimeter only', 'solo el altímetro', 'только высотомер', 'лише висотомір'), to: 'altitude' },
-  { big: '5,500', label: h('pull', 'abre', 'раскрытие', 'розкриття'), to: 'deploy' },
+  { big: '5,500', label: h('pull', 'apertura del paracaídas', 'раскрытие парашюта', 'розкриття парашута'), to: 'deploy' },
   { big: '2,500', label: h('can you reach the holding point?', '¿llegas al punto de espera?', 'долетаешь до точки ожидания?', 'долітаєш до точки очікування?'), to: 'pattern' },
   { big: '2,000', label: h('over the holding point', 'sobre el punto de espera', 'над точкой ожидания', 'над точкою очікування'), to: 'pattern' },
   { big: '1,000', label: h('leave it, start the pattern', 'déjalo, empieza el circuito', 'уходи в схему захода', 'виходь на схему заходу'), to: 'pattern' },
   { big: '900 · 600 · 300', label: h('landing pattern', 'circuito', 'схема захода', 'схема заходу'), to: 'pattern' },
-  { big: '10 ft', label: h('flare, then PLF', 'flare y PLF', 'flare, потом PLF', 'flare, потім PLF'), to: 'flare' },
+  { big: '10 ft', label: h('flare, then PLF', 'flare y PLF', 'торможение (flare), потом PLF', 'гальмування (flare), потім PLF'), to: 'flare' },
 ];
 /** Only if the main is bad: the emergency numbers, kept apart so they don't mix with the canopy ones. */
 const EMERGENCY: { big: string; label: L; to: string }[] = [
