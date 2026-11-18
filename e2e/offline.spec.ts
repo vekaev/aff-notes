@@ -16,7 +16,7 @@ test('first visit in German: German still works offline, other extra languages a
   await page.waitForFunction(() => navigator.serviceWorker.controller !== null, null, { timeout: 15_000 });
   await expect
     .poll(() => page.evaluate(async () => (await (await caches.open('langs')).keys()).map(r => r.url).join(' ')))
-    .toMatch(/\/assets\/de-[\w-]+\.js/);
+    .toMatch(/\/i18n\/de\.json/);
   const precached = await page.evaluate(async () => {
     const names = await caches.keys();
     const urls: string[] = [];
@@ -25,7 +25,7 @@ test('first visit in German: German still works offline, other extra languages a
     return urls;
   });
   expect(precached.some(u => /\/assets\/index-/.test(u))).toBe(true);
-  expect(precached.filter(u => /\/assets\/(fr|de|ja|ar)-/.test(u))).toEqual([]);
+  expect(precached.filter(u => /\/i18n\/(fr|de|ja|ar)\.json/.test(u))).toEqual([]);
 
   await context.setOffline(true);
   await page.reload();

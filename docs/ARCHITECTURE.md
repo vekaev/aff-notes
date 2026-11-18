@@ -55,6 +55,10 @@ AGENTS.md CLAUDE.md   rules for any AI agent / for agents working for the owner
 - 28 more languages live in `src/content/i18n/<lang>.json`, keyed by a hash of the English text. `npm run i18n`
   regenerates `en.json`; `npm run i18n:todo` lists what each language still needs. Tests fail if any language misses a
   key or changes a tag or a number. Each language has a glossary of its federation's terms (`docs/i18n/glossary-*.md`).
+- The 28 extra languages ship as plain JSON at fixed addresses (`i18n/<lang>.json`, emitted by `langFiles` in
+  `vite.config.ts`) and are fetched when chosen, never as hashed code chunks: a page opened before a deploy can still
+  switch language at once, without a reload (hashed chunks vanish on deploy; Paraglide, TanStack's i18n pick, reloads
+  the page on every switch by default). Offline: cached when first used (`src/pwa.ts`, `e2e/offline.spec.ts`).
 - Language comes from `?lang=` in the link → saved choice → browser languages. Units: `?units=` → saved → language /
   region default (metric-training countries → m, feet federations → ft, others → ft + m). Metres are always "≈"
   conversions until school-rules profiles land (see `docs/i18n/DEEP-LOCALIZATION.md`).
