@@ -58,6 +58,17 @@ export function initialLang(): Lang {
   return 'en';
 }
 
+// A page loaded before a new deploy asks for language files under old names that no longer exist, and the text stays
+// in the old language until the reader reloads. Reload once by ourselves: the address already has the new language.
+const RELOADED = 'aff-lang-reload';
+function reloadOnce(): void {
+  try {
+    if (!navigator.onLine || sessionStorage.getItem(RELOADED)) return; // offline or already tried: stays English
+    sessionStorage.setItem(RELOADED, '1');
+    location.reload();
+  } catch { /* storage blocked: stays English */ }
+}
+
 interface Ctx { lang: Lang; setLang: (l: Lang) => void; t: (s: L) => string; units: Units; setUnits: (u: Units) => void }
 const LangContext = createContext<Ctx>({ lang: 'en', setLang: () => {}, t: s => s.en, units: 'ft', setUnits: () => {} });
 
@@ -88,7 +99,7 @@ export function LangProvider({ children, initial }: { children: ReactNode; initi
     document.documentElement.dir = RTL.includes(lang) ? 'rtl' : 'ltr';
     if (isCore(lang)) return;
     const load = CATALOGS[`./content/i18n/${lang}.json`];
-    if (load) load().then(map => setCat({ lang, map })).catch(() => { /* stays English */ });
+    if (load) load().then(map => { setCat({ lang, map }); try { sessionStorage.removeItem(RELOADED); } catch { /* ignore */ } }).catch(reloadOnce);
   }, [lang]);
   const value = useMemo(() => {
     const map = cat && cat.lang === lang ? cat.map : null;
