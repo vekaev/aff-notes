@@ -277,7 +277,7 @@ export const part4: Part = {
                 ),
                 t(
                   `Not fixed by 2,500 ft{decision}? <b>Emergency procedure</b>`,
-                  `¿Sin arreglar a 2,500 ft? <b>Procedimiento de emergencia</b>`,
+                  `¿Aún sin arreglar al llegar a 2,500 ft? <b>Procedimiento de emergencia</b>`,
                   `Не исправил к 2 500 футов? <b>Аварийная процедура</b>`,
                   `Не виправив до 2 500 футів? <b>Аварійна процедура</b>`,
                 ),

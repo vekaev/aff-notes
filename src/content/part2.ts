@@ -45,7 +45,7 @@ export const part2: Part = {
                   },
                 },
                 {
-                  title: { en: 'Thumb-to-ear check', es: 'Pulgares a las orejas', uk: 'Перевірка: великі пальці до вух', ru: 'Проверка: большие пальцы к ушам' },
+                  title: { en: 'Thumb-to-ear check', es: 'Comprobación: pulgares a las orejas', uk: 'Перевірка: великі пальці до вух', ru: 'Проверка: большие пальцы к ушам' },
                   sub: {
                     en: 'Touch your <b>thumbs to your ears</b>, then <b>open your arms out to the sides</b>: that\'s where square arms are.',
                     es: 'Toca las <b>orejas con los pulgares</b> y <b>abre los brazos a los lados</b>: ahí están los brazos en escuadra.',
@@ -198,7 +198,7 @@ export const part2: Part = {
             {
               alt: '↓',
               value: 11.5,
-              title: { en: '3 practice touches', es: '3 toques de práctica', uk: '3 тренувальні дотики до витяжного', ru: '3 тренировочных касания' },
+              title: { en: '3 practice touches', es: '3 toques de práctica a la manija del extractor', uk: '3 тренувальні дотики до витяжного', ru: '3 тренировочных касания' },
               sub: {
                 en: 'Left hand over your head, right hand back to the <b>pilot chute</b>. Back to arch. <b>Three times</b>. Then altitude.',
                 es: 'Mano izquierda sobre la cabeza, mano derecha atrás al <b>extractor</b>. De vuelta al arco. <b>Tres veces</b>. Luego la altura.',
@@ -232,14 +232,14 @@ export const part2: Part = {
               alt: '6,000 ft{lockOn}',
               value: 6,
               hot: true,
-              title: { en: 'Lock on', es: 'Lock on', uk: 'Далі дивись лише на висотомір', ru: 'Дальше смотри только на высотомер' },
+              title: { en: 'Lock on', es: 'Lock on: desde aquí, solo el altímetro', uk: 'Далі дивись лише на висотомір', ru: 'Дальше смотри только на высотомер' },
               sub: { en: '<b>No more</b> exercises.', es: '<b>Se acabaron</b> los ejercicios.', uk: 'Більше <b>жодних</b> вправ.', ru: 'Больше <b>никаких</b> упражнений.' },
             },
             {
               alt: '5,500 ft{pull}',
               value: 5.5,
               hot: true,
-              title: { en: 'PULL', es: 'ABRIR', uk: 'РОЗКРИТТЯ', ru: 'РАСКРЫТИЕ' },
+              title: { en: 'PULL', es: 'ABRE EL PARACAÍDAS', uk: 'РОЗКРИТТЯ', ru: 'РАСКРЫТИЕ' },
               sub: {
                 en: '<b>Wave off</b>: wave both arms smoothly over your head ("I know my altitude, I\'m pulling"). How many waves your school wants <q-check/>. Then <b>look, reach, throw</b> and count to five (Part III).',
                 es: '<b>Wave-off</b>: agita los dos brazos suavemente por encima de la cabeza ("sé mi altura, voy a abrir"). Cuántas veces lo pide tu escuela <q-check/>. Luego <b>mira, alcanza, lanza</b> y cuenta hasta cinco (Parte III).',
@@ -446,7 +446,7 @@ export const part2: Part = {
             {
               big: '6,000 ft{lockOn}',
               tone: 'accent',
-              title: { en: 'Lock on', es: 'Lock on', uk: 'Далі дивись лише на висотомір', ru: 'Дальше смотри только на высотомер' },
+              title: { en: 'Lock on', es: 'Lock on: desde aquí, solo el altímetro', uk: 'Далі дивись лише на висотомір', ru: 'Дальше смотри только на высотомер' },
               text: {
                 en: '{uspa}Stop <b>all exercises</b>. Watch the <b>altimeter only</b>: from 6,000 ft{lockOn} you have about <b>3 seconds</b> to 5,500 ft{pull}. At 5,500 ft{pull} wave off and pull. Wave-off and pull together take about <b>1,000 ft{~}</b> (USPA), so start on time.',
                 es: 'Deja <b>todos los ejercicios</b>. Mira <b>solo el altímetro</b>: de 6,000 a 5,500 ft tienes unos <b>3 segundos</b>. A 5,500 ft haz el wave-off y abre. El wave-off y la apertura juntos llevan unos <b>1,000 ft</b> (USPA), así que empieza a tiempo.',
@@ -457,7 +457,7 @@ export const part2: Part = {
             {
               big: '5,500 ft{pull}',
               tone: 'accent',
-              title: { en: 'Pull', es: 'Abrir', uk: 'Розкриття', ru: 'Раскрытие' },
+              title: { en: 'Pull', es: 'Abre el paracaídas', uk: 'Розкриття', ru: 'Раскрытие' },
               text: {
                 en: '{uspa}On <b>category A</b> we pull at <b>5,500 ft{pull}</b>, not 5,000 ft. Ask about later categories.',
                 es: 'En la <b>categoría A</b> abrimos a <b>5,500 ft</b>, no a 5,000 ft. Pregunta por las categorías siguientes.',
@@ -885,7 +885,7 @@ export const part2: Part = {
             },
             {
               clip: 's_toetap',
-              name: { en: 'Toe taps', es: 'Toque de puntas', uk: 'Стукни носками', ru: 'Стукни носками' },
+              name: { en: 'Toe taps', es: 'Toque de puntas de los pies', uk: 'Стукни носками', ru: 'Стукни носками' },
               what: { en: 'Bent flat hand.', es: 'Mano plana doblada.', uk: 'Зігнута долоня.', ru: 'Согнутая ладонь.' },
               act: {
                 en: 'Legs too wide or uneven: tap your toes together and even them out.',
@@ -928,7 +928,7 @@ export const part2: Part = {
               act: { en: 'Head up, look forward.', es: 'Cabeza arriba, mira al frente.', uk: 'Підніми голову, дивися вперед.', ru: 'Подними голову, смотри вперёд.' },
             },
             {
-              name: { en: 'Shaking you on exit', es: 'Te sacuden al salir', uk: 'Тебе трясуть після відокремлення', ru: 'Трясут после отделения' },
+              name: { en: 'Shaking you on exit', es: 'Un instructor te sacude el arnés al salir', uk: 'Тебе трясуть після відокремлення', ru: 'Трясут после отделения' },
               what: {
                 en: 'An instructor shakes your harness right after exit. Not a USPA signal: ask your school what it means. <q-check/>',
                 es: 'Un instructor sacude tu arnés justo después de salir. No es una señal de la USPA: pregunta en tu escuela qué significa. <q-check/>',

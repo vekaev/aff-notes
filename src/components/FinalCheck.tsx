@@ -20,11 +20,11 @@ const T = {
     'Три способа убедиться, что ты действительно всё знаешь. Брифинг инструкторов всегда важнее этих заметок.',
     'Три способи переконатися, що ти справді все знаєш. Брифінг інструкторів завжди важливіший за ці нотатки.',
   ),
-  examT: h('1. Test on everything', '1. Prueba de todo', '1. Тест по всем главам', '1. Тест з усіх розділів'),
+  examT: h('1. Test on everything', '1. Prueba de todos los capítulos', '1. Тест по всем главам', '1. Тест з усіх розділів'),
   examS: h('20 questions mixed from every chapter, a new set each time.', '20 preguntas mezcladas de todos los capítulos, otras cada vez.', '20 вопросов из всех глав вперемешку, каждый раз новые.', '20 питань з усіх розділів упереміш, щоразу нові.'),
   start: h('Start the test', 'Empezar la prueba', 'Начать тест', 'Почати тест'),
   again: h('New set of questions', 'Otras preguntas', 'Другие вопросы', 'Інші питання'),
-  ownT: h('2. In your own words', '2. Con tus palabras', '2. Своими словами', '2. Своїми словами'),
+  ownT: h('2. In your own words', '2. Explícalo con tus palabras', '2. Своими словами', '2. Своїми словами'),
   ownS: h(
     'Answer out loud or type it here (it stays on this device). Then show it to an instructor: they\'ll catch what a test can\'t.',
     'Responde en voz alta o escríbelo aquí (se queda en este dispositivo). Luego enséñaselo a un instructor: verá lo que una prueba no ve.',
@@ -39,25 +39,25 @@ const T = {
     'Скопируй готовый запрос со всеми этими заметками и вставь в ChatGPT, Claude, Gemini или любой ассистент. Он будет спрашивать по одной ситуации, объяснит ошибки и углубится там, где ты не уверен.',
     'Скопіюй готовий запит з усіма цими нотатками і встав у ChatGPT, Claude, Gemini чи будь-який асистент. Він питатиме по одній ситуації, пояснить помилки й заглибиться там, де ти не впевнений.',
   ),
-  copyAi: h('Copy the prompt for my AI', 'Copiar el prompt para mi IA', 'Скопировать запрос для ИИ', 'Скопіювати запит для ШІ'),
+  copyAi: h('Copy the prompt for my AI', 'Copiar las instrucciones para mi IA', 'Скопировать запрос для ИИ', 'Скопіювати запит для ШІ'),
   copied: h('Copied', 'Copiado', 'Скопировано', 'Скопійовано'),
   aiNote: h('An AI can be wrong too: anything it says that isn\'t in your notes, check with your instructors.', 'Una IA también se equivoca: lo que diga que no esté en tus apuntes, confírmalo con tus instructores.', 'ИИ тоже ошибается: всё, чего нет в твоих заметках, уточняй у инструкторов.', 'ШІ теж помиляється: усе, чого немає в твоїх нотатках, уточнюй в інструкторів.'),
 };
 
 /** Open questions: decisions a student must be able to explain, not just recognise. */
 const OWN: L[] = [
-  h('Walk through your climb-out and exit count.', 'Explica tu salida a la puerta y la cuenta de salida.', 'Расскажи по шагам, как выходишь к двери и что считаешь перед отделением от самолёта.', 'Розкажи вихід у двері й рахунок на відокремлення.'),
+  h('Walk through your climb-out and exit count.', 'Explica paso a paso cómo te colocas en la puerta y la cuenta de salida.', 'Расскажи по шагам, как выходишь к двери и что считаешь перед отделением от самолёта.', 'Розкажи вихід у двері й рахунок на відокремлення.'),
   h('What do you do at 6,000 ft{lockOn}, and at 5,500 ft{pull}?', '¿Qué haces a 6,000 ft y a 5,500 ft?', 'Что ты делаешь на 6 000 и на 5 500 футов?', 'Що ти робиш на 6 000 і на 5 500 футів?'),
   h('You reach for the pilot chute and can\'t find it. What exactly do you do?', 'Buscas el extractor y no lo encuentras. ¿Qué haces exactamente?', 'Тянешься к вытяжному и не находишь его. Что именно ты делаешь?', 'Тягнешся до витяжного й не знаходиш його. Що саме ти робиш?'),
   h('Your canopy opens. How do you check it, and what makes you cut away?', 'Se abre tu vela. ¿Cómo la revisas y qué te hace liberar?', 'Купол открылся. Как ты его проверяешь и что заставит отцепиться?', 'Купол відкрився. Як ти його перевіряєш і що змусить відчепитися?'),
   h('Say your emergency procedure out loud, step by step, with the altitudes.', 'Di tu procedimiento de emergencia en voz alta, paso a paso, con las alturas.', 'Произнеси аварийную процедуру вслух, по шагам, с высотами.', 'Промов аварійну процедуру вголос, крок за кроком, з висотами.'),
-  h('Line twists: when do you fix them, and when is it an emergency?', 'Twists: ¿cuándo los arreglas y cuándo es una emergencia?', 'Закрутка строп: когда исправляешь, а когда это авария?', 'Закрутка строп: коли виправляєш, а коли це аварія?'),
+  h('Line twists: when do you fix them, and when is it an emergency?', 'Vueltas en las líneas (twists): ¿cuándo las arreglas y cuándo es una emergencia?', 'Закрутка строп: когда исправляешь, а когда это авария?', 'Закрутка строп: коли виправляєш, а коли це аварія?'),
   h('Plan today\'s landing: 2,500{holdingReach}, 2,000{holding}, 1,000{patternEntry}, 900{downwind}, 600{base}, 300 ft{final} and the flare.', 'Planea el aterrizaje de hoy: 2,500, 2,000, 1,000, 900, 600, 300 ft y el flare.', 'Спланируй сегодняшнюю посадку: 2 500, 2 000, 1 000, 900, 600, 300 футов и выравнивание.', 'Сплануй сьогоднішню посадку: 2 500, 2 000, 1 000, 900, 600, 300 футів і вирівнювання.'),
   h('What are your turn limits under canopy, and why?', '¿Cuáles son tus límites de giro bajo la vela y por qué?', 'Какие у тебя ограничения разворотов под куполом и почему?', 'Які в тебе обмеження розворотів під куполом і чому?'),
   h('You\'re going to land in trees, water or near power lines. What do you do for each?', 'Vas a caer en árboles, agua o cerca de cables. ¿Qué haces en cada caso?', 'Ты приземляешься на деревья, в воду или рядом с проводами. Что делаешь в каждом случае?', 'Ти сідаєш на дерева, у воду чи біля дротів. Що робиш у кожному випадку?'),
-  h('Two canopies out: what do you do in each case?', 'Dos velas fuera: ¿qué haces en cada caso?', 'Раскрылись оба купола (основной и запасной): что делаешь в каждом случае?', 'Вийшли два куполи: що робиш у кожному випадку?'),
+  h('Two canopies out: what do you do in each case?', 'Dos velas abiertas: ¿qué haces en cada caso?', 'Раскрылись оба купола (основной и запасной): что делаешь в каждом случае?', 'Вийшли два куполи: що робиш у кожному випадку?'),
   h('You lost both instructors in freefall. What now?', 'Perdiste a los dos instructores en caída libre. ¿Y ahora?', 'Ты потерял обоих инструкторов в свободном падении. Что теперь?', 'Ти загубив обох інструкторів у вільному падінні. Що тепер?'),
-  h('Flare and PLF: when, how, and what goes wrong most often?', 'Flare y PLF: cuándo, cómo y qué sale mal más a menudo?', 'Выравнивание (flare) и PLF: когда, как и что чаще всего идёт не так?', 'Вирівнювання (flare) і PLF: коли, як і що найчастіше йде не так?'),
+  h('Flare and PLF: when, how, and what goes wrong most often?', '¿Flare y PLF: cuándo, cómo y qué sale mal más a menudo?', 'Выравнивание (flare) и PLF: когда, как и что чаще всего идёт не так?', 'Вирівнювання (flare) і PLF: коли, як і що найчастіше йде не так?'),
 ];
 
 const ALL: QuizQuestion[] = parts.flatMap(p => p.chapters.flatMap(c => c.blocks.flatMap(b => (b.type === 'quiz' ? b.questions : []))));

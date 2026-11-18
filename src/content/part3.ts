@@ -14,7 +14,7 @@ export const part3: Part = {
     // ---------------------------------------------------------------- deploy
     {
       id: 'deploy',
-      title: l('Pull, count, check', 'Abrir, contar, revisar', 'Раскрытие, счёт, проверка', 'Розкриття, рахунок до п’яти, перевірка купола'),
+      title: l('Pull, count, check', 'Abre, cuenta, revisa', 'Раскрытие, счёт, проверка', 'Розкриття, рахунок до п’яти, перевірка купола'),
       blocks: [
         {
           type: 'split',
@@ -94,7 +94,7 @@ export const part3: Part = {
             {
               type: 'callout',
               tone: 'red',
-              title: l('Any “no”?', '¿Algún “no”?', 'Хотя бы один ответ «нет»?', 'Хоч одне «ні»?'),
+              title: l('Any “no”?', '¿Alguna respuesta es “no”?', 'Хотя бы один ответ «нет»?', 'Хоч одне «ні»?'),
               text: l(
                 'Try the fixes in <a href="#ep">Part IV</a>. Not fixed: <b>decide and act by 2,500 ft{decision}</b>, the decision altitude.',
                 'Prueba los arreglos de la <a href="#ep">Parte IV</a>. ¿No se arregla? <b>Decide y actúa antes de 2,500 ft</b>, la altura de decisión.',
@@ -294,7 +294,7 @@ export const part3: Part = {
               value: 0.01,
               hot: true,
               point: [188, 70],
-              title: l('Flare', 'Flare', 'Flare', 'Flare'),
+              title: l('Flare', 'Flare (frenada)', 'Flare', 'Flare'),
               sub: l(
                 '<b>About 3 m</b> off the ground. Smooth, both hands, <b>finished at touchdown</b>, then hold it. Why: it turns the descent into a short level glide.',
                 '<b>A unos 3 m</b> del suelo. Suave, con las dos manos, que <b>termine al tocar el suelo</b>, y luego mantenlo. Por qué: convierte el descenso en un planeo corto y nivelado.',
@@ -307,7 +307,7 @@ export const part3: Part = {
         {
           type: 'callout',
           only: ['uspa'],
-          title: l('Two different 2,500 ft{~}', 'Dos 2,500 ft distintos', 'Два разных решения на 2 500 футах', 'Дві різні позначки 2 500 футів'),
+          title: l('Two different 2,500 ft{~}', 'Dos cosas distintas a 2,500 ft', 'Два разных решения на 2 500 футах', 'Дві різні позначки 2 500 футів'),
           points: [
             l(
               '<b>Good canopy</b>: plan the landing. Holding point, left or right pattern.',
@@ -792,7 +792,7 @@ export const part3: Part = {
     // ---------------------------------------------------------------- flare
     {
       id: 'flare',
-      title: l('The flare', 'El flare', 'Выравнивание (flare)', 'Вирівнювання (flare)'),
+      title: l('The flare', 'El flare (la frenada)', 'Выравнивание (flare)', 'Вирівнювання (flare)'),
       blocks: [
         {
           type: 'split',
