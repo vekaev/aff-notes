@@ -86,7 +86,7 @@ export function MoreMenu() {
   const box = useRef<HTMLDivElement>(null);
   // "Rules shown: … change" in the hero opens this menu
   useEffect(() => {
-    const o = () => { setOpen(true); box.current?.querySelector('button')?.focus(); };
+    const o = () => { setOpen(true); box.current?.querySelector('button')?.focus({ preventScroll: true }); };
     addEventListener('open-more', o);
     return () => removeEventListener('open-more', o);
   }, []);

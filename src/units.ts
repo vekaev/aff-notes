@@ -63,7 +63,7 @@ const mWord = (lang: Lang) => (lang === 'uk' || lang === 'ru' || lang === 'bg' ?
 const NUM = String.raw`\d{1,3}(?:[,.   ]\d{3})+|\d+`;
 const FT_UNIT = String.raw`(?:ft|feet|фт|футів|футов|футах|футами|футам|фута|фути|фут)(?![A-Za-z\u0400-\u04FF])`;
 // "1,000–2,000 ft" (a range) or "5,500 ft"; not when a conversion already follows ("1,000 ft ≈ 300 m").
-const QTY = new RegExp(String.raw`(${NUM})(?:(\s?[–-]\s?)(${NUM}))?(\s?)(${FT_UNIT})(?!\s*(?:≈|=|\(≈))`, 'gu');
+const QTY = new RegExp(String.raw`(${NUM})(?:(\s?[–-]\s?|\s?→\s?)(${NUM}))?(\s?)(${FT_UNIT})(?!\s*(?:≈|=|\(≈))`, 'gu');
 const parse = (s: string) => Number(s.replace(/[^\d]/g, ''));
 
 /** Rewrites every "N ft" in a text for the reader's units. Feet stay as written; metres are added or swapped in. */

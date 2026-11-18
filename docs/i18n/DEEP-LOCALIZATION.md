@@ -7,7 +7,7 @@ for a Russian speaker training at Skydive Dubai, or a Brazilian in Florida. So t
 |---|---|---|---|---|
 | **Language** | every word | the menu | the browser's preferred languages | `src/i18n.tsx`, `src/content/i18n/*.json` |
 | **Units** | how a quantity is shown (ft, ft + m, m) | the `ft / ft·m / m` chip | the browser region (metric-training countries → ft + m) | `src/units.ts` |
-| **School rules** (phase 2) | numbers, procedures, links and names that differ by federation | a "my school follows" picker | from the region (US → USPA, UK → British Skydiving…) | `src/content/rules/*` (planned) |
+| **School rules** (phase 2, built) | numbers, procedures, links and names that differ by federation | "School rules" in the ⋯ menu, `?rules=` | from the region (US → USPA, UK → British Skydiving…) | `src/content/rules/index.ts`, `src/rules.ts` |
 
 Common software practice behind this: CLDR/ICU separates *locale* (language + region) from user *preferences*
 (units, calendar); `Intl.NumberFormat` handles separators; the measurement system is a preference, not a language.
@@ -24,7 +24,18 @@ Aviation and sports apps keep regulations as data keyed by jurisdiction, not as 
 - Tests: rounding, ranges, already-converted text left alone, Russian/German formats, and "no bare N ft left in metres
   mode" for every language file.
 
-## Phase 2 (planned): school rules as data
+## Phase 2 (built 2026-11-18): how it works
+- Profiles `uspa | dfv | ffp | bs | ruua` in `src/content/rules/index.ts`; each value `{ n, unit, src, check?, note? }`.
+- The English text marks rule numbers right after the quantity: `pull at 5,500 ft{pull}`, `13,000{exit} → 5,500 ft{pull}`.
+  `{~}` = reviewed, stays USPA's number (dropzone facts, numbers cited as USPA's). `{uspa}` at the start = a sentence
+  that only makes sense with USPA numbers (hidden under other rules). Blocks can have `only: ['ruua']`.
+- Marks live only in English; keys and display strip them. Translations are matched by value (the same number in
+  the same string), so translators keep numbers as they are and nothing else changes. Tests: every key altitude is
+  marked, every mark finds its number in all 32 languages, every value has a source.
+- A missing value shows USPA's with the check badge; metric rules show it as ≈ m. Quiz questions that still use a
+  bare USPA number (a scenario at 2,100 ft, a wrong answer 5,000 ft) are left out under other rules.
+
+## Phase 2 design notes (original plan)
 Facts that differ by federation (pull altitude, decision altitude, canopy-size limits for students, A-licence
 requirements, minimum age, AAD/RSL requirements, wind limits, licence names, the manual to read and its link) move
 out of prose into a typed table:

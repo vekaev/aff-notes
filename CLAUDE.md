@@ -18,6 +18,10 @@ Research: `docs/research/`. Content brief: `docs/content-brief.md`.
   without the owner. Never commit secrets or the owner's private data (that lives in ~/me).
 - **Content** lives in `src/content/part*.ts` + `dropzone.ts` as typed data; every string is `{ en, es, uk, ru }` (languages listed in `LANGS` in `types.ts`).
   Interface words in `src/ui.ts`. Inline tags allowed: `<b>`, `<a href>`, `<q-check/>`. No emoji in content.
+- **School rules** (`src/content/rules/index.ts`, `src/rules.ts`, design in `docs/i18n/DEEP-LOCALIZATION.md`): a rule
+  number in English text gets a mark right after it (`5,500 ft{pull}`); exit, lock-on, pull, decision and hard-deck
+  altitudes must carry one (`{~}` if it must stay USPA's, e.g. the dropzone chapter). A profile value needs a source;
+  no source → leave it out (USPA + check shows). Unofficial values get `check: true`.
 - **Facts**: never change a number or procedure without a source (USPA SIM / ISP, the dropzone, the research
   notes). Unsure → `<q-check/>` and a line in the "ask the instructors" chapter. The instructors' briefing wins.
 - **Checks before every commit**: `npm run check` (types + content tests) and `npx vite build`. Then look at the

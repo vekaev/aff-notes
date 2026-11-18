@@ -19,17 +19,22 @@ function Big({ v, lang, units }: { v: string; lang: Lang; units: 'ft' | 'm' | 'b
 import { usePassed } from '../progress';
 
 /** A big altitude from the reader's school rules: its own unit, or USPA's feet with the check badge. */
-function RuleBig({ ids }: { ids: RuleId[] }) {
+function RuleBig({ ids, compact }: { ids: RuleId[]; compact?: boolean }) {
   const { lang, units, rules } = useLang();
   const shown = ids.map(id => ruleValue(id, rules));
   const check = shown.some(x => x.check);
+  // in the tape a badge per number would crowd it: unsure numbers are dimmed, the note above says why
+  const badge = check && !compact ? <CheckBadge /> : null;
+  const cls = check && compact ? ' unsure' : '';
   const mW = lang === 'uk' || lang === 'ru' || lang === 'bg' ? 'м' : 'm';
   if (shown.every(x => x.v.unit === 'm')) {
     const ft = shown.map(x => group(toFeet(x.v.n), lang)).join(' · ');
-    return <span className="big">{shown.map(x => group(x.v.n, lang)).join(' · ')}<small className="u">{mW}</small>{check && <CheckBadge />}{units !== 'm' && <span className="mline">≈{ft} {ftWord(lang)}</span>}</span>;
+    return <span className={`big${cls}`}>{shown.map(x => group(x.v.n, lang)).join(' · ')}<small className="u">{mW}</small>{badge}{units !== 'm' && <span className="mline">≈{ft} {ftWord(lang)}</span>}</span>;
   }
   const v = shown.map(x => x.v.n.toLocaleString('en-US')).join(' · ');
-  return <span className="rb"><Big v={v} lang={lang} units={units} />{check && <CheckBadge />}</span>;
+  // under a metric school's rules a missing number is shown like the rest: USPA's, converted (≈ m)
+  const u = PROFILES[rules].unit === 'm' ? 'm' : units;
+  return <span className={`rb${cls}`}><Big v={v} lang={lang} units={u} />{badge}</span>;
 }
 
 /** Each key number of the reader's rules with its source; missing ones say USPA's number is shown. */
@@ -51,7 +56,7 @@ function RulesSources() {
             <div key={id} className={fallback ? 'fb' : ''}>
               <dt>{t(RULE_NAMES[id])}</dt>
               <dd>
-                <b>{fmt(v.n, v.to, v.unit)}</b>{(fallback || v.check) && <CheckBadge />}{' '}
+                <b>{fmt(v.n, v.to, v.unit)}{fallback && p.unit === 'm' && v.unit === 'ft' ? ` (≈${fmt(toMetres(v.n), undefined, 'm')})` : ''}</b>{(fallback || v.check) && <CheckBadge />}{' '}
                 {fallback ? <span className="muted">{t(ui.rulesMissing)}</span> : <>
                   {v.note && <span>{renderInline(t(v.note))} </span>}
                   {v.check && <span className="muted">{t(ui.rulesUnofficial)} </span>}
@@ -243,7 +248,7 @@ export function Hero() {
         <ol className="tape surface">
           {TAPE.map((x, i) => (
             <li key={i} className={x.red ? 'red' : ''}>
-              <a href={`#${x.to}`}>{x.rule ? <RuleBig ids={x.rule} /> : <span className="big">{num(x.big!, lang, units)}</span>}<span className="dot" aria-hidden="true" /><span className="lbl">{t(x.label)}</span></a>
+              <a href={`#${x.to}`}>{x.rule ? <RuleBig ids={x.rule} compact /> : <span className="big">{num(x.big!, lang, units)}</span>}<span className="dot" aria-hidden="true" /><span className="lbl">{t(x.label)}</span></a>
             </li>
           ))}
         </ol>

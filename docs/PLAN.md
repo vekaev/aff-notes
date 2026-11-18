@@ -152,11 +152,22 @@ Work in this order; tick each line here and in the inbox below; one item per run
    facts that differ by country/federation; a clean, scalable design. Research common practice, propose, build phase 1
    (units), plan phase 2 (country/federation variants). Safety: metre altitudes must not be silent conversions of
    feet; schools in metric countries teach their own round numbers.
-6j. [ ] **School-rules profiles** (phase 2 of deep localization, research done: docs/i18n/units-and-rules.md):
-   metric schools teach their own round numbers (DFV: wave-off 1,500 m, pull ≥1,200 m L1; FFP: open ≥1,500 m;
-   Finland: pull 1,600→1,400 m, decide 600 m), so a ft/m switch alone would teach wrong altitudes. Build a visible
-   "rules: USPA / DFV / FFP / British Skydiving / RU-UA metric" profile from the region, in that order; unofficial
-   numbers marked check. Gaps: FPSR/FPSU syllabi, DFV AHB Teil I, APF, Form 330 values, CBPq, KNVvL.
+6j. [x] **School-rules profiles** (phase 2 of deep localization, built 2026-11-18 on branch rules-profiles; seen DE/DFV
+   desktop light, FR/FFP 375 dark with the sources list, RU/RU-UA 375 light chapters, UK/RU-UA 375 light hero +
+   instructor questions, HE/DFV desktop dark right-to-left, EN/USPA 375 light unchanged). "Rules" in the ⋯ menu (USPA /
+   DFV / FFP / British Skydiving / metric schools RU-UA), default from the browser region (US, DE/AT, FR, GB/IE,
+   RU/UA/BY/KZ, else USPA), `?rules=dfv` in the link, "Rules shown: … · change" in the hero, "Where these numbers come
+   from" list with every value's source. Data: `src/content/rules/index.ts`; marks in the English text
+   (`5,500 ft{pull}`, `{~}` = stays USPA, `{uspa}` = USPA-only sentence, block `only: [...]`); `src/rules.ts`. Quiz
+   questions with bare USPA numbers hide under other rules (13 of 74). Dropzone chapter stays Skydive California's.
+   RU/UA unofficial numbers marked check + 5 questions in "Ask the instructors". 40 new strings in 32 languages.
+   **Still unsourced (fall back to USPA + check; redo when a document is found):** DFV decision altitude, hard deck,
+   pattern, wind, licence (AHB Teil I); FFP lock-on, decision, hard deck, pattern; British Skydiving AFF exit/pull/
+   decision/hard deck/pattern (only min. opening 3,000 ft and wind 15 kt are sourced; A Licence is Category 8 + exam,
+   not a jump count); RU/UA: FPSR/FPSU syllabi (exit, pull, decision, hard deck are school/secondary values); pattern
+   points for every federation. Also open: altimeter dial stays in feet for metric rules (needle moves to the metric
+   value); "10 ft (≈3 m)" flare item clips at the left in right-to-left + ft·m (seen HE desktop).
+
 7. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
    (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
@@ -215,7 +226,7 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 2026-11-17 (chat, translations + tooling):
 - [~] "Something wrong or a better word in the translation? Tell me": on every translated language (the top note) and
       in the feedback card; mail subject carries the language.
-- [~] By ear "start a separate branch to fix everything you just said": build the school-rules profiles (6j), checked in
+- [x] (seen DE, FR, RU, UK, HE, EN; 2026-11-18) By ear "start a separate branch to fix everything you just said": build the school-rules profiles (6j), checked in
       every language, on its own branch (sub-chat).
 - [~] Project tooling for contributors (sub-chat): ESLint, Prettier, Husky + lint-staged, i18n checks on commit
       (all languages, tags, numbers), CI on GitHub, CONTRIBUTING, best practices / boilerplates; "TanStack Query" (by
