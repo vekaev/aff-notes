@@ -9,7 +9,7 @@ export const part1: Part = {
     // ---------------------------------------------------------------- plane
     {
       id: 'plane',
-      title: { en: 'The ride up', es: 'La subida', uk: 'Набір висоти', ru: 'Подъём на высоту' },
+      title: { en: 'The ride up', es: 'La subida en el avión', uk: 'Набір висоти', ru: 'Подъём на высоту' },
       blocks: [
         {
           type: 'rules',

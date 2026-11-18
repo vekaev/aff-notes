@@ -54,7 +54,7 @@ export function applySavedTheme() {
 }
 
 const THEME_NAMES: Record<Theme, L> = {
-  system: { en: 'system', es: 'sistema', uk: 'як у системі', ru: 'как в системе' },
+  system: { en: 'system', es: 'como el sistema', uk: 'як у системі', ru: 'как в системе' },
   light: { en: 'light', es: 'claro', uk: 'світла', ru: 'светлая' },
   dark: { en: 'dark', es: 'oscuro', uk: 'темна', ru: 'тёмная' },
 };

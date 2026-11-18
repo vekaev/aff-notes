@@ -18,7 +18,7 @@ const h = (en: string, es: string, ru: string, uk: string): L => ({ en, es, ru, 
 
 const T = {
   eyebrow: h('About these notes', 'Sobre estos apuntes', 'Об этих заметках', 'Про ці нотатки'),
-  title: h('Why I made this', 'Por qué hice esto', 'Зачем я это сделал', 'Навіщо я це зробив'),
+  title: h('Why I made this', 'Por qué hice estos apuntes', 'Зачем я это сделал', 'Навіщо я це зробив'),
   me: h('Yevhenii Petrenko', 'Yevhenii Petrenko', 'Евгений Петренко', 'Євгеній Петренко'),
   from: h('From Ukraine. I love learning new skills, getting better and helping people.', 'De Ucrania. Me encanta aprender cosas nuevas, mejorar y ayudar a la gente.', 'Из Украины. Люблю учиться новому, становиться лучше и помогать людям.', 'З України. Люблю вчитися нового, ставати кращим і допомагати людям.'),
   story: h(
@@ -59,8 +59,8 @@ const T = {
   ),
   open: h('Send feedback', 'Enviar comentarios', 'Оставить отзыв', 'Залишити відгук'),
   close: h('Close', 'Cerrar', 'Закрыть', 'Закрити'),
-  notNow: h('Not now, hide this', 'Ahora no, ocultar', 'Не сейчас, скрыть', 'Не зараз, сховати'),
-  why: h('Why I made this', 'Por qué hice esto', 'Зачем я это сделал', 'Навіщо я це зробив'),
+  notNow: h('Not now, hide this', 'Ahora no, ocultar este aviso', 'Не сейчас, скрыть', 'Не зараз, сховати'),
+  why: h('Why I made this', 'Por qué hice estos apuntes', 'Зачем я это сделал', 'Навіщо я це зробив'),
   findMe: h('Find me:', 'Encuéntrame:', 'Где меня найти:', 'Де мене знайти:'),
   repoText: h('The project is open: read the code, suggest a fix or add something on', 'El proyecto es abierto: lee el código, propón un arreglo o añade algo en', 'Проект открыт: смотри код, предлагай исправления или добавляй своё на', 'Проєкт відкритий: дивись код, пропонуй виправлення або додавай своє на'),
 };
