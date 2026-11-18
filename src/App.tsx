@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
+import { restoreScroll } from './scroll';
 import { parts } from './content';
 import { headline, useLang } from './i18n';
 import { ui } from './ui';
@@ -77,6 +78,7 @@ function MtNote() {
 }
 
 export function App() {
+  useLayoutEffect(restoreScroll, []); // back where the reader was, before the first paint (src/scroll.ts)
   const { t } = useLang();
   useTrackLastChapter();
   const passed = usePassed();
