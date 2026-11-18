@@ -86,39 +86,39 @@ export function useTrackLastChapter() {
 }
 
 const T = {
-  eyebrow: h('AFF category A · study notes', 'AFF categoría A · apuntes', 'AFF категория A · конспект', 'AFF категорія A · конспект'),
+  eyebrow: h('AFF category A · study notes', 'AFF categoría A · apuntes', 'Ускоренное обучение AFF, категория A · конспект', 'Прискорене навчання AFF, категорія A · конспект'),
   title: h('Your first jump, step by step', 'Tu primer salto, paso a paso', 'Твой первый прыжок, шаг за шагом', 'Твій перший стрибок, крок за кроком'),
   sub: h('From the plane door to the landing: what to do, the numbers to remember, and what to do if something goes wrong. Real videos and a short test after each chapter.', 'De la puerta del avión al aterrizaje: qué hacer, las cifras que hay que recordar y qué hacer si algo sale mal. Vídeos reales y una prueba corta tras cada capítulo.', 'От двери самолёта до приземления: что делать, какие цифры помнить и что делать, если что-то пошло не так. Настоящие видео и короткий тест после каждой главы.', 'Від дверей літака до приземлення: що робити, які цифри пам’ятати і що робити, якщо щось пішло не так. Справжні відео та короткий тест після кожного розділу.'),
   start: h('Start reading', 'Empezar a leer', 'Начать читать', 'Почати читати'),
   cont: h('Continue', 'Continuar', 'Продолжить', 'Продовжити'),
-  where: h('You stopped at', 'Te quedaste en', 'Ты остановился на', 'Ти зупинився на'),
+  where: h('You stopped at', 'Te quedaste en', 'Последняя открытая глава', 'Останній відкритий розділ'),
   nextTest: h('Next test', 'Siguiente prueba', 'Следующий тест', 'Наступний тест'),
-  allDone: h('All tests passed. Review the numbers before every jump.', 'Todas las pruebas aprobadas. Repasa las cifras antes de cada salto.', 'Все тесты сданы. Перед каждым прыжком повторяй цифры.', 'Усі тести складено. Перед кожним стрибком повторюй цифри.'),
-  tests: h('tests passed', 'pruebas aprobadas', 'тестов сдано', 'тестів складено'),
+  allDone: h('All tests passed. Review the numbers before every jump.', 'Todas las pruebas aprobadas. Repasa las cifras antes de cada salto.', 'Все тесты пройдены. Перед каждым прыжком повторяй цифры.', 'Усі тести складено. Перед кожним стрибком повторюй цифри.'),
+  tests: h('tests passed', 'pruebas aprobadas', 'тестов пройдено', 'тестів складено'),
   feet: h('Altitudes in feet above the ground (1,000 ft{~} ≈ 300 m)', 'Alturas en pies sobre el suelo (1,000 ft ≈ 300 m)', 'Высота над землёй в футах (1 000 футов ≈ 300 м)', 'Висота над землею у футах (1 000 футів ≈ 300 м)'),
-  ifBad: h('If the main is bad', 'Si la principal falla', 'Если основной плохой', 'Якщо основний поганий'),
+  ifBad: h('If the main is bad', 'Si la principal falla', 'Если с основным куполом что-то не так', 'Якщо з основним куполом проблема'),
   numbers: h('The numbers to know by heart', 'Las cifras que hay que saber de memoria', 'Цифры, которые надо знать наизусть', 'Цифри, які треба знати напам’ять'),
 };
 
 /** The altitudes in the order you pass them, plus two timers. Each links to its chapter. */
 const TAPE: { rule?: RuleId[]; big?: string; label: L; to: string; red?: boolean }[] = [
-  { rule: ['exit'], label: h('exit', 'salida', 'отделение', 'відокремлення'), to: 'count' },
-  { rule: ['lockOn'], label: h('lock on: altimeter only', 'solo el altímetro', 'только высотомер', 'лише висотомір'), to: 'altitude' },
-  { rule: ['pull'], label: h('pull', 'abre', 'раскрытие', 'розкриття'), to: 'deploy' },
-  { rule: ['holdingReach'], label: h('can you reach the holding point?', '¿llegas al punto de espera?', 'долетаешь до точки ожидания?', 'долітаєш до точки очікування?'), to: 'pattern' },
+  { rule: ['exit'], label: h('exit', 'salida del avión', 'отделение от самолёта', 'відокремлення від літака'), to: 'count' },
+  { rule: ['lockOn'], label: h('lock on: altimeter only', 'solo el altímetro', 'дальше смотри только на высотомер', 'далі дивись лише на висотомір'), to: 'altitude' },
+  { rule: ['pull'], label: h('pull', 'apertura del paracaídas', 'раскрой парашют', 'розкрий парашут'), to: 'deploy' },
+  { rule: ['holdingReach'], label: h('can you reach the holding point?', '¿llegas al punto de espera?', 'хватит высоты долететь до точки ожидания?', 'чи долетиш до точки очікування?'), to: 'pattern' },
   { rule: ['holding'], label: h('over the holding point', 'sobre el punto de espera', 'над точкой ожидания', 'над точкою очікування'), to: 'pattern' },
-  { rule: ['patternEntry'], label: h('leave it, start the pattern', 'déjalo, empieza el circuito', 'уходи в схему захода', 'виходь на схему заходу'), to: 'pattern' },
-  { rule: ['downwind', 'base', 'final'], label: h('landing pattern', 'circuito', 'схема захода', 'схема заходу'), to: 'pattern' },
-  { big: '10 ft', label: h('flare, then PLF', 'flare y PLF', 'flare, потом PLF', 'flare, потім PLF'), to: 'flare' },
+  { rule: ['patternEntry'], label: h('leave it, start the pattern', 'déjalo, empieza el circuito', 'оставь точку ожидания, начинай схему захода', 'залиш точку очікування, починай схему заходу'), to: 'pattern' },
+  { rule: ['downwind', 'base', 'final'], label: h('landing pattern', 'circuito', 'схема захода: по ветру, базовая, финал', 'схема заходу: по вітру, базова, фінал'), to: 'pattern' },
+  { big: '10 ft', label: h('flare, then PLF', 'flare y PLF', 'выравнивание (flare), потом приземление с перекатом (PLF)', 'вирівнювання (flare), потім приземлення з перекатом (PLF)'), to: 'flare' },
 ];
 /** Only if the main is bad: the emergency numbers, kept apart so they don't mix with the canopy ones. */
 const EMERGENCY: { rule: RuleId[]; label: L; to: string }[] = [
-  { rule: ['decision'], label: h('decide and act (fix or cut away) by here', 'decide y actúa (arreglar o liberar) antes de aquí', 'реши и действуй (исправить или отцепка) до этой высоты', 'виріши й дій (виправити чи відчеплення) до цієї висоти'), to: 'ep' },
-  { rule: ['hardDeck'], label: h('no cutaway below: pull the reserve only (one exception: a downplane)', 'por debajo no liberes: solo la reserva (excepción: downplane)', 'ниже не отцепляйся: только запасной (исключение: «даунплейн»)', 'нижче не відчіплюйся: лише запасний (виняток: «даунплейн»)'), to: 'ep' },
+  { rule: ['decision'], label: h('decide and act (fix or cut away) by here', 'decide y actúa (arreglar o liberar) antes de aquí', 'до этой высоты реши и действуй: исправь купол или отцепись', 'до цієї висоти виріши й дій: виправ купол або відчепись'), to: 'ep' },
+  { rule: ['hardDeck'], label: h('no cutaway below: pull the reserve only (one exception: a downplane)', 'por debajo no liberes: solo la reserva (excepción: downplane)', 'ниже не отцепляйся: раскрывай только запасной (исключение: «даунплейн», оба купола вниз)', 'нижче не відчіплюйся: розкривай лише запасний (виняток: «даунплейн», обидва куполи вниз)'), to: 'ep' },
 ];
 const TIMERS: { big: string; label: L; to: string }[] = [
-  { big: '3 s', label: h('check altitude, all the time', 'mira el altímetro, siempre', 'смотри на высоту, всегда', 'дивись на висоту, завжди'), to: 'altitude' },
-  { big: '5 s', label: h('count after the pull, then check the canopy', 'cuenta tras abrir y revisa la vela', 'счёт после раскрытия, потом проверка купола', 'рахунок після розкриття, потім перевірка купола'), to: 'deploy' },
+  { big: '3 s', label: h('check altitude, all the time', 'mira el altímetro, siempre', 'смотри на высотомер, постоянно', 'дивись на висотомір, постійно'), to: 'altitude' },
+  { big: '5 s', label: h('count after the pull, then check the canopy', 'cuenta tras abrir y revisa la vela', 'после раскрытия считай до пяти, потом проверь купол', 'після розкриття порахуй до п’яти, потім перевір купол'), to: 'deploy' },
 ];
 
 /**
@@ -207,6 +207,9 @@ export function Hero() {
   const quizIds = new Set(chapters.filter(({ c }) => c.blocks.some(b => b.type === 'quiz' && (!b.only || b.only.includes(rules)) && forRules(b.questions, rules).length)).map(({ c }) => c.id));
   const [last, setLast] = useState<string | null>(null);
   useEffect(() => { try { setLast(localStorage.getItem(LAST)); } catch { /* ignore */ } }, []);
+  // The tab title follows the language (pre-rendered pages start right; switching languages must update it too).
+  const title = t(T.title);
+  useEffect(() => { document.title = `${title} · AFF notes`; }, [title]);
   const lastCh = chapters.find(x => x.c.id === last);
   const nextTest = chapters.find(x => quizIds.has(x.c.id) && !passed.has(x.c.id));
   const done = [...quizIds].filter(id => passed.has(id)).length;

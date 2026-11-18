@@ -9,7 +9,7 @@ export const part1: Part = {
     // ---------------------------------------------------------------- plane
     {
       id: 'plane',
-      title: { en: 'The ride up', es: 'La subida', uk: 'Набір висоти', ru: 'Набор высоты' },
+      title: { en: 'The ride up', es: 'La subida', uk: 'Набір висоти', ru: 'Подъём на высоту' },
       blocks: [
         {
           type: 'rules',
@@ -209,10 +209,10 @@ export const part1: Part = {
               title: { en: 'AAD', es: 'AAD', uk: 'AAD (страхувальний прилад)', ru: 'AAD (страхующий прибор)' },
               points: [
                 {
-                  en: 'Fires the reserve <b>automatically</b> if you are still falling <b>fast</b> when low: in freefall, or under a bad canopy that still comes down fast. On a student unit, around 750–1,000 ft <q-check/>',
-                  es: 'Abre la reserva <b>automáticamente</b> si sigues cayendo <b>rápido</b> a poca altura: en caída libre o bajo una vela en mal estado que todavía baja rápido. En un equipo de alumno, unos 750–1,000 ft <q-check/>',
-                  uk: '<b>Автоматично</b> розкриває запасний, якщо ти ще <b>швидко</b> падаєш низько: у вільному падінні або під несправним куполом, що все ще швидко знижується. На студентському приладі — приблизно 750–1 000 футів <q-check/>',
-                  ru: '<b>Автоматически</b> раскрывает запасной, если ты ещё <b>быстро</b> падаешь низко: в свободном падении или под неисправным куполом, который всё ещё быстро снижается. На студенческом приборе — примерно 750–1 000 футов <q-check/>',
+                  en: 'Fires the reserve <b>automatically</b> if you are still falling <b>fast</b> when low: in freefall, or under a bad canopy that still comes down fast. Student CYPRES 2: about 750 ft in freefall, about 1,000 ft{~} under a canopy still falling faster than 29 mph. Vigil II Student: about 1,040 ft. Ask which one is on your rig.',
+                  es: 'Abre la reserva <b>automáticamente</b> si sigues cayendo <b>rápido</b> a poca altura: en caída libre o bajo una vela en mal estado que todavía baja rápido. CYPRES 2 de alumno: unos 750 ft en caída libre, unos 1,000 ft bajo una vela que todavía baja a más de 29 mph. Vigil II en modo alumno: unos 1,040 ft. Pregunta cuál lleva tu equipo.',
+                  uk: '<b>Автоматично</b> розкриває запасний, якщо ти ще <b>швидко</b> падаєш низько: у вільному падінні або під несправним куполом, що все ще швидко знижується. Студентський CYPRES 2: приблизно 750 футів у вільному падінні, приблизно 1 000 футів під куполом, що ще знижується швидше за 29 mph. Vigil II у студентському режимі: приблизно 1 040 футів. Запитай, який стоїть на твоїй системі.',
+                  ru: '<b>Автоматически</b> раскрывает запасной, если ты ещё <b>быстро</b> падаешь низко: в свободном падении или под неисправным куполом, который всё ещё быстро снижается. Студенческий CYPRES 2: примерно 750 футов в свободном падении, примерно 1 000 футов под куполом, который ещё снижается быстрее 29 mph. Vigil II в студенческом режиме: примерно 1 040 футов. Спроси, какой стоит на твоей системе.',
                 },
                 { en: 'It is <b>only a backup</b>', es: 'Es <b>solo un respaldo</b>', uk: 'Це <b>лише підстраховка</b>', ru: 'Это <b>только подстраховка</b>' },
                 { en: 'Pulling is always <b>your job</b>', es: 'Abrir siempre es <b>tu responsabilidad</b>', uk: 'Розкриватися — завжди <b>твоє завдання</b>', ru: 'Раскрываться — всегда <b>твоя задача</b>' },
@@ -293,7 +293,7 @@ export const part1: Part = {
             { icon: 'rig', title: { en: 'Before you put it on', es: 'Antes de ponértelo', uk: 'Перед тим як одягнути', ru: 'Перед тем как надеть' } },
             { icon: 'person', title: { en: 'After you put it on', es: 'Después de ponértelo', uk: 'Після того як одягнув', ru: 'После того как надел' } },
             { icon: 'plane', title: { en: 'Before boarding', es: 'Antes de subir al avión', uk: 'Перед посадкою в літак', ru: 'Перед посадкой в самолёт' } },
-            { icon: 'door', title: { en: 'Before exit', es: 'Antes de salir', uk: 'Перед відокремленням', ru: 'Перед отделением' } },
+            { icon: 'door', title: { en: 'Before exit', es: 'Antes de salir', uk: 'Перед відокремленням від літака', ru: 'Перед отделением от самолёта' } },
           ],
         },
         {
@@ -492,7 +492,7 @@ export const part1: Part = {
     // ---------------------------------------------------------------- count
     {
       id: 'count',
-      title: { en: 'Exit count', es: 'Conteo de salida', uk: 'Відлік на відокремлення', ru: 'Счёт на отделение' },
+      title: { en: 'Exit count', es: 'Conteo de salida', uk: 'Відлік на відокремлення', ru: 'Счёт на отделение от самолёта' },
       blocks: [
         {
           type: 'exit',

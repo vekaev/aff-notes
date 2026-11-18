@@ -2,27 +2,57 @@
   "name": "aff-notes",
   "private": true,
   "version": "0.1.0",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && node scripts/artifact.mjs",
+    "build": "tsc -b && vite build && node scripts/prerender.mjs && node scripts/artifact.mjs",
     "preview": "vite preview",
     "test": "vitest run",
-    "check": "tsc -b && vitest run"
+    "typecheck": "tsc -b",
+    "lint": "oxlint --type-aware",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "i18n": "node scripts/i18n-extract.mjs",
+    "i18n:check": "node scripts/i18n-extract.mjs --check && vitest run tests/i18n.test.ts",
+    "check": "tsc -b && oxlint --type-aware && node scripts/i18n-extract.mjs --check && prettier --check . && vitest run",
+    "prepare": "husky",
+    "i18n:todo": "node scripts/i18n-todo.mjs",
+    "e2e": "npm run build && playwright test",
+    "size": "node scripts/size-check.mjs"
   },
   "dependencies": {
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
+    "@babel/parser": "^8.1.2",
+    "@commitlint/cli": "^21.2.4",
+    "@commitlint/config-conventional": "^21.2.4",
+    "@playwright/test": "^1.65.1",
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.1",
+    "oxlint": "^1.94.0",
+    "oxlint-tsgolint": "^7.0.2007",
+    "prettier": "^3.10.1",
     "sharp": "^0.35.5",
     "typescript": "^7.0.2",
     "vite": "^8.3.8",
     "vite-plugin-pwa": "^2.0.0",
     "vitest": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs,cjs}": [
+      "oxlint --type-aware",
+      "prettier --write --ignore-unknown"
+    ],
+    "*.{json,md,yml,yaml,css,html}": "prettier --write --ignore-unknown"
   }
 }

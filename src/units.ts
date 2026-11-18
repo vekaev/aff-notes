@@ -29,13 +29,22 @@ export function savedUnits(): Units | null {
 
 /** Languages whose skydiving schools train in metres (docs/i18n/units-and-rules.md). */
 const METRIC_LANGS: readonly string[] = ['ru', 'uk', 'fr', 'de', 'fi', 'da', 'sv', 'pl', 'cs', 'sk', 'lt', 'hu'];
+/** Regions whose federation rules are in feet (USPA, CSPA, British Skydiving, PAI, APF, NZ, PASA, KNVvL). */
+const FEET_REGIONS = new Set(['US', 'CA', 'GB', 'UK', 'IE', 'AU', 'NZ', 'ZA', 'NL']);
 
-/** Default units: metres where schools use metres (by the browser region, else by the app language), else feet. */
+/**
+ * Default units until the reader picks (owner 2026-11-17): a metric-training language → metres; else the browser
+ * region: feet countries → feet, metric countries → metres; English with no region → feet; everyone else → feet and
+ * metres side by side.
+ */
 export function defaultUnits(lang: Lang): Units {
+  if (METRIC_LANGS.includes(lang)) return 'm';
   const prefs = typeof navigator !== 'undefined' ? (navigator.languages?.length ? navigator.languages : [navigator.language]) : [];
   const region = (prefs[0] || '').split('-')[1]?.toUpperCase();
+  if (region && FEET_REGIONS.has(region)) return 'ft';
   if (region && METRIC_REGIONS.has(region)) return 'm';
-  return METRIC_LANGS.includes(lang) ? 'm' : 'ft';
+  if (!region && lang === 'en') return 'ft';
+  return 'both';
 }
 export function saveUnits(u: Units) { try { localStorage.setItem(KEY, u); } catch { /* ignore */ } }
 
@@ -62,15 +71,31 @@ export function toMetres(ft: number): number {
 const mWord = (lang: Lang) => (lang === 'uk' || lang === 'ru' || lang === 'bg' ? 'м' : 'm');
 const NUM = String.raw`\d{1,3}(?:[,.   ]\d{3})+|\d+`;
 const FT_UNIT = String.raw`(?:ft|feet|фт|футів|футов|футах|футами|футам|фута|фути|фут)(?![A-Za-z\u0400-\u04FF])`;
-// "1,000–2,000 ft" (a range) or "5,500 ft"; not when a conversion already follows ("1,000 ft ≈ 300 m").
-const QTY = new RegExp(String.raw`(${NUM})(?:(\s?[–-]\s?|\s?→\s?)(${NUM}))?(\s?)(${FT_UNIT})(?!\s*(?:≈|=|\(≈))`, 'gu');
+// Words that join two heights sharing one "ft" ("2,000 to 1,000 ft"), in the content's languages; arrows and
+// dashes join with or without spaces ("13,000 → 5,500 ft"). Only these: a looser match would also catch "question
+// 28 also asks about 300 ft". Longer phrases first. Without them only the last number was converted ("2,000 to ≈300 m").
+const JOIN = [
+  'и на', 'і на', 'vagy az', 'και τα', 'ή τα', 'έως τα', 'ya da',
+  'to', 'and', 'or', 'y', 'o', 'a', 'ni', 'e', 'ou', 'et', 'à', 'und', 'oder', 'bis', 'til', 'till', 'og', 'och',
+  'eller', 'tot', 'en', 'of', 'do', 'i', 'ili', 'in', 'ali', 'ani', 'și', 'sau', 'la', 'ja', 'tai', 'ir', 'iki',
+  'ar', 'és', 'και', 'έως', 'ile', 'sampai', 'dan', 'atau', 'до', 'и', 'или', 'і', 'чи', 'إلى', 'أو', 'או', 'עד',
+  '到', '或', 'ถึง', 'หรือ',
+].join('|');
+// "1,000–2,000 ft" or "2,000 to 1,000 ft" (a range), "2,500, 2,000, 1,000 ft" (a list: ", " with a space, unlike a
+// thousands comma) or "5,500 ft"; not when a conversion already follows ("1,000 ft ≈ 300 m").
+const QTY = new RegExp(
+  String.raw`((?:(?:${NUM}),\s)*)(${NUM})(?:(\s?[–\-→←]\s?|\s(?:${JOIN})\s)(${NUM}))?(\s?)(${FT_UNIT})(?!\s*(?:≈|=|\(≈))`,
+  'gu',
+);
 const parse = (s: string) => Number(s.replace(/[^\d]/g, ''));
 
 /** Rewrites every "N ft" in a text for the reader's units. Feet stay as written; metres are added or swapped in. */
 export function convertQuantities(text: string, lang: Lang, units: Units): string {
   if (units === 'ft' || !text) return text;
-  return text.replace(QTY, (whole, a: string, dash: string | undefined, b: string | undefined) => {
-    const m = `${group(toMetres(parse(a)), lang)}${dash ? `${dash}${group(toMetres(parse(b!)), lang)}` : ''}${NB}${mWord(lang)}`;
+  const metres = (n: string) => group(toMetres(parse(n)), lang);
+  return text.replace(QTY, (whole, list: string, a: string, dash: string | undefined, b: string | undefined) => {
+    const head = list ? `${list.split(/,\s/u).filter(Boolean).map(metres).join(', ')}, ` : '';
+    const m = `${head}${metres(a)}${dash ? `${dash}${metres(b!)}` : ''}${NB}${mWord(lang)}`;
     return units === 'm' ? `≈${m}` : `${whole} (≈${m})`;
   });
 }

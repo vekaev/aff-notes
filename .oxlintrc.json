@@ -1,0 +1,47 @@
+{
+  // Oxlint (Rust) instead of ESLint: typescript-eslint does not run on the TypeScript 7 native compiler yet,
+  // while oxlint has the react, react-hooks, jsx-a11y and typescript rules built in, and its type-aware rules
+  // (`--type-aware`, via oxlint-tsgolint) run on TypeScript 7. Errors fail the commit and CI; warnings are shown.
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "jsx-a11y", "unicorn", "oxc", "import", "vitest"],
+  "categories": { "correctness": "error", "suspicious": "warn" },
+  "env": { "browser": true, "es2024": true },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "warn",
+    "react/react-in-jsx-scope": "off",
+
+    // React Compiler rules: they flag a render-time chapter counter (App), DOM writes through refs in a scroll
+    // handler (SkyRail) and reading localStorage in an effect (Hero). Worth a look, not worth blocking a commit.
+    "react/immutability": "warn",
+    "react/set-state-in-effect": "warn",
+
+    // Accessibility: real issues stay visible as warnings until the one-time fix pass (docs/PLAN.md, tooling line):
+    // clickable <li> rows in widgets.tsx and the tap-to-reveal card in Blocks.tsx should be <button>s.
+    "jsx-a11y/no-noninteractive-element-interactions": "warn",
+    "jsx-a11y/no-noninteractive-tabindex": "warn",
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    // Valid ARIA (role="dialog" popover, listbox of buttons): native tags would change behaviour and styling.
+    "jsx-a11y/prefer-tag-over-role": "off",
+
+    // Style-only or noisy for this code base.
+    "unicorn/no-array-sort": "off",
+    "unicorn/consistent-function-scoping": "off",
+    "import/no-unassigned-import": "off", // import './styles.css'
+    "typescript/no-unsafe-type-assertion": "off", // JSON.parse(...) as Record<…> on our own files
+    "typescript/consistent-return": "off" // effect cleanups that return nothing on one branch
+  },
+  "overrides": [
+    {
+      "files": ["scripts/**", "*.config.ts", "tests/**"],
+      "env": { "node": true },
+      "rules": {
+        "typescript/require-array-sort-compare": "off",
+        "vitest/valid-expect": "off" // vitest allows expect(value, message)
+      }
+    }
+  ],
+  "ignorePatterns": [".claude", "dist", "dev-dist", "node_modules", "public", "docs"]
+}

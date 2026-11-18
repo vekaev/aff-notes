@@ -1,0 +1,19 @@
+name: Bug
+description: Something on screen is broken
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what you expected
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device, browser, language
+      placeholder: iPhone 15, Safari, ?lang=fr
+  - type: textarea
+    id: shot
+    attributes:
+      label: Screenshot (optional)

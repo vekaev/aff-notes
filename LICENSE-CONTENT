@@ -1,0 +1,26 @@
+AFF notes: written notes and drawings
+Copyright (c) 2026 Yevhenii Petrenko and contributors
+
+Licensed under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+Full text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+You may share and adapt this material, also commercially, if you give credit ("AFF notes,
+https://github.com/vekaev/aff-notes"), link to the license, say what you changed, and share your adaptations
+under the same license.
+
+What this covers:
+- The study text and its translations: src/content/ (all languages, including src/content/i18n/*.json) and
+  src/ui.ts.
+- The drawings and illustrations: the SVG drawings in src/ (canopy, aircraft, altitude and pattern diagrams) and
+  the images in public/ outside public/media (icons, og.png).
+
+What this does NOT cover:
+- The video clips in public/media. They are short excerpts from other people's YouTube videos and belong to their
+  creators. Each clip is credited and linked (with its start time) next to where it is shown in the app. They are
+  not covered by this license or by the MIT license; ask the creator for any reuse.
+- Names and trademarks (USPA, dropzone and equipment brand names) and short quotations from the sources, which
+  belong to their owners.
+- The source code, which is under the MIT license (see LICENSE).
+
+Safety: this material is study help, not training. It comes without any warranty (see section 5 of the license).
+A student's own instructors' briefing always wins.

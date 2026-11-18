@@ -126,8 +126,42 @@ export function SkyRail() {
     const f = Math.min(1, Math.max(0, (y - r.top) / r.height));
     scrollTo({ top: f * (document.documentElement.scrollHeight - innerHeight), behavior: smooth && !reduce ? 'smooth' : 'auto' });
   };
+  // Touch: only the skydiver is grabbable (the rest of the rail is where the thumb scrolls), and it moves with the
+  // finger from where it was grabbed, never jumping: page position = position at grab + finger distance × page/rail.
+  const grab = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== 'touch') return;
+    e.stopPropagation();
+    e.preventDefault();
+    const jumperEl = e.currentTarget;
+    const rail = jumperEl.parentElement!;
+    const range = Math.max(1, rail.getBoundingClientRect().height - jumperEl.offsetHeight - 26);
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const y0 = e.clientY;
+    const s0 = scrollY;
+    jumperEl.setPointerCapture(e.pointerId);
+    rail.classList.add('dragging');
+    let frame = 0;
+    let lastY = y0;
+    const move = (ev: PointerEvent) => {
+      lastY = ev.clientY;
+      if (!frame)
+        frame = requestAnimationFrame(() => {
+          frame = 0;
+          scrollTo({ top: Math.min(max, Math.max(0, s0 + ((lastY - y0) / range) * max)), behavior: 'auto' });
+        });
+    };
+    const up = () => {
+      jumperEl.removeEventListener('pointermove', move);
+      jumperEl.removeEventListener('pointerup', up);
+      jumperEl.removeEventListener('pointercancel', up);
+      rail.classList.remove('dragging');
+    };
+    jumperEl.addEventListener('pointermove', move);
+    jumperEl.addEventListener('pointerup', up);
+    jumperEl.addEventListener('pointercancel', up);
+  };
   const down = (e: React.PointerEvent<HTMLDivElement>) => {
-    // Mouse and pen only. On a phone the rail sits where the thumb scrolls: a touch there used to jump the page.
+    // Mouse and pen: click or drag anywhere on the rail. Touch: only the skydiver (`grab`).
     if (e.pointerType === 'touch') return;
     const el = e.currentTarget;
     el.setPointerCapture(e.pointerId);
@@ -150,7 +184,7 @@ export function SkyRail() {
           <line x1="0" y1="22.5" x2="40" y2="22.5" stroke="var(--line-strong)" strokeWidth="1.5" />
         </svg>
       </div>
-      <div className="sky-jumper" ref={jumper}>
+      <div className="sky-jumper" ref={jumper} onPointerDown={grab}>
         <span className="sky-alt" ref={altEl} />
         <svg key={pose} viewBox="0 0 40 48" className="pose-in"><Jumper pose={pose} /></svg>
         {burst > 0 && (

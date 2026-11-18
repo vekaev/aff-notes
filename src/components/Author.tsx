@@ -11,6 +11,8 @@ export const LINKS = {
   repo: 'https://github.com/vekaev/aff-notes',
   github: 'https://github.com/vekaev',
   linkedin: 'https://www.linkedin.com/in/vekaev',
+  facebook: 'https://www.facebook.com/vekaev/',
+  instagram: 'https://www.instagram.com/vekaev.ceramics',
 };
 const h = (en: string, es: string, ru: string, uk: string): L => ({ en, es, ru, uk });
 
@@ -18,7 +20,7 @@ const T = {
   eyebrow: h('About these notes', 'Sobre estos apuntes', 'Об этих заметках', 'Про ці нотатки'),
   title: h('Why I made this', 'Por qué hice esto', 'Зачем я это сделал', 'Навіщо я це зробив'),
   me: h('Yevhenii Petrenko', 'Yevhenii Petrenko', 'Евгений Петренко', 'Євгеній Петренко'),
-  from: h('From Ukraine. I love learning new skills and helping people get better.', 'De Ucrania. Me encanta aprender cosas nuevas y ayudar a otros a mejorar.', 'Из Украины. Люблю учиться новому и помогать людям становиться лучше.', 'З України. Люблю вчитися нового й допомагати людям ставати кращими.'),
+  from: h('From Ukraine. I love learning new skills, getting better and helping people.', 'De Ucrania. Me encanta aprender cosas nuevas, mejorar y ayudar a la gente.', 'Из Украины. Люблю учиться новому, становиться лучше и помогать людям.', 'З України. Люблю вчитися нового, ставати кращим і допомагати людям.'),
   story: h(
     'I went through the AFF course myself. It is an incredible sport, and the course is not easy: a lot to remember, and the things that matter most happen in seconds. I made these notes to learn it properly, and then wanted them to help others too.',
     'Hice el curso AFF yo mismo. Es un deporte increíble, y el curso no es fácil: hay mucho que recordar, y lo más importante pasa en segundos. Hice estos apuntes para aprenderlo bien, y luego quise que ayudaran a otros también.',
@@ -100,7 +102,9 @@ export function AboutAuthor() {
           <p className="links">
             <span className="muted">{t(T.findMe)}</span>{' '}
             <a href={LINKS.github} target="_blank" rel="noopener">GitHub</a>
-            {LINKS.linkedin && <>{' · '}<a href={LINKS.linkedin} target="_blank" rel="noopener">LinkedIn</a></>}
+            {' · '}<a href={LINKS.linkedin} target="_blank" rel="noopener">LinkedIn</a>
+            {' · '}<a href={LINKS.facebook} target="_blank" rel="noopener">Facebook</a>
+            {' · '}<a href={LINKS.instagram} target="_blank" rel="noopener">Instagram</a>
           </p>
         </div>
       </section>
@@ -108,7 +112,6 @@ export function AboutAuthor() {
   );
 }
 
-const SEEN = 'aff-feedback-seen';
 const HIDDEN = 'aff-feedback-hidden';
 
 export function FeedbackBubble() {
@@ -117,15 +120,11 @@ export function FeedbackBubble() {
   const [shown, setShown] = useState(false);
   const [hidden, setHidden] = useState(() => { try { return localStorage.getItem(HIDDEN) === '1'; } catch { return false; } });
   useEffect(() => {
-    const id = setTimeout(() => {
-      setShown(true);
-      let seen = false;
-      try { seen = localStorage.getItem(SEEN) === '1'; } catch { /* ignore */ }
-      if (!seen) setOpen(true);
-    }, 10000);
+    // After a minute only the round "?" icon appears; the card never opens by itself over what the reader is reading (owner, 2026-11-17).
+    const id = setTimeout(() => setShown(true), 60000);
     return () => clearTimeout(id);
   }, []);
-  const close = () => { setOpen(false); try { localStorage.setItem(SEEN, '1'); } catch { /* ignore */ } };
+  const close = () => setOpen(false);
   // "Not now": the bubble and its icon go away for good on this device; the "write to me" card at the end stays.
   const hide = () => { close(); setHidden(true); try { localStorage.setItem(HIDDEN, '1'); } catch { /* ignore */ } };
   if (!shown || hidden) return null;
@@ -146,7 +145,7 @@ export function FeedbackBubble() {
         </div>
       )}
       <button type="button" className="fbub-btn" aria-label={t(T.open)} aria-expanded={open} onClick={() => (open ? close() : setOpen(true))}>
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z" /><path d="M8 9h8M8 12h5" /></svg>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M9.5 9.25a2.5 2.5 0 0 1 4.9.75c0 1.75-2.4 2.25-2.4 3.75" /><path d="M12 17h.01" /></svg>
       </button>
     </div>
   );

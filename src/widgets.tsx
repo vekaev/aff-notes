@@ -287,7 +287,7 @@ export function LowTurn({ b }: { b: Extract<Block, { type: 'lowturn' }> }) {
           <g fontFamily="var(--mono)" fontSize="10">
             <EndLabel x={100} y={112} fill="var(--red)" s={t({ en: 'turn starts low', es: 'el giro empieza bajo', ru: 'поворот низко', uk: 'поворот низько' })} />
             <EndLabel x={112} y={172} fill="var(--red)" s={t({ en: 'dives, speeds up', es: 'se clava, acelera', ru: 'ныряет, разгоняется', uk: 'пірнає, розганяється' })} />
-            <text x="312" y="203" textAnchor="end" fill="var(--ink)">{t({ en: 'straight: glide, flare', es: 'recto: planeo, flare', ru: 'прямо: скольжение, flare', uk: 'прямо: ковзання, flare' })}</text>
+            <text x="312" y="203" textAnchor="end" fill="var(--ink)">{t({ en: 'straight: glide, flare', es: 'recto: planeo, flare', ru: 'прямо: скольжение, выравнивание', uk: 'прямо: ковзання, вирівнювання' })}</text>
             <text x="12" y="202" fill="var(--muted)">{t(ui.sideView)}</text>
           </g>
         </svg>

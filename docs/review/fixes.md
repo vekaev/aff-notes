@@ -7,6 +7,96 @@ Expert reports: `docs/review/expert/<scope>.md`. A second, independent pass on P
 first one was being fixed) is kept in `docs/review/expert/second-opinion/part4-emergencies.md`: compare it with the fixer
 log when Part IV is done.
 
+## Final summary (2026-11-17 10:00 PST, last run of the 24-hour review task)
+
+The 24-hour review round is over; the regular autopilot (`autopilot-aff-notes`, twice a day) takes over from here.
+
+- **Expert fact-check, 6 scopes, all processed**: 69 fixed, 21 added, 7 rejected (claim didn't hold against the
+  source), 17 ask-owner (school-specific; each is a line in the app's "questions for your instructors" chapter and
+  a `check` badge until the instructors answer).
+- **Curriculum**: proposals #1–#6 built (final check, rig photos, "when freefall goes wrong", traffic, landing off);
+  #7 (after the silver handle) is the next one, todo.
+- **Real footage**: 6 clips + 8 photos placed, all with credit and link.
+- **Todo (needs nothing from the owner)**: Part IV: 4 left for later (#17, M1, M2, C3 elsewhere); optional source
+  checks from the AI-run fact-checks: MARD line, "Two instructors" line, 73–88 % anchors, USPA 2024 fatality figure,
+  tunnel shoulder study; curriculum #7.
+- **Still open, waiting on the owner** (docs/PLAN.md "Waiting on you"): instructor briefing answers, hand signals
+  "legs in" + "OK", Q27 key (300 or 1,000 ft), headline case, big reorder of Part IV, the dropzone map photo.
+- **2026-11-18 06:00 PST**: the task kept firing after the deadline; it can't switch itself off or the autopilot
+  on without the owner's approval in an unattended run. Asked under "Waiting on you" in docs/PLAN.md. No content changes.
+- **In progress elsewhere**: school-rules profiles, draft PR #6 (not merged; needs a merge of main, regenerate en.json).
+
+## Status 2026-11-17 08:00 PST
+
+08:00 run: part4 `real` new stat "6/10": 6 of the 10 US deaths in 2023 happened at landing under an open canopy, 1
+was an equipment problem; AADs and reserve static lines have nearly ended the no-pull and equipment deaths that once
+caused most of them. Source re-read this run: "A Widespread Improvement: The 2023 Fatality Summary", Parachutist,
+2024-04-09 (parachutist.com ArticleID 9378): record low of 10; landing problems 6 (4 intentional low turns); equipment 1;
+"automatic activation devices and reserve static lines have nearly eliminated fatalities in categories that used to
+contribute significantly". All 32 languages. Still open (optional): MARD line, "Two instructors" line, 73–88 % anchors,
+USPA 2024 fatality figure, tunnel shoulder study. School-rules PR #6 still a draft (no content collision: it doesn't
+touch this stat).
+
+## Status 2026-11-17 06:00 PST
+
+06:00 run: the school-rules sub-chat saved its work as draft PR #6 (05:58, not merged; it changes all four part files
+and every language file), so this run edited on its own branch and kept the change to two lines; #6 will need a merge
+of main (regenerate en.json, keep both sides).
+- part4 EP chapter: "More than 4,000 cutaways a year (USPA, 2019)" → "About 4,777 reserve rides in 2025 in the US
+  (USPA survey estimate, 1 per 726 jumps)". Source re-read: uspa.org/find/faqs/safety (2025 USPA Member Survey).
+  The page has no 2023 figure; the "2023: 4,913" in PLAN is unconfirmed.
+- part4 tips: new line "Later, downsize one size at a time, and change size or canopy type, never both at once (USPA
+  downsizing checklist)". Source re-read: uspa.org/downsize (USPA Downsizing Checklist PDF: "Downsize one size at a
+  time"; "Change planform (type of canopy) or size, not both"). UK/France binding size rules left for the school-rules
+  profiles.
+- All 32 languages. Still open from the AI-run fact-checks: MARD line, "Two instructors" line, 73–88 % anchors, USPA
+  2024 fatality figure (all optional).
+
+## Status 2026-11-17 04:00 PST
+
+04:00 run: no content edits: the school-rules sub-chat is running (since ~04:01) with all four part files, dropzone.ts
+and the language files open and uncommitted in its worktree; editing them on main now would collide. Done instead:
+the four open "Facts to verify" lines in docs/PLAN.md checked against USPA SIM 4-1 (uspa.org/sim/4-1, section G):
+- Water: "Flare to half brakes at 10 feet above the surface" = the app. Building: "flare 10 feet above the first point
+  of contact" = a height, as the app says. Both closed.
+- Slider stuck: SIM 4-1 has no procedure; the app already says toggles (some schools rear risers) + q-check +
+  instructor question. Closed. "5–6 s at full brakes" no longer in the app. Closed.
+- Cutaways a year: part4 says "more than 4,000 (USPA, 2019)"; USPA's safety FAQ now gives ~4,777 reserve rides in 2025
+  (~1 per 726 jumps, member survey). Open content task: update the line once the school-rules chat commits.
+Still open from the AI-run fact-checks: downsizing line, MARD line, "Two instructors" line, 73–88 % anchors, USPA 2024
+fatality figure.
+
+## Status 2026-11-17 02:00 PST
+
+02:00 run: two more content tasks from the AI-run fact-checks (PLAN "Resume here" step 4), sources re-checked:
+- part4 `ep` RSL line: "if your rig has one <q-check/>" → "Student rigs must have an RSL (USPA BSR 2-1 M): … pull
+  silver anyway, straight away." Source: USPA BSR 2-1 M.2.b ("a reserve static line" required for all students until
+  the A license) and SIM 4-3 F ("RSL use is mandatory for students"). q-check resolved (safety).
+- part2 "Overloaded or lost?": one-line why: first-jump stress impairs learning of complex new tasks (Taverniers et
+  al. 2011, Cogn Affect Behav Neurosci 11:332–343, 61 cadets). The false "cognitive flexibility" claim not used.
+- All 32 languages (28 JSON by a translator agent from each language's old wording + glossary; back-checked ar, th,
+  zh). Native check wanted: sr ("samo pomoć" replaced an odd "rezerva za rezervu"), hu, sl, ko/ja bold placement.
+- Checks: `npm run check` 0, `npx vite build` 0, strings present in the build. **Not seen on screen**: the dev-server
+  preview was declined in this unattended run. Page guard not run (text-only change).
+- Still open from step 4: downsizing line (part4 tips), MARD line, "Two instructors" line, 73–88 % anchors, USPA 2024
+  fatality figure (optional ones).
+
+## Status 2026-11-17 00:00 PST
+
+00:00 run: content tasks from the AI-run fact-checks (PLAN "Resume here" step 4), sources re-checked this run:
+- part1 AAD card: "around 750–1,000 ft <q-check/>" → model figures: Student CYPRES 2 ~750 ft in freefall, ~1,000 ft
+  under a canopy still faster than 29 mph (cypres.aero/?p=3130); Vigil II Student 1,040 ft at ≥20 m/s (Vigil II
+  manual v2.0.6 §3.3.2); "ask which one is on your rig". q-check resolved.
+- part4 two canopies: new line on how a student gets two out (late pull / riding a fast malfunction below ~1,000 ft
+  lets the student AAD fire); pull on time, act by decision altitude (CYPRES page above).
+- part4 `real`: new stat "49 injuries and 0.57 deaths per 100,000 jumps, no tandem deaths" and the source link
+  "Fer 2021, FFP 2010–19" (doi:10.1016/j.jsams.2020.11.002; abstract via Europe PMC: 6.2 M jumps, 35 deaths, 3,015
+  injuries, RR 6.1 students).
+- All 32 languages updated (tests: same numbers and tags). Not done yet: part2 Taverniers line, 73–88 % anchors,
+  USPA 2024 fatality figure (optional).
+- Seen: RU phone light (ft+m), UK phone dark, ES desktop light, EN by text. Page guard not run (text-only change).
+- docs/PLAN.md not ticked this run: it had another chat's uncommitted edits.
+
 ## Status 2026-11-16 22:00 PST
 
 22:00 run: curriculum #6 landing off + after you land (Part III obstacles chapter), 2 decision questions, 2 instructor questions (wind drag on the ground and telling the DZ are not in SIM 4-1: <q-check/>).

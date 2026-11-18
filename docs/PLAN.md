@@ -5,8 +5,9 @@ true to the sources, grouped the way a jump happens, short, readable and shown w
 remembers the right thing at the right second because of it, it was worth it. Every change is checked against that:
 is it true, is it clear, does it help someone on their next jump?
 
-Personal study app for AFF (Accelerated Freefall) after the ground course at Skydive California (Tracy, CA).
-For personal use for now; maybe later shared with the dropzone, or turned into an app for beginner skydivers.
+Study app for AFF (Accelerated Freefall) students, started after the owner's ground course at Skydive California
+(Tracy, CA). Public since 2026-11-17: github.com/vekaev/aff-notes (MIT code, CC BY-SA content, clips belong to their
+creators) and https://aff-notes.vercel.app; 32 languages. Project on one page: docs/ARCHITECTURE.md.
 Every request from the owner goes here first. `[x]` = in the app (content tests pass); `[ ]` = not done.
 Seen on screen 2026-11-16: hero, climb-out, hand signals, deploy + canopy check, landing pattern, EP, malfunctions
 (desktop, light, EN); canopy check, obstacles, a chapter test (phone, dark, RU).
@@ -38,23 +39,29 @@ Work in this order; tick each line here and in the inbox below; one item per run
    collection, so re-source those rows from each org's own site or mark them (found 2026-11-17, 6b/6c).
    **Content tasks from the AI-run fact-checks** (2026-11-17; sources in `docs/outreach/raw/ext_chatgpt_1_factcheck.md`
    and `ext_ai_run2_factcheck.md`; facts rule applies: re-check the source before editing):
-   - [ ] part1 AAD card: replace "around 750–1,000 ft <q-check/>" with model figures (CYPRES 2 Student ~750 ft in
+   - [x] (0e9f702) part1 AAD card: replace "around 750–1,000 ft <q-check/>" with model figures (CYPRES 2 Student ~750 ft in
      freefall, ~1,000 ft under a canopy faster than 29 mph; Vigil II Student 1,040 ft) + "ask which unit your school
      uses" (cypres.aero/?p=3130; Vigil II manual v2.0.6).
-   - [ ] part4 two canopies: one line: a late pull or riding a fast partial malfunction below ~1,000 ft can fire the
+   - [x] (0e9f702) part4 two canopies: one line: a late pull or riding a fast partial malfunction below ~1,000 ft can fire the
      student AAD → two canopies out, possibly a downplane; pull on time, act by decision altitude (CYPRES; Parachutist
      Safety Check Jan 2026; SIM 4-1).
-   - [ ] part2 "Overloaded or lost?": one-line why: first-jump stress impairs learning complex new tasks, so keep the
+   - [x] (this run, 02:00 run 2026-11-17; not seen on screen: preview declined) part2 "Overloaded or lost?": one-line why: first-jump stress impairs learning complex new tasks, so keep the
      plan to a few rehearsed moves (Taverniers et al. 2011, PMID 21607782). Don't use the cadet "cognitive flexibility"
      claim (false).
-   - [ ] part4 `real` sources: add "Fer 2021: France 2010–19" (doi:10.1016/j.jsams.2020.11.002); the "~6×" figure
+   - [x] (0e9f702) part4 `real` sources: add "Fer 2021: France 2010–19" (doi:10.1016/j.jsams.2020.11.002); the "~6×" figure
      comes from it.
-   - [ ] part4 `real` stats: "how rare" figure: 49 injuries and 0.57 deaths per 100,000 jumps (France 2010–19,
+   - [x] (0e9f702) part4 `real` stats: "how rare" figure: 49 injuries and 0.57 deaths per 100,000 jumps (France 2010–19,
      6.2 M jumps, no tandem deaths) (Fer 2021 abstract). Don't use Barthel 2023's ">62 M jumps / 0.044 % / 0.0011 %"
      (the paper contradicts itself).
    - [ ] part4 `real`, optional: name the studies behind "73–88 %" (Westman 87.9 % canopy + landing; France 83.3 %).
    - [ ] optional: USPA 2024 "9 deaths in ~3.88 M jumps": check Parachutist's 2024 fatality summary first. Accident
      lessons: link USPA yearly summaries / FAI safety report, not SkydivingFatalities.info (unsigned, outdated).
+   - [x] (08:00 run 2026-11-17, source re-read: parachutist.com ArticleID 9378: 10 deaths, landing 6, equipment 1; all 32 languages) part4 `real`, one line on why causes changed (Gemini run 1 fact-check, `ext_gemini_1_factcheck.md` #2): "AADs
+     and reserve static lines have nearly eliminated deaths from no pulls and equipment; most US deaths now happen
+     under an open canopy, at landing" (USPA 2023 Fatality Summary, parachutist.com articleid 9378: 10 deaths, 6
+     landing, 1 equipment).
+   - [ ] optional, tunnel: Newcomb et al. 2022 (PMC8929224), anterior shoulder dislocations from indoor skydiving:
+     read the full text first; if useful, a tunnel-safety tip marked check.
 5. [ ] **The ask**: from `docs/outreach/raw/how-to-ask.md` and the analysis, write `docs/outreach/email.md` (email,
    follow-up, Reddit post, creator DM) with the owner's mission. Nothing is sent: the owner approves each wave.
 6. [ ] **Outreach pipeline** (owner 2026-11-17): send emails in each contact's language and track everything:
@@ -112,10 +119,10 @@ Work in this order; tick each line here and in the inbox below; one item per run
    Fact-check `ext_ai_run3_factcheck.md`: 26 claims, 14 true, 10 partly, 1 false (NTSB doesn't investigate skydiver
    deaths), 1 unverified (failed PLF "leading cause"). Dutch tunnel-overconfidence = speculation in the Discussion,
    not a finding; Vigil battery 8–12 yrs; BS Form 330(i) + Ops Manual s.6 and FFP DT 48 are binding canopy-size rules.
-   - [ ] content, part4 `ep` RSL line: "Student rigs must have one (USPA SIM 4-3 F); it's a backup: pull silver
+   - [x] (02:00 run 2026-11-17, source re-checked: USPA BSR 2-1 M.2.b + SIM 4-3 F; q-check removed; all 32 languages; not seen on screen) content, part4 `ep` RSL line: "Student rigs must have one (USPA SIM 4-3 F); it's a backup: pull silver
      anyway, straight away" instead of "if your rig has one <q-check/>".
-   - [ ] content, part4 `tips` next to the canopy course: downsizing: one size at a time, change size or type not
-     both (uspa.org/downsize); UK and France set binding minimum sizes by weight and jumps (BS Form 330(i); FFP DT 48).
+   - [x] (06:00 run 2026-11-17, source re-read: USPA Downsizing Checklist PDF, uspa.org/downsize) content, part4 `tips` next to the canopy course: downsizing: one size at a time, change size or type not
+     both (uspa.org/downsize). Not added (owner may want it in the school-rules profiles): UK and France set binding minimum sizes by weight and jumps (BS Form 330(i); FFP DT 48).
    - [ ] content, optional: MARD line (Skyhook: reserve out ~0.5 s after cutaway, still pull silver; UPT, USPA 2018).
    - [ ] content, optional: part1 "Two instructors": USPA allows one AFF instructor after set tunnel training
      (BSR 2-1 G.4.2.1), ask your school.
@@ -123,6 +130,12 @@ Work in this order; tick each line here and in the inbox below; one item per run
      KNVvL para@knvvl.nl, PD support@, iFLY merge table with wrong cities, Bottrop phone +49 2041 373730, ISC Bureau names).
    - [!] redo: live USPA DZ count (fetch to uspa.org was refused by the permission check; mirror used), the 2 new DZs'
      own pages, Vigil dealer locator (JavaScript only), 5 CYPRES pages that failed, British Skydiving s.6 PDF (404).
+   Full report pasted by the owner 2026-11-17 + its Gemini chat read in Dia (Tavus account, "Skydiving Safety
+   Directory"): `ext_ai_run3_full.md`. Gemini never wrote its "193-row" CSV: 49 rows drafted in its reasoning, 48
+   already in, 1 new (MC Industries). Re-checked leads (`ext_ai_run3_full_leads.csv`): APF careers page is job ads,
+   iFLY info.<city>@ inboxes don't exist (pr@, partnerships@ and Wilmington events@ do), 2 AU DZ emails added.
+   - [!] redo: IBA tunnel list tunnelflight.com/tunnels/all (public, robots allow; fetch blocked by the permission
+     check): open it in Dia or allow the fetch, then dedupe against the 414 tunnel rows.
 6d. [x] Owner 2026-11-17: AI runs return too little → prompt v2 for volume (one narrow scope per run, table only,
    harvest whole directories, "continue" follow-ups, 29 scopes): `docs/outreach/deep-research-prompt-v2.md`.
    Owner runs it in other tools; each answer saved as `raw/ext_<tool>_<scope>.unverified.csv.txt`, verified + merged.
@@ -167,9 +180,52 @@ Work in this order; tick each line here and in the inbox below; one item per run
    not a jump count); RU/UA: FPSR/FPSU syllabi (exit, pull, decision, hard deck are school/secondary values); pattern
    points for every federation. Also open: altimeter dial stays in feet for metric rules (needle moves to the metric
    value); "10 ft (≈3 m)" flare item clips at the left in right-to-left + ft·m (seen HE desktop).
-
-7. [?] Waiting on the owner: shareable private link + clips replaced by YouTube embeds before any outreach; sender
-   (Gmail, 20–40 a day); first wave = own school and instructor; keep the GitHub photo at the end or send another.
+6k. [~] **Owner sends the latest deep-research results from Gemini, Claude and ChatGPT** (owner 2026-11-17, "I will come
+   back to it later"). When they arrive: save each as `docs/outreach/raw/ext_<tool>_<scope>.unverified.csv.txt` + `.md`
+   (a pasted chat or uploaded file), then process like 6b/6c/6h: verify every row at its source, drop legal/privacy
+   inboxes, fact-check the claims, merge with `scripts/merge-contacts.py` and report new vs already-known rows
+   (repeats are expected and fine).
+   2026-11-17: fetched by the agent itself in Dia (owner: "open Gemini/ChatGPT under my Tavus account").
+   - [x] Gemini "Skydiving Safety Directory": its 193-row CSV was never written (49 drafts, 48 known) → 6h.
+   - [x] Gemini run 1, turn 6 (owner asked "Can u run this plan and collect this data"; fetched again 2026-11-17 in a
+     sub-chat): the CSV now exists: 232 rows (it says 193; 216 with shifted columns), saved unchanged
+     (`raw/ext_gemini_1.md`, `ext_gemini_1.unverified.csv.txt`). ~190 already known; ~60 checked on own sites →
+     21 rows in `ext_gemini_1_verified.csv`: 14 new (10 with email: McNeil, Barry, Wang, Jacoby, Iowa State,
+     FSC Lipperland, Western Parachute Service, 2 YouTube creators, + 5 PASA-listed Facebook groups), 1 email fill
+     (WeFly), 4 CSPA rows + board addresses; dropped pissedconsumer iFLY info.<city>@, legal/RMA inboxes, PIA-only
+     emails, iFLY Hollywood (closed), the Smith & Pell satire paper. contacts.csv 4,159 → 4,173 rows, emails
+     2,322 → 2,332. Fact-check `ext_gemini_1_factcheck.md`: 20 claims, 10 true, 7 partly, 2 false (Peyron 2018 is a
+     suicide case report; Smith & Pell 2003 is satire), 1 unverified. Better inboxes for known rows (Perris manifest@,
+     CSPA, DFV technik@, JYRO) in `ext_gemini_1_leads.md` → step 4 clean-up.
+   - [!] redo: 6 rows not checked (`raw/ext_gemini_1_pending.unverified.csv.txt`: GRISSUL Lausanne emails, Skydiving
+     NSW bigpond address, Parachute Academy mario@, Basik aerosportevents@, 2 Facebook groups). One search each in a
+     fresh session, then merge.
+   - [x] ChatGPT "Build Skydiving Contacts" (Tavus 2.0 workspace, agent mode): 3 CSVs, 533 + 1,008 + 817 rows
+     (`raw/ext_chatgpt_2{a,b,c}_*.unverified.csv.txt`, report `ext_chatgpt_2_report.md`, chat `ext_chatgpt_2_conversation.md`).
+     1,679 already known, 679 new. 86 with a contact verified on own sites → 65 kept (21 dropped: closed, unrelated,
+     a test record, a gambling domain); + 47 CSPA opt-in rigger emails; + 12 emails for known rows; + 2 published
+     personal addresses (FFP DTN, FSC Remscheid) → `ext_chatgpt_2_verified.csv`. 469 name-only rows researched
+     (owner: "as many emails as possible") → 198 with a contact (146 emails), 102 dropped → `ext_chatgpt_2_names_researched.csv`.
+     contacts.csv 3,985 → 4,122 rows, emails 2,035 → 2,141.
+   - [!] redo: 169 name-only rows not searched (session web-search limit, 200 shared): `raw/ext_chatgpt_2_names_pending.unverified.csv.txt`
+     (US 22, Russia 15, Brazil 13, Italy 11, Germany 10…). One search each in a fresh session, then merge.
+   - [ ] dedupe at step 4: Tandem Skydive Germany ×5 sites (one company), Nuggets ×2, iFLY Orlando ×2, Mendoza ×2,
+     SkydivePorto group, iSkydive America group (Capital City, Charlevoix, DC, NY Tandem).
+   - [x] Claude run (Tavus org, chat "Unfilled scope placeholder", fetched 2026-11-17): 539 rows (USPA DZs + FAI),
+     mostly known; 35 new + 3 email fills (`raw/ext_claude_1_verified.csv`); 122 FAI ISC delegates (names only) →
+     `todo/email_hunt_14.csv`. Content lead: FAI Technical & Safety Committee yearly safety reports 2001–2023.
+   - [x] Site email hunt (no search, sites read directly): 557 no-email rows with a website → 182 emails found,
+     221 none, 154 dead/hijacked sites (`todo/dead_sites_2026-11-17.csv`, for the step 4 clean-up).
+     contacts.csv now 4,129 rows, 2,284 with email.
+   - [x] M2 AAD dealer list (m2aad.com/contacts-2, robots allow): 77 rows, 30 new, 8 email fills (`raw/m2aad_dealers.csv`);
+     check Skydive Breclav and DZ Ignalina (matched on the dealer's domain).
+   - [ ] Email hunt batches 01–14 (`todo/email_hunt_*.csv`, ~1,550 rows needing a search): one fresh desktop session
+     each (sessions can't start over Remote Control).
+7. [?] Waiting on the owner (link + clips settled 2026-11-17: public, clips kept): sender = a project domain + one
+   Workspace mailbox, never the personal Gmail (docs/outreach/sending.md: domain name? ~$100 budget? postal address for
+   the footer?); first wave = own school and instructor; photo: the GitHub one stays (owner 2026-11-17);
+   community: answered 2026-11-17 (owner not admin, the community decides everything; propose Discord, Reddit and a
+   forum), see docs/community/PLAN.md §11.
 Linked sub-chats (may be idle): outreach-europe, outreach-world, outreach-lists, outreach-people. Their files are in
 `docs/outreach/raw/`; nothing in them needs a commit except what's listed above.
 
@@ -179,6 +235,32 @@ owner's words in short. Status: `[ ]` planned · `[~]` started · `[!]` blocked 
 owner · `[x]` done and seen on screen (commit) · `[?]` waiting on the owner (the question is under "Waiting on you").
 A re-ask is marked `re-asked <date>: why it wasn't done` on the same line. The 2-hourly run and the autopilot work the open
 lines top down; a line is closed only when it's done and seen, or the owner drops it.
+
+2026-11-18 (scheduled run "PRs and Codex translations"; report: docs/review/prs-and-codex-2026-11-18.md):
+- [x] Review contributor / Dependabot PRs: none open (only the owner's draft #6).
+- [x] Read the owner's Codex chat "Review translation quality" (its patch never reached GitHub) and check each finding.
+- [x] Arabic canopy-check tile "مربّعة" → "مستطيلة", as glossary-ar already chose (#28, seen 375 px light + dark).
+- [x] Metres mode converted only the last height of "2,000 to 1,000 ft", "13,000 → 5,500 ft" and the landing-plan list,
+      in all 32 languages (#29; seen 375 px en/ru/de/ar, light + dark).
+- [x] Japanese pilot-chute line "まだ仰向け" (lying face-up) → "まだ背中の後ろにある" (#30; seen 375 px light + dark).
+- [?] "Square" tile word in other languages, Spanish "batidores", ar/he arrow label, ru/uk "на спине": under "Waiting on you".
+
+2026-11-17 (chat, phone screenshot):
+- [x] Russian card labels in full ("отделение от самолёта", "раскрытие парашюта") + other languages checked (#21, #22).
+- [x] /de/ reload flashed English ↔ German: language fetched before the first render + preloaded (#23); not a Vercel problem.
+- [x] Side skydiver draggable by touch on phones, smooth, no jump (#24).
+- [x] Scroll position on reload: same place, no jump; scrolled to top stays at top (#25), measured in WebKit + Chromium.
+- [ ] Hosting: Cloudflare (Workers static assets: static traffic unmetered, commercial use allowed) vs Vercel Hobby (100 GB/month, non-commercial). Not needed for the bugs above; revisit with the domain (owner decides).
+- [x] About line: "From Ukraine. I love learning new skills, getting better and helping people." (#13); Facebook and Instagram in "Find me" (#14).
+- [x] Language switch got stuck on the phone until a reload (Polish): languages now load from fixed-name JSON files, so switching works at once with no reload, also after a deploy (#19, replaces the reload-once workaround #18); the tab title follows the language (#17). Seen on the live site: EN → Polish on the same page. One-time catch: phones still running yesterday's copy need one last reload.
+- [x] Gemini "Skydiving Safety Directory" processed (#12): 14 new contacts, 2 false claims caught.
+- [x] Community: owner won't be admin, "they can do everything"; propose Discord, Reddit and a forum (Discourse); answers in docs/community/PLAN.md §11.
+- [x] Nothing gets lost: every pushed branch gets a PR at once; "pushed" isn't done, "merged into main" is. School-rules branch got draft PR #6; `~/agent-tools/scripts/unmerged` lists uncommitted files, unpushed branches, branches without a PR and open PRs (agent-tools 264fb7d).
+- [x] Commit messages: switch to Conventional Commits (`feat:`, `fix:`, `docs:`…) with commitlint in the commit hook; rule in AGENTS.md + CONTRIBUTING (owner: "sounds good").
+- [x] /learn on this stretch (sub-chats, feedback icon, commit style).
+- [x] Feedback icon: show it only after a minute (was 10 s); a question-mark icon instead of the message bubble.
+- [x] Feedback card opened by itself over the page (after ~2 min on iPhone): owner chose "icon only": after 10 s only
+  the round icon shows; the card opens only on tap.
 
 2026-11-16 (chat, plan discipline):
 - [x] "Also to all other apps" (by ear: the app ending with feedback + more languages, saved to /study, should apply
@@ -199,9 +281,12 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [x] all 10 (fr de it pt pl sv nb da fi ar) translated, tests pass, merged 2026-11-17; each glossary lists 5 terms
         for a native instructor (docs/i18n/glossary-<lang>.md) (committed on i18n; not seen on screen yet: check RTL ranges like "2,000 ← 1,000 ft"; 5 terms for a native instructor in glossary-ar.md)
     (2026-11-16 23:00: glossaries for ar/it/pl only, no translations yet; resume per "Resume here" step 1)
-  - [~] After: look at every language on screen (FR, AR, DE seen; IT, PT, PL, SV, NB, DA, FI not yet) (phone + desktop, light + dark), Arabic layout right-to-left, merge.
+  - [~] re-asked 2026-11-16 23:23 (6e c), still not done: 7 here + 16 of the i18n2 languages unseen. After: look at every language on screen (FR, AR, DE seen; IT, PT, PL, SV, NB, DA, FI not yet) (phone + desktop, light + dark), Arabic layout right-to-left, merge.
   - [ ] Later: native skydivers check each language (ask through the outreach list), more languages (nl, cs, tr, ja,
         zh, ko, he) if wanted.
+- [ ] Languages of the remaining contact countries (owner 2026-11-16 23:23 "add all of their languages"): fa, et, lv, vi,
+      ms, ka, hy, kk, uz, mn, km are not in the app; add them the same way (glossary, translate, back-check, tests) or
+      ask the owner to skip the ones with few contacts (from audit 2026-11-17).
 - [x] Auto-detect the visitor's browser language and open that version; the language menu at the top still switches.
       (already existed for 4 languages; now checks every preferred browser language, all 14, on branch i18n)
 - [x] Rule: every ask goes into the plan first (tasks, what else may be needed), then work; every delegated agent or
@@ -223,25 +308,129 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
   - [~] Sub-chats: A Europe deep done (799 rows), B world done (619), D people done (400, partial: search limit);
         C done (2,449 rows incl. existing lists, 2026-11-17).
 
+2026-11-17 (chat, playbook):
+- [x] (2026-11-17: header, Waiting on you, Owner decides later, sender line, About line fixed; tooling worktree removed) Make the plan true again (found by audit 2, docs/review/owner-asks-audit-2.md W1–W6): "Waiting on you" drops the
+      private dropzone link, "owner removes aff-notes.vercel.app" and "needs the private link"; "Owner decides later"
+      and the header drop "private repo only / not published / personal use"; Resume 7's "sender (Gmail…)" follows
+      sending.md (own domain); the About-section line loses its stale [?] notes; languages ticked [x] without being seen
+      say so; tick the playbook line (27cd54f, bb581fe); remove the merged worktree .claude/worktrees/tooling-8c5524 (from audit 2026-11-17).
+- [~] Check that everything the owner asked was done (audit of all owner messages since 2026-11-16 against this plan).
+      re-asked 2026-11-17 00:57 (first 2026-11-16 10:17 / 10:25). Audit 2: docs/review/owner-asks-audit-2.md.
+- [x] (agent-tools skills/study/references/playbook.md; docs/AGENT-TOOLS.md here) A reusable playbook of how this project was made (license, collecting content, clips/photos/GIFs, researching
+      organisations, deployment, attention/marketing, outreach to companies and people, telling the mission, agent
+      tools), saved in ~/agent-tools for future projects; in this repo, docs/AGENT-TOOLS.md says which agent tools and
+      skills built it.
+- [ ] Marketing / launch plan (gap found while writing the playbook): where and when to announce, creators,
+      newsletters, search (per-language pages), measure.
+
+2026-11-17 (chat, project guide):
+- [x] (docs/ARCHITECTURE.md, linked from README and AGENTS.md) Walk the owner through the whole project (stack, build, linters, structure, i18n, tests, CI, publishing,
+      agents), saved as docs/ARCHITECTURE.md so people (and agents, to save tokens) learn it from one page; then /learn.
+
+2026-11-17 (chat, units default 2):
+- [~] (04:00 run: the sub-chat "School-rules profiles" is running again since ~04:01 PST, 46 files uncommitted in its
+      worktree; let it post its own question; content edits on main paused until it commits) Owner asked "What's the question" (00:50) about the school-rules sub-chat: find the question it waits on (open its
+      chat or the worktree `.claude/worktrees/rules-profiles-206c10`, 49 uncommitted files), put it under "Waiting on you"
+      with a recommended answer; 6j and the round metric numbers are blocked on it (from audit 2026-11-17).
+- [x] (owner: "Yes" 2026-11-17: US/CA/UK/IE/AU/NZ/ZA/NL ft, metric federations m, everyone else ft + m; tests + seen RU m, IT in a US browser ft) Which countries use feet vs metres in skydiving (owner thinks Canada and England may be metric); should the
+      default be "ft + m" for everyone except the US? Metres look unrounded (≈760, ≈610): check what Russian, Italian,
+      French materials actually teach and use those numbers.
+
+2026-11-17 (chat, research in repo + PRs):
+- [x] (checked: all in docs/research + docs/outreach/raw; rule in AGENTS.md) Deep research (ours and other AI tools') is saved in the repo too: check nothing lives only outside it, and say
+      where it goes in AGENTS.md.
+- [x] re-asked 2026-11-17 00:35 (first "PR merge" 00:22). Merge the open PRs (owner: "merge open prs"): #1 and #3 merged; #2 conflicted after #1, same change made on main.
+
+2026-11-17 (chat, repo description + agent rules):
+- [x] GitHub description is outdated ("personal, EN/ES/UK/RU"): update description, website and topics.
+- [x] Rules for LLMs/agents in the project: AGENTS.md (CLAUDE.md imports it; Copilot + Gemini pointers; CONTRIBUTING section) (AGENTS.md for any tool: Claude, Codex, Cursor, Copilot…), so contributors'
+      agents follow the same facts, safety, language and check rules.
+
+2026-11-17 (chat, license + PRs):
+- [x] Owner: "every change in its own workspace, see the parallel chats, PR and merge, never drop lines" → yes + learn:
+      every change in its own worktree + draft PR (shared rule, all apps); here: `.gitattributes` keeps both sides of
+      `docs/PLAN.md` on a merge, the pre-commit hook refuses commits on main (`scripts/no-commit-on-main.sh`),
+      AGENTS.md rule 5; same guards in the bootstrap template; the chat audit flags uncommitted worktrees 3+ h old.
+- [x] License (owner: "License yes"): MIT for code (`LICENSE`), CC BY-SA 4.0 for notes, translations and drawings
+      (`LICENSE-CONTENT`, says what it covers), clips in public/media belong to their creators and are under neither;
+      README + CONTRIBUTING say so, package.json `license: MIT`.
+- [x] Merge the Dependabot PRs vekaev/aff-notes#1–#3 (owner: "PR merge"), after CI passes on each: #1 and #3 merged,
+      #2 conflicted after #1 and was applied by hand (3a4680d); CI on main green.
+- [x] README: mission (owner's words from "Why I made this"), all 32 languages, translation help first (owner: "update
+      readme, there are many more languages than these 4, add the mission") — 4293d9f.
+- [x] Owner "Yes" (2026-11-17) to both tooling proposals:
+  - [x] Smaller offline install: 4.9 → 1.8 MB. The 28 extra languages are no longer pre-downloaded; the reader's
+        language is cached when it loads, also on the very first visit (`src/pwa-langs.ts`). Seen in a Playwright test
+        (`e2e/offline.spec.ts`): first visit in German, go offline, reload, still German; budget lowered to 3 MB.
+        Trade-off: a language never opened shows English offline.
+  - [x] Per-language pages, light way (live 2026-11-17 via vekaev/aff-notes#4: aff-notes.vercel.app/fr/ is French
+        without scripts, /?lang=de → /de/, CI green; owner 2026-11-17: "why not a worktree and a PR instead of waiting" → branch
+        `langpages`, PR, no wait): every language at its own address (`/fr/`, English at `/`), pre-rendered at build
+        (`scripts/prerender.mjs`): text, `<html lang dir>`, translated title/description/og, canonical, hreflang × 33,
+        `sitemap.xml`, `robots.txt`; old `?lang=fr` links redirect to `/fr/` (vercel.json); language menu moves the
+        address; offline keeps the reader's language page. Tested on a real Vercel preview first: `/?lang=fr` can't serve
+        another file (static files win), so real folders it is. Seen: FR/JA desktop light/dark, UK/AR phone, DE without
+        JavaScript; 32 Playwright checks. Overlap with the school-rules branch: a few lines in `src/i18n.tsx`.
+
 2026-11-17 (chat, translations + tooling):
-- [~] "Something wrong or a better word in the translation? Tell me": on every translated language (the top note) and
+- [x] (seen FR + AR phone; mail subject "AFF notes: translation (fr)") "Something wrong or a better word in the translation? Tell me": on every translated language (the top note) and
       in the feedback card; mail subject carries the language.
 - [x] (seen DE, FR, RU, UK, HE, EN; 2026-11-18) By ear "start a separate branch to fix everything you just said": build the school-rules profiles (6j), checked in
       every language, on its own branch (sub-chat).
-- [~] Project tooling for contributors (sub-chat): ESLint, Prettier, Husky + lint-staged, i18n checks on commit
-      (all languages, tags, numbers), CI on GitHub, CONTRIBUTING, best practices / boilerplates; "TanStack Query" (by
-      ear "10 stack query"): check whether the app needs it (no server data today).
+- [x] Project tooling for contributors (sub-chat, branch claude/tooling-8c5524): set up and checked (pre-commit hook on a
+      test commit, CI steps run in a clean clone, first GitHub CI run on main green in 18 s). Dependabot opened 3 PRs
+      at once (#1 #2 actions v7, #3 @babel/parser 8), all CI green; merging them was blocked for the agent: owner merges.
+      - Lint: **Oxlint** instead of ESLint: typescript-eslint does not run on the TypeScript 7 native compiler (peer
+        `typescript <6.1`, the TS 7 package has no JS API); Oxlint has react, react-hooks, jsx-a11y, typescript,
+        unicorn, import and vitest rules built in, and type-aware rules on TS 7 (oxlint-tsgolint). `.oxlintrc.json`;
+        errors block, warnings show (19 today, each relaxed rule has its reason in the file).
+      - Format: **Prettier** (`.prettierrc.json`, 120 columns, single quotes); `.editorconfig`. oxfmt is still 0.x.
+      - Pre-commit (**Husky + lint-staged**): format + lint the staged files, `tsc -b`, en.json check, all tests (~2 s).
+      - Translations: `npm run i18n:check` fails if en.json is stale (`i18n-extract.mjs --check`), a language file is
+        missing, a key is missing or stray, or tags/numbers differ; `npm run i18n:todo [lang] [--prune]` lists what
+        each language needs after English changes.
+      - CI: `.github/workflows/ci.yml` (Node 24: npm ci, types, lint, translations, formatting, tests, build) on
+        every push to main and every PR. Dependabot monthly, grouped (npm + actions).
+      - Docs: CONTRIBUTING.md (how to fix a translation, change English, add a language, facts need sources, clips are
+        third-party), CODE_OF_CONDUCT.md (Contributor Covenant 2.1, short), issue forms (translation, fact, bug), PR
+        template, README updated. License added later (line above, 2026-11-17).
+      - **TanStack Query: no.** It caches and refetches server data; the app has none (content is bundled TypeScript,
+        translations are lazy-loaded static JSON loaded once, progress is localStorage). It would add ~13 kB and a
+        provider for nothing. Revisit only if the app gets a server (accounts, synced progress, live wind data).
+      - Commit-message convention: not enforced (one-person repo, messages are descriptive); revisit if many PRs.
+      - Owner's wider ask (TanStack + Vite ecosystems; re-asked 2026-11-17 00:08 after the 00:03 ask): comparison in `docs/TOOLING.md`. Added after it: size budget in
+        CI (`npm run size`), Playwright screen tests on the build (7 languages × phone/desktop × light/dark, screenshots
+        uploaded by CI, `npm run e2e`). Bigger moves (per-language URLs + prerender / TanStack Router + Start, smaller
+        offline install, Weblate) are under "Owner decides later".
+- [ ] One-time format + lint pass after the components/content branch (school-rules profiles) merges: remove the
+      four TEMPORARY lines in `.prettierignore`, `npm run format`, commit alone ("format only"); fix the a11y warnings
+      (clickable `<li>` rows in widgets.tsx and the tap-to-reveal card in Blocks.tsx become `<button>`s) and turn those
+      jsx-a11y rules back to errors in `.oxlintrc.json`. Look at the changed screens in 4 languages.
+      - Owner 2026-11-17: whole TanStack and Vite ecosystems, production-ready, adopt what's clearly worth it. Verdict:
+        - Already on the current Vite stack: Vite 8 (Rolldown bundler inside), Vitest, vite-plugin-pwa, and now Oxlint.
+        - **Vite+** (`vp`, MIT, 1.x since 2026-09): one CLI over the same tools (Vite, Vitest, Oxlint, Oxfmt). Not now:
+          1.7 came out today and moves fast; contributors know `npm run` + Prettier. Moving later is small (scripts →
+          `vp`, Prettier → Oxfmt). Recommended: revisit in the one-time format pass or when Oxfmt is 1.0.
+        - Biome: also good (lint + format in one), but its type checks are its own inference, while Oxlint's type-aware
+          rules run on TypeScript 7 itself, and Oxlint is the linter Vite+ ships. Not chosen.
+        - TanStack **Query / Form / Table / Virtual: no** (no server data, no forms: feedback is a mail link, no big
+          tables or long lists). **Router: no** (one scrolling page, chapters are #anchors, settings in ?lang=&units=).
+        - TanStack **Start**: only for one real gain, pre-rendered HTML per language so search engines and link previews
+          see each language. A full move is big; a lighter way is a build step that pre-renders the page per language.
+          Under "Owner decides later".
 
 2026-11-17 (chat, project link):
 - [x] (seen RU phone light) "Why I made this": link to the project on GitHub (https://github.com/vekaev/aff-notes), now public, so people can
       see the code and contribute.
 
 2026-11-17 (chat, settings menu):
-- [x] (seen: ?lang=uk opens in metres, switching to EN gives feet) Metres by default where schools use metres (Russia, Ukraine: "no one uses feet"), chosen from the region or,
+- [x] re-asked 2026-11-17 00:45 (defaults questioned: Canada, UK, ft + m), redone in 3925505. (seen: ?lang=uk opens in metres, switching to EN gives feet) Metres by default where schools use metres (Russia, Ukraine: "no one uses feet"), chosen from the region or,
       without one, the language (docs/i18n/units-and-rules.md list); feet elsewhere.
 - [x] (seen UK light + EN dark on the phone) Units and theme go into a "⋯" menu at the right of the header; the language stays visible on top.
 
 2026-11-17 (chat, going public):
+- [x] (agent-tools c2f73a8) Owner "Yes" (00:32) to the /learn lesson: repeat the owner's words as said, never stronger
+      ("asked" is not "cleared"), as a rule for all chats (from audit 2026-11-17).
 - [x] (40c3def) LinkedIn https://www.linkedin.com/in/vekaev next to GitHub at the end (+ saved in ~/me).
 - [x] Make the GitHub repo public (owner's OK 2026-11-17). Checked: no secrets in history (.env holds only the site URL);
       the contacts list (3,816 rows, 2,024 emails) is published as is by the owner's choice.
@@ -257,10 +446,9 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 2026-11-17 (chat, feedback bubble 2):
 - [x] Bubble: a "Not now" that hides the bubble and its icon completely (it's annoying and takes space on the phone).
 - [x] Bubble: a link "Why I made this" to the mission section at the bottom (#about).
-- [~] About section: links to GitHub (the project, to contribute) and LinkedIn, so people can reach the owner there.
-      Done: GitHub profile link (seen EN phone dark). [?] LinkedIn URL from the owner (not in ~/me or mail); [?] repo is
-      private: make it public for contributions? (it holds clips of other people's videos: replace them first).
-- [?] Seen on the owner's phone: aff-notes.vercel.app is still public and auto-deploys on push (clips of other people's
+- [x] (dd445e2, 40c3def) About section: links to GitHub (the project, to contribute) and LinkedIn, so people can reach the owner there.
+      Done: GitHub profile + project link, LinkedIn (40c3def, dd445e2); repo public 2026-11-17.
+- [x] (owner 2026-11-17: repo public, site stays, clips OK) Seen on the owner's phone: aff-notes.vercel.app is still public and auto-deploys on push (clips of other people's
       videos). Owner said he'd remove it; ask again.
 
 2026-11-16 (chat, feedback):
@@ -276,9 +464,11 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       something unclear? Tell me, I want to make it better to help others." Done: section "Why I made this" (#about)
       after the final check, email vekaev4@gmail.com ("vkf4" by ear, checked against Gmail), bubble opens once, then
       only the icon; seen EN desktop light, RU/UK phone dark, ES phone light.
-- [?] Photo at the end is the GitHub avatar for now: keep it or send another.
+- [x] Photo at the end is the GitHub avatar: keep it (owner 2026-11-17: "why do you need my picture if you already have from GitHub").
 
 2026-11-16 (chat, outreach):
+- [x] (answered 2026-11-17) Put the 9 owner questions from docs/community/PLAN.md §11 (domain name first; sending.md waits on it) under
+      "Waiting on you", one question each with the recommended answer (from audit 2026-11-17).
 - [~] Research every skydiving school / dropzone worldwide (US, Australia, UK, Canada, Europe, rest of the world),
       plus coaches, gear makers, associations: one CSV (docs/outreach/contacts.csv), public business contacts only.
 - [~] Also creators and communities: YouTube, Instagram/TikTok, blogs, podcasts, Reddit, Discord, Facebook groups,
@@ -293,14 +483,14 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
       tunnels, events, researchers, non-English communities). Second wave of agents, raw files in docs/outreach/raw.
 - [x] One big copy-paste prompt for other deep-research tools (ChatGPT, Gemini, Perplexity, Grok…) that returns the
       same CSV, so the owner can run it elsewhere and compare (docs/outreach/deep-research-prompt.md).
-- [?] Before sending to anyone: private link ready, clips question (the app holds cuts of other people's videos),
+- [x] (resolved 2026-11-17: public site + repo, clips kept) Before sending to anyone: private link ready, clips question (the app holds cuts of other people's videos),
       sending tool and pace. Nothing is sent without the owner's OK.
 
 2026-11-16 (chat):
 - [x] Remove "decide by 2,500" under part IV of the jump picture (bb861dd).
 - [x] Content general, not tied to Tracy; Skydive California only in Part V (6eea713).
 - [x] Find the dropzone's email, draft the review/help email in the owner's words, don't send (docs/email-draft.md).
-- [?] Private link only the dropzone can open (Cloudflare Access proposed); owner removes the public Vercel site first.
+- [-] (owner 2026-11-17: everything public instead) Private link only the dropzone can open (Cloudflare Access proposed); owner removes the public Vercel site first.
 - [x] Future ideas into "Owner decides later": open source, ML model for packing mistakes.
 - [x] Sections felt cramped: more space, margins, sizes (6eea713).
 - [x] Incident cards: the clip opens the full YouTube video (6eea713).
@@ -343,7 +533,8 @@ lines top down; a line is closed only when it's done and seen, or the owner drop
 - [x] Re-check every owner message of this whole chat (before and after the summary) against this inbox; add what's
       missing; result in docs/review/owner-asks-audit.md.
 - [x] Rule: every owner message is first split into tasks / subtasks / questions, written here, and the reply points to
-      these lines (CLAUDE.md + ~/agent-tools/rules/working.md).
+      these lines (CLAUDE.md + ~/agent-tools/rules/working.md). re-asked 2026-11-16 22:32 and 22:41: the rule existed;
+      made stronger then (plan-first, statuses, redo lines; agent-tools d44fe9a, 0924b7d).
 - [x] Final check at the end of the app: a "test yourself on everything" button (mixed decision-style questions from all
       chapters), a list of open self-answers to show an instructor, and "practise with your AI": one button copies a
       ready prompt (all key facts + quiz instructions) to paste into ChatGPT / Claude / any assistant (2026-11-16).
@@ -397,6 +588,14 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - For a redesign, propose a few options first and let the owner pick; animations smooth and not distracting.
 
 ## Waiting on you
+- Scheduled task `aff-notes-finish-review` still fires every 2 h after its 24 hours ended (runs on 2026-11-18 can't
+  switch tasks without a person). In the app's Scheduled tasks: turn it off, and turn `autopilot-aff-notes` back on.
+  Recommended: yes.
+- Translations (2026-11-18 report, docs/review/prs-and-codex-2026-11-18.md §5): (a) canopy-check tile still a literal
+  "square" in bg, cs, el, fr, he, pt, sr, tr, ru, uk while its line says "rectangle": switch to the rectangle word with
+  "square" in brackets once? Recommended: yes. (b) Spanish toggles: add "(mandos)" after "batidores" once and start
+  glossary-es.md? Recommended: yes. (c) ar/he pattern label "2,000→1,000 ft": translate it with "←"? Recommended: yes.
+  (d) ru/uk "Всё ещё на спине" → "Всё ещё за спиной"? Recommended: yes.
 - **Instructor briefing:** the app's last Part IV chapter "questions for your instructors" (18, by jump phase) holds every
   school-specific doubt from the fact-check (count 3 or 5 after the pull, where to look in the flare, aircraft-emergency
   altitudes, which instructor is outside, hard pull: reserve only or cut away first, RSL/MARD, reserve handle type,
@@ -409,18 +608,18 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - Big reorder: Part IV "act now" chapters first, statistics and real cases in their own part "learn from others", an
   always-visible EP button in the header? Recommended: yes.
 - Email to Skydive California (info@skydivecalifornia.com, checked on their contact page): review request + offer to
-  help for free + "what would you add for your school?". Draft: `docs/email-draft.md` (not sent). Needs the private link.
-- Private link only the dropzone can open: Cloudflare Pages + Cloudflare Access (email one-time code, allow-list)?
-  Needs your Cloudflare account and OK; the clips are other people's videos, so keep the allow-list small.
+  help for free + "what would you add for your school?". Draft: `docs/email-draft.md` (not sent). Link: the public site.
+- ~~Private link only the dropzone can open~~ (dropped 2026-11-17: everything public).
 
 - Photo of the dropzone map the instructors drew in ground school (holding point, pattern, landing area): send it and
   it goes next to the pattern drawing in Part III and into Part V.
 
-- aff-notes.vercel.app (public, created 2026-11-16, auto-deploys on push): owner removes it (2026-11-16).
+- ~~aff-notes.vercel.app: owner removes it~~ (2026-11-17: the site stays public).
 
 ## Owner decides later
-- Publishing: **private GitHub repo only** (vekaev/aff-notes, owner 2026-11-16); the app itself is not published. A web version would need the clips replaced by links or own footage.
-- Public version for the dropzone / other students (needs own footage or licensed clips instead of YouTube cuts).
+- **Translation platform** (Weblate, free for open source) once outside translators show up: they edit in a web page,
+  Weblate opens PRs to `src/content/i18n/*.json`, CI checks them.
+- (Decided 2026-11-17: the repo and the site are public; clips kept with credits, creators asked.)
 - Native app version (iPhone) built on the same content files.
 - Reuse for other dropzones: content is now general ("your dropzone"); dropzone facts live only in Part V. Needs rights
   from the clip creators (or own footage) before anyone else gets it.
@@ -509,10 +708,16 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 
 ## Facts to verify (doubts raised by the text reviewers; check against sources, then fix or mark <q-check/>)
 - [x] Arms 90/90 = thumb and pinky: confirmed by the video's narration (lines along thumb and pinky form 90°).
-- [ ] Slider stuck: we say pump the rear risers; many sources say pump the toggles/brakes.
-- [ ] "~4,000 cutaways a year, about one per 700–800 jumps": check against USPA jump totals (~3.5 M → ~1 per 875).
-- [ ] "5–6 s at full brakes without stalling" depends on the canopy.
-- [ ] Water landing wording vs the current SIM 4-1; "flare about 10 ft" before a building: height or distance?
+- [x] Slider stuck: the app already says "pump the toggles (some schools teach rear risers)" + <q-check/> + an
+  instructor question; USPA SIM 4-1 has no slider procedure (checked 2026-11-17 04:00 run, uspa.org/sim/4-1).
+- [x] (06:00 run 2026-11-17: part4 now "about 4,777 reserve rides in 2025 … (USPA survey estimate, 1 per 726 jumps)", all 32 languages; uspa.org/find/faqs/safety re-read; it has no 2023 figure, so "2023: 4,913" below is unconfirmed) "~4,000 cutaways a year": the per-jumps ratio is gone; part4 now says "more than 4,000 cutaways a year (USPA,
+  2019)". Newer USPA figure (uspa.org/find/faqs/safety, member survey): 2025 ≈ 4,777 reserve rides, ~1 per 726 jumps
+  (2023: 4,913). Content task: update the part4 line to the 2025 figure and say "reserve rides" (a survey estimate);
+  waits until the school-rules chat (all content files open, running 04:01) commits.
+- [x] "5–6 s at full brakes" is no longer in the app; the stall time is a question for the instructors (part4 questions).
+- [x] Water + buildings match SIM 4-1 G (checked 2026-11-17 04:00): "Flare to half brakes at 10 feet above the
+  surface"; building: "flare 10 feet above the first point of contact" = height, as the app says. Not in the app
+  yet (optional): open the face shield, activate flotation; "poor depth perception over water".
 - [x] Tips now say "category A/B/C" like the rest of the app.
 - [x] Source links for the injury charts (Sweden 2007, USPA, Netherlands 2024).
 

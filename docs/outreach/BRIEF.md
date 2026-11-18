@@ -10,6 +10,11 @@ post, never submit a form.
 - Public business contacts only: what an organisation or creator publishes for contact (website contact page,
   "business inquiries" email, official directory). No guessed emails, no personal emails from leaks or private pages,
   no logins, no paywalls, no CAPTCHAs.
+- **As many emails as possible** (owner 2026-11-17): a personal address (gmail, hotmail…) counts when it is
+  published in public for contact: a club's own page, an official or opt-in list (e.g. CSPA rigger list), a
+  creator's channel, a paper's corresponding author. Keep it and say in notes where it was published. Still never
+  guessed, leaked, behind a login, or legal/privacy/RMA inboxes. Owner accepted that contacts.csv sits in the public
+  repo with these addresses.
 - Prefer one official directory (federation/association list) and then open each member's site for the email.
 - If a site shows only a contact form, put the form URL in contact_form and leave email empty.
 - Record where you found each row (source_url). Mark confidence: high (email seen on their own site), medium (seen

@@ -1,6 +1,7 @@
 // Collects every English string the app shows (L objects and the per-file h()/l()/t() helpers) into
 // src/content/i18n/en.json as { key: english }. Extra languages live in src/content/i18n/<lang>.json with the
-// same keys, translated. Run after changing English text: `node scripts/i18n-extract.mjs`.
+// same keys, translated. Run after changing English text: `node scripts/i18n-extract.mjs` (or `npm run i18n`).
+// `--check` writes nothing and exits 1 if en.json is out of date (used by the pre-commit hook and CI).
 import fs from 'node:fs';
 import path from 'node:path';
 import { parse } from '@babel/parser';
@@ -53,6 +54,19 @@ for (const file of files) {
   })(ast.program);
 }
 const sorted = Object.fromEntries(Object.entries(out).sort((a, b) => a[0].localeCompare(b[0])));
-fs.writeFileSync(path.join(root, 'src/content/i18n/en.json'), JSON.stringify(sorted, null, 1) + '\n');
+const enFile = path.join(root, 'src/content/i18n/en.json');
+const json = JSON.stringify(sorted, null, 1) + '\n';
+if (process.argv.includes('--check')) {
+  const was = fs.existsSync(enFile) ? JSON.parse(fs.readFileSync(enFile, 'utf8')) : {};
+  const added = Object.keys(sorted).filter(k => !(k in was));
+  const removed = Object.keys(was).filter(k => !(k in sorted));
+  const changed = Object.keys(sorted).filter(k => k in was && was[k] !== sorted[k]);
+  if (fs.existsSync(enFile) && fs.readFileSync(enFile, 'utf8') === json) { console.log(`en.json is up to date (${Object.keys(sorted).length} strings)`); process.exit(0); }
+  console.error(`en.json is out of date: ${added.length} new, ${removed.length} gone, ${changed.length} changed. Run: npm run i18n`);
+  for (const k of [...added, ...changed].slice(0, 5)) console.error(`  + ${sorted[k].slice(0, 100)}`);
+  for (const k of removed.slice(0, 5)) console.error(`  - ${was[k].slice(0, 100)}`);
+  process.exit(1);
+}
+fs.writeFileSync(enFile, json);
 const chars = Object.values(sorted).reduce((s, v) => s + v.length, 0);
 console.log(`strings ${Object.keys(sorted).length}, chars ${chars}${skipped.length ? `, not literal (stay English): ${skipped.join(' ')}` : ''}`);
