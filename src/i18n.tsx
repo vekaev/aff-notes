@@ -1,4 +1,4 @@
-import { createContext, Fragment, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { createContext, Fragment, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { ALL_LANGS, isCore, RTL, type L, type Lang } from './content/types';
 import { keyOf } from './content/i18n/key';
 import { convertQuantities, defaultUnits, savedUnits, saveUnits, type Units } from './units';
@@ -7,8 +7,8 @@ import { convertQuantities, defaultUnits, savedUnits, saveUnits, type Units } fr
 // The 28 extra languages: plain JSON at fixed addresses next to the app (vite.config.ts, `langFiles`). A fixed name
 // still exists after a new deploy, so switching language works on a page that was opened before it (no reload).
 const APP_ROOT = new URL('../', import.meta.url); // the built script lives in assets/; in dev this is the site root
-const loadCatalog = (lang: Lang): Promise<Record<string, string>> =>
-  fetch(new URL(`i18n/${lang}.json`, APP_ROOT), { cache: 'no-cache' }).then(r => {
+export const loadCatalog = (lang: Lang): Promise<Record<string, string>> =>
+  fetch(new URL(`i18n/${lang}.json`, APP_ROOT)).then(r => {
     if (!r.ok) throw new Error(`${lang}: ${r.status}`);
     return r.json() as Promise<Record<string, string>>;
   });
@@ -68,8 +68,18 @@ export function initialLang(): Lang {
 interface Ctx { lang: Lang; setLang: (l: Lang) => void; t: (s: L) => string; units: Units; setUnits: (u: Units) => void }
 const LangContext = createContext<Ctx>({ lang: 'en', setLang: () => {}, t: s => s.en, units: 'ft', setUnits: () => {} });
 
-/** `initial` is for pre-rendering a language page at build time (scripts/prerender.mjs): no browser, catalogue given. */
-export function LangProvider({ children, initial }: { children: ReactNode; initial?: { lang: Lang; catalog?: Record<string, string> } }) {
+/** `initial` is for pre-rendering a language page at build time (scripts/prerender.mjs): no browser, catalogue given.
+ *  `preloaded` is the reader's language, fetched before the first render (main.tsx), so a language page never flashes
+ *  English while its file loads. */
+export function LangProvider({
+  children,
+  initial,
+  preloaded,
+}: {
+  children: ReactNode;
+  initial?: { lang: Lang; catalog?: Record<string, string> };
+  preloaded?: { lang: Lang; map: Record<string, string> } | null;
+}) {
   const [lang, setLangState] = useState<Lang>(() => initial?.lang ?? initialLang());
   const setLang = useCallback((l: Lang) => {
     setLangState(l);
@@ -88,12 +98,16 @@ export function LangProvider({ children, initial }: { children: ReactNode; initi
     } catch { /* ignore */ }
   }, [lang, chosenUnits]);
   const [cat, setCat] = useState<{ lang: Lang; map: Record<string, string> } | null>(
-    initial?.catalog ? { lang: initial.lang, map: initial.catalog } : null,
+    initial?.catalog ? { lang: initial.lang, map: initial.catalog } : (preloaded ?? null),
   );
+  const catRef = useRef(cat);
+  useEffect(() => {
+    catRef.current = cat;
+  }, [cat]);
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = RTL.includes(lang) ? 'rtl' : 'ltr';
-    if (isCore(lang)) return;
+    if (isCore(lang) || catRef.current?.lang === lang) return; // already loaded (e.g. preloaded before the first render)
     loadCatalog(lang).then(map => setCat({ lang, map })).catch(() => { /* offline and never loaded: stays English */ });
   }, [lang]);
   const value = useMemo(() => {
