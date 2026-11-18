@@ -227,8 +227,10 @@ A re-ask is marked `re-asked <date>: why it wasn't done` on the same line. The 2
 lines top down; a line is closed only when it's done and seen, or the owner drops it.
 
 2026-11-17 (chat, phone screenshot):
+- [x] About line: "From Ukraine. I love learning new skills, getting better and helping people." (#13); Facebook and Instagram in "Find me" (#14).
+- [x] Language switch got stuck on the phone until a reload (Polish): languages now load from fixed-name JSON files, so switching works at once with no reload, also after a deploy (#19, replaces the reload-once workaround #18); the tab title follows the language (#17). Seen on the live site: EN → Polish on the same page. One-time catch: phones still running yesterday's copy need one last reload.
+- [x] Gemini "Skydiving Safety Directory" processed (#12): 14 new contacts, 2 false claims caught.
 - [x] Community: owner won't be admin, "they can do everything"; propose Discord, Reddit and a forum (Discourse); answers in docs/community/PLAN.md §11.
-- [~] Open Gemini in Dia (Tavus account) and process its deep-research chat "Skydiving Safety Directory" (helper agent; line 6k).
 - [x] Nothing gets lost: every pushed branch gets a PR at once; "pushed" isn't done, "merged into main" is. School-rules branch got draft PR #6; `~/agent-tools/scripts/unmerged` lists uncommitted files, unpushed branches, branches without a PR and open PRs (agent-tools 264fb7d).
 - [x] Commit messages: switch to Conventional Commits (`feat:`, `fix:`, `docs:`…) with commitlint in the commit hook; rule in AGENTS.md + CONTRIBUTING (owner: "sounds good").
 - [x] /learn on this stretch (sub-chats, feedback icon, commit style).
