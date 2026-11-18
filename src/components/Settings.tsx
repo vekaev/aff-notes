@@ -52,7 +52,7 @@ export function applySavedTheme() {
 }
 
 const THEME_NAMES: Record<Theme, L> = {
-  system: { en: 'system', es: 'sistema', uk: 'системна', ru: 'системная' },
+  system: { en: 'system', es: 'sistema', uk: 'як у системі', ru: 'как в системе' },
   light: { en: 'light', es: 'claro', uk: 'світла', ru: 'светлая' },
   dark: { en: 'dark', es: 'oscuro', uk: 'темна', ru: 'тёмная' },
 };
@@ -70,7 +70,7 @@ function useTheme(): [Theme, (t: Theme) => void] {
 
 const M: Record<string, L> = {
   more: { en: 'More settings', es: 'Más ajustes', uk: 'Більше налаштувань', ru: 'Ещё настройки' },
-  units: { en: 'Units', es: 'Unidades', uk: 'Одиниці', ru: 'Единицы' },
+  units: { en: 'Units', es: 'Unidades', uk: 'Одиниці вимірювання', ru: 'Единицы измерения' },
   ft: { en: 'Feet', es: 'Pies', uk: 'Фути', ru: 'Футы' },
   both: { en: 'Feet and metres', es: 'Pies y metros', uk: 'Фути й метри', ru: 'Футы и метры' },
   m: { en: 'Metres', es: 'Metros', uk: 'Метри', ru: 'Метры' },
