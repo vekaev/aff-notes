@@ -227,6 +227,11 @@ A re-ask is marked `re-asked <date>: why it wasn't done` on the same line. The 2
 lines top down; a line is closed only when it's done and seen, or the owner drops it.
 
 2026-11-17 (chat, phone screenshot):
+- [x] Russian card labels in full ("отделение от самолёта", "раскрытие парашюта") + other languages checked (#21, #22).
+- [x] /de/ reload flashed English ↔ German: language fetched before the first render + preloaded (#23); not a Vercel problem.
+- [x] Side skydiver draggable by touch on phones, smooth, no jump (#24).
+- [x] Scroll position on reload: same place, no jump; scrolled to top stays at top (#25), measured in WebKit + Chromium.
+- [ ] Hosting: Cloudflare (Workers static assets: static traffic unmetered, commercial use allowed) vs Vercel Hobby (100 GB/month, non-commercial). Not needed for the bugs above; revisit with the domain (owner decides).
 - [x] About line: "From Ukraine. I love learning new skills, getting better and helping people." (#13); Facebook and Instagram in "Find me" (#14).
 - [x] Language switch got stuck on the phone until a reload (Polish): languages now load from fixed-name JSON files, so switching works at once with no reload, also after a deploy (#19, replaces the reload-once workaround #18); the tab title follows the language (#17). Seen on the live site: EN → Polish on the same page. One-time catch: phones still running yesterday's copy need one last reload.
 - [x] Gemini "Skydiving Safety Directory" processed (#12): 14 new contacts, 2 false claims caught.
