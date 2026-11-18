@@ -226,6 +226,15 @@ owner · `[x]` done and seen on screen (commit) · `[?]` waiting on the owner (t
 A re-ask is marked `re-asked <date>: why it wasn't done` on the same line. The 2-hourly run and the autopilot work the open
 lines top down; a line is closed only when it's done and seen, or the owner drops it.
 
+2026-11-18 (scheduled run "PRs and Codex translations"; report: docs/review/prs-and-codex-2026-11-18.md):
+- [x] Review contributor / Dependabot PRs: none open (only the owner's draft #6).
+- [x] Read the owner's Codex chat "Review translation quality" (its patch never reached GitHub) and check each finding.
+- [x] Arabic canopy-check tile "مربّعة" → "مستطيلة", as glossary-ar already chose (#28, seen 375 px light + dark).
+- [x] Metres mode converted only the last height of "2,000 to 1,000 ft", "13,000 → 5,500 ft" and the landing-plan list,
+      in all 32 languages (#29; seen 375 px en/ru/de/ar, light + dark).
+- [x] Japanese pilot-chute line "まだ仰向け" (lying face-up) → "まだ背中の後ろにある" (#30; seen 375 px light + dark).
+- [?] "Square" tile word in other languages, Spanish "batidores", ar/he arrow label, ru/uk "на спине": under "Waiting on you".
+
 2026-11-17 (chat, phone screenshot):
 - [x] Russian card labels in full ("отделение от самолёта", "раскрытие парашюта") + other languages checked (#21, #22).
 - [x] /de/ reload flashed English ↔ German: language fetched before the first render + preloaded (#23); not a Vercel problem.
@@ -569,6 +578,11 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - For a redesign, propose a few options first and let the owner pick; animations smooth and not distracting.
 
 ## Waiting on you
+- Translations (2026-11-18 report, docs/review/prs-and-codex-2026-11-18.md §5): (a) canopy-check tile still a literal
+  "square" in bg, cs, el, fr, he, pt, sr, tr, ru, uk while its line says "rectangle": switch to the rectangle word with
+  "square" in brackets once? Recommended: yes. (b) Spanish toggles: add "(mandos)" after "batidores" once and start
+  glossary-es.md? Recommended: yes. (c) ar/he pattern label "2,000→1,000 ft": translate it with "←"? Recommended: yes.
+  (d) ru/uk "Всё ещё на спине" → "Всё ещё за спиной"? Recommended: yes.
 - **Instructor briefing:** the app's last Part IV chapter "questions for your instructors" (18, by jump phase) holds every
   school-specific doubt from the fact-check (count 3 or 5 after the pull, where to look in the flare, aircraft-emergency
   altitudes, which instructor is outside, hard pull: reserve only or cut away first, RSL/MARD, reserve handle type,
