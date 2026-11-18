@@ -87,7 +87,7 @@ for (const lang of ALL_LANGS) {
     .replace(/(content=")(?:\.\.\/)?og\.png"/g, `$1${SITE}og.png"`)
     .replace(
       '</head>',
-      `  <link rel="canonical" href="${url(lang)}" />\n    <meta property="og:url" content="${url(lang)}" />\n    ${alternates}\n  </head>`,
+      `  ${lang !== 'en' && catalog ? `<link rel="preload" href="../i18n/${lang}.json" as="fetch" crossorigin="anonymous" />\n    ` : ''}<link rel="canonical" href="${url(lang)}" />\n    <meta property="og:url" content="${url(lang)}" />\n    ${alternates}\n  </head>`,
     )
     .replace(/\s*<noscript>[\s\S]*?<\/noscript>/, '') // the text is on the page now, also without scripts
     .replace('<div id="root"></div>', `<div id="root">${app}</div>`);
