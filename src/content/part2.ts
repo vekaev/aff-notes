@@ -619,8 +619,8 @@ export const part2: Part = {
                 {
                   en: '<b>Two tries or 5 s</b>. Still on your back: <b>emergency procedure</b>.',
                   es: '<b>Dos intentos o 5 s</b>. ¿Sigue en tu espalda? <b>Procedimiento de emergencia</b>.',
-                  uk: '<b>Дві спроби або 5 с</b>. Досі на спині — <b>аварійна процедура</b>.',
-                  ru: '<b>Две попытки или 5 с</b>. Всё ещё на спине — <b>аварийная процедура</b>.',
+                  uk: '<b>Дві спроби або 5 с</b>. Досі за спиною — <b>аварійна процедура</b>.',
+                  ru: '<b>Две попытки или 5 с</b>. Всё ещё за спиной — <b>аварийная процедура</b>.',
                 },
               ],
             },
