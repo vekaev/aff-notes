@@ -682,7 +682,12 @@ h4 { margin: var(--s8) 0 var(--s3); font-size: 17px; }
 @media (max-width: 420px) { .brand { display: inline; } .parts { margin-left: 0; } }
 
 /* phones: the rail only shows progress; scrolling stays native (a touch on it used to jump the page) */
-@media (pointer: coarse) { .skyrail { pointer-events: none; touch-action: auto; } }
+@media (pointer: coarse) {
+  .skyrail { pointer-events: none; touch-action: auto; }
+  /* the skydiver alone takes touches: drag it to scroll; a bigger invisible grip around it */
+  .sky-jumper { pointer-events: auto; touch-action: none; }
+  .sky-jumper::before { content: ''; position: absolute; inset: -14px -10px; }
+}
 .faq p { white-space: pre-line; }
 
 /* altimeter: the reading sits under the dial, never on it */
