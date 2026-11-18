@@ -151,6 +151,9 @@ export function Hero() {
   const quizIds = new Set(chapters.filter(({ c }) => JSON.stringify(c.blocks).includes('"type":"quiz"')).map(({ c }) => c.id));
   const [last, setLast] = useState<string | null>(null);
   useEffect(() => { try { setLast(localStorage.getItem(LAST)); } catch { /* ignore */ } }, []);
+  // The tab title follows the language (pre-rendered pages start right; switching languages must update it too).
+  const title = t(T.title);
+  useEffect(() => { document.title = `${title} · AFF notes`; }, [title]);
   const lastCh = chapters.find(x => x.c.id === last);
   const nextTest = chapters.find(x => quizIds.has(x.c.id) && !passed.has(x.c.id));
   const done = [...quizIds].filter(id => passed.has(id)).length;
