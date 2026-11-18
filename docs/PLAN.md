@@ -578,6 +578,9 @@ Added by the owner-asks audit (docs/review/owner-asks-audit.md):
 - For a redesign, propose a few options first and let the owner pick; animations smooth and not distracting.
 
 ## Waiting on you
+- Scheduled task `aff-notes-finish-review` still fires every 2 h after its 24 hours ended (runs on 2026-11-18 can't
+  switch tasks without a person). In the app's Scheduled tasks: turn it off, and turn `autopilot-aff-notes` back on.
+  Recommended: yes.
 - Translations (2026-11-18 report, docs/review/prs-and-codex-2026-11-18.md §5): (a) canopy-check tile still a literal
   "square" in bg, cs, el, fr, he, pt, sr, tr, ru, uk while its line says "rectangle": switch to the rectangle word with
   "square" in brackets once? Recommended: yes. (b) Spanish toggles: add "(mandos)" after "batidores" once and start

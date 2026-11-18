@@ -22,6 +22,8 @@ The 24-hour review round is over; the regular autopilot (`autopilot-aff-notes`, 
   tunnel shoulder study; curriculum #7.
 - **Still open, waiting on the owner** (docs/PLAN.md "Waiting on you"): instructor briefing answers, hand signals
   "legs in" + "OK", Q27 key (300 or 1,000 ft), headline case, big reorder of Part IV, the dropzone map photo.
+- **2026-11-18 06:00 PST**: the task kept firing after the deadline; it can't switch itself off or the autopilot
+  on without the owner's approval in an unattended run. Asked under "Waiting on you" in docs/PLAN.md. No content changes.
 - **In progress elsewhere**: school-rules profiles, draft PR #6 (not merged; needs a merge of main, regenerate en.json).
 
 ## Status 2026-11-17 08:00 PST
