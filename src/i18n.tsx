@@ -4,7 +4,14 @@ import { keyOf } from './content/i18n/key';
 import { convertQuantities, defaultUnits, savedUnits, saveUnits, type Units } from './units';
 
 // Extra languages load on demand (one JSON per language, built from English by the translators).
-const CATALOGS = import.meta.glob<Record<string, string>>('./content/i18n/*.json', { import: 'default' });
+// The 28 extra languages: plain JSON at fixed addresses next to the app (vite.config.ts, `langFiles`). A fixed name
+// still exists after a new deploy, so switching language works on a page that was opened before it (no reload).
+const APP_ROOT = new URL('../', import.meta.url); // the built script lives in assets/; in dev this is the site root
+const loadCatalog = (lang: Lang): Promise<Record<string, string>> =>
+  fetch(new URL(`i18n/${lang}.json`, APP_ROOT), { cache: 'no-cache' }).then(r => {
+    if (!r.ok) throw new Error(`${lang}: ${r.status}`);
+    return r.json() as Promise<Record<string, string>>;
+  });
 
 const KEY = 'aff-lang';
 
@@ -58,17 +65,6 @@ export function initialLang(): Lang {
   return 'en';
 }
 
-// A page loaded before a new deploy asks for language files under old names that no longer exist, and the text stays
-// in the old language until the reader reloads. Reload once by ourselves: the address already has the new language.
-const RELOADED = 'aff-lang-reload';
-function reloadOnce(): void {
-  try {
-    if (!navigator.onLine || sessionStorage.getItem(RELOADED)) return; // offline or already tried: stays English
-    sessionStorage.setItem(RELOADED, '1');
-    location.reload();
-  } catch { /* storage blocked: stays English */ }
-}
-
 interface Ctx { lang: Lang; setLang: (l: Lang) => void; t: (s: L) => string; units: Units; setUnits: (u: Units) => void }
 const LangContext = createContext<Ctx>({ lang: 'en', setLang: () => {}, t: s => s.en, units: 'ft', setUnits: () => {} });
 
@@ -98,8 +94,7 @@ export function LangProvider({ children, initial }: { children: ReactNode; initi
     document.documentElement.lang = lang;
     document.documentElement.dir = RTL.includes(lang) ? 'rtl' : 'ltr';
     if (isCore(lang)) return;
-    const load = CATALOGS[`./content/i18n/${lang}.json`];
-    if (load) load().then(map => { setCat({ lang, map }); try { sessionStorage.removeItem(RELOADED); } catch { /* ignore */ } }).catch(reloadOnce);
+    loadCatalog(lang).then(map => setCat({ lang, map })).catch(() => { /* offline and never loaded: stays English */ });
   }, [lang]);
   const value = useMemo(() => {
     const map = cat && cat.lang === lang ? cat.map : null;

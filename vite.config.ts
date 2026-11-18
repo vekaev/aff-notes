@@ -1,13 +1,38 @@
 /// <reference types="vitest/config" />
+import fs from 'node:fs';
+import path from 'node:path';
 import { defineConfig, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 import { ALL_LANGS, LANGS } from './src/content/types.ts';
 
-// The 28 extra languages are separate chunks (assets/<lang>-<hash>.js, ~3 MB together). The offline install skips
-// them; the reader's language is cached when it loads (runtime rule below + src/pwa.ts for the first visit).
+// The 28 extra languages are JSON files (i18n/<lang>.json, ~3 MB together). The offline install skips them; the
+// reader's language is cached when it loads (runtime rule below + src/pwa.ts for the first visit).
 const EXTRA = ALL_LANGS.filter(l => !(LANGS as readonly string[]).includes(l));
 const LANG_PAGE = new RegExp(`/(?:${ALL_LANGS.join('|')})/$`);
+
+// The 28 extra languages are plain JSON at fixed addresses (i18n/<lang>.json), not hashed code chunks: a page opened
+// before a new deploy can still switch language without a reload (a hashed chunk would be gone after the deploy).
+const I18N_DIR = path.resolve(import.meta.dirname, 'src/content/i18n');
+const langFiles = (): Plugin => ({
+  name: 'lang-files',
+  configureServer(server) {
+    server.middlewares.use((req, res, next) => {
+      const m = /\/i18n\/([a-z]{2})\.json(?:\?.*)?$/.exec(req.url ?? '');
+      if (!m || !EXTRA.includes(m[1] as (typeof EXTRA)[number])) return next();
+      res.setHeader('Content-Type', 'application/json');
+      res.end(fs.readFileSync(path.join(I18N_DIR, `${m[1]}.json`)));
+    });
+  },
+  generateBundle() {
+    for (const l of EXTRA)
+      this.emitFile({
+        type: 'asset',
+        fileName: `i18n/${l}.json`,
+        source: fs.readFileSync(path.join(I18N_DIR, `${l}.json`)),
+      });
+  },
+});
 
 // `vite preview` stands in for Vercel's rewrite (vercel.json): /fr/media/x.mp4 → /media/x.mp4 when no such file.
 const langFolderFallback = (): Plugin => ({
@@ -31,6 +56,7 @@ export default defineConfig({
   plugins: [
     react(),
     langFolderFallback(),
+    langFiles(),
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: false, // registered in src/pwa.ts, at the app root also from a language page (/fr/)
@@ -57,7 +83,6 @@ export default defineConfig({
         clientsClaim: true, // take over the open page right away (set by hand since injectRegister is off)
         skipWaiting: true,
         globPatterns: ['**/*.{js,css,html,svg,png,jpg,webmanifest}'],
-        globIgnores: EXTRA.map(l => `assets/${l}-*.js`),
         // clips are cached the first time they play, and served from the cache offline (with range requests)
         runtimeCaching: [
           {
@@ -73,11 +98,12 @@ export default defineConfig({
             },
           },
           {
-            // a language chunk is cached the first time it loads (hashed name, so it never goes stale)
-            urlPattern: new RegExp(`/assets/(?:${EXTRA.join('|')})-[\\w-]+\\.js$`),
-            handler: 'CacheFirst',
+            // languages (i18n/<lang>.json, fixed names): fresh when online, the last copy offline
+            urlPattern: /\/i18n\/[a-z]{2}\.json$/,
+            handler: 'NetworkFirst',
             options: {
               cacheName: 'langs',
+              networkTimeoutSeconds: 4,
               cacheableResponse: { statuses: [0, 200] },
               expiration: { maxEntries: 40 },
               // copies saved by src/pwa.ts were fetched without an Origin header; `Vary: Origin` must not hide them
