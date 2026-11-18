@@ -14,7 +14,7 @@ export const part3: Part = {
     // ---------------------------------------------------------------- deploy
     {
       id: 'deploy',
-      title: l('Pull, count, check', 'Abrir, contar, revisar', 'Раскрытие, счёт, проверка', 'Розкриття, рахунок, перевірка'),
+      title: l('Pull, count, check', 'Abrir, contar, revisar', 'Раскрытие, счёт, проверка', 'Розкриття, рахунок до п’яти, перевірка купола'),
       blocks: [
         {
           type: 'split',
@@ -64,7 +64,7 @@ export const part3: Part = {
               type: 'canopyCheck',
               items: [
                 {
-                  word: l('There', 'Está', 'Есть', 'Є'),
+                  word: l('There', 'Está', 'Есть', 'Купол є'),
                   text: l('Something is out over your head.', 'Hay algo abierto sobre tu cabeza.', 'Над головой что-то есть.', 'Над головою щось є.'),
                 },
                 {
@@ -85,8 +85,8 @@ export const part3: Part = {
                   text: l(
                     'Line twists? <b>Kick them out first</b>. Then unstow the toggles: turn left, turn right, then a <b>practice flare</b>.',
                     '¿Vueltas en las líneas? <b>Primero patea hasta deshacerlas</b>. Luego desengancha los batidores: gira a la izquierda, gira a la derecha y luego haz un <b>flare de práctica</b>.',
-                    'Закрутка строп? <b>Сначала раскрутись</b>. Потом снять клеванты с фиксации: поворот влево, вправо, потом <b>пробное торможение (flare)</b>.',
-                    'Закрутка строп? <b>Спершу розкрутися</b>. Потім зніми клеванти з фіксації: поворот ліворуч, праворуч, потім <b>пробне гальмування (flare)</b>.',
+                    'Закрутка строп? <b>Сначала раскрутись</b>. Потом снять клеванты с фиксации: поворот влево, вправо, потом <b>пробное выравнивание (flare)</b>.',
+                    'Закрутка строп? <b>Спершу розкрутися</b>. Потім зніми клеванти з фіксації: поворот ліворуч, праворуч, потім <b>пробне вирівнювання (flare)</b>.',
                   ),
                 },
               ],
@@ -94,7 +94,7 @@ export const part3: Part = {
             {
               type: 'callout',
               tone: 'red',
-              title: l('Any “no”?', '¿Algún “no”?', 'Хоть одно «нет»?', 'Хоч одне «ні»?'),
+              title: l('Any “no”?', '¿Algún “no”?', 'Хотя бы один ответ «нет»?', 'Хоч одне «ні»?'),
               text: l(
                 'Try the fixes in <a href="#ep">Part IV</a>. Not fixed: <b>decide and act by 2,500 ft</b>, the decision altitude.',
                 'Prueba los arreglos de la <a href="#ep">Parte IV</a>. ¿No se arregla? <b>Decide y actúa antes de 2,500 ft</b>, la altura de decisión.',
@@ -109,7 +109,7 @@ export const part3: Part = {
               items: [
                 clip('deploy', l('Lock on, wave off, reach, throw (their altimeter, not your pull altitude)', 'Altímetro, wave-off, buscar, lanzar (su altímetro, no tu altura de apertura)', 'Высотомер, отмашка, дотянуться, выбросить (их высотомер, не твоя высота раскрытия)', 'Висотомір, відмашка, дотягнутися, викинути (їхній висотомір, не твоя висота розкриття)'), 'Skydive Spaceland', 'ufz1HjyYs_0', 146),
                 clip('throw', l('Locate, grip, throw, arch, count', 'Localizar, agarrar, lanzar, arquear, contar', 'Найти, взять, выбросить, прогиб, счёт', 'Знайти, взяти, викинути, прогин, рахунок'), 'APF', 'PTYsjH7DSVA', 124),
-                clip('check', l('Canopy check: shape, slider, toggles, practice flares', 'Revisión de la vela: forma, slider, batidores, flares de práctica', 'Проверка купола: форма, слайдер, клеванты, пробные flare', 'Перевірка купола: форма, слайдер, клеванти, пробні flare'), 'APF', 'PTYsjH7DSVA', 154),
+                clip('check', l('Canopy check: shape, slider, toggles, practice flares', 'Revisión de la vela: forma, slider, batidores, flares de práctica', 'Проверка купола: форма, слайдер, клеванты, пробные выравнивания', 'Перевірка купола: форма, слайдер, клеванти, пробні вирівнювання'), 'APF', 'PTYsjH7DSVA', 154),
                 clip('canopy_check_pov', l('Your view right after opening: slider coming down, then the check: square, stable, steerable', 'Lo que ves justo después de abrir: el slider baja, luego la revisión: cuadrada, estable, gobernable', 'Что ты видишь сразу после раскрытия: слайдер опускается, дальше проверка: квадратный, стабильный, управляемый', 'Що ти бачиш одразу після розкриття: слайдер опускається, далі перевірка: квадратний, стабільний, керований'), 'Strictly Clown Business', 'moBHeP1WNNI', 33),
               ],
             },
@@ -154,8 +154,8 @@ export const part3: Part = {
               why: l(
                 '“There” is something overhead, “steerable” is the turns and the practice flare. “Square” is the shape: all cells open, slider down.',
                 '“Está” es que hay algo arriba, “gobernable” son los giros y el flare de práctica. “Cuadrada” es la forma: todas las celdas abiertas, slider abajo.',
-                '«Есть» — что-то над головой, «управляемый» — повороты и пробный flare. «Квадратный» — это форма: все секции наполнены, слайдер опущен.',
-                '«Є» — щось над головою, «керований» — повороти й пробний flare. «Квадратний» — це форма: усі секції наповнені, слайдер опущений.',
+                '«Есть» — что-то над головой, «управляемый» — повороты и пробное выравнивание. «Квадратный» — это форма: все секции наполнены, слайдер опущен.',
+                '«Є» — щось над головою, «керований» — повороти й пробне вирівнювання. «Квадратний» — це форма: усі секції наповнені, слайдер опущений.',
               ),
             },
             {
@@ -285,8 +285,8 @@ export const part3: Part = {
               sub: l(
                 '<b>Into the wind</b>, toward the target. From here only small flat corrections (<b>≤ 45°</b>). Why: time to fly straight and level before the flare.',
                 '<b>Contra el viento</b>, hacia el blanco. Desde aquí solo correcciones pequeñas y planas (<b>≤ 45°</b>). Por qué: tiempo para volar recto y nivelado antes del flare.',
-                '<b>Против ветра</b>, на цель. Дальше только небольшие плоские поправки (<b>≤ 45°</b>). Почему: есть время лететь прямо и ровно до flare.',
-                '<b>Проти вітру</b>, на ціль. Далі лише невеликі пласкі поправки (<b>≤ 45°</b>). Чому: є час летіти прямо й рівно до flare.',
+                '<b>Против ветра</b>, на цель. Дальше только небольшие плоские поправки (<b>≤ 45°</b>). Почему: есть время лететь прямо и ровно до выравнивания.',
+                '<b>Проти вітру</b>, на ціль. Далі лише невеликі пласкі поправки (<b>≤ 45°</b>). Чому: є час летіти прямо й рівно до вирівнювання.',
               ),
             },
             {
@@ -306,7 +306,7 @@ export const part3: Part = {
         },
         {
           type: 'callout',
-          title: l('Two different 2,500 ft', 'Dos 2,500 ft distintos', 'Две разные отметки 2 500 футов', 'Дві різні позначки 2 500 футів'),
+          title: l('Two different 2,500 ft', 'Dos 2,500 ft distintos', 'Два разных решения на 2 500 футах', 'Дві різні позначки 2 500 футів'),
           points: [
             l(
               '<b>Good canopy</b>: plan the landing. Holding point, left or right pattern.',
@@ -418,8 +418,8 @@ export const part3: Part = {
           text: l(
             'Turning <b>too sharply</b> at the very end, near the ground: you hit fast, often at an angle, with <b>no flare left</b>. That’s a <b>low turn</b>.',
             'Girar <b>demasiado fuerte</b> justo al final, cerca del suelo: golpeas rápido, a menudo inclinado, <b>sin margen para el flare</b>. Eso es un <b>giro bajo</b>.',
-            'Слишком <b>резкий поворот</b> в самом конце, у земли: удар на скорости, часто под углом, и <b>на flare нет запаса</b>. Это и есть <b>низкий разворот</b>.',
-            'Надто <b>різкий поворот</b> у самому кінці, біля землі: удар на швидкості, часто під кутом, і <b>на flare немає запасу</b>. Це і є <b>низький розворот</b>.',
+            'Слишком <b>резкий поворот</b> в самом конце, у земли: удар на скорости, часто под углом, и <b>на выравнивание нет запаса</b>. Это и есть <b>низкий разворот</b>.',
+            'Надто <b>різкий поворот</b> у самому кінці, біля землі: удар на швидкості, часто під кутом, і <b>на вирівнювання немає запасу</b>. Це і є <b>низький розворот</b>.',
           ),
           points: [
             l(
@@ -431,26 +431,26 @@ export const part3: Part = {
             l(
               'A <b>level wing</b> beats the perfect spot. Landing priorities (USPA SIM 4-1): <b>1 level wing</b>, flying straight; <b>2 a clear area</b>, even a farther one; <b>3 flare and PLF</b>.',
               'Un <b>ala nivelada</b> vale más que el lugar perfecto. Prioridades al aterrizar (USPA SIM 4-1): <b>1 ala nivelada</b>, volando recto; <b>2 una zona despejada</b>, aunque esté más lejos; <b>3 flare y PLF</b>.',
-              '<b>Ровное крыло</b> важнее идеального места. Приоритеты при посадке (USPA SIM 4-1): <b>1 ровное крыло</b>, полёт по прямой; <b>2 свободная площадка</b>, даже если она дальше; <b>3 flare и PLF</b>.',
-              '<b>Рівне крило</b> важливіше за ідеальне місце. Пріоритети під час посадки (USPA SIM 4-1): <b>1 рівне крило</b>, політ по прямій; <b>2 вільний майданчик</b>, навіть якщо він далі; <b>3 flare і PLF</b>.',
+              '<b>Ровное крыло</b> важнее идеального места. Приоритеты при посадке (USPA SIM 4-1): <b>1 ровное крыло</b>, полёт по прямой; <b>2 свободная площадка</b>, даже если она дальше; <b>3 выравнивание и PLF</b>.',
+              '<b>Рівне крило</b> важливіше за ідеальне місце. Пріоритети під час посадки (USPA SIM 4-1): <b>1 рівне крило</b>, політ по прямій; <b>2 вільний майданчик</b>, навіть якщо він далі; <b>3 вирівнювання і PLF</b>.',
             ),
             l(
               'Obstacle below 300 ft (bush, fence): <b>half brakes</b>; the smallest <b>flat braked turn</b> that misses it, or go into it with feet and knees together, <b>flare and PLF</b>. Never a hard turn.',
               'Obstáculo por debajo de 300 ft (arbusto, cerca): <b>medio freno</b>; el <b>giro plano con freno</b> más pequeño que lo esquive, o entra en él con pies y rodillas juntos, <b>flare y PLF</b>. Nunca un giro fuerte.',
-              'Препятствие ниже 300 футов (куст, забор): <b>полутормоза</b>; самый маленький <b>плоский поворот на тормозах</b>, чтобы его обойти, или садись в него, ступни и колени вместе, <b>flare и PLF</b>. Никаких резких поворотов.',
-              'Перешкода нижче 300 футів (кущ, паркан): <b>напівгальма</b>; найменший <b>плаский поворот на гальмах</b>, щоб її оминути, або сідай у неї, ступні й коліна разом, <b>flare і PLF</b>. Жодних різких поворотів.',
+              'Препятствие ниже 300 футов (куст, забор): <b>полутормоза</b>; самый маленький <b>плоский поворот на тормозах</b>, чтобы его обойти, или садись в него, ступни и колени вместе, <b>выравнивание и PLF</b>. Никаких резких поворотов.',
+              'Перешкода нижче 300 футів (кущ, паркан): <b>напівгальма</b>; найменший <b>плаский поворот на гальмах</b>, щоб її оминути, або сідай у неї, ступні й коліна разом, <b>вирівнювання і PLF</b>. Жодних різких поворотів.',
             ),
             l(
               'Must turn low? A <b>braked flat turn</b>: from half brakes, let one toggle up a little and pull the other down a little more. No dive. Then flare from there.',
               '¿Tienes que girar bajo? Un <b>giro plano con freno</b>: desde medio freno, sube un poco un batidor y baja un poco más el otro. Sin picar. Luego flare desde ahí.',
-              'Нужно повернуть низко? <b>Плоский поворот на тормозах</b>: из полутормозов чуть отпусти одну клеванту и чуть добери другую. Без нырка. Потом flare из этого положения.',
-              'Треба повернути низько? <b>Плаский поворот на гальмах</b>: з напівгальм трохи відпусти одну клеванту й трохи добери другу. Без пірнання. Потім flare із цього положення.',
+              'Нужно повернуть низко? <b>Плоский поворот на тормозах</b>: из полутормозов чуть отпусти одну клеванту и чуть добери другую. Без нырка. Потом выравнивание из этого положения.',
+              'Треба повернути низько? <b>Плаский поворот на гальмах</b>: з напівгальм трохи відпусти одну клеванту й трохи добери другу. Без пірнання. Потім вирівнювання із цього положення.',
             ),
             l(
               'Already in a low turn? <b>Opposite toggle down</b> to stop the turn and bring the canopy back overhead. Then <b>flare from those brakes</b> and get ready for a hard landing (PLF). Hit early? <b>Keep flying</b> the canopy (USPA SIM 4-1).',
               '¿Ya estás en un giro bajo? <b>Baja el batidor contrario</b> para parar el giro y volver a tener la vela encima. Luego <b>flare desde esos frenos</b> y prepárate para un aterrizaje duro (PLF). ¿Tocas antes? <b>Sigue pilotando</b> la vela (USPA SIM 4-1).',
-              'Уже в низком развороте? <b>Противоположную клеванту вниз</b>, чтобы остановить разворот и вернуть купол над головой. Потом <b>flare из этих тормозов</b> и готовься к жёсткой посадке (PLF). Коснулся раньше? <b>Продолжай управлять</b> куполом (USPA SIM 4-1).',
-              'Уже в низькому розвороті? <b>Протилежну клеванту вниз</b>, щоб зупинити розворот і повернути купол над головою. Потім <b>flare із цих гальм</b> і готуйся до жорсткої посадки (PLF). Торкнувся раніше? <b>Далі керуй</b> куполом (USPA SIM 4-1).',
+              'Уже в низком развороте? <b>Противоположную клеванту вниз</b>, чтобы остановить разворот и вернуть купол над головой. Потом <b>выравнивание из этих тормозов</b> и готовься к жёсткой посадке (PLF). Коснулся раньше? <b>Продолжай управлять</b> куполом (USPA SIM 4-1).',
+              'Уже в низькому розвороті? <b>Протилежну клеванту вниз</b>, щоб зупинити розворот і повернути купол над головою. Потім <b>вирівнювання із цих гальм</b> і готуйся до жорсткої посадки (PLF). Торкнувся раніше? <b>Далі керуй</b> куполом (USPA SIM 4-1).',
             ),
           ],
           clip: clip(
@@ -479,7 +479,7 @@ export const part3: Part = {
               options: [
                 l('Whether to cut away or keep this canopy', 'Si liberar o quedarte con esta vela', 'Отцепляться или лететь на этом куполе', 'Відчіплюватися чи летіти на цьому куполі'),
                 l('The holding point and a left or right pattern', 'El punto de espera y circuito izquierdo o derecho', 'Точку ожидания и левую или правую схему', 'Точку очікування й ліву чи праву схему'),
-                l('How high to start the flare today', 'A qué altura empezar hoy el flare', 'На какой высоте сегодня начать flare', 'На якій висоті сьогодні почати flare'),
+                l('How high to start the flare today', 'A qué altura empezar hoy el flare', 'На какой высоте сегодня начать выравнивание', 'На якій висоті сьогодні почати вирівнювання'),
               ],
               answer: 1,
               why: l(
@@ -505,8 +505,8 @@ export const part3: Part = {
               why: l(
                 'Hold from 2,000 to 1,000 ft, enter downwind at 900 ft, base at 600 ft, final at 300 ft, flare at about 10 ft.',
                 'Espera de 2,000 a 1,000 ft, entra con viento en cola a 900 ft, base a 600 ft, final a 300 ft, flare a unos 10 ft.',
-                'Ожидание с 2 000 до 1 000 футов, вход по ветру на 900 футах, базовая прямая на 600, финал на 300, flare примерно на 10 футах.',
-                'Очікування з 2 000 до 1 000 футів, вхід по вітру на 900 футах, базова пряма на 600, фінал на 300, flare приблизно на 10 футах.',
+                'Ожидание с 2 000 до 1 000 футов, вход по ветру на 900 футах, базовая прямая на 600, финал на 300, выравнивание примерно на 10 футах.',
+                'Очікування з 2 000 до 1 000 футів, вхід по вітру на 900 футах, базова пряма на 600, фінал на 300, вирівнювання приблизно на 10 футах.',
               ),
             },
             {
@@ -562,7 +562,7 @@ export const part3: Part = {
         {
           type: 'list',
           kind: 'do',
-          title: l('Best plan: never get there', 'El mejor plan: no llegar ahí', 'Лучший план: туда не попасть', 'Найкращий план: туди не потрапити'),
+          title: l('Best plan: never get there', 'El mejor plan: no llegar ahí', 'Лучший план: не допустить такой посадки', 'Найкращий план: туди не потрапити'),
           items: [
             l('<b>See it early</b> and turn away from it <b>while you are still above 1,000 ft</b>.', '<b>Detéctalo temprano</b> y aléjate de él <b>mientras estés por encima de 1,000 ft</b>.', '<b>Заметь заранее</b> и отверни от него, <b>пока ты выше 1 000 футов</b>.', '<b>Помічай заздалегідь</b> і відвертай від неї, <b>поки ти вище 1 000 футів</b>.'),
             l('Be over the holding point <b>by 2,000 ft</b>: still time to judge if you reach the landing area.', 'Llega sobre el punto de espera <b>antes de 2,000 ft</b>: aún hay tiempo para ver si llegas.', 'К <b>2 000 футам</b> будь над точкой ожидания: ещё есть время понять, долетишь ли.', 'На <b>2 000 футах</b> будь над точкою очікування: ще є час зрозуміти, чи долетиш.'),
@@ -600,7 +600,7 @@ export const part3: Part = {
               title: l('Buildings', 'Edificios', 'Здания', 'Будівлі'),
               points: [
                 l('Near a wall: <b>fly along it</b> with a flat turn, not into it', 'Cerca de una pared: <b>vuela a lo largo</b> con un giro plano, no contra ella', 'У стены: <b>лети вдоль неё</b> плоским поворотом, не в неё', 'Біля стіни: <b>лети вздовж неї</b> пласким поворотом, не в неї'),
-                l('Going to hit: <b>flare about 10 ft above where you\'ll touch</b>, then PLF', 'Si vas a golpear: <b>flare a unos 10 ft por encima del punto de contacto</b>, luego PLF', 'Удар неизбежен: <b>flare на высоте около 10 футов над точкой касания</b>, потом PLF', 'Удару не уникнути: <b>flare на висоті близько 10 футів над точкою дотику</b>, потім PLF'),
+                l('Going to hit: <b>flare about 10 ft above where you\'ll touch</b>, then PLF', 'Si vas a golpear: <b>flare a unos 10 ft por encima del punto de contacto</b>, luego PLF', 'Удар неизбежен: <b>выравнивание на высоте около 10 футов над точкой касания</b>, потом PLF', 'Удару не уникнути: <b>вирівнювання на висоті близько 10 футів над точкою дотику</b>, потім PLF'),
                 l('On a roof: <b>collapse the canopy</b>; if the wind drags you, <b>cut away</b> (disconnect the RSL first if you can; USPA SIM 4-1)', 'En un techo: <b>colapsa la vela</b>; si el viento te arrastra, <b>libera</b> (antes desconecta el RSL si puedes; USPA SIM 4-1)', 'На крыше: <b>погаси купол</b>; если ветер тащит — <b>отцепляйся</b> (сначала отсоедини RSL, если можешь; USPA SIM 4-1)', 'На даху: <b>погаси купол</b>; якщо вітер тягне — <b>відчіплюйся</b> (спершу від’єднай RSL, якщо можеш; USPA SIM 4-1)'),
               ],
             },
@@ -759,8 +759,8 @@ export const part3: Part = {
               why: l(
                 'A flat turn along the wall keeps you from hitting it without making the canopy dive. If you do hit, flare about 10 ft above where you\'ll touch, then PLF.',
                 'Un giro plano a lo largo de la pared evita el golpe sin hacer picar la vela. Si igual golpeas, flare a unos 10 ft por encima del punto de contacto y luego PLF.',
-                'Плоский поворот вдоль стены уводит от удара, не заставляя купол нырять. Если всё же удар — flare на высоте около 10 футов над точкой касания, потом PLF.',
-                'Плаский поворот уздовж стіни відводить від удару й не змушує купол пірнати. Якщо удару не уникнути — flare на висоті близько 10 футів над точкою дотику, потім PLF.',
+                'Плоский поворот вдоль стены уводит от удара, не заставляя купол нырять. Если всё же удар — выравнивание на высоте около 10 футов над точкой касания, потом PLF.',
+                'Плаский поворот уздовж стіни відводить від удару й не змушує купол пірнати. Якщо удару не уникнути — вирівнювання на висоті близько 10 футів над точкою дотику, потім PLF.',
               ),
             },
             {
@@ -798,21 +798,21 @@ export const part3: Part = {
           left: [
             {
               type: 'callout',
-              title: l('What the flare does', 'Qué hace el flare', 'Что делает flare', 'Що робить flare'),
+              title: l('What the flare does', 'Qué hace el flare', 'Что даёт выравнивание (flare)', 'Що дає вирівнювання (flare)'),
               points: [
                 l('On final you come down <b>at an angle</b>.', 'En final bajas <b>en ángulo</b>.', 'На финале ты снижаешься <b>под углом</b>.', 'На фіналі ти знижуєшся <b>під кутом</b>.'),
                 l(
                   'The flare makes it a <b>short level glide</b>; the canopy “lifts” you a little.',
                   'El flare lo convierte en un <b>planeo corto y nivelado</b>; la vela te “levanta” un poco.',
-                  'Flare превращает это в <b>короткое горизонтальное планирование</b>, купол чуть «приподнимает».',
-                  'Flare перетворює це на <b>коротке горизонтальне планування</b>, купол трохи «підіймає».',
+                  'Выравнивание (flare) превращает это в <b>короткое горизонтальное планирование</b>, купол чуть «приподнимает».',
+                  'Вирівнювання (flare) перетворює це на <b>коротке горизонтальне планування</b>, купол трохи «підіймає».',
                 ),
                 l('You <b>step down softly</b>.', 'Te <b>posas suave</b>.', 'Ты <b>мягко встаёшь</b>.', 'Ти <b>м’яко стаєш</b> на ноги.'),
                 l(
                   'Common mistake: <b>too fast</b>. A jerky flare spends the canopy’s speed too early, and you drop the last few feet.',
                   'Error común: <b>demasiado rápido</b>. Un flare brusco gasta la velocidad de la vela demasiado pronto y caes los últimos pies.',
-                  'Частая ошибка — <b>слишком быстро</b>: резкий flare тратит скорость купола раньше времени, и последние футы ты падаешь.',
-                  'Часта помилка — <b>надто швидко</b>: різкий flare витрачає швидкість купола завчасно, і останні фути ти падаєш.',
+                  'Частая ошибка — <b>слишком быстро</b>: резкое выравнивание тратит скорость купола раньше времени, и последние футы ты падаешь.',
+                  'Часта помилка — <b>надто швидко</b>: різке вирівнювання витрачає швидкість купола завчасно, і останні фути ти падаєш.',
                 ),
               ],
             },
@@ -868,9 +868,9 @@ export const part3: Part = {
             },
             {
               type: 'list',
-              title: l('Timing', 'El momento', 'Когда тянуть', 'Коли тягнути'),
+              title: l('Timing', 'El momento', 'Когда начинать выравнивание', 'Коли починати вирівнювання'),
               items: [
-                l('What matters: the flare is <b>finished at touchdown</b>. USPA: arms all the way down when your feet are about <b>1–3 ft</b> off the ground.', 'Lo que importa: el flare <b>termina al tocar el suelo</b>. USPA: brazos abajo del todo cuando los pies están a <b>1–3 ft</b> del suelo.', 'Главное — flare <b>закончился в момент касания</b>. USPA: руки до упора вниз, когда ноги примерно в <b>1–3 футах</b> от земли.', 'Головне — flare <b>закінчено в момент торкання</b>. USPA: руки до кінця вниз, коли ноги приблизно за <b>1–3 фути</b> від землі.'),
+                l('What matters: the flare is <b>finished at touchdown</b>. USPA: arms all the way down when your feet are about <b>1–3 ft</b> off the ground.', 'Lo que importa: el flare <b>termina al tocar el suelo</b>. USPA: brazos abajo del todo cuando los pies están a <b>1–3 ft</b> del suelo.', 'Главное — выравнивание <b>закончилось в момент касания</b>. USPA: руки до упора вниз, когда ноги примерно в <b>1–3 футах</b> от земли.', 'Головне — вирівнювання <b>закінчено в момент торкання</b>. USPA: руки до кінця вниз, коли ноги приблизно за <b>1–3 фути</b> від землі.'),
                 l('Started late: <b>pull faster</b>.', 'Si empiezas tarde: <b>tira más rápido</b>.', 'Начал поздно — <b>тяни быстрее</b>.', 'Почав пізно — <b>тягни швидше</b>.'),
                 l('Started early: <b>pull slower</b>.', 'Si empiezas temprano: <b>tira más lento</b>.', 'Начал рано — <b>тяни медленнее</b>.', 'Почав рано — <b>тягни повільніше</b>.'),
                 l(
@@ -882,20 +882,20 @@ export const part3: Part = {
                 l(
                   'Why hold: letting the toggles back up makes the canopy <b>dive</b>. Stop where you are, finish the flare as you get close, then PLF (USPA).',
                   'Por qué mantener: si dejas subir los batidores, la vela <b>pica</b>. Para donde estás, termina el flare al acercarte al suelo y luego PLF (USPA).',
-                  'Почему держать: если отпустить клеванты вверх, купол <b>нырнёт</b>. Остановись там, где есть, дожми flare у самой земли, потом PLF (USPA).',
-                  'Чому тримати: якщо відпустити клеванти вгору, купол <b>пірне</b>. Зупинись там, де є, дотисни flare біля самої землі, потім PLF (USPA).',
+                  'Почему держать: если отпустить клеванты вверх, купол <b>нырнёт</b>. Остановись там, где есть, закончи выравнивание у самой земли, потом PLF (USPA).',
+                  'Чому тримати: якщо відпустити клеванти вгору, купол <b>пірне</b>. Зупинись там, де є, закінчи вирівнювання біля самої землі, потім PLF (USPA).',
                 ),
                 l(
                   'No radio call and the ground is close? <b>Flare anyway</b>: you fly your canopy.',
                   '¿No llega la llamada por radio y el suelo está cerca? <b>Haz el flare igual</b>: tú pilotas tu vela.',
-                  'Команды по радио нет, а земля близко? <b>Всё равно делай flare</b>: куполом управляешь ты.',
-                  'Команди по радіо немає, а земля близько? <b>Однаково роби flare</b>: куполом керуєш ти.',
+                  'Команды по радио нет, а земля близко? <b>Всё равно делай выравнивание</b>: куполом управляешь ты.',
+                  'Команди по радіо немає, а земля близько? <b>Однаково роби вирівнювання</b>: куполом керуєш ти.',
                 ),
               ],
             },
             {
               type: 'callout',
-              title: l('About “5, 4, 3, 2, 1”', 'Sobre “5, 4, 3, 2, 1”', 'Про «5, 4, 3, 2, 1»', 'Про «5, 4, 3, 2, 1»'),
+              title: l('About “5, 4, 3, 2, 1”', 'Sobre “5, 4, 3, 2, 1”', 'Про счёт «5, 4, 3, 2, 1» на посадке', 'Про «5, 4, 3, 2, 1»'),
               points: [
                 l(
                   'In class we counted it <b>while pulling down</b>.',
@@ -922,8 +922,8 @@ export const part3: Part = {
             {
               type: 'clips',
               items: [
-                clip('flare_cue', l('Where to start the flare (this school says 12–15 ft)', 'Dónde empezar el flare (esta escuela dice 12–15 ft)', 'Где начинать flare (в этой школе — 12–15 футов)', 'Де починати flare (у цій школі — 12–15 футів)'), 'Rhythm Skydiving', 'tUFSss3guic', 33),
-                clip('flare_land', l('Final, flare, slide, stand', 'Final, flare, deslizar, de pie', 'Финал, flare, скольжение, встал', 'Фінал, flare, ковзання, встав'), 'Rhythm Skydiving', 'tUFSss3guic', 85),
+                clip('flare_cue', l('Where to start the flare (this school says 12–15 ft)', 'Dónde empezar el flare (esta escuela dice 12–15 ft)', 'Где начинать выравнивание (в этой школе — 12–15 футов)', 'Де починати вирівнювання (у цій школі — 12–15 футів)'), 'Rhythm Skydiving', 'tUFSss3guic', 33),
+                clip('flare_land', l('Final, flare, slide, stand', 'Final, flare, deslizar, de pie', 'Финал, выравнивание, скольжение, встал', 'Фінал, вирівнювання, ковзання, встав'), 'Rhythm Skydiving', 'tUFSss3guic', 85),
                 clip('flare_end', l('Level out just above the ground, slide', 'Nivelar justo sobre el suelo, deslizar', 'Выровняться у самой земли и скользить', 'Вирівнятися біля самої землі й ковзати'), 'Rhythm Skydiving', 'tUFSss3guic', 148),
               ],
             },
@@ -995,7 +995,7 @@ export const part3: Part = {
           type: 'watch',
           items: [
             { yt: 'tUFSss3guic', t: 65, label: l('The landing flare', 'El flare de aterrizaje', 'Выравнивание при посадке', 'Вирівнювання під час посадки'), credit: 'Rhythm Skydiving' },
-            { yt: 'lCWKPIQuK8Q', t: 0, label: l('Parachute landing fall', 'Caída de aterrizaje en paracaídas (PLF)', 'PLF — приземление с перекатом', 'PLF — приземлення з перекатом'), credit: 'USPA' },
+            { yt: 'lCWKPIQuK8Q', t: 0, label: l('Parachute landing fall', 'Caída de aterrizaje en paracaídas (PLF)', 'Приземление с перекатом (PLF)', 'PLF — приземлення з перекатом'), credit: 'USPA' },
           ],
         },
         {
@@ -1005,8 +1005,8 @@ export const part3: Part = {
               q: l(
                 'Where do you look when you start the flare?',
                 '¿Adónde miras al empezar el flare?',
-                'Куда смотришь, когда начинаешь flare?',
-                'Куди дивишся, коли починаєш flare?',
+                'Куда смотришь, когда начинаешь выравнивание?',
+                'Куди дивишся, коли починаєш вирівнювання?',
               ),
               options: [
                 l('Straight down at the ground under you', 'Justo abajo, al suelo debajo de ti', 'Прямо вниз, на землю под собой', 'Просто вниз, на землю під собою'),
@@ -1025,12 +1025,12 @@ export const part3: Part = {
               q: l(
                 'We counted “5, 4, 3, 2, 1” while flaring. What does that mean?',
                 'Contábamos “5, 4, 3, 2, 1” al hacer el flare. ¿Qué significa?',
-                'Мы считали «5, 4, 3, 2, 1» во время flare. Что это значит?',
-                'Ми рахували «5, 4, 3, 2, 1» під час flare. Що це означає?',
+                'Мы считали «5, 4, 3, 2, 1» во время выравнивания. Что это значит?',
+                'Ми рахували «5, 4, 3, 2, 1» під час вирівнювання. Що це означає?',
               ),
               options: [
                 l('The pull must last exactly five seconds', 'El tirón tiene que durar exactamente cinco segundos', 'Движение должно длиться ровно пять секунд', 'Рух має тривати рівно п’ять секунд'),
-                l('Start the flare at 5 ft above the ground', 'Empezar el flare a 5 ft del suelo', 'Начинать flare в 5 футах над землёй', 'Починати flare за 5 футів над землею'),
+                l('Start the flare at 5 ft above the ground', 'Empezar el flare a 5 ft del suelo', 'Начинать выравнивание в 5 футах над землёй', 'Починати вирівнювання за 5 футів над землею'),
                 l('A rhythm to keep the pull smooth', 'Un ritmo para que el tirón sea suave', 'Ритм, чтобы тянуть плавно', 'Ритм, щоб тягнути плавно'),
               ],
               answer: 2,
@@ -1045,8 +1045,8 @@ export const part3: Part = {
               q: l(
                 'You started the flare too high. What now?',
                 'Empezaste el flare demasiado alto. ¿Y ahora?',
-                'Начал flare слишком высоко. Что теперь?',
-                'Почав flare надто високо. Що тепер?',
+                'Начал выравнивание слишком высоко. Что теперь?',
+                'Почав вирівнювання надто високо. Що тепер?',
               ),
               options: [
                 l('Let the toggles back up and start again', 'Dejar subir los batidores y empezar de nuevo', 'Отпустить клеванты вверх и начать заново', 'Відпустити клеванти вгору й почати знову'),
@@ -1110,8 +1110,8 @@ export const part3: Part = {
               a: l(
                 '<b>2,500 ft</b>: decide where to go and which side the pattern is on.\n<b>2,000 → 1,000 ft</b>: hold over the holding point.\n<b>900 ft</b>: start the downwind leg.\n<b>600 ft</b>: turn onto base.\n<b>300 ft</b>: turn onto final, into the wind.\n<b>About 10 ft</b>: flare.\nSee <a href="#pattern">the landing pattern</a>.',
                 '<b>2,500 ft</b>: decide adónde ir y de qué lado va el circuito.\n<b>2,000 → 1,000 ft</b>: espera sobre el punto de espera.\n<b>900 ft</b>: empieza el tramo con viento en cola.\n<b>600 ft</b>: gira a base.\n<b>300 ft</b>: gira a final, contra el viento.\n<b>Unos 10 ft</b>: flare.\nVer <a href="#pattern">el circuito de aterrizaje</a>.',
-                '<b>2 500 футов</b>: решаем, куда лететь и с какой стороны схема.\n<b>2 000 → 1 000 футов</b>: ожидание над точкой.\n<b>900 футов</b>: начало участка по ветру.\n<b>600 футов</b>: поворот на базовую прямую.\n<b>300 футов</b>: поворот на финал, против ветра.\n<b>Около 10 футов</b>: flare.\nСм. <a href="#pattern">схему захода</a>.',
-                '<b>2 500 футів</b>: вирішуємо, куди летіти і з якого боку схема.\n<b>2 000 → 1 000 футів</b>: очікування над точкою.\n<b>900 футів</b>: початок ділянки по вітру.\n<b>600 футів</b>: поворот на базову пряму.\n<b>300 футів</b>: поворот на фінал, проти вітру.\n<b>Близько 10 футів</b>: flare.\nДив. <a href="#pattern">схему заходу</a>.',
+                '<b>2 500 футов</b>: решаем, куда лететь и с какой стороны схема.\n<b>2 000 → 1 000 футов</b>: ожидание над точкой.\n<b>900 футов</b>: начало участка по ветру.\n<b>600 футов</b>: поворот на базовую прямую.\n<b>300 футов</b>: поворот на финал, против ветра.\n<b>Около 10 футов</b>: выравнивание (flare).\nСм. <a href="#pattern">схему захода</a>.',
+                '<b>2 500 футів</b>: вирішуємо, куди летіти і з якого боку схема.\n<b>2 000 → 1 000 футів</b>: очікування над точкою.\n<b>900 футів</b>: початок ділянки по вітру.\n<b>600 футів</b>: поворот на базову пряму.\n<b>300 футів</b>: поворот на фінал, проти вітру.\n<b>Близько 10 футів</b>: вирівнювання (flare).\nДив. <a href="#pattern">схему заходу</a>.',
               ),
             },
             {
@@ -1144,8 +1144,8 @@ export const part3: Part = {
               q: l(
                 'When do you start the flare? What if you flare too high?',
                 '¿Cuándo empiezas el flare? ¿Y si haces el flare demasiado alto?',
-                'Когда начинаем flare? А если начали слишком высоко?',
-                'Коли починаємо flare? А якщо почали надто високо?',
+                'Когда начинаем выравнивание? А если начали слишком высоко?',
+                'Коли починаємо вирівнювання? А якщо почали надто високо?',
               ),
               a: l(
                 "<b>About 10 ft (3 m)</b> off the ground. Too high: <b>don't let the toggles back up</b>. Stop, hold what you have, fly straight, finish as you sink and get ready to PLF.",
@@ -1257,16 +1257,16 @@ export const part3: Part = {
                 'Приблизно на 150 футах розумієш, що почав надто низький розворот. Що тепер?',
               ),
               options: [
-                l('Opposite toggle down to stop the turn, flare from those brakes, PLF', 'Bajas el batidor contrario para parar el giro, flare desde esos frenos, PLF', 'Противоположную клеванту вниз, чтобы остановить разворот, flare из этих тормозов, PLF', 'Протилежну клеванту вниз, щоб зупинити розворот, flare із цих гальм, PLF'),
-                l('Pull the same toggle harder to finish the turn fast, then flare from there', 'Tiras más del mismo batidor para terminar el giro rápido, y flare desde ahí', 'Сильнее тяну ту же клеванту, чтобы быстрее докрутить, потом flare', 'Сильніше тягну ту саму клеванту, щоб швидше докрутити, потім flare'),
-                l('Let both toggles all the way up for speed, then a hard flare at the end', 'Subes los dos batidores del todo para ganar velocidad, y un flare fuerte al final', 'Отпускаю обе клеванты до конца ради скорости, потом резкий flare', 'Відпускаю обидві клеванти до кінця заради швидкості, потім різкий flare'),
+                l('Opposite toggle down to stop the turn, flare from those brakes, PLF', 'Bajas el batidor contrario para parar el giro, flare desde esos frenos, PLF', 'Противоположную клеванту вниз, чтобы остановить разворот, выравнивание из этих тормозов, PLF', 'Протилежну клеванту вниз, щоб зупинити розворот, вирівнювання із цих гальм, PLF'),
+                l('Pull the same toggle harder to finish the turn fast, then flare from there', 'Tiras más del mismo batidor para terminar el giro rápido, y flare desde ahí', 'Сильнее тяну ту же клеванту, чтобы быстрее докрутить, потом выравнивание', 'Сильніше тягну ту саму клеванту, щоб швидше докрутити, потім вирівнювання'),
+                l('Let both toggles all the way up for speed, then a hard flare at the end', 'Subes los dos batidores del todo para ganar velocidad, y un flare fuerte al final', 'Отпускаю обе клеванты до конца ради скорости, потом резкое выравнивание', 'Відпускаю обидві клеванти до кінця заради швидкості, потім різке вирівнювання'),
               ],
               answer: 0,
               why: l(
                 'Stop the turn with the opposite toggle, get the canopy back overhead, flare from there and PLF. Hit early? Keep flying the canopy (USPA SIM 4-1).',
                 'Para el giro con el batidor contrario, vuelve a tener la vela encima, flare desde ahí y PLF. ¿Tocas antes? Sigue pilotando la vela (USPA SIM 4-1).',
-                'Останови разворот противоположной клевантой, верни купол над головой, flare оттуда и PLF. Коснулся раньше? Продолжай управлять куполом (USPA SIM 4-1).',
-                'Зупини розворот протилежною клевантою, поверни купол над головою, flare звідти й PLF. Торкнувся раніше? Далі керуй куполом (USPA SIM 4-1).',
+                'Останови разворот противоположной клевантой, верни купол над головой, выравнивание оттуда и PLF. Коснулся раньше? Продолжай управлять куполом (USPA SIM 4-1).',
+                'Зупини розворот протилежною клевантою, поверни купол над головою, вирівнювання звідти й PLF. Торкнувся раніше? Далі керуй куполом (USPA SIM 4-1).',
               ),
             },
           ],

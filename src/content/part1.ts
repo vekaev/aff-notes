@@ -9,7 +9,7 @@ export const part1: Part = {
     // ---------------------------------------------------------------- plane
     {
       id: 'plane',
-      title: { en: 'The ride up', es: 'La subida', uk: 'Набір висоти', ru: 'Набор высоты' },
+      title: { en: 'The ride up', es: 'La subida', uk: 'Набір висоти', ru: 'Подъём на высоту' },
       blocks: [
         {
           type: 'rules',
@@ -293,7 +293,7 @@ export const part1: Part = {
             { icon: 'rig', title: { en: 'Before you put it on', es: 'Antes de ponértelo', uk: 'Перед тим як одягнути', ru: 'Перед тем как надеть' } },
             { icon: 'person', title: { en: 'After you put it on', es: 'Después de ponértelo', uk: 'Після того як одягнув', ru: 'После того как надел' } },
             { icon: 'plane', title: { en: 'Before boarding', es: 'Antes de subir al avión', uk: 'Перед посадкою в літак', ru: 'Перед посадкой в самолёт' } },
-            { icon: 'door', title: { en: 'Before exit', es: 'Antes de salir', uk: 'Перед відокремленням', ru: 'Перед отделением' } },
+            { icon: 'door', title: { en: 'Before exit', es: 'Antes de salir', uk: 'Перед відокремленням від літака', ru: 'Перед отделением от самолёта' } },
           ],
         },
         {
@@ -492,7 +492,7 @@ export const part1: Part = {
     // ---------------------------------------------------------------- count
     {
       id: 'count',
-      title: { en: 'Exit count', es: 'Conteo de salida', uk: 'Відлік на відокремлення', ru: 'Счёт на отделение' },
+      title: { en: 'Exit count', es: 'Conteo de salida', uk: 'Відлік на відокремлення', ru: 'Счёт на отделение от самолёта' },
       blocks: [
         {
           type: 'exit',

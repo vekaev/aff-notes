@@ -9,7 +9,7 @@ export const part2: Part = {
     // ---------------------------------------------------------------- body
     {
       id: 'body',
-      title: { en: 'Body position: the box', es: 'Posición del cuerpo: la caja (box)', uk: 'Положення тіла: «коробочка»', ru: 'Положение тела: «коробочка»' },
+      title: { en: 'Body position: the box', es: 'Posición del cuerpo: la caja (box)', uk: 'Положення тіла: «коробочка»', ru: 'Положение тела: «коробочка» (box)' },
       blocks: [
         {
           type: 'split',
@@ -176,7 +176,7 @@ export const part2: Part = {
             {
               alt: '13,000 ft',
               value: 13,
-              title: { en: 'Exit, arch', es: 'Salida, arquea', uk: 'Відокремлення, прогин', ru: 'Отделение, прогиб' },
+              title: { en: 'Exit, arch', es: 'Salida, arquea', uk: 'Відокремлення від літака, прогин', ru: 'Отделение от самолёта, прогиб' },
               sub: {
                 en: '<b>Hips into the wind</b>, chin up. Then <b>breathe</b> and check your body position.',
                 es: '<b>Cadera contra el viento</b>, barbilla arriba. Luego <b>respira</b> y revisa tu posición.',
@@ -198,7 +198,7 @@ export const part2: Part = {
             {
               alt: '↓',
               value: 11.5,
-              title: { en: '3 practice touches', es: '3 toques de práctica', uk: '3 тренувальні дотики', ru: '3 тренировочных касания' },
+              title: { en: '3 practice touches', es: '3 toques de práctica', uk: '3 тренувальні дотики до витяжного', ru: '3 тренировочных касания' },
               sub: {
                 en: 'Left hand over your head, right hand back to the <b>pilot chute</b>. Back to arch. <b>Three times</b>. Then altitude.',
                 es: 'Mano izquierda sobre la cabeza, mano derecha atrás al <b>extractor</b>. De vuelta al arco. <b>Tres veces</b>. Luego la altura.',
@@ -232,7 +232,7 @@ export const part2: Part = {
               alt: '6,000 ft',
               value: 6,
               hot: true,
-              title: { en: 'Lock on', es: 'Lock on', uk: 'Лише висотомір', ru: 'Только высотомер' },
+              title: { en: 'Lock on', es: 'Lock on', uk: 'Далі дивись лише на висотомір', ru: 'Дальше смотри только на высотомер' },
               sub: { en: '<b>No more</b> exercises.', es: '<b>Se acabaron</b> los ejercicios.', uk: 'Більше <b>жодних</b> вправ.', ru: 'Больше <b>никаких</b> упражнений.' },
             },
             {
@@ -302,7 +302,7 @@ export const part2: Part = {
             },
             {
               src: 'touches',
-              caption: { en: 'Three practice touches', es: 'Tres toques de práctica', uk: 'Три тренувальні дотики', ru: 'Три тренировочных касания' },
+              caption: { en: 'Three practice touches', es: 'Tres toques de práctica', uk: 'Три тренувальні дотики до витяжного', ru: 'Три тренировочных касания' },
               credit: 'Skydive Fundamentals',
               yt: 'LpoztnjW5c8',
               t: 274,
@@ -427,7 +427,7 @@ export const part2: Part = {
         {
           type: 'callout',
           tone: 'red',
-          title: { en: 'Pull priorities (USPA), in this order', es: 'Prioridades de apertura (USPA), en este orden', uk: 'Пріоритети розкриття (USPA), саме в такому порядку', ru: 'Приоритеты раскрытия (USPA), именно в таком порядке' },
+          title: { en: 'Pull priorities (USPA), in this order', es: 'Prioridades de apertura (USPA), en este orden', uk: 'Пріоритети розкриття (USPA), саме в такому порядку', ru: 'Что важнее при раскрытии (USPA), строго по порядку' },
           points: [
             { en: '<b>Pull</b>.', es: '<b>Abre</b>.', uk: '<b>Розкрийся</b>.', ru: '<b>Раскройся</b>.' },
             { en: 'Pull <b>at your altitude</b>.', es: 'Abre <b>a tu altura</b>.', uk: 'Розкрийся <b>на своїй висоті</b>.', ru: 'Раскройся <b>на своей высоте</b>.' },
@@ -446,7 +446,7 @@ export const part2: Part = {
             {
               big: '6,000 ft',
               tone: 'accent',
-              title: { en: 'Lock on', es: 'Lock on', uk: 'Лише висотомір', ru: 'Только высотомер' },
+              title: { en: 'Lock on', es: 'Lock on', uk: 'Далі дивись лише на висотомір', ru: 'Дальше смотри только на высотомер' },
               text: {
                 en: 'Stop <b>all exercises</b>. Watch the <b>altimeter only</b>: from 6,000 ft you have about <b>3 seconds</b> to 5,500 ft. At 5,500 ft wave off and pull. Wave-off and pull together take about <b>1,000 ft</b> (USPA), so start on time.',
                 es: 'Deja <b>todos los ejercicios</b>. Mira <b>solo el altímetro</b>: de 6,000 a 5,500 ft tienes unos <b>3 segundos</b>. A 5,500 ft haz el wave-off y abre. El wave-off y la apertura juntos llevan unos <b>1,000 ft</b> (USPA), así que empieza a tiempo.',
@@ -602,7 +602,7 @@ export const part2: Part = {
             },
             {
               icon: 'repeat',
-              title: { en: 'Pilot chute hesitates', es: 'El extractor se queda atrás', uk: 'Витяжний «завис»', ru: 'Вытяжной «завис»' },
+              title: { en: 'Pilot chute hesitates', es: 'El extractor se queda atrás', uk: 'Витяжний «завис»', ru: 'Вытяжной парашют «завис» за спиной' },
               points: [
                 {
                   en: 'Thrown, but it hangs in the <b>calm air behind your back</b> (the burble).',
@@ -627,7 +627,7 @@ export const part2: Part = {
             {
               icon: 'warn',
               tone: 'red',
-              title: { en: 'Container opens early', es: 'El contenedor se abre antes de tiempo', uk: 'Ранець відкрився раніше', ru: 'Ранец открылся раньше' },
+              title: { en: 'Container opens early', es: 'El contenedor se abre antes de tiempo', uk: 'Ранець відкрився раніше часу', ru: 'Ранец открылся раньше времени' },
               points: [
                 {
                   en: 'The main pin came out: the <b>bag leaves your back</b>, but the <b>pilot chute is still in its pouch</b> (USPA SIM 4-1 E).',
@@ -679,7 +679,7 @@ export const part2: Part = {
         {
           type: 'callout',
           tone: 'red',
-          title: { en: 'The AAD is not a plan', es: 'El AAD no es un plan', uk: 'AAD — це не план', ru: 'AAD — это не план' },
+          title: { en: 'The AAD is not a plan', es: 'El AAD no es un plan', uk: 'AAD (страхувальний прилад) — це не план', ru: 'AAD (страхующий прибор) — не план' },
           points: [
             {
               en: 'It fires the reserve only at a <b>preset altitude and speed</b>, far lower than your pull (USPA Cat A).',
@@ -928,7 +928,7 @@ export const part2: Part = {
               act: { en: 'Head up, look forward.', es: 'Cabeza arriba, mira al frente.', uk: 'Підніми голову, дивися вперед.', ru: 'Подними голову, смотри вперёд.' },
             },
             {
-              name: { en: 'Shaking you on exit', es: 'Te sacuden al salir', uk: 'Трусять після відокремлення', ru: 'Трясут после отделения' },
+              name: { en: 'Shaking you on exit', es: 'Te sacuden al salir', uk: 'Тебе трясуть після відокремлення', ru: 'Трясут после отделения' },
               what: {
                 en: 'An instructor shakes your harness right after exit. Not a USPA signal: ask your school what it means. <q-check/>',
                 es: 'Un instructor sacude tu arnés justo después de salir. No es una señal de la USPA: pregunta en tu escuela qué significa. <q-check/>',

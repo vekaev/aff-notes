@@ -36,8 +36,8 @@ export const part4: Part = {
           title: t(
             `Two handles: red cuts away, silver opens the reserve`,
             `Dos manijas: la roja libera, la plateada abre la reserva`,
-            `Две ручки: красная отцепляет, кольцо раскрывает запасной`,
-            `Дві ручки: червона відчіплює, кільце розкриває запасний`,
+            `Две ручки: красная отцепляет основной, кольцо раскрывает запасной`,
+            `Дві ручки: червона відчіплює основний, кільце розкриває запасний`,
           ),
           items: [
             t(
@@ -49,7 +49,7 @@ export const part4: Part = {
             t(
               `Then <b>open the reserve</b>: silver handle, left chest.`,
               `Luego <b>abre la reserva</b>: manija plateada, pecho izquierdo.`,
-              `Потом <b>раскрой запасной</b>: серебряное кольцо, слева на груди.`,
+              `Потом <b>раскрой запасной</b>: серебристое кольцо, слева на груди.`,
               `Потім <b>розкрий запасний</b>: срібне кільце, зліва на грудях.`,
             ),
             t(
@@ -85,15 +85,15 @@ export const part4: Part = {
                   sub: t(`<b>Right hand</b>.`, `<b>Mano derecha</b>.`, `<b>Правой рукой</b>.`, `<b>Правою рукою</b>.`),
                 },
                 {
-                  title: t(`Look silver`, `Mira la plateada`, `Смотри на кольцо`, `Дивись на кільце`),
+                  title: t(`Look silver`, `Mira la plateada`, `Смотри на кольцо запасного`, `Дивись на кільце запасного`),
                   sub: t(`Reserve handle, <b>left chest</b>.`, `Manija de la reserva, <b>pecho izquierdo</b>.`, `Кольцо запасного, <b>слева на груди</b>.`, `Кільце запасного, <b>зліва на грудях</b>.`),
                 },
                 {
-                  title: t(`Grab silver`, `Agarra la plateada`, `Возьмись за кольцо`, `Візьмися за кільце`),
+                  title: t(`Grab silver`, `Agarra la plateada`, `Возьмись за кольцо запасного`, `Візьмися за кільце запасного`),
                   sub: t(`<b>Left hand</b>.`, `<b>Mano izquierda</b>.`, `<b>Левой рукой</b>.`, `<b>Лівою рукою</b>.`),
                 },
                 {
-                  title: t(`Peel and pull red`, `Despega y tira de la roja`, `Отлепи и выдерни красную`, `Відліпи і висмикни червону`),
+                  title: t(`Peel and pull red`, `Despega y tira de la roja`, `Отлепи и выдерни красную`, `Відірви з липучки й висмикни червону`),
                   sub: t(
                     `To <b>full arm extension</b>, still looking at silver. The main is gone.`,
                     `Hasta <b>extender el brazo</b> del todo, sin dejar de mirar la plateada. La principal queda liberada.`,
@@ -102,7 +102,7 @@ export const part4: Part = {
                   ),
                 },
                 {
-                  title: t(`Pull silver`, `Tira de la plateada`, `Выдерни кольцо`, `Висмикни кільце`),
+                  title: t(`Pull silver`, `Tira de la plateada`, `Выдерни кольцо запасного`, `Висмикни кільце запасного`),
                   sub: t(`<b>Full arm extension</b>.`, `Hasta <b>extender el brazo</b> del todo.`, `До <b>полного выпрямления руки</b>.`, `До <b>повного випрямлення руки</b>.`),
                 },
                 {
@@ -161,20 +161,20 @@ export const part4: Part = {
                   sub: t(`A firm <b>two-hand grip</b>.`, `Agarre firme con <b>las dos manos</b>.`, `Крепко, <b>двумя руками</b>.`, `Міцно, <b>двома руками</b>.`),
                 },
                 {
-                  title: t(`Peel and punch red`, `Despega y empuja la roja`, `Отлепи и пробей красную вниз`, `Відліпи і пробий червону вниз`),
+                  title: t(`Peel and punch red`, `Despega y empuja la roja`, `Отлепи и пробей красную вниз`, `Відірви з липучки й пробий червону вниз`),
                   sub: t(
                     `Peel it off the Velcro, punch down to <b>full arm extension</b>. The main is gone.`,
                     `Despégala del velcro y empuja hacia abajo hasta <b>extender los brazos</b>. La principal queda liberada.`,
                     `Отлепи с липучки и резко вниз до <b>полного выпрямления рук</b>. Основной отцеплен.`,
-                    `Відліпи з липучки й різко вниз до <b>повного випрямлення рук</b>. Основний відчеплено.`,
+                    `Відірви з липучки й різко вниз до <b>повного випрямлення рук</b>. Основний відчеплено.`,
                   ),
                 },
                 {
-                  title: t(`Look silver`, `Mira la plateada`, `Смотри на кольцо`, `Дивись на кільце`),
+                  title: t(`Look silver`, `Mira la plateada`, `Смотри на кольцо запасного`, `Дивись на кільце запасного`),
                   sub: t(`Reserve handle, <b>left chest</b>.`, `Manija de la reserva, <b>pecho izquierdo</b>.`, `Кольцо запасного, <b>слева на груди</b>.`, `Кільце запасного, <b>зліва на грудях</b>.`),
                 },
                 {
-                  title: t(`Both hands on silver`, `Las dos manos en la plateada`, `Обе руки на кольцо`, `Обидві руки на кільце`),
+                  title: t(`Both hands on silver`, `Las dos manos en la plateada`, `Обе руки на кольцо запасного`, `Обидві руки на кільце запасного`),
                   sub: t(
                     `Straight away: <b>don't wait</b> for the AAD. One or two hands on silver: ask your school. <q-check/>`,
                     `Enseguida: <b>no esperes</b> al AAD. ¿Una o dos manos en la plateada? Pregunta en tu escuela. <q-check/>`,
@@ -183,7 +183,7 @@ export const part4: Part = {
                   ),
                 },
                 {
-                  title: t(`Pull silver`, `Tira de la plateada`, `Выдерни кольцо`, `Висмикни кільце`),
+                  title: t(`Pull silver`, `Tira de la plateada`, `Выдерни кольцо запасного`, `Висмикни кільце запасного`),
                   sub: t(`<b>Full arm extension</b>.`, `Hasta <b>extender los brazos</b> del todo.`, `До <b>полного выпрямления рук</b>.`, `До <b>повного випрямлення рук</b>.`),
                 },
                 {
@@ -286,7 +286,7 @@ export const part4: Part = {
             {
               big: '1,000 ft',
               tone: 'red',
-              title: t(`Hard deck`, `Límite mínimo`, `Нижняя граница`, `Нижня межа`),
+              title: t(`Hard deck`, `Límite mínimo`, `Нижняя граница отцепки (hard deck)`, `Нижня межа відчеплення (hard deck)`),
               points: [
                 t(`Below 1,000 ft <b>don't cut away</b>`, `Por debajo de 1,000 ft <b>no liberes</b>`, `Ниже 1 000 футов <b>не отцепляйся</b>`, `Нижче 1 000 футів <b>не відчіплюйся</b>`),
                 t(
@@ -302,7 +302,7 @@ export const part4: Part = {
         },
         {
           type: 'callout',
-          title: t(`Same number, different question`, `Mismo número, otra pregunta`, `Число то же, вопрос другой`, `Число те саме, питання інше`),
+          title: t(`Same number, different question`, `Mismo número, otra pregunta`, `Та же высота, другой вопрос`, `Число те саме, питання інше`),
           points: [
             t(
               `This 2,500 ft: <b>keep or drop</b> a bad main.`,
@@ -500,7 +500,7 @@ export const part4: Part = {
         {
           type: 'cards',
           pill: 'EP',
-          groupTitle: t(`Nothing out, or almost nothing`, `No sale nada, o casi nada`, `Ничего не вышло или почти ничего`, `Нічого не вийшло або майже нічого`),
+          groupTitle: t(`Nothing out, or almost nothing`, `No sale nada, o casi nada`, `Ничего не вышло или почти ничего`, `Нічого не вийшло з ранця або майже нічого`),
           groupSub: t(`High speed: you are still falling fast.`, `Alta velocidad: sigues cayendo rápido.`, `Высокая скорость: ты всё ещё быстро падаешь.`, `Висока швидкість: ти досі швидко падаєш.`),
           items: [
             {
@@ -554,7 +554,7 @@ export const part4: Part = {
         {
           type: 'cards',
           pill: 'EP',
-          groupTitle: t(`Out, but not flyable`, `Fuera, pero no se puede volar`, `Вышел, но не летит`, `Вийшов, але не летить`),
+          groupTitle: t(`Out, but not flyable`, `Fuera, pero no se puede volar`, `Вышел, но не летит`, `Купол вийшов, але летіти на ньому не можна`),
           groupSub: t(
             `Partial: you lose height fast, the canopy is not a rectangle.`,
             `Parcial: pierdes altura rápido, la vela no es un rectángulo.`,
@@ -565,7 +565,7 @@ export const part4: Part = {
             {
               clip: 'm_streamer',
               tone: 'ep',
-              name: t(`Streamer`, `Streamer`, `«Колбаса»`, `«Ковбаса»`),
+              name: t(`Streamer`, `Streamer`, `«Колбаса»`, `«Ковбаса» (streamer)`),
               what: t(
                 `Canopy out but not inflated, flapping like a flag.`,
                 `Vela fuera pero sin inflar, flameando como una bandera.`,
@@ -611,7 +611,7 @@ export const part4: Part = {
             {
               clip: 'm_horseshoe',
               tone: 'ep',
-              name: t(`Horseshoe`, `Herradura (horseshoe)`, `«Подкова»`, `«Підкова»`),
+              name: t(`Horseshoe`, `Herradura (horseshoe)`, `«Подкова»`, `«Підкова» (horseshoe)`),
               what: t(
                 `Part of the main is out, but something still holds it to the container.`,
                 `Parte de la principal salió, pero algo la sigue sujetando al contenedor.`,
@@ -724,9 +724,9 @@ export const part4: Part = {
           items: [
             { yt: 'MwIcFPK6DKU', t: 59, credit: 'Skydive Vibes', label: t(`Malfunction types overview`, `Tipos de malfunción: resumen`, `Обзор видов отказов`, `Огляд видів відмов`) },
             { yt: 'lPmK9OJHdXc', t: 107, credit: 'Skydive Vibes', label: t(`Line twists, real footage`, `Vueltas en las líneas, imágenes reales`, `Закрутка строп, реальные съёмки`, `Закрутка строп, реальні зйомки`) },
-            { yt: 'iBNf-HsD3Ms', t: 303, credit: 'APF', label: t(`Streamer`, `Streamer`, `«Колбаса»`, `«Ковбаса»`) },
+            { yt: 'iBNf-HsD3Ms', t: 303, credit: 'APF', label: t(`Streamer`, `Streamer`, `«Колбаса»: купол не наполнился`, `«Ковбаса» (streamer)`) },
             { yt: 'MZx3lN-lwok', t: 125, credit: 'APF', label: t(`End cells closed`, `Celdas laterales cerradas`, `Закрыты концевые секции`, `Закриті крайні секції`) },
-            { yt: 'MZx3lN-lwok', t: 240, credit: 'APF', label: t(`Slider stuck`, `Slider trabado`, `Слайдер застрял`, `Слайдер застряг`) },
+            { yt: 'MZx3lN-lwok', t: 240, credit: 'APF', label: t(`Slider stuck`, `Slider trabado`, `Слайдер застрял наверху`, `Слайдер застряг`) },
           ],
         },
         {
@@ -820,7 +820,7 @@ export const part4: Part = {
     // ---------------------------------------------------------------- two canopies
     {
       id: 'two',
-      title: t(`Two canopies out`, `Dos velas abiertas`, `Два купола`, `Два куполи`),
+      title: t(`Two canopies out`, `Dos velas abiertas`, `Раскрылись оба купола`, `Два куполи`),
       blocks: [
         {
           type: 'p',
@@ -850,8 +850,8 @@ export const part4: Part = {
               act: t(
                 `<b>Don't cut away.</b> Steer the front one gently with its <b>rear risers</b>, only if needed; leave the back one alone. <b>No flare</b>, PLF.`,
                 `<b>No liberes.</b> Dirige con suavidad la de adelante con sus <b>bandas traseras</b>, solo si hace falta; no toques la de atrás. <b>Sin flare</b>, PLF.`,
-                `<b>Не отцепляйся.</b> Аккуратно управляй передним его <b>задними свободными концами</b>, только если нужно; задний не трогай. <b>Без flare</b>, PLF.`,
-                `<b>Не відчіплюйся.</b> Обережно керуй переднім його <b>задніми вільними кінцями</b>, лише якщо треба; заднього не чіпай. <b>Без flare</b>, PLF.`,
+                `<b>Не отцепляйся.</b> Аккуратно управляй передним его <b>задними свободными концами</b>, только если нужно; задний не трогай. <b>Без выравнивания</b>, PLF.`,
+                `<b>Не відчіплюйся.</b> Обережно керуй переднім його <b>задніми вільними кінцями</b>, лише якщо треба; заднього не чіпай. <b>Без вирівнювання</b>, PLF.`,
               ),
             },
             {
@@ -866,14 +866,14 @@ export const part4: Part = {
               act: t(
                 `<b>Don't cut away.</b> Steer the <b>dominant</b> one (more overhead) gently with its rear risers, only if needed. <b>No flare</b>, PLF.`,
                 `<b>No liberes.</b> Dirige con suavidad la <b>dominante</b> (la que está más encima) con sus bandas traseras, solo si hace falta. <b>Sin flare</b>, PLF.`,
-                `<b>Не отцепляйся.</b> Аккуратно управляй <b>ведущим</b> куполом (тем, что больше над головой) его задними свободными концами, только если нужно. <b>Без flare</b>, PLF.`,
-                `<b>Не відчіплюйся.</b> Обережно керуй <b>провідним</b> куполом (тим, що більше над головою) його задніми вільними кінцями, лише якщо треба. <b>Без flare</b>, PLF.`,
+                `<b>Не отцепляйся.</b> Аккуратно управляй <b>ведущим</b> куполом (тем, что больше над головой) его задними свободными концами, только если нужно. <b>Без выравнивания</b>, PLF.`,
+                `<b>Не відчіплюйся.</b> Обережно керуй <b>провідним</b> куполом (тим, що більше над головою) його задніми вільними кінцями, лише якщо треба. <b>Без вирівнювання</b>, PLF.`,
               ),
             },
             {
               clip: 'two_down',
               tone: 'ep',
-              name: t(`Downplane`, `Downplane`, `«Даунплейн»`, `«Даунплейн»`),
+              name: t(`Downplane`, `Downplane`, `«Даунплейн»`, `«Даунплейн» (downplane)`),
               what: t(
                 `They pull apart, both pointing down, pulling you between them. Rare.`,
                 `Se separan, las dos apuntando hacia abajo, y tiran de ti entre ellas. Es raro.`,
@@ -934,7 +934,7 @@ export const part4: Part = {
               yt: 'or3MhI4MhAc',
               t: 202,
               credit: 'Skydive Vibes',
-              label: t(`Two canopies out: all 5 configurations`, `Dos velas abiertas: las 5 configuraciones`, `Два купола: все 5 вариантов`, `Два куполи: усі 5 варіантів`),
+              label: t(`Two canopies out: all 5 configurations`, `Dos velas abiertas: las 5 configuraciones`, `Раскрылись оба купола: все 5 вариантов`, `Два куполи: усі 5 варіантів`),
             },
           ],
         },
@@ -957,8 +957,8 @@ export const part4: Part = {
               why: t(
                 `A biplane flies. Keep both, steer the front one gently with its rear risers, leave the back one alone, no flare, PLF (USPA SIM 4-1). A flare can slow the front canopy and let the back one fly over it.`,
                 `Un biplano vuela. Quédate con las dos, dirige con suavidad la de adelante con sus bandas traseras, no toques la de atrás, sin flare, PLF (USPA SIM 4-1). Un flare puede frenar la de adelante y hacer que la de atrás la pase por encima.`,
-                `Биплан летит. Оставь оба, аккуратно управляй передним его задними свободными концами, задний не трогай, без flare, PLF (USPA SIM 4-1). Flare может затормозить передний купол, и задний налетит на него.`,
-                `Біплан летить. Залиш обидва, обережно керуй переднім його задніми вільними кінцями, заднього не чіпай, без flare, PLF (USPA SIM 4-1). Flare може загальмувати передній купол, і задній налетить на нього.`,
+                `Биплан летит. Оставь оба, аккуратно управляй передним его задними свободными концами, задний не трогай, без выравнивания, PLF (USPA SIM 4-1). Выравнивание может затормозить передний купол, и задний налетит на него.`,
+                `Біплан летить. Залиш обидва, обережно керуй переднім його задніми вільними кінцями, заднього не чіпай, без вирівнювання, PLF (USPA SIM 4-1). Вирівнювання може загальмувати передній купол, і задній налетить на нього.`,
               ),
             },
             {
@@ -1124,9 +1124,9 @@ export const part4: Part = {
           type: 'bars',
           title: t(`What went wrong at landing`, `Qué salió mal al aterrizar`, `Что пошло не так при посадке`, `Що пішло не так під час посадки`),
           items: [
-            { label: t(`Wrong flare`, `Flare incorrecto`, `Неправильный flare`, `Неправильний flare`), value: 31, hl: true },
+            { label: t(`Wrong flare`, `Flare incorrecto`, `Неправильное выравнивание (flare)`, `Неправильне вирівнювання (flare)`), value: 31, hl: true },
             { label: t(`Terrain`, `Terreno`, `Рельеф и препятствия`, `Рельєф і перешкоди`), value: 30 },
-            { label: t(`Bad landing position`, `Mala posición al aterrizar`, `Неправильное положение тела`, `Неправильне положення тіла`), value: 19 },
+            { label: t(`Bad landing position`, `Mala posición al aterrizar`, `Неправильное положение тела`, `Неправильна поза під час приземлення`), value: 19 },
             { label: t(`Other`, `Otras`, `Другое`, `Інше`), value: 20 },
           ],
           source: { label: { en: 'Damhuis et al. 2024, Netherlands 2015–2020, 234 landing injuries', es: 'Damhuis et al. 2024, Países Bajos 2015–2020, 234 lesiones al aterrizar', uk: 'Damhuis et al. 2024, Нідерланди 2015–2020, 234 травми при приземленні', ru: 'Damhuis et al. 2024, Нидерланды 2015–2020, 234 травмы при приземлении' }, href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/' },
@@ -1144,8 +1144,8 @@ export const part4: Part = {
             t(
               `Canada, Jan–May 2025: all three student landing injuries were a <b>slow or half flare, no PLF</b>.`,
               `Canadá, enero–mayo de 2025: las tres lesiones de alumnos al aterrizar fueron un <b>flare lento o a medias sin PLF</b>.`,
-              `Канада, январь–май 2025: все три травмы студентов при посадке — <b>медленный или неполный flare без PLF</b>.`,
-              `Канада, січень–травень 2025: усі три травми студентів під час посадки — <b>повільний або неповний flare без PLF</b>.`,
+              `Канада, январь–май 2025: все три травмы студентов при посадке — <b>медленное или неполное выравнивание без PLF</b>.`,
+              `Канада, січень–травень 2025: усі три травми студентів під час посадки — <b>повільне або неповне вирівнювання без PLF</b>.`,
             ),
           ],
         },
@@ -1167,12 +1167,12 @@ export const part4: Part = {
           type: 'steps',
           items: [
             {
-              title: t(`Bad flare, no PLF`, `Flare malo, sin PLF`, `Плохой flare, нет PLF`, `Поганий flare, немає PLF`),
+              title: t(`Bad flare, no PLF`, `Flare malo, sin PLF`, `Плохое выравнивание, нет PLF`, `Погане вирівнювання, немає PLF`),
               sub: t(
                 `<b>22%</b> of landing incidents without a turn: flaring too early, too late or not at all. No flare at all gave the worst injuries. <b>Full flare at ~10 ft</b>, hold it, feet and knees together, knees slightly bent, <b>feet touch first</b>, <b>PLF every time</b>: even an imperfect PLF meant milder injuries.`,
                 `<b>22%</b> de los incidentes de aterrizaje sin giro: flare demasiado pronto, demasiado tarde o sin flare. Sin flare, las peores lesiones. <b>Flare completo a ~10 ft</b>, mantenlo, pies y rodillas juntos, rodillas un poco flexionadas, <b>los pies tocan primero</b>, <b>PLF siempre</b>: incluso un PLF imperfecto dio lesiones más leves.`,
-                `<b>22 %</b> посадочных инцидентов без разворота: flare слишком рано, слишком поздно или без flare вообще. Без flare — самые тяжёлые травмы. <b>Полный flare на ~10 футах</b>, держи, ступни и колени вместе, колени чуть согнуты, <b>первыми касаются ступни</b>, <b>PLF всегда</b>: даже неидеальный PLF давал более лёгкие травмы.`,
-                `<b>22 %</b> посадкових інцидентів без розвороту: flare зарано, запізно або взагалі без flare. Без flare — найважчі травми. <b>Повний flare на ~10 футах</b>, тримай, стопи й коліна разом, коліна трохи зігнуті, <b>першими торкаються стопи</b>, <b>PLF завжди</b>: навіть неідеальний PLF давав легші травми.`,
+                `<b>22 %</b> посадочных инцидентов без разворота: выравнивание слишком рано, слишком поздно или без выравнивания вообще. Без выравнивания — самые тяжёлые травмы. <b>Полное выравнивание на ~10 футах</b>, держи, ступни и колени вместе, колени чуть согнуты, <b>первыми касаются ступни</b>, <b>PLF всегда</b>: даже неидеальный PLF давал более лёгкие травмы.`,
+                `<b>22 %</b> посадкових інцидентів без розвороту: вирівнювання зарано, запізно або взагалі без вирівнювання. Без вирівнювання — найважчі травми. <b>Повне вирівнювання на ~10 футах</b>, тримай, стопи й коліна разом, коліна трохи зігнуті, <b>першими торкаються стопи</b>, <b>PLF завжди</b>: навіть неідеальний PLF давав легші травми.`,
               ),
             },
             {
@@ -1207,8 +1207,8 @@ export const part4: Part = {
               sub: t(
                 `<b>7%</b> of all reported 2024 incidents (about 13% of landing incidents) were unintended low turns. A big turn low makes the canopy dive. In trouble: <b>stop turning</b>, fly straight, flare. <b>Level wing</b> first, then target and wind.`,
                 `<b>7%</b> de todos los incidentes reportados en 2024 (cerca del 13% de los de aterrizaje) fueron giros bajos involuntarios. Un giro grande abajo hace picar la vela. ¿Problemas? <b>Deja de girar</b>, vuela recto, flare. <b>Ala nivelada</b> antes que blanco y viento.`,
-                `<b>7 %</b> всех инцидентов 2024 года (около 13 % посадочных) — непреднамеренные низкие развороты. Большой разворот у земли — купол ныряет. Что-то не так: <b>прекрати разворот</b>, лети прямо, flare. <b>Ровное крыло</b> важнее цели и ветра.`,
-                `<b>7 %</b> усіх інцидентів 2024 року (близько 13 % посадкових) — ненавмисні низькі розвороти. Великий розворот біля землі — купол пірнає. Щось не так: <b>припини розворот</b>, лети прямо, flare. <b>Рівне крило</b> важливіше за ціль і вітер.`,
+                `<b>7 %</b> всех инцидентов 2024 года (около 13 % посадочных) — непреднамеренные низкие развороты. Большой разворот у земли — купол ныряет. Что-то не так: <b>прекрати разворот</b>, лети прямо, делай выравнивание. <b>Ровное крыло</b> важнее цели и ветра.`,
+                `<b>7 %</b> усіх інцидентів 2024 року (близько 13 % посадкових) — ненавмисні низькі розвороти. Великий розворот біля землі — купол пірнає. Щось не так: <b>припини розворот</b>, лети прямо, роби вирівнювання. <b>Рівне крило</b> важливіше за ціль і вітер.`,
               ),
             },
             {
@@ -1334,7 +1334,7 @@ export const part4: Part = {
               `Багато хто <b>ламав щиколотку</b> на AFF 2–4: після кількох м’яких посадок намагалися встояти на ногах.`,
             ),
             t(`Look at the <b>horizon</b>, not the ground.`, `Mira el <b>horizonte</b>, no el suelo.`, `Смотри на <b>горизонт</b>, а не в землю.`, `Дивись на <b>горизонт</b>, а не в землю.`),
-            t(`<b>Practice flares</b> up high.`, `<b>Practica el flare</b> en altura.`, `<b>Тренируй flare</b> на высоте.`, `<b>Тренуй flare</b> на висоті.`),
+            t(`<b>Practice flares</b> up high.`, `<b>Practica el flare</b> en altura.`, `<b>Тренируй выравнивание</b> на высоте.`, `<b>Тренуй вирівнювання</b> на висоті.`),
             t(
               `Experienced jumpers still <b>PLF on no-wind days</b>.`,
               `Los experimentados siguen haciendo <b>PLF sin viento</b>.`,
@@ -1344,8 +1344,8 @@ export const part4: Part = {
             t(
               `One late flare, fixated on the target: a <b>rod in the shin</b>, 14 months of rehab.`,
               `Un flare tardío por mirar fijo el blanco: <b>clavo en la tibia</b>, 14 meses de rehabilitación.`,
-              `Поздний flare из-за фиксации на цели: <b>штифт в голени</b>, 14 месяцев реабилитации.`,
-              `Пізній flare через фіксацію на цілі: <b>штифт у гомілці</b>, 14 місяців реабілітації.`,
+              `Позднее выравнивание из-за фиксации на цели: <b>штифт в голени</b>, 14 месяцев реабилитации.`,
+              `Пізнє вирівнювання через фіксацію на цілі: <b>штифт у гомілці</b>, 14 місяців реабілітації.`,
             ),
           ],
         },
@@ -1355,8 +1355,8 @@ export const part4: Part = {
           text: t(
             `Sources: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/">Westman 2007</a> · <a href="http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents">USPA 2024 non-fatal incidents</a> · <a href="https://parachutist.com/another-record-lowthe-2020-fatality-summary">2020 fatality summary</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/">Dutch study 2015–2020</a> · <a href="https://lermagazine.com/?p=39724">Forrester 2023: leg injuries</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/">Barthel 2023 review</a> · <a href="https://doi.org/10.1016/j.jsams.2020.11.002">Fer 2021, FFP 2010–19</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">Planche Wallace 2019</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486">Bell 2019</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488">Bell 2024</a> · <a href="https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency">USPA Rating Corner 2023</a> · <a href="https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/">r/SkyDiving: broke my ankle on AFF 3</a> · <a href="https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/">r/SkyDiving: late flare</a>`,
             `Fuentes: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/">Westman 2007</a> · <a href="http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents">USPA, incidentes no fatales 2024</a> · <a href="https://parachutist.com/another-record-lowthe-2020-fatality-summary">resumen de accidentes mortales 2020</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/">estudio neerlandés 2015–2020</a> · <a href="https://lermagazine.com/?p=39724">Forrester 2023: lesiones de pierna</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/">revisión de Barthel 2023</a> · <a href="https://doi.org/10.1016/j.jsams.2020.11.002">Fer 2021, FFP 2010–19</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">Planche Wallace 2019</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486">Bell 2019</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488">Bell 2024</a> · <a href="https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency">USPA Rating Corner 2023</a> · <a href="https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/">r/SkyDiving: tobillo roto en AFF 3</a> · <a href="https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/">r/SkyDiving: flare tardío</a>`,
-            `Источники: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/">Westman 2007</a> · <a href="http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents">USPA, несмертельные инциденты 2024</a> · <a href="https://parachutist.com/another-record-lowthe-2020-fatality-summary">сводка смертельных случаев 2020</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/">нидерландское исследование 2015–2020</a> · <a href="https://lermagazine.com/?p=39724">Forrester 2023: травмы ног</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/">обзор Barthel 2023</a> · <a href="https://doi.org/10.1016/j.jsams.2020.11.002">Fer 2021, FFP 2010–19</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">Planche Wallace 2019</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486">Bell 2019</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488">Bell 2024</a> · <a href="https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency">USPA Rating Corner 2023</a> · <a href="https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/">r/SkyDiving: сломал лодыжку на AFF 3</a> · <a href="https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/">r/SkyDiving: поздний flare</a>`,
-            `Джерела: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/">Westman 2007</a> · <a href="http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents">USPA, несмертельні інциденти 2024</a> · <a href="https://parachutist.com/another-record-lowthe-2020-fatality-summary">зведення смертельних випадків 2020</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/">нідерландське дослідження 2015–2020</a> · <a href="https://lermagazine.com/?p=39724">Forrester 2023: травми ніг</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/">огляд Barthel 2023</a> · <a href="https://doi.org/10.1016/j.jsams.2020.11.002">Fer 2021, FFP 2010–19</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">Planche Wallace 2019</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486">Bell 2019</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488">Bell 2024</a> · <a href="https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency">USPA Rating Corner 2023</a> · <a href="https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/">r/SkyDiving: зламав щиколотку на AFF 3</a> · <a href="https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/">r/SkyDiving: пізній flare</a>`,
+            `Источники: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/">Westman 2007</a> · <a href="http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents">USPA, несмертельные инциденты 2024</a> · <a href="https://parachutist.com/another-record-lowthe-2020-fatality-summary">сводка смертельных случаев 2020</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/">нидерландское исследование 2015–2020</a> · <a href="https://lermagazine.com/?p=39724">Forrester 2023: травмы ног</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/">обзор Barthel 2023</a> · <a href="https://doi.org/10.1016/j.jsams.2020.11.002">Fer 2021, FFP 2010–19</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">Planche Wallace 2019</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486">Bell 2019</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488">Bell 2024</a> · <a href="https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency">USPA Rating Corner 2023</a> · <a href="https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/">r/SkyDiving: сломал лодыжку на AFF 3</a> · <a href="https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/">r/SkyDiving: позднее выравнивание</a>`,
+            `Джерела: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC2465315/">Westman 2007</a> · <a href="http://parachutist.com/The-2024-Non-Fatal-Incident-Summary-Part-One-Landing-Incidents">USPA, несмертельні інциденти 2024</a> · <a href="https://parachutist.com/another-record-lowthe-2020-fatality-summary">зведення смертельних випадків 2020</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10900578/">нідерландське дослідження 2015–2020</a> · <a href="https://lermagazine.com/?p=39724">Forrester 2023: травми ніг</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9859333/">огляд Barthel 2023</a> · <a href="https://doi.org/10.1016/j.jsams.2020.11.002">Fer 2021, FFP 2010–19</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/6/artmid/2830/articleid/7485">Planche Wallace 2019</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/9/ArtMID/2830/ArticleID/7486">Bell 2019</a> · <a href="https://parachutist.com/p/PgrID/2839/PageID/160/ArtMID/2834/ArticleID/9488">Bell 2024</a> · <a href="https://www.uspa.org/about-uspa/uspa-news/rating-corner-emergency-procedure-proficiency">USPA Rating Corner 2023</a> · <a href="https://www.reddit.com/r/SkyDiving/comments/uavxqs/broke_my_ankle_on_aff_3_any_advice/">r/SkyDiving: зламав щиколотку на AFF 3</a> · <a href="https://www.reddit.com/r/SkyDiving/comments/1ixg4yn/late_flare/">r/SkyDiving: пізнє вирівнювання</a>`,
           ),
         },
         {
@@ -1390,7 +1390,7 @@ export const part4: Part = {
                 `Яка головна причина травм під час посадки в нідерландському дослідженні?`,
               ),
               options: [
-                t(`A wrong flare`, `Un flare incorrecto`, `Неправильный flare`, `Неправильний flare`),
+                t(`A wrong flare`, `Un flare incorrecto`, `Неправильное выравнивание (flare)`, `Неправильне вирівнювання (flare)`),
                 t(`Uneven terrain`, `Terreno irregular`, `Неровная земля`, `Нерівна земля`),
                 t(`A low turn`, `Un giro bajo`, `Низкий разворот`, `Низький розворот`),
               ],
@@ -1398,8 +1398,8 @@ export const part4: Part = {
               why: t(
                 `Wrong flare 31%, terrain 30%, bad landing position 19% (Netherlands 2015–2020, 234 landing injuries). Terrain is a close second.`,
                 `Flare incorrecto 31%, terreno 30%, mala posición al aterrizar 19% (Países Bajos 2015–2020, 234 lesiones al aterrizar). El terreno queda muy cerca.`,
-                `Неправильный flare — 31 %, рельеф — 30 %, неправильное положение тела — 19 % (Нидерланды 2015–2020, 234 травмы при посадке). Рельеф почти вровень.`,
-                `Неправильний flare — 31 %, рельєф — 30 %, неправильне положення тіла — 19 % (Нідерланди 2015–2020, 234 травми під час посадки). Рельєф майже нарівні.`,
+                `Неправильное выравнивание — 31 %, рельеф — 30 %, неправильное положение тела — 19 % (Нидерланды 2015–2020, 234 травмы при посадке). Рельеф почти вровень.`,
+                `Неправильне вирівнювання — 31 %, рельєф — 30 %, неправильне положення тіла — 19 % (Нідерланди 2015–2020, 234 травми під час посадки). Рельєф майже нарівні.`,
               ),
             },
             {
@@ -1466,15 +1466,15 @@ export const part4: Part = {
           items: [
             {
               clip: 'x_flarehigh', tone: 'fix', source: { yt: 'hZXQpFu8I1s', t: 2, credit: 'Zach Foreman' },
-              name: t(`Flared too high, then fixed it`, `Flare demasiado alto, y bien corregido`, `Flare слишком высоко — и правильное исправление`, `Flare зависоко — і правильне виправлення`),
-              what: t(`An AFF student flares early; the instructor on the radio: hold it, then finish.`, `Un alumno AFF hace el flare pronto; el instructor por radio: mantén y luego termina.`, `Студент AFF начал flare рано; инструктор по радио: держи, потом дожми.`, `Студент AFF почав flare рано; інструктор по радіо: тримай, потім дотисни.`),
+              name: t(`Flared too high, then fixed it`, `Flare demasiado alto, y bien corregido`, `Выравнивание слишком высоко — и правильное исправление`, `Вирівнювання зависоко — і правильне виправлення`),
+              what: t(`An AFF student flares early; the instructor on the radio: hold it, then finish.`, `Un alumno AFF hace el flare pronto; el instructor por radio: mantén y luego termina.`, `Студент AFF начал выравнивание рано; инструктор по радио: держи, потом дожми.`, `Студент AFF почав вирівнювання рано; інструктор по радіо: тримай, потім дотисни.`),
               act: t(`Too high? <b>Hold, don't let up</b>, finish as you sink.`, `¿Muy alto? <b>Mantén, no subas</b>, termina al bajar.`, `Слишком высоко? <b>Держи, не отпускай</b>, дожми при снижении.`, `Зависоко? <b>Тримай, не відпускай</b>, дотисни під час зниження.`),
             },
             {
               clip: 'x_flarefast', tone: 'ep', source: { yt: 'N8vpe-olEYs', t: 9, credit: 'jpelligrinelli' },
-              name: t(`Flare stabbed too fast`, `Flare demasiado brusco`, `Flare рывком`, `Flare ривком`),
-              what: t(`An AFF B student; the uploader says only "too fast of a flare". He hits hard and tumbles.`, `Un alumno AFF B; quien subió el video solo dice "un flare demasiado rápido". Golpea fuerte y rueda.`, `Студент AFF B; автор видео пишет только «слишком быстрый flare». Жёсткий удар, и он кувыркается.`, `Студент AFF B; автор відео пише лише «надто швидкий flare». Жорсткий удар, і він перекидається.`),
-              act: t(`Flare <b>smoothly and all the way</b>; feet and knees together, PLF.`, `Flare <b>suave y hasta abajo</b>; pies y rodillas juntos, PLF.`, `Flare <b>плавно и до конца</b>; ступни и колени вместе, PLF.`, `Flare <b>плавно й до кінця</b>; стопи й коліна разом, PLF.`),
+              name: t(`Flare stabbed too fast`, `Flare demasiado brusco`, `Выравнивание рывком`, `Вирівнювання ривком`),
+              what: t(`An AFF B student; the uploader says only "too fast of a flare". He hits hard and tumbles.`, `Un alumno AFF B; quien subió el video solo dice "un flare demasiado rápido". Golpea fuerte y rueda.`, `Студент AFF B; автор видео пишет только «слишком быстрое выравнивание». Жёсткий удар, и он кувыркается.`, `Студент AFF B; автор відео пише лише «надто швидке вирівнювання». Жорсткий удар, і він перекидається.`),
+              act: t(`Flare <b>smoothly and all the way</b>; feet and knees together, PLF.`, `Flare <b>suave y hasta abajo</b>; pies y rodillas juntos, PLF.`, `Делай выравнивание <b>плавно и до конца</b>; ступни и колени вместе, PLF.`, `Роби вирівнювання <b>плавно й до кінця</b>; стопи й коліна разом, PLF.`),
             },
           ],
         },
@@ -1492,7 +1492,7 @@ export const part4: Part = {
               clip: 'x_downwind', tone: 'ep', source: { yt: 'tG63N8Y-ti4', t: 11, credit: 'Paul Lewis' },
               name: t(`Downwind landing`, `Aterrizaje con viento de cola`, `Посадка по ветру`, `Посадка за вітром`),
               what: t(`The landing direction was set wrong. He saw it at 300 ft but, with 19 canopies around, chose not to turn low: landed downwind, too fast, and his legs folded.`, `La dirección de aterrizaje estaba mal. Lo vio a 300 ft, pero con 19 velas alrededor decidió no girar bajo: aterrizó con viento de cola, demasiado rápido, y se le doblaron las piernas.`, `Направление посадки было выставлено неверно. Он заметил это на 300 футах, но вокруг было 19 куполов, и он не стал разворачиваться низко: сел по ветру, слишком быстро, ноги подломились.`, `Напрямок посадки було виставлено неправильно. Він помітив це на 300 футах, але навколо було 19 куполів, і він не став розвертатися низько: сів за вітром, надто швидко, ноги підломилися.`),
-              act: t(`Check the <b>windsock</b> yourself. Wrong way low, with traffic around? <b>Don't turn low</b>: land downwind, flare fully, PLF.`, `Mira tú el <b>cono de viento</b>. ¿Al revés, abajo y con tráfico? <b>No gires bajo</b>: aterriza con viento de cola, flare completo, PLF.`, `Сам смотри на <b>колдун</b>. Низко, не в ту сторону, вокруг купола? <b>Не разворачивайся низко</b>: садись по ветру, полный flare, PLF.`, `Сам дивись на <b>вітровказ</b>. Низько, не в той бік, навколо куполи? <b>Не розвертайся низько</b>: сідай за вітром, повний flare, PLF.`),
+              act: t(`Check the <b>windsock</b> yourself. Wrong way low, with traffic around? <b>Don't turn low</b>: land downwind, flare fully, PLF.`, `Mira tú el <b>cono de viento</b>. ¿Al revés, abajo y con tráfico? <b>No gires bajo</b>: aterriza con viento de cola, flare completo, PLF.`, `Сам смотри на <b>колдун</b>. Низко, не в ту сторону, вокруг купола? <b>Не разворачивайся низко</b>: садись по ветру, полное выравнивание, PLF.`, `Сам дивись на <b>вітровказ</b>. Низько, не в той бік, навколо куполи? <b>Не розвертайся низько</b>: сідай за вітром, повне вирівнювання, PLF.`),
             },
           ],
         },
@@ -1554,9 +1554,9 @@ export const part4: Part = {
           type: 'quiz',
           questions: [
             {
-              q: t(`You flared too high. What do you do?`, `Hiciste el flare demasiado alto. ¿Qué haces?`, `Ты начал flare слишком высоко. Что делаешь?`, `Ти почав flare зависоко. Що робиш?`),
+              q: t(`You flared too high. What do you do?`, `Hiciste el flare demasiado alto. ¿Qué haces?`, `Ты начал выравнивание слишком высоко. Что делаешь?`, `Ти почав вирівнювання зависоко. Що робиш?`),
               options: [
-                t(`Let up and flare again`, `Subir los batidores y repetir`, `Отпустить и повторить flare`, `Відпустити й повторити flare`),
+                t(`Let up and flare again`, `Subir los batidores y repetir`, `Отпустить и повторить выравнивание`, `Відпустити й повторити вирівнювання`),
                 t(`Hold, finish as you sink`, `Mantener y terminar al bajar`, `Держать, дожать при снижении`, `Тримати, дотиснути при зниженні`),
                 t(`Turn to lose height`, `Girar para perder altura`, `Повернуть, чтобы снизиться`, `Повернути, щоб знизитися`),
               ],
@@ -1750,8 +1750,8 @@ export const part4: Part = {
                 t(
                   `Skipping the turns and practice flare, and finding out near the ground that the canopy doesn't steer.`,
                   `Saltarte los giros y el flare de práctica, y descubrir cerca del suelo que la vela no responde.`,
-                  `Пропустить развороты и пробный flare — и у земли узнать, что купол не управляется.`,
-                  `Пропустити розвороти й пробний flare — і біля землі дізнатися, що купол не керується.`,
+                  `Пропустить развороты и пробное выравнивание — и у земли узнать, что купол не управляется.`,
+                  `Пропустити розвороти й пробне вирівнювання — і біля землі дізнатися, що купол не керується.`,
                 ),
               ],
               good: [
@@ -1782,8 +1782,8 @@ export const part4: Part = {
                 t(
                   `Full canopy check: there, square, stable, steerable; full flare; turns of 90° each way.`,
                   `Revisión completa de la vela: está, cuadrada, estable, gobernable; flare completo; giros de 90° a cada lado.`,
-                  `Полная проверка купола: есть, квадратный, стабильный, управляемый; полный flare; развороты на 90° в обе стороны.`,
-                  `Повна перевірка купола: є, квадратний, стабільний, керований; повний flare; розвороти на 90° в обидва боки.`,
+                  `Полная проверка купола: есть, квадратный, стабильный, управляемый; полное выравнивание; развороты на 90° в обе стороны.`,
+                  `Повна перевірка купола: є, квадратний, стабільний, керований; повне вирівнювання; розвороти на 90° в обидва боки.`,
                 ),
                 t(
                   `Turning on its own after the twists are out? Check that a toggle hasn't come unstowed.`,
@@ -1851,13 +1851,13 @@ export const part4: Part = {
               ],
             },
             {
-              title: t(`Canopy flight, flare and landing`, `Vuelo bajo vela, flare y aterrizaje`, `Полёт под куполом, flare и посадка`, `Політ під куполом, flare і посадка`),
+              title: t(`Canopy flight, flare and landing`, `Vuelo bajo vela, flare y aterrizaje`, `Полёт под куполом, выравнивание и посадка`, `Політ під куполом, вирівнювання і посадка`),
               bad: [
                 t(
                   `Flaring early, late or not at all. No flare causes the worst injuries.`,
                   `Hacer el flare temprano, tarde o no hacerlo. Sin flare se producen las peores lesiones.`,
-                  `Flare слишком рано, слишком поздно или без flare вообще. Без flare — самые тяжёлые травмы.`,
-                  `Flare зарано, запізно або взагалі без flare. Без flare — найважчі травми.`,
+                  `Выравнивание слишком рано, слишком поздно или без выравнивания вообще. Без выравнивания — самые тяжёлые травмы.`,
+                  `Вирівнювання зарано, запізно або взагалі без вирівнювання. Без вирівнювання — найважчі травми.`,
                 ),
                 t(
                   `Feet apart, or reaching for the ground with one foot or a hand.`,
@@ -1880,8 +1880,8 @@ export const part4: Part = {
                 t(
                   `Straight arms swung out to the sides in the flare ("iron cross").`,
                   `Brazos rectos abiertos a los lados en el flare ("cruz de hierro").`,
-                  `Прямые руки в стороны во время flare («железный крест»).`,
-                  `Прямі руки в боки під час flare («залізний хрест»).`,
+                  `Прямые руки в стороны во время выравнивания («железный крест»).`,
+                  `Прямі руки в боки під час вирівнювання («залізний хрест»).`,
                 ),
                 t(
                   `Looking straight down at the ground under you: it rushes up and the timing goes wrong.`,
@@ -1892,8 +1892,8 @@ export const part4: Part = {
                 t(
                   `Treating "5, 4, 3, 2, 1" as five full seconds of pull.`,
                   `Tomar el "5, 4, 3, 2, 1" como cinco segundos completos de tirón.`,
-                  `Принимать «5, 4, 3, 2, 1» за пять полных секунд торможения.`,
-                  `Сприймати «5, 4, 3, 2, 1» як п’ять повних секунд гальмування.`,
+                  `Принимать «5, 4, 3, 2, 1» за пять полных секунд выравнивания.`,
+                  `Сприймати «5, 4, 3, 2, 1» як п’ять повних секунд вирівнювання.`,
                 ),
                 t(
                   `Dropping a toggle near the ground: the single worst injury among 2024 US landings without a turn.`,
@@ -1903,7 +1903,7 @@ export const part4: Part = {
                 ),
               ],
               good: [
-                t(`Priorities: level wing, clear area, flare and PLF.`, `Prioridades: ala nivelada, zona despejada, flare y PLF.`, `Приоритеты: ровное крыло, свободная площадка, flare и PLF.`, `Пріоритети: рівне крило, вільний майданчик, flare і PLF.`),
+                t(`Priorities: level wing, clear area, flare and PLF.`, `Prioridades: ala nivelada, zona despejada, flare y PLF.`, `Приоритеты: ровное крыло, свободная площадка, выравнивание и PLF.`, `Пріоритети: рівне крило, вільний майданчик, вирівнювання і PLF.`),
                 t(
                   `Look at the horizon ahead, about 45° down, not at your feet.`,
                   `Mira al horizonte adelante, unos 45° hacia abajo, no a tus pies.`,
@@ -1919,14 +1919,14 @@ export const part4: Part = {
                 t(
                   `Flared high? Stop, hold what you have, fly straight, finish on the way down.`,
                   `¿Flare demasiado alto? Para, mantén lo que tienes, vuela recto y termina mientras bajas.`,
-                  `Начал flare слишком высоко? Остановись, держи то, что есть, лети прямо и добирай на снижении.`,
-                  `Почав flare надто високо? Зупинись, тримай те, що є, лети прямо й добирай на зниженні.`,
+                  `Начал выравнивание слишком высоко? Остановись, держи то, что есть, лети прямо и добирай на снижении.`,
+                  `Почав вирівнювання надто високо? Зупинись, тримай те, що є, лети прямо й добирай на зниженні.`,
                 ),
                 t(
                   `The radio is a backup: ground coming fast and no "flare" call? Flare.`,
                   `La radio es un respaldo: ¿el suelo se acerca rápido y nadie dice "flare"? Haz el flare.`,
-                  `Радио — только подстраховка: земля близко, а команды нет? Делай flare.`,
-                  `Радіо — лише підстраховка: земля близько, а команди «flare» немає? Роби flare.`,
+                  `Радио — только подстраховка: земля близко, а команды нет? Делай выравнивание.`,
+                  `Радіо — лише підстраховка: земля близько, а команди «flare» немає? Роби вирівнювання.`,
                 ),
                 t(
                   `At 2,500 ft decide whether you can reach the holding point; if not, pick a clear alternate by 2,000 ft at the latest.`,
@@ -2061,7 +2061,7 @@ export const part4: Part = {
               yt: 'IIN4WylwLGo',
               t: 0,
               credit: 'Brian Germain',
-              label: t(`Flaring too high`, `Flare demasiado alto`, `Flare слишком высоко`, `Flare надто високо`),
+              label: t(`Flaring too high`, `Flare demasiado alto`, `Выравнивание слишком высоко`, `Вирівнювання надто високо`),
             },
           ],
         },
@@ -2112,8 +2112,8 @@ export const part4: Part = {
               q: t(
                 `What does the "5, 4, 3, 2, 1" in the flare mean?`,
                 `¿Qué significa el "5, 4, 3, 2, 1" del flare?`,
-                `Что значит «5, 4, 3, 2, 1» во время flare?`,
-                `Що означає «5, 4, 3, 2, 1» під час flare?`,
+                `Что значит «5, 4, 3, 2, 1» во время выравнивания?`,
+                `Що означає «5, 4, 3, 2, 1» під час вирівнювання?`,
               ),
               options: [
                 t(`One smooth pull, done at touchdown`, `Un tirón suave, terminado al tocar`, `Одно плавное движение до касания`, `Один плавний рух до дотику`),
@@ -2124,8 +2124,8 @@ export const part4: Part = {
               why: t(
                 `It's a count, not a timer. What matters is where the flare finishes: at touchdown, with both hands, elbows back, hands close to the body.`,
                 `Es un conteo, no un cronómetro. Lo que importa es dónde termina el flare: al tocar el suelo, con las dos manos, codos atrás, manos pegadas al cuerpo.`,
-                `Это счёт, а не таймер. Важно, где flare заканчивается: в момент касания, обеими руками, локти назад, кисти у корпуса.`,
-                `Це лік, а не таймер. Важливо, де flare закінчується: у момент дотику, обома руками, лікті назад, кисті біля тіла.`,
+                `Это счёт, а не таймер. Важно, где выравнивание заканчивается: в момент касания, обеими руками, локти назад, кисти у корпуса.`,
+                `Це лік, а не таймер. Важливо, де вирівнювання закінчується: у момент дотику, обома руками, лікті назад, кисті біля тіла.`,
               ),
             },
             {
@@ -2136,7 +2136,7 @@ export const part4: Part = {
                 `Земля швидко наближається, а по радіо тиша. Що робиш?`,
               ),
               options: [
-                t(`Flare yourself`, `Haz el flare tú`, `Делаю flare сам`, `Роблю flare сам`),
+                t(`Flare yourself`, `Haz el flare tú`, `Делаю выравнивание сам`, `Роблю вирівнювання сам`),
                 t(`Wait for the "flare" call`, `Espera a que digan "flare"`, `Жду команды «flare»`, `Чекаю на команду «flare»`),
                 t(`Turn to slow down`, `Gira para frenar`, `Поворачиваю, чтобы затормозить`, `Повертаю, щоб загальмувати`),
               ],
@@ -2144,8 +2144,8 @@ export const part4: Part = {
               why: t(
                 `The radio is a backup. You fly your canopy: ground close and no call, flare.`,
                 `La radio es un respaldo. Tú vuelas tu vela: suelo cerca y nadie dice nada, haz el flare.`,
-                `Радио — подстраховка. Куполом управляешь ты: земля близко, команды нет — flare.`,
-                `Радіо — підстраховка. Куполом керуєш ти: земля близько, команди немає — flare.`,
+                `Радио — подстраховка. Куполом управляешь ты: земля близко, команды нет — делай выравнивание.`,
+                `Радіо — підстраховка. Куполом керуєш ти: земля близько, команди немає — роби вирівнювання.`,
               ),
             },
           ],
@@ -2157,7 +2157,7 @@ export const part4: Part = {
     {
       id: 'questions',
       eyebrow: t(`Before the next session`, `Antes de la próxima sesión`, `Перед следующим занятием`, `Перед наступним заняттям`),
-      title: t(`Ask the instructors`, `Pregunta a los instructores`, `Спросить у инструкторов`, `Запитати в інструкторів`),
+      title: t(`Ask the instructors`, `Pregunta a los instructores`, `Вопросы инструкторам`, `Запитати в інструкторів`),
       blocks: [
         { type: 'h', text: t(`Gear`, `Equipo`, `Снаряжение`, `Спорядження`) },
         {
@@ -2352,8 +2352,8 @@ export const part4: Part = {
             t(
               `Two canopies out: USPA says land a biplane or side by side with no flare, and cut away a downplane. Do students disconnect the RSL first, and where is it on our rigs? Walk us through all the cases on the ground.`,
               `Dos velas abiertas: USPA dice aterrizar biplano o lado a lado sin flare y liberar un downplane. ¿Los alumnos desconectan antes el RSL y dónde está en nuestros equipos? Repasar todos los casos en tierra.`,
-              `Два купола: USPA говорит — биплан и бок о бок садить без flare, при «даунплейне» отцепляться. Студенты сначала отсоединяют RSL, и где он на наших системах? Разобрать все случаи на земле.`,
-              `Два куполи: USPA каже — біплан і пліч-о-пліч садити без flare, при «даунплейні» відчіплятися. Студенти спершу від'єднують RSL, і де він на наших системах? Розібрати всі випадки на землі.`,
+              `Два купола: USPA говорит — биплан и бок о бок садить без выравнивания, при «даунплейне» отцепляться. Студенты сначала отсоединяют RSL, и где он на наших системах? Разобрать все случаи на земле.`,
+              `Два куполи: USPA каже — біплан і пліч-о-пліч садити без вирівнювання, при «даунплейні» відчіплятися. Студенти спершу від'єднують RSL, і де він на наших системах? Розібрати всі випадки на землі.`,
             ),
           ],
         },
@@ -2388,8 +2388,8 @@ export const part4: Part = {
             t(
               `Flare: one-stage or two-stage, and where do we look, the horizon or forward and down at about 45°? How long can our student canopy stay at full brakes before it stalls?`,
               `Flare: ¿en una etapa o en dos, y adónde miramos, al horizonte o adelante y abajo a unos 45°? ¿Cuánto aguanta nuestra vela de alumno a frenos completos antes de entrar en pérdida?`,
-              `Flare: в одно движение или в два, и куда смотрим — на горизонт или вперёд и вниз примерно под 45°? Сколько наш студенческий купол летит на полных тормозах до сваливания?`,
-              `Flare: в один рух чи у два, і куди дивимося — на горизонт чи вперед і вниз приблизно під 45°? Скільки наш студентський купол летить на повних гальмах до звалювання?`,
+              `Выравнивание (flare): в одно движение или в два, и куда смотрим — на горизонт или вперёд и вниз примерно под 45°? Сколько наш студенческий купол летит на полных тормозах до сваливания?`,
+              `Вирівнювання (flare): в один рух чи у два, і куди дивимося — на горизонт чи вперед і вниз приблизно під 45°? Скільки наш студентський купол летить на повних гальмах до звалювання?`,
             ),
             t(
               `Ground-school test Q27: what altitude stops major turns, 1,000 ft or 300 ft?`,
