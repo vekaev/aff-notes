@@ -25,6 +25,7 @@ The 24-hour review round is over; the regular autopilot (`autopilot-aff-notes`, 
 - **2026-11-18 06:00 PST**: the task kept firing after the deadline; it can't switch itself off or the autopilot
   on without the owner's approval in an unattended run. Asked under "Waiting on you" in docs/PLAN.md. No content changes.
 - **2026-11-18 12:00 PST**: fired again; switching the task off and the autopilot on was refused again (needs the owner's approval, nobody opened the run). No content changes. Owner: disable `aff-notes-finish-review` and enable `autopilot-aff-notes` by hand.
+- **2026-11-19 06:00 PST**: fired a third time; switching the task off and the autopilot on was refused again (no person to approve). No content changes. Owner: disable `aff-notes-finish-review` and enable `autopilot-aff-notes` by hand.
 - **In progress elsewhere**: school-rules profiles, draft PR #6 (not merged; needs a merge of main, regenerate en.json).
 
 ## Status 2026-11-17 08:00 PST
