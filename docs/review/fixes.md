@@ -29,6 +29,7 @@ The 24-hour review round is over; the regular autopilot (`autopilot-aff-notes`, 
 - **2026-11-19 14:00 PST**: fired a fourth time; switching the task off and the autopilot on was refused again (no person to approve). No content changes. Owner: disable `aff-notes-finish-review` and enable `autopilot-aff-notes` by hand.
 - **2026-11-20 02:00 PST**: fired a fifth time; switching the task off and the autopilot on was refused again (no person to approve). No content changes. Owner: disable `aff-notes-finish-review` and enable `autopilot-aff-notes` by hand.
 - **2026-11-20 10:00 PST**: fired a sixth time; switching the task off and the autopilot on was refused again (no person to approve). No content changes. Owner: disable `aff-notes-finish-review` and enable `autopilot-aff-notes` by hand.
+- **2026-11-20 20:00 PST**: fired an eighth time; switching the task off and the autopilot on was refused again (no person to approve). No content changes. Owner: disable `aff-notes-finish-review` and enable `autopilot-aff-notes` by hand.
 - **In progress elsewhere**: school-rules profiles, draft PR #6 (not merged; needs a merge of main, regenerate en.json).
 
 ## Status 2026-11-17 08:00 PST
