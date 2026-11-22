@@ -146,3 +146,4 @@ From the two Part IV reports (both passes agree on these):
 ## Open questions for the owner
 
 See "Questions for the owner" in each fixer log; collected in docs/PLAN.md "Waiting on you".
+- **2026-11-21 22:00 PST**: fired a fourteenth time; switching the task off and the autopilot on was refused again (no person to approve). No content changes. Owner: disable `aff-notes-finish-review` and enable `autopilot-aff-notes` by hand.
